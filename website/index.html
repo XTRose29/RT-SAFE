@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f6f5f1" />
+    <title>RT–SAFE — The world doesn’t pause</title>
+    <meta
+      name="description"
+      content="Benchmarking embodied agent safety when the world keeps moving during reasoning and action. Five city maps, 36 routes, and eight vision-language models."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="RT–SAFE — The world doesn’t pause" />
+    <meta
+      property="og:description"
+      content="Neither should safety evaluation. Explore the benchmark, recorded decisions, and results."
+    />
+    <meta property="og:image" content="./og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="RT–SAFE — The world doesn’t pause" />
+    <meta
+      name="twitter:description"
+      content="Neither should safety evaluation. Explore the benchmark, recorded decisions, and results."
+    />
+    <meta name="twitter:image" content="./og.png" />
+    <link rel="icon" href="./favicon.png" type="image/png" />
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript
+      ><main
+        style="
+          font-family: sans-serif;
+          padding: 3rem;
+          max-width: 50rem;
+          margin: auto;
+        "
+      >
+        <h1>RT–SAFE</h1>
+        <p>Benchmarking agent safety in real-time embodied environments.</p>
+        <p>
+          The world does not pause while an agent thinks. On 288 matched
+          model–route pairs, safe completion falls from 19.8% in static
+          evaluation to 0.7% in real time.
+        </p>
+        <p>
+          <a href="./media/rt-safe-paper.pdf">Read the manuscript</a> ·
+          <a href="./data/results.csv">Download results</a> ·
+          <a href="./media/rt-safe-demo.mp4">Watch the film</a>
+        </p>
+        <p>Enable JavaScript to use the interactive results explorer.</p>
+      </main></noscript
+    >
+    <script type="module" src="/pages-entry.tsx"></script>
+  </body>
+</html>

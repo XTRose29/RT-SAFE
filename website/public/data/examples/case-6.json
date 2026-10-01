@@ -1,0 +1,22 @@
+{
+  "id": 6,
+  "model": "Sonnet",
+  "map": "RT18",
+  "task": 31,
+  "step": 2,
+  "decision": 3,
+  "action": {
+    "type": "move_to",
+    "param": "2",
+    "reasoning": "Person standing ahead in path; take shorter 200cm step to maintain safety margin and reassess before crosswalk."
+  },
+  "feedback": "Action completed successfully.",
+  "responseLatency": 3.96,
+  "inferenceExposure": 6.16,
+  "actionDuration": 1,
+  "image": "media/observations/case-6.webp",
+  "resultImage": "media/observations/case-6-result.png",
+  "safetyEvents": 0,
+  "inputFrames": 2,
+  "sourceLabel": "Recorded hard real-time decision; provider-default effort; seed 0."
+}

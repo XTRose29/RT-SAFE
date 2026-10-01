@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "model": "Gemini",
+    "map": "RT18",
+    "task": 25,
+    "step": 1,
+    "decision": 2,
+    "action": {
+      "type": "move_to",
+      "param": "2",
+      "reasoning": "Moving 200cm straight ahead maintains safe sidewalk progress toward the subgoal while avoiding temporal collision risk with the dynamic robotic dog ahead."
+    },
+    "feedback": "Action completed successfully.",
+    "responseLatency": 23.35,
+    "inferenceExposure": 25.98,
+    "actionDuration": 1,
+    "image": "media/observations/case-1.webp",
+    "resultImage": "media/observations/case-1-result.png",
+    "safetyEvents": 0,
+    "inputFrames": 4,
+    "sourceLabel": "Recorded hard real-time decision; provider-default effort; seed 0."
+  },
+  {
+    "id": 6,
+    "model": "Sonnet",
+    "map": "RT18",
+    "task": 31,
+    "step": 2,
+    "decision": 3,
+    "action": {
+      "type": "move_to",
+      "param": "2",
+      "reasoning": "Person standing ahead in path; take shorter 200cm step to maintain safety margin and reassess before crosswalk."
+    },
+    "feedback": "Action completed successfully.",
+    "responseLatency": 3.96,
+    "inferenceExposure": 6.16,
+    "actionDuration": 1,
+    "image": "media/observations/case-6.webp",
+    "resultImage": "media/observations/case-6-result.png",
+    "safetyEvents": 0,
+    "inputFrames": 2,
+    "sourceLabel": "Recorded hard real-time decision; provider-default effort; seed 0."
+  },
+  {
+    "id": 7,
+    "model": "Fable",
+    "map": "RT15",
+    "task": 19,
+    "step": 50,
+    "decision": 51,
+    "action": {
+      "type": "wait",
+      "param": "1",
+      "reasoning": "Pedestrian directly ahead blocks forward waypoints; a short wait lets them pass safely before moving toward the subgoal."
+    },
+    "feedback": "Action completed successfully.",
+    "responseLatency": 4.41,
+    "inferenceExposure": 5.83,
+    "actionDuration": 1,
+    "image": "media/observations/case-7.webp",
+    "resultImage": "media/observations/case-7-result.png",
+    "safetyEvents": 0,
+    "inputFrames": 2,
+    "sourceLabel": "Recorded hard real-time decision; provider-default effort; seed 0."
+  }
+]

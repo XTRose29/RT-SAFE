@@ -1,0 +1,35 @@
+00:00:00.000  THE PROBLEM
+The world does not pause while an agent thinks. Pedestrians move. Vehicles approach. A safe action can become unsafe before it even begins.
+
+00:00:13.867  WHY REAL TIME
+In a static evaluation, the simulator freezes during reasoning. In R T Safe, the world keeps moving. Safety depends on what an agent decides, and when that decision becomes available.
+
+00:00:29.400  THE BENCHMARK
+Built with Unreal Engine 5, R T Safe brings together five city maps, thirty-six navigation routes, and three difficulty levels. The task is straightforward: reach the destination safely.
+
+00:00:44.900  OBSERVE. REASON. ACT.
+Agents receive recent motion frames, a first-person image, and navigation context. Every model uses the same sixteen actions: seven moves, six turns, and three waits.
+
+00:00:59.533  A RECORDED DECISION
+Here, Fable sees a pedestrian blocking its forward targets and chooses a one-second wait. The recorded inference exposure is five point eight three seconds. This decision finishes without a safety event.
+
+00:01:15.767  WHAT COUNTS AS SAFE
+R T Safe measures collision avoidance, hazard avoidance, and traffic compliance. Safe success requires reaching the goal with zero recorded events across all three. Arrival alone is not enough.
+
+00:01:31.833  THE HIDDEN SAFETY GAP
+On two hundred eighty-eight matched model and route pairs, task completion remains high in both settings. But safe completion falls from nineteen point eight percent in static evaluation to just zero point seven percent in real time.
+
+00:01:48.700  RISK WHILE REASONING
+Collisions rise twelve point three times. Approximately eighty-four percent of real-time contacts occur during inference, while the agent is deciding. These are risks a paused evaluation cannot reveal.
+
+00:02:04.933  EIGHT MODELS. DIFFERENT TRADEOFFS.
+Model rankings change, too. Inkling records the fewest collisions in the static setting, while Fable records the fewest in real time. The website lets you inspect every model and metric.
+
+00:02:20.200  THE COST OF MORE REASONING
+More reasoning does not consistently make navigation safer. Raising effort above provider defaults increases mean collisions from forty point seven to sixty-two per episode. Extra inference time can outweigh better individual actions.
+
+00:02:38.367  A TESTBED FOR LEARNING
+R T Safe also supports offline reinforcement learning. In a separate training study, reward design changes the tradeoff between completion and collision avoidance. Behavior cloning remains a strong baseline.
+
+00:02:55.067  RT–SAFE
+Evaluate the whole decision, including the time it takes. R T Safe. Benchmarking agent safety in real-time embodied environments.

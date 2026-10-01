@@ -1,0 +1,22 @@
+{
+  "id": 7,
+  "model": "Fable",
+  "map": "RT15",
+  "task": 19,
+  "step": 50,
+  "decision": 51,
+  "action": {
+    "type": "wait",
+    "param": "1",
+    "reasoning": "Pedestrian directly ahead blocks forward waypoints; a short wait lets them pass safely before moving toward the subgoal."
+  },
+  "feedback": "Action completed successfully.",
+  "responseLatency": 4.41,
+  "inferenceExposure": 5.83,
+  "actionDuration": 1,
+  "image": "media/observations/case-7.webp",
+  "resultImage": "media/observations/case-7-result.png",
+  "safetyEvents": 0,
+  "inputFrames": 2,
+  "sourceLabel": "Recorded hard real-time decision; provider-default effort; seed 0."
+}

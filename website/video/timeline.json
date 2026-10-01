@@ -1,0 +1,129 @@
+{
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "voice": "en-US-AriaNeural",
+  "duration": 187.7333333333333,
+  "scenes": [
+    {
+      "id": "opening",
+      "chapter": "THE PROBLEM",
+      "narration": "The world does not pause while an agent thinks. Pedestrians move. Vehicles approach. A safe action can become unsafe before it even begins.",
+      "minDuration": 10,
+      "start": 0,
+      "voiceDuration": 12.264,
+      "voiceOffset": 0.65,
+      "duration": 13.866666666666667
+    },
+    {
+      "id": "timing",
+      "chapter": "WHY REAL TIME",
+      "narration": "In a static evaluation, the simulator freezes during reasoning. In R T Safe, the world keeps moving. Safety depends on what an agent decides, and when that decision becomes available.",
+      "minDuration": 12,
+      "start": 13.866666666666667,
+      "voiceDuration": 13.92,
+      "voiceOffset": 0.65,
+      "duration": 15.533333333333333
+    },
+    {
+      "id": "environment",
+      "chapter": "THE BENCHMARK",
+      "narration": "Built with Unreal Engine 5, R T Safe brings together five city maps, thirty-six navigation routes, and three difficulty levels. The task is straightforward: reach the destination safely.",
+      "minDuration": 12,
+      "start": 29.4,
+      "voiceDuration": 13.872,
+      "voiceOffset": 0.65,
+      "duration": 15.5
+    },
+    {
+      "id": "interface",
+      "chapter": "OBSERVE. REASON. ACT.",
+      "narration": "Agents receive recent motion frames, a first-person image, and navigation context. Every model uses the same sixteen actions: seven moves, six turns, and three waits.",
+      "minDuration": 11,
+      "start": 44.9,
+      "voiceDuration": 13.032,
+      "voiceOffset": 0.65,
+      "duration": 14.633333333333333
+    },
+    {
+      "id": "decision",
+      "chapter": "A RECORDED DECISION",
+      "narration": "Here, Fable sees a pedestrian blocking its forward targets and chooses a one-second wait. The recorded inference exposure is five point eight three seconds. This decision finishes without a safety event.",
+      "minDuration": 14,
+      "start": 59.53333333333333,
+      "voiceDuration": 14.616,
+      "voiceOffset": 0.65,
+      "duration": 16.233333333333334
+    },
+    {
+      "id": "safety",
+      "chapter": "WHAT COUNTS AS SAFE",
+      "narration": "R T Safe measures collision avoidance, hazard avoidance, and traffic compliance. Safe success requires reaching the goal with zero recorded events across all three. Arrival alone is not enough.",
+      "minDuration": 12,
+      "start": 75.76666666666667,
+      "voiceDuration": 14.448,
+      "voiceOffset": 0.65,
+      "duration": 16.066666666666666
+    },
+    {
+      "id": "completion",
+      "chapter": "THE HIDDEN SAFETY GAP",
+      "narration": "On two hundred eighty-eight matched model and route pairs, task completion remains high in both settings. But safe completion falls from nineteen point eight percent in static evaluation to just zero point seven percent in real time.",
+      "minDuration": 16,
+      "start": 91.83333333333333,
+      "voiceDuration": 15.264,
+      "voiceOffset": 0.65,
+      "duration": 16.866666666666667
+    },
+    {
+      "id": "collisions",
+      "chapter": "RISK WHILE REASONING",
+      "narration": "Collisions rise twelve point three times. Approximately eighty-four percent of real-time contacts occur during inference, while the agent is deciding. These are risks a paused evaluation cannot reveal.",
+      "minDuration": 12,
+      "start": 108.69999999999999,
+      "voiceDuration": 14.616,
+      "voiceOffset": 0.65,
+      "duration": 16.233333333333334
+    },
+    {
+      "id": "models",
+      "chapter": "EIGHT MODELS. DIFFERENT TRADEOFFS.",
+      "narration": "Model rankings change, too. Inkling records the fewest collisions in the static setting, while Fable records the fewest in real time. The website lets you inspect every model and metric.",
+      "minDuration": 12,
+      "start": 124.93333333333332,
+      "voiceDuration": 13.656,
+      "voiceOffset": 0.65,
+      "duration": 15.266666666666667
+    },
+    {
+      "id": "effort",
+      "chapter": "THE COST OF MORE REASONING",
+      "narration": "More reasoning does not consistently make navigation safer. Raising effort above provider defaults increases mean collisions from forty point seven to sixty-two per episode. Extra inference time can outweigh better individual actions.",
+      "minDuration": 14,
+      "start": 140.2,
+      "voiceDuration": 16.536,
+      "voiceOffset": 0.65,
+      "duration": 18.166666666666668
+    },
+    {
+      "id": "learning",
+      "chapter": "A TESTBED FOR LEARNING",
+      "narration": "R T Safe also supports offline reinforcement learning. In a separate training study, reward design changes the tradeoff between completion and collision avoidance. Behavior cloning remains a strong baseline.",
+      "minDuration": 12,
+      "start": 158.36666666666665,
+      "voiceDuration": 15.072,
+      "voiceOffset": 0.65,
+      "duration": 16.7
+    },
+    {
+      "id": "closing",
+      "chapter": "RT\u2013SAFE",
+      "narration": "Evaluate the whole decision, including the time it takes. R T Safe. Benchmarking agent safety in real-time embodied environments.",
+      "minDuration": 10,
+      "start": 175.06666666666663,
+      "voiceDuration": 11.064,
+      "voiceOffset": 0.65,
+      "duration": 12.666666666666666
+    }
+  ]
+}

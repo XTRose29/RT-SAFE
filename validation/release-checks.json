@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-01",
+  "benchmark_tests": {
+    "passed": 672,
+    "subtests_passed": 407,
+    "skipped_modules": 1,
+    "skip_reason": "Optional local model-serving stack is not installed"
+  },
+  "python_modules_parse": 194,
+  "website": {
+    "data_tests_passed": 6,
+    "typescript": "passed",
+    "production_build": "passed",
+    "npm_audit_known_vulnerabilities": 0,
+    "html_references_checked": 33,
+    "section_anchors_checked": 8,
+    "pages_project_path_http": "passed",
+    "pages_project_and_account_metadata": "passed; idempotent"
+  },
+  "media": {
+    "rt-safe-demo.mp4": {
+      "sha256": "68ccb5d91689341324286f137723261a3c7095ecdf172033daa55d3a73462210",
+      "bytes": 9869240
+    },
+    "rt-safe-highlights.mp4": {
+      "sha256": "491058fa535cea0b79a9ca23e7d8083d58df3b5663cf5406a2f9fa1753fd63af",
+      "bytes": 3260075
+    },
+    "rt-safe-conference-captioned.mp4": {
+      "sha256": "dfd21b62c73e30e48e4aa0d5d6a564f749d78fe9dee4f1749c25dd4934d91b14",
+      "bytes": 13567375
+    }
+  },
+  "limitations": [
+    "No live Unreal/model rollout performed",
+    "No browser interaction testing performed",
+    "No authenticated GitHub connection; remote creation and Pages deployment pending",
+    "Runtime acquisition and offline training materials not supplied",
+    "Project-wide license and author metadata pending"
+  ]
+}

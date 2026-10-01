@@ -1,0 +1,6 @@
+{
+  "pilot-route.mp4": {
+    "source": "results/lingge_easy_rollout_scenario10_uniform_aligned_hq_v3_20260817/rollout_agent_input_annotated.mp4",
+    "role": "Actual UE pilot observations, condensed; not one of the quantitative paper-campaign comparisons"
+  }
+}

@@ -1,0 +1,545 @@
+{
+  "generated_at": "2026-03-17T16:08:32.833605",
+  "map_path": "data/map1_10roads/roads.json",
+  "total_tasks": 8,
+  "tasks": [
+    {
+      "task_id": 0,
+      "start_point": [
+        9300.0,
+        -4473.2925
+      ],
+      "end_point": [
+        2595.7893,
+        -9300.0
+      ],
+      "start_edge": {
+        "node1": [
+          9300.0,
+          -9300.0
+        ],
+        "node2": [
+          9300.0,
+          -700.0
+        ],
+        "type": "sidewalk"
+      },
+      "end_edge": {
+        "node1": [
+          700.0,
+          -9300.0
+        ],
+        "node2": [
+          9300.0,
+          -9300.0
+        ],
+        "type": "sidewalk"
+      },
+      "edges": [
+        {
+          "node1": [
+            9300.0,
+            -9300.0
+          ],
+          "node2": [
+            9300.0,
+            -700.0
+          ],
+          "type": "sidewalk"
+        },
+        {
+          "node1": [
+            700.0,
+            -9300.0
+          ],
+          "node2": [
+            9300.0,
+            -9300.0
+          ],
+          "type": "sidewalk"
+        }
+      ],
+      "total_hops": 2,
+      "crosswalk_hops": 0
+    },
+    {
+      "task_id": 1,
+      "start_point": [
+        7498.2395,
+        -700.0
+      ],
+      "end_point": [
+        9300.0,
+        -3264.3453
+      ],
+      "start_edge": {
+        "node1": [
+          9300.0,
+          -700.0
+        ],
+        "node2": [
+          700.0,
+          -700.0
+        ],
+        "type": "sidewalk"
+      },
+      "end_edge": {
+        "node1": [
+          9300.0,
+          -9300.0
+        ],
+        "node2": [
+          9300.0,
+          -700.0
+        ],
+        "type": "sidewalk"
+      },
+      "edges": [
+        {
+          "node1": [
+            9300.0,
+            -700.0
+          ],
+          "node2": [
+            700.0,
+            -700.0
+          ],
+          "type": "sidewalk"
+        },
+        {
+          "node1": [
+            9300.0,
+            -9300.0
+          ],
+          "node2": [
+            9300.0,
+            -700.0
+          ],
+          "type": "sidewalk"
+        }
+      ],
+      "total_hops": 2,
+      "crosswalk_hops": 0
+    },
+    {
+      "task_id": 2,
+      "start_point": [
+        9300.0,
+        -17485.5475
+      ],
+      "end_point": [
+        7471.4117,
+        -10700.0
+      ],
+      "start_edge": {
+        "node1": [
+          9300.0,
+          -19300.0
+        ],
+        "node2": [
+          9300.0,
+          -10700.0
+        ],
+        "type": "sidewalk"
+      },
+      "end_edge": {
+        "node1": [
+          9300.0,
+          -10700.0
+        ],
+        "node2": [
+          700.0,
+          -10700.0
+        ],
+        "type": "sidewalk"
+      },
+      "edges": [
+        {
+          "node1": [
+            9300.0,
+            -19300.0
+          ],
+          "node2": [
+            9300.0,
+            -10700.0
+          ],
+          "type": "sidewalk"
+        },
+        {
+          "node1": [
+            9300.0,
+            -10700.0
+          ],
+          "node2": [
+            700.0,
+            -10700.0
+          ],
+          "type": "sidewalk"
+        }
+      ],
+      "total_hops": 2,
+      "crosswalk_hops": 0
+    },
+    {
+      "task_id": 3,
+      "start_point": [
+        18105.485,
+        700.0
+      ],
+      "end_point": [
+        6096.036,
+        700.0
+      ],
+      "start_edge": {
+        "node1": [
+          10700.0,
+          700.0
+        ],
+        "node2": [
+          19300.0,
+          700.0
+        ],
+        "type": "sidewalk"
+      },
+      "end_edge": {
+        "node1": [
+          700.0,
+          700.0
+        ],
+        "node2": [
+          9300.0,
+          700.0
+        ],
+        "type": "sidewalk"
+      },
+      "edges": [
+        {
+          "node1": [
+            10700.0,
+            700.0
+          ],
+          "node2": [
+            19300.0,
+            700.0
+          ],
+          "type": "sidewalk"
+        },
+        {
+          "node1": [
+            10700.0,
+            700.0
+          ],
+          "node2": [
+            9300.0,
+            700.0
+          ],
+          "type": "crosswalk"
+        },
+        {
+          "node1": [
+            700.0,
+            700.0
+          ],
+          "node2": [
+            9300.0,
+            700.0
+          ],
+          "type": "sidewalk"
+        }
+      ],
+      "total_hops": 3,
+      "crosswalk_hops": 1
+    },
+    {
+      "task_id": 4,
+      "start_point": [
+        -7939.8433,
+        700.0
+      ],
+      "end_point": [
+        -8902.817,
+        -700.0
+      ],
+      "start_edge": {
+        "node1": [
+          -9300.0,
+          700.0
+        ],
+        "node2": [
+          -700.0,
+          700.0
+        ],
+        "type": "sidewalk"
+      },
+      "end_edge": {
+        "node1": [
+          -700.0,
+          -700.0
+        ],
+        "node2": [
+          -9300.0,
+          -700.0
+        ],
+        "type": "sidewalk"
+      },
+      "edges": [
+        {
+          "node1": [
+            -9300.0,
+            700.0
+          ],
+          "node2": [
+            -700.0,
+            700.0
+          ],
+          "type": "sidewalk"
+        },
+        {
+          "node1": [
+            -700.0,
+            -700.0
+          ],
+          "node2": [
+            -700.0,
+            700.0
+          ],
+          "type": "crosswalk"
+        },
+        {
+          "node1": [
+            -700.0,
+            -700.0
+          ],
+          "node2": [
+            -9300.0,
+            -700.0
+          ],
+          "type": "sidewalk"
+        }
+      ],
+      "total_hops": 3,
+      "crosswalk_hops": 1
+    },
+    {
+      "task_id": 5,
+      "start_point": [
+        -10700.0,
+        -5097.9909
+      ],
+      "end_point": [
+        -9300.0,
+        -8690.2481
+      ],
+      "start_edge": {
+        "node1": [
+          -10700.0,
+          -9300.0
+        ],
+        "node2": [
+          -10700.0,
+          -700.0
+        ],
+        "type": "sidewalk"
+      },
+      "end_edge": {
+        "node1": [
+          -9300.0,
+          -700.0
+        ],
+        "node2": [
+          -9300.0,
+          -9300.0
+        ],
+        "type": "sidewalk"
+      },
+      "edges": [
+        {
+          "node1": [
+            -10700.0,
+            -9300.0
+          ],
+          "node2": [
+            -10700.0,
+            -700.0
+          ],
+          "type": "sidewalk"
+        },
+        {
+          "node1": [
+            -9300.0,
+            -9300.0
+          ],
+          "node2": [
+            -10700.0,
+            -9300.0
+          ],
+          "type": "crosswalk"
+        },
+        {
+          "node1": [
+            -9300.0,
+            -700.0
+          ],
+          "node2": [
+            -9300.0,
+            -9300.0
+          ],
+          "type": "sidewalk"
+        }
+      ],
+      "total_hops": 3,
+      "crosswalk_hops": 1
+    },
+    {
+      "task_id": 6,
+      "start_point": [
+        19300.0,
+        -3168.6388
+      ],
+      "end_point": [
+        20700.0,
+        -9258.2845
+      ],
+      "start_edge": {
+        "node1": [
+          19300.0,
+          -9300.0
+        ],
+        "node2": [
+          19300.0,
+          -700.0
+        ],
+        "type": "sidewalk"
+      },
+      "end_edge": {
+        "node1": [
+          20700.0,
+          -700.0
+        ],
+        "node2": [
+          20700.0,
+          -9300.0
+        ],
+        "type": "sidewalk"
+      },
+      "edges": [
+        {
+          "node1": [
+            19300.0,
+            -9300.0
+          ],
+          "node2": [
+            19300.0,
+            -700.0
+          ],
+          "type": "sidewalk"
+        },
+        {
+          "node1": [
+            20700.0,
+            -700.0
+          ],
+          "node2": [
+            19300.0,
+            -700.0
+          ],
+          "type": "crosswalk"
+        },
+        {
+          "node1": [
+            20700.0,
+            -700.0
+          ],
+          "node2": [
+            20700.0,
+            -9300.0
+          ],
+          "type": "sidewalk"
+        }
+      ],
+      "total_hops": 3,
+      "crosswalk_hops": 1
+    },
+    {
+      "task_id": 7,
+      "start_point": [
+        9300.0,
+        -7331.1007
+      ],
+      "end_point": [
+        1907.1356,
+        -10700.0
+      ],
+      "start_edge": {
+        "node1": [
+          9300.0,
+          -9300.0
+        ],
+        "node2": [
+          9300.0,
+          -700.0
+        ],
+        "type": "sidewalk"
+      },
+      "end_edge": {
+        "node1": [
+          9300.0,
+          -10700.0
+        ],
+        "node2": [
+          700.0,
+          -10700.0
+        ],
+        "type": "sidewalk"
+      },
+      "edges": [
+        {
+          "node1": [
+            9300.0,
+            -9300.0
+          ],
+          "node2": [
+            9300.0,
+            -700.0
+          ],
+          "type": "sidewalk"
+        },
+        {
+          "node1": [
+            700.0,
+            -9300.0
+          ],
+          "node2": [
+            9300.0,
+            -9300.0
+          ],
+          "type": "sidewalk"
+        },
+        {
+          "node1": [
+            700.0,
+            -10700.0
+          ],
+          "node2": [
+            700.0,
+            -9300.0
+          ],
+          "type": "crosswalk"
+        },
+        {
+          "node1": [
+            9300.0,
+            -10700.0
+          ],
+          "node2": [
+            700.0,
+            -10700.0
+          ],
+          "type": "sidewalk"
+        }
+      ],
+      "total_hops": 4,
+      "crosswalk_hops": 1
+    }
+  ]
+}

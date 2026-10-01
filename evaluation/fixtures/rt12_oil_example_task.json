@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-08-17T00:00:00Z",
+  "map_path": "data/map2_12roads/roads.json",
+  "total_tasks": 1,
+  "tasks": [
+    {
+      "task_id": 901,
+      "start_point": [-24100.0, -569.8689585482081],
+      "end_point": [-23200.0, -569.8689585482081],
+      "start_edge": {
+        "node1": [-20700.0, -700.0],
+        "node2": [-29300.0, -700.0],
+        "type": "sidewalk"
+      },
+      "end_edge": {
+        "node1": [-20700.0, -700.0],
+        "node2": [-29300.0, -700.0],
+        "type": "sidewalk"
+      },
+      "edges": [
+        {
+          "node1": [-20700.0, -700.0],
+          "node2": [-29300.0, -700.0],
+          "type": "sidewalk"
+        }
+      ],
+      "total_hops": 1,
+      "crosswalk_hops": 0,
+      "map_path": "data/map2_12roads/roads.json",
+      "route_info": {
+        "shortest_path": [
+          [-24100.0, -569.8689585482081],
+          [-23200.0, -569.8689585482081]
+        ],
+        "intersections": []
+      },
+      "pedestrian_routes": [],
+      "pedestrian_routes_num": 0,
+      "scooter_routes": [],
+      "scooter_routes_num": 0,
+      "irregular_routes": [],
+      "irregular_routes_num": 0,
+      "falling_objects": [],
+      "falling_objects_num": 0,
+      "evidence_target": {
+        "asset_id": "GEN_RT_RT_Oil_244",
+        "asset_type": "RT_Oil_C",
+        "location_cm": [-23697.42266217407, -569.8689585482081]
+      }
+    }
+  ]
+}

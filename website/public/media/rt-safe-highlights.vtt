@@ -1,0 +1,52 @@
+WEBVTT
+
+00:00:00.752 --> 00:00:03.493
+The world does not pause while an agent thinks.
+
+00:00:04.297 --> 00:00:05.737
+Pedestrians move.
+
+00:00:06.526 --> 00:00:07.850
+Vehicles approach.
+
+00:00:08.640 --> 00:00:11.446
+A safe action can become unsafe before it even
+
+00:00:11.359 --> 00:00:12.116
+begins.
+
+00:00:14.618 --> 00:00:17.592
+On two hundred eighty-eight matched model and route pairs,
+
+00:00:17.801 --> 00:00:20.581
+task completion remains high in both settings.
+
+00:00:21.372 --> 00:00:24.655
+But safe completion falls from nineteen point eight percent
+
+00:00:24.568 --> 00:00:28.057
+in static evaluation to just zero point seven percent
+
+00:00:27.970 --> 00:00:28.972
+in real time.
+
+00:00:31.485 --> 00:00:34.059
+Collisions rise twelve point three times.
+
+00:00:34.849 --> 00:00:39.382
+Approximately eighty-four percent of real-time contacts occur during inference,
+
+00:00:39.605 --> 00:00:41.225
+while the agent is deciding.
+
+00:00:42.027 --> 00:00:45.207
+These are risks a paused evaluation cannot reveal.
+
+00:00:47.718 --> 00:00:51.349
+Evaluate the whole decision, including the time it takes.
+
+00:00:52.140 --> 00:00:53.309
+R T Safe.
+
+00:00:54.111 --> 00:00:57.858
+Benchmarking agent safety in real-time embodied environments.

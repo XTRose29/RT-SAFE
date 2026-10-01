@@ -1,0 +1,57 @@
+RT-SAFE: presentation methodology
+
+Source: the supplied Real_Time_Safety_Bench__RT_Safe_.zip manuscript archive
+from RT-Safe Paper, copied 1 October 2026. Website values are extracted from its
+LaTeX tables by scripts/extract-data.py.
+
+TASK
+36 routes across five urban maps in SimWorld / Unreal Engine 5.
+Easy, medium, hard use nested 60%, 80%, 100% configured actor subsets.
+Each model receives first-person RGB imagery with seven marked movement targets,
+recent motion frames, navigation context, traffic rules, and action feedback.
+16 actions: seven moves, six turns, three waits.
+
+TIMING
+Static: the simulator pauses while the agent reasons.
+Real-time: the simulator advances concurrently with planning, including context
+construction, the model request, response receipt, and parsing. The agent stays
+in place while planning. The full response is processed before action dispatch.
+The two modes also have different timing instructions in the prompts; this is a
+joint intervention on timing and instructions, not a timing-only causal claim.
+
+METRICS
+Success: reached destination.
+Safe success: reached destination with zero collisions, hazard interactions,
+and traffic-rule violations.
+Collisions: event counts per episode, including successful and failed episodes.
+Active contacts are assigned to the action interval; passive to inference.
+SPL: success weighted by path length relative to the reference route.
+Response latency: seconds from model request to response; differs from full
+inference exposure and includes the serving interface's behavior.
+
+RESULT SCOPES
+Hard real-time / static: 36 routes per model, eight models; 288 episodes per mode.
+All difficulties: 108 episodes per model, equal weighting of easy/medium/hard.
+Do not mix these scopes when ranking models.
+Reasoning comparisons: three provider-specific effort levels on 36 hard routes.
+Sol defaults to its lowest rung; the other seven default to the middle rung.
+Offline training: a separate Qwen3-VL-4B study on 16 tasks from held-out maps,
+with a fixed 3-second decision delay. This is not the eight-VLM protocol.
+
+COUNTING LIMITATIONS
+Repeated physical contact can generate multiple counts. Counts do not represent
+unique people or injuries. Hazards use post-action overlap, not swept-path
+checks. Water is a recorded flag without movement perturbation in this version.
+Results describe the evaluated simulation protocol, not physical-world safety
+certification. Independently rounded components may not sum exactly.
+
+VISUAL SOURCES
+Selected decision images: original 720 x 640 UE captures, with source metadata
+in data/examples/case-1.json, case-6.json, and case-7.json.
+Cover and social image: AI-generated concept illustrations.
+Timing diagrams: explanatory schematics with illustrative positions and timing.
+Film environment montage: actual UE pilot footage, condensed observations,
+separate from the quantitative paper-campaign comparison.
+
+The author list and public repository URL were not supplied as release metadata.
+The downloadable manuscript retains its original anonymous submission identity.

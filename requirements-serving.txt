@@ -1,0 +1,7 @@
+# Optional local Qwen server; install in a separate GPU environment.
+# Choose a torch build compatible with your CUDA driver first.
+transformers>=4.57,<5
+accelerate>=1,<2
+fastapi>=0.115,<1
+uvicorn>=0.30,<1
+bitsandbytes>=0.45,<1

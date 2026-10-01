@@ -1,0 +1,13 @@
+# Runtime for Linux / Python 3.12
+IPython>=9,<10
+numpy>=2.2,<3
+openai>=2.51,<4
+websockets>=13,<16
+opencv-python-headless>=4.10,<6
+pandas>=2.2,<4
+pillow>=12,<13
+pydantic>=2.12,<3
+PyQt5==5.15.11
+PyYAML>=6,<7
+requests>=2.32,<3
+unrealcv==1.2.0

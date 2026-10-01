@@ -1,0 +1,10 @@
+{
+  "llm": [
+    {
+      "model": "qwen3-vl-8b",
+      "provider": "self-hosted",
+      "url": "http://127.0.0.1:30001/v1",
+      "reasoning": false
+    }
+  ]
+}

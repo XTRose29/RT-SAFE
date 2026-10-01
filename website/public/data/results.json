@@ -1,0 +1,643 @@
+{
+  "source": "Supplied manuscript archive, RT-Safe Paper/Real_Time_Safety_Bench__RT_Safe_.zip (2026-10-01 copy)",
+  "models": [
+    {
+      "name": "Astra",
+      "fullName": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "color": "#527d69",
+      "static": {
+        "success": 94.4,
+        "safeSuccess": 19.4,
+        "spl": 0.926,
+        "collisions": 2.53,
+        "active": 2.53,
+        "passive": 0.0,
+        "hazards": 1.39,
+        "latency": 6.3,
+        "decisions": 46.8
+      },
+      "realtime": {
+        "success": 100.0,
+        "safeSuccess": 0.0,
+        "spl": 0.984,
+        "collisions": 29.81,
+        "active": 8.03,
+        "passive": 21.78,
+        "hazards": 1.53,
+        "latency": 7.7,
+        "decisions": 55.6
+      },
+      "average": {
+        "success": 97.2,
+        "safeSuccess": 0.0,
+        "collisions": 22.4,
+        "latency": 6.6,
+        "decisions": 51.7,
+        "spl": 0.952,
+        "passiveShare": 67.8
+      },
+      "effort": [
+        {
+          "label": "Low",
+          "success": 91.7,
+          "safeSuccess": 0.0,
+          "collisions": 20.0,
+          "passive": 16.6,
+          "active": 3.3,
+          "terminations": "3/0",
+          "decisions": 48.9,
+          "latency": 6.4
+        },
+        {
+          "label": "Medium",
+          "success": 100.0,
+          "safeSuccess": 0.0,
+          "collisions": 29.8,
+          "passive": 21.8,
+          "active": 8.0,
+          "terminations": "0/0",
+          "decisions": 55.6,
+          "latency": 7.7
+        },
+        {
+          "label": "Max",
+          "success": 97.2,
+          "safeSuccess": 0.0,
+          "collisions": 51.8,
+          "passive": 34.8,
+          "active": 17.0,
+          "terminations": "1/0",
+          "decisions": 73.2,
+          "latency": 14.6
+        }
+      ]
+    },
+    {
+      "name": "Sol",
+      "fullName": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "color": "#89a491",
+      "static": {
+        "success": 94.4,
+        "safeSuccess": 16.7,
+        "spl": 0.926,
+        "collisions": 5.42,
+        "active": 5.42,
+        "passive": 0.0,
+        "hazards": 1.72,
+        "latency": 7.7,
+        "decisions": 63.9
+      },
+      "realtime": {
+        "success": 97.2,
+        "safeSuccess": 2.8,
+        "spl": 0.959,
+        "collisions": 36.78,
+        "active": 7.53,
+        "passive": 29.25,
+        "hazards": 1.75,
+        "latency": 10.2,
+        "decisions": 72.9
+      },
+      "average": {
+        "success": 98.1,
+        "safeSuccess": 1.9,
+        "collisions": 25.6,
+        "latency": 8.4,
+        "decisions": 69.1,
+        "spl": 0.967,
+        "passiveShare": 76.4
+      },
+      "effort": [
+        {
+          "label": "Low",
+          "success": 97.2,
+          "safeSuccess": 2.8,
+          "collisions": 36.8,
+          "passive": 29.2,
+          "active": 7.5,
+          "terminations": "1/0",
+          "decisions": 72.9,
+          "latency": 10.2
+        },
+        {
+          "label": "Medium",
+          "success": 97.2,
+          "safeSuccess": 0.0,
+          "collisions": 28.2,
+          "passive": 24.6,
+          "active": 3.6,
+          "terminations": "1/0",
+          "decisions": 60.2,
+          "latency": 9.3
+        },
+        {
+          "label": "Max",
+          "success": 97.2,
+          "safeSuccess": 0.0,
+          "collisions": 31.5,
+          "passive": 29.0,
+          "active": 2.5,
+          "terminations": "1/0",
+          "decisions": 53.8,
+          "latency": 13.0
+        }
+      ]
+    },
+    {
+      "name": "Fable",
+      "fullName": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "color": "#be825a",
+      "static": {
+        "success": 88.9,
+        "safeSuccess": 19.4,
+        "spl": 0.866,
+        "collisions": 3.28,
+        "active": 3.28,
+        "passive": 0.0,
+        "hazards": 1.39,
+        "latency": 6.7,
+        "decisions": 51.2
+      },
+      "realtime": {
+        "success": 91.7,
+        "safeSuccess": 0.0,
+        "spl": 0.899,
+        "collisions": 18.94,
+        "active": 5.39,
+        "passive": 13.56,
+        "hazards": 1.67,
+        "latency": 5.8,
+        "decisions": 56.3
+      },
+      "average": {
+        "success": 96.3,
+        "safeSuccess": 0.0,
+        "collisions": 20.9,
+        "latency": 5.9,
+        "decisions": 58.9,
+        "spl": 0.933,
+        "passiveShare": 64.9
+      },
+      "effort": [
+        {
+          "label": "Low",
+          "success": 88.9,
+          "safeSuccess": 2.8,
+          "collisions": 25.3,
+          "passive": 19.3,
+          "active": 6.0,
+          "terminations": "1/3",
+          "decisions": 113.6,
+          "latency": 2.8
+        },
+        {
+          "label": "High",
+          "success": 91.7,
+          "safeSuccess": 0.0,
+          "collisions": 18.9,
+          "passive": 13.6,
+          "active": 5.4,
+          "terminations": "3/0",
+          "decisions": 56.3,
+          "latency": 5.8
+        },
+        {
+          "label": "Max",
+          "success": 94.4,
+          "safeSuccess": 0.0,
+          "collisions": 64.9,
+          "passive": 60.7,
+          "active": 4.2,
+          "terminations": "2/0",
+          "decisions": 51.6,
+          "latency": 51.9
+        }
+      ]
+    },
+    {
+      "name": "Sonnet",
+      "fullName": "Claude Sonnet 5",
+      "provider": "Anthropic",
+      "color": "#d9a781",
+      "static": {
+        "success": 91.7,
+        "safeSuccess": 5.6,
+        "spl": 0.905,
+        "collisions": 4.53,
+        "active": 4.53,
+        "passive": 0.0,
+        "hazards": 1.92,
+        "latency": 6.0,
+        "decisions": 42.3
+      },
+      "realtime": {
+        "success": 86.1,
+        "safeSuccess": 2.8,
+        "spl": 0.851,
+        "collisions": 20.89,
+        "active": 8.86,
+        "passive": 12.03,
+        "hazards": 1.97,
+        "latency": 5.2,
+        "decisions": 55.0
+      },
+      "average": {
+        "success": 90.7,
+        "safeSuccess": 3.7,
+        "collisions": 19.6,
+        "latency": 4.9,
+        "decisions": 54.6,
+        "spl": 0.896,
+        "passiveShare": 52.4
+      },
+      "effort": [
+        {
+          "label": "Low",
+          "success": 86.1,
+          "safeSuccess": 2.8,
+          "collisions": 38.2,
+          "passive": 13.9,
+          "active": 24.3,
+          "terminations": "5/0",
+          "decisions": 80.7,
+          "latency": 3.5
+        },
+        {
+          "label": "High",
+          "success": 86.1,
+          "safeSuccess": 2.8,
+          "collisions": 20.9,
+          "passive": 12.0,
+          "active": 8.9,
+          "terminations": "5/0",
+          "decisions": 55.0,
+          "latency": 5.2
+        },
+        {
+          "label": "Max",
+          "success": 97.2,
+          "safeSuccess": 0.0,
+          "collisions": 46.6,
+          "passive": 44.7,
+          "active": 1.8,
+          "terminations": "1/0",
+          "decisions": 56.0,
+          "latency": 24.2
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "fullName": "Gemini-3.8-Flash",
+      "provider": "Google",
+      "color": "#5e83a6",
+      "static": {
+        "success": 97.2,
+        "safeSuccess": 22.2,
+        "spl": 0.956,
+        "collisions": 2.83,
+        "active": 2.83,
+        "passive": 0.0,
+        "hazards": 1.11,
+        "latency": 11.9,
+        "decisions": 58.5
+      },
+      "realtime": {
+        "success": 97.2,
+        "safeSuccess": 0.0,
+        "spl": 0.959,
+        "collisions": 33.03,
+        "active": 5.53,
+        "passive": 27.5,
+        "hazards": 2.03,
+        "latency": 12.6,
+        "decisions": 69.8
+      },
+      "average": {
+        "success": 94.4,
+        "safeSuccess": 0.0,
+        "collisions": 27.7,
+        "latency": 11.2,
+        "decisions": 66.7,
+        "spl": 0.929,
+        "passiveShare": 83.1
+      },
+      "effort": [
+        {
+          "label": "Low",
+          "success": 91.7,
+          "safeSuccess": 2.8,
+          "collisions": 18.6,
+          "passive": 16.0,
+          "active": 2.7,
+          "terminations": "3/0",
+          "decisions": 60.2,
+          "latency": 5.4
+        },
+        {
+          "label": "Medium",
+          "success": 97.2,
+          "safeSuccess": 0.0,
+          "collisions": 33.0,
+          "passive": 27.5,
+          "active": 5.5,
+          "terminations": "1/0",
+          "decisions": 69.8,
+          "latency": 12.6
+        },
+        {
+          "label": "High",
+          "success": 94.4,
+          "safeSuccess": 0.0,
+          "collisions": 81.2,
+          "passive": 73.0,
+          "active": 8.2,
+          "terminations": "1/1",
+          "decisions": 71.7,
+          "latency": 36.7
+        }
+      ]
+    },
+    {
+      "name": "DeepSeek",
+      "fullName": "DeepSeek-V4-Flash-Vision-Exp",
+      "provider": "DeepSeek",
+      "color": "#8b7b9c",
+      "static": {
+        "success": 80.6,
+        "safeSuccess": 16.7,
+        "spl": 0.773,
+        "collisions": 4.0,
+        "active": 4.0,
+        "passive": 0.0,
+        "hazards": 1.44,
+        "latency": 46.0,
+        "decisions": 39.3
+      },
+      "realtime": {
+        "success": 88.9,
+        "safeSuccess": 0.0,
+        "spl": 0.861,
+        "collisions": 71.03,
+        "active": 7.56,
+        "passive": 63.47,
+        "hazards": 1.58,
+        "latency": 42.8,
+        "decisions": 57.3
+      },
+      "average": {
+        "success": 91.7,
+        "safeSuccess": 0.0,
+        "collisions": 51.4,
+        "latency": 40.4,
+        "decisions": 52.4,
+        "spl": 0.892,
+        "passiveShare": 90.3
+      },
+      "effort": [
+        {
+          "label": "Low",
+          "success": 91.7,
+          "safeSuccess": 0.0,
+          "collisions": 55.2,
+          "passive": 50.7,
+          "active": 4.5,
+          "terminations": "3/0",
+          "decisions": 53.0,
+          "latency": 33.8
+        },
+        {
+          "label": "High",
+          "success": 88.9,
+          "safeSuccess": 0.0,
+          "collisions": 71.0,
+          "passive": 63.5,
+          "active": 7.6,
+          "terminations": "4/0",
+          "decisions": 57.3,
+          "latency": 42.8
+        },
+        {
+          "label": "Max",
+          "success": 97.2,
+          "safeSuccess": 0.0,
+          "collisions": 80.5,
+          "passive": 74.9,
+          "active": 5.6,
+          "terminations": "1/0",
+          "decisions": 49.3,
+          "latency": 66.4
+        }
+      ]
+    },
+    {
+      "name": "Inkling",
+      "fullName": "Inkling",
+      "provider": "Thinking Machines",
+      "color": "#b29b4c",
+      "static": {
+        "success": 88.9,
+        "safeSuccess": 30.6,
+        "spl": 0.888,
+        "collisions": 1.22,
+        "active": 1.22,
+        "passive": 0.0,
+        "hazards": 1.31,
+        "latency": 33.3,
+        "decisions": 31.0
+      },
+      "realtime": {
+        "success": 94.4,
+        "safeSuccess": 0.0,
+        "spl": 0.943,
+        "collisions": 36.64,
+        "active": 2.39,
+        "passive": 34.25,
+        "hazards": 2.0,
+        "latency": 31.2,
+        "decisions": 43.5
+      },
+      "average": {
+        "success": 94.4,
+        "safeSuccess": 0.0,
+        "collisions": 21.9,
+        "latency": 26.0,
+        "decisions": 38.5,
+        "spl": 0.943,
+        "passiveShare": 94.4
+      },
+      "effort": [
+        {
+          "label": "Low",
+          "success": 80.6,
+          "safeSuccess": 0.0,
+          "collisions": 29.8,
+          "passive": 17.4,
+          "active": 12.4,
+          "terminations": "7/0",
+          "decisions": 47.2,
+          "latency": 7.9
+        },
+        {
+          "label": "High",
+          "success": 94.4,
+          "safeSuccess": 0.0,
+          "collisions": 36.6,
+          "passive": 34.2,
+          "active": 2.4,
+          "terminations": "2/0",
+          "decisions": 43.5,
+          "latency": 31.2
+        },
+        {
+          "label": "Max",
+          "success": 83.3,
+          "safeSuccess": 0.0,
+          "collisions": 49.4,
+          "passive": 44.0,
+          "active": 5.3,
+          "terminations": "6/0",
+          "decisions": 45.8,
+          "latency": 49.8
+        }
+      ]
+    },
+    {
+      "name": "Grok",
+      "fullName": "Grok-4.6",
+      "provider": "xAI",
+      "color": "#67716d",
+      "static": {
+        "success": 94.4,
+        "safeSuccess": 27.8,
+        "spl": 0.928,
+        "collisions": 2.69,
+        "active": 2.69,
+        "passive": 0.0,
+        "hazards": 0.5,
+        "latency": 38.9,
+        "decisions": 38.2
+      },
+      "realtime": {
+        "success": 97.2,
+        "safeSuccess": 0.0,
+        "spl": 0.959,
+        "collisions": 78.36,
+        "active": 5.75,
+        "passive": 72.61,
+        "hazards": 1.81,
+        "latency": 38.2,
+        "decisions": 67.5
+      },
+      "average": {
+        "success": 92.6,
+        "safeSuccess": 0.0,
+        "collisions": 59.5,
+        "latency": 40.4,
+        "decisions": 60.9,
+        "spl": 0.912,
+        "passiveShare": 90.8
+      },
+      "effort": [
+        {
+          "label": "Low",
+          "success": 91.7,
+          "safeSuccess": 2.8,
+          "collisions": 37.8,
+          "passive": 28.2,
+          "active": 9.7,
+          "terminations": "3/0",
+          "decisions": 67.4,
+          "latency": 10.4
+        },
+        {
+          "label": "High",
+          "success": 97.2,
+          "safeSuccess": 0.0,
+          "collisions": 78.4,
+          "passive": 72.6,
+          "active": 5.8,
+          "terminations": "1/0",
+          "decisions": 67.5,
+          "latency": 38.2
+        },
+        {
+          "label": "Xhigh",
+          "success": 97.2,
+          "safeSuccess": 0.0,
+          "collisions": 90.1,
+          "passive": 87.9,
+          "active": 2.2,
+          "terminations": "1/0",
+          "decisions": 61.7,
+          "latency": 53.1
+        }
+      ]
+    }
+  ],
+  "rl": [
+    {
+      "method": "Behavior cloning",
+      "success": 62.5,
+      "spl": 0.612,
+      "collisions": 3.9,
+      "active": 2.6,
+      "passive": 1.3,
+      "vehicle": 0.31,
+      "per100m": 5.5,
+      "progress": 3.23
+    },
+    {
+      "method": "RL (base reward)",
+      "success": 31.2,
+      "spl": 0.277,
+      "collisions": 14.7,
+      "active": 9.1,
+      "passive": 5.6,
+      "vehicle": 0.62,
+      "per100m": 27.5,
+      "progress": 1.06
+    },
+    {
+      "method": "RL (wander penalty)",
+      "success": 75.0,
+      "spl": 0.638,
+      "collisions": 39.8,
+      "active": 21.9,
+      "passive": 17.9,
+      "vehicle": 0.19,
+      "per100m": 54.8,
+      "progress": 0.62
+    },
+    {
+      "method": "Prompting",
+      "success": 31.2,
+      "spl": 0.308,
+      "collisions": 60.5,
+      "active": 55.9,
+      "passive": 4.6,
+      "vehicle": 0.19,
+      "per100m": 118.8,
+      "progress": 0.24
+    }
+  ],
+  "aggregate": {
+    "static": {
+      "success": 91.3,
+      "safeSuccess": 19.8,
+      "collisions": 3.31,
+      "active": 3.31,
+      "passive": 0
+    },
+    "realtime": {
+      "success": 94.1,
+      "safeSuccess": 0.7,
+      "collisions": 40.68,
+      "active": 6.38,
+      "passive": 34.31
+    }
+  }
+}
