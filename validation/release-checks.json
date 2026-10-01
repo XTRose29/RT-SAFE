@@ -39,7 +39,7 @@
     "Project-wide license and author metadata pending"
   ],
   "fresh_export": {
-    "benchmark": "passed before adding historical online-RL source; final export recheck pending",
+    "benchmark": "684 passed, 1 optional module skipped, 407 subtests passed from a git archive without repository history",
     "website": "npm ci, typecheck, six data tests and production build passed"
   }
 }
