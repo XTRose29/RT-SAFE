@@ -1,6 +1,6 @@
 # SimWorld-RealTime default benchmark and rollout protocol
 
-This is the single maintained project document. It defines the default
+This document preserves the research evaluation profile. See [the release protocol](../docs/PROTOCOL.md) for manuscript scopes and release limits. It defines the default
 evaluation profile and rollout procedure for SimWorld-RealTime. The
 machine-readable authority is
 [`configs/all_tasks_easy_realtime_collision.json`](configs/all_tasks_easy_realtime_collision.json),

@@ -2206,6 +2206,81 @@
       "path": "website/scripts/assemble-film.py",
       "source": "RT-SAFE presentation",
       "sha256": "6aaf509ac972d7be361262c7105c889aff5cb68cf9fe508b3f02b3e6b0542016"
+    },
+    {
+      "path": "online_rl/README.md",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "64fd40d9af71369c3c3e06b33ff9137b09e364e40c08e69a09a590d7b3dd2c2a"
+    },
+    {
+      "path": "online_rl/__init__.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "11ddcd79636dfcd1ee70413f404739eb8d95d15ba0ae3987af97c23fc078261a"
+    },
+    {
+      "path": "online_rl/endpoints.example.json",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "5c02c86884394220c0eb471ad6656d13ca0277b752c0fc127fcac0b469a63131"
+    },
+    {
+      "path": "online_rl/env.example",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "8d70aad2bbe1acc4a88b5eeb7cb7c0e65888d3ea4047f76efb748654a6afa8de"
+    },
+    {
+      "path": "online_rl/launch_ue_fleet.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "576236371ff81ebb732fec67fca637f3df1db0e56f9af1f585acbff0fbb15def"
+    },
+    {
+      "path": "online_rl/preflight.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "b385218adc5e198ed1e20df10c7e291f6b7b450ab89373349be589d0393fa74a"
+    },
+    {
+      "path": "online_rl/realtime_backend.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "75dac3f5faaf23e5a7c6107525b625695fe27bcd8ddcff401b4802530f69a6ab"
+    },
+    {
+      "path": "online_rl/smoke_env.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "01d751a0aea1b8f92a4b26444288956695d7127a8ff5124bc2f0f853b03a880d"
+    },
+    {
+      "path": "online_rl/start_fleet.sh",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "58ddc7eed685c741fa7b0ec844761d19375027ab89425517035a8f45f06b9aac"
+    },
+    {
+      "path": "online_rl/train_grpo_vagen.sh",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "b7eba2b1bad1ea0b7ae0099aa654db20fc796766dbe591b26f6e2f3ee705590f"
+    },
+    {
+      "path": "online_rl/train_vagen.yaml",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "88290fe831775b9c52d1df54b7f1da0feae59309309655c5a95d73edeb82a2ab"
+    },
+    {
+      "path": "online_rl/vagen_env.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "4a3fdc852fc122a9eb4a1900b8052ca297c4fad07df977bc24db36b0a894779e"
+    },
+    {
+      "path": "online_rl/val_vagen.yaml",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "2c054c3e46aba89e10bced7ef1ffcbb1a058a72bfbc277f5d4e49836ec9a300f"
+    },
+    {
+      "path": "tests/test_vagen_env.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "90733673bae91fc2bf6acaa30a8c23d47193119048c76e51a7c7e19be64fac51"
+    },
+    {
+      "path": "tests/test_vagen_fleet.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "5cde894bf9078e6a306ed78d04f4ec5957074efcc7876cc203e8bb2a4dec9f5e"
     }
   ]
 }

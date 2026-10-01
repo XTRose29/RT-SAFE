@@ -61,6 +61,7 @@ llm/             Prompts, API adapters and authenticated CLI transports
 data/            Five city maps, 36 evaluation routes and asset identifiers
 evaluation/      Rollouts, aggregation, baselines, replay and research runners
 sample/          Scenario and actor sampling
+online_rl/       Experimental VAGEN online-RL adapter, fleet tools and configs
 utils/           Geometry, scoring, timing and output helpers
 SimWorld/        Bundled Python simulation support and its original license
 tests/           Benchmark regression tests

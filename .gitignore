@@ -44,3 +44,9 @@ release-artifacts/
 .DS_Store
 *.bak
 *.swo
+
+# Experimental training outputs
+exps/
+wandb/
+checkpoints/
+online_rl/*.env

@@ -1,12 +1,12 @@
 {
   "date": "2026-10-01",
   "benchmark_tests": {
-    "passed": 672,
+    "passed": 684,
     "subtests_passed": 407,
     "skipped_modules": 1,
     "skip_reason": "Optional local model-serving stack is not installed"
   },
-  "python_modules_parse": 194,
+  "python_modules_parse": 200,
   "website": {
     "data_tests_passed": 6,
     "typescript": "passed",
@@ -37,5 +37,9 @@
     "No authenticated GitHub connection; remote creation and Pages deployment pending",
     "Runtime acquisition and offline training materials not supplied",
     "Project-wide license and author metadata pending"
-  ]
+  ],
+  "fresh_export": {
+    "benchmark": "passed before adding historical online-RL source; final export recheck pending",
+    "website": "npm ci, typecheck, six data tests and production build passed"
+  }
 }

@@ -19,7 +19,7 @@ Open the address printed by Vite. `npm run dev` starts the editing server. The d
 
 ## Publish from this repository
 
-1. Push the repository to GitHub.
+1. Authenticate using `gh auth login`, then run `./scripts/create-github-repo.sh` from the repository root. It creates a private `RT-SAFE` repository under your account and pushes the committed files. Pass `OWNER/NAME` to choose a different destination.
 2. In repository Settings → Pages, select **GitHub Actions** as the build source.
 3. Set the repository Actions variable `PAGES_ENABLED` to `true`.
 4. Run the **Deploy project website** workflow, or push to `main`.
