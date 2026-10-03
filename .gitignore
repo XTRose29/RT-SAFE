@@ -40,6 +40,11 @@ website/video/source-frames/
 website/video/*.mp4
 website/video/*.wav
 website/video/*.ass
+website/video/revision-90s/scenes/
+website/video/revision-90s/stills/
+website/video/revision-90s/audio/*-fitted.wav
+website/video/revision-90s/*-concat.txt
+website/video/revision-90s/*.ass
 release-artifacts/
 .DS_Store
 *.bak

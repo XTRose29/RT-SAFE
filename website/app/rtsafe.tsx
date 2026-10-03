@@ -772,7 +772,7 @@ function Training() {
 export default function RTsafe() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [menu, setMenu] = useState(false);
-  const [film, setFilm] = useState<"demo" | "highlights">("demo");
+  const [film, setFilm] = useState<"demo-90s" | "highlights">("demo-90s");
   const watch = () => {
     document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
     videoRef.current?.play().catch(() => {});
@@ -1085,10 +1085,10 @@ export default function RTsafe() {
           <div className="film-toolbar">
             <div className="segmented" aria-label="Film version">
               <button
-                aria-pressed={film === "demo"}
-                onClick={() => setFilm("demo")}
+                aria-pressed={film === "demo-90s"}
+                onClick={() => setFilm("demo-90s")}
               >
-                Full film · 3:08
+                Project film · 1:30
               </button>
               <button
                 aria-pressed={film === "highlights"}
@@ -1106,7 +1106,7 @@ export default function RTsafe() {
               controls
               playsInline
               preload="none"
-              poster="media/film-poster.jpg"
+              poster="media/film-poster-90s.jpg"
               aria-label="RT-SAFE project film"
             >
               <source src={`media/rt-safe-${film}.mp4`} type="video/mp4" />
@@ -1129,7 +1129,7 @@ export default function RTsafe() {
               <a href={`media/rt-safe-${film}.vtt`} download>
                 Captions <span>↓</span>
               </a>
-              <a href="media/rt-safe-conference-captioned.mp4" download>
+              <a href="media/rt-safe-demo-90s-captioned.mp4" download>
                 Conference edition <span>↓</span>
               </a>
             </div>

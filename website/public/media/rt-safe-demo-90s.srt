@@ -1,0 +1,135 @@
+1
+00:00:00,397 --> 00:00:01,456
+R T Safe.
+
+2
+00:00:04,381 --> 00:00:05,978
+The world does not pause while an agent
+
+3
+00:00:05,988 --> 00:00:06,482
+thinks.
+
+4
+00:00:07,089 --> 00:00:09,712
+Static evaluation freezes the world during inference.
+
+5
+00:00:10,322 --> 00:00:12,549
+In real time, pedestrians keep moving, and a
+
+6
+00:00:12,559 --> 00:00:14,039
+clear path can become unsafe.
+
+7
+00:00:15,397 --> 00:00:17,604
+Navigate to the goal across five maps and
+
+8
+00:00:17,614 --> 00:00:18,767
+thirty-six routes.
+
+9
+00:00:19,510 --> 00:00:23,116
+Safety includes collisions, trip, oil and water hazards,
+
+10
+00:00:23,236 --> 00:00:24,861
+and traffic-rule violations.
+
+11
+00:00:27,390 --> 00:00:28,922
+These are recorded decisions.
+
+12
+00:00:29,592 --> 00:00:31,102
+Gemini moves two meters.
+
+13
+00:00:31,775 --> 00:00:33,689
+Sonnet also chooses a short step.
+
+14
+00:00:34,362 --> 00:00:35,991
+Fable waits for a pedestrian.
+
+15
+00:00:36,675 --> 00:00:38,925
+All three use the same visual observation and
+
+16
+00:00:38,935 --> 00:00:39,964
+action interface.
+
+17
+00:00:41,382 --> 00:00:43,959
+Across all difficulty levels, Sonnet records the fewest
+
+18
+00:00:43,969 --> 00:00:44,608
+collisions.
+
+19
+00:00:45,215 --> 00:00:48,211
+Inference exposure strongly tracks collisions, but models differ
+
+20
+00:00:48,221 --> 00:00:50,029
+in how they move, turn, and wait.
+
+21
+00:00:51,379 --> 00:00:52,781
+Task completion is not enough.
+
+22
+00:00:53,369 --> 00:00:55,993
+Success reaches ninety-four point four percent, but safe
+
+23
+00:00:56,003 --> 00:00:58,057
+success is only zero point seven percent.
+
+24
+00:00:59,392 --> 00:01:02,350
+On matched hard routes, real-time collisions rise twelve
+
+25
+00:01:02,360 --> 00:01:03,430
+point three times.
+
+26
+00:01:04,125 --> 00:01:06,306
+About eighty-four percent occur while the agent is
+
+27
+00:01:06,316 --> 00:01:06,941
+deciding.
+
+28
+00:01:08,397 --> 00:01:10,564
+More reasoning is not reliably safer.
+
+29
+00:01:11,307 --> 00:01:14,068
+From default to higher effort, collisions rise from
+
+30
+00:01:14,078 --> 00:01:16,588
+forty point seven to sixty-two per episode.
+
+31
+00:01:18,379 --> 00:01:21,036
+R T Safe also supports offline reinforcement learning.
+
+32
+00:01:21,627 --> 00:01:23,688
+Reward design changes safety and progress.
+
+33
+00:01:24,271 --> 00:01:27,059
+The wander penalty achieves seventy-five percent success, while
+
+34
+00:01:27,069 --> 00:01:29,053
+behavior cloning has the lowest collision rate.

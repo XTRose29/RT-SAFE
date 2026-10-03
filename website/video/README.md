@@ -2,6 +2,8 @@
 
 ## Versions
 
+- **Current project film:** exactly 1:30, 1920×1080, 30 fps, narrated, with selectable
+  captions and a separate burned-caption copy. See [the revision notes](revision-90s/README.md).
 - **Full film:** about 3:08, 1920×1080, 30 fps, narrated.
 - **Highlights:** about 1:00, from the opening, completion gap, collision gap, and closing.
 - **Conference edition:** full film with burned-in English captions, for dependable

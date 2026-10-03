@@ -1,0 +1,47 @@
+{
+  "paper": "Real_Time_Safety_Bench__RT_Safe_.pdf (user-supplied 3 October manuscript)",
+  "figures": {
+    "figure1.png": "Paper Figure 1: animated static / real-time schematic",
+    "figure2.png": "Paper Figure 2: animated navigation goal and safety events"
+  },
+  "examples": [
+    {
+      "model": "Gemini",
+      "map": "RT18",
+      "task": 25,
+      "decision": 2,
+      "source": "Recorded hard real-time, provider-default, seed 0",
+      "display": "Input observation followed by recorded action result; inference gaps omitted",
+      "inferenceExposureSeconds": 25.98,
+      "actionDurationSeconds": 1
+    },
+    {
+      "model": "Sonnet",
+      "map": "RT18",
+      "task": 31,
+      "decision": 3,
+      "source": "Recorded hard real-time, provider-default, seed 0",
+      "display": "Input observation followed by recorded action result; inference gaps omitted",
+      "inferenceExposureSeconds": 6.16,
+      "actionDurationSeconds": 1
+    },
+    {
+      "model": "Fable",
+      "map": "RT15",
+      "task": 19,
+      "decision": 51,
+      "source": "Recorded hard real-time, provider-default, seed 0",
+      "display": "Input observation followed by recorded action result; inference gaps omitted",
+      "inferenceExposureSeconds": 5.83,
+      "actionDurationSeconds": 1
+    }
+  ],
+  "claims": {
+    "modelRank": "All-difficulty, 108 episodes per model, mean collisions per episode",
+    "completion": "All-difficulty aggregate, 94.4% success and 0.7% safe success",
+    "timing": "Matched hard routes, 288 episodes per timing condition, 3.31 to 40.68 collisions per episode",
+    "reasoning": "Provider-default versus higher, 40.7 to 62.0 collisions; Sol default is lower, other defaults middle",
+    "rl": "Separate offline-learning protocol, Qwen3-VL-4B, 16 held-out tasks, fixed 3 s delay"
+  },
+  "presentation": "Figure motion and route trace are explanatory. Recorded example imagery is not interpolated. Charts animate manuscript values. Repeated contacts can produce multiple event counts."
+}

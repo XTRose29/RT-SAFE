@@ -1,0 +1,58 @@
+{
+  "rt-safe-demo-90s.mp4": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "duration": "90.000000",
+        "nb_frames": "2700"
+      },
+      {
+        "codec_name": "aac",
+        "r_frame_rate": "0/0",
+        "duration": "88.100000",
+        "nb_frames": "4130"
+      }
+    ],
+    "format": {
+      "duration": "90.000000",
+      "size": "7099030"
+    },
+    "sha256": "d9ccb4dd01cd6dab7228302e49b022f7cf868a5e7e07f6af2e61606da0307c6f",
+    "full_decode": "passed"
+  },
+  "rt-safe-demo-90s-captioned.mp4": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "duration": "90.000000",
+        "nb_frames": "2700"
+      },
+      {
+        "codec_name": "aac",
+        "r_frame_rate": "0/0",
+        "duration": "88.100000",
+        "nb_frames": "4130"
+      }
+    ],
+    "format": {
+      "duration": "90.000000",
+      "size": "7357331"
+    },
+    "sha256": "93ca427c60bc54ccee38b03a208cdc5b22faa55aeea488e5e7f4bf8e4d88d2b6",
+    "full_decode": "passed"
+  },
+  "captions": {
+    "cues": 34,
+    "last_end_seconds": 89.053,
+    "ordered_nonoverlapping": true
+  },
+  "voice_fits_all_scenes": true
+}
