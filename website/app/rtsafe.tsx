@@ -512,11 +512,14 @@ export default function RTsafe() {
       </a>
       <header className="header">
         <div className="brand-suite">
+          <a className="simworld-brand" href="https://simworld.org/" aria-label="SimWorld home">
+            <img src="media/logos/simworld.png" alt="" width="48" height="48" />
+            <span>SimWorld</span>
+          </a>
           <a className="brand" href="#top" aria-label="RT-SAFE home">
-            <span className="brand-icon">rt</span> RT–SAFE
+            RT–SAFE
             <span className="brand-note">The real-time safety benchmark</span>
           </a>
-          <span className="simworld-brand"><img src="media/logos/simworld.png" alt="" width="48" height="48" /><span>SimWorld</span></span>
         </div>
         <button
           className="menu-toggle"
@@ -963,10 +966,11 @@ export default function RTsafe() {
         </section>
         <footer className="footer">
           <div className="brand-suite">
-            <a className="brand" href="#top">
-              <span className="brand-icon">rt</span> RT–SAFE
+            <a className="simworld-brand" href="https://simworld.org/" aria-label="SimWorld home">
+              <img src="media/logos/simworld.png" alt="" width="48" height="48" />
+              <span>SimWorld</span>
             </a>
-            <span className="simworld-brand"><img src="media/logos/simworld.png" alt="" width="48" height="48" /><span>SimWorld</span></span>
+            <a className="brand" href="#top">RT–SAFE</a>
           </div>
           <p>Benchmarking agent safety in real-time embodied environments.</p>
           <a href="#top">Back to top ↑</a>
