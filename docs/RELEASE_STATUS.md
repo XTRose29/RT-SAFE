@@ -30,7 +30,7 @@ a synchronized static/real-time illustration, and the original recorded Astra/So
 The full selected comparison is 44.1 seconds at 6× simulation speed.
 
 The native renders completed successfully. Both film editions and the full comparison decode
-without errors. Narration measures -15.97 LUFS integrated and -1.48 dBTP true peak. The
+without errors. Narration measures -16.07 LUFS integrated and -1.48 dBTP true peak. The
 website passes desktop/mobile playback, seek/replay, camera-gallery, reduced-motion, and
 layout checks. No browser errors were reported. The web aerial loop is an 8 MB 1080p encode;
 the higher-quality render and intermediate frames remain in the local production workspace.
@@ -40,9 +40,15 @@ See [NYC validation](../validation/nyc-release-checks.json) and
 remain from the prior release check; this edition does not change benchmark execution code.
 
 The latest 90-second edit adds a frontier-agent introduction, all eight radar profiles with
-provider logos, a highlighted collision column, and a six-second RL ending.
+provider logos, a highlighted collision column, and a five-second RL ending.
 
 The Astra/Sol presentation uses original first-person observation and action snapshots with
 the game-style overlay. All 95 source images are included losslessly and verified by decoded
 pixel hashes. Inputs are held during inference; this is a snapshot replay, not a continuous
 inference-time recording. The previous NYC comparison remains available as an alternate.
+
+The opening now begins with static evaluation alone, presents “But the real world does not stop,”
+and reveals RT-Safe beside it. The encounter is rendered on a paved Madison Square Park path
+with trees, benches, and a fountain. A separate environment title card introduces the three
+safety-event categories. The website includes the narrated 15-second opening and 12-second
+environment introduction.

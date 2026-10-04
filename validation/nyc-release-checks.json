@@ -1,17 +1,11 @@
 {
-  "date_utc": "2026-10-04T17:45:23.626790+00:00",
+  "date_utc": "2026-10-04T18:15:22.930060+00:00",
   "scope": "NYC website and film edition; benchmark implementation unchanged",
   "website": {
     "typescript": "passed",
     "data_tests_passed": 6,
     "production_build": "passed",
     "browser": {
-      "timing": {
-        "synchronized_playback": true,
-        "seek": true,
-        "replay": true,
-        "duration": 11
-      },
       "case": {
         "synchronized_playback": true,
         "seek": true,
@@ -20,6 +14,16 @@
       },
       "behavior_profiles": 8,
       "leaderboard_default": "all difficulties",
+      "timing_story": {
+        "duration": 15,
+        "playback": true,
+        "seek": true
+      },
+      "environment_intro": {
+        "duration": 12,
+        "playback": true,
+        "seek": true
+      },
       "reduced_motion": true,
       "browser_errors": [],
       "desktop_overflow": false,
@@ -37,18 +41,22 @@
       "success": true,
       "frames": 330,
       "metadata": {
-        "times": null,
         "mode": "static",
-        "illustrative": true
+        "illustrative": true,
+        "location": "Madison Square Park interior paved path",
+        "spatial_samples": 8,
+        "lighting": "screen-space indirect lighting"
       }
     },
     "timing-realtime": {
       "success": true,
       "frames": 330,
       "metadata": {
-        "times": null,
         "mode": "realtime",
-        "illustrative": true
+        "illustrative": true,
+        "location": "Madison Square Park interior paved path",
+        "spatial_samples": 8,
+        "lighting": "screen-space indirect lighting"
       }
     },
     "environment": {
@@ -140,9 +148,9 @@
       ],
       "format": {
         "duration": "90.000000",
-        "size": "27405963"
+        "size": "26450780"
       },
-      "sha256": "ffd7945707503196fc3eba5e4a5c045822f2f502a9b05d802923fcce741e5fbc",
+      "sha256": "0a30037028e92770e319b743759f190116b1b9b203faa812caee2ba0e5cccce3",
       "full_decode": "passed"
     },
     "rt-safe-nyc-90s-captioned.mp4": {
@@ -165,34 +173,42 @@
       ],
       "format": {
         "duration": "90.000000",
-        "size": "26718272"
+        "size": "26035643"
       },
-      "sha256": "631b13702fa7f8711a957f635e87d95f1942a2b4aeabcbd43a74271036f450ce",
+      "sha256": "f29e125b4530d95ec5509cf11c798adea73eb3c6b3f340f33015b3b1f89c9dc5",
       "full_decode": "passed"
     },
     "captions": {
-      "cues": 26,
-      "last_end_seconds": 88.956,
+      "cues": 28,
+      "last_end_seconds": 88.911,
       "ordered_nonoverlapping": true
     },
     "voice_fits_all_scenes": true,
     "timing_motion": {
       "static": {
         "inference_mean_absolute_pixel_changes": [
-          0.05545173611111111,
-          0.05566111111111111,
-          0.05948020833333333
+          0.04452291666666667,
+          0.04351354166666667,
+          0.052044791666666666
         ],
-        "action_change": 7.736691319444445
+        "action_change": 11.930685416666666
       },
       "realtime": {
         "inference_mean_absolute_pixel_changes": [
-          1.0392277777777779,
-          1.3272114583333334,
-          1.5328902777777778
+          3.1102701388888887,
+          3.0742538194444444,
+          4.435688541666667
         ],
-        "action_change": 7.793398263888889
+        "action_change": 11.908712152777778
       }
+    },
+    "opening_story": {
+      "static_first": true,
+      "center_message": "But the real world does not stop.",
+      "slide_reveal": true,
+      "location": "Madison Square Park interior path",
+      "environment_title_seconds": 2.4,
+      "visual_review": "Reviewed static, center message, reveal, inference, action, and environment title frames"
     },
     "completed_segment_holds": {
       "astra": {
@@ -213,6 +229,38 @@
       ],
       "format": {
         "duration": "8.000000"
+      }
+    },
+    "timing-story": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "nb_frames": "450"
+        },
+        {
+          "nb_frames": "1388"
+        }
+      ],
+      "format": {
+        "duration": "15.000000"
+      }
+    },
+    "environment-intro": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "nb_frames": "360"
+        },
+        {
+          "nb_frames": "1106"
+        }
+      ],
+      "format": {
+        "duration": "12.000000"
       }
     },
     "timing-static": {
@@ -312,55 +360,71 @@
       "full_decode": "passed"
     },
     "narration_loudness": {
-      "integrated_lufs": -15.97,
+      "integrated_lufs": -16.07,
       "true_peak_dbtp": -1.48
     },
     "repository_media_size_limit": "all current NYC MP4s below 95 MiB"
   },
   "media": {
     "website/public/media/rt-safe-nyc-90s.mp4": {
-      "bytes": 27179831,
-      "sha256": "9f739c6958525fe49e1bb866c3b1055571f5eba6cd5f2a216e7017f962788a0b"
+      "bytes": 26450780,
+      "sha256": "0a30037028e92770e319b743759f190116b1b9b203faa812caee2ba0e5cccce3"
     },
     "website/public/media/rt-safe-nyc-comparison.mp4": {
-      "bytes": 9617069,
-      "sha256": "c37c9fe08fc93d6967a997c4e88f0dd9e3371b589bcf520e5d343abd0541f06a"
+      "bytes": 22061762,
+      "sha256": "aeb46321942252613a2deca9a590a8b0d89f417912579d8a5ff6173b3f1cb0a4"
     },
     "website/public/media/rt-safe-nyc-90s.srt": {
-      "bytes": 2206,
-      "sha256": "065b0f1057c96397fc038d19b2eea4415cbb4d054cda4cba89e1d6baac25d7d4"
+      "bytes": 2094,
+      "sha256": "0761335387ec93c9a46ff5cd43d0304d9baa9af5d7e1f1ae29fafa7adc0df458"
     },
     "website/public/media/rt-safe-nyc-90s-captioned.mp4": {
-      "bytes": 26373509,
-      "sha256": "dc714c5f1e6e8078cfb9678b4e6d897b57eeaeb60eb10cd362392cc4965e78af"
+      "bytes": 26035643,
+      "sha256": "f29e125b4530d95ec5509cf11c798adea73eb3c6b3f340f33015b3b1f89c9dc5"
     },
     "website/public/media/rt-safe-nyc-comparison.vtt": {
       "bytes": 608,
       "sha256": "5c856819cb9b815684f820bd939a958b833a4020db17d2a8432331dfe7326c9f"
     },
     "website/public/media/rt-safe-nyc-90s.vtt": {
-      "bytes": 2145,
-      "sha256": "563b93d67fe3947a76a9ef8a21f764771c06a01495118ca421df358d5a4325a2"
+      "bytes": 2027,
+      "sha256": "bca682b2366fd86346631f86bf58e789a755ef52f693cb6e554adbedc30fc2ff"
+    },
+    "website/public/media/rt-safe-original-comparison.mp4": {
+      "bytes": 12499754,
+      "sha256": "2f2c5e3c21e8d29579121aac850a1a748bbdaa76cd487f5eebf517f87f4dd50e"
+    },
+    "website/public/media/rt-safe-original-comparison.vtt": {
+      "bytes": 110,
+      "sha256": "fddaaf4c32171debfaea8f4c27338ab94bed1a15367da9d3aa3bf95f0f343a71"
     },
     "website/public/media/nyc/timing-static.mp4": {
-      "bytes": 1476061,
-      "sha256": "4a34df8289a9edf45e787fc0a65e1c41c25322eae157b643b178e82062d98f03"
+      "bytes": 1099102,
+      "sha256": "ced3f33706fdfac6b0e2b1edb9e2aefc6b823fd6050e400c92f2a54777478ca1"
     },
     "website/public/media/nyc/astra.mp4": {
-      "bytes": 13268736,
-      "sha256": "ceae893423fb9d16969fc1a4af7697bef457bd22625abd61cd4e66dc8b52ab4f"
+      "bytes": 7139723,
+      "sha256": "15d0cbe3a7d5d87e4bb51ca396333952f2143a12bfe05909ace225ef27821226"
     },
     "website/public/media/nyc/environment-tour.mp4": {
       "bytes": 13382085,
       "sha256": "b8c12bc33e28d908ae5f8139b8faa0b32f2b890f30c009a79cd720ede8c74711"
     },
+    "website/public/media/nyc/timing-story.mp4": {
+      "bytes": 4638064,
+      "sha256": "9bf0f4f80fd414bfb5c90d1e62e73d2a9a5d01b5f2072195ae3bd5bf9fd8fe0c"
+    },
+    "website/public/media/nyc/environment-intro.mp4": {
+      "bytes": 11607487,
+      "sha256": "151e01920eb01d8d11263fb88cf0df08b321b0f6c858d910e2fec215b858a893"
+    },
     "website/public/media/nyc/sol.mp4": {
-      "bytes": 22974608,
-      "sha256": "eae610905a7499897bbbe1c5800177072eb251cf27e61aa1649e2187b96476f8"
+      "bytes": 14677801,
+      "sha256": "d3074556756904e600610fa81e1809250dce8a9d1b9f8cf7cd54bd5f9292358a"
     },
     "website/public/media/nyc/timing-realtime.mp4": {
-      "bytes": 2031303,
-      "sha256": "2c4bb4ce90d0053114d4314331633dc019d1f4e71d6a6c90929f58fbf4b6d02f"
+      "bytes": 1890172,
+      "sha256": "1f1bf9f986e72faf08d9495b5ef82c30067e42db036914c559bbaf373bb42402"
     },
     "website/public/media/nyc/hero.mp4": {
       "bytes": 8314959,
@@ -368,13 +432,13 @@
     }
   },
   "limitations": [
-    "NYC timing and environment scenes are illustrative.",
-    "Astra/Sol images reconstruct original RT15 agent endpoints and simulation timing; surrounding patrols are authored reconstructions. Counts remain original log measurements.",
+    "NYC timing and environment scenes are illustrative; benchmark results remain measurements on the original evaluation maps.",
+    "The current Astra/Sol comparison replays original recorded snapshots; inputs are held during inference. The separate NYC alternate reconstructs surrounding motion.",
     "No authenticated GitHub connection; remote creation and Pages deployment remain pending."
   ],
   "release_content": {
-    "tracked_files_checked": 633,
-    "tracked_content_mib": 216.1,
+    "tracked_files_checked": 842,
+    "tracked_content_mib": 297.6,
     "status": "passed",
     "staged_whitespace_check": "passed"
   },
@@ -382,9 +446,13 @@
     "duration_seconds": 90,
     "frontier_intro_seconds": 2,
     "radar_models": 8,
-    "rl_ending_seconds": 6,
+    "rl_ending_seconds": 5,
     "provider_logos": true,
     "collision_column_emphasis": true,
-    "comparison": "original first-person recorded snapshots"
+    "comparison": "original first-person recorded snapshots",
+    "opening_seconds": 15,
+    "environment_title_seconds": 2.4,
+    "opening": "Static first, center message, side-by-side RT-Safe reveal",
+    "location": "Madison Square Park paved interior path"
   }
 }

@@ -8,26 +8,31 @@ Astra/Sol comparison and an eight-second aerial loop.
 
 | Time | Scene |
 |---|---|
-| 0:00–0:04 | Project title and NYC aerial |
-| 0:04–0:15 | Static versus real-time inference |
-| 0:15–0:27 | Navigation goal, collisions, hazards, and traffic rules |
-| 0:27–0:29 | How do frontier agents perform? |
-| 0:29–0:43 | Astra/Sol replay with input frames, commands, and collision alerts |
-| 0:43–0:48.2 | All-difficulty leaderboard with logos and collision emphasis |
-| 0:48.2–0:52.6 | Inkling, Grok, Astra, and Fable behavior profiles |
-| 0:52.6–0:57 | Sonnet, Sol, Gemini, and DeepSeek behavior profiles |
-| 0:57–1:05 | Success versus safe success |
-| 1:05–1:14 | Matched static versus real-time results |
-| 1:14–1:24 | Lower, default, and higher reasoning effort |
-| 1:24–1:30 | Learning environment and reported BC/RL results |
+| 0:00–0:03 | Project title and NYC aerial |
+| 0:03–0:07.15 | Conventional static evaluation, full frame |
+| 0:07.15–0:09.6 | Center message: the real world does not stop |
+| 0:09.6–0:10.4 | Static view moves left; RT-Safe is revealed |
+| 0:10.4–0:18 | Matched park encounter: frozen vs. advancing world |
+| 0:18–0:20.4 | A closer look at RT-Safe: environment title card |
+| 0:20.4–0:30 | Collisions, hazards, traffic rules, and safe completion |
+| 0:30–0:32 | How do frontier agents perform? |
+| 0:32–0:44 | Original Astra/Sol input and action snapshots |
+| 0:44–0:49.2 | All-difficulty leaderboard |
+| 0:49.2–0:53.6 | Inkling, Grok, Astra, and Fable profiles |
+| 0:53.6–0:58 | Sonnet, Sol, Gemini, and DeepSeek profiles |
+| 0:58–1:06 | Success versus safe success |
+| 1:06–1:15 | Matched static versus real-time results |
+| 1:15–1:25 | Lower, default, and higher reasoning effort |
+| 1:25–1:30 | Learning environment and reported BC/RL results |
 
 Title: **RT-Safe: Benchmarking Agent Safety in Real-Time Embodied Environment**.
 Subtitle: **The world does not pause while an agent thinks.**
 
-The opening comparison explicitly contrasts conventional static evaluation with real-world timing.
-Large labels and a pedestrian motion cue distinguish the paused and advancing worlds. Labels sit
-inside each view and follow the agent from Thinking to Acting. The pedestrian approaches
-along the sidewalk while the static world pauses and the real-time world advances.
+The opening first shows static evaluation alone. A center message explains that the real
+world does not stop, then the static view moves left to reveal RT-Safe. The scene is a paved
+interior path in Madison Square Park, selected through native camera surveys. The same
+camera and initial actors are used in both modes. Labels follow Thinking and Acting.
+A separate environment title card introduces collisions, hazards, and traffic-rule violations.
 
 ## Exports
 
@@ -43,7 +48,7 @@ a reserved band below the scene content.
 The Astra/Sol scene fills the frame with the original first-person observation and action
 snapshots. Its overlay shows the navigation goal, the selected command, decision progress, and collision
 reports. Red alerts appear when a completed phase reports contacts. The short film uses
-two chronological excerpts (0–6 s and 33–39 s of the 6× replay), then full-segment totals.
+two chronological excerpts (0–5 s and 34–39 s of the 6× replay), then full-segment totals.
 The jump is labelled. The separate 44.1-second comparison plays the full selected segment.
 
 ## Sources and limits
@@ -115,3 +120,9 @@ python scripts/verify-film-nyc.py
 hashes. `scripts/prepare-recorded-replay.py --campaign /path/to/campaign` can recurate these
 from the separately provisioned source run. The previous NYC reconstruction is retained as
 `public/media/rt-safe-nyc-comparison.mp4` for comparison.
+
+The website uses `public/media/nyc/timing-story.mp4` (15 seconds) and
+`public/media/nyc/environment-intro.mp4` (12 seconds), exported with narration and local
+captions by `python scripts/export-story-clips.py` after film assembly. The opening can be
+re-rendered without Unreal from the included full-width still, scene metadata, and timing
+clips. Native park rendering uses eight spatial samples with screen-space indirect lighting.

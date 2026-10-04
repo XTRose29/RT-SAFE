@@ -1,1 +1,1 @@
-How do frontier agents perform? On the same recorded route, Astra makes twelve decisions with one collision. Sol makes thirty-three decisions with seventeen collisions. These are the original recorded observations and actions.
+How do frontier agents perform? On the same recorded route, Astra makes twelve decisions with one collision. Sol makes thirty-three decisions with seventeen collisions. These are original recorded inputs.

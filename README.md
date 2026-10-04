@@ -71,7 +71,7 @@ docs/            Setup, protocol, asset requirements and release provenance
 
 The website includes a **90-second narrated NYC film**, a conference copy with burned captions, and a **44-second Astra/Sol comparison**. Native scene scripts and reconstruction evidence are in [`website/nyc/`](website/nyc/README.md); the edit and narration are in [`website/video/nyc-90s/`](website/video/nyc-90s/README.md). Earlier film editions are retained.
 
-The NYC comparison preserves the selected run’s recorded agent endpoints and simulation timing. Its 1 versus 17 collision counts come from the original RT15 logs. It visualizes that existing run in a new scene; it is not a new NYC benchmark evaluation.
+The Astra/Sol comparison uses the original RT15 first-person observation and action snapshots, with recorded timing and 1 versus 17 reported collisions. Inputs are held during inference because the source capture is not continuous video. The opening illustrates static and real-time evaluation on a native Madison Square Park path.
 
 ## Results
 

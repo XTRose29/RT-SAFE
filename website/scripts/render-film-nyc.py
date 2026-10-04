@@ -46,13 +46,47 @@ def title(s,t):
     v.text(im,(100,711),'The world does not pause while an agent thinks.',34,v.PALE,400)
     v.text(im,(101,935),'MADISON SQUARE PARK, NYC  /  UNREAL ENGINE',19,'#c5d8e6',400)
     return im
+timing_meta=None
+timing_presentation=None
+def opening_static(width=1920):
+    global timing_meta,timing_presentation
+    if timing_presentation is None:
+        spec=importlib.util.spec_from_file_location('timing_presentation',ROOT/'scripts/timing-presentation.py')
+        timing_presentation=importlib.util.module_from_spec(spec);spec.loader.exec_module(timing_presentation)
+        timing_meta=json.loads((ROOT/'public/data/nyc/timing-scene.json').read_text())
+    frame=v.load(str(MEDIA/'timing-static-wide.webp'))
+    return timing_presentation.compose(frame,timing_meta,0,0,'static',v,width=width)
+
 def timing(s,t):
     im=Image.new('RGB',(1920,1080),v.INK)
-    for i,name in enumerate(('timing-static','timing-realtime')):
-        im.paste(footage(name,t,(960,1000)),(i*960,0))
-    v.line(im,[(959,0),(959,1000)],'#f6f8fb',4)
+    if t<4.15:
+        im.paste(opening_static(),(0,0))
+    elif t<6.6:
+        im.paste(shade(opening_static(),160,190),(0,0))
+        v.text(im,(960,350),'But the real world',88,v.WHITE,600,'ma')
+        v.text(im,(960,466),'does not stop.',108,'#ffca7a',600,'ma')
+        v.text(im,(960,655),'People keep moving. Risk keeps changing.',32,v.WHITE,500,'ma')
+    elif t<7.4:
+        p=v.ease((t-6.6)/.8);width=round(1920-960*p)
+        im.paste(footage('timing-realtime',0,(960,1000)),(960,0))
+        im.paste(opening_static(width),(0,0))
+        v.line(im,[(width-1,0),(width-1,1000)],v.WHITE,3)
+    else:
+        source=min(10.99,(t-7.4)*11/7.6)
+        for i,name in enumerate(('timing-static','timing-realtime')):
+            im.paste(footage(name,source,(960,1000)),(i*960,0))
+        v.line(im,[(959,0),(959,1000)],v.WHITE,3)
     return im
 def environment(s,t):
+    if t<2.4:
+        im=shade(footage('hero',t+2),195,215)
+        v.text(im,(960,253),'INSIDE THE BENCHMARK',25,v.PALE,600,'ma')
+        v.text(im,(960,368),'A closer look at RT-Safe',84,v.WHITE,600,'ma')
+        v.text(im,(960,509),'Navigate to the goal safely.',38,v.WHITE,500,'ma')
+        for x,label,col in [(415,'Collisions','#88c8ff'),(960,'Hazards','#ffca7a'),(1505,'Traffic-rule violations','#ff9bad')]:
+            v.rect(im,(x-235,671,x+235,754),'#18334e',12,col,2)
+            v.text(im,(x,695),label,29,col,600,'ma')
+        return im
     return footage('environment-tour',t)
 def examples(s,t):
     if t<2:
@@ -64,12 +98,12 @@ def examples(s,t):
         return im
     t-=2
     # Two chronological excerpts, followed by the full-segment outcomes.
-    source=t if t<6 else 33+(t-6) if t<12 else 44.05
+    source=t if t<5 else 34+(t-5) if t<10 else 44.05
     im=Image.new('RGB',(1920,1080),v.INK)
     for i,name in enumerate(('/recorded/astra','/recorded/sol')):im.paste(footage(name,source,(960,1000)),(i*960,0))
     v.line(im,[(959,0),(959,1000)],v.WHITE,3)
-    if 6<=t<8 or t>=12:
-        label='LATER IN THE SAME RUN' if t<12 else 'FULL SEGMENT OUTCOMES'
+    if 5<=t<7 or t>=10:
+        label='LATER IN THE SAME RUN' if t<10 else 'FULL SEGMENT OUTCOMES'
         v.rect(im,(701,107,1219,149),v.INK,8,v.PALE)
         v.text(im,(960,117),label,20,v.WHITE,600,'ma')
     return im

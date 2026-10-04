@@ -1,1 +1,1 @@
-The world does not pause while an agent thinks. Static evaluation freezes the world during inference. In real time, pedestrians keep moving, and a clear path can become unsafe.
+Conventional evaluation pauses the world during inference. But the real world does not stop. We introduce R T Safe: real-time evaluation, where the world keeps moving while an agent thinks.

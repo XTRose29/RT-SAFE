@@ -110,14 +110,22 @@ function SynchronizedViews({ comparison = false }: { comparison?: boolean }) {
   </div>;
 }
 
-export function NYCTiming() { return <SynchronizedViews />; }
+export function NYCTiming() {
+  return <figure className="nyc-environment nyc-timing-story">
+    <video controls playsInline preload="none" poster={`${media}timing-story.webp`} aria-label="From static evaluation to real-time evaluation in Madison Square Park">
+      <source src={`${media}timing-story.mp4`} type="video/mp4" />
+      <track kind="captions" src={`${media}timing-story.vtt`} srcLang="en" label="English" default />
+    </video>
+    <figcaption><strong>The real world does not stop.</strong><span>Static evaluation → RT-Safe · illustrative NYC encounter</span></figcaption>
+  </figure>;
+}
 export function NYCComparison() { return <SynchronizedViews comparison />; }
 
 export function NYCEnvironment() {
   return <figure className="nyc-environment">
-    <video controls muted playsInline preload="none" poster={`${media}environment.webp`} aria-label="NYC environment tour showing the route and safety events">
-      <source src={`${media}environment-tour.mp4`} type="video/mp4" />
-      <track kind="captions" src={`${media}environment-tour.vtt`} srcLang="en" label="English" default />
+    <video controls playsInline preload="none" poster={`${media}environment-intro.webp`} aria-label="NYC environment tour showing the route and safety events">
+      <source src={`${media}environment-intro.mp4`} type="video/mp4" />
+      <track kind="captions" src={`${media}environment-intro.vtt`} srcLang="en" label="English" default />
     </video>
     <figcaption><strong>One task: reach the goal safely.</strong><span>NYC demonstration scene · pedestrians, obstacles, hazards, and traffic rules</span></figcaption>
   </figure>;

@@ -19,9 +19,9 @@
     ],
     "format": {
       "duration": "90.000000",
-      "size": "27405963"
+      "size": "26450780"
     },
-    "sha256": "ffd7945707503196fc3eba5e4a5c045822f2f502a9b05d802923fcce741e5fbc",
+    "sha256": "0a30037028e92770e319b743759f190116b1b9b203faa812caee2ba0e5cccce3",
     "full_decode": "passed"
   },
   "rt-safe-nyc-90s-captioned.mp4": {
@@ -44,34 +44,41 @@
     ],
     "format": {
       "duration": "90.000000",
-      "size": "26718272"
+      "size": "26035643"
     },
-    "sha256": "631b13702fa7f8711a957f635e87d95f1942a2b4aeabcbd43a74271036f450ce",
+    "sha256": "f29e125b4530d95ec5509cf11c798adea73eb3c6b3f340f33015b3b1f89c9dc5",
     "full_decode": "passed"
   },
   "captions": {
-    "cues": 26,
-    "last_end_seconds": 88.956,
+    "cues": 28,
+    "last_end_seconds": 88.911,
     "ordered_nonoverlapping": true
   },
   "voice_fits_all_scenes": true,
   "timing_motion": {
     "static": {
       "inference_mean_absolute_pixel_changes": [
-        0.05545173611111111,
-        0.05566111111111111,
-        0.05948020833333333
+        0.04452291666666667,
+        0.04351354166666667,
+        0.052044791666666666
       ],
-      "action_change": 7.736691319444445
+      "action_change": 11.930685416666666
     },
     "realtime": {
       "inference_mean_absolute_pixel_changes": [
-        1.0392277777777779,
-        1.3272114583333334,
-        1.5328902777777778
+        3.1102701388888887,
+        3.0742538194444444,
+        4.435688541666667
       ],
-      "action_change": 7.793398263888889
+      "action_change": 11.908712152777778
     }
+  },
+  "opening_story": {
+    "static_first": true,
+    "center_message": "But the real world does not stop.",
+    "slide_reveal": true,
+    "location": "Madison Square Park interior path",
+    "environment_title_seconds": 2.4
   },
   "completed_segment_holds": {
     "astra": {
@@ -92,6 +99,38 @@
     ],
     "format": {
       "duration": "8.000000"
+    }
+  },
+  "timing-story": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_frames": "450"
+      },
+      {
+        "nb_frames": "1388"
+      }
+    ],
+    "format": {
+      "duration": "15.000000"
+    }
+  },
+  "environment-intro": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_frames": "360"
+      },
+      {
+        "nb_frames": "1106"
+      }
+    ],
+    "format": {
+      "duration": "12.000000"
     }
   },
   "timing-static": {
@@ -191,7 +230,7 @@
     "full_decode": "passed"
   },
   "narration_loudness": {
-    "integrated_lufs": -15.97,
+    "integrated_lufs": -16.07,
     "true_peak_dbtp": -1.48
   },
   "repository_media_size_limit": "all current NYC MP4s below 95 MiB"

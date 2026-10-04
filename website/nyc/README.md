@@ -51,8 +51,8 @@ excerpt, while the 44.1-second comparison shows the whole selected segment.
 
 The opening timing example uses the same initial scene, camera, and commanded agent movement.
 The static version freezes the world during inference. The real-time version advances the
-pedestrian and traffic trajectories throughout inference. The approaching pedestrian stays on the
-sidewalk in both versions. A closer camera fills each portrait panel, and the Thinking / Acting
+pedestrian trajectories throughout inference. The approaching pedestrian stays on the
+paved park path in both versions. A close camera fills each portrait panel, and the Thinking / Acting
 label follows the agent. This controlled encounter is illustrative.
 
 Native timing frames are stored in `renders/timing-close-static/` and
@@ -87,7 +87,7 @@ remain in memory during rendering; the source map is never saved back to the sha
 
 The 90-second edit includes a two-second frontier-agent introduction, an averaged leaderboard
 with a highlighted collision column, and all eight model behavior profiles in two groups.
-The RL ending lasts six seconds. Model/provider marks are documented in
+The RL ending lasts five seconds. Model/provider marks are documented in
 `../public/media/logos/SOURCES.txt`; benchmark measurements are unchanged.
 
 ## Current Astra / Sol comparison: original first-person capture
@@ -98,3 +98,16 @@ are retained. See `../public/data/recorded-replay.json` for all 95 source frame 
 The input is held during inference; action snapshots are shown in file order. No continuous
 inference recording or interpolated image frames are presented. The NYC opening, environment
 tour, aerial, and learning visualization remain native NYC renders.
+
+## Staged park opening
+
+The current opening uses an interior paved path at approximately (-4000, 2850) in the
+native map, facing along +X toward the fountain. Camera surveys covered six initial
+positions and four closer path candidates. The selected close camera preserves clear
+views of the agent and pedestrian, with trees and benches framing the encounter.
+`render_timing_scene.py` renders the matched 11-second takes with eight spatial samples
+and screen-space indirect lighting. `queue_opening_revision.py` renders both modes.
+
+The film begins with the static scene alone, then a centered message and a slide reveal
+of real-time evaluation. This 15-second sequence and the separate environment title card
+are also available in the website. The full film remains exactly 90 seconds.

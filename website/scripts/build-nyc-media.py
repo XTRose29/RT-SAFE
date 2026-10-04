@@ -45,13 +45,16 @@ def timing():
         stem='timing-close-'+name;raw=NYC/'encoded'/f'{stem}.mp4'
         encode(NYC/'renders'/stem,stem,raw)
         meta=json.loads((NYC/'renders'/stem/'scene.json').read_text())
+        if name=='static':
+            full=film.Clip(raw).frame(0);full.save(MEDIA/'timing-static-wide.webp',lossless=True)
+            target=ROOT/'public/data/nyc/timing-scene.json';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(meta,indent=2)+'\n')
         clip=film.Clip(raw);process=writer(MEDIA/f'timing-{name}.mp4',width=960,height=1000,crf=19)
         for f in range(330):
             t=f/30;source=0 if name=='static' and t<7 else f
             im=presentation.compose(clip.frame(source/30),meta,source,t,name,v)
             process.stdin.write(im.tobytes())
             if f==0:im.save(MEDIA/f'timing-{name}.webp',quality=93)
-        finish(process);print('Exported closer sidewalk timing scene:',name,flush=True)
+        finish(process);print('Exported park timing scene:',name,flush=True)
 def comparison():
     spec=importlib.util.spec_from_file_location('replay_presentation',ROOT/'scripts/replay-presentation.py')
     hud=importlib.util.module_from_spec(spec);spec.loader.exec_module(hud)

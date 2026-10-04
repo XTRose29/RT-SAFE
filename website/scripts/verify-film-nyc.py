@@ -60,6 +60,10 @@ for mode in ('static','realtime'):
     else:assert max(inference)>1, inference
     assert action>1,action
 report['timing_motion']=motion
+assert next(s for s in timeline['scenes'] if s['id']=='timing')['duration']==15
+assert next(s for s in timeline['scenes'] if s['id']=='environment')['duration']==12
+report['opening_story']={'static_first':True,'center_message':'But the real world does not stop.','slide_reveal':True,'location':'Madison Square Park interior path','environment_title_seconds':2.4}
+
 holds={}
 for model,a,b in [('astra',20,40),('sol',42.8,43.8)]:
     cap=cv2.VideoCapture(str(ROOT/'public/media/recorded'/f'{model}.mp4'));frames=[]
@@ -69,7 +73,7 @@ for model,a,b in [('astra',20,40),('sol',42.8,43.8)]:
     assert delta<.5,(model,delta)
     holds[model]={'completed_view_mean_absolute_pixel_change':delta}
 report['completed_segment_holds']=holds
-for stem,duration in [('hero',8),('timing-static',11),('timing-realtime',11),('environment-tour',12),('astra',44.1),('sol',44.1)]:
+for stem,duration in [('hero',8),('timing-story',15),('environment-intro',12),('timing-static',11),('timing-realtime',11),('environment-tour',12),('astra',44.1),('sol',44.1)]:
     path=ROOT/('public/media/recorded' if stem in ('astra','sol') else 'public/media/nyc')/f'{stem}.mp4'
     info=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration:stream=nb_frames,width,height','-of','json',str(path)]))
     assert abs(float(info['format']['duration'])-duration)<.04,(stem,info)
