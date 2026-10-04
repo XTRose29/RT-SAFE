@@ -62,7 +62,7 @@ for mode in ('static','realtime'):
 report['timing_motion']=motion
 holds={}
 for model,a,b in [('astra',20,40),('sol',42.8,43.8)]:
-    cap=cv2.VideoCapture(str(ROOT/'public/media/nyc'/f'{model}.mp4'));frames=[]
+    cap=cv2.VideoCapture(str(ROOT/'public/media/recorded'/f'{model}.mp4'));frames=[]
     for t in (a,b):
         cap.set(cv2.CAP_PROP_POS_MSEC,t*1000);ok,im=cap.read();assert ok;frames.append(im)
     cap.release();delta=float(np.abs(frames[0].astype(float)-frames[1].astype(float)).mean())
@@ -70,7 +70,7 @@ for model,a,b in [('astra',20,40),('sol',42.8,43.8)]:
     holds[model]={'completed_view_mean_absolute_pixel_change':delta}
 report['completed_segment_holds']=holds
 for stem,duration in [('hero',8),('timing-static',11),('timing-realtime',11),('environment-tour',12),('astra',44.1),('sol',44.1)]:
-    path=ROOT/'public/media/nyc'/f'{stem}.mp4'
+    path=ROOT/('public/media/recorded' if stem in ('astra','sol') else 'public/media/nyc')/f'{stem}.mp4'
     info=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration:stream=nb_frames,width,height','-of','json',str(path)]))
     assert abs(float(info['format']['duration'])-duration)<.04,(stem,info)
     report[stem]=info
@@ -98,12 +98,24 @@ for axis in range(6):
     assert abs(max(p['values'][axis] for p in profiles)-1)<1e-9
     assert all(0<=p['values'][axis]<=1 for p in profiles)
 # At 35.8 s, Sol has just reported four contacts; the red edge is visible.
-cap=cv2.VideoCapture(str(ROOT/'public/media/nyc/sol.mp4'));cap.set(cv2.CAP_PROP_POS_MSEC,35800)
+cap=cv2.VideoCapture(str(ROOT/'public/media/recorded/sol.mp4'));cap.set(cv2.CAP_PROP_POS_MSEC,35800)
 ok,frame=cap.read();cap.release();assert ok
 blue,green,red=frame[5,480];assert int(red)>int(green)+70 and int(red)>int(blue)+50
 report['replay_overlay']={'original_input_frames':inputs,'command_distances':'verified','collision_report_flash':'verified at 35.8 s'}
+original=json.loads((ROOT/'public/data/recorded-replay.json').read_text())
+frame_count=0
+for model in original['models'].values():
+    for step in model['steps']:
+        for entries in step['recorded_frames'].values():
+            for entry in entries:
+                with Image.open(ROOT/'public'/entry['path']) as im:
+                    assert list(im.size)==entry['size']
+                    assert hashlib.sha256(im.convert('RGB').tobytes()).hexdigest()==entry['pixel_sha256']
+                frame_count+=1
+assert frame_count==95,frame_count
+report['original_recorded_frames']={'count':frame_count,'lossless_pixel_hashes':'verified','interpolation':'none','inference':'recorded input held'}
 report['behavior_profiles']={'models':8,'axes':6,'normalization':'maximum across all eight models'}
-comparison=ROOT/'public/media/rt-safe-nyc-comparison.mp4'
+comparison=ROOT/'public/media/rt-safe-original-comparison.mp4'
 info=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration:stream=nb_frames,width,height','-of','json',str(comparison)]))
 assert abs(float(info['format']['duration'])-44.1)<.01
 assert info['streams'][0]['nb_frames']=='1323'
@@ -117,7 +129,7 @@ levels=json.loads(match.group())
 assert -18<float(levels['input_i'])<-14,levels
 assert float(levels['input_tp'])<-.5,levels
 report['narration_loudness']={'integrated_lufs':float(levels['input_i']),'true_peak_dbtp':float(levels['input_tp'])}
-for path in [*ROOT.glob('public/media/rt-safe-nyc*.mp4'),*ROOT.glob('public/media/nyc/*.mp4')]:
+for path in [*ROOT.glob('public/media/rt-safe-nyc*.mp4'),*ROOT.glob('public/media/nyc/*.mp4'),*ROOT.glob('public/media/recorded/*.mp4'),*ROOT.glob('public/media/rt-safe-original*.mp4')]:
     assert path.stat().st_size<95*1024**2,('File exceeds repository limit',path.name)
 report['repository_media_size_limit']='all current NYC MP4s below 95 MiB'
 (OUT / 'validation.json').write_text(json.dumps(report, indent=2) + '\n')

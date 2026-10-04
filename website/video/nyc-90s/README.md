@@ -34,14 +34,14 @@ along the sidewalk while the static world pauses and the real-time world advance
 - `../../public/media/rt-safe-nyc-90s.mp4`: narrated 1080p, 30 fps, exactly 90 seconds.
 - `../../public/media/rt-safe-nyc-90s-captioned.mp4`: the same edit with burned captions.
 - `../../public/media/rt-safe-nyc-90s.vtt` and `.srt`: English captions.
-- `../../public/media/rt-safe-nyc-comparison.mp4`: full selected Astra/Sol segments at 6× speed.
+- `../../public/media/rt-safe-original-comparison.mp4`: full selected Astra/Sol segments at 6× speed.
 
 Narration uses the synthetic `en-US-AriaNeural` voice. There is no background music.
 The standard master uses selectable captions; the conference edition burns them into
 a reserved band below the scene content.
 
-The Astra/Sol scene fills the frame with paired NYC views. Its overlay shows the original
-input image, the navigation goal, the selected command, decision progress, and collision
+The Astra/Sol scene fills the frame with the original first-person observation and action
+snapshots. Its overlay shows the navigation goal, the selected command, decision progress, and collision
 reports. Red alerts appear when a completed phase reports contacts. The short film uses
 two chronological excerpts (0–6 s and 33–39 s of the 6× replay), then full-segment totals.
 The jump is labelled. The separate 44.1-second comparison plays the full selected segment.
@@ -55,9 +55,10 @@ of 19.8% and 0.7%. The model behavior chart uses the separate all-difficulty sum
 The BC/RL table is the paper's separate learning experiment.
 
 The visual timing encounter and environment tour are illustrative. The Astra/Sol
-comparison reconstructs original RT15 agent endpoints and timing in the NYC scene;
-its surrounding patrols and walk cycles are presentation animations. It does not
-represent a new benchmark run on NYC. See [scene production](../../nyc/README.md)
+comparison now uses 95 lossless source frames from the original RT15 run. The saved input
+is held throughout inference. Action captures play in file order, with equal spacing when
+exact capture timestamps are unavailable. No intermediate images are synthesized.
+The image sequence is a snapshot replay, not continuous inference-time video. See [scene production](../../nyc/README.md)
 and the curated evidence for the complete provenance.
 
 ## Rebuild
@@ -99,3 +100,18 @@ data. To curate them again from the separately provisioned source logs, run
 All eight models have provider logos beside their names. Logo sources and attribution are in
 `public/media/logos/SOURCES.txt`. Astra/Sol share the OpenAI mark; Fable/Sonnet share Claude’s.
 Run `node scripts/prepare-model-logos.cjs` with Playwright installed to rasterize the vendored SVGs.
+
+To rebuild the current first-person comparison from the included lossless frames:
+
+```bash
+python scripts/build-recorded-comparison.py
+python scripts/narrate-film-nyc.py
+python scripts/render-film-nyc.py --scene examples
+python scripts/assemble-film-nyc.py
+python scripts/verify-film-nyc.py
+```
+
+`public/data/recorded-replay.json` records frame paths, source-file hashes, and decoded-pixel
+hashes. `scripts/prepare-recorded-replay.py --campaign /path/to/campaign` can recurate these
+from the separately provisioned source run. The previous NYC reconstruction is retained as
+`public/media/rt-safe-nyc-comparison.mp4` for comparison.

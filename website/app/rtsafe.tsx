@@ -500,7 +500,7 @@ function Training() {
 export default function RTsafe() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [menu, setMenu] = useState(false);
-  const [film, setFilm] = useState<"nyc-90s" | "nyc-comparison">("nyc-90s");
+  const [film, setFilm] = useState<"nyc-90s" | "original-comparison">("nyc-90s");
   const watch = () => {
     document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
     videoRef.current?.play().catch(() => {});
@@ -742,7 +742,7 @@ export default function RTsafe() {
             n="03"
             label="RECORDED MODEL BEHAVIOR"
             title={<>How do frontier agents perform?</>}
-            description="Follow GPT-6 Astra and GPT-5.6 Sol through the same final route segment. Their recorded decisions and timing are reconstructed in the NYC scene."
+            description="Follow GPT-6 Astra and GPT-5.6 Sol through the same final route segment. See the original first-person observations and action snapshots, with recorded decisions, timing, and collision reports."
           />
           <NYCComparison />
           <div className="action-space">
@@ -815,8 +815,8 @@ export default function RTsafe() {
                 NYC project film · 1:30
               </button>
               <button
-                aria-pressed={film === "nyc-comparison"}
-                onClick={() => setFilm("nyc-comparison")}
+                aria-pressed={film === "original-comparison"}
+                onClick={() => setFilm("original-comparison")}
               >
                 Astra vs. Sol · 0:44
               </button>
@@ -830,7 +830,7 @@ export default function RTsafe() {
               controls
               playsInline
               preload="none"
-              poster={film === "nyc-90s" ? "media/nyc/film-poster.webp" : "media/nyc/comparison-poster.webp"}
+              poster={film === "nyc-90s" ? "media/nyc/film-poster.webp" : "media/recorded/comparison-poster.webp"}
               aria-label="RT-SAFE project film"
             >
               <source src={`media/rt-safe-${film}.mp4`} type="video/mp4" />

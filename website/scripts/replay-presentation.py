@@ -21,10 +21,13 @@ def events(model):
    counts=s[phase+'_collisions'];n=sum(counts.values())
    if n:result.append({'at':(at-start)/6,'count':n,'phase':phase,'kinds':', '.join('pedestrian' if k=='human' else k for k,n in counts.items() if n)})
  return sorted(result,key=lambda e:e['at'])
-def compose(frame,model,name,t,v):
+def compose(frame,model,name,t,v,source="nyc"):
  duration=model['summary']['source_duration_seconds']/6;t=min(t,duration)
  state=replay.sample_agent(model,t*6);step=model['steps'][state['decision']-1];finished=state['finished'];counts=replay.counts_reported_by(model,t*6)
- im=frame.crop((442,0,1478,1080)).resize((W,H),Image.Resampling.LANCZOS)
+ if source=='recorded':
+  # Preserve the complete horizontal field of view of the recorded camera.
+  im=Image.new('RGB',(W,H),'#10243a');scaled=frame.resize((960,853),Image.Resampling.LANCZOS);im.paste(scaled,(0,73))
+ else:im=frame.crop((442,0,1478,1080)).resize((W,H),Image.Resampling.LANCZOS)
  d=ImageDraw.Draw(im,'RGBA')
  for y in range(150):d.line((0,y,W,y),fill=(7,20,36,int(220*(1-y/175))))
  for y in range(770,H):d.line((0,y,W,y),fill=(7,20,36,int(160+70*(y-770)/230)))
@@ -33,21 +36,27 @@ def compose(frame,model,name,t,v):
  v.text(im,(30,77),'TASK 19  /  LOW REASONING  /  6×',18,col,600)
  v.text(im,(30,106),'GOAL: REACH THE FINAL SUBGOAL',16,white,500)
  v.text(im,(931,20),'COLLISIONS REPORTED',17,muted,600,'ra');v.text(im,(930,44),str(counts['total']).zfill(2),60,red if counts['total'] else white,600,'ra')
- # This is the real model input from the source run, labelled separately from the NYC replay.
- v.rect(im,(28,133,257,371),'#122d48',8)
- im.paste(observation(step['input_image']),(30,165));v.text(im,(38,141),'INPUT · ORIGINAL FRAME',16,white,500)
- v.text(im,(30,382),f'Observation {step["source_decision"]}',17,white,500)
+ if source=='nyc':
+  v.rect(im,(28,133,257,371),'#122d48',8)
+  im.paste(observation(step['input_image']),(30,165));v.text(im,(38,141),'INPUT · ORIGINAL FRAME',16,white,500)
+  v.text(im,(30,382),f'Observation {step["source_decision"]}',17,white,500)
+ else:
+  v.rect(im,(28,133,524,174),'#122d48',7)
+  label='FINAL RECORDED OUTPUT' if finished else 'ORIGINAL INPUT · OBSERVATION '+str(step['source_decision']) if state['phase']=='inference' else 'ORIGINAL ACTION SNAPSHOT'
+  v.text(im,(40,144),label,18,white,600)
  phase='Segment complete' if finished else 'Thinking…' if state['phase']=='inference' else 'Acting'
- bw=v.font(30,600).getlength(phase)+38;bx=480-bw/2
- v.rect(im,(bx,454,bx+bw,510),'#142d4b',10,col,2);v.text(im,(bx+19,464),phase,30,white,600)
- v.line(im,[(480,510),(480,542)],col,3)
+ bw=v.font(30,600).getlength(phase)+38;bx=480-bw/2;by=685 if source=='recorded' else 454
+ v.rect(im,(bx,by,bx+bw,by+56),'#142d4b',10,col,2);v.text(im,(bx+19,by+10),phase,30,white,600)
+ if source=='nyc':v.line(im,[(480,510),(480,542)],col,3)
+ elif state['phase']=='inference' and not finished:
+  v.text(im,(480,749),'Input held during inference',18,white,500,'ma')
  relevant=[e for e in events(model) if e['at']<=t];last=relevant[-1] if relevant else None
  if last and not finished and t-last['at']<.9:
   v.rect(im,(5,5,W-6,H-6),None,6,red,7)
   alpha=round(90*(1-(t-last['at'])/.9));ImageDraw.Draw(im,'RGBA').rectangle((0,0,W,H),fill=(255,40,50,alpha//3))
-  v.rect(im,(282,149,931,249),'#872b3c',10,red,2)
-  v.text(im,(303,164),f'COLLISION REPORTED  +{last["count"]}',30,white,600)
-  v.text(im,(305,210),'During inference' if last['phase']=='passive' else 'During action',23,'#ffcad0',500)
+  v.rect(im,(282,189 if source=='recorded' else 149,931,289 if source=='recorded' else 249),'#872b3c',10,red,2)
+  v.text(im,(303,204 if source=='recorded' else 164),f'COLLISION REPORTED  +{last["count"]}',30,white,600)
+  v.text(im,(305,250 if source=='recorded' else 210),'During inference' if last['phase']=='passive' else 'During action',23,'#ffcad0',500)
  v.text(im,(30,790),'MODEL OUTPUT',16,col,600)
  output='Route segment complete' if finished else command(step) if state['phase']=='action' else 'Choosing the next action…'
  v.text(im,(29,819),output,31,white,600)

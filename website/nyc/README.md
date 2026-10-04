@@ -17,7 +17,7 @@ native PNG sequences; Python and FFmpeg add labels, charts, narration, captions,
 The Unreal project, binaries, linked marketplace assets, caches, and intermediate PNG sequences
 are excluded from the publication repository. They require the separately provisioned runtime.
 
-## Recorded Astra / Sol comparison
+## Previous NYC Astra / Sol reconstruction
 
 The selected final-subgoal segment is from RT15, Task 19, easy real-time, low reasoning, seed 0.
 It is reconstructed in the NYC scene at six times recorded simulation speed.
@@ -89,3 +89,12 @@ The 90-second edit includes a two-second frontier-agent introduction, an average
 with a highlighted collision column, and all eight model behavior profiles in two groups.
 The RL ending lasts six seconds. Model/provider marks are documented in
 `../public/media/logos/SOURCES.txt`; benchmark measurements are unchanged.
+
+## Current Astra / Sol comparison: original first-person capture
+
+The website and 90-second film now use the original RT15 observation/action frames for this
+segment. The game-style interface, commands, collision alerts, and source simulation timing
+are retained. See `../public/data/recorded-replay.json` for all 95 source frame records.
+The input is held during inference; action snapshots are shown in file order. No continuous
+inference recording or interpolated image frames are presented. The NYC opening, environment
+tour, aerial, and learning visualization remain native NYC renders.

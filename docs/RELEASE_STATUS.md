@@ -26,8 +26,7 @@ Validation details are recorded in [validation/release-checks.json](../validatio
 ## NYC presentation edition
 
 The 4 October 2026 edition adds native Madison Square Park rendering, four camera views,
-a synchronized static/real-time illustration, and the recorded Astra/Sol segment reconstructed
-in NYC. The narrated and captioned films are both exactly 90 seconds (2,700 frames at 30 fps).
+a synchronized static/real-time illustration, and the original recorded Astra/Sol first-person segment. The narrated and captioned films are both exactly 90 seconds (2,700 frames at 30 fps).
 The full selected comparison is 44.1 seconds at 6× simulation speed.
 
 The native renders completed successfully. Both film editions and the full comparison decode
@@ -42,3 +41,8 @@ remain from the prior release check; this edition does not change benchmark exec
 
 The latest 90-second edit adds a frontier-agent introduction, all eight radar profiles with
 provider logos, a highlighted collision column, and a six-second RL ending.
+
+The Astra/Sol presentation uses original first-person observation and action snapshots with
+the game-style overlay. All 95 source images are included losslessly and verified by decoded
+pixel hashes. Inputs are held during inference; this is a snapshot replay, not a continuous
+inference-time recording. The previous NYC comparison remains available as an alternate.

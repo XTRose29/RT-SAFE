@@ -8,7 +8,7 @@ The world does not pause while an agent thinks. Static evaluation freezes the wo
 Navigate to the goal across five maps and thirty-six routes. Safety includes collisions, trip, oil and water hazards, and traffic-rule violations.
 
 00:00:27.000  HOW DO FRONTIER AGENTS PERFORM?
-How do frontier agents perform? On the same recorded route, Astra makes twelve decisions with one collision. Sol makes thirty-three decisions with seventeen collisions. Recorded behavior, reconstructed in NYC.
+How do frontier agents perform? On the same recorded route, Astra makes twelve decisions with one collision. Sol makes thirty-three decisions with seventeen collisions. These are the original recorded observations and actions.
 
 00:00:43.000  EIGHT MODELS: PERFORMANCE AND BEHAVIOR
 Sonnet records the fewest collisions; Grok, the most. Inkling favors longer moves. Sol turns and waits most. Response time and action choices both shape behavior.

@@ -1,0 +1,2970 @@
+{
+  "source_task": 19,
+  "source_map": "RT15",
+  "difficulty": "easy",
+  "reasoning": "low",
+  "seed": 0,
+  "presentation": "Original first-person observation and action snapshots; no NYC reconstruction.",
+  "clock": "Recorded simulation clock, including inference exposure and action execution. Uniform 6x playback.",
+  "playback_speed": 6,
+  "models": {
+    "astra": {
+      "name": "gpt-6-astra",
+      "steps": [
+        {
+          "source_step": 33,
+          "source_decision": 34,
+          "action": {
+            "type": "move_to",
+            "param": "5"
+          },
+          "start_sim_seconds": 215.58,
+          "end_sim_seconds": 223.44000000000003,
+          "inference_exposure_seconds": 5.86,
+          "response_latency_seconds": 4.49389123916626,
+          "position_cm": [
+            20471.131,
+            544.492
+          ],
+          "post_action_position_cm": [
+            20574.654,
+            930.864
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "8e1bfe81392fb62ccaf9dee696d74168ff0bec0d0e5e3aecd6b229e59077a5f7",
+          "input_image": "media/nyc/inputs/astra-033.webp",
+          "commanded_distance_m": 3.999999603073227,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "74c92d34bc32d74f651199c4e849bc013dc5806ef3118393629a956fb78e3a15",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/astra-033-input-00.webp",
+                "source_sha256": "74c92d34bc32d74f651199c4e849bc013dc5806ef3118393629a956fb78e3a15",
+                "pixel_sha256": "017521bb7d575aae65c3b0682a9d7b1f064a458c646acb1947b70a829bdaaa36",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [
+              {
+                "path": "media/recorded/frames/astra-033-action-00.webp",
+                "source_sha256": "fede7ea0f8c40816bcf8314ff31df6117122935cb3c2dd4a1c9388b17c430b59",
+                "pixel_sha256": "9d7a27b2e64eac490247b054f051ea159fbeaf0bc2168c5923050bd76f05ade7",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "output": [
+              {
+                "path": "media/recorded/frames/astra-033-output-00.webp",
+                "source_sha256": "ac1aa709bb8b3be68bc99471fecceabcf9496ea60cc6914d0e74cb2fc3b2ca2f",
+                "pixel_sha256": "b7ac93db8d2a3398c6fe33ff2e648662be2c3c7f40d2419c44a377b8c17d1540",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 34,
+          "source_decision": 35,
+          "action": {
+            "type": "move_to",
+            "param": "5"
+          },
+          "start_sim_seconds": 223.44000000000003,
+          "end_sim_seconds": 230.35000000000002,
+          "inference_exposure_seconds": 4.91,
+          "response_latency_seconds": 3.034661054611206,
+          "position_cm": [
+            20574.654,
+            930.864
+          ],
+          "post_action_position_cm": [
+            20678.178,
+            1317.235
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "34aaed76b33994047a1791398cb32fd10d539f84d7c47a4826bc2dad71a81000",
+          "input_image": "media/nyc/inputs/astra-034.webp",
+          "commanded_distance_m": 3.999999603073235,
+          "recorded_feedback": "While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "fede7ea0f8c40816bcf8314ff31df6117122935cb3c2dd4a1c9388b17c430b59",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/astra-034-input-00.webp",
+                "source_sha256": "fede7ea0f8c40816bcf8314ff31df6117122935cb3c2dd4a1c9388b17c430b59",
+                "pixel_sha256": "9d7a27b2e64eac490247b054f051ea159fbeaf0bc2168c5923050bd76f05ade7",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [
+              {
+                "path": "media/recorded/frames/astra-034-action-00.webp",
+                "source_sha256": "77cd06cd8e7f7fac22387597eb8de3ed67d8af7bfb26b0c8c93c9f4f22b08f06",
+                "pixel_sha256": "a9c2d763228b5c105232c25bda7d69630fa6e23c3249dcf749b1d61974baf8e1",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "output": [
+              {
+                "path": "media/recorded/frames/astra-034-output-00.webp",
+                "source_sha256": "46b043d3cfaf3587db1ebb8c6cdfa94d7bcafe07dd3231ff0fcea8097e2596cb",
+                "pixel_sha256": "d4c38dba49116a072d70e833fc7ee335a77021bfbf66f1f73c505bdc1a0404cb",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 35,
+          "source_decision": 36,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 230.35000000000002,
+          "end_sim_seconds": 234.87000000000003,
+          "inference_exposure_seconds": 3.52,
+          "response_latency_seconds": 2.639477252960205,
+          "position_cm": [
+            20678.178,
+            1317.235
+          ],
+          "post_action_position_cm": [
+            20729.939,
+            1510.421
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "900dd4a67366253c0549debfb48ff337bbd9844a7c1120e81a5b7d3eae9232a2",
+          "input_image": "media/nyc/inputs/astra-035.webp",
+          "commanded_distance_m": 2.0000001550972475,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "77cd06cd8e7f7fac22387597eb8de3ed67d8af7bfb26b0c8c93c9f4f22b08f06",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/astra-035-input-00.webp",
+                "source_sha256": "77cd06cd8e7f7fac22387597eb8de3ed67d8af7bfb26b0c8c93c9f4f22b08f06",
+                "pixel_sha256": "a9c2d763228b5c105232c25bda7d69630fa6e23c3249dcf749b1d61974baf8e1",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/astra-035-output-00.webp",
+                "source_sha256": "2d239b2545b6177f5d9e5743b7f5d1bac5e308208d8fbfd7e9497d04aed3398f",
+                "pixel_sha256": "b2860fba8192413a7670049d45499cd5845b6b254435198b7a79073e5b17b9d5",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 36,
+          "source_decision": 37,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 234.87000000000003,
+          "end_sim_seconds": 239.66000000000003,
+          "inference_exposure_seconds": 3.79,
+          "response_latency_seconds": 3.0207042694091797,
+          "position_cm": [
+            20729.939,
+            1510.421
+          ],
+          "post_action_position_cm": [
+            20781.701,
+            1703.607
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "84fa8ded9b62493c0e99e132978ad5178c9e95ac7735dc865d9afd3a4c9bc47b",
+          "input_image": "media/nyc/inputs/astra-036.webp",
+          "commanded_distance_m": 2.0000001550972453,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "49924276c6a247dcf2a0ee7276499f6f83fb59e8f7797e0bccf57214b0b1dd54",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/astra-036-input-00.webp",
+                "source_sha256": "49924276c6a247dcf2a0ee7276499f6f83fb59e8f7797e0bccf57214b0b1dd54",
+                "pixel_sha256": "49ad55ccc6a4b5eb45c5b6bf2bd526bc18d1fc032854b122165a35c6eee12308",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/astra-036-output-00.webp",
+                "source_sha256": "83901f4efba1ee251f9ba6b26157de28707decacc7bf1b783eafc123974c48de",
+                "pixel_sha256": "b82fc4aee2408cc4c14989f5fe203f332db7f25cdc9e7e40c17e180fd9357986",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 37,
+          "source_decision": 38,
+          "action": {
+            "type": "move_to",
+            "param": "3"
+          },
+          "start_sim_seconds": 239.66000000000003,
+          "end_sim_seconds": 244.36,
+          "inference_exposure_seconds": 3.7,
+          "response_latency_seconds": 2.7940621376037598,
+          "position_cm": [
+            20781.701,
+            1703.607
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            1876.811
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "e9476e0cc54f9616c5f8fdf3f256f33170ae71e57fe8bb09fe6d7287d0e09cd9",
+          "input_image": "media/nyc/inputs/astra-037.webp",
+          "commanded_distance_m": 1.9999997744802391,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "652935cd7ca7c28325691d31d50a16a4b53b6dc4507bf6caf72d058e73ec9bf1",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/astra-037-input-00.webp",
+                "source_sha256": "652935cd7ca7c28325691d31d50a16a4b53b6dc4507bf6caf72d058e73ec9bf1",
+                "pixel_sha256": "2102beb12a87ca4ba929bbb7265a4755afffcbde3e42cbbd2ae5885453c94b68",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/astra-037-output-00.webp",
+                "source_sha256": "49a0429f7394dc721a9bee358820750b4bbf84b86dccd0f018207f0fcecc4149",
+                "pixel_sha256": "1ff53bc8104d99e32919f1b4477d976fa6a7ffc8e35aacdfd9809e08b00bdffd",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 38,
+          "source_decision": 39,
+          "action": {
+            "type": "turn_around",
+            "param": "R30"
+          },
+          "start_sim_seconds": 244.36,
+          "end_sim_seconds": 251.27,
+          "inference_exposure_seconds": 5.91,
+          "response_latency_seconds": 5.02372670173645,
+          "position_cm": [
+            20681.699,
+            1876.811
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            1876.811
+          ],
+          "yaw_degrees": 120.00072778082739,
+          "post_action_yaw_degrees": 90.001,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "a1a651ffdeecc2a36fb6cdfbc69c4071fa631f2b05ab3cbc77020ec082d06d7a",
+          "input_image": "media/nyc/inputs/astra-038.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "28f77593e412637ea7bba945e2e568cc54bb4f57209ce0db1c36e3fe61dc303a",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/astra-038-input-00.webp",
+                "source_sha256": "28f77593e412637ea7bba945e2e568cc54bb4f57209ce0db1c36e3fe61dc303a",
+                "pixel_sha256": "8ca79a5236030714ee99e8a84a55efc078de29e83ec872d19b1ac1a7aa449557",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/astra-038-output-00.webp",
+                "source_sha256": "eb416af0863805ad63fe591a74d215d2d150c8ea9934fa7f0437dc21bfc41c64",
+                "pixel_sha256": "bf14ba5abd519505ce0073206498cacebfdf1367293b8b69a3e527c6ffd733b0",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 39,
+          "source_decision": 40,
+          "action": {
+            "type": "move_to",
+            "param": "5"
+          },
+          "start_sim_seconds": 251.27,
+          "end_sim_seconds": 257.07000000000005,
+          "inference_exposure_seconds": 3.8,
+          "response_latency_seconds": 2.9768149852752686,
+          "position_cm": [
+            20681.699,
+            1876.811
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            2276.811
+          ],
+          "yaw_degrees": 90.0,
+          "post_action_yaw_degrees": 90.0,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "507811552f3db55d274623c9b2d74354b98bd3f391dbc016c0c03c9dcb1507ca",
+          "input_image": "media/nyc/inputs/astra-039.webp",
+          "commanded_distance_m": 4.000000000000003,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "385ca98e8fb5d58a052851f11afadaa3b335d2b0498f015626f12cbab4cb6432",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/astra-039-input-00.webp",
+                "source_sha256": "385ca98e8fb5d58a052851f11afadaa3b335d2b0498f015626f12cbab4cb6432",
+                "pixel_sha256": "264d4b50663233294888ad12510835b5dbdcb58ecc77a768df5d7eb0cdaf3d32",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [
+              {
+                "path": "media/recorded/frames/astra-039-action-00.webp",
+                "source_sha256": "94d317c94dbb436f49ba7a79a7bd79492105ec0f9638f9195a1ef341de00549c",
+                "pixel_sha256": "89b533245c94a6481b660ea7a4a14188109164d6a4ebd03fc9e36168e808c492",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "output": [
+              {
+                "path": "media/recorded/frames/astra-039-output-00.webp",
+                "source_sha256": "018f78072bb16e31cb8b88fe6bc3d7bed6d0de7979c9ef3cc54b55e241f1d6be",
+                "pixel_sha256": "acf99f8d6c666557d2a38340914c2ea9e970e10ad601c8c4d788f5bf3db9f49c",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 40,
+          "source_decision": 41,
+          "action": {
+            "type": "move_to",
+            "param": "5"
+          },
+          "start_sim_seconds": 257.07000000000005,
+          "end_sim_seconds": 263.16,
+          "inference_exposure_seconds": 4.09,
+          "response_latency_seconds": 3.1116154193878174,
+          "position_cm": [
+            20681.699,
+            2276.811
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            2676.811
+          ],
+          "yaw_degrees": 90.0,
+          "post_action_yaw_degrees": 90.0,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "08493a64e643a3d762a4dd276844702f2b8e5fde5d5b44834d5d99e19a89ba2b",
+          "input_image": "media/nyc/inputs/astra-040.webp",
+          "commanded_distance_m": 4.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "94d317c94dbb436f49ba7a79a7bd79492105ec0f9638f9195a1ef341de00549c",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/astra-040-input-00.webp",
+                "source_sha256": "94d317c94dbb436f49ba7a79a7bd79492105ec0f9638f9195a1ef341de00549c",
+                "pixel_sha256": "89b533245c94a6481b660ea7a4a14188109164d6a4ebd03fc9e36168e808c492",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [
+              {
+                "path": "media/recorded/frames/astra-040-action-00.webp",
+                "source_sha256": "563b1246e6261d979acc0c33b78e87e5359ebab96213b11c595795a584b981a0",
+                "pixel_sha256": "37df12c1421b951658e330b4c7a9c570067ecdc781e3d4cb8d592219e5801141",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "output": [
+              {
+                "path": "media/recorded/frames/astra-040-output-00.webp",
+                "source_sha256": "9903ba797af1121e95ed76f505ccb27d808e1eb9800487f87e6f98c3d3e468eb",
+                "pixel_sha256": "f277801b7dbdde2903a52d339f710d28dc749ea261b87487b221b63a16272805",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 41,
+          "source_decision": 42,
+          "action": {
+            "type": "move_to",
+            "param": "5"
+          },
+          "start_sim_seconds": 263.16,
+          "end_sim_seconds": 268.41,
+          "inference_exposure_seconds": 3.25,
+          "response_latency_seconds": 2.5723981857299805,
+          "position_cm": [
+            20681.699,
+            2676.811
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            3076.811
+          ],
+          "yaw_degrees": 90.0,
+          "post_action_yaw_degrees": 90.0,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "26b146cb503f6319409cea61ff4e666fa1953a5b579c3845ec34722abc59b07f",
+          "input_image": "media/nyc/inputs/astra-041.webp",
+          "commanded_distance_m": 4.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "563b1246e6261d979acc0c33b78e87e5359ebab96213b11c595795a584b981a0",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/astra-041-input-00.webp",
+                "source_sha256": "563b1246e6261d979acc0c33b78e87e5359ebab96213b11c595795a584b981a0",
+                "pixel_sha256": "37df12c1421b951658e330b4c7a9c570067ecdc781e3d4cb8d592219e5801141",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [
+              {
+                "path": "media/recorded/frames/astra-041-action-00.webp",
+                "source_sha256": "fbb0b8ac4246afe46a5833e18dfe705a58b813588381690b8a96cdb6a9400871",
+                "pixel_sha256": "61932fd7574200a42db25a8ffa90f1bd2dc6826c8ada723259919855a0c297c3",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "output": [
+              {
+                "path": "media/recorded/frames/astra-041-output-00.webp",
+                "source_sha256": "4c153fa6f19640f5cc82f3abe473cec8c1c573b7e2f25ff4a16fe75bde8757c5",
+                "pixel_sha256": "f9f0e70cab5a7cb4aa18fdf3b9e938bf5b248b887d472b0fa6d91b4e883f7833",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 42,
+          "source_decision": 43,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 268.41,
+          "end_sim_seconds": 273.13000000000005,
+          "inference_exposure_seconds": 3.72,
+          "response_latency_seconds": 2.828033685684204,
+          "position_cm": [
+            20681.699,
+            3076.811
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            3276.811
+          ],
+          "yaw_degrees": 90.0,
+          "post_action_yaw_degrees": 90.0,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "59563da160caadf12165a65fdb09cd1570bd52d3f16fc755472b78b89c6f11e0",
+          "input_image": "media/nyc/inputs/astra-042.webp",
+          "commanded_distance_m": 2.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "fbb0b8ac4246afe46a5833e18dfe705a58b813588381690b8a96cdb6a9400871",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/astra-042-input-00.webp",
+                "source_sha256": "fbb0b8ac4246afe46a5833e18dfe705a58b813588381690b8a96cdb6a9400871",
+                "pixel_sha256": "61932fd7574200a42db25a8ffa90f1bd2dc6826c8ada723259919855a0c297c3",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/astra-042-output-00.webp",
+                "source_sha256": "6a76e62b319a39f77d0c6531e86bffdc8c9bbb914149794d6de7b99c56393d01",
+                "pixel_sha256": "2cb9eea7683d4f7773477419ee8865318567227dcfff8256bc64b41c00145109",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 43,
+          "source_decision": 44,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 273.13000000000005,
+          "end_sim_seconds": 277.88000000000005,
+          "inference_exposure_seconds": 3.75,
+          "response_latency_seconds": 2.8804831504821777,
+          "position_cm": [
+            20681.699,
+            3276.811
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            3476.811
+          ],
+          "yaw_degrees": 90.0,
+          "post_action_yaw_degrees": 90.0,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "e44db79b7ce83732a31e6774cce62d754cefbd91550b9f5be0d3bf7d699bff6e",
+          "input_image": "media/nyc/inputs/astra-043.webp",
+          "commanded_distance_m": 2.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "c46dfb278d51e6c5eaa4f99a72c28193f73fde74911b31cb4baabd0aec8a7b7a",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/astra-043-input-00.webp",
+                "source_sha256": "c46dfb278d51e6c5eaa4f99a72c28193f73fde74911b31cb4baabd0aec8a7b7a",
+                "pixel_sha256": "1f5efd2eb93a97f6639802ebf0d8e8c56ed2b4d41e2fe962ca0834ece40b9390",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/astra-043-output-00.webp",
+                "source_sha256": "d5d1428a2a4202766b76e954d1cbd1c02a6ce3267dc612b8b3df3bb60d0f1b8d",
+                "pixel_sha256": "ff29b1ac75b41fe35e2bc1eef6dd7cf9aa3cd9615dc381682a9e6cc85565b91c",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 44,
+          "source_decision": 45,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 277.88000000000005,
+          "end_sim_seconds": 284.20000000000005,
+          "inference_exposure_seconds": 5.32,
+          "response_latency_seconds": 4.565758466720581,
+          "position_cm": [
+            20681.699,
+            3476.811
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            3676.811
+          ],
+          "yaw_degrees": 90.0,
+          "post_action_yaw_degrees": 90.0,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "ad0dd138f8e1fd6f9be2b43715e40e19ff23a9201a214f03c898f2956e2eafa3",
+          "input_image": "media/nyc/inputs/astra-044.webp",
+          "commanded_distance_m": 2.0,
+          "recorded_feedback": "You have reached the final destination.",
+          "input_sha256": "87496fd89f639d4a2e9ed540b3c4c1a30c05bb8c6d6715d825dc5279d2a015f9",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/astra-044-input-00.webp",
+                "source_sha256": "87496fd89f639d4a2e9ed540b3c4c1a30c05bb8c6d6715d825dc5279d2a015f9",
+                "pixel_sha256": "c9fc0804fd0c1ab0bc327e5ac4b8487b16bffde3a3f98cef1d9e240ff2c1c03e",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/astra-044-output-00.webp",
+                "source_sha256": "d79ac611c575e341a166887d73aa140bd4c6819d55f6bf1b4e0134c1db497b2f",
+                "pixel_sha256": "aa36301c2ff0b261699b91bcc7f499631993a29574566157b065632e9e234625",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "summary": {
+        "decisions": 12,
+        "active_collisions": 0,
+        "passive_collisions": 1,
+        "collisions": 1,
+        "source_duration_seconds": 68.62000000000003,
+        "video_duration_seconds": 11.436666666666673
+      }
+    },
+    "sol": {
+      "name": "gpt-5.6-sol",
+      "steps": [
+        {
+          "source_step": 37,
+          "source_decision": 38,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 285.55,
+          "end_sim_seconds": 295.16,
+          "inference_exposure_seconds": 8.61,
+          "response_latency_seconds": 3.7189435958862305,
+          "position_cm": [
+            20646.932,
+            523.592
+          ],
+          "post_action_position_cm": [
+            20698.693,
+            716.778
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "6ce7717715f9e0a1a43b71bf94e01ad4e941465233b5922921af4d5dcf20f7d2",
+          "input_image": "media/nyc/inputs/sol-037.webp",
+          "commanded_distance_m": 2.0000001550972453,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "1decfd2960e6e1faa522038b3097f1830bb402603ef2b0373fb38c28fec7cc1c",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-037-input-00.webp",
+                "source_sha256": "1decfd2960e6e1faa522038b3097f1830bb402603ef2b0373fb38c28fec7cc1c",
+                "pixel_sha256": "f7595ca7a97f233124698c8ed7080fbba06a70e64ff154bb1ec7b3f092c5205a",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-037-output-00.webp",
+                "source_sha256": "7ba46ff484ec4646f23f2c54b66af4359725e9ee957df0af0a63546b3399e638",
+                "pixel_sha256": "a2d6a2c0a6c6743c5c1e1d81367c9bde0820894e26b1c92204630c1596ad2c2b",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 38,
+          "source_decision": 39,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 295.16,
+          "end_sim_seconds": 302.96000000000004,
+          "inference_exposure_seconds": 6.8,
+          "response_latency_seconds": 3.7891530990600586,
+          "position_cm": [
+            20698.693,
+            716.778
+          ],
+          "post_action_position_cm": [
+            20750.455,
+            909.964
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "c1d756bca611f0025e307c9bf0d528bd912f1808f71f72c659c0859f4e958f22",
+          "input_image": "media/nyc/inputs/sol-038.webp",
+          "commanded_distance_m": 2.0000001550972453,
+          "recorded_feedback": "While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "fd82f0ed94b49da9bd7898968de1b0649f8906aadb9667f0274be2ef5913fec7",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-038-input-00.webp",
+                "source_sha256": "fd82f0ed94b49da9bd7898968de1b0649f8906aadb9667f0274be2ef5913fec7",
+                "pixel_sha256": "7269ce142dd031e30b47ddcd382e5cc25eb66864c803eb65753d0ed50a221115",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-038-output-00.webp",
+                "source_sha256": "420d5f9a6320a79bacd0787f48a5b4b48698c50a548b9111c9f6e45083da170b",
+                "pixel_sha256": "38e4ac8017d04e43bcdf10bb1853b68d82eef8bfd293346dd8ff76b47422ce68",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 39,
+          "source_decision": 40,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 302.96000000000004,
+          "end_sim_seconds": 315.24,
+          "inference_exposure_seconds": 11.78,
+          "response_latency_seconds": 5.246076822280884,
+          "position_cm": [
+            20750.455,
+            909.964
+          ],
+          "post_action_position_cm": [
+            20776.336,
+            1006.557
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "3dde317e7137cba75115af75970f62a143737af54fefe7adfe34088e90ff8d78",
+          "input_image": "media/nyc/inputs/sol-039.webp",
+          "commanded_distance_m": 1.0000002069524758,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "7a770654422d7165563f5a6f02c25759fdbecc9c2d2cf8883dded0fd4fa48d9e",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-039-input-00.webp",
+                "source_sha256": "7a770654422d7165563f5a6f02c25759fdbecc9c2d2cf8883dded0fd4fa48d9e",
+                "pixel_sha256": "63a4716367c48fa7cdf5a5a06abc936dec2debf31ff5fe5114c1db9c53e2cf50",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-039-output-00.webp",
+                "source_sha256": "8b232dc490a90b089e53740ee14d9b6b9c928c66d4760f91275630d6dc9f69ac",
+                "pixel_sha256": "85b1979c261751f038fbb2c0601dcd40ed59c37728ab6aaa38ae79ed4c52c8f4",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 40,
+          "source_decision": 41,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 315.24,
+          "end_sim_seconds": 321.12,
+          "inference_exposure_seconds": 5.38,
+          "response_latency_seconds": 4.497462034225464,
+          "position_cm": [
+            20776.336,
+            1006.557
+          ],
+          "post_action_position_cm": [
+            20802.217,
+            1103.15
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "704e7d893dc0648e9eaaf197f8d20a96b8c3315e12e10f9483c446612d9cfa1e",
+          "input_image": "media/nyc/inputs/sol-040.webp",
+          "commanded_distance_m": 1.000000206952475,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "43b7517a80ba102a12c5ef87a5f420db4f11e86ded6a9d01b575361960a4f2f3",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-040-input-00.webp",
+                "source_sha256": "43b7517a80ba102a12c5ef87a5f420db4f11e86ded6a9d01b575361960a4f2f3",
+                "pixel_sha256": "95e37cd2cd9081bb500844ebef820d442adbc7669c6d022d430759efdd204203",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-040-output-00.webp",
+                "source_sha256": "6c9e7606de044862238f2fd8db74fc034cd170b9c4c5994dde8713e13ba0141f",
+                "pixel_sha256": "b598453396b080d371de0f8ef43850ed4489572aef1e2b9432a572b2b2701112",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 41,
+          "source_decision": 42,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 321.12,
+          "end_sim_seconds": 331.44,
+          "inference_exposure_seconds": 9.82,
+          "response_latency_seconds": 4.433201789855957,
+          "position_cm": [
+            20802.217,
+            1103.15
+          ],
+          "post_action_position_cm": [
+            20828.098,
+            1199.743
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "ce23402e0b6695a92c08f6e07e80565eb422cd1b66e863870a69c8a444df26d3",
+          "input_image": "media/nyc/inputs/sol-041.webp",
+          "commanded_distance_m": 1.000000206952475,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "e3f9d0f7e14c430b74f3d798aea56c74f2e420438d0893676f7d91374717af4a",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-041-input-00.webp",
+                "source_sha256": "e3f9d0f7e14c430b74f3d798aea56c74f2e420438d0893676f7d91374717af4a",
+                "pixel_sha256": "130fe0d8ca86c0361ff402265173e8eacb54ff138688310c822e725ba27c1df9",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-041-output-00.webp",
+                "source_sha256": "c8501303b8efbd18f7628fcefc386d79b0548730fc6cc69847f6f9ef3e7e5ed9",
+                "pixel_sha256": "2964784615a63b6492703749febfb3456a9f274223f9d07accf10b7c1f450a6e",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 42,
+          "source_decision": 43,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 331.44,
+          "end_sim_seconds": 340.63,
+          "inference_exposure_seconds": 8.69,
+          "response_latency_seconds": 2.954258918762207,
+          "position_cm": [
+            20828.098,
+            1199.743
+          ],
+          "post_action_position_cm": [
+            20853.979,
+            1296.336
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "c9a17cb822028e41a907d09f7480f4a5acc6d3df48329c2149e3066712816ed0",
+          "input_image": "media/nyc/inputs/sol-042.webp",
+          "commanded_distance_m": 1.000000206952477,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "3c5c62306ac7cc0653ad6806b3e8d297a9ece9bae3b81c147c74c153406cf3c8",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-042-input-00.webp",
+                "source_sha256": "3c5c62306ac7cc0653ad6806b3e8d297a9ece9bae3b81c147c74c153406cf3c8",
+                "pixel_sha256": "a612d7a3548ab3f7204095ca31c3b49a8a048cda4675257356bd2bccba29fc84",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-042-output-00.webp",
+                "source_sha256": "b765fbc77f254e867f4e750d321eafdceeab14f50eeb40354dfd3804da6bae77",
+                "pixel_sha256": "8e223667354e9ceb2cf4221368fd886f96a088189cb4088d984658da68a9d606",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 43,
+          "source_decision": 44,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 340.63,
+          "end_sim_seconds": 348.11,
+          "inference_exposure_seconds": 6.98,
+          "response_latency_seconds": 6.029070615768433,
+          "position_cm": [
+            20853.979,
+            1296.336
+          ],
+          "post_action_position_cm": [
+            20879.859,
+            1392.929
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "12498c1bc26eb4722d901d21e070bd6d1f33629af79c4c8e78a360bd48220187",
+          "input_image": "media/nyc/inputs/sol-043.webp",
+          "commanded_distance_m": 1.000000206952477,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "f35ecd0f83b6591e808c692f24fabbb3ea9cd870b85ff62a477dc865048c3bbb",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-043-input-00.webp",
+                "source_sha256": "f35ecd0f83b6591e808c692f24fabbb3ea9cd870b85ff62a477dc865048c3bbb",
+                "pixel_sha256": "f495375c047b59790fab9441f7024d35a5df524d33bb9456f14d2efae8888de9",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-043-output-00.webp",
+                "source_sha256": "2ea149a167bc826b83ea5a3bf5ff0d621ac96b3bd40b7ab76e5a7671c2e7ca64",
+                "pixel_sha256": "b2295ccddbfa791431105fdb3c0538afe573ac4f1ca717b80d8f691e793b63a0",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 44,
+          "source_decision": 45,
+          "action": {
+            "type": "move_to",
+            "param": "3"
+          },
+          "start_sim_seconds": 348.11,
+          "end_sim_seconds": 355.01,
+          "inference_exposure_seconds": 5.9,
+          "response_latency_seconds": 5.096955060958862,
+          "position_cm": [
+            20879.859,
+            1392.929
+          ],
+          "post_action_position_cm": [
+            20779.857,
+            1566.133
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "74cdf949b54f19fb130427b520b401254e92bcb8575ed61587de5a0e363ea204",
+          "input_image": "media/nyc/inputs/sol-044.webp",
+          "commanded_distance_m": 1.9999997744802391,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "a96c2d16080d2ab02cab28c11b73735a9375a6c016e1d61eba982d8026f32bed",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-044-input-00.webp",
+                "source_sha256": "a96c2d16080d2ab02cab28c11b73735a9375a6c016e1d61eba982d8026f32bed",
+                "pixel_sha256": "a9ed473bc282131e7e01e0aa03201330f27f73f6485199675adee97fd864d925",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-044-output-00.webp",
+                "source_sha256": "384caa463e702b0143a9f8b5ca5ce0afd9da269ff983f6e68baf142ecead8659",
+                "pixel_sha256": "12628ee51f1272f4c80c685385cdbed6051694b6a66c3bcca170510426f5f56b",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 45,
+          "source_decision": 46,
+          "action": {
+            "type": "move_to",
+            "param": "4"
+          },
+          "start_sim_seconds": 355.01,
+          "end_sim_seconds": 361.49,
+          "inference_exposure_seconds": 5.48,
+          "response_latency_seconds": 4.574983835220337,
+          "position_cm": [
+            20779.857,
+            1566.133
+          ],
+          "post_action_position_cm": [
+            20831.619,
+            1759.319
+          ],
+          "yaw_degrees": 120.00072778082739,
+          "post_action_yaw_degrees": 120.00072778082739,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "4881f6bc12907890e6abb0d0f6174f36d7d445832778b3b3358b9a1d77f32497",
+          "input_image": "media/nyc/inputs/sol-045.webp",
+          "commanded_distance_m": 1.9999998962899956,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "2f95c082c175f07b3c3825ad2dc5f203ebab98b3765ed575471842b1c88bdd7d",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-045-input-00.webp",
+                "source_sha256": "2f95c082c175f07b3c3825ad2dc5f203ebab98b3765ed575471842b1c88bdd7d",
+                "pixel_sha256": "02e77b7323f680293f2523f8f7505751b25ccf7897d029d303e89e0d98b1b90b",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-045-output-00.webp",
+                "source_sha256": "3d6afee3372c0db7b668382072da1721c7f7bb6af23bdca4755f4996d262e8c5",
+                "pixel_sha256": "c78cab706a57111fb78437bc98fb7c308923ed9fa45977ffbe229b84c873bc25",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 46,
+          "source_decision": 47,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 361.49,
+          "end_sim_seconds": 367.90000000000003,
+          "inference_exposure_seconds": 5.41,
+          "response_latency_seconds": 4.522107124328613,
+          "position_cm": [
+            20831.619,
+            1759.319
+          ],
+          "post_action_position_cm": [
+            20883.381,
+            1952.505
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "12276c0444cd4efdea3a62863273115120c00c3275afdfc9e9381521c92010ce",
+          "input_image": "media/nyc/inputs/sol-046.webp",
+          "commanded_distance_m": 2.0000001550972453,
+          "recorded_feedback": "While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "540f52543b725e6ac7542539416782afcb169c8f52b848e1d0a4b66999f2ce0a",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-046-input-00.webp",
+                "source_sha256": "540f52543b725e6ac7542539416782afcb169c8f52b848e1d0a4b66999f2ce0a",
+                "pixel_sha256": "68af0b13029482215bd19659ab580003633f394b50e3764488a25b1df301c29d",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-046-output-00.webp",
+                "source_sha256": "3ff8e4a891fb8d55414a57d8cd9de50425abe7a412c5ddd805c5f1b840299b5c",
+                "pixel_sha256": "222b86923c6cc61f7f4a6f4fc20729414432e594838a364a20819fe7b52c499c",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 47,
+          "source_decision": 48,
+          "action": {
+            "type": "turn_around",
+            "param": "L30"
+          },
+          "start_sim_seconds": 367.90000000000003,
+          "end_sim_seconds": 376.11,
+          "inference_exposure_seconds": 7.21,
+          "response_latency_seconds": 6.476133823394775,
+          "position_cm": [
+            20883.381,
+            1952.505
+          ],
+          "post_action_position_cm": [
+            20883.381,
+            1952.505
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 105.001,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "91489193fa44764b9b53142be1870a8fe597a0a63cd983237114bef534e84a0b",
+          "input_image": "media/nyc/inputs/sol-047.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "3c5b99e26a9a151772f11c66ea5c28fe21505b999f2e65bc5b3c466e66a112b3",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-047-input-00.webp",
+                "source_sha256": "3c5b99e26a9a151772f11c66ea5c28fe21505b999f2e65bc5b3c466e66a112b3",
+                "pixel_sha256": "f8b887f61504c13e94eb6efb027b55eed8fe691ca0fba127f90fafa12e60faa0",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-047-output-00.webp",
+                "source_sha256": "fc13134ad6127096730f28316d16075cac294c28ed21952895286ddc484707c3",
+                "pixel_sha256": "e03dbeb8f2b0d6c3d031efcc7ae8166a342982192c5a720eaf954fe08c417c63",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 48,
+          "source_decision": 49,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 376.11,
+          "end_sim_seconds": 380.28000000000003,
+          "inference_exposure_seconds": 3.67,
+          "response_latency_seconds": 2.863633394241333,
+          "position_cm": [
+            20883.381,
+            1952.505
+          ],
+          "post_action_position_cm": [
+            20857.5,
+            2049.098
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "b978543d757e65c00e6fac4f42cf1903a9ac99d7922eeb6af20628e4c90d3014",
+          "input_image": "media/nyc/inputs/sol-048.webp",
+          "commanded_distance_m": 1.0000002069524863,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "3fc91d26ea0701c698f9ddd80d3e3d7d549e5b1600b9d78055387b29517dc84d",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-048-input-00.webp",
+                "source_sha256": "3fc91d26ea0701c698f9ddd80d3e3d7d549e5b1600b9d78055387b29517dc84d",
+                "pixel_sha256": "c730933e77bcca59946a8f82c12dfa31105a0de1cb8ff27b3adc33b9191e61bc",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-048-output-00.webp",
+                "source_sha256": "08acc3e757885a18800b8495b31c6f3724dc1326a4381afe1b3cdb5f7a3489e0",
+                "pixel_sha256": "8790491673d22170d1b6be169f91cd35b6b0d3c6a0792676bf4cc44088b61704",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 49,
+          "source_decision": 50,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 380.28000000000003,
+          "end_sim_seconds": 384.75000000000006,
+          "inference_exposure_seconds": 3.97,
+          "response_latency_seconds": 3.0876212120056152,
+          "position_cm": [
+            20857.5,
+            2049.098
+          ],
+          "post_action_position_cm": [
+            20831.619,
+            2145.691
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "68acbfe3d744e69ea9435721e85a7de6f559e6b4251ca895a9bcc29dd76bfb56",
+          "input_image": "media/nyc/inputs/sol-049.webp",
+          "commanded_distance_m": 1.000000206952477,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "8fe713ac2f3f32b483cf7ad747bac4f05bd994e7a7cd0dced7a588e3f0c87bc7",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-049-input-00.webp",
+                "source_sha256": "8fe713ac2f3f32b483cf7ad747bac4f05bd994e7a7cd0dced7a588e3f0c87bc7",
+                "pixel_sha256": "8cd7b1dd06cb0908e699fecfdaef03cb92fa203460bc5ddd7c61b030ee9d5d76",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-049-output-00.webp",
+                "source_sha256": "58f9655785dbf71d2685281a825c25ccf814a2dcea7b8d6a888d50713c074c99",
+                "pixel_sha256": "e872b8da723c76236efb02856b5eb6528e872e5e4abd32169f24e440f81393b7",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 50,
+          "source_decision": 51,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 384.75000000000006,
+          "end_sim_seconds": 390.49000000000007,
+          "inference_exposure_seconds": 5.24,
+          "response_latency_seconds": 4.405325174331665,
+          "position_cm": [
+            20831.619,
+            2145.691
+          ],
+          "post_action_position_cm": [
+            20805.738,
+            2242.284
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "be160c880280001ae802e6cab1dc9f2054807afe960b579c9affcd482359b2fe",
+          "input_image": "media/nyc/inputs/sol-050.webp",
+          "commanded_distance_m": 1.000000206952477,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "b88ed40ad85bcf9a8e182e2f2ef4701b447b6307bcbfa4e30110a875619c0d43",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-050-input-00.webp",
+                "source_sha256": "b88ed40ad85bcf9a8e182e2f2ef4701b447b6307bcbfa4e30110a875619c0d43",
+                "pixel_sha256": "4d46933632b709550ad4c4cfd8f1ba3e061576b378ae1f9d87ba1627811e3879",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-050-output-00.webp",
+                "source_sha256": "ee76eb23e3ec722dac1a389c1c9d6ba8b11bedc1c5cac26d78a70e9e10cddf5f",
+                "pixel_sha256": "a0a32e538833c5cae577e1eca27648c9ed83e0bc0ce980e29ba8f935fb5f1731",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 51,
+          "source_decision": 52,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 390.49000000000007,
+          "end_sim_seconds": 398.8400000000001,
+          "inference_exposure_seconds": 7.35,
+          "response_latency_seconds": 6.600595951080322,
+          "position_cm": [
+            20805.738,
+            2242.284
+          ],
+          "post_action_position_cm": [
+            20753.977,
+            2435.47
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "e5032dffcae05ee93957ac5225684e3437d626a4c986df98c0493c80208ffcf2",
+          "input_image": "media/nyc/inputs/sol-051.webp",
+          "commanded_distance_m": 2.0000001550972426,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "02f96f896f81337af47d7d698c050ca9557cf3d7cb40311964980ea2b96e3c35",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-051-input-00.webp",
+                "source_sha256": "02f96f896f81337af47d7d698c050ca9557cf3d7cb40311964980ea2b96e3c35",
+                "pixel_sha256": "aead92511da4faec9981e6efc12d8755900fdee94bc5d73388807c6bec71aa01",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-051-output-00.webp",
+                "source_sha256": "29097cffd318d466a1d40185dfa420c27ea5e79701d6572a01e987eff1f3d70d",
+                "pixel_sha256": "e0466580a083ef6e344591af53f968ad5ab0e5f6af800f154148d6fe8f2cddbd",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 52,
+          "source_decision": 53,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 398.8400000000001,
+          "end_sim_seconds": 404.7800000000001,
+          "inference_exposure_seconds": 4.94,
+          "response_latency_seconds": 4.108905792236328,
+          "position_cm": [
+            20753.977,
+            2435.47
+          ],
+          "post_action_position_cm": [
+            20702.215,
+            2628.656
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "c9d414ffe5b3c7c358d52cd241080bada39b6a1023dde889057999b28fcc5e74",
+          "input_image": "media/nyc/inputs/sol-052.webp",
+          "commanded_distance_m": 2.0000001550972475,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "d62e6208bf0ad8d4c4c4f51fde1a08d6a4e0f72a8329b3ba0c76f1c643ec5b46",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-052-input-00.webp",
+                "source_sha256": "d62e6208bf0ad8d4c4c4f51fde1a08d6a4e0f72a8329b3ba0c76f1c643ec5b46",
+                "pixel_sha256": "42560ab466e9c12cb45c9cdbb47580984ca3b6ecd5508f90d481f03825e40913",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-052-output-00.webp",
+                "source_sha256": "c003985dfa377121594b104e1ddba8d9e01b13e7e001d19fe5616d3f7bb7b05d",
+                "pixel_sha256": "653f051fc7f25a8649249dfc995ce98dbfdefa5abb9a97acc4f1033c53fe47b6",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 53,
+          "source_decision": 54,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 404.7800000000001,
+          "end_sim_seconds": 409.6000000000001,
+          "inference_exposure_seconds": 3.82,
+          "response_latency_seconds": 2.9455087184906006,
+          "position_cm": [
+            20702.215,
+            2628.656
+          ],
+          "post_action_position_cm": [
+            20650.453,
+            2821.842
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "6cd8a91c38a3be31e801ef5df8cbc3b4f6f782820a44c370a3b62eae2e2b3998",
+          "input_image": "media/nyc/inputs/sol-053.webp",
+          "commanded_distance_m": 2.0000001550972475,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "8af7c0feb51b4d0c855ac3b178c6ecf277dfe319cc714254f453ae2910f2d812",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-053-input-00.webp",
+                "source_sha256": "8af7c0feb51b4d0c855ac3b178c6ecf277dfe319cc714254f453ae2910f2d812",
+                "pixel_sha256": "421d3d4acd71e04324be5670e84f5b8545b47eb2b0a090e7ebcc5deeba44bfb6",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-053-output-00.webp",
+                "source_sha256": "d5c4f471a3af4de9810a836fa6476852963f92ed6afdb38494b4b3201ac32443",
+                "pixel_sha256": "6d9a48307f7ccacfd5d4c2a877466caf34574ba941547374a472ca95a7cbd523",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 54,
+          "source_decision": 55,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 409.6000000000001,
+          "end_sim_seconds": 413.87000000000006,
+          "inference_exposure_seconds": 3.27,
+          "response_latency_seconds": 2.4533119201660156,
+          "position_cm": [
+            20650.453,
+            2821.842
+          ],
+          "post_action_position_cm": [
+            20598.691,
+            3015.028
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "5eee7a616f47f0ebe8de2d1eae07aae83ba6121214864e4f2d69dee4a35a5869",
+          "input_image": "media/nyc/inputs/sol-054.webp",
+          "commanded_distance_m": 2.0000001550972426,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "f34c2c7868e59ba14fc8a0ff5b99bfca9fddf3816988997b68305ddb6c61a631",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-054-input-00.webp",
+                "source_sha256": "f34c2c7868e59ba14fc8a0ff5b99bfca9fddf3816988997b68305ddb6c61a631",
+                "pixel_sha256": "f78ce4afc6cde2d5838c7d2e8b8f154f6082cf565043338a3d6cbecf07c75270",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-054-output-00.webp",
+                "source_sha256": "812a20803ddfc4ebbeac957494a24b7c6c393493a5dabe61b020216c1b48c239",
+                "pixel_sha256": "684f4ce925d385807de692d5026d8bdd69a6c9cbbbd61905765188040681b621",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 55,
+          "source_decision": 56,
+          "action": {
+            "type": "wait",
+            "param": "1"
+          },
+          "start_sim_seconds": 413.87000000000006,
+          "end_sim_seconds": 423.20000000000005,
+          "inference_exposure_seconds": 8.33,
+          "response_latency_seconds": 7.479634046554565,
+          "position_cm": [
+            20598.691,
+            3015.028
+          ],
+          "post_action_position_cm": [
+            20598.691,
+            3015.028
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "939fe8ec4552a7efaa3dbabb937abd41b59ff477313c16ae1ddf7e6566e2e95f",
+          "input_image": "media/nyc/inputs/sol-055.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "87d4e829767190e9cb5449288b32c061cc5195e6296c2c182da014d840145097",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-055-input-00.webp",
+                "source_sha256": "87d4e829767190e9cb5449288b32c061cc5195e6296c2c182da014d840145097",
+                "pixel_sha256": "a236990b61b7cb8d1218fe79b8308cd02f366cbe9e5d34f23f62e2f57e539602",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-055-output-00.webp",
+                "source_sha256": "a5583e557e3712c682eec5c53cac17e5bcccd919211c7a8866b83bf9666e6cbb",
+                "pixel_sha256": "1b149ae339fa4602ac58fd42e9e2ca3c9d58ce9d98536e872a297c407efeb20c",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 56,
+          "source_decision": 57,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 423.20000000000005,
+          "end_sim_seconds": 428.26000000000005,
+          "inference_exposure_seconds": 4.56,
+          "response_latency_seconds": 3.6792447566986084,
+          "position_cm": [
+            20598.691,
+            3015.028
+          ],
+          "post_action_position_cm": [
+            20572.811,
+            3111.621
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "99d471cbc21af2c95ae7ab529cb4d8a8101b3fa8b5539fc21a6f3acc82b33828",
+          "input_image": "media/nyc/inputs/sol-056.webp",
+          "commanded_distance_m": 1.000000206952477,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "514154bf64a45323d6ee4212ff65755a468bf591f6e892c54eb57e4a99471163",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-056-input-00.webp",
+                "source_sha256": "514154bf64a45323d6ee4212ff65755a468bf591f6e892c54eb57e4a99471163",
+                "pixel_sha256": "16b015009c964c06b0744970bd412ca712dc7c23a5d7e47c6f07d91ad44da786",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-056-output-00.webp",
+                "source_sha256": "2809660702b4a42e08647913ed098af6d4fc10b797549f40262c5865806d967e",
+                "pixel_sha256": "6c41b9067f7e5d9367afac8b71b33b31f60f0617779022e1865e34830474b08b",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 57,
+          "source_decision": 58,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 428.26000000000005,
+          "end_sim_seconds": 435.14000000000004,
+          "inference_exposure_seconds": 6.38,
+          "response_latency_seconds": 5.512955665588379,
+          "position_cm": [
+            20572.811,
+            3111.621
+          ],
+          "post_action_position_cm": [
+            20546.93,
+            3208.214
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "e11ddbe75586c39e46d30bf9e9e8d02ffc86d163f551fe8916f967fdee8c7984",
+          "input_image": "media/nyc/inputs/sol-057.webp",
+          "commanded_distance_m": 1.0000002069524863,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "f57a05206608071d1f30e546c7a29995d7d7ee989cd84017e5ed9c55bd77fff7",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-057-input-00.webp",
+                "source_sha256": "f57a05206608071d1f30e546c7a29995d7d7ee989cd84017e5ed9c55bd77fff7",
+                "pixel_sha256": "5ebb662c49358fd38b202d59d7b9574923e59f4da487ff712cf0484d65835b70",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-057-output-00.webp",
+                "source_sha256": "985ce8f8fe0e271813afba20ba9599be83ed753ebc826df42f7523de17bc52ed",
+                "pixel_sha256": "9344b5225ac8316ceedc4be3b2daf22e2b8bb0e8e5600a94c68a41cd323db1f7",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 58,
+          "source_decision": 59,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 435.14000000000004,
+          "end_sim_seconds": 442.04,
+          "inference_exposure_seconds": 6.4,
+          "response_latency_seconds": 5.5003392696380615,
+          "position_cm": [
+            20546.93,
+            3208.214
+          ],
+          "post_action_position_cm": [
+            20521.049,
+            3304.807
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "391aca09a465c166a9e00cc2e67aad18155d9275af63f77dc96607e1f89bccb2",
+          "input_image": "media/nyc/inputs/sol-058.webp",
+          "commanded_distance_m": 1.000000206952477,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "dfcca23f8014be8dc10a02f1a60e72cc10e88bb71737cf6efcd94602a6c55315",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-058-input-00.webp",
+                "source_sha256": "dfcca23f8014be8dc10a02f1a60e72cc10e88bb71737cf6efcd94602a6c55315",
+                "pixel_sha256": "06e27f4221402fa77905b79b3df60f212f6b104b6b3246c63a5e8c6ea7711046",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-058-output-00.webp",
+                "source_sha256": "5ceb5a3193eb2cf730aec58527ed248026f3d9ca2f177928cd2ef2002ad7f2d5",
+                "pixel_sha256": "93e9af2e446d009357f8aa2eba1146b25a603ffcfe23e67ed40e38add00e309c",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 59,
+          "source_decision": 60,
+          "action": {
+            "type": "turn_around",
+            "param": "R30"
+          },
+          "start_sim_seconds": 442.04,
+          "end_sim_seconds": 448.76000000000005,
+          "inference_exposure_seconds": 5.72,
+          "response_latency_seconds": 4.753471374511719,
+          "position_cm": [
+            20521.049,
+            3304.807
+          ],
+          "post_action_position_cm": [
+            20521.049,
+            3304.807
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 74.999,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "453d6ffd6b17e8969a520c7b18479817d01b04d8a427488e2ee90a3522b49b9a",
+          "input_image": "media/nyc/inputs/sol-059.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "f0835c285b81f99e9807cb17ed2aa05e933ee49a307064bd28d013f4166749e4",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-059-input-00.webp",
+                "source_sha256": "f0835c285b81f99e9807cb17ed2aa05e933ee49a307064bd28d013f4166749e4",
+                "pixel_sha256": "b18a47c01670e21528cc6bbd3266798da4a3117d17227693c8f0f29810ad72fe",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-059-output-00.webp",
+                "source_sha256": "c60501b3322d5c8e6e2d2132a27ab81ee8d9453b2ba0c0705747b7b33f09529d",
+                "pixel_sha256": "c5ab5ef0070ca74b8acd8eabf92be643c26b0553205520513b16edea70ee822f",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 60,
+          "source_decision": 61,
+          "action": {
+            "type": "wait",
+            "param": "1"
+          },
+          "start_sim_seconds": 448.76000000000005,
+          "end_sim_seconds": 458.7300000000001,
+          "inference_exposure_seconds": 8.97,
+          "response_latency_seconds": 8.120776414871216,
+          "position_cm": [
+            20521.049,
+            3304.807
+          ],
+          "post_action_position_cm": [
+            20521.049,
+            3304.807
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "74de0c882ea51befa9bb71986a9a0c79f86d5ce30d10a4dc991e4bd329a56386",
+          "input_image": "media/nyc/inputs/sol-060.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "29593a2b10147e0da339cfc503833fc1a405acdca8ec7d25b07152f034d422c5",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-060-input-00.webp",
+                "source_sha256": "29593a2b10147e0da339cfc503833fc1a405acdca8ec7d25b07152f034d422c5",
+                "pixel_sha256": "bebda0217f6eb6eea16d34dc9573af4bf31984830475c18aab669b779deadf0f",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-060-output-00.webp",
+                "source_sha256": "737a4ac724755f850f2cfef09c909e669e0e332ce07f93539a6b8b3ff301d94e",
+                "pixel_sha256": "4eac9f42f61974c1478b54b12c754ff0d3a807127b961b6717eda03473434eae",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 61,
+          "source_decision": 62,
+          "action": {
+            "type": "move_to",
+            "param": "3"
+          },
+          "start_sim_seconds": 458.7300000000001,
+          "end_sim_seconds": 464.99000000000007,
+          "inference_exposure_seconds": 5.26,
+          "response_latency_seconds": 4.4098310470581055,
+          "position_cm": [
+            20521.049,
+            3304.807
+          ],
+          "post_action_position_cm": [
+            20517.535,
+            3304.698
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "f0ae670c513ee0376f7b7ec0e73691bd6f6a1af9db9575f68f8b243690d7b74a",
+          "input_image": "media/nyc/inputs/sol-061.webp",
+          "commanded_distance_m": 1.9999997744802431,
+          "recorded_feedback": "You collided with a human. While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "3d1fc18ae927131269d2b7ba08dab46d411208299f0cbd57cc5a381384eacaf7",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-061-input-00.webp",
+                "source_sha256": "3d1fc18ae927131269d2b7ba08dab46d411208299f0cbd57cc5a381384eacaf7",
+                "pixel_sha256": "0aea5664c8e8a5f583b17034ff22baf7ea5340c3acf02df02bd100ecd40dcd58",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-061-output-00.webp",
+                "source_sha256": "193dd0756c4845dbbf5c38e88de183c11e0975a76024ec3b137e615ee90cf921",
+                "pixel_sha256": "fa8f23cc2eed61ba8b6a7930f59645ebf64cb8ef758f964464c71c818127e0e0",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 62,
+          "source_decision": 63,
+          "action": {
+            "type": "turn_around",
+            "param": "R60"
+          },
+          "start_sim_seconds": 464.99000000000007,
+          "end_sim_seconds": 473.4200000000001,
+          "inference_exposure_seconds": 7.43,
+          "response_latency_seconds": 6.520716905593872,
+          "position_cm": [
+            20517.535,
+            3304.698
+          ],
+          "post_action_position_cm": [
+            20517.535,
+            3304.698
+          ],
+          "yaw_degrees": 116.0013362947823,
+          "post_action_yaw_degrees": 55.999,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 1,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "db622f290f359347acf6816bdb1570f0f2b57d3ceee8701e6a6ecc86860293b7",
+          "input_image": "media/nyc/inputs/sol-062.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "While you were deciding, you collided with an object.",
+          "input_sha256": "713e53c9ade6ab834b1ab5bf6a387ea59ae142dbb11816d728969a877cbfffce",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-062-input-00.webp",
+                "source_sha256": "713e53c9ade6ab834b1ab5bf6a387ea59ae142dbb11816d728969a877cbfffce",
+                "pixel_sha256": "138f23ef0a22964e94a5d7fc3ce86b3509fdd9645a0a6d5608d24f8b7c6bdaa3",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-062-output-00.webp",
+                "source_sha256": "49bcf683158e4da280c015bb1fae35c9141720d1562fa17af0201685e8765271",
+                "pixel_sha256": "f90b6e8ffa4d4f7b83add8f8ce5843c9b46e44fb326ef3330005b8d97dbf8b2f",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 63,
+          "source_decision": 64,
+          "action": {
+            "type": "move_to",
+            "param": "3"
+          },
+          "start_sim_seconds": 473.4200000000001,
+          "end_sim_seconds": 489.20000000000005,
+          "inference_exposure_seconds": 8.78,
+          "response_latency_seconds": 7.9248597621917725,
+          "position_cm": [
+            20517.535,
+            3304.698
+          ],
+          "post_action_position_cm": [
+            20517.535,
+            3304.698
+          ],
+          "yaw_degrees": 55.998459068596915,
+          "post_action_yaw_degrees": 55.998459068596915,
+          "active_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "6387e01ef33d911a516e8e192ebb7fa4d903bad096f33a9ba66ddf317a3f8ef5",
+          "input_image": "media/nyc/inputs/sol-063.webp",
+          "commanded_distance_m": 2.0000003273624762,
+          "recorded_feedback": "You collided with a human. While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "f3de36214a30e5513be5f11cace9e59fac61c49e303cce8264f24826f587e95c",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-063-input-00.webp",
+                "source_sha256": "f3de36214a30e5513be5f11cace9e59fac61c49e303cce8264f24826f587e95c",
+                "pixel_sha256": "a512a400c68e7a2661e377ed0c33b4e3f6c97c15912713af3975d1481dff31d0",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-063-output-00.webp",
+                "source_sha256": "f6036f25dee044ecdeb897afa2bd922b929eb9b78c9bfa077d1acfece5419b05",
+                "pixel_sha256": "a95657f1c3c4ee5db227f8c287e33de73bedaf077e402da377de15c46574de4f",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 64,
+          "source_decision": 65,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 489.20000000000005,
+          "end_sim_seconds": 499.90000000000003,
+          "inference_exposure_seconds": 10.2,
+          "response_latency_seconds": 9.188127756118774,
+          "position_cm": [
+            20517.535,
+            3304.698
+          ],
+          "post_action_position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "yaw_degrees": 98.00127153677316,
+          "post_action_yaw_degrees": 98.00127153677316,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 3,
+            "object": 1,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "9c1e5765d040ed684ae74d06fc2c51beb0be97351802f4a3c1856522a3080de8",
+          "input_image": "media/nyc/inputs/sol-064.webp",
+          "commanded_distance_m": 1.0000000091249992,
+          "recorded_feedback": "While you were deciding, you collided with a pedestrian and an object.",
+          "input_sha256": "a527f84e8d0777599df8d2c212ebb21fd0cfe9210f7c807eeb8a76bb94fcab92",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-064-input-00.webp",
+                "source_sha256": "a527f84e8d0777599df8d2c212ebb21fd0cfe9210f7c807eeb8a76bb94fcab92",
+                "pixel_sha256": "3df5fcb0349c6816f5316af54458fa9d7c4652f52d26b57034f5c91fc649e346",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-064-output-00.webp",
+                "source_sha256": "cbb4f039eaac797e360b96260c13f363a7824b7e55ec0d2aebbfe59133b1c056",
+                "pixel_sha256": "a5e633043d53139032ac9cbc8f0482640433c0147ce97a3e27a3efe9dfbdbc3c",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 65,
+          "source_decision": 66,
+          "action": {
+            "type": "turn_around",
+            "param": "R30"
+          },
+          "start_sim_seconds": 499.90000000000003,
+          "end_sim_seconds": 506.25000000000006,
+          "inference_exposure_seconds": 5.35,
+          "response_latency_seconds": 4.5184326171875,
+          "position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "post_action_position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "yaw_degrees": 98.00127153677316,
+          "post_action_yaw_degrees": 68.001,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "c7b2571b29805942f041e9e913cc95e1b3f886a6940311c8f5da2896d9c724e4",
+          "input_image": "media/nyc/inputs/sol-065.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "9b1797d96a6d94163bfb215f1e13fde88cdbbef618f7e684cabf615547717584",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-065-input-00.webp",
+                "source_sha256": "9b1797d96a6d94163bfb215f1e13fde88cdbbef618f7e684cabf615547717584",
+                "pixel_sha256": "0337075280d406b80bc6e22f84aa9193a5824e4debd191132f800c46316ed49a",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-065-output-00.webp",
+                "source_sha256": "0170fcdade834fb0360ca197d26650e0792ec8790e0d44a61a12ba94f258c5f0",
+                "pixel_sha256": "e49f4273fca92d83b668780e20ea5b58e19ccb8230a66722c55f691535d8a751",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 66,
+          "source_decision": 67,
+          "action": {
+            "type": "move_to",
+            "param": "3"
+          },
+          "start_sim_seconds": 506.25000000000006,
+          "end_sim_seconds": 518.25,
+          "inference_exposure_seconds": 5.0,
+          "response_latency_seconds": 3.9680426120758057,
+          "position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "post_action_position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "yaw_degrees": 68.00069679359844,
+          "post_action_yaw_degrees": 68.00069679359844,
+          "active_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "ecd3620d9689259a25a05354ea58115e72f2169d1ba5bba1c5abf7945190d5be",
+          "input_image": "media/nyc/inputs/sol-066.webp",
+          "commanded_distance_m": 1.9999999513062603,
+          "recorded_feedback": "You collided with a human. While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "ec99d4c6110876e164ab279eabd78e8f46bd564308e744ed314757b2654ab52b",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-066-input-00.webp",
+                "source_sha256": "ec99d4c6110876e164ab279eabd78e8f46bd564308e744ed314757b2654ab52b",
+                "pixel_sha256": "54ffd518503f8d5ee27acea9dfe6075712629be48872731cdecbe0882fe4d96d",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-066-output-00.webp",
+                "source_sha256": "321db9b62f51ad0fb7fa62a35660fedaeff2b5858ad2c51e8318fbc179a47b3d",
+                "pixel_sha256": "0eb363d39bf8ef764b63d2cd0406280e1f50404bd1f6e76309516f39121e29e5",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 67,
+          "source_decision": 68,
+          "action": {
+            "type": "turn_around",
+            "param": "R60"
+          },
+          "start_sim_seconds": 518.25,
+          "end_sim_seconds": 525.25,
+          "inference_exposure_seconds": 6.0,
+          "response_latency_seconds": 5.061206340789795,
+          "position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "post_action_position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "yaw_degrees": 109.0020717257803,
+          "post_action_yaw_degrees": 49.001,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "8a2af2a8655c860b8d21234cab382410c07dbbccbdc4940531c0f685980be46c",
+          "input_image": "media/nyc/inputs/sol-067.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "00fced5998d405acbc3e61dd685065c373108f04890e8713f3e8e8e7d172d318",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-067-input-00.webp",
+                "source_sha256": "00fced5998d405acbc3e61dd685065c373108f04890e8713f3e8e8e7d172d318",
+                "pixel_sha256": "0e875ebbf813569cae0ee46054057c8808776bb08b037375cde5dd69e6d3de8b",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-067-output-00.webp",
+                "source_sha256": "3da5316db8018c26ea89132e4a411f7785a76dd291ded222c814630bf4a38590",
+                "pixel_sha256": "52b6eb1fbbd47791d49224d15be69b10e5b5d3ff0b953643d1434df29153016f",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 68,
+          "source_decision": 69,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 525.25,
+          "end_sim_seconds": 530.73,
+          "inference_exposure_seconds": 4.98,
+          "response_latency_seconds": 4.101319074630737,
+          "position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "post_action_position_cm": [
+            20569.219,
+            3479.198
+          ],
+          "yaw_degrees": 49.00219249815081,
+          "post_action_yaw_degrees": 49.00219249815081,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "fff42f89f4500a12b94e6dc085715b4db602c8c9a3b7ddb2fa11eec9f0e53b56",
+          "input_image": "media/nyc/inputs/sol-068.webp",
+          "commanded_distance_m": 1.000000140562485,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "1d534bfd061453917636278159b113ba882f7de076de6f24c3467f9f79aa923c",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-068-input-00.webp",
+                "source_sha256": "1d534bfd061453917636278159b113ba882f7de076de6f24c3467f9f79aa923c",
+                "pixel_sha256": "162a19116bd8188a47187f382d511694fbc1178df46bf57186db3d530379f904",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-068-output-00.webp",
+                "source_sha256": "cd2c133ec9cfba09c316d93db7c92660eae5b93475ad91aded3baca6634137f1",
+                "pixel_sha256": "07129f8b64fa189fd6a050af8f6bb3fb0ab3c392820e54645fa8c960c5483272",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "source_step": 69,
+          "source_decision": 70,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 530.73,
+          "end_sim_seconds": 538.0600000000001,
+          "inference_exposure_seconds": 6.83,
+          "response_latency_seconds": 5.6920623779296875,
+          "position_cm": [
+            20569.219,
+            3479.198
+          ],
+          "post_action_position_cm": [
+            20634.822,
+            3554.671
+          ],
+          "yaw_degrees": 49.00219249815081,
+          "post_action_yaw_degrees": 49.00219249815081,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "487f00cae2b8c5a46e8bf2bb8748427bb107e1410c64a2fde55b7c8ab3112dcf",
+          "input_image": "media/nyc/inputs/sol-069.webp",
+          "commanded_distance_m": 1.000000140562485,
+          "recorded_feedback": "You have reached the final destination. While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "fdb55a4bd2aa6510b995b76b760682f6276ab94dc6e3794991b56944f40e600d",
+          "recorded_frames": {
+            "input": [
+              {
+                "path": "media/recorded/frames/sol-069-input-00.webp",
+                "source_sha256": "fdb55a4bd2aa6510b995b76b760682f6276ab94dc6e3794991b56944f40e600d",
+                "pixel_sha256": "3b8ce9700440f5a5259903ffc378f9ce17484c144cf4374fba883d5d672f2056",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ],
+            "action": [],
+            "output": [
+              {
+                "path": "media/recorded/frames/sol-069-output-00.webp",
+                "source_sha256": "44642b2e13d287209f725320a771a11157612a0ee7b340e998ad612d336bd6b8",
+                "pixel_sha256": "7e9433df38175b5d9cbca9b82b504d4629a938e86e1c924226e75bf9493b4e90",
+                "size": [
+                  720,
+                  640
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "summary": {
+        "decisions": 33,
+        "active_collisions": 3,
+        "passive_collisions": 14,
+        "collisions": 17,
+        "source_duration_seconds": 252.51000000000005,
+        "video_duration_seconds": 42.08500000000001
+      }
+    }
+  },
+  "source_choreography_sha256": "d37841e645f3f704cfa6cef88a4d34b7a424c9255d06d76506680f6856e0edb6",
+  "frame_policy": "Hold the recorded input during inference. Show saved action snapshots in file order during action, with equal spacing when exact capture times are unavailable. Hold the final output on completion. No synthesized intermediate frames."
+}

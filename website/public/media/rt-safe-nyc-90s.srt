@@ -27,24 +27,24 @@ Navigate to the goal across five maps and thirty-six routes.
 Safety includes collisions, trip, oil and water hazards, and traffic-rule violations.
 
 8
-00:00:27,397 --> 00:00:29,352
+00:00:27,396 --> 00:00:29,330
 How do frontier agents perform?
 
 9
-00:00:30,083 --> 00:00:32,750
+00:00:30,051 --> 00:00:32,687
 On the same recorded route, Astra makes twelve
 
 10
-00:00:32,760 --> 00:00:34,338
+00:00:32,697 --> 00:00:34,258
 decisions with one collision.
 
 11
-00:00:35,083 --> 00:00:38,205
+00:00:34,994 --> 00:00:38,081
 Sol makes thirty-three decisions with seventeen collisions.
 
 12
-00:00:38,939 --> 00:00:41,873
-Recorded behavior, reconstructed in NYC.
+00:00:38,806 --> 00:00:41,905
+These are the original recorded observations and actions.
 
 13
 00:00:43,397 --> 00:00:46,638

@@ -1,5 +1,5 @@
 {
-  "date_utc": "2026-10-04T17:09:08.743635+00:00",
+  "date_utc": "2026-10-04T17:45:23.626790+00:00",
   "scope": "NYC website and film edition; benchmark implementation unchanged",
   "website": {
     "typescript": "passed",
@@ -140,9 +140,9 @@
       ],
       "format": {
         "duration": "90.000000",
-        "size": "30463530"
+        "size": "27405963"
       },
-      "sha256": "bb40f8517078483d97592d900dabfc0601286882d6ea7820aac6dae56812ae13",
+      "sha256": "ffd7945707503196fc3eba5e4a5c045822f2f502a9b05d802923fcce741e5fbc",
       "full_decode": "passed"
     },
     "rt-safe-nyc-90s-captioned.mp4": {
@@ -165,9 +165,9 @@
       ],
       "format": {
         "duration": "90.000000",
-        "size": "29616828"
+        "size": "26718272"
       },
-      "sha256": "e18910ef9c7f26edc12c1b8e8e8505784b817a8a143ff05646db5371e531879a",
+      "sha256": "631b13702fa7f8711a957f635e87d95f1942a2b4aeabcbd43a74271036f450ce",
       "full_decode": "passed"
     },
     "captions": {
@@ -196,10 +196,10 @@
     },
     "completed_segment_holds": {
       "astra": {
-        "completed_view_mean_absolute_pixel_change": 0.0020305555555555554
+        "completed_view_mean_absolute_pixel_change": 0.0001
       },
       "sol": {
-        "completed_view_mean_absolute_pixel_change": 0.05976666666666667
+        "completed_view_mean_absolute_pixel_change": 0.041195833333333334
       }
     },
     "hero": {
@@ -285,6 +285,12 @@
       "original_input_frames": 45,
       "command_distances": "verified",
       "collision_report_flash": "verified at 35.8 s"
+    },
+    "original_recorded_frames": {
+      "count": 95,
+      "lossless_pixel_hashes": "verified",
+      "interpolation": "none",
+      "inference": "recorded input held"
     },
     "behavior_profiles": {
       "models": 8,
@@ -378,6 +384,7 @@
     "radar_models": 8,
     "rl_ending_seconds": 6,
     "provider_logos": true,
-    "collision_column_emphasis": true
+    "collision_column_emphasis": true,
+    "comparison": "original first-person recorded snapshots"
   }
 }

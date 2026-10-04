@@ -31,7 +31,7 @@ class Clip:
         if not ok:raise RuntimeError('Video decoding failed at frame '+str(target))
         self.index=target;self.image=Image.fromarray(cv2.cvtColor(frame,cv2.COLOR_BGR2RGB));return self.image.copy()
 def footage(name,t,size=(1920,1080)):
-    if name not in clips:clips[name]=Clip(MEDIA/(name+'.mp4'))
+    if name not in clips:clips[name]=Clip((ROOT/'public/media'/name[1:] if name.startswith('/') else MEDIA/name).with_suffix('.mp4'))
     return clips[name].frame(t).resize(size,Image.Resampling.LANCZOS)
 def shade(im,top=0,bottom=0):
     alpha=np.linspace(top,bottom,im.height).astype(np.uint8)
@@ -66,7 +66,7 @@ def examples(s,t):
     # Two chronological excerpts, followed by the full-segment outcomes.
     source=t if t<6 else 33+(t-6) if t<12 else 44.05
     im=Image.new('RGB',(1920,1080),v.INK)
-    for i,name in enumerate(('astra','sol')):im.paste(footage(name,source,(960,1000)),(i*960,0))
+    for i,name in enumerate(('/recorded/astra','/recorded/sol')):im.paste(footage(name,source,(960,1000)),(i*960,0))
     v.line(im,[(959,0),(959,1000)],v.WHITE,3)
     if 6<=t<8 or t>=12:
         label='LATER IN THE SAME RUN' if t<12 else 'FULL SEGMENT OUTCOMES'

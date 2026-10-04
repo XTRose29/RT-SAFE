@@ -7,7 +7,7 @@ n=importlib.util.module_from_spec(spec);spec.loader.exec_module(n)
 n.OUT=ROOT/'video/nyc-90s';n.AUDIO=n.OUT/'audio';n.AUDIO.mkdir(parents=True,exist_ok=True)
 # Changed scripts invalidate their own cached voice and word timings.
 overrides={
- 'examples':(16,'HOW DO FRONTIER AGENTS PERFORM?', 'How do frontier agents perform? On the same recorded route, Astra makes twelve decisions with one collision. Sol makes thirty-three decisions with seventeen collisions. Recorded behavior, reconstructed in NYC.'),
+ 'examples':(16,'HOW DO FRONTIER AGENTS PERFORM?', 'How do frontier agents perform? On the same recorded route, Astra makes twelve decisions with one collision. Sol makes thirty-three decisions with seventeen collisions. These are the original recorded observations and actions.'),
  'behavior':(14,'EIGHT MODELS: PERFORMANCE AND BEHAVIOR', 'Sonnet records the fewest collisions; Grok, the most. Inkling favors longer moves. Sol turns and waits most. Response time and action choices both shape behavior.'),
  'learning':(6,'AN ENVIRONMENT FOR LEARNING', 'R T Safe supports reinforcement learning. Reward design shapes safety.'),
 }

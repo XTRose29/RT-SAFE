@@ -34,6 +34,7 @@ function SynchronizedViews({ comparison = false }: { comparison?: boolean }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const duration = comparison ? 44.1 : 11;
+  const clipMedia = comparison ? "media/recorded/" : media;
   const stems = comparison ? ["astra", "sol"] : ["timing-static", "timing-realtime"];
   const labels = comparison ? ["GPT-6 Astra", "GPT-5.6 Sol"] : ["Static evaluation", "Real-time evaluation"];
   const pause = () => { playGeneration.current++; left.current?.pause(); right.current?.pause(); setPlaying(false); setLoading(false); };
@@ -88,9 +89,9 @@ function SynchronizedViews({ comparison = false }: { comparison?: boolean }) {
     <div className="nyc-pair-grid">
       {stems.map((stem,i) => <article key={stem} className={`nyc-view nyc-view-${i}`}>
         <div className="nyc-view-frame"><video ref={i === 0 ? left : right} muted playsInline preload="none"
-          poster={`${media}${stem}.webp`} aria-label={`${labels[i]} in the NYC scene`}
+          poster={`${clipMedia}${stem}.webp`} aria-label={`${labels[i]} ${comparison ? "original first-person recording" : "in the NYC scene"}`}
           onLoadedMetadata={event => { const v=event.currentTarget; v.currentTime=Math.min(requestedTime.current,Math.max(0,v.duration-.001)); }}>
-          <source src={`${media}${stem}.mp4`} type="video/mp4" />
+          <source src={`${clipMedia}${stem}.mp4`} type="video/mp4" />
         </video></div>
       </article>)}
     </div>
@@ -103,9 +104,9 @@ function SynchronizedViews({ comparison = false }: { comparison?: boolean }) {
     </div>
     {error && <p role="alert" className="fineprint">{error}</p>}
     <p className="fineprint">{comparison
-      ? "Final-subgoal segment from the same RT15 task, easy difficulty, seed 0, low reasoning. Original agent positions and recorded simulation timing are reconstructed in NYC at 6× speed. The input inset shows each original recorded observation. Collision alerts appear at the report times in the source logs. This is not a new evaluation on the NYC map."
+      ? "Final-subgoal segment from the same RT15 task, easy difficulty, seed 0, low reasoning. Original first-person observations and action snapshots play on the recorded simulation timeline at 6× speed. Inputs are held during inference; the capture is not continuous video. Collision alerts appear at report times in the source logs."
       : "Native Unreal rendering of the same initial scene and commanded move. Timing and the encounter are illustrative; benchmark results are measured separately."}</p>
-    {comparison && <a className="nyc-evidence-link" href="data/nyc/task19-replay.json" download>Inspect the recorded actions and timing ↗</a>}
+    {comparison && <a className="nyc-evidence-link" href="data/recorded-replay.json" download>Inspect the recorded actions and timing ↗</a>}
   </div>;
 }
 
