@@ -3,7 +3,7 @@
 <p align="center">The world does not pause while an agent thinks.</p>
 <p align="center">
   <a href="docs/INSTALL.md">Quick start</a> ·
-  <a href="docs/WEBSITE.md">Project website</a> ·
+  <a href="https://xtrose29.github.io/RT-SAFE/">Project website</a> ·
   <a href="website/public/media/rt-safe-paper.pdf">Paper draft</a> ·
   <a href="website/public/media/rt-safe-nyc-90s.mp4">Demo film</a> ·
   <a href="#results">Results</a> ·
@@ -11,7 +11,7 @@
 </p>
 
 ![RT-SAFE — the world does not pause](website/public/og.png)
-<sub>Native Unreal Engine rendering of the Madison Square Park NYC scene. The website includes a matched reconstruction of recorded Astra and Sol behavior.</sub>
+<sub>Native Unreal Engine rendering of Madison Square Park, NYC. The website also compares original recorded Astra and Sol inputs and actions.</sub>
 
 ## Why real time matters
 
@@ -106,7 +106,7 @@ The interactive website also includes static comparisons, all-difficulty summari
 
 ## GitHub Pages
 
-The repository includes automated checks and a Pages deployment workflow. A project repository can serve `https://OWNER.github.io/RT-SAFE/`. The root address `https://rt-safe.github.io/` requires control of the `rt-safe` account or organization and its `rt-safe.github.io` repository. See [website setup](docs/WEBSITE.md).
+The public repository is [XTRose29/RT-SAFE](https://github.com/XTRose29/RT-SAFE), and the project website is [xtrose29.github.io/RT-SAFE](https://xtrose29.github.io/RT-SAFE/). Changes to the website on `main` deploy automatically through GitHub Actions. See [website setup](docs/WEBSITE.md).
 
 ## License and citation
 

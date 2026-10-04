@@ -1,6 +1,8 @@
 # Release status
 
-This is a private-first release candidate. The remote repository and Pages URL are established during publishing and are not hardcoded in the source.
+Public source release: [XTRose29/RT-SAFE](https://github.com/XTRose29/RT-SAFE).
+Project website: [xtrose29.github.io/RT-SAFE](https://xtrose29.github.io/RT-SAFE/).
+GitHub Actions builds and publishes the website from `website/`.
 
 ## Included
 
@@ -10,12 +12,11 @@ This is a private-first release candidate. The remote repository and Pages URL a
 - Fresh-repository layout, ignored runtime/output/secrets directories, CI and Pages workflows.
 - Installation, protocol, runtime requirements, media provenance and source import manifest.
 
-## Publication dependencies
+## Remaining release materials
 
-1. Authenticate GitHub and create the private repository.
-2. Select the project-wide code license and supply final author/citation metadata.
-3. Provide a compatible Unreal runtime distribution or a reproducible acquisition/build path.
-4. Supply the offline BC/RL implementation, dataset and checkpoints if that paper study is to be reproducible from this repository.
+1. Select the project-wide code license and supply final author/citation metadata.
+2. Provide a compatible Unreal runtime distribution or a reproducible acquisition/build path.
+3. Supply the offline BC/RL implementation, dataset and checkpoints if that paper study is to be reproducible from this repository.
 
 The repository can be shared as a partial source release when its scope is stated clearly. It should not be described as a complete end-to-end reproduction package while the runtime and training materials remain unavailable.
 

@@ -2,6 +2,10 @@
 
 The website is a pre-rendered React/Vite static site. No server, database, secret, or API key is needed at deployment time.
 
+Project URL: **https://xtrose29.github.io/RT-SAFE/**.
+Repository: **https://github.com/XTRose29/RT-SAFE**.
+Updates to `website/` on `main` automatically build and deploy through GitHub Actions.
+
 ## Local preview
 
 Use Node.js 22.13 or newer:
@@ -20,9 +24,10 @@ Open the address printed by Vite. `npm run dev` starts the editing server. The d
 ## Publish from this repository
 
 1. Authenticate using `gh auth login`, then run `./scripts/create-github-repo.sh` from the repository root. It creates a private `RT-SAFE` repository under your account and pushes the committed files. Pass `OWNER/NAME` to choose a different destination.
-2. In repository Settings → Pages, select **GitHub Actions** as the build source.
-3. Set the repository Actions variable `PAGES_ENABLED` to `true`.
-4. Run the **Deploy project website** workflow, or push to `main`.
+2. When ready to publish, make the repository public using Settings → General → Change repository visibility. This publishes the benchmark source, website, and included media.
+3. In repository Settings → Pages, select **GitHub Actions** as the build source.
+4. Set the repository Actions variable `PAGES_ENABLED` to `true`.
+5. Run the **Deploy project website** workflow, or push to `main`.
 
 The workflow runs type checks, data tests and the production build, sets canonical/share URLs, then deploys the static artifact. CI also builds the site while the repository is private, without publishing it.
 
@@ -37,7 +42,8 @@ Set repository variable `SITE_URL` only when using a custom domain. Configure th
 - `website/app/examples.json`: curated recorded decisions.
 - `website/public/media/rt-safe-nyc-90s.mp4`: current 90-second narrated film.
 - `website/public/media/rt-safe-nyc-90s-captioned.mp4`: conference copy with burned captions.
-- `website/public/media/rt-safe-nyc-comparison.mp4`: full selected Astra/Sol comparison at 6× simulation speed.
+- `website/public/media/rt-safe-original-comparison.mp4`: current Astra/Sol comparison using original recorded snapshots at 6× simulation speed.
+- `website/public/media/rt-safe-nyc-comparison.mp4`: earlier NYC reconstruction, retained as an alternate.
 - `website/public/media/nyc/`: native city footage, synchronized timing/replay clips, and camera gallery.
 - `website/nyc/`: native rendering scripts and curated reconstruction evidence.
 - `website/video/nyc-90s/`: narration, timing, captions, and export validation.

@@ -25,6 +25,9 @@ jobs:
           node-version: '22'
           cache: npm
           cache-dependency-path: website/package-lock.json
+      - name: Read Pages configuration
+        id: pages
+        uses: actions/configure-pages@v5
       - run: npm ci
       - run: npm run typecheck
       - run: npm test
@@ -33,10 +36,9 @@ jobs:
           REPOSITORY_URL: https://github.com/${{ github.repository }}
       - name: Set sharing URLs
         env:
-          PAGES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+          PAGES_URL: ${{ steps.pages.outputs.base_url }}
           SITE_URL: ${{ vars.SITE_URL }}
         run: node scripts/finalize-pages.mjs
-      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: website/dist-pages
