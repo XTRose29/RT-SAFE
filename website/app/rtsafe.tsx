@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import rawData from "./data.json";
-import examples from "./examples.json";
+import { NYCHero, NYCTiming, NYCComparison, NYCEnvironment, NYCSceneGallery } from "./nyc-scenes";
 
 declare const __RT_SAFE_REPOSITORY_URL__: string;
-const repositoryUrl = __RT_SAFE_REPOSITORY_URL__;
+const repositoryUrl = typeof __RT_SAFE_REPOSITORY_URL__ !== "undefined" ? __RT_SAFE_REPOSITORY_URL__ : "";
 
 type Scope = "realtime" | "static" | "average";
 type Metric = {
@@ -60,280 +60,6 @@ function SectionHead({
       <div className="section-title">
         <h2>{title}</h2>
         {description && <p>{description}</p>}
-      </div>
-    </div>
-  );
-}
-function TimingExplainer() {
-  const [t, setT] = useState(0);
-  const [playing, setPlaying] = useState(false);
-  useEffect(() => {
-    if (!playing) return;
-    const id = setInterval(
-      () =>
-        setT((v) => {
-          if (v >= 8) {
-            setPlaying(false);
-            return 8;
-          }
-          return Math.min(8, v + 0.1);
-        }),
-      100,
-    );
-    return () => clearInterval(id);
-  }, [playing]);
-  const phase = t < 1 ? "Observe" : t < 6 ? "Reason" : "Act";
-  return (
-    <div className="timing-explainer">
-      <div className="timing-header">
-        <span className="micro">THE SAME DECISION. TWO CLOCKS.</span>
-        <span className="pill">Timing illustration</span>
-      </div>
-      <div className="timing-panels">
-        {(["static", "realtime"] as const).map((mode) => {
-          const sim = mode === "realtime" ? t : Math.max(0, t - 6);
-          return (
-            <div className={"timing-panel " + mode} key={mode}>
-              <div className="timing-panel-heading">
-                <h3>
-                  {mode === "static" ? "A paused world" : "The real-time world"}
-                </h3>
-                <span>
-                  {mode === "static" && t < 6 ? "Ⅱ PAUSED" : "● EVOLVING"}
-                </span>
-              </div>
-              <div
-                className="street-diagram"
-                role="img"
-                aria-label={`${mode === "static" ? "Static" : "Real-time"} timing schematic. ${mode === "static" ? "The pedestrian stays still during reasoning." : "The pedestrian continues moving during reasoning."}`}
-              >
-                <div className="building-line">
-                  <i />
-                  <i />
-                  <i />
-                </div>
-                <div className="sidewalk">
-                  <div className="route-line" />
-                  <div
-                    className="robot-token"
-                    style={{ left: `${15 + Math.max(0, t - 6) * 14}%` }}
-                  >
-                    A
-                  </div>
-                  <div
-                    className="pedestrian-token"
-                    style={{ left: `${75 - sim * 6.5}%` }}
-                  >
-                    P
-                  </div>
-                  <span className="destination">GOAL</span>
-                  {mode === "realtime" && t >= 5 && t < 6.5 && (
-                    <div className="risk-bubble">Scene has changed</div>
-                  )}
-                </div>
-                <div className="road">
-                  <i />
-                  <i />
-                  <i />
-                  <i />
-                  <i />
-                </div>
-                <div className="diagram-legend">
-                  <span>
-                    <b>A</b> Agent
-                  </span>
-                  <span>
-                    <b>P</b> Pedestrian
-                  </span>
-                  <span>Simulation +{sim.toFixed(1)} s</span>
-                </div>
-              </div>
-              <p>
-                {mode === "static"
-                  ? "The observation remains current while the agent decides."
-                  : "The agent stays in place. Actors keep moving while it decides."}
-              </p>
-            </div>
-          );
-        })}
-      </div>
-      <div className="timing-controls">
-        <button
-          className="round-button"
-          aria-label={
-            playing ? "Pause timing illustration" : "Play timing illustration"
-          }
-          onClick={() => {
-            if (t >= 8) setT(0);
-            setPlaying(!playing);
-          }}
-        >
-          {playing ? "Ⅱ" : "▶"}
-        </button>
-        <label className="timeline-slider">
-          <span className="sr-only">Illustrative elapsed wall time</span>
-          <input
-            type="range"
-            min="0"
-            max="8"
-            step="0.1"
-            value={t}
-            onChange={(e) => {
-              setPlaying(false);
-              setT(+e.target.value);
-            }}
-          />
-          <span className="timeline-phases">
-            <span>01 Observe</span>
-            <span>02 Reason</span>
-            <span>03 Act</span>
-          </span>
-        </label>
-        <div className="timer">
-          <b>
-            {t.toFixed(1)}
-            <small> s</small>
-          </b>
-          <span>{phase}</span>
-        </div>
-      </div>
-      <p className="fineprint">
-        Illustrative positions and timing. The benchmark records actual model
-        latency and simulator events; this schematic does not predict collision
-        counts.
-      </p>
-    </div>
-  );
-}
-function AgentExplorer() {
-  const [active, setActive] = useState(7);
-  const [result, setResult] = useState(false);
-  const item = examples.find((x) => x.id === active)!;
-  return (
-    <div className="agent-explorer">
-      <div className="case-tabs" aria-label="Recorded examples">
-        {examples.map((x) => (
-          <button
-            key={x.id}
-            aria-pressed={active === x.id}
-            onClick={() => {
-              setActive(x.id);
-              setResult(false);
-            }}
-          >
-            <span className="case-dot" />
-            <span>
-              <b>
-                {x.id === 7
-                  ? "Wait for a pedestrian"
-                  : x.id === 1
-                    ? "Navigate around motion"
-                    : "Approach a crossing"}
-              </b>
-              <small>
-                {x.model} · {x.map} · Task {x.task}
-              </small>
-            </span>
-            <Arrow />
-          </button>
-        ))}
-      </div>
-      <div className="agent-workspace">
-        <div className="observation">
-          <div className="viewer-bar">
-            <span>
-              <i className="live-dot" /> RECORDED AGENT{" "}
-              {result ? "OUTCOME" : "INPUT"}
-            </span>
-            <div className="segmented small">
-              <button aria-pressed={!result} onClick={() => setResult(false)}>
-                Observe
-              </button>
-              <button aria-pressed={result} onClick={() => setResult(true)}>
-                After action
-              </button>
-            </div>
-          </div>
-          <img
-            key={item.image + result}
-            src={result ? item.resultImage : item.image}
-            alt={
-              result
-                ? `Recorded frame after ${item.model}'s selected action.`
-                : `Exact image supplied to ${item.model}, with seven numbered movement targets.`
-            }
-            width="720"
-            height="640"
-            loading="lazy"
-          />
-          <div className="viewer-caption">
-            <span>
-              {item.map} / route {item.task} / decision {item.decision}
-            </span>
-            <span>720 × 640 RGB</span>
-          </div>
-        </div>
-        <div className="agent-inspector">
-          <div className="eyebrow">ONE RECORDED DECISION</div>
-          <h3>
-            {item.model}
-            <span>Provider default</span>
-          </h3>
-          <p className="inspector-intro">
-            Recent motion frames, the current marked image, a subgoal, and
-            feedback from earlier actions.
-          </p>
-          <div className="action-card">
-            <span className="micro">SELECTED ACTION</span>
-            <strong>
-              {item.action.type === "wait" ? "Wait 1 second" : "Move 2 meters"}
-              <span>{item.action.type === "wait" ? "Ⅱ" : "↑"}</span>
-            </strong>
-            <code>
-              {item.action.type}({item.action.param})
-            </code>
-          </div>
-          <blockquote>“{item.action.reasoning}”</blockquote>
-          <div className="decision-metrics">
-            <div>
-              <strong>
-                {item.inferenceExposure.toFixed(2)}
-                <small> s</small>
-              </strong>
-              <span>Inference exposure</span>
-            </div>
-            <div>
-              <strong>
-                1.00<small> s</small>
-              </strong>
-              <span>Selected action</span>
-            </div>
-          </div>
-          <div className="outcome">
-            <span>✓</span>
-            <div>
-              <b>No safety event in this decision</b>
-              <p>
-                {item.action.type === "wait"
-                  ? "Wait completed on the sidewalk."
-                  : "Reached the selected 2 m waypoint."}
-              </p>
-            </div>
-          </div>
-          <a
-            className="text-link"
-            href={`data/examples/case-${item.id}.json`}
-            download
-          >
-            Download this decision <Arrow diagonal />
-          </a>
-        </div>
-      </div>
-      <div className="explorer-footer">
-        <span>Actual Unreal Engine captures · Hard real-time · Seed 0</span>
-        <span>
-          One safe decision does not imply a safely completed episode.
-        </span>
       </div>
     </div>
   );
@@ -772,7 +498,7 @@ function Training() {
 export default function RTsafe() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [menu, setMenu] = useState(false);
-  const [film, setFilm] = useState<"demo-90s" | "highlights">("demo-90s");
+  const [film, setFilm] = useState<"nyc-90s" | "nyc-comparison">("nyc-90s");
   const watch = () => {
     document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
     videoRef.current?.play().catch(() => {});
@@ -841,14 +567,7 @@ export default function RTsafe() {
             </div>
           </div>
           <div className="hero-scene">
-            <img
-              className="hero-image"
-              src="media/hero.webp"
-              alt="Concept illustration of a delivery robot approaching pedestrians and a city crossing."
-              width="1672"
-              height="941"
-              fetchPriority="high"
-            />
+            <NYCHero />
             <div className="scene-top">
               <span>
                 <i /> THE WORLD IS STILL MOVING
@@ -862,8 +581,8 @@ export default function RTsafe() {
             </div>
             <button className="scene-preview" onClick={watch}>
               <img
-                src="media/observations/case-7.webp"
-                alt="Actual Unreal Engine observation"
+                src="media/nyc/high_follow.webp"
+                alt="Elevated third-person view in the NYC scene"
                 width="720"
                 height="640"
               />
@@ -874,10 +593,11 @@ export default function RTsafe() {
             </button>
             <div className="scene-bottom">
               <span>Observe → Reason → Act</span>
-              <span>Cover: AI-generated concept illustration</span>
+              <span>Madison Square Park · Unreal Engine</span>
             </div>
           </div>
         </section>
+        <NYCSceneGallery />
         <section className="intro-stats" aria-label="Benchmark scale">
           <div>
             <b>5</b>
@@ -909,7 +629,7 @@ export default function RTsafe() {
             }
             description="Pedestrians move. Vehicles approach. Signals change. RT–SAFE evaluates both the decision an agent makes and the world in which that decision finally executes."
           />
-          <TimingExplainer />
+          <NYCTiming />
           <div className="principles">
             <div>
               <span>01 / OBSERVE</span>
@@ -950,6 +670,7 @@ export default function RTsafe() {
             }
             description="Follow sidewalk and crosswalk subgoals to a destination. Reaching it safely means avoiding every recorded safety event along the way."
           />
+          <NYCEnvironment />
           <div className="safety-cards">
             <article>
               <div className="safety-symbol collision-symbol">
@@ -1017,11 +738,11 @@ export default function RTsafe() {
         <section id="examples" className="section">
           <SectionHead
             n="03"
-            label="INSIDE A DECISION"
-            title={<>See what the agent sees.</>}
-            description="Explore real decisions from the evaluation campaign. The same action interface is used across all eight vision-language models."
+            label="RECORDED MODEL BEHAVIOR"
+            title={<>Same route. Different decisions.</>}
+            description="Follow GPT-6 Astra and GPT-5.6 Sol through the same final route segment. Their recorded decisions and timing are reconstructed in the NYC scene."
           />
-          <AgentExplorer />
+          <NYCComparison />
           <div className="action-space">
             <span className="micro">16 ACTIONS, ONE SHARED INTERFACE</span>
             <div>
@@ -1085,16 +806,16 @@ export default function RTsafe() {
           <div className="film-toolbar">
             <div className="segmented" aria-label="Film version">
               <button
-                aria-pressed={film === "demo-90s"}
-                onClick={() => setFilm("demo-90s")}
+                aria-pressed={film === "nyc-90s"}
+                onClick={() => setFilm("nyc-90s")}
               >
-                Project film · 1:30
+                NYC project film · 1:30
               </button>
               <button
-                aria-pressed={film === "highlights"}
-                onClick={() => setFilm("highlights")}
+                aria-pressed={film === "nyc-comparison"}
+                onClick={() => setFilm("nyc-comparison")}
               >
-                Highlights · 1:00
+                Astra vs. Sol · 0:44
               </button>
             </div>
             <span className="micro">RT–SAFE / PROJECT PRESENTATION</span>
@@ -1106,7 +827,7 @@ export default function RTsafe() {
               controls
               playsInline
               preload="none"
-              poster="media/film-poster-90s.jpg"
+              poster={film === "nyc-90s" ? "media/nyc/film-poster.webp" : "media/nyc/comparison-poster.webp"}
               aria-label="RT-SAFE project film"
             >
               <source src={`media/rt-safe-${film}.mp4`} type="video/mp4" />
@@ -1121,7 +842,7 @@ export default function RTsafe() {
             </video>
           </div>
           <div className="film-footer">
-            <span>1920 × 1080 · Narrated · English captions</span>
+            <span>{film === "nyc-90s" ? "1920 × 1080 · Narrated · English captions" : "1920 × 1080 · 6× playback · English captions"}</span>
             <div>
               <a href={`media/rt-safe-${film}.mp4`} download>
                 Download film <span>↓</span>
@@ -1129,8 +850,8 @@ export default function RTsafe() {
               <a href={`media/rt-safe-${film}.vtt`} download>
                 Captions <span>↓</span>
               </a>
-              <a href="media/rt-safe-demo-90s-captioned.mp4" download>
-                Conference edition <span>↓</span>
+              <a href="media/rt-safe-nyc-90s-captioned.mp4" download>
+                90s conference edition <span>↓</span>
               </a>
             </div>
           </div>

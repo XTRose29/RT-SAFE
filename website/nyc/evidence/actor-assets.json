@@ -1,0 +1,42 @@
+[
+  {
+    "asset": "/Game/Character/Player/Male/Meshes/SKM_PlayerMale",
+    "type": "SkeletalMesh",
+    "materials": "[{material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Crowd/Character/Male/m_002/Materials/M_HeadSynthesized.M_HeadSynthesized'\", material_slot_name: \"M_Head\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Crowd/Character/Male/m_002/Materials/M_BodySynthesized.M_BodySynthesized'\", material_slot_name: \"M_Body\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Crowd/Character/Male/m_002/Materials/M_EyeRefractive_Inst_R.M_EyeRefractive_Inst_R'\", material_slot_name: \"M_EyeR\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Character/Player/Male/Materials/MI_Shirt_Player.MI_Shirt_Player'\", material_slot_name: \"M_ButtonDown\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Crowd/Character/Male/m_002/Materials/M_EyeRefractive_Inst_L.M_EyeRefractive_Inst_L'\", material_slot_name: \"M_EyeL\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Crowd/Character/Shared/Materials/MetaHuman/M_TeethCharacterCreator_Inst.M_TeethCharacterCreator_Inst'\", material_slot_name: \"M_Teeth\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Chara",
+    "skeleton": "<Object '/Game/Character/Shared/Skeleton/SK_Base.SK_Base' (0x56f38384e00) Class 'Skeleton'>",
+    "bounds": "<Struct 'BoxSphereBounds' (0x56f372068c0) {origin: {x: 0.000000, y: 7.268364, z: 89.381416}, box_extent: {x: 55.385948, y: 20.747131, z: 91.564262}, sphere_radius: 109.004866}>"
+  },
+  {
+    "asset": "/Game/Character/Player/Female/Meshes/SKM_PlayerFemale_Base",
+    "type": "SkeletalMesh",
+    "materials": "[{material_interface: None, material_slot_name: \"Default_Material\", uv_channel_data: {}, overlay_material_interface: None}]",
+    "skeleton": "<Object '/Game/Character/Shared/Skeleton/SK_Base.SK_Base' (0x56f38384e00) Class 'Skeleton'>",
+    "bounds": "<Struct 'BoxSphereBounds' (0x56f3720aec0) {origin: {x: 0.500000, y: 0.500000, z: 0.000000}, box_extent: {x: 0.500000, y: 0.500000, z: 0.000000}, sphere_radius: 0.707107}>"
+  },
+  {
+    "asset": "/Game/Character/Player/Female/Meshes/SKM_PlayerFemale_Body",
+    "type": "SkeletalMesh",
+    "materials": "[{material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Crowd/Character/Female/f_001/Materials/M_BodySynthesized.M_BodySynthesized'\", material_slot_name: \"M_Body\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Character/Player/Female/Materials/MI_Player_Belt.MI_Player_Belt'\", material_slot_name: \"M_Belt\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Character/Player/Female/Materials/MI_Player_Gloves.MI_Player_Gloves'\", material_slot_name: \"M_Gloves\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Character/Player/Female/Materials/MI_Player_Jacket.MI_Player_Jacket'\", material_slot_name: \"M_Jacket\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Character/Player/Female/Materials/MI_Player_Boots.MI_Player_Boots'\", material_slot_name: \"M_Boots\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Character/Player/Female/Materials/MI_Player_Pants.MI_Player_Pants'\", material_slot_name: \"M_Pants\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Character/Player/Female/Materials/MI_Player_Shirt.MI_Player_Shirt'\", materia",
+    "skeleton": "<Object '/Game/Character/Shared/Skeleton/SK_Base.SK_Base' (0x56f38384e00) Class 'Skeleton'>",
+    "bounds": "<Struct 'BoxSphereBounds' (0x56f390cec40) {origin: {x: 0.000000, y: 6.346523, z: 72.814651}, box_extent: {x: 48.050007, y: 17.226620, z: 74.982910}, sphere_radius: 90.708304}>"
+  },
+  {
+    "asset": "/Game/Character/Player/Female/Meshes/SKM_PlayerFemale_Head",
+    "type": "SkeletalMesh",
+    "materials": "[{material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Character/Player/Female/Materials/M_HeadSynthesized.M_HeadSynthesized'\", material_slot_name: \"head_shader_shader\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Character/Player/Female/Materials/M_TeethCharacterCreator_Inst.M_TeethCharacterCreator_Inst'\", material_slot_name: \"teeth_shader_shader\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Crowd/Character/Shared/Materials/MetaHuman/M_lacrimal_fluid_Inst.M_lacrimal_fluid_Inst'\", material_slot_name: \"saliva_shader_shader\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Character/Player/Female/Materials/M_EyeRefractive_Inst_L.M_EyeRefractive_Inst_L'\", material_slot_name: \"eyeLeft_shader_shader\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Character/Player/Female/Materials/M_EyeRefractive_Inst_R.M_EyeRefractive_Inst_R'\", material_slot_name: \"eyeRight_shader_shader\", uv_channel_data: {}, overlay_material_interface: None}, {material_interface: \"/Script/Engine.MaterialInstanceConstant'/Game/Crowd/Character/Shared/Materials/MetaHuman/M_EyeOcclusion_Inst.M_EyeOcclusion_Inst'\", material_slot_name: \"eyeshell_shader_shader\", uv_channel_data: {}, overlay_materi",
+    "skeleton": "<Object '/Game/Character/Shared/Skeleton/SK_Base_Head.SK_Base_Head' (0x56f35ed5a00) Class 'Skeleton'>",
+    "bounds": "<Struct 'BoxSphereBounds' (0x56f35cd0340) {origin: {x: 0.000000, y: 1.785667, z: 149.629395}, box_extent: {x: 15.608767, y: 10.541985, z: 18.144760}, sphere_radius: 26.153381}>"
+  },
+  {
+    "asset": "/Game/Vehicle/vehCar_vehicle07/Mesh/SKM_vehCar_vehicle07",
+    "type": "SkeletalMesh",
+    "materials": "[{material_interface: None, material_slot_name: \"lambert1\", uv_channel_data: {}, overlay_material_interface: None}]",
+    "skeleton": "<Object '/Game/Vehicle/vehCar_vehicle07/Skeleton/SK_vehCar_vehicle07.SK_vehCar_vehicle07' (0x56f384f4e00) Class 'Skeleton'>",
+    "bounds": "<Struct 'BoxSphereBounds' (0x56f35cd9ac0) {origin: {x: 0.000000, y: 0.000000, z: 0.000000}, box_extent: {x: 0.000050, y: 0.000000, z: 0.000050}, sphere_radius: 0.000071}>"
+  },
+  {
+    "asset": "/Game/Vehicle/vehCar_vehicle07/Mesh/SM_vehCar_vehicle07",
+    "type": "StaticMesh",
+    "bounds": "<Struct 'BoxSphereBounds' (0x56f35cd71c0) {origin: {x: -8.343498, y: 0.000000, z: 71.700912}, box_extent: {x: 220.518440, y: 102.963707, z: 71.393356}, sphere_radius: 225.789050}>"
+  }
+]

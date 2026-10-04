@@ -1,3 +1,7 @@
+# Current NYC edition
+
+Use the [90-second NYC edit](nyc-90s/README.md) and [native scene workflow](../nyc/README.md) for the current website. The older editions documented below remain available as source history.
+
 # RT-SAFE film production
 
 ## Versions

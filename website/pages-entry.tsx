@@ -2,6 +2,7 @@ import React from "react";
 import { hydrateRoot } from "react-dom/client";
 import RTsafe from "./app/rtsafe";
 import "./app/globals.css";
+import "./app/nyc-scenes.css";
 hydrateRoot(
   document.getElementById("root")!,
   <React.StrictMode>

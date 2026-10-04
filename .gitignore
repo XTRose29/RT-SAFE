@@ -55,3 +55,9 @@ exps/
 wandb/
 checkpoints/
 online_rl/*.env
+
+# Native NYC film intermediates
+website/video/nyc-90s/scenes/
+website/video/nyc-90s/audio/*-fitted.wav
+website/video/nyc-90s/*-concat.txt
+website/video/nyc-90s/*.ass

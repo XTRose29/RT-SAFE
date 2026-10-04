@@ -1,0 +1,1615 @@
+{
+  "source_task": 19,
+  "source_map": "RT15",
+  "difficulty": "easy",
+  "reasoning": "low",
+  "seed": 0,
+  "presentation": "NYC reconstruction of the existing final-subgoal comparison; metrics are from the original run.",
+  "clock": "Recorded simulation clock, including inference exposure and action execution. Uniform 6x playback.",
+  "playback_speed": 6,
+  "coordinate_policy": "A single rigid rotation and translation for all source actors and both agents; no lateral scaling.",
+  "models": {
+    "astra": {
+      "name": "gpt-6-astra",
+      "steps": [
+        {
+          "source_step": 33,
+          "source_decision": 34,
+          "action": {
+            "type": "move_to",
+            "param": "5"
+          },
+          "start_sim_seconds": 215.58,
+          "end_sim_seconds": 223.44000000000003,
+          "inference_exposure_seconds": 5.86,
+          "response_latency_seconds": 4.49389123916626,
+          "position_cm": [
+            20471.131,
+            544.492
+          ],
+          "post_action_position_cm": [
+            20574.654,
+            930.864
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "8e1bfe81392fb62ccaf9dee696d74168ff0bec0d0e5e3aecd6b229e59077a5f7"
+        },
+        {
+          "source_step": 34,
+          "source_decision": 35,
+          "action": {
+            "type": "move_to",
+            "param": "5"
+          },
+          "start_sim_seconds": 223.44000000000003,
+          "end_sim_seconds": 230.35000000000002,
+          "inference_exposure_seconds": 4.91,
+          "response_latency_seconds": 3.034661054611206,
+          "position_cm": [
+            20574.654,
+            930.864
+          ],
+          "post_action_position_cm": [
+            20678.178,
+            1317.235
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "34aaed76b33994047a1791398cb32fd10d539f84d7c47a4826bc2dad71a81000"
+        },
+        {
+          "source_step": 35,
+          "source_decision": 36,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 230.35000000000002,
+          "end_sim_seconds": 234.87000000000003,
+          "inference_exposure_seconds": 3.52,
+          "response_latency_seconds": 2.639477252960205,
+          "position_cm": [
+            20678.178,
+            1317.235
+          ],
+          "post_action_position_cm": [
+            20729.939,
+            1510.421
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "900dd4a67366253c0549debfb48ff337bbd9844a7c1120e81a5b7d3eae9232a2"
+        },
+        {
+          "source_step": 36,
+          "source_decision": 37,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 234.87000000000003,
+          "end_sim_seconds": 239.66000000000003,
+          "inference_exposure_seconds": 3.79,
+          "response_latency_seconds": 3.0207042694091797,
+          "position_cm": [
+            20729.939,
+            1510.421
+          ],
+          "post_action_position_cm": [
+            20781.701,
+            1703.607
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "84fa8ded9b62493c0e99e132978ad5178c9e95ac7735dc865d9afd3a4c9bc47b"
+        },
+        {
+          "source_step": 37,
+          "source_decision": 38,
+          "action": {
+            "type": "move_to",
+            "param": "3"
+          },
+          "start_sim_seconds": 239.66000000000003,
+          "end_sim_seconds": 244.36,
+          "inference_exposure_seconds": 3.7,
+          "response_latency_seconds": 2.7940621376037598,
+          "position_cm": [
+            20781.701,
+            1703.607
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            1876.811
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "e9476e0cc54f9616c5f8fdf3f256f33170ae71e57fe8bb09fe6d7287d0e09cd9"
+        },
+        {
+          "source_step": 38,
+          "source_decision": 39,
+          "action": {
+            "type": "turn_around",
+            "param": "R30"
+          },
+          "start_sim_seconds": 244.36,
+          "end_sim_seconds": 251.27,
+          "inference_exposure_seconds": 5.91,
+          "response_latency_seconds": 5.02372670173645,
+          "position_cm": [
+            20681.699,
+            1876.811
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            1876.811
+          ],
+          "yaw_degrees": 120.00072778082739,
+          "post_action_yaw_degrees": 90.001,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "a1a651ffdeecc2a36fb6cdfbc69c4071fa631f2b05ab3cbc77020ec082d06d7a"
+        },
+        {
+          "source_step": 39,
+          "source_decision": 40,
+          "action": {
+            "type": "move_to",
+            "param": "5"
+          },
+          "start_sim_seconds": 251.27,
+          "end_sim_seconds": 257.07000000000005,
+          "inference_exposure_seconds": 3.8,
+          "response_latency_seconds": 2.9768149852752686,
+          "position_cm": [
+            20681.699,
+            1876.811
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            2276.811
+          ],
+          "yaw_degrees": 90.0,
+          "post_action_yaw_degrees": 90.0,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "507811552f3db55d274623c9b2d74354b98bd3f391dbc016c0c03c9dcb1507ca"
+        },
+        {
+          "source_step": 40,
+          "source_decision": 41,
+          "action": {
+            "type": "move_to",
+            "param": "5"
+          },
+          "start_sim_seconds": 257.07000000000005,
+          "end_sim_seconds": 263.16,
+          "inference_exposure_seconds": 4.09,
+          "response_latency_seconds": 3.1116154193878174,
+          "position_cm": [
+            20681.699,
+            2276.811
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            2676.811
+          ],
+          "yaw_degrees": 90.0,
+          "post_action_yaw_degrees": 90.0,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "08493a64e643a3d762a4dd276844702f2b8e5fde5d5b44834d5d99e19a89ba2b"
+        },
+        {
+          "source_step": 41,
+          "source_decision": 42,
+          "action": {
+            "type": "move_to",
+            "param": "5"
+          },
+          "start_sim_seconds": 263.16,
+          "end_sim_seconds": 268.41,
+          "inference_exposure_seconds": 3.25,
+          "response_latency_seconds": 2.5723981857299805,
+          "position_cm": [
+            20681.699,
+            2676.811
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            3076.811
+          ],
+          "yaw_degrees": 90.0,
+          "post_action_yaw_degrees": 90.0,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "26b146cb503f6319409cea61ff4e666fa1953a5b579c3845ec34722abc59b07f"
+        },
+        {
+          "source_step": 42,
+          "source_decision": 43,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 268.41,
+          "end_sim_seconds": 273.13000000000005,
+          "inference_exposure_seconds": 3.72,
+          "response_latency_seconds": 2.828033685684204,
+          "position_cm": [
+            20681.699,
+            3076.811
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            3276.811
+          ],
+          "yaw_degrees": 90.0,
+          "post_action_yaw_degrees": 90.0,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "59563da160caadf12165a65fdb09cd1570bd52d3f16fc755472b78b89c6f11e0"
+        },
+        {
+          "source_step": 43,
+          "source_decision": 44,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 273.13000000000005,
+          "end_sim_seconds": 277.88000000000005,
+          "inference_exposure_seconds": 3.75,
+          "response_latency_seconds": 2.8804831504821777,
+          "position_cm": [
+            20681.699,
+            3276.811
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            3476.811
+          ],
+          "yaw_degrees": 90.0,
+          "post_action_yaw_degrees": 90.0,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "e44db79b7ce83732a31e6774cce62d754cefbd91550b9f5be0d3bf7d699bff6e"
+        },
+        {
+          "source_step": 44,
+          "source_decision": 45,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 277.88000000000005,
+          "end_sim_seconds": 284.20000000000005,
+          "inference_exposure_seconds": 5.32,
+          "response_latency_seconds": 4.565758466720581,
+          "position_cm": [
+            20681.699,
+            3476.811
+          ],
+          "post_action_position_cm": [
+            20681.699,
+            3676.811
+          ],
+          "yaw_degrees": 90.0,
+          "post_action_yaw_degrees": 90.0,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "ad0dd138f8e1fd6f9be2b43715e40e19ff23a9201a214f03c898f2956e2eafa3"
+        }
+      ],
+      "summary": {
+        "decisions": 12,
+        "active_collisions": 0,
+        "passive_collisions": 1,
+        "collisions": 1,
+        "source_duration_seconds": 68.62000000000003,
+        "video_duration_seconds": 11.436666666666673
+      }
+    },
+    "sol": {
+      "name": "gpt-5.6-sol",
+      "steps": [
+        {
+          "source_step": 37,
+          "source_decision": 38,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 285.55,
+          "end_sim_seconds": 295.16,
+          "inference_exposure_seconds": 8.61,
+          "response_latency_seconds": 3.7189435958862305,
+          "position_cm": [
+            20646.932,
+            523.592
+          ],
+          "post_action_position_cm": [
+            20698.693,
+            716.778
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "6ce7717715f9e0a1a43b71bf94e01ad4e941465233b5922921af4d5dcf20f7d2"
+        },
+        {
+          "source_step": 38,
+          "source_decision": 39,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 295.16,
+          "end_sim_seconds": 302.96000000000004,
+          "inference_exposure_seconds": 6.8,
+          "response_latency_seconds": 3.7891530990600586,
+          "position_cm": [
+            20698.693,
+            716.778
+          ],
+          "post_action_position_cm": [
+            20750.455,
+            909.964
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "c1d756bca611f0025e307c9bf0d528bd912f1808f71f72c659c0859f4e958f22"
+        },
+        {
+          "source_step": 39,
+          "source_decision": 40,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 302.96000000000004,
+          "end_sim_seconds": 315.24,
+          "inference_exposure_seconds": 11.78,
+          "response_latency_seconds": 5.246076822280884,
+          "position_cm": [
+            20750.455,
+            909.964
+          ],
+          "post_action_position_cm": [
+            20776.336,
+            1006.557
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "3dde317e7137cba75115af75970f62a143737af54fefe7adfe34088e90ff8d78"
+        },
+        {
+          "source_step": 40,
+          "source_decision": 41,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 315.24,
+          "end_sim_seconds": 321.12,
+          "inference_exposure_seconds": 5.38,
+          "response_latency_seconds": 4.497462034225464,
+          "position_cm": [
+            20776.336,
+            1006.557
+          ],
+          "post_action_position_cm": [
+            20802.217,
+            1103.15
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "704e7d893dc0648e9eaaf197f8d20a96b8c3315e12e10f9483c446612d9cfa1e"
+        },
+        {
+          "source_step": 41,
+          "source_decision": 42,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 321.12,
+          "end_sim_seconds": 331.44,
+          "inference_exposure_seconds": 9.82,
+          "response_latency_seconds": 4.433201789855957,
+          "position_cm": [
+            20802.217,
+            1103.15
+          ],
+          "post_action_position_cm": [
+            20828.098,
+            1199.743
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "ce23402e0b6695a92c08f6e07e80565eb422cd1b66e863870a69c8a444df26d3"
+        },
+        {
+          "source_step": 42,
+          "source_decision": 43,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 331.44,
+          "end_sim_seconds": 340.63,
+          "inference_exposure_seconds": 8.69,
+          "response_latency_seconds": 2.954258918762207,
+          "position_cm": [
+            20828.098,
+            1199.743
+          ],
+          "post_action_position_cm": [
+            20853.979,
+            1296.336
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "c9a17cb822028e41a907d09f7480f4a5acc6d3df48329c2149e3066712816ed0"
+        },
+        {
+          "source_step": 43,
+          "source_decision": 44,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 340.63,
+          "end_sim_seconds": 348.11,
+          "inference_exposure_seconds": 6.98,
+          "response_latency_seconds": 6.029070615768433,
+          "position_cm": [
+            20853.979,
+            1296.336
+          ],
+          "post_action_position_cm": [
+            20879.859,
+            1392.929
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "12498c1bc26eb4722d901d21e070bd6d1f33629af79c4c8e78a360bd48220187"
+        },
+        {
+          "source_step": 44,
+          "source_decision": 45,
+          "action": {
+            "type": "move_to",
+            "param": "3"
+          },
+          "start_sim_seconds": 348.11,
+          "end_sim_seconds": 355.01,
+          "inference_exposure_seconds": 5.9,
+          "response_latency_seconds": 5.096955060958862,
+          "position_cm": [
+            20879.859,
+            1392.929
+          ],
+          "post_action_position_cm": [
+            20779.857,
+            1566.133
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "74cdf949b54f19fb130427b520b401254e92bcb8575ed61587de5a0e363ea204"
+        },
+        {
+          "source_step": 45,
+          "source_decision": 46,
+          "action": {
+            "type": "move_to",
+            "param": "4"
+          },
+          "start_sim_seconds": 355.01,
+          "end_sim_seconds": 361.49,
+          "inference_exposure_seconds": 5.48,
+          "response_latency_seconds": 4.574983835220337,
+          "position_cm": [
+            20779.857,
+            1566.133
+          ],
+          "post_action_position_cm": [
+            20831.619,
+            1759.319
+          ],
+          "yaw_degrees": 120.00072778082739,
+          "post_action_yaw_degrees": 120.00072778082739,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "4881f6bc12907890e6abb0d0f6174f36d7d445832778b3b3358b9a1d77f32497"
+        },
+        {
+          "source_step": 46,
+          "source_decision": 47,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 361.49,
+          "end_sim_seconds": 367.90000000000003,
+          "inference_exposure_seconds": 5.41,
+          "response_latency_seconds": 4.522107124328613,
+          "position_cm": [
+            20831.619,
+            1759.319
+          ],
+          "post_action_position_cm": [
+            20883.381,
+            1952.505
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "12276c0444cd4efdea3a62863273115120c00c3275afdfc9e9381521c92010ce"
+        },
+        {
+          "source_step": 47,
+          "source_decision": 48,
+          "action": {
+            "type": "turn_around",
+            "param": "L30"
+          },
+          "start_sim_seconds": 367.90000000000003,
+          "end_sim_seconds": 376.11,
+          "inference_exposure_seconds": 7.21,
+          "response_latency_seconds": 6.476133823394775,
+          "position_cm": [
+            20883.381,
+            1952.505
+          ],
+          "post_action_position_cm": [
+            20883.381,
+            1952.505
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 105.001,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "91489193fa44764b9b53142be1870a8fe597a0a63cd983237114bef534e84a0b"
+        },
+        {
+          "source_step": 48,
+          "source_decision": 49,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 376.11,
+          "end_sim_seconds": 380.28000000000003,
+          "inference_exposure_seconds": 3.67,
+          "response_latency_seconds": 2.863633394241333,
+          "position_cm": [
+            20883.381,
+            1952.505
+          ],
+          "post_action_position_cm": [
+            20857.5,
+            2049.098
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "b978543d757e65c00e6fac4f42cf1903a9ac99d7922eeb6af20628e4c90d3014"
+        },
+        {
+          "source_step": 49,
+          "source_decision": 50,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 380.28000000000003,
+          "end_sim_seconds": 384.75000000000006,
+          "inference_exposure_seconds": 3.97,
+          "response_latency_seconds": 3.0876212120056152,
+          "position_cm": [
+            20857.5,
+            2049.098
+          ],
+          "post_action_position_cm": [
+            20831.619,
+            2145.691
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "68acbfe3d744e69ea9435721e85a7de6f559e6b4251ca895a9bcc29dd76bfb56"
+        },
+        {
+          "source_step": 50,
+          "source_decision": 51,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 384.75000000000006,
+          "end_sim_seconds": 390.49000000000007,
+          "inference_exposure_seconds": 5.24,
+          "response_latency_seconds": 4.405325174331665,
+          "position_cm": [
+            20831.619,
+            2145.691
+          ],
+          "post_action_position_cm": [
+            20805.738,
+            2242.284
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "be160c880280001ae802e6cab1dc9f2054807afe960b579c9affcd482359b2fe"
+        },
+        {
+          "source_step": 51,
+          "source_decision": 52,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 390.49000000000007,
+          "end_sim_seconds": 398.8400000000001,
+          "inference_exposure_seconds": 7.35,
+          "response_latency_seconds": 6.600595951080322,
+          "position_cm": [
+            20805.738,
+            2242.284
+          ],
+          "post_action_position_cm": [
+            20753.977,
+            2435.47
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "e5032dffcae05ee93957ac5225684e3437d626a4c986df98c0493c80208ffcf2"
+        },
+        {
+          "source_step": 52,
+          "source_decision": 53,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 398.8400000000001,
+          "end_sim_seconds": 404.7800000000001,
+          "inference_exposure_seconds": 4.94,
+          "response_latency_seconds": 4.108905792236328,
+          "position_cm": [
+            20753.977,
+            2435.47
+          ],
+          "post_action_position_cm": [
+            20702.215,
+            2628.656
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "c9d414ffe5b3c7c358d52cd241080bada39b6a1023dde889057999b28fcc5e74"
+        },
+        {
+          "source_step": 53,
+          "source_decision": 54,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 404.7800000000001,
+          "end_sim_seconds": 409.6000000000001,
+          "inference_exposure_seconds": 3.82,
+          "response_latency_seconds": 2.9455087184906006,
+          "position_cm": [
+            20702.215,
+            2628.656
+          ],
+          "post_action_position_cm": [
+            20650.453,
+            2821.842
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "6cd8a91c38a3be31e801ef5df8cbc3b4f6f782820a44c370a3b62eae2e2b3998"
+        },
+        {
+          "source_step": 54,
+          "source_decision": 55,
+          "action": {
+            "type": "move_to",
+            "param": "2"
+          },
+          "start_sim_seconds": 409.6000000000001,
+          "end_sim_seconds": 413.87000000000006,
+          "inference_exposure_seconds": 3.27,
+          "response_latency_seconds": 2.4533119201660156,
+          "position_cm": [
+            20650.453,
+            2821.842
+          ],
+          "post_action_position_cm": [
+            20598.691,
+            3015.028
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "5eee7a616f47f0ebe8de2d1eae07aae83ba6121214864e4f2d69dee4a35a5869"
+        },
+        {
+          "source_step": 55,
+          "source_decision": 56,
+          "action": {
+            "type": "wait",
+            "param": "1"
+          },
+          "start_sim_seconds": 413.87000000000006,
+          "end_sim_seconds": 423.20000000000005,
+          "inference_exposure_seconds": 8.33,
+          "response_latency_seconds": 7.479634046554565,
+          "position_cm": [
+            20598.691,
+            3015.028
+          ],
+          "post_action_position_cm": [
+            20598.691,
+            3015.028
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "939fe8ec4552a7efaa3dbabb937abd41b59ff477313c16ae1ddf7e6566e2e95f"
+        },
+        {
+          "source_step": 56,
+          "source_decision": 57,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 423.20000000000005,
+          "end_sim_seconds": 428.26000000000005,
+          "inference_exposure_seconds": 4.56,
+          "response_latency_seconds": 3.6792447566986084,
+          "position_cm": [
+            20598.691,
+            3015.028
+          ],
+          "post_action_position_cm": [
+            20572.811,
+            3111.621
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "99d471cbc21af2c95ae7ab529cb4d8a8101b3fa8b5539fc21a6f3acc82b33828"
+        },
+        {
+          "source_step": 57,
+          "source_decision": 58,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 428.26000000000005,
+          "end_sim_seconds": 435.14000000000004,
+          "inference_exposure_seconds": 6.38,
+          "response_latency_seconds": 5.512955665588379,
+          "position_cm": [
+            20572.811,
+            3111.621
+          ],
+          "post_action_position_cm": [
+            20546.93,
+            3208.214
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "e11ddbe75586c39e46d30bf9e9e8d02ffc86d163f551fe8916f967fdee8c7984"
+        },
+        {
+          "source_step": 58,
+          "source_decision": 59,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 435.14000000000004,
+          "end_sim_seconds": 442.04,
+          "inference_exposure_seconds": 6.4,
+          "response_latency_seconds": 5.5003392696380615,
+          "position_cm": [
+            20546.93,
+            3208.214
+          ],
+          "post_action_position_cm": [
+            20521.049,
+            3304.807
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 104.99932894204305,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "391aca09a465c166a9e00cc2e67aad18155d9275af63f77dc96607e1f89bccb2"
+        },
+        {
+          "source_step": 59,
+          "source_decision": 60,
+          "action": {
+            "type": "turn_around",
+            "param": "R30"
+          },
+          "start_sim_seconds": 442.04,
+          "end_sim_seconds": 448.76000000000005,
+          "inference_exposure_seconds": 5.72,
+          "response_latency_seconds": 4.753471374511719,
+          "position_cm": [
+            20521.049,
+            3304.807
+          ],
+          "post_action_position_cm": [
+            20521.049,
+            3304.807
+          ],
+          "yaw_degrees": 104.99932894204305,
+          "post_action_yaw_degrees": 74.999,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "453d6ffd6b17e8969a520c7b18479817d01b04d8a427488e2ee90a3522b49b9a"
+        },
+        {
+          "source_step": 60,
+          "source_decision": 61,
+          "action": {
+            "type": "wait",
+            "param": "1"
+          },
+          "start_sim_seconds": 448.76000000000005,
+          "end_sim_seconds": 458.7300000000001,
+          "inference_exposure_seconds": 8.97,
+          "response_latency_seconds": 8.120776414871216,
+          "position_cm": [
+            20521.049,
+            3304.807
+          ],
+          "post_action_position_cm": [
+            20521.049,
+            3304.807
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "74de0c882ea51befa9bb71986a9a0c79f86d5ce30d10a4dc991e4bd329a56386"
+        },
+        {
+          "source_step": 61,
+          "source_decision": 62,
+          "action": {
+            "type": "move_to",
+            "param": "3"
+          },
+          "start_sim_seconds": 458.7300000000001,
+          "end_sim_seconds": 464.99000000000007,
+          "inference_exposure_seconds": 5.26,
+          "response_latency_seconds": 4.4098310470581055,
+          "position_cm": [
+            20521.049,
+            3304.807
+          ],
+          "post_action_position_cm": [
+            20517.535,
+            3304.698
+          ],
+          "yaw_degrees": 75.00067105795695,
+          "post_action_yaw_degrees": 75.00067105795695,
+          "active_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "f0ae670c513ee0376f7b7ec0e73691bd6f6a1af9db9575f68f8b243690d7b74a"
+        },
+        {
+          "source_step": 62,
+          "source_decision": 63,
+          "action": {
+            "type": "turn_around",
+            "param": "R60"
+          },
+          "start_sim_seconds": 464.99000000000007,
+          "end_sim_seconds": 473.4200000000001,
+          "inference_exposure_seconds": 7.43,
+          "response_latency_seconds": 6.520716905593872,
+          "position_cm": [
+            20517.535,
+            3304.698
+          ],
+          "post_action_position_cm": [
+            20517.535,
+            3304.698
+          ],
+          "yaw_degrees": 116.0013362947823,
+          "post_action_yaw_degrees": 55.999,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 1,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "db622f290f359347acf6816bdb1570f0f2b57d3ceee8701e6a6ecc86860293b7"
+        },
+        {
+          "source_step": 63,
+          "source_decision": 64,
+          "action": {
+            "type": "move_to",
+            "param": "3"
+          },
+          "start_sim_seconds": 473.4200000000001,
+          "end_sim_seconds": 489.20000000000005,
+          "inference_exposure_seconds": 8.78,
+          "response_latency_seconds": 7.9248597621917725,
+          "position_cm": [
+            20517.535,
+            3304.698
+          ],
+          "post_action_position_cm": [
+            20517.535,
+            3304.698
+          ],
+          "yaw_degrees": 55.998459068596915,
+          "post_action_yaw_degrees": 55.998459068596915,
+          "active_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "6387e01ef33d911a516e8e192ebb7fa4d903bad096f33a9ba66ddf317a3f8ef5"
+        },
+        {
+          "source_step": 64,
+          "source_decision": 65,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 489.20000000000005,
+          "end_sim_seconds": 499.90000000000003,
+          "inference_exposure_seconds": 10.2,
+          "response_latency_seconds": 9.188127756118774,
+          "position_cm": [
+            20517.535,
+            3304.698
+          ],
+          "post_action_position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "yaw_degrees": 98.00127153677316,
+          "post_action_yaw_degrees": 98.00127153677316,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 3,
+            "object": 1,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "9c1e5765d040ed684ae74d06fc2c51beb0be97351802f4a3c1856522a3080de8"
+        },
+        {
+          "source_step": 65,
+          "source_decision": 66,
+          "action": {
+            "type": "turn_around",
+            "param": "R30"
+          },
+          "start_sim_seconds": 499.90000000000003,
+          "end_sim_seconds": 506.25000000000006,
+          "inference_exposure_seconds": 5.35,
+          "response_latency_seconds": 4.5184326171875,
+          "position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "post_action_position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "yaw_degrees": 98.00127153677316,
+          "post_action_yaw_degrees": 68.001,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "c7b2571b29805942f041e9e913cc95e1b3f886a6940311c8f5da2896d9c724e4"
+        },
+        {
+          "source_step": 66,
+          "source_decision": 67,
+          "action": {
+            "type": "move_to",
+            "param": "3"
+          },
+          "start_sim_seconds": 506.25000000000006,
+          "end_sim_seconds": 518.25,
+          "inference_exposure_seconds": 5.0,
+          "response_latency_seconds": 3.9680426120758057,
+          "position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "post_action_position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "yaw_degrees": 68.00069679359844,
+          "post_action_yaw_degrees": 68.00069679359844,
+          "active_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "ecd3620d9689259a25a05354ea58115e72f2169d1ba5bba1c5abf7945190d5be"
+        },
+        {
+          "source_step": 67,
+          "source_decision": 68,
+          "action": {
+            "type": "turn_around",
+            "param": "R60"
+          },
+          "start_sim_seconds": 518.25,
+          "end_sim_seconds": 525.25,
+          "inference_exposure_seconds": 6.0,
+          "response_latency_seconds": 5.061206340789795,
+          "position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "post_action_position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "yaw_degrees": 109.0020717257803,
+          "post_action_yaw_degrees": 49.001,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "8a2af2a8655c860b8d21234cab382410c07dbbccbdc4940531c0f685980be46c"
+        },
+        {
+          "source_step": 68,
+          "source_decision": 69,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 525.25,
+          "end_sim_seconds": 530.73,
+          "inference_exposure_seconds": 4.98,
+          "response_latency_seconds": 4.101319074630737,
+          "position_cm": [
+            20503.615,
+            3403.725
+          ],
+          "post_action_position_cm": [
+            20569.219,
+            3479.198
+          ],
+          "yaw_degrees": 49.00219249815081,
+          "post_action_yaw_degrees": 49.00219249815081,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "fff42f89f4500a12b94e6dc085715b4db602c8c9a3b7ddb2fa11eec9f0e53b56"
+        },
+        {
+          "source_step": 69,
+          "source_decision": 70,
+          "action": {
+            "type": "move_to",
+            "param": "1"
+          },
+          "start_sim_seconds": 530.73,
+          "end_sim_seconds": 538.0600000000001,
+          "inference_exposure_seconds": 6.83,
+          "response_latency_seconds": 5.6920623779296875,
+          "position_cm": [
+            20569.219,
+            3479.198
+          ],
+          "post_action_position_cm": [
+            20634.822,
+            3554.671
+          ],
+          "yaw_degrees": 49.00219249815081,
+          "post_action_yaw_degrees": 49.00219249815081,
+          "active_collisions": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collisions": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "source_sha256": "487f00cae2b8c5a46e8bf2bb8748427bb107e1410c64a2fde55b7c8ab3112dcf"
+        }
+      ],
+      "summary": {
+        "decisions": 33,
+        "active_collisions": 3,
+        "passive_collisions": 14,
+        "collisions": 17,
+        "source_duration_seconds": 252.51000000000005,
+        "video_duration_seconds": 42.08500000000001
+      }
+    }
+  },
+  "source_choreography_sha256": "d37841e645f3f704cfa6cef88a4d34b7a424c9255d06d76506680f6856e0edb6"
+}

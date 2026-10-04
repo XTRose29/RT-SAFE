@@ -1,0 +1,79 @@
+{
+  "timing-static": {
+    "success": true,
+    "frames": 330,
+    "metadata": {
+      "times": null,
+      "mode": "static",
+      "illustrative": true
+    }
+  },
+  "timing-realtime": {
+    "success": true,
+    "frames": 330,
+    "metadata": {
+      "times": null,
+      "mode": "realtime",
+      "illustrative": true
+    }
+  },
+  "environment": {
+    "success": true,
+    "frames": 360,
+    "metadata": {
+      "illustrative": true,
+      "frames": 360
+    }
+  },
+  "astra": {
+    "success": true,
+    "frames": 374,
+    "metadata": {
+      "model": "astra",
+      "source": "gpt-6-astra",
+      "summary": {
+        "decisions": 12,
+        "active_collisions": 0,
+        "passive_collisions": 1,
+        "collisions": 1,
+        "source_duration_seconds": 68.62000000000003,
+        "video_duration_seconds": 11.436666666666673
+      },
+      "playback_speed": 6,
+      "preview": false,
+      "frame_times": null,
+      "ground_samples": 791,
+      "reconstruction": "Original agent poses and simulation clock; rigid NYC transform; authored NPC patrol paths."
+    }
+  },
+  "sol": {
+    "success": true,
+    "frames": 1293,
+    "metadata": {
+      "model": "sol",
+      "source": "gpt-5.6-sol",
+      "summary": {
+        "decisions": 33,
+        "active_collisions": 3,
+        "passive_collisions": 14,
+        "collisions": 17,
+        "source_duration_seconds": 252.51000000000005,
+        "video_duration_seconds": 42.08500000000001
+      },
+      "playback_speed": 6,
+      "preview": false,
+      "frame_times": null,
+      "ground_samples": 791,
+      "reconstruction": "Original agent poses and simulation clock; rigid NYC transform; authored NPC patrol paths."
+    }
+  },
+  "hero": {
+    "success": true,
+    "frames": 240,
+    "metadata": {
+      "duration": 8,
+      "fps": 30,
+      "native_city": true
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.nyc-hero-video { width:100%; height:100%; object-fit:cover; filter:brightness(.86) saturate(1.05); }
+.nyc-motion-toggle { position:absolute; z-index:4; right:22px; top:65px; border:1px solid #ffffff50; border-radius:100px; background:#102928b8; color:white; padding:10px 17px; font-size:12px; backdrop-filter:blur(8px); }
+.nyc-pair { border:1px solid var(--line); border-radius:16px; overflow:hidden; background:#fffdf9; }
+.nyc-pair-kicker { display:flex; justify-content:space-between; gap:20px; padding:23px 28px; font-size:10px; letter-spacing:1.1px; font-weight:650; border-bottom:1px solid var(--line); }
+.nyc-pair-kicker span:last-child { color:var(--muted); letter-spacing:.3px; }
+.nyc-pair-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); }
+.nyc-view { background:var(--paper); min-width:0; }
+.nyc-view-heading { padding:22px 25px; display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.nyc-view-heading h3 { font:500 clamp(18px,2vw,26px) var(--display); letter-spacing:-.6px; }
+.nyc-view-heading>span { font-size:9px; letter-spacing:.4px; color:var(--green); }
+.nyc-view-1 .nyc-view-heading>span { color:#a35a32; }
+.nyc-view-frame { position:relative; background:#1d2c32; aspect-ratio:16/9; overflow:hidden; }
+.nyc-view-frame video { display:block; width:100%; height:100%; object-fit:cover; }
+.nyc-view-tag { position:absolute; bottom:14px; left:16px; padding:6px 10px; color:white; background:#122f32c9; border:1px solid #ffffff25; border-radius:5px; font-size:10px; backdrop-filter:blur(5px); }
+.nyc-case .nyc-view-tag { top:14px; bottom:auto; }
+.nyc-view>p { padding:18px 25px 23px; font-size:12px; line-height:1.6; color:var(--muted); }
+.nyc-transport { display:flex; align-items:center; gap:24px; padding:22px 28px; border-top:1px solid var(--line); }
+.nyc-play { min-width:108px; background:var(--ink); color:white; border:0; border-radius:7px; padding:13px 16px; font-size:12px; }
+.nyc-play:disabled { opacity:.65; cursor:progress; }
+.nyc-scrubber { flex:1; display:flex; }
+.nyc-scrubber input { width:100%; accent-color:var(--green); cursor:pointer; }
+.nyc-time { font:12px var(--display); color:var(--muted); min-width:100px; text-align:right; }
+.nyc-pair>.fineprint { margin:0; padding:0 28px 22px; max-width:100%; font-size:11px; line-height:1.7; }
+.nyc-case-numbers { display:grid; grid-template-columns:1fr 1fr 1.2fr; padding:23px 25px 28px; gap:12px; }
+.nyc-case-numbers strong { display:block; font:500 clamp(25px,3vw,42px) var(--display); letter-spacing:-1px; }
+.nyc-case-numbers strong small { font-size:17px; margin-left:4px; }
+.nyc-case-numbers span { display:block; font-size:10px; color:var(--muted); margin-top:6px; }
+.nyc-case .nyc-view-0 strong { color:var(--green); }
+.nyc-case .nyc-view-1 strong { color:#ae653e; }
+.nyc-evidence-link { display:inline-block; margin:0 28px 25px; font-size:12px; color:var(--green); border-bottom:1px solid var(--green); padding-bottom:4px; }
+.nyc-environment { margin:0 0 28px; background:var(--ink); color:white; border-radius:12px; overflow:hidden; }
+.nyc-environment video { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; }
+.nyc-environment figcaption { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:22px 27px; }
+.nyc-environment figcaption strong { font:500 20px var(--display); }
+.nyc-environment figcaption span { color:#b1c4bb; font-size:11px; }
+.nyc-gallery { margin-top:18px; border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+.nyc-gallery summary { padding:19px 24px; cursor:pointer; font-size:13px; }
+.nyc-gallery summary>span { float:right; font-size:11px; color:var(--muted); }
+.nyc-gallery-inner { border-top:1px solid var(--line); padding:22px; }
+.nyc-gallery-inner img { width:100%; height:auto; display:block; border-radius:7px; }
+.nyc-gallery-inner p { font-size:11px; color:var(--muted); margin-top:13px; }
+.nyc-camera-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+.nyc-camera-tabs button { border:1px solid var(--line); background:transparent; border-radius:100px; padding:9px 17px; font-size:12px; }
+.nyc-camera-tabs button[aria-pressed=true] { background:var(--ink); color:white; border-color:var(--ink); }
+@media(max-width:760px) {
+ .nyc-pair-grid { grid-template-columns:1fr; }
+ .nyc-pair-kicker { flex-direction:column; gap:9px; padding:18px; }
+ .nyc-view-heading { padding:17px 18px; }
+ .nyc-view>p { padding:14px 18px 19px; }
+ .nyc-transport { gap:12px; padding:18px; flex-wrap:wrap; }
+ .nyc-scrubber { min-width:90px; }
+ .nyc-time { min-width:85px; font-size:11px; }
+ .nyc-pair>.fineprint { padding:0 18px 18px; }
+ .nyc-case-numbers { padding:18px; }
+ .nyc-environment figcaption { flex-direction:column; align-items:flex-start; padding:19px; gap:9px; }
+ .nyc-gallery summary>span { display:none; }
+ .nyc-gallery-inner { padding:14px; }
+ .nyc-motion-toggle { right:14px; top:52px; font-size:10px; padding:8px 12px; }
+}

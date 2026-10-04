@@ -18,4 +18,4 @@ Set `SIMWORLD_UE_LAUNCHER` to the absolute launcher path. Run `python benchmark/
 
 Record the runtime version, download location, SHA-256, Unreal version, GPU requirements, launch command, and applicable third-party asset terms. The currently available workspace does not establish all of these, so no download or compatibility claim is invented here.
 
-Rendered demonstration media is supplied separately under `website/public/media`. The generated cover is labeled as a concept illustration. Pilot footage illustrates the interface and is not the source of the paper tables.
+Rendered demonstration media is supplied under `website/public/media`. The current cover and film use native Unreal Engine renders of the Madison Square Park NYC scene. The Astra/Sol comparison reconstructs an existing RT15 run with its recorded agent endpoints and simulation timing; the original logs supply the displayed counts. The NYC imagery is not the source of the paper tables. See [scene provenance](../website/nyc/README.md).

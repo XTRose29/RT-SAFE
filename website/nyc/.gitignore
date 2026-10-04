@@ -1,0 +1,10 @@
+/ue/
+/runtime/
+/renders/
+/previews/
+/encoded/
+/UnrealEngine-*/
+__pycache__/
+*.pyc
+
+/project-source.json

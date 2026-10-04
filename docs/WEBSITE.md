@@ -35,12 +35,14 @@ Set repository variable `SITE_URL` only when using a custom domain. Configure th
 - `website/app/rtsafe.tsx`: page and interactive tables.
 - `website/app/data.json`: manuscript results.
 - `website/app/examples.json`: curated recorded decisions.
-- `website/public/media/rt-safe-demo.mp4`: full narrated film.
-- `website/public/media/rt-safe-highlights.mp4`: one-minute cut.
-- `website/public/media/rt-safe-conference-captioned.mp4`: full film with burned captions.
-- `website/video/`: script, timing, voice clips and source footage.
+- `website/public/media/rt-safe-nyc-90s.mp4`: current 90-second narrated film.
+- `website/public/media/rt-safe-nyc-90s-captioned.mp4`: conference copy with burned captions.
+- `website/public/media/rt-safe-nyc-comparison.mp4`: full selected Astra/Sol comparison at 6× simulation speed.
+- `website/public/media/nyc/`: native city footage, synchronized timing/replay clips, and camera gallery.
+- `website/nyc/`: native rendering scripts and curated reconstruction evidence.
+- `website/video/nyc-90s/`: narration, timing, captions, and export validation.
 
-[Video editing instructions](../website/video/README.md) describe regeneration. The concept image is labeled as illustrative; the decision examples use recorded UE observations.
+[NYC production instructions](../website/nyc/README.md) describe the isolated Unreal project and Movie Render Queue workflow. [Film instructions](../website/video/nyc-90s/README.md) describe editing and export. The timing encounter and environment tour are illustrative. The matched Astra/Sol replay visualizes an existing recorded run; manuscript results remain from the original benchmark maps.
 
 Do not add raw research folders or environment files to `website/public`: everything there is deployed publicly.
 

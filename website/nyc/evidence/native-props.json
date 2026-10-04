@@ -1,0 +1,53 @@
+[
+  {
+    "path": "/Game/RealTimeBench/game-ready-sport-balls/source/Soccer",
+    "type": null,
+    "parameters": []
+  },
+  {
+    "path": "/Game/RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Soccer",
+    "type": null,
+    "parameters": []
+  },
+  {
+    "path": "/Game/RealTimeBench/game-ready-sport-balls/source/Basketball",
+    "type": null,
+    "parameters": []
+  },
+  {
+    "path": "/Game/RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Basketball",
+    "type": null,
+    "parameters": []
+  },
+  {
+    "path": "/Game/RealTimeBench/game-ready-sport-balls/source/Tennis",
+    "type": null,
+    "parameters": []
+  },
+  {
+    "path": "/Game/RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Tennis",
+    "type": null,
+    "parameters": []
+  },
+  {
+    "path": "/Game/bp_city_props/SM_carton_box_b",
+    "type": "Blueprint"
+  },
+  {
+    "path": "/Game/RealTimeBench/Material/M_OilStick",
+    "type": null,
+    "parameters": []
+  },
+  {
+    "path": "/Game/RealTimeBench/Material/M_WaterPuddle",
+    "type": null,
+    "parameters": []
+  },
+  {
+    "path": "/Engine/BasicShapes/BasicShapeMaterial",
+    "type": "Material",
+    "parameters": [
+      "Color"
+    ]
+  }
+]

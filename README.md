@@ -5,13 +5,13 @@
   <a href="docs/INSTALL.md">Quick start</a> ·
   <a href="docs/WEBSITE.md">Project website</a> ·
   <a href="website/public/media/rt-safe-paper.pdf">Paper draft</a> ·
-  <a href="website/public/media/rt-safe-demo.mp4">Demo film</a> ·
+  <a href="website/public/media/rt-safe-nyc-90s.mp4">Demo film</a> ·
   <a href="#results">Results</a> ·
   <a href="docs/PROTOCOL.md">Protocol</a>
 </p>
 
 ![RT-SAFE — the world does not pause](website/public/og.png)
-<sub>Concept illustration. Recorded Unreal Engine observations are included in the website's decision examples.</sub>
+<sub>Native Unreal Engine rendering of the Madison Square Park NYC scene. The website includes a matched reconstruction of recorded Astra and Sol behavior.</sub>
 
 ## Why real time matters
 
@@ -69,7 +69,9 @@ website/         Static website, paper tables, curated examples and demo media
 docs/            Setup, protocol, asset requirements and release provenance
 ```
 
-The website includes the full narrated film, a one-minute highlight cut and a conference copy with burned captions. Editable film scripts and voice clips are in `website/video/`.
+The website includes a **90-second narrated NYC film**, a conference copy with burned captions, and a **44-second Astra/Sol comparison**. Native scene scripts and reconstruction evidence are in [`website/nyc/`](website/nyc/README.md); the edit and narration are in [`website/video/nyc-90s/`](website/video/nyc-90s/README.md). Earlier film editions are retained.
+
+The NYC comparison preserves the selected run’s recorded agent endpoints and simulation timing. Its 1 versus 17 collision counts come from the original RT15 logs. It visualizes that existing run in a new scene; it is not a new NYC benchmark evaluation.
 
 ## Results
 

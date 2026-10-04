@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:11.437
+GPT-6 Astra and GPT-5.6 Sol follow their recorded Task 19 final-subgoal trajectories, reconstructed in NYC at 6× speed.
+
+00:00:11.437 --> 00:00:26.000
+Astra has completed the segment: 12 decisions, 1 recorded collision. Sol is still navigating.
+
+00:00:26.000 --> 00:00:42.085
+The agent pauses during inference while surrounding patrols continue moving. Source collision counts appear as they are reported.
+
+00:00:42.085 --> 00:00:44.100
+Sol completes the segment: 33 decisions, 17 recorded collisions. These are original RT15 measurements, not a new evaluation on NYC.

@@ -1,0 +1,164 @@
+[
+  {
+    "name": "RootScene",
+    "type": "SceneComponent",
+    "parent": null,
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: -0.000000, z: 0.244786, w: 0.969577}, translation: {x: -14392.951180, y: 20740.030906, z: -218.697182}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "MjBody_FL_thigh",
+    "type": "MjBody",
+    "parent": "RootScene",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 18.800000, y: -12.700000, z: 27.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "Mesh_RL_calf",
+    "type": "StaticMeshComponent",
+    "parent": "MjBody_RL_calf",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "Mesh_FR_thigh",
+    "type": "StaticMeshComponent",
+    "parent": "MjBody_FR_thigh",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "MjBody_RL_calf",
+    "type": "MjBody",
+    "parent": "RootScene",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: -18.800000, y: -12.700000, z: 6.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "MjBody_FR_thigh",
+    "type": "MjBody",
+    "parent": "RootScene",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 18.800000, y: 12.700000, z: 27.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "Mesh_RR_calf",
+    "type": "StaticMeshComponent",
+    "parent": "MjBody_RR_calf",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "Mesh_RL_hip",
+    "type": "StaticMeshComponent",
+    "parent": "MjBody_RL_hip",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "MjBody_RR_calf",
+    "type": "MjBody",
+    "parent": "RootScene",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: -18.800000, y: 12.700000, z: 6.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "MjBody_RL_hip",
+    "type": "MjBody",
+    "parent": "RootScene",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: -18.800000, y: -4.700000, z: 27.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "Mesh_FL_calf",
+    "type": "StaticMeshComponent",
+    "parent": "MjBody_FL_calf",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "Mesh_RR_hip",
+    "type": "StaticMeshComponent",
+    "parent": "MjBody_RR_hip",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "MjBody_FL_calf",
+    "type": "MjBody",
+    "parent": "RootScene",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 18.800000, y: -12.700000, z: 6.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "MjBody_RR_hip",
+    "type": "MjBody",
+    "parent": "RootScene",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: -18.800000, y: 4.700000, z: 27.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "Mesh_FR_calf",
+    "type": "StaticMeshComponent",
+    "parent": "MjBody_FR_calf",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "Mesh_FL_hip",
+    "type": "StaticMeshComponent",
+    "parent": "MjBody_FL_hip",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "MjBody_FR_calf",
+    "type": "MjBody",
+    "parent": "RootScene",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 18.800000, y: 12.700000, z: 6.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "MjBody_FL_hip",
+    "type": "MjBody",
+    "parent": "RootScene",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 18.800000, y: -4.700000, z: 27.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "Mesh_RL_thigh",
+    "type": "StaticMeshComponent",
+    "parent": "MjBody_RL_thigh",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "Mesh_FR_hip",
+    "type": "StaticMeshComponent",
+    "parent": "MjBody_FR_hip",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "MjBody_RL_thigh",
+    "type": "MjBody",
+    "parent": "RootScene",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: -18.800000, y: -12.700000, z: 27.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "MjBody_FR_hip",
+    "type": "MjBody",
+    "parent": "RootScene",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 18.800000, y: 4.700000, z: 27.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "Mesh_RR_thigh",
+    "type": "StaticMeshComponent",
+    "parent": "MjBody_RR_thigh",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "Mesh_trunk",
+    "type": "StaticMeshComponent",
+    "parent": "MjBody_trunk",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "MjBody_RR_thigh",
+    "type": "MjBody",
+    "parent": "RootScene",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: -18.800000, y: 12.700000, z: 27.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "MjBody_trunk",
+    "type": "MjBody",
+    "parent": "RootScene",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 27.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  },
+  {
+    "name": "Mesh_FL_thigh",
+    "type": "StaticMeshComponent",
+    "parent": "MjBody_FL_thigh",
+    "transform": "<Struct 'Transform' (0x7eee0c79f540) {rotation: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}, translation: {x: 0.000000, y: 0.000000, z: 0.000000}, scale3d: {x: 1.000000, y: 1.000000, z: 1.000000}}>"
+  }
+]

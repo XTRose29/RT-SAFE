@@ -1,0 +1,183 @@
+{
+  "rt-safe-nyc-90s.mp4": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "duration": "90.000000",
+        "nb_frames": "2700"
+      },
+      {
+        "codec_name": "aac",
+        "r_frame_rate": "0/0",
+        "duration": "88.100000",
+        "nb_frames": "4130"
+      }
+    ],
+    "format": {
+      "duration": "90.000000",
+      "size": "27179831"
+    },
+    "sha256": "9f739c6958525fe49e1bb866c3b1055571f5eba6cd5f2a216e7017f962788a0b",
+    "full_decode": "passed"
+  },
+  "rt-safe-nyc-90s-captioned.mp4": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "duration": "90.000000",
+        "nb_frames": "2700"
+      },
+      {
+        "codec_name": "aac",
+        "r_frame_rate": "0/0",
+        "duration": "88.100000",
+        "nb_frames": "4130"
+      }
+    ],
+    "format": {
+      "duration": "90.000000",
+      "size": "26373509"
+    },
+    "sha256": "dc714c5f1e6e8078cfb9678b4e6d897b57eeaeb60eb10cd362392cc4965e78af",
+    "full_decode": "passed"
+  },
+  "captions": {
+    "cues": 26,
+    "last_end_seconds": 89.053,
+    "ordered_nonoverlapping": true
+  },
+  "voice_fits_all_scenes": true,
+  "timing_motion": {
+    "static": {
+      "inference_mean_absolute_pixel_changes": [
+        0.01527247299382716,
+        0.014184670781893003,
+        0.01662037037037037
+      ],
+      "action_change": 5.1205844907407405
+    },
+    "realtime": {
+      "inference_mean_absolute_pixel_changes": [
+        1.7719372106481481,
+        2.0987424447016463,
+        3.0677184606481482
+      ],
+      "action_change": 5.973101048096708
+    }
+  },
+  "completed_segment_holds": {
+    "astra": {
+      "completed_view_mean_absolute_pixel_change": 0.0008101851851851852
+    },
+    "sol": {
+      "completed_view_mean_absolute_pixel_change": 0.01879420653292181
+    }
+  },
+  "hero": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_frames": "240"
+      }
+    ],
+    "format": {
+      "duration": "8.000000",
+      "size": "8314959"
+    }
+  },
+  "timing-static": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_frames": "330"
+      }
+    ],
+    "format": {
+      "duration": "11.000000"
+    }
+  },
+  "timing-realtime": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_frames": "330"
+      }
+    ],
+    "format": {
+      "duration": "11.000000"
+    }
+  },
+  "environment-tour": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_frames": "360"
+      }
+    ],
+    "format": {
+      "duration": "12.000000"
+    }
+  },
+  "astra": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_frames": "1323"
+      }
+    ],
+    "format": {
+      "duration": "44.100000"
+    }
+  },
+  "sol": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_frames": "1323"
+      }
+    ],
+    "format": {
+      "duration": "44.100000"
+    }
+  },
+  "comparison_source_totals": "verified against curated original logs",
+  "full_selected_comparison": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_frames": "1323"
+      }
+    ],
+    "format": {
+      "duration": "44.100000"
+    },
+    "full_decode": "passed"
+  },
+  "narration_loudness": {
+    "integrated_lufs": -16.07,
+    "true_peak_dbtp": -1.48
+  },
+  "repository_media_size_limit": "all current NYC MP4s below 95 MiB"
+}

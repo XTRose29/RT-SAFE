@@ -1,0 +1,8 @@
+{
+  "source_metrics": "passed",
+  "world_clock_advances_during_inference": "passed",
+  "agent_holds_during_inference": "passed",
+  "rigid_transform_preserves_action_distances": "passed",
+  "source_initial_actor_positions": "passed",
+  "last_agent_positions": "passed"
+}
