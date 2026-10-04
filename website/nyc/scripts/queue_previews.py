@@ -55,8 +55,8 @@ for job in [
         render(*job)
 
 jobs = [
-    ('timing-rt-preview', 'render_timing_scene.py', {'RTSAFE_TIMING': 'realtime'}, 'renders/timing-realtime-samples/result.json'),
-    ('timing-static-preview', 'render_timing_scene.py', {'RTSAFE_TIMING': 'static'}, 'renders/timing-static-samples/result.json'),
+    ('timing-rt-preview', 'render_timing_scene.py', {'RTSAFE_TIMING': 'realtime'}, 'renders/timing-close-realtime-samples/result.json'),
+    ('timing-static-preview', 'render_timing_scene.py', {'RTSAFE_TIMING': 'static'}, 'renders/timing-close-static-samples/result.json'),
     ('environment-preview', 'render_environment.py', {}, 'renders/environment-samples/result.json'),
     ('astra-preview', 'render_task19_replay.py', {'RTSAFE_MODEL': 'astra'}, 'renders/task19/astra-samples/result.json'),
     ('sol-preview', 'render_task19_replay.py', {'RTSAFE_MODEL': 'sol'}, 'renders/task19/sol-samples/result.json'),

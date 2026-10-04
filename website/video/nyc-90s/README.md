@@ -21,6 +21,10 @@ Astra/Sol comparison and an eight-second aerial loop.
 Title: **RT-Safe: Benchmarking Agent Safety in Real-Time Embodied Environment**.
 Subtitle: **The world does not pause while an agent thinks.**
 
+The opening comparison uses two edge-to-edge city views with a closer camera. Labels sit
+inside each view and follow the agent from Thinking to Acting. The pedestrian approaches
+along the sidewalk while the static world pauses and the real-time world advances.
+
 ## Exports
 
 - `../../public/media/rt-safe-nyc-90s.mp4`: narrated 1080p, 30 fps, exactly 90 seconds.

@@ -40,16 +40,10 @@ def title(s,t):
     v.text(im,(101,935),'MADISON SQUARE PARK, NYC  /  UNREAL ENGINE',19,'#c5d8e6',400)
     return im
 def timing(s,t):
-    im=v.base(s,t,'The world does not pause while an agent thinks.')
+    im=Image.new('RGB',(1920,1080),v.INK)
     for i,name in enumerate(('timing-static','timing-realtime')):
-        x=65+i*920;col=v.BLUE if i==0 else v.ORANGE
-        v.rect(im,(x,270,x+870,928),v.WHITE,14,v.LINE)
-        v.text(im,(x+22,293),'Static evaluation' if i==0 else 'Real-time evaluation',36,col,600)
-        im.paste(footage(name,t,(870,489)),(x,362))
-        v.text(im,(x+23,874),'INFERENCE' if t<7 else 'ACTION' if t<10 else 'OUTCOME',20,col,600)
-        clock=max(0,t-7) if i==0 else t
-        v.text(im,(x+847,873),f'World time +{clock:.1f} s',25,col,500,'ra')
-    v.footer(im,'Native NYC scene · same initial state and commanded move · illustrative encounter')
+        im.paste(footage(name,t,(960,1000)),(i*960,0))
+    v.line(im,[(959,0),(959,1000)],'#f6f8fb',4)
     return im
 def environment(s,t):
     return footage('environment-tour',t)

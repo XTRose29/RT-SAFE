@@ -39,23 +39,19 @@ def hero():
     shutil.copy2(web,MEDIA/'hero.mp4')
     print('Exported web aerial loop; high-quality master retained locally',flush=True)
 def timing():
+    spec=importlib.util.spec_from_file_location('timing_presentation',ROOT/'scripts/timing-presentation.py')
+    presentation=importlib.util.module_from_spec(spec);spec.loader.exec_module(presentation)
     for name in ('static','realtime'):
-        stem='timing-'+name;raw=NYC/'encoded'/f'{stem}.mp4'
+        stem='timing-close-'+name;raw=NYC/'encoded'/f'{stem}.mp4'
         encode(NYC/'renders'/stem,stem,raw)
-        clip=film.Clip(raw);process=writer(MEDIA/f'{stem}.mp4')
+        meta=json.loads((NYC/'renders'/stem/'scene.json').read_text())
+        clip=film.Clip(raw);process=writer(MEDIA/f'timing-{name}.mp4',width=960,height=1000,crf=19)
         for f in range(330):
-            t=f/30;im=clip.frame(0 if name=='static' and t<7 else t)
-            # A presentation annotation, not an event measured by this illustrative take.
-            if t>=8.65:
-                col=v.TEAL if name=='static' else v.ORANGE
-                label='Path remains clear' if name=='static' else 'Collision risk'
-                v.rect(im,(1280,55,1860,137),v.INK,12)
-                v.text(im,(1310,74),label,39,'#74ded7' if name=='static' else col,600)
-                if name=='realtime' and t<9.75:
-                    v.circle(im,980,550,95+7*math.sin(t*8),col,5)
+            t=f/30;source=0 if name=='static' and t<7 else f
+            im=presentation.compose(clip.frame(source/30),meta,source,t,name,v)
             process.stdin.write(im.tobytes())
-            if f==0:im.save(MEDIA/f'{stem}.webp',quality=91)
-        finish(process);print('Exported',stem,flush=True)
+            if f==0:im.save(MEDIA/f'timing-{name}.webp',quality=93)
+        finish(process);print('Exported closer sidewalk timing scene:',name,flush=True)
 def comparison():
     data=json.loads((NYC/'evidence/task19-replay.json').read_text())
     for name,model in data['models'].items():

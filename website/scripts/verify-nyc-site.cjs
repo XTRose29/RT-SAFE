@@ -29,6 +29,8 @@ const assert=(ok,message)=>{if(!ok)throw new Error(message)};
   assert(states.every(v=>v.t<2&&!v.paused),`${kind} replay failed`);
   await panel.locator('.nyc-play').click();
   await slider.focus();for(let i=0;i<100;i++)await slider.press('ArrowRight');
+  await page.waitForFunction(selector=>Array.from(document.querySelectorAll(selector)).every(v=>!v.seeking),`.nyc-${kind} video`);
+  await page.waitForTimeout(250);
   await panel.screenshot({path:path.join(out,`${kind}.png`)});results[kind]={synchronized_playback:true,seek:true,replay:true,duration};
  }
  await page.locator('.nyc-gallery summary').click();
@@ -51,6 +53,7 @@ const assert=(ok,message)=>{if(!ok)throw new Error(message)};
  await page.setViewportSize({width:390,height:844});await page.goto(process.env.SITE_URL||'http://127.0.0.1:4173/',{waitUntil:'networkidle'});
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Mobile overflow');
  await page.screenshot({path:path.join(out,'mobile-top.png')});
+ await page.locator('.nyc-timing').screenshot({path:path.join(out,'mobile-timing.png')});
  await page.locator('.nyc-case').screenshot({path:path.join(out,'mobile-comparison.png')});
  await page.emulateMedia({reducedMotion:'reduce'});
  await page.reload({waitUntil:'networkidle'});

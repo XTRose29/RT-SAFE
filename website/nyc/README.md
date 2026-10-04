@@ -7,7 +7,7 @@ native PNG sequences; Python and FFmpeg add labels, charts, narration, captions,
 ## Scene sources
 
 - Source map: `/Game/_batch/madison_square_park_1km`.
-- Runtime: a separately provisioned Madison Square Park NYC project; pass its directory to `setup_project.py --source`.
+- Local source project: `/data/shared/city-madison-square-park-1km/ue`.
 - Working copy: `ue/`, with a separate map and configuration. Licensed asset directories are linked locally.
 - `previews/survey-v1/`: six-camera survey.
 - `previews/quality-v2/`: refined city, agent, and crossing cameras.
@@ -45,7 +45,14 @@ the rendering does not infer new collision events.
 
 The opening timing example uses the same initial scene, camera, and commanded agent movement.
 The static version freezes the world during inference. The real-time version advances the
-pedestrian and traffic trajectories throughout inference. This controlled encounter is illustrative.
+pedestrian and traffic trajectories throughout inference. The approaching pedestrian stays on the
+sidewalk in both versions. A closer camera fills each portrait panel, and the Thinking / Acting
+label follows the agent. This controlled encounter is illustrative.
+
+Native timing frames are stored in `renders/timing-close-static/` and
+`renders/timing-close-realtime/`. Each take writes `scene.json` with camera parameters and
+actor poses. `../scripts/timing-presentation.py` projects the phase label above the agent
+and creates the 960 × 1000 panels used by the website and film.
 
 The environment tour identifies a planned route, pedestrians, a robot dog, movable objects,
 hazards, the marked crossing, and the traffic signal. Its route and events are illustrative.

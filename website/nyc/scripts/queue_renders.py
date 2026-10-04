@@ -10,8 +10,8 @@ args=ap.parse_args()
 if not args.resume or not (root/'runtime/render-batch.json').exists():
  (root/'runtime/render-batch.json').write_text(json.dumps({'started':time.time(),'only':args.only},indent=2))
 jobs=[
- ('timing-realtime','render_timing_scene.py',{'RTSAFE_TIMING':'realtime'},'renders/timing-realtime/result.json','timing'),
- ('timing-static','render_timing_scene.py',{'RTSAFE_TIMING':'static'},'renders/timing-static/result.json','timing'),
+ ('timing-realtime','render_timing_scene.py',{'RTSAFE_TIMING':'realtime'},'renders/timing-close-realtime/result.json','timing'),
+ ('timing-static','render_timing_scene.py',{'RTSAFE_TIMING':'static'},'renders/timing-close-static/result.json','timing'),
  ('environment','render_environment.py',{},'renders/environment/result.json','environment'),
  ('astra','render_task19_replay.py',{'RTSAFE_MODEL':'astra'},'renders/task19/astra/result.json','astra'),
  ('sol','render_task19_replay.py',{'RTSAFE_MODEL':'sol'},'renders/task19/sol/result.json','sol'),

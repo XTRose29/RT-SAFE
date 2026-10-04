@@ -5,7 +5,23 @@
     "metadata": {
       "times": null,
       "mode": "static",
-      "illustrative": true
+      "illustrative": true,
+      "pedestrian_route": "Along the sidewalk toward the agent; no traffic-lane crossing.",
+      "camera_location": [
+        -14864.085707652133,
+        20349.605167531896,
+        211.30281829833984
+      ],
+      "camera_rotation": [
+        -21.50504466525272,
+        38.2646072467642,
+        0
+      ],
+      "presentation_dimensions": [
+        960,
+        1000
+      ],
+      "labels": "Agent-following Thinking / Acting overlay"
     }
   },
   "timing-realtime": {
@@ -14,7 +30,23 @@
     "metadata": {
       "times": null,
       "mode": "realtime",
-      "illustrative": true
+      "illustrative": true,
+      "pedestrian_route": "Along the sidewalk toward the agent; no traffic-lane crossing.",
+      "camera_location": [
+        -14864.085707652133,
+        20349.605167531896,
+        211.30281829833984
+      ],
+      "camera_rotation": [
+        -21.50504466525272,
+        38.2646072467642,
+        0
+      ],
+      "presentation_dimensions": [
+        960,
+        1000
+      ],
+      "labels": "Agent-following Thinking / Acting overlay"
     }
   },
   "environment": {

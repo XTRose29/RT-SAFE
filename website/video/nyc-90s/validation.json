@@ -19,9 +19,9 @@
     ],
     "format": {
       "duration": "90.000000",
-      "size": "27179831"
+      "size": "28303756"
     },
-    "sha256": "9f739c6958525fe49e1bb866c3b1055571f5eba6cd5f2a216e7017f962788a0b",
+    "sha256": "ffcc2cfd6d09dd22479a13f0866f7ab09e9833bbdd6140dfc5978a282e20528b",
     "full_decode": "passed"
   },
   "rt-safe-nyc-90s-captioned.mp4": {
@@ -44,9 +44,9 @@
     ],
     "format": {
       "duration": "90.000000",
-      "size": "26373509"
+      "size": "27413310"
     },
-    "sha256": "dc714c5f1e6e8078cfb9678b4e6d897b57eeaeb60eb10cd362392cc4965e78af",
+    "sha256": "18d11ff4ad466a9a841c2d65fc7e55870ad24e015fbaa0b5ed8073e65de58a96",
     "full_decode": "passed"
   },
   "captions": {
@@ -58,19 +58,19 @@
   "timing_motion": {
     "static": {
       "inference_mean_absolute_pixel_changes": [
-        0.01527247299382716,
-        0.014184670781893003,
-        0.01662037037037037
+        0.048002083333333334,
+        0.047179513888888885,
+        0.04935972222222222
       ],
-      "action_change": 5.1205844907407405
+      "action_change": 7.378497569444445
     },
     "realtime": {
       "inference_mean_absolute_pixel_changes": [
-        1.7719372106481481,
-        2.0987424447016463,
-        3.0677184606481482
+        1.0989243055555555,
+        1.4168461805555554,
+        1.6082618055555555
       ],
-      "action_change": 5.973101048096708
+      "action_change": 7.6181197916666665
     }
   },
   "completed_segment_holds": {
@@ -91,16 +91,15 @@
       }
     ],
     "format": {
-      "duration": "8.000000",
-      "size": "8314959"
+      "duration": "8.000000"
     }
   },
   "timing-static": {
     "programs": [],
     "streams": [
       {
-        "width": 1920,
-        "height": 1080,
+        "width": 960,
+        "height": 1000,
         "nb_frames": "330"
       }
     ],
@@ -112,8 +111,8 @@
     "programs": [],
     "streams": [
       {
-        "width": 1920,
-        "height": 1080,
+        "width": 960,
+        "height": 1000,
         "nb_frames": "330"
       }
     ],

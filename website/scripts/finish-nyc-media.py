@@ -16,7 +16,7 @@ def wait(relative):
  raise TimeoutError(relative)
 def run(script,*args):
  print('Running',script,*args,flush=True);subprocess.run([PY,str(ROOT/'scripts'/script),*args],cwd=ROOT,check=True)
-wait('renders/timing-static/result.json');run('build-nyc-media.py','timing')
+wait('renders/timing-close-static/result.json');run('build-nyc-media.py','timing')
 wait('renders/environment/result.json');run('compose-nyc-environment.py')
 wait('renders/task19/sol/result.json');run('build-nyc-media.py','comparison')
 wait('renders/hero/result.json')

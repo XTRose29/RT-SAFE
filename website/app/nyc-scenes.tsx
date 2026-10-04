@@ -36,7 +36,6 @@ function SynchronizedViews({ comparison = false }: { comparison?: boolean }) {
   const duration = comparison ? 44.1 : 11;
   const stems = comparison ? ["astra", "sol"] : ["timing-static", "timing-realtime"];
   const labels = comparison ? ["GPT-6 Astra", "GPT-5.6 Sol"] : ["Static evaluation", "Real-time evaluation"];
-  const phase = time < .5 ? "Observe" : time < 7 ? "Inference" : time < 10 ? "Action" : "Outcome";
   const pause = () => { playGeneration.current++; left.current?.pause(); right.current?.pause(); setPlaying(false); setLoading(false); };
   const seek = (value: number) => {
     pause();
@@ -86,21 +85,21 @@ function SynchronizedViews({ comparison = false }: { comparison?: boolean }) {
   }, [playing]);
   useEffect(() => () => { playGeneration.current++;left.current?.pause(); right.current?.pause(); }, []);
   return <div className={`nyc-pair ${comparison ? "nyc-case" : "nyc-timing"}`}>
-    <div className="nyc-pair-kicker"><span>{comparison ? "SAME ROUTE · RECORDED BEHAVIOR" : "THE WORLD DOES NOT PAUSE WHILE AN AGENT THINKS"}</span>
-      <span>{comparison ? "RT15 / Task 19 / Low effort" : "A controlled timing illustration"}</span></div>
+    {comparison && <div className="nyc-pair-kicker"><span>SAME ROUTE · RECORDED BEHAVIOR</span>
+      <span>RT15 / Task 19 / Low effort</span></div>}
     <div className="nyc-pair-grid">
       {stems.map((stem,i) => <article key={stem} className={`nyc-view nyc-view-${i}`}>
-        <div className="nyc-view-heading"><h3>{labels[i]}</h3><span>{comparison ? "Recorded trajectory" : i === 0 && time < 7 ? "Ⅱ WORLD PAUSED" : "● WORLD MOVING"}</span></div>
+        {comparison && <div className="nyc-view-heading"><h3>{labels[i]}</h3><span>Recorded trajectory</span></div>}
         <div className="nyc-view-frame"><video ref={i === 0 ? left : right} muted playsInline preload="none"
           poster={`${media}${stem}.webp`} aria-label={`${labels[i]} in the NYC scene`}
           onLoadedMetadata={event => { const v=event.currentTarget; v.currentTime=Math.min(requestedTime.current,Math.max(0,v.duration-.001)); }}>
           <source src={`${media}${stem}.mp4`} type="video/mp4" />
-        </video><span className="nyc-view-tag">{comparison ? "NYC reconstruction" : phase}</span></div>
+        </video>{comparison && <span className="nyc-view-tag">NYC reconstruction</span>}</div>
         {comparison ? <div className="nyc-case-numbers">
           <div><strong>{i===0 ? "1" : "17"}</strong><span>recorded collisions</span></div>
           <div><strong>{i===0 ? "12" : "33"}</strong><span>decisions</span></div>
           <div><strong>{i===0 ? "68.6" : "252.5"}<small>s</small></strong><span>simulation time</span></div>
-        </div> : <p>{i===0 ? "The scene stays frozen throughout inference." : "Pedestrians and traffic continue moving during inference."}</p>}
+        </div> : null}
       </article>)}
     </div>
     <div className="nyc-transport">

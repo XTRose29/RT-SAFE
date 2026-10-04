@@ -10,6 +10,7 @@
 .nyc-view-heading>span { font-size:9px; letter-spacing:.4px; color:var(--green); }
 .nyc-view-1 .nyc-view-heading>span { color:#a35a32; }
 .nyc-view-frame { position:relative; background:#1d2c32; aspect-ratio:16/9; overflow:hidden; }
+.nyc-timing .nyc-view-frame { aspect-ratio: 960 / 1000; }
 .nyc-view-frame video { display:block; width:100%; height:100%; object-fit:cover; }
 .nyc-view-tag { position:absolute; bottom:14px; left:16px; padding:6px 10px; color:white; background:#122f32c9; border:1px solid #ffffff25; border-radius:5px; font-size:10px; backdrop-filter:blur(5px); }
 .nyc-case .nyc-view-tag { top:14px; bottom:auto; }
