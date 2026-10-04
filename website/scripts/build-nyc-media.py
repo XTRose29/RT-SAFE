@@ -45,6 +45,7 @@ def timing():
         stem='timing-close-'+name;raw=NYC/'encoded'/f'{stem}.mp4'
         encode(NYC/'renders'/stem,stem,raw)
         meta=json.loads((NYC/'renders'/stem/'scene.json').read_text())
+        target=ROOT/'public/data/nyc'/f'timing-{name}-scene.json';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(meta,indent=2)+'\n')
         if name=='static':
             full=film.Clip(raw).frame(0);full.save(MEDIA/'timing-static-wide.webp',lossless=True)
             target=ROOT/'public/data/nyc/timing-scene.json';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(meta,indent=2)+'\n')

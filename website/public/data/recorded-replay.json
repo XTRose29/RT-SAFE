@@ -4,7 +4,7 @@
   "difficulty": "easy",
   "reasoning": "low",
   "seed": 0,
-  "presentation": "Original first-person observation and action snapshots; no NYC reconstruction.",
+  "presentation": "Original first-person observation and action snapshots with short display cross-dissolves. No generated intermediate scene frames.",
   "clock": "Recorded simulation clock, including inference exposure and action execution. Uniform 6x playback.",
   "playback_speed": 6,
   "models": {
@@ -2966,5 +2966,6 @@
     }
   },
   "source_choreography_sha256": "d37841e645f3f704cfa6cef88a4d34b7a424c9255d06d76506680f6856e0edb6",
-  "frame_policy": "Hold the recorded input during inference. Show saved action snapshots in file order during action, with equal spacing when exact capture times are unavailable. Hold the final output on completion. No synthesized intermediate frames."
+  "frame_policy": "Hold the recorded input during inference. Show saved action snapshots in file order during action, with equal spacing when exact capture times are unavailable. Hold the final output on completion. No synthesized intermediate frames.",
+  "display_transition_seconds": 0.14
 }

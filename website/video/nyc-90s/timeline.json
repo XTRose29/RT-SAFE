@@ -97,5 +97,7 @@
       "voiceDuration": 4.464,
       "voiceSpeed": 1.0262068965517244
     }
-  ]
+  ],
+  "audio": "none",
+  "presentation_revision": "silent-motion-2"
 }

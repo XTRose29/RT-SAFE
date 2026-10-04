@@ -5,7 +5,8 @@ from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
 ap=argparse.ArgumentParser();ap.add_argument('--campaign',type=Path,required=True);args=ap.parse_args()
 data=json.loads((ROOT/'nyc/evidence/task19-replay.json').read_text())
-data['presentation']='Original first-person observation and action snapshots; no NYC reconstruction.'
+data['presentation']='Original first-person snapshots with short eased dissolves; input then holds during inference. Original simulation and collision-report timing.'
+data['display_transition_seconds']=0.14
 data['frame_policy']='Hold the recorded input during inference. Show saved action snapshots in file order during action, with equal spacing when exact capture times are unavailable. Hold the final output on completion. No synthesized intermediate frames.'
 data.pop('coordinate_policy',None)
 count=0

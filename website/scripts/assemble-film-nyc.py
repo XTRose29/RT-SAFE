@@ -15,17 +15,12 @@ def concat_file(paths, name):
     path.write_text(''.join("file '" + str(p).replace("'", "'\\''") + "'\n" for p in paths))
     return path
 
-spec=importlib.util.spec_from_file_location('soundtrack',ROOT/'scripts/music-soundtrack.py')
-soundtrack=importlib.util.module_from_spec(spec);spec.loader.exec_module(soundtrack)
-if not soundtrack.TRACK.exists():soundtrack.generate()
 video_list = concat_file([OUT / 'scenes' / (s['id'] + '.mp4') for s in TL['scenes']], 'video-concat.txt')
 master = MEDIA / 'rt-safe-nyc-90s.mp4'
 run(['-f', 'concat', '-safe', '0', '-i', str(video_list),
-     '-i', str(soundtrack.TRACK),
-     '-map', '0:v:0', '-map', '1:a:0',
-     '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000',
+     '-map', '0:v:0', '-an', '-c:v', 'copy',
      '-t', '90', '-movflags', '+faststart', str(master)])
-print('Exported 90-second master with soft instrumental music', flush=True)
+print('Exported 90-second master without an audio track', flush=True)
 
 def ass_stamp(ts):
     h, m, sec = ts.split(':')
@@ -55,7 +50,7 @@ ass_path = OUT / 'captions.ass'
 ass_path.write_text(ass)
 run(['-i', str(master), '-vf', f'ass={ass_path}:fontsdir={ROOT / "public/fonts"}',
      '-c:v', 'libx264', '-preset', 'fast', '-threads', '8', '-crf', '19',
-     '-c:a', 'copy', '-t', '90', '-movflags', '+faststart',
+     '-an', '-t', '90', '-movflags', '+faststart',
      str(MEDIA / 'rt-safe-nyc-90s-captioned.mp4')])
 shutil.copy2(OUT / 'captions.vtt', MEDIA / 'rt-safe-nyc-90s.vtt')
 shutil.copy2(OUT / 'captions.srt', MEDIA / 'rt-safe-nyc-90s.srt')

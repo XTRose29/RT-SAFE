@@ -59,20 +59,26 @@ def opening_static(width=1920):
 
 def timing(s,t):
     im=Image.new('RGB',(1920,1080),v.INK)
-    if t<4.15:
+    if t<2.8:
         im.paste(opening_static(),(0,0))
-    elif t<6.6:
+    elif t<4.8:
         im.paste(shade(opening_static(),160,190),(0,0))
         v.text(im,(960,350),'But the real world',88,v.WHITE,600,'ma')
         v.text(im,(960,466),'does not stop.',108,'#ffca7a',600,'ma')
         v.text(im,(960,655),'People keep moving. Risk keeps changing.',32,v.WHITE,500,'ma')
-    elif t<7.4:
-        p=v.ease((t-6.6)/.8);width=round(1920-960*p)
+    elif t<7.0:
+        im=shade(footage('hero',t-4.8),190,210)
+        v.text(im,(960,273),'WE INTRODUCE',36,v.PALE,600,'ma')
+        v.text(im,(960,375),'RT-Safe',118,v.WHITE,600,'ma')
+        v.text(im,(960,552),'An embodied environment that keeps evolving',43,v.WHITE,500,'ma')
+        v.text(im,(960,624),'while the agent thinks.',49,'#ffca7a',600,'ma')
+    elif t<7.7:
+        p=v.ease((t-7.0)/.7);width=round(1920-960*p)
         im.paste(footage('timing-realtime',0,(960,1000)),(960,0))
         im.paste(opening_static(width),(0,0))
         v.line(im,[(width-1,0),(width-1,1000)],v.WHITE,3)
     else:
-        source=min(10.99,(t-7.4)*11/7.6)
+        source=min(10.99,(t-7.7)*11/7.3)
         for i,name in enumerate(('timing-static','timing-realtime')):
             im.paste(footage(name,source,(960,1000)),(i*960,0))
         v.line(im,[(959,0),(959,1000)],v.WHITE,3)
@@ -80,8 +86,8 @@ def timing(s,t):
 def environment(s,t):
     if t<2.4:
         im=shade(footage('hero',t+2),195,215)
-        v.text(im,(960,253),'INSIDE THE BENCHMARK',25,v.PALE,600,'ma')
-        v.text(im,(960,368),'A closer look at RT-Safe',84,v.WHITE,600,'ma')
+        v.text(im,(960,253),'OUR TASK & ENVIRONMENT',32,v.PALE,600,'ma')
+        v.text(im,(960,368),'Inside the RT-Safe environment',74,v.WHITE,600,'ma')
         v.text(im,(960,509),'Navigate to the goal safely.',38,v.WHITE,500,'ma')
         for x,label,col in [(415,'Collisions','#88c8ff'),(960,'Hazards','#ffca7a'),(1505,'Traffic-rule violations','#ff9bad')]:
             v.rect(im,(x-235,671,x+235,754),'#18334e',12,col,2)
@@ -107,6 +113,30 @@ def examples(s,t):
         v.rect(im,(701,107,1219,149),v.INK,8,v.PALE)
         v.text(im,(960,117),label,20,v.WHITE,600,'ma')
     return im
+PROFILES={p['name']:p['values'] for p in json.loads((ROOT/'public/data/behavior.json').read_text())['profiles']}
+def animated_radar(im,name,col,x,t):
+    cx,cy=x+225,535;radius=128
+    angles=[-math.pi/2+i*math.pi/3 for i in range(6)]
+    labels=[['Fewer','collisions'],['Quicker','decisions'],['Fewer','decisions'],['Longer commanded','moves'],['More','waiting'],['More','turning']]
+    for r in [.25,.5,.75,1]:v.circle(im,cx,cy,radius*r,'#dce4ec',1)
+    for i,a in enumerate(angles):
+        end=(cx+radius*math.cos(a),cy+radius*math.sin(a))
+        v.line(im,[(cx,cy),end],'#dce4ec',1)
+        lx=cx+181*math.cos(a);ly=cy+172*math.sin(a)
+        for j,label in enumerate(labels[i]):v.text(im,(lx,ly-14+j*22),label,18,'#34495e',500,'ma')
+    progress=v.ease(t/1.15)
+    points=[(cx+radius*value*progress*math.cos(a),cy+radius*value*progress*math.sin(a)) for value,a in zip(PROFILES[name],angles)]
+    rgb=tuple(int(col[i:i+2],16) for i in (1,3,5))
+    d=ImageDraw.Draw(im,'RGBA');d.polygon(points,fill=rgb+(40,))
+    v.line(im,points+[points[0]],col,3)
+    for px,py in points:v.circle(im,px,py,3.5,col,2)
+    if t>1.25:
+        axis={'Inkling':3,'Grok':0,'Astra':1,'Fable':4,'Sonnet':0,'Sol':5,'Gemini':1,'DeepSeek':0}[name]
+        px,py=points[axis];pulse=5+4*(.5+.5*math.sin((t-1.25)*4))
+        v.circle(im,px,py,pulse,col,2)
+    v.rect(im,(x+30,863,x+420,867),'#edf1f5',2)
+    v.rect(im,(x+30,863,x+30+390*min(1,t/4.2),867),col,2)
+
 def behavior(s,t):
     im=Image.new('RGB',(1920,1080),v.BG)
     v.text(im,(62,28),'REAL-TIME BENCHMARK  /  PROVIDER-DEFAULT REASONING',20,v.TEAL,600)
@@ -117,16 +147,22 @@ def behavior(s,t):
         v.text(im,(77,224),'MODEL',21,v.MUTED,600)
         for x,label in cols:v.text(im,(x,224),label,21,v.MUTED,600,'ra')
         for i,m in enumerate(sorted(v.MODELS,key=lambda m:m['average']['collisions'])):
-            y=279+i*75;a=m['average'];col=v.TEAL if i==0 else v.INK
+            progress=v.ease((t-.08*i)/1.05)
+            if progress<=0:continue
+            y=279+i*75+round(18*(1-progress));a=m['average'];col=v.TEAL if i==0 else v.INK
             v.rect(im,(60,y-7,1860,y+58),'#e0f0ee' if i==0 else v.WHITE,8)
             v.text(im,(80,y+6),f'{i+1:02}',23,v.MUTED,500);logo(im,m['name'],135,y+1,38);v.text(im,(190,y),m['name'],35,col,600)
             # A dedicated collision band makes the ranking metric visible at a glance.
             v.rect(im,(989,y-7,1270,y+58),'#e0f0ee' if i==0 else '#fff0e7',5)
-            v.rect(im,(1005,y+39,1005+235*a['collisions']/60,y+47),v.TEAL if i==0 else '#cf603a',3)
-            vals=[f'{a["success"]:.1f}%',f'{a["safeSuccess"]:.1f}%',f'{a["collisions"]:.1f}',f'{a["latency"]:.1f}',f'{a["decisions"]:.1f}']
+            v.rect(im,(1005,y+39,1005+235*a['collisions']/60*progress,y+47),v.TEAL if i==0 else '#cf603a',3)
+            vals=[f'{a["success"]*progress:.1f}%',f'{a["safeSuccess"]*progress:.1f}%',f'{a["collisions"]*progress:.1f}',f'{a["latency"]*progress:.1f}',f'{a["decisions"]*progress:.1f}']
             for j,((x,_),value) in enumerate(zip(cols,vals)):
                 v.text(im,(x,y),value,35,('#087d88' if i==0 else '#ae4527') if j==2 else v.RED if j==1 and a['safeSuccess']==0 else col,600 if j==2 else 500,'ra')
-        v.text(im,(65,909),'Sonnet: fewest collisions. Every model: safe success below 4%.',31,v.TEAL,500)
+        focus=0 if t<2.1 else 1 if t<3.65 else 2
+        bounds=[(467,643),(734,935),(989,1270)][focus]
+        if t>1.45:v.rect(im,(bounds[0],211,bounds[1],874),None,8,v.TEAL if focus!=2 else '#cf603a',3)
+        takeaway=['High task completion across all eight models.','Every model: safe success below 4%.','Sonnet: fewest collisions. Grok: about 3× as many.'][focus]
+        v.text(im,(65,909),takeaway,31,v.TEAL,500)
         v.footer(im,'Paper Table 5 / Appendix B.3 · means across easy, medium, and hard conditions')
     else:
         v.text(im,(60,76),'How do their behaviors differ?',60,v.INK,600)
@@ -139,8 +175,8 @@ def behavior(s,t):
             x=50+i*470;v.rect(im,(x,225,x+450,878),v.WHITE,14,v.LINE)
             logo(im,name,x+225-v.font(38,600).getlength(name)/2-37,250,38)
             v.text(im,(x+245,249),name,38,col,600,'ma')
-            chart=Image.open(ROOT/'public/media/behavior'/f'{name.lower()}.png').convert('RGBA').resize((450,450),Image.Resampling.LANCZOS)
-            im.paste(chart,(x,310),chart)
+            local=t-(5.2 if t<9.6 else 9.6)
+            animated_radar(im,name,col,x,max(0,local-i*.12))
             for j,line in enumerate(lines):v.text(im,(x+225,758+j*31),line,23,v.INK,500,'ma')
             v.text(im,(x+225,832),stat,22,col,600,'ma')
         v.text(im,(65,919),'Radar area is a behavior profile, not an overall safety score.',28,v.MUTED,400)

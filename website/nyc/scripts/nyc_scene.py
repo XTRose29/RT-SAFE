@@ -67,13 +67,39 @@ def key_transform(binding,poses):
     for frame,loc,rotation in poses:
         values=list(loc)+[rotation[2],rotation[0],rotation[1]]
         for c,v in zip(channels,values): c.add_key(unreal.FrameNumber(frame),float(v),interpolation=unreal.MovieSceneKeyInterpolation.LINEAR)
+def in_place_animation(path):
+    # The UE 5.8 preview Sequencer mixer can bypass Force Root Lock.
+    # https://issues.unrealengine.com/issue/UE-386453
+    # Strip translation from a separate, unsaved animation copy instead.
+    # Original marketplace assets are never edited or saved.
+    import hashlib
+    if not hasattr(builtins,'_rtsafe_in_place'):builtins._rtsafe_in_place={}
+    cache=builtins._rtsafe_in_place
+    if path in cache:return cache[path]
+    source=unreal.load_asset(path)
+    if not isinstance(source,unreal.AnimSequence):return source
+    name='InPlace_'+hashlib.sha1(path.encode()).hexdigest()[:10]+'_'+str(int(time.time()*1000))
+    anim=unreal.AssetToolsHelpers.get_asset_tools().duplicate_asset(name,'/Game/RTSafeNYC',source)
+    model=anim.get_editor_property('data_model_interface')
+    controller=anim.get_editor_property('controller')
+    if model.is_valid_bone_track_name('root'):
+        count=model.get_number_of_keys()
+        first=unreal.AnimationLibrary.get_bone_pose_for_time(source,'root',0,False)
+        controller.open_bracket('Create in-place presentation copy',False)
+        ok=controller.set_bone_track_keys('root',[first.translation]*count,[first.rotation]*count,[first.scale3d]*count,False)
+        controller.close_bracket(False)
+        assert ok, 'Could not lock the copied root track: '+path
+    anim.set_editor_property('enable_root_motion',False)
+    anim.set_editor_property('force_root_lock',True)
+    keep(anim);cache[path]=anim
+    return anim
+
 def animation(binding,path,start,end,rate=1,offset=0):
-    anim=unreal.load_asset(path)
+    anim=in_place_animation(path)
     if not anim:return
-    # Sequencer transforms own the trajectories; animation must only move limbs.
-    if isinstance(anim,unreal.AnimSequence) and not anim.get_editor_property('force_root_lock'):
-        anim.set_editor_property('force_root_lock',True)
-    section=binding.add_track(unreal.MovieSceneSkeletalAnimationTrack).add_section()
+    tracks=[t for t in binding.get_tracks() if isinstance(t,unreal.MovieSceneSkeletalAnimationTrack)]
+    track=tracks[0] if tracks else binding.add_track(unreal.MovieSceneSkeletalAnimationTrack)
+    section=track.add_section()
     params=section.get_editor_property('params');params.set_editor_property('animation',anim)
     params.set_editor_property('play_rate',unreal.MovieSceneTimeWarpExtensions.make_time_warp(float(rate)))
     params.set_editor_property('start_frame_offset',unreal.FrameNumber(offset))

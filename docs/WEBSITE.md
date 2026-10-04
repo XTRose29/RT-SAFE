@@ -40,16 +40,18 @@ Set repository variable `SITE_URL` only when using a custom domain. Configure th
 - `website/app/rtsafe.tsx`: page and interactive tables.
 - `website/app/data.json`: manuscript results.
 - `website/app/examples.json`: curated recorded decisions.
-- `website/public/media/rt-safe-nyc-90s.mp4`: current 90-second film with soft instrumental music.
+- `website/public/media/rt-safe-nyc-90s.mp4`: current 90-second film without audio.
 - `website/public/media/rt-safe-nyc-90s-captioned.mp4`: conference copy with burned captions.
 - `website/public/media/rt-safe-original-comparison.mp4`: current Astra/Sol comparison using original recorded snapshots at 6× simulation speed.
 - `website/public/media/rt-safe-nyc-comparison.mp4`: earlier NYC reconstruction, retained as an alternate.
 - `website/public/media/nyc/`: native city footage, synchronized timing/replay clips, and camera gallery.
 - `website/nyc/`: native rendering scripts and curated reconstruction evidence.
-- `website/video/nyc-90s/`: narration, timing, captions, and export validation.
+- `website/video/nyc-90s/`: timing, captions, and export validation.
 
 [NYC production instructions](../website/nyc/README.md) describe the isolated Unreal project and Movie Render Queue workflow. [Film instructions](../website/video/nyc-90s/README.md) describe editing and export. The timing encounter and environment tour are illustrative. The matched Astra/Sol replay visualizes an existing recorded run; manuscript results remain from the original benchmark maps.
 
 Do not add raw research folders or environment files to `website/public`: everything there is deployed publicly.
 
 [GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
+
+The current revision adds a visible stop and recoil to the illustrative park contact, full-stride walking, an explicit RT-Safe introduction, larger opening headings, and animated leaderboard/radar results. Original replay snapshots use brief dissolves; collision report times and all paper measurements are unchanged.

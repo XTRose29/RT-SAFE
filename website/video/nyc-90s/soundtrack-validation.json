@@ -1,41 +1,5 @@
 {
-  "track_sha256": "9a88dd594be84ccc5b86d3fda2c1c3320360b15ca8f72e64a6436606d3a94c1c",
-  "exports": {
-    "rt-safe-nyc-90s.mp4": {
-      "video_stream_sha256": "c6b41d1a013b01bf16a08cf0f8cb7feb9e2b7287a3e04a211fd756e1b9955643",
-      "video_unchanged": true,
-      "duration_seconds": 90,
-      "audio": "original soft instrumental; no voice",
-      "music_start_seconds": 0,
-      "audio_matches_instrumental_encode": true,
-      "audio_stream_sha256": "a6ea4b53351ac4904f17d6b2c4eadf75d634bc3cd0c040f7d8fa1b7cf578b174"
-    },
-    "rt-safe-nyc-90s-captioned.mp4": {
-      "video_stream_sha256": "446210cefc9d5390838d4e107d373062d98c7df89a73b43fa7e4e92008044dc8",
-      "video_unchanged": true,
-      "duration_seconds": 90,
-      "audio": "original soft instrumental; no voice",
-      "music_start_seconds": 0,
-      "audio_matches_instrumental_encode": true,
-      "audio_stream_sha256": "a6ea4b53351ac4904f17d6b2c4eadf75d634bc3cd0c040f7d8fa1b7cf578b174"
-    },
-    "nyc/timing-story.mp4": {
-      "video_stream_sha256": "841cb92be19e82c25e65a240d0e103034fff73e95429857233e866a501bf53f3",
-      "video_unchanged": true,
-      "duration_seconds": 15,
-      "audio": "original soft instrumental; no voice",
-      "music_start_seconds": 3,
-      "audio_matches_instrumental_encode": true,
-      "audio_stream_sha256": "5dd2f4ec68f2432761be88f9cbe37c5fdc97d957756e584a8a672a7ae7188a66"
-    },
-    "nyc/environment-intro.mp4": {
-      "video_stream_sha256": "a0af55e6c503ece8136b4385c638ef06c28288df439fd8eb80575486d550ea11",
-      "video_unchanged": true,
-      "duration_seconds": 12,
-      "audio": "original soft instrumental; no voice",
-      "music_start_seconds": 18,
-      "audio_matches_instrumental_encode": true,
-      "audio_stream_sha256": "949ecc47adcb66bbd5541ac6f818dcf42cac33105c5a788acc15693f4fc8c01e"
-    }
-  }
+  "status": "superseded",
+  "current_audio": "none",
+  "note": "Current silent exports are validated by validation.json; earlier instrumental assets are unused."
 }

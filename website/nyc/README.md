@@ -2,7 +2,7 @@
 
 The current edit renders the server's Madison Square Park scene directly in Unreal Engine.
 The working project is isolated from the shared map and assets. Movie Render Queue produces
-native PNG sequences; Python and FFmpeg add labels, charts, narration, captions, and web encodings.
+native PNG sequences; Python and FFmpeg add labels, charts, captions, and web encodings.
 
 ## Scene sources
 
@@ -96,7 +96,7 @@ The website and 90-second film now use the original RT15 observation/action fram
 segment. The game-style interface, commands, collision alerts, and source simulation timing
 are retained. See `../public/data/recorded-replay.json` for all 95 source frame records.
 The input is held during inference; action snapshots are shown in file order. No continuous
-inference recording or interpolated image frames are presented. The NYC opening, environment
+inference recording is available. Short 0.14-second eased dissolves soften snapshot changes; there is no optical-flow interpolation, and collision-report timing is unchanged. The NYC opening, environment
 tour, aerial, and learning visualization remain native NYC renders.
 
 ## Staged park opening
@@ -111,3 +111,17 @@ and screen-space indirect lighting. `queue_opening_revision.py` renders both mod
 The film begins with the static scene alone, then a centered message and a slide reveal
 of real-time evaluation. This 15-second sequence and the separate environment title card
 are also available in the website. The full film remains exactly 90 seconds.
+
+## Silent motion revision
+
+The current full film and website clips contain no audio streams. The park encounter uses
+authored swept-capsule contact: the actor centers stop at 64 cm separation and recoil slightly,
+without crossing each other. This is presentation choreography, not a new measured rollout.
+Full-stride native male/female walk cycles replace the former near-static in-place cycle.
+The root track is fixed in unsaved copies of the animations; sequence transforms control the paths.
+A dedicated introduction explains that RT-Safe evolves while the agent thinks. The environment
+tour is explicitly labelled as our RT-Safe task and environment. Animated leaderboard
+counts, column emphasis, expanding radar profiles, and pulsing key axes explain the same
+paper results; they add no new measurements.
+
+The environment tour warms the world for 180 engine frames before capture, so background traffic is present from the first frame. `RTSAFE_ENV_WARMUP` can increase this on a slower runtime.

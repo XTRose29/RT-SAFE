@@ -1,6 +1,6 @@
 """Build the original first-person replay with the existing game-style HUD."""
 from pathlib import Path
-import importlib.util,json,functools,argparse
+import importlib.util,json,functools,argparse,bisect
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
 def module(name):
@@ -9,15 +9,27 @@ media=module('build-nyc-media');hud=module('replay-presentation');v=media.v
 DATA=json.loads((ROOT/'public/data/recorded-replay.json').read_text());OUT=ROOT/'public/media/recorded'
 @functools.lru_cache(160)
 def load(path):return Image.open(ROOT/'public'/path).convert('RGB')
+@functools.lru_cache(4)
+def frame_schedule(name):
+ model=DATA['models'][name];origin=model['steps'][0]['start_sim_seconds'];events={}
+ for step in model['steps']:
+  frames=step['recorded_frames'];start=step['start_sim_seconds'];end=step['end_sim_seconds']
+  events[(start-origin)/6]=frames['input'][0]['path']
+  action_start=start+step['inference_exposure_seconds'];span=max(.001,end-action_start)
+  captures=frames['action'] or frames['output']
+  for i,entry in enumerate(captures):events[(action_start+span*i/len(captures)-origin)/6]=entry['path']
+  events[(end-origin)/6]=frames['output'][0]['path']
+ return sorted(events.items())
 def frame_for(model,t):
- state=hud.replay.sample_agent(model,t*6);step=model['steps'][state['decision']-1];frames=step['recorded_frames']
- if state['finished']:entry=frames['output'][0]
- elif state['phase']=='inference':entry=frames['input'][0]
- else:
-  start=step['start_sim_seconds']+step['inference_exposure_seconds'];span=max(.001,step['end_sim_seconds']-start)
-  progress=max(0,min(.999,(state['source_sim_seconds']-start)/span))
-  captures=frames['action'] or frames['output'];entry=captures[int(progress*len(captures))]
- return load(entry['path'])
+ name=next(name for name,value in DATA['models'].items() if value is model)
+ events=frame_schedule(name);index=max(0,bisect.bisect_right([at for at,_ in events],t)-1)
+ at,path=events[index];current=load(path)
+ if index and t-at<.14:
+  previous=load(events[index-1][1])
+  if previous.size!=current.size:previous=previous.resize(current.size,Image.Resampling.LANCZOS)
+  span=min(.14,(events[index+1][0]-at)*.8) if index+1<len(events) else .14
+  return Image.blend(previous,current,v.ease((t-at)/max(.001,span)))
+ return current
 def panel(name,t):
  model=DATA['models'][name];return hud.compose(frame_for(model,t),model,name,t,v,source='recorded')
 def main():
@@ -40,7 +52,7 @@ def main():
   for k,clip in enumerate(clips):im.paste(clip.frame(i/30),(960*k,0))
   v.line(im,[(959,0),(959,1000)],v.WHITE,3)
   v.text(im,(30,1015),'Original first-person observations and action snapshots · RT15 / Task 19 · 6× recorded simulation timeline',23,v.WHITE,500)
-  v.text(im,(30,1050),'Input held during inference; snapshots are not continuous video. Collision alerts mark source-log report times.',18,v.PALE,400)
+  v.text(im,(30,1050),'Short dissolves smooth recorded snapshots; input then holds during inference. Collision alerts use original report times.',18,v.PALE,400)
   writer.stdin.write(im.tobytes())
   if i==0:im.save(OUT/'comparison-poster.webp',quality=93)
  media.finish(writer);print('Exported original 44.1-second comparison',flush=True)

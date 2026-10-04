@@ -91,7 +91,7 @@ function SynchronizedViews({ comparison = false }: { comparison?: boolean }) {
         <div className="nyc-view-frame"><video ref={i === 0 ? left : right} muted playsInline preload="none"
           poster={`${clipMedia}${stem}.webp`} aria-label={`${labels[i]} ${comparison ? "original first-person recording" : "in the NYC scene"}`}
           onLoadedMetadata={event => { const v=event.currentTarget; v.currentTime=Math.min(requestedTime.current,Math.max(0,v.duration-.001)); }}>
-          <source src={`${clipMedia}${stem}.mp4`} type="video/mp4" />
+          <source src={`${clipMedia}${stem}.mp4?v=silent-motion-2`} type="video/mp4" />
         </video></div>
       </article>)}
     </div>
@@ -104,7 +104,7 @@ function SynchronizedViews({ comparison = false }: { comparison?: boolean }) {
     </div>
     {error && <p role="alert" className="fineprint">{error}</p>}
     <p className="fineprint">{comparison
-      ? "Final-subgoal segment from the same RT15 task, easy difficulty, seed 0, low reasoning. Original first-person observations and action snapshots play on the recorded simulation timeline at 6× speed. Inputs are held during inference; the capture is not continuous video. Collision alerts appear at report times in the source logs."
+      ? "Final-subgoal segment from the same RT15 task, easy difficulty, seed 0, low reasoning. Original first-person observations and action snapshots play on the recorded simulation timeline at 6× speed. Brief dissolves soften snapshot changes; inputs then hold during inference. This is a snapshot replay. Collision alerts appear at report times in the source logs."
       : "Native Unreal rendering of the same initial scene and commanded move. Timing and the encounter are illustrative; benchmark results are measured separately."}</p>
     {comparison && <a className="nyc-evidence-link" href="data/recorded-replay.json" download>Inspect the recorded actions and timing ↗</a>}
   </div>;
@@ -112,9 +112,9 @@ function SynchronizedViews({ comparison = false }: { comparison?: boolean }) {
 
 export function NYCTiming() {
   return <figure className="nyc-environment nyc-timing-story">
-    <video controls playsInline preload="none" poster={`${media}timing-story.webp`} aria-label="From static evaluation to real-time evaluation in Madison Square Park">
-      <source src={`${media}timing-story.mp4?v=soft-music-1`} type="video/mp4" />
-      <track kind="captions" src={`${media}timing-story.vtt`} srcLang="en" label="English" default />
+    <video controls playsInline preload="none" poster={`${media}timing-story.webp?v=silent-motion-2`} aria-label="From static evaluation to real-time evaluation in Madison Square Park">
+      <source src={`${media}timing-story.mp4?v=silent-motion-2`} type="video/mp4" />
+      <track kind="captions" src={`${media}timing-story.vtt?v=silent-motion-2`} srcLang="en" label="English" default />
     </video>
     <figcaption><strong>The real world does not stop.</strong><span>Static evaluation → RT-Safe · illustrative NYC encounter</span></figcaption>
   </figure>;
@@ -123,11 +123,11 @@ export function NYCComparison() { return <SynchronizedViews comparison />; }
 
 export function NYCEnvironment() {
   return <figure className="nyc-environment">
-    <video controls playsInline preload="none" poster={`${media}environment-intro.webp`} aria-label="NYC environment tour showing the route and safety events">
-      <source src={`${media}environment-intro.mp4?v=soft-music-1`} type="video/mp4" />
-      <track kind="captions" src={`${media}environment-intro.vtt`} srcLang="en" label="English" default />
+    <video controls playsInline preload="none" poster={`${media}environment-intro.webp?v=silent-motion-2`} aria-label="NYC environment tour showing the route and safety events">
+      <source src={`${media}environment-intro.mp4?v=silent-motion-2`} type="video/mp4" />
+      <track kind="captions" src={`${media}environment-intro.vtt?v=silent-motion-2`} srcLang="en" label="English" default />
     </video>
-    <figcaption><strong>One task: reach the goal safely.</strong><span>NYC demonstration scene · pedestrians, obstacles, hazards, and traffic rules</span></figcaption>
+    <figcaption><strong>Our RT-Safe task: reach the goal safely.</strong><span>NYC demonstration scene · pedestrians, obstacles, hazards, and traffic rules</span></figcaption>
   </figure>;
 }
 

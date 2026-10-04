@@ -9,10 +9,11 @@ Astra/Sol comparison and an eight-second aerial loop.
 | Time | Scene |
 |---|---|
 | 0:00–0:03 | Project title and NYC aerial |
-| 0:03–0:07.15 | Conventional static evaluation, full frame |
-| 0:07.15–0:09.6 | Center message: the real world does not stop |
-| 0:09.6–0:10.4 | Static view moves left; RT-Safe is revealed |
-| 0:10.4–0:18 | Matched park encounter: frozen vs. advancing world |
+| 0:03–0:05.8 | Conventional static evaluation, full frame |
+| 0:05.8–0:07.8 | Center message: the real world does not stop |
+| 0:07.8–0:10 | We introduce RT-Safe: the environment evolves while the agent thinks |
+| 0:10–0:10.7 | Static view moves left; RT-Safe is revealed |
+| 0:10.7–0:18 | Matched park encounter: frozen vs. advancing world |
 | 0:18–0:20.4 | A closer look at RT-Safe: environment title card |
 | 0:20.4–0:30 | Collisions, hazards, traffic rules, and safe completion |
 | 0:30–0:32 | How do frontier agents perform? |
@@ -36,14 +37,13 @@ A separate environment title card introduces collisions, hazards, and traffic-ru
 
 ## Exports
 
-- `../../public/media/rt-safe-nyc-90s.mp4`: 1080p with soft instrumental music, 30 fps, exactly 90 seconds.
+- `../../public/media/rt-safe-nyc-90s.mp4`: silent 1080p, 30 fps, exactly 90 seconds.
 - `../../public/media/rt-safe-nyc-90s-captioned.mp4`: the same edit with burned captions.
 - `../../public/media/rt-safe-nyc-90s.vtt` and `.srt`: English captions.
 - `../../public/media/rt-safe-original-comparison.mp4`: full selected Astra/Sol segments at 6× speed.
 
-The soundtrack is an original, quiet instrumental composed for this project: warm keyboard tones and a soft ambient backing at 64 BPM. It contains no voices or external samples.
-`audio/soft-instrumental.flac` is the lossless master; `scripts/music-soundtrack.py` reproduces it. The target loudness is -25 LUFS, with gentle opening and ending fades.
-Earlier narration files remain as caption-timing source material; they are not mixed into the current exports.
+All current exports have no audio track: no narration, music, or sound effects.
+Earlier audio files are retained only as production history and are not used by the export pipeline.
 The standard master uses selectable captions; the conference edition burns them into
 a reserved band below the scene content.
 
@@ -64,7 +64,7 @@ The BC/RL table is the paper's separate learning experiment.
 The visual timing encounter and environment tour are illustrative. The Astra/Sol
 comparison now uses 95 lossless source frames from the original RT15 run. The saved input
 is held throughout inference. Action captures play in file order, with equal spacing when
-exact capture timestamps are unavailable. No intermediate images are synthesized.
+exact capture timestamps are unavailable. Snapshot changes use a 0.14-second eased cross-dissolve, followed by a hold. No optical-flow or generated scene frames are used. Collision reports keep their original timestamps.
 The image sequence is a snapshot replay, not continuous inference-time video. See [scene production](../../nyc/README.md)
 and the curated evidence for the complete provenance.
 
@@ -86,7 +86,7 @@ python scripts/finish-nyc-media.py
 ```
 
 The final export controller encodes each completed take, composes the route and
-safety annotations, renders the edit, assembles instrumental music and captions, and verifies
+safety annotations, renders the edit, assembles silent video and captions, and verifies
 the exported frame counts, durations, decoding, and static-world freeze.
 
 `python scripts/narrate-film-nyc.py` regenerates the narration timeline from cached
@@ -112,7 +112,6 @@ To rebuild the current first-person comparison from the included lossless frames
 
 ```bash
 python scripts/build-recorded-comparison.py
-python scripts/narrate-film-nyc.py
 python scripts/render-film-nyc.py --scene examples
 python scripts/assemble-film-nyc.py
 python scripts/verify-film-nyc.py
@@ -124,11 +123,15 @@ from the separately provisioned source run. The previous NYC reconstruction is r
 `public/media/rt-safe-nyc-comparison.mp4` for comparison.
 
 The website uses `public/media/nyc/timing-story.mp4` (15 seconds) and
-`public/media/nyc/environment-intro.mp4` (12 seconds), exported with soft instrumental music and local
+`public/media/nyc/environment-intro.mp4` (12 seconds), exported without audio and with local
 captions by `python scripts/export-story-clips.py` after film assembly. The opening can be
 re-rendered without Unreal from the included full-width still, scene metadata, and timing
 clips. Native park rendering uses eight spatial samples with screen-space indirect lighting.
 
-To replace the audio in existing exports while preserving every video packet, run
-`python scripts/music-soundtrack.py --apply`. Both full-film editions and the two narrated-era
-website clips receive music only. Captions and the 90-second duration are retained.
+The current park encounter stops the approaching actors at a 64 cm center distance,
+then applies a small recoil. This is authored contact choreography for the illustrative
+scene, not a new benchmark collision measurement. Native male and female walk cycles
+animate the legs and arms; unsaved copies have their root track fixed because the sequence controls trajectories.
+The leaderboard reveals rows and counts, then highlights success, safe success, and collisions.
+Both radar pages expand the six-axis profiles and emphasize each model’s key behavior.
+All chart endpoints and reported measurements are unchanged.

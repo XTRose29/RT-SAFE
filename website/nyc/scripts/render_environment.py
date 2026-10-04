@@ -32,7 +32,7 @@ bindings=[(robot,poses,n.WALK)]
 for i,(forward,lateral,speed) in enumerate([(2100,40,65),(2850,-90,-75),(3150,170,55)]):
     actor,anim=a.pedestrian('TourHuman'+str(i),i,position(forward,lateral))
     actor_poses=[(f,position(forward+t*speed,lateral),(0,n.YAW-90+(180 if speed<0 else 0),0)) for f,t in enumerate(times)]
-    bindings.append((actor,actor_poses,[(anim,0,len(times),abs(speed)/120)]))
+    bindings.append((actor,actor_poses,[(anim,0,len(times),a.walk_rate(anim,speed))]))
 dog=a.dog('TourGo1',position(2750,80,15))
 bindings.append((dog,[(f,position(2750-45*t,80,15),(0,n.YAW+180,0)) for f,t in enumerate(times)],None))
 bindings.extend(a.dog_gait(dog,times))
@@ -57,7 +57,7 @@ stem='environment'+('-samples' if preview else '')
 out=n.ROOT+'/renders/'+stem;os.makedirs(out,exist_ok=True)
 seq=n.sequence(stem.replace('-','_'),cam,camera_poses,bindings,len(times))
 cfg=n.config(out,stem,1920,1080,8 if preview else 4,quality=quality)
-aa=cfg.find_or_add_setting_by_class(n.unreal.MoviePipelineAntiAliasingSetting);aa.engine_warm_up_count=24;aa.render_warm_up_count=24
+aa=cfg.find_or_add_setting_by_class(n.unreal.MoviePipelineAntiAliasingSetting);aa.engine_warm_up_count=int(os.environ.get('RTSAFE_ENV_WARMUP','180'));aa.render_warm_up_count=64
 metadata={'times':times,'camera_poses':camera_poses,'horizontal_fov':86,'anchors':anchors,'route':route,'illustrative':True}
 metadata['dynamic_anchors']={'pedestrians':[position(2100+65*t,40,130) for t in times],
     'dog':[position(2750-45*t,80,60) for t in times]}

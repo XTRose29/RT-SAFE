@@ -1,13 +1,16 @@
 WEBVTT
 
-00:00:00.397 --> 00:00:03.661
-Conventional evaluation pauses the world during inference.
+00:00:00.100 --> 00:00:02.700
+Conventional static evaluation pauses the world during inference.
 
-00:00:04.404 --> 00:00:06.253
+00:00:02.850 --> 00:00:04.750
 But the real world does not stop.
 
-00:00:06.986 --> 00:00:10.278
-We introduce R T Safe: real-time evaluation, where
+00:00:04.850 --> 00:00:07.650
+We introduce RT-Safe: the embodied world keeps evolving while the agent thinks.
 
-00:00:10.288 --> 00:00:12.597
-the world keeps moving while an agent thinks.
+00:00:07.750 --> 00:00:13.500
+The same initial scene and commanded move, with different world timing.
+
+00:00:13.650 --> 00:00:14.950
+Contact interrupts movement in the real-time illustration.

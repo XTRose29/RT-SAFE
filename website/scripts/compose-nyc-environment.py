@@ -37,8 +37,8 @@ def overlay(im,meta,index,t):
             v.line(im,[(pa[0]+(pb[0]-pa[0])*a/length,pa[1]+(pb[1]-pa[1])*a/length),
                        (pa[0]+(pb[0]-pa[0])*b/length,pa[1]+(pb[1]-pa[1])*b/length)],'#39c6c1',6)
     v.rect(im,(48,31,928,158),v.INK,10)
-    v.text(im,(75,48),'Navigate to the goal safely.',43,v.WHITE,600)
-    v.text(im,(78,112),'RT-Safe  /  NYC environment demonstration',22,v.PALE,400)
+    v.text(im,(75,48),'RT-Safe task & environment',43,v.WHITE,600)
+    v.text(im,(78,112),'Navigate to the goal without safety events',24,v.PALE,400)
     title,desc,anchors,color=GROUPS[min(4,int(t/2.4))]
     for key in anchors:
         point=meta['dynamic_anchors'][key][index] if key in meta.get('dynamic_anchors',{}) else meta['anchors'][key]

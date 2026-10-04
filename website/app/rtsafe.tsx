@@ -833,10 +833,10 @@ export default function RTsafe() {
               poster={film === "nyc-90s" ? "media/nyc/film-poster.webp" : "media/recorded/comparison-poster.webp"}
               aria-label="RT-SAFE project film"
             >
-              <source src={`media/rt-safe-${film}.mp4${film === "nyc-90s" ? "?v=soft-music-1" : ""}`} type="video/mp4" />
+              <source src={`media/rt-safe-${film}.mp4?v=silent-motion-2`} type="video/mp4" />
               <track
                 kind="captions"
-                src={`media/rt-safe-${film}.vtt`}
+                src={`media/rt-safe-${film}.vtt?v=silent-motion-2`}
                 srcLang="en"
                 label="English"
                 default
@@ -845,15 +845,15 @@ export default function RTsafe() {
             </video>
           </div>
           <div className="film-footer">
-            <span>{film === "nyc-90s" ? "1920 × 1080 · Soft music · English captions" : "1920 × 1080 · 6× playback · English captions"}</span>
+            <span>{film === "nyc-90s" ? "1920 × 1080 · Silent · English captions" : "1920 × 1080 · 6× playback · English captions"}</span>
             <div>
-              <a href={`media/rt-safe-${film}.mp4${film === "nyc-90s" ? "?v=soft-music-1" : ""}`} download>
+              <a href={`media/rt-safe-${film}.mp4?v=silent-motion-2`} download>
                 Download film <span>↓</span>
               </a>
-              <a href={`media/rt-safe-${film}.vtt`} download>
+              <a href={`media/rt-safe-${film}.vtt?v=silent-motion-2`} download>
                 Captions <span>↓</span>
               </a>
-              <a href="media/rt-safe-nyc-90s-captioned.mp4?v=soft-music-1" download>
+              <a href="media/rt-safe-nyc-90s-captioned.mp4?v=silent-motion-2" download>
                 90s conference edition <span>↓</span>
               </a>
             </div>

@@ -5,8 +5,9 @@ import nyc_scene as n
 
 MALE='/Game/Character/Player/Male/Meshes/SKM_PlayerMale'
 FEMALE='/Game/Character/Player/Female/Meshes/SKM_PlayerFemale_Body'
-MALE_WALK='/Game/Crowd/Character/Anims/Loco/MTN_N_Walk_InPlace'
-FEMALE_WALK=MALE_WALK  # Both body meshes use SK_Base; this clip is genuinely in place.
+MALE_WALK='/Game/Crowd/Character/Anims/Loco/MTN_N_Walk_F'
+FEMALE_WALK='/Game/Character/Player/Female/Anims/Locomotion/FP_Walk_F'
+# Native full-stride cycles. Root tracks are fixed in unsaved copies.
 SCOOTER='/Game/CityAssetsKit/Assets/MM00130_Scooter/SM_MM00130_Scooter_fbx'
 HYDRANT='/Game/CityAssetsKit/Assets/MM00281_Fire_Hydrant/SM_MM00281_Fire_Hydrant'
 TRASH='/Game/CityAssetsKit/Assets/MM00289_Street_Trash/SM_MM00289-Trashbag_01_fbx'
@@ -132,3 +133,9 @@ def vehicle(name,position,yaw=n.YAW):
     lift=position[2]-(center.z-extent.z)
     actor.set_actor_location(n.vec((position[0],position[1],position[2]+lift)),False,False)
     return actor,lift
+
+
+def walk_rate(animation_path, speed_cm_s):
+    """Match cycle speed to the authored path after removing root translation."""
+    native_speed = 190.7 if animation_path == FEMALE_WALK else 140.0
+    return abs(speed_cm_s) / native_speed

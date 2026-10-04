@@ -1,22 +1,25 @@
 WEBVTT
 
-00:00:00.397 --> 00:00:01.456
-R T Safe.
+00:00:00.300 --> 00:00:02.700
+RT-Safe: Benchmarking Agent Safety in Real-Time Embodied Environment.
 
-00:00:03.397 --> 00:00:06.661
-Conventional evaluation pauses the world during inference.
+00:00:03.100 --> 00:00:05.700
+Conventional static evaluation pauses the world during inference.
 
-00:00:07.404 --> 00:00:09.253
+00:00:05.850 --> 00:00:07.750
 But the real world does not stop.
 
-00:00:09.986 --> 00:00:13.278
-We introduce R T Safe: real-time evaluation, where
+00:00:07.850 --> 00:00:10.650
+We introduce RT-Safe: the embodied world keeps evolving while the agent thinks.
 
-00:00:13.288 --> 00:00:15.597
-the world keeps moving while an agent thinks.
+00:00:10.750 --> 00:00:16.500
+The same initial scene and commanded move, with different world timing.
+
+00:00:16.650 --> 00:00:17.950
+Contact interrupts movement in the real-time illustration.
 
 00:00:18.397 --> 00:00:20.152
-A closer look at R T Safe.
+Our RT-Safe task and environment: navigate to the goal safely.
 
 00:00:20.894 --> 00:00:22.130
 Avoid collisions.
@@ -45,17 +48,20 @@ Sol makes thirty-three decisions with seventeen collisions.
 00:00:41.055 --> 00:00:42.965
 These are original recorded inputs.
 
-00:00:44.397 --> 00:00:47.638
+00:00:44.200 --> 00:00:46.050
+All eight models complete over 90% of tasks.
+
+00:00:46.150 --> 00:00:47.600
+Every model has safe success below 4%.
+
+00:00:47.700 --> 00:00:49.100
 Sonnet records the fewest collisions; Grok, the most.
 
-00:00:48.368 --> 00:00:50.182
-Inkling favors longer moves.
+00:00:49.350 --> 00:00:53.400
+Inkling favors longer moves. Response time and action choices shape behavior.
 
-00:00:50.916 --> 00:00:52.611
-Sol turns and waits most.
-
-00:00:53.345 --> 00:00:56.326
-Response time and action choices both shape behavior.
+00:00:53.750 --> 00:00:57.700
+Sonnet responds fastest. Sol makes the most decisions, turns, and waits.
 
 00:00:58.379 --> 00:00:59.781
 Task completion is not enough.
@@ -82,4 +88,4 @@ From default to higher effort, collisions rise from
 forty point seven to sixty-two per episode.
 
 00:01:25.395 --> 00:01:28.911
-R T Safe supports reinforcement learning with rewards for safety.
+RT-Safe supports reinforcement learning with rewards for safety.

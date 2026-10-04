@@ -1,6 +1,6 @@
 {
-  "date_utc": "2026-10-04T19:12:12.948035+00:00",
-  "scope": "NYC website and film edition; benchmark implementation unchanged",
+  "date_utc": "2026-10-04T22:59:12.415685+00:00",
+  "scope": "Silent film and motion revision; benchmark measurements unchanged",
   "website": {
     "typescript": "passed",
     "data_tests_passed": 6,
@@ -29,103 +29,7 @@
       "desktop_overflow": false,
       "mobile_overflow": false,
       "gallery_cameras": 4
-    },
-    "pages": {
-      "project_subpath_http": "passed",
-      "project_and_account_metadata": "passed",
-      "metadata_idempotence": "passed"
     }
-  },
-  "native_renders": {
-    "timing-static": {
-      "success": true,
-      "frames": 330,
-      "metadata": {
-        "mode": "static",
-        "illustrative": true,
-        "location": "Madison Square Park interior paved path",
-        "spatial_samples": 8,
-        "lighting": "screen-space indirect lighting"
-      }
-    },
-    "timing-realtime": {
-      "success": true,
-      "frames": 330,
-      "metadata": {
-        "mode": "realtime",
-        "illustrative": true,
-        "location": "Madison Square Park interior paved path",
-        "spatial_samples": 8,
-        "lighting": "screen-space indirect lighting"
-      }
-    },
-    "environment": {
-      "success": true,
-      "frames": 360,
-      "metadata": {
-        "illustrative": true,
-        "frames": 360
-      }
-    },
-    "astra": {
-      "success": true,
-      "frames": 374,
-      "metadata": {
-        "model": "astra",
-        "source": "gpt-6-astra",
-        "summary": {
-          "decisions": 12,
-          "active_collisions": 0,
-          "passive_collisions": 1,
-          "collisions": 1,
-          "source_duration_seconds": 68.62000000000003,
-          "video_duration_seconds": 11.436666666666673
-        },
-        "playback_speed": 6,
-        "preview": false,
-        "frame_times": null,
-        "ground_samples": 791,
-        "reconstruction": "Original agent poses and simulation clock; rigid NYC transform; authored NPC patrol paths."
-      }
-    },
-    "sol": {
-      "success": true,
-      "frames": 1293,
-      "metadata": {
-        "model": "sol",
-        "source": "gpt-5.6-sol",
-        "summary": {
-          "decisions": 33,
-          "active_collisions": 3,
-          "passive_collisions": 14,
-          "collisions": 17,
-          "source_duration_seconds": 252.51000000000005,
-          "video_duration_seconds": 42.08500000000001
-        },
-        "playback_speed": 6,
-        "preview": false,
-        "frame_times": null,
-        "ground_samples": 791,
-        "reconstruction": "Original agent poses and simulation clock; rigid NYC transform; authored NPC patrol paths."
-      }
-    },
-    "hero": {
-      "success": true,
-      "frames": 240,
-      "metadata": {
-        "duration": 8,
-        "fps": 30,
-        "native_city": true
-      }
-    }
-  },
-  "replay": {
-    "source_metrics": "passed",
-    "world_clock_advances_during_inference": "passed",
-    "agent_holds_during_inference": "passed",
-    "rigid_transform_preserves_action_distances": "passed",
-    "source_initial_actor_positions": "passed",
-    "last_agent_positions": "passed"
   },
   "film": {
     "rt-safe-nyc-90s.mp4": {
@@ -133,24 +37,19 @@
       "streams": [
         {
           "codec_name": "h264",
+          "codec_type": "video",
           "width": 1920,
           "height": 1080,
           "r_frame_rate": "30/1",
           "duration": "90.000000",
           "nb_frames": "2700"
-        },
-        {
-          "codec_name": "aac",
-          "r_frame_rate": "0/0",
-          "duration": "90.000000",
-          "nb_frames": "4220"
         }
       ],
       "format": {
         "duration": "90.000000",
-        "size": "26996463"
+        "size": "26779304"
       },
-      "sha256": "580df28ddfb59e3239c7ecfc475e912e156c751a8fb3dab1b1b73ccff9ec4164",
+      "sha256": "42ecd46d87f1e9281b8b82c6adc57cc24821ff834c9274a094937ad1c3348c8b",
       "full_decode": "passed"
     },
     "rt-safe-nyc-90s-captioned.mp4": {
@@ -158,48 +57,43 @@
       "streams": [
         {
           "codec_name": "h264",
+          "codec_type": "video",
           "width": 1920,
           "height": 1080,
           "r_frame_rate": "30/1",
           "duration": "90.000000",
           "nb_frames": "2700"
-        },
-        {
-          "codec_name": "aac",
-          "r_frame_rate": "0/0",
-          "duration": "90.000000",
-          "nb_frames": "4220"
         }
       ],
       "format": {
         "duration": "90.000000",
-        "size": "26581326"
+        "size": "26104652"
       },
-      "sha256": "bdbd82cd9e00a9de1ab29b48991f7a9c1860b69bd4f62cbe025647dcb6ff3139",
+      "sha256": "ec2b60aac55d14e6eca5bda7316065108ac720f34581eb82724c5c6a352fd140",
       "full_decode": "passed"
     },
     "captions": {
-      "cues": 28,
+      "cues": 30,
       "last_end_seconds": 88.911,
       "ordered_nonoverlapping": true
     },
-    "voice_fits_all_scenes": true,
+    "audio": "No audio streams: no music, narration, or sound effects.",
     "timing_motion": {
       "static": {
         "inference_mean_absolute_pixel_changes": [
-          0.04452291666666667,
-          0.04351354166666667,
-          0.052044791666666666
+          0.038470833333333336,
+          0.03856145833333333,
+          0.04297361111111111
         ],
-        "action_change": 11.930685416666666
+        "action_change": 11.838753125
       },
       "realtime": {
         "inference_mean_absolute_pixel_changes": [
-          3.1102701388888887,
-          3.0742538194444444,
-          4.435688541666667
+          3.560629513888889,
+          3.4159375,
+          5.3382875
         ],
-        "action_change": 11.908712152777778
+        "action_change": 12.743538194444444
       }
     },
     "opening_story": {
@@ -211,10 +105,10 @@
     },
     "completed_segment_holds": {
       "astra": {
-        "completed_view_mean_absolute_pixel_change": 0.0001
+        "completed_view_mean_absolute_pixel_change": 0.0014208333333333334
       },
       "sol": {
-        "completed_view_mean_absolute_pixel_change": 0.041195833333333334
+        "completed_view_mean_absolute_pixel_change": 0.042931944444444446
       }
     },
     "hero": {
@@ -237,9 +131,6 @@
           "width": 1920,
           "height": 1080,
           "nb_frames": "450"
-        },
-        {
-          "nb_frames": "705"
         }
       ],
       "format": {
@@ -253,9 +144,6 @@
           "width": 1920,
           "height": 1080,
           "nb_frames": "360"
-        },
-        {
-          "nb_frames": "564"
         }
       ],
       "format": {
@@ -336,7 +224,7 @@
     "original_recorded_frames": {
       "count": 95,
       "lossless_pixel_hashes": "verified",
-      "interpolation": "none",
+      "display_transition": "0.14-second eased cross-dissolve; no optical-flow interpolation",
       "inference": "recorded input held"
     },
     "behavior_profiles": {
@@ -358,140 +246,119 @@
       },
       "full_decode": "passed"
     },
-    "music_loudness": {
-      "integrated_lufs": -24.87,
-      "true_peak_dbtp": -14.06
-    },
     "repository_media_size_limit": "all current NYC MP4s below 95 MiB"
   },
-  "media": {
-    "website/public/media/rt-safe-nyc-90s.mp4": {
-      "bytes": 26996463,
-      "sha256": "580df28ddfb59e3239c7ecfc475e912e156c751a8fb3dab1b1b73ccff9ec4164"
+  "motion": {
+    "static": {
+      "minimum_center_separation_cm": 423.33333333333303,
+      "crossing": false,
+      "source": "authored scene transforms; native frames also reviewed visually"
     },
-    "website/public/media/rt-safe-nyc-comparison.mp4": {
-      "bytes": 22061762,
-      "sha256": "aeb46321942252613a2deca9a590a8b0d89f417912579d8a5ff6173b3f1cb0a4"
+    "realtime": {
+      "minimum_center_separation_cm": 67.65276095372383,
+      "crossing": false,
+      "source": "authored scene transforms; native frames also reviewed visually"
     },
-    "website/public/media/rt-safe-nyc-90s.srt": {
-      "bytes": 2094,
-      "sha256": "0761335387ec93c9a46ff5cd43d0304d9baa9af5d7e1f1ae29fafa7adc0df458"
+    "matched_initial_state_and_camera": true,
+    "leaderboard": {
+      "mean_absolute_pixel_change": 13.300619756890944,
+      "animated": true
     },
-    "website/public/media/rt-safe-nyc-90s-captioned.mp4": {
-      "bytes": 26581326,
-      "sha256": "bdbd82cd9e00a9de1ab29b48991f7a9c1860b69bd4f62cbe025647dcb6ff3139"
+    "radar_page_1": {
+      "mean_absolute_pixel_change": 3.6871148193370415,
+      "animated": true
     },
-    "website/public/media/rt-safe-nyc-comparison.vtt": {
-      "bytes": 608,
-      "sha256": "5c856819cb9b815684f820bd939a958b833a4020db17d2a8432331dfe7326c9f"
-    },
-    "website/public/media/rt-safe-nyc-90s.vtt": {
-      "bytes": 2027,
-      "sha256": "bca682b2366fd86346631f86bf58e789a755ef52f693cb6e554adbedc30fc2ff"
-    },
-    "website/public/media/rt-safe-original-comparison.mp4": {
-      "bytes": 12499754,
-      "sha256": "2f2c5e3c21e8d29579121aac850a1a748bbdaa76cd487f5eebf517f87f4dd50e"
-    },
-    "website/public/media/rt-safe-original-comparison.vtt": {
-      "bytes": 110,
-      "sha256": "fddaaf4c32171debfaea8f4c27338ab94bed1a15367da9d3aa3bf95f0f343a71"
-    },
-    "website/public/media/nyc/timing-static.mp4": {
-      "bytes": 1099102,
-      "sha256": "ced3f33706fdfac6b0e2b1edb9e2aefc6b823fd6050e400c92f2a54777478ca1"
-    },
-    "website/public/media/nyc/astra.mp4": {
-      "bytes": 7139723,
-      "sha256": "15d0cbe3a7d5d87e4bb51ca396333952f2143a12bfe05909ace225ef27821226"
-    },
-    "website/public/media/nyc/environment-tour.mp4": {
-      "bytes": 13382085,
-      "sha256": "b8c12bc33e28d908ae5f8139b8faa0b32f2b890f30c009a79cd720ede8c74711"
-    },
-    "website/public/media/nyc/timing-story.mp4": {
-      "bytes": 4771975,
-      "sha256": "b26b3ac885addc06f286c827fd67eb8fbb061e9d31219c852b8cdc85b5c208b1"
-    },
-    "website/public/media/nyc/environment-intro.mp4": {
-      "bytes": 11729482,
-      "sha256": "972f04f22a8ce25064d7144a9f13e1f803acbbfa6df9411a71e71b913a0443dc"
-    },
-    "website/public/media/nyc/sol.mp4": {
-      "bytes": 14677801,
-      "sha256": "d3074556756904e600610fa81e1809250dce8a9d1b9f8cf7cd54bd5f9292358a"
-    },
-    "website/public/media/nyc/timing-realtime.mp4": {
-      "bytes": 1890172,
-      "sha256": "1f1bf9f986e72faf08d9495b5ef82c30067e42db036914c559bbaf373bb42402"
-    },
-    "website/public/media/nyc/hero.mp4": {
-      "bytes": 8314959,
-      "sha256": "3169e35b4579ffa80e69998b793059f14c0948e3c69547771c493c36586a1d19"
+    "radar_page_2": {
+      "mean_absolute_pixel_change": 3.3729109573554017,
+      "animated": true
     }
   },
-  "limitations": [
-    "NYC timing and environment scenes are illustrative; benchmark results remain measurements on the original evaluation maps.",
-    "The current Astra/Sol comparison replays original recorded snapshots; inputs are held during inference. The separate NYC alternate reconstructs surrounding motion."
-  ],
-  "release_content": {
-    "tracked_files_checked": 842,
-    "tracked_content_mib": 297.6,
-    "status": "passed",
-    "staged_whitespace_check": "passed"
-  },
-  "presentation_revision": {
-    "duration_seconds": 90,
-    "frontier_intro_seconds": 2,
-    "radar_models": 8,
-    "rl_ending_seconds": 5,
-    "provider_logos": true,
-    "collision_column_emphasis": true,
-    "comparison": "original first-person recorded snapshots",
-    "opening_seconds": 15,
-    "environment_title_seconds": 2.4,
-    "opening": "Static first, center message, side-by-side RT-Safe reveal",
-    "location": "Madison Square Park paved interior path"
-  },
-  "soundtrack": {
-    "track_sha256": "9a88dd594be84ccc5b86d3fda2c1c3320360b15ca8f72e64a6436606d3a94c1c",
-    "exports": {
-      "rt-safe-nyc-90s.mp4": {
-        "video_stream_sha256": "c6b41d1a013b01bf16a08cf0f8cb7feb9e2b7287a3e04a211fd756e1b9955643",
-        "video_unchanged": true,
-        "duration_seconds": 90,
-        "audio": "original soft instrumental; no voice",
-        "music_start_seconds": 0,
-        "audio_matches_instrumental_encode": true,
-        "audio_stream_sha256": "a6ea4b53351ac4904f17d6b2c4eadf75d634bc3cd0c040f7d8fa1b7cf578b174"
+  "native": {
+    "static": {
+      "success": true,
+      "jobs": [
+        {
+          "name": "timing-close-static",
+          "success": true,
+          "seconds": 358.90309166908264
+        }
+      ],
+      "elapsed": 367.28954315185547,
+      "metadata": {
+        "times": null,
+        "mode": "static",
+        "illustrative": true
+      }
+    },
+    "static_cycle_patch": {
+      "success": true,
+      "jobs": [
+        {
+          "name": "timing-close-static-check",
+          "success": true,
+          "seconds": 157.84407567977905
+        }
+      ],
+      "elapsed": 165.72819471359253,
+      "metadata": {
+        "times": null,
+        "mode": "static",
+        "illustrative": true
       },
-      "rt-safe-nyc-90s-captioned.mp4": {
-        "video_stream_sha256": "446210cefc9d5390838d4e107d373062d98c7df89a73b43fa7e4e92008044dc8",
-        "video_unchanged": true,
-        "duration_seconds": 90,
-        "audio": "original soft instrumental; no voice",
-        "music_start_seconds": 0,
-        "audio_matches_instrumental_encode": true,
-        "audio_stream_sha256": "a6ea4b53351ac4904f17d6b2c4eadf75d634bc3cd0c040f7d8fa1b7cf578b174"
-      },
-      "nyc/timing-story.mp4": {
-        "video_stream_sha256": "841cb92be19e82c25e65a240d0e103034fff73e95429857233e866a501bf53f3",
-        "video_unchanged": true,
-        "duration_seconds": 15,
-        "audio": "original soft instrumental; no voice",
-        "music_start_seconds": 3,
-        "audio_matches_instrumental_encode": true,
-        "audio_stream_sha256": "5dd2f4ec68f2432761be88f9cbe37c5fdc97d957756e584a8a672a7ae7188a66"
-      },
-      "nyc/environment-intro.mp4": {
-        "video_stream_sha256": "a0af55e6c503ece8136b4385c638ef06c28288df439fd8eb80575486d550ea11",
-        "video_unchanged": true,
-        "duration_seconds": 12,
-        "audio": "original soft instrumental; no voice",
-        "music_start_seconds": 18,
-        "audio_matches_instrumental_encode": true,
-        "audio_stream_sha256": "949ecc47adcb66bbd5541ac6f818dcf42cac33105c5a788acc15693f4fc8c01e"
+      "patched_frames": [
+        210,
+        329
+      ]
+    },
+    "realtime": {
+      "success": true,
+      "jobs": [
+        {
+          "name": "timing-close-realtime",
+          "success": true,
+          "seconds": 354.08232593536377
+        }
+      ],
+      "elapsed": 362.12168312072754,
+      "metadata": {
+        "times": null,
+        "mode": "realtime",
+        "illustrative": true
+      }
+    },
+    "environment": {
+      "success": true,
+      "jobs": [
+        {
+          "name": "environment",
+          "success": true,
+          "seconds": 289.364244222641
+        }
+      ],
+      "elapsed": 300.81415843963623,
+      "metadata": {
+        "illustrative": true,
+        "frames": 360
       }
     }
-  }
+  },
+  "visual_review": {
+    "contact_frames": [
+      250,
+      265,
+      270,
+      285,
+      310,
+      329
+    ],
+    "walking_frames": [
+      5,
+      35,
+      65
+    ],
+    "traffic_present": "confirmed in final environment frame 300",
+    "captioned_contact": "reviewed at 17.3 seconds"
+  },
+  "audio": "All current film and website clips contain no audio streams.",
+  "recorded_comparison": "95 original source frames verified losslessly; 0.14-second display dissolves; unchanged report timing and totals."
 }

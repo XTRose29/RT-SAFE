@@ -1,0 +1,25 @@
+{
+  "static": {
+    "minimum_center_separation_cm": 423.33333333333303,
+    "crossing": false,
+    "source": "authored scene transforms; native frames also reviewed visually"
+  },
+  "realtime": {
+    "minimum_center_separation_cm": 67.65276095372383,
+    "crossing": false,
+    "source": "authored scene transforms; native frames also reviewed visually"
+  },
+  "matched_initial_state_and_camera": true,
+  "leaderboard": {
+    "mean_absolute_pixel_change": 13.300619756890944,
+    "animated": true
+  },
+  "radar_page_1": {
+    "mean_absolute_pixel_change": 3.6871148193370415,
+    "animated": true
+  },
+  "radar_page_2": {
+    "mean_absolute_pixel_change": 3.3729109573554017,
+    "animated": true
+  }
+}

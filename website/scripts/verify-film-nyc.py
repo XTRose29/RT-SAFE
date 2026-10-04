@@ -9,13 +9,13 @@ for name in ['rt-safe-nyc-90s.mp4', 'rt-safe-nyc-90s-captioned.mp4']:
     path = ROOT / 'public/media' / name
     info = json.loads(subprocess.check_output([
         'ffprobe', '-v', 'error', '-show_entries',
-        'format=duration,size:stream=codec_name,width,height,r_frame_rate,nb_frames,duration',
+        'format=duration,size:stream=codec_type,codec_name,width,height,r_frame_rate,nb_frames,duration',
         '-of', 'json', str(path)]))
     assert float(info['format']['duration']) == 90, info
     video = next(s for s in info['streams'] if s['codec_name'] == 'h264')
     assert video['nb_frames'] == '2700', video
     assert (video['width'], video['height'], video['r_frame_rate']) == (1920, 1080, '30/1'), video
-    assert any(s['codec_name'] == 'aac' for s in info['streams']), info
+    assert all(s['codec_type'] != 'audio' for s in info['streams']), info
     decoded = subprocess.run(['ffmpeg', '-v', 'error', '-i', str(path), '-f', 'null', '-'],
                              check=True, capture_output=True)
     assert not decoded.stderr, decoded.stderr.decode()
@@ -38,9 +38,7 @@ for a, b in cues:
 report['captions'] = {'cues': len(cues), 'last_end_seconds': end, 'ordered_nonoverlapping': True}
 timeline = json.loads((OUT / 'timeline.json').read_text())
 assert sum(s['duration'] for s in timeline['scenes']) == 90
-for s in timeline['scenes']:
-    assert s['voiceOffset'] + s['voiceDuration'] / s['voiceSpeed'] < s['duration']
-report['voice_fits_all_scenes'] = True
+report['audio'] = 'No audio streams: no music, narration, or sound effects.'
 # Decode the paired timing clips and measure whether the intended world freeze is visible.
 import cv2
 import numpy as np
@@ -117,7 +115,7 @@ for model in original['models'].values():
                     assert hashlib.sha256(im.convert('RGB').tobytes()).hexdigest()==entry['pixel_sha256']
                 frame_count+=1
 assert frame_count==95,frame_count
-report['original_recorded_frames']={'count':frame_count,'lossless_pixel_hashes':'verified','interpolation':'none','inference':'recorded input held'}
+report['original_recorded_frames']={'count':frame_count,'lossless_pixel_hashes':'verified','display_transition':'0.14-second eased cross-dissolve; no optical-flow interpolation','inference':'recorded input held'}
 report['behavior_profiles']={'models':8,'axes':6,'normalization':'maximum across all eight models'}
 comparison=ROOT/'public/media/rt-safe-original-comparison.mp4'
 info=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration:stream=nb_frames,width,height','-of','json',str(comparison)]))
@@ -126,15 +124,10 @@ assert info['streams'][0]['nb_frames']=='1323'
 decoded=subprocess.run(['ffmpeg','-v','error','-i',str(comparison),'-f','null','-'],check=True,capture_output=True)
 assert not decoded.stderr,decoded.stderr.decode()
 report['full_selected_comparison']={**info,'full_decode':'passed'}
-levels=subprocess.run(['ffmpeg','-hide_banner','-i',str(ROOT/'public/media/rt-safe-nyc-90s.mp4'),'-vn','-af','loudnorm=I=-16:TP=-1.5:LRA=9:print_format=json','-f','null','-'],check=True,capture_output=True,text=True)
-match=re.search(r'\{\s*"input_i"[\s\S]*?\}',levels.stderr)
-assert match,'Missing loudness measurement'
-levels=json.loads(match.group())
-assert -27<float(levels['input_i'])<-23,levels
-assert float(levels['input_tp'])<-4,levels
-report['music_loudness']={'integrated_lufs':float(levels['input_i']),'true_peak_dbtp':float(levels['input_tp'])}
 for path in [*ROOT.glob('public/media/rt-safe-nyc*.mp4'),*ROOT.glob('public/media/nyc/*.mp4'),*ROOT.glob('public/media/recorded/*.mp4'),*ROOT.glob('public/media/rt-safe-original*.mp4')]:
+    tracks=json.loads(subprocess.check_output(['ffprobe','-v','error','-select_streams','a','-show_streams','-of','json',str(path)]))
+    assert not tracks['streams'],('Unexpected audio stream',path.name)
     assert path.stat().st_size<95*1024**2,('File exceeds repository limit',path.name)
 report['repository_media_size_limit']='all current NYC MP4s below 95 MiB'
 (OUT / 'validation.json').write_text(json.dumps(report, indent=2) + '\n')
-print('Passed: both 90-second / 2700-frame exports decode fully; captions do not overlap; instrumental loudness is within the soft target range.')
+print('Passed: both 90-second / 2700-frame exports decode fully; captions do not overlap; current film and website clips contain no audio streams.')
