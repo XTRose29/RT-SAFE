@@ -11,18 +11,21 @@ Astra/Sol comparison and an eight-second aerial loop.
 | 0:00–0:04 | Project title and NYC aerial |
 | 0:04–0:15 | Static versus real-time inference |
 | 0:15–0:27 | Navigation goal, collisions, hazards, and traffic rules |
-| 0:27–0:41 | Astra/Sol replay with input frames, commands, and collision alerts |
-| 0:41–0:46.2 | All-difficulty leaderboard: success, safe success, collisions, latency, decisions |
-| 0:46.2–0:51 | Four behavior radar profiles and model takeaways |
-| 0:51–0:59 | Success versus safe success |
-| 0:59–1:08 | Matched static versus real-time results |
-| 1:08–1:18 | Lower, default, and higher reasoning effort |
-| 1:18–1:30 | Learning environment and reported BC/RL results |
+| 0:27–0:29 | How do frontier agents perform? |
+| 0:29–0:43 | Astra/Sol replay with input frames, commands, and collision alerts |
+| 0:43–0:48.2 | All-difficulty leaderboard with logos and collision emphasis |
+| 0:48.2–0:52.6 | Inkling, Grok, Astra, and Fable behavior profiles |
+| 0:52.6–0:57 | Sonnet, Sol, Gemini, and DeepSeek behavior profiles |
+| 0:57–1:05 | Success versus safe success |
+| 1:05–1:14 | Matched static versus real-time results |
+| 1:14–1:24 | Lower, default, and higher reasoning effort |
+| 1:24–1:30 | Learning environment and reported BC/RL results |
 
 Title: **RT-Safe: Benchmarking Agent Safety in Real-Time Embodied Environment**.
 Subtitle: **The world does not pause while an agent thinks.**
 
-The opening comparison uses two edge-to-edge city views with a closer camera. Labels sit
+The opening comparison explicitly contrasts conventional static evaluation with real-world timing.
+Large labels and a pedestrian motion cue distinguish the paused and advancing worlds. Labels sit
 inside each view and follow the agent from Thinking to Acting. The pedestrian approaches
 along the sidewalk while the static world pauses and the real-time world advances.
 
@@ -92,3 +95,7 @@ waiting, and turning describe choices; radar area is not a composite safety scor
 The recorded input frames and selected command distances are included in the curated replay
 data. To curate them again from the separately provisioned source logs, run
 `python scripts/prepare-behavior-media.py --campaign /path/to/campaign --radar-csv /path/to/rq1_radar_raw.csv`.
+
+All eight models have provider logos beside their names. Logo sources and attribution are in
+`public/media/logos/SOURCES.txt`. Astra/Sol share the OpenAI mark; Fable/Sonnet share Claude’s.
+Run `node scripts/prepare-model-logos.cjs` with Playwright installed to rasterize the vendored SVGs.

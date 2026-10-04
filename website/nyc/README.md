@@ -82,3 +82,10 @@ Render with the compatible Linux editor supplied with the NYC runtime (this prod
 The launcher records its process ID for precise cleanup. The local workaround disables GPU
 occlusion queries to avoid a Vulkan query hang in this editor build. Dynamic color instances avoid recompiling the city materials. Generated sequence assets
 remain in memory during rendering; the source map is never saved back to the shared project.
+
+## Presentation revision
+
+The 90-second edit includes a two-second frontier-agent introduction, an averaged leaderboard
+with a highlighted collision column, and all eight model behavior profiles in two groups.
+The RL ending lasts six seconds. Model/provider marks are documented in
+`../public/media/logos/SOURCES.txt`; benchmark measurements are unchanged.

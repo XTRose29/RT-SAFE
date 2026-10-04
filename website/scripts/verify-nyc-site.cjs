@@ -39,10 +39,10 @@ const assert=(ok,message)=>{if(!ok)throw new Error(message)};
  }
  await page.locator('.nyc-gallery summary').click();
  assert(await page.getByRole('button',{name:'All difficulties',exact:true}).getAttribute('aria-pressed')==='true','Leaderboard must start with all-difficulty averages');
- assert(await page.locator('.behavior-card').count()===4,'Missing radar profiles');
- for(const im of await page.locator('.behavior-card img').all())await im.evaluate(img=>img.decode());
+ assert(await page.locator('.behavior-card').count()===8,'Missing radar profiles');
+ for(const im of await page.locator('.behavior-card img').all())await im.evaluate(img=>{img.loading='eager';return img.decode()});
  await page.locator('.behavior-profiles').screenshot({path:path.join(out,'behavior-profiles.png')});
- results.behavior_profiles=4;results.leaderboard_default='all difficulties';
+ results.behavior_profiles=8;results.leaderboard_default='all difficulties';
  const tour=page.locator('.nyc-environment video');await tour.evaluate(v=>{v.load()});
  await tour.evaluate(v=>new Promise((resolve,reject)=>{if(v.readyState>=1){resolve();return;}v.addEventListener('loadedmetadata',resolve,{once:true});setTimeout(()=>reject(new Error('Tour metadata timeout')),15000)}));
  assert(Math.abs(await tour.evaluate(v=>v.duration)-12)<.04,'Tour duration');

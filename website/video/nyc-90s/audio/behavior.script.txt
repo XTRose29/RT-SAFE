@@ -1,1 +1,1 @@
-Sonnet has the fewest collisions, but safe success remains rare. Inkling favors longer moves. Fable turns and waits more than Astra.
+Sonnet records the fewest collisions; Grok, the most. Inkling favors longer moves. Sol turns and waits most. Response time and action choices both shape behavior.

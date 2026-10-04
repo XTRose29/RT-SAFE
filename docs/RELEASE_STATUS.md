@@ -31,7 +31,7 @@ in NYC. The narrated and captioned films are both exactly 90 seconds (2,700 fram
 The full selected comparison is 44.1 seconds at 6× simulation speed.
 
 The native renders completed successfully. Both film editions and the full comparison decode
-without errors. Narration measures −16.07 LUFS integrated and −1.48 dBTP true peak. The
+without errors. Narration measures -15.97 LUFS integrated and -1.48 dBTP true peak. The
 website passes desktop/mobile playback, seek/replay, camera-gallery, reduced-motion, and
 layout checks. No browser errors were reported. The web aerial loop is an 8 MB 1080p encode;
 the higher-quality render and intermediate frames remain in the local production workspace.
@@ -39,3 +39,6 @@ the higher-quality render and intermediate frames remain in the local production
 See [NYC validation](../validation/nyc-release-checks.json) and
 [rendering provenance](../website/nyc/README.md). The earlier benchmark test results above
 remain from the prior release check; this edition does not change benchmark execution code.
+
+The latest 90-second edit adds a frontier-agent introduction, all eight radar profiles with
+provider logos, a highlighted collision column, and a six-second RL ending.

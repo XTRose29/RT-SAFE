@@ -39,28 +39,28 @@
     },
     {
       "id": "examples",
-      "chapter": "ASTRA / SOL: SAME RECORDED ROUTE",
+      "chapter": "HOW DO FRONTIER AGENTS PERFORM?",
       "start": 27,
-      "duration": 14,
-      "narration": "On the same recorded route, Astra finishes in twelve decisions with one collision. Sol takes thirty-three decisions with seventeen collisions. This NYC reconstruction uses recorded agent positions and simulation timing.",
+      "duration": 16,
+      "narration": "How do frontier agents perform? On the same recorded route, Astra makes twelve decisions with one collision. Sol makes thirty-three decisions with seventeen collisions. Recorded behavior, reconstructed in NYC.",
       "voiceOffset": 0.3,
-      "voiceDuration": 14.832,
-      "voiceSpeed": 1.1110112359550564
+      "voiceDuration": 15.336,
+      "voiceSpeed": 1
     },
     {
       "id": "behavior",
-      "chapter": "MODEL BEHAVIOR",
-      "start": 41,
-      "duration": 10,
-      "narration": "Sonnet has the fewest collisions, but safe success remains rare. Inkling favors longer moves. Fable turns and waits more than Astra.",
+      "chapter": "EIGHT MODELS: PERFORMANCE AND BEHAVIOR",
+      "start": 43,
+      "duration": 14,
+      "narration": "Sonnet records the fewest collisions; Grok, the most. Inkling favors longer moves. Sol turns and waits most. Response time and action choices both shape behavior.",
       "voiceOffset": 0.3,
-      "voiceDuration": 10.08,
-      "voiceSpeed": 1.0780748663101605
+      "voiceDuration": 12.792,
+      "voiceSpeed": 1
     },
     {
       "id": "completion",
       "chapter": "TASK COMPLETION IS NOT ENOUGH",
-      "start": 51,
+      "start": 57,
       "duration": 8,
       "narration": "Task completion is not enough. Success reaches ninety-four point four percent, but safe success is only zero point seven percent.",
       "voiceOffset": 0.3,
@@ -70,7 +70,7 @@
     {
       "id": "comparison",
       "chapter": "STATIC VS. REAL-TIME",
-      "start": 59,
+      "start": 65,
       "duration": 9,
       "narration": "On matched hard routes, real-time collisions rise twelve point three times. About eighty-four percent occur while the agent is deciding.",
       "voiceOffset": 0.3,
@@ -80,7 +80,7 @@
     {
       "id": "reasoning",
       "chapter": "LOWER / DEFAULT / HIGHER",
-      "start": 68,
+      "start": 74,
       "duration": 10,
       "narration": "More reasoning is not reliably safer. From default to higher effort, collisions rise from forty point seven to sixty-two per episode.",
       "voiceOffset": 0.3,
@@ -90,12 +90,12 @@
     {
       "id": "learning",
       "chapter": "AN ENVIRONMENT FOR LEARNING",
-      "start": 78,
-      "duration": 12,
-      "narration": "R T Safe also supports offline reinforcement learning. Reward design changes safety and progress. The wander penalty achieves seventy-five percent success, while behavior cloning has the lowest collision rate.",
+      "start": 84,
+      "duration": 6,
+      "narration": "R T Safe supports reinforcement learning. Reward design shapes safety.",
       "voiceOffset": 0.3,
-      "voiceDuration": 13.92,
-      "voiceSpeed": 1.226431718061674
+      "voiceDuration": 5.736,
+      "voiceSpeed": 1.0721495327102804
     }
   ]
 }

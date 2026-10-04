@@ -1,0 +1,1 @@
+R T Safe supports reinforcement learning. Reward design shapes safety.

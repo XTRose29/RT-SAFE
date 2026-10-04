@@ -1,5 +1,5 @@
 {
-  "date_utc": "2026-10-04T06:00:53Z",
+  "date_utc": "2026-10-04T17:09:08.743635+00:00",
   "scope": "NYC website and film edition; benchmark implementation unchanged",
   "website": {
     "typescript": "passed",
@@ -18,6 +18,8 @@
         "replay": true,
         "duration": 44.1
       },
+      "behavior_profiles": 8,
+      "leaderboard_default": "all difficulties",
       "reduced_motion": true,
       "browser_errors": [],
       "desktop_overflow": false,
@@ -138,9 +140,9 @@
       ],
       "format": {
         "duration": "90.000000",
-        "size": "27179831"
+        "size": "30463530"
       },
-      "sha256": "9f739c6958525fe49e1bb866c3b1055571f5eba6cd5f2a216e7017f962788a0b",
+      "sha256": "bb40f8517078483d97592d900dabfc0601286882d6ea7820aac6dae56812ae13",
       "full_decode": "passed"
     },
     "rt-safe-nyc-90s-captioned.mp4": {
@@ -163,41 +165,41 @@
       ],
       "format": {
         "duration": "90.000000",
-        "size": "26373509"
+        "size": "29616828"
       },
-      "sha256": "dc714c5f1e6e8078cfb9678b4e6d897b57eeaeb60eb10cd362392cc4965e78af",
+      "sha256": "e18910ef9c7f26edc12c1b8e8e8505784b817a8a143ff05646db5371e531879a",
       "full_decode": "passed"
     },
     "captions": {
       "cues": 26,
-      "last_end_seconds": 89.053,
+      "last_end_seconds": 88.956,
       "ordered_nonoverlapping": true
     },
     "voice_fits_all_scenes": true,
     "timing_motion": {
       "static": {
         "inference_mean_absolute_pixel_changes": [
-          0.01527247299382716,
-          0.014184670781893003,
-          0.01662037037037037
+          0.05545173611111111,
+          0.05566111111111111,
+          0.05948020833333333
         ],
-        "action_change": 5.1205844907407405
+        "action_change": 7.736691319444445
       },
       "realtime": {
         "inference_mean_absolute_pixel_changes": [
-          1.7719372106481481,
-          2.0987424447016463,
-          3.0677184606481482
+          1.0392277777777779,
+          1.3272114583333334,
+          1.5328902777777778
         ],
-        "action_change": 5.973101048096708
+        "action_change": 7.793398263888889
       }
     },
     "completed_segment_holds": {
       "astra": {
-        "completed_view_mean_absolute_pixel_change": 0.0008101851851851852
+        "completed_view_mean_absolute_pixel_change": 0.0020305555555555554
       },
       "sol": {
-        "completed_view_mean_absolute_pixel_change": 0.01879420653292181
+        "completed_view_mean_absolute_pixel_change": 0.05976666666666667
       }
     },
     "hero": {
@@ -210,16 +212,15 @@
         }
       ],
       "format": {
-        "duration": "8.000000",
-        "size": "8314959"
+        "duration": "8.000000"
       }
     },
     "timing-static": {
       "programs": [],
       "streams": [
         {
-          "width": 1920,
-          "height": 1080,
+          "width": 960,
+          "height": 1000,
           "nb_frames": "330"
         }
       ],
@@ -231,8 +232,8 @@
       "programs": [],
       "streams": [
         {
-          "width": 1920,
-          "height": 1080,
+          "width": 960,
+          "height": 1000,
           "nb_frames": "330"
         }
       ],
@@ -257,8 +258,8 @@
       "programs": [],
       "streams": [
         {
-          "width": 1920,
-          "height": 1080,
+          "width": 960,
+          "height": 1000,
           "nb_frames": "1323"
         }
       ],
@@ -270,8 +271,8 @@
       "programs": [],
       "streams": [
         {
-          "width": 1920,
-          "height": 1080,
+          "width": 960,
+          "height": 1000,
           "nb_frames": "1323"
         }
       ],
@@ -280,6 +281,16 @@
       }
     },
     "comparison_source_totals": "verified against curated original logs",
+    "replay_overlay": {
+      "original_input_frames": 45,
+      "command_distances": "verified",
+      "collision_report_flash": "verified at 35.8 s"
+    },
+    "behavior_profiles": {
+      "models": 8,
+      "axes": 6,
+      "normalization": "maximum across all eight models"
+    },
     "full_selected_comparison": {
       "programs": [],
       "streams": [
@@ -295,7 +306,7 @@
       "full_decode": "passed"
     },
     "narration_loudness": {
-      "integrated_lufs": -16.07,
+      "integrated_lufs": -15.97,
       "true_peak_dbtp": -1.48
     },
     "repository_media_size_limit": "all current NYC MP4s below 95 MiB"
@@ -360,5 +371,13 @@
     "tracked_content_mib": 216.1,
     "status": "passed",
     "staged_whitespace_check": "passed"
+  },
+  "presentation_revision": {
+    "duration_seconds": 90,
+    "frontier_intro_seconds": 2,
+    "radar_models": 8,
+    "rl_ending_seconds": 6,
+    "provider_logos": true,
+    "collision_column_emphasis": true
   }
 }

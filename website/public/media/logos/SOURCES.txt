@@ -1,0 +1,18 @@
+Model/provider marks used to identify evaluated models; no endorsement implied.
+
+Astra, Sol: OpenAI
+Fable, Sonnet: Claude (Anthropic)
+Gemini: Google Gemini
+DeepSeek: DeepSeek
+Grok: Grok (xAI)
+SVG sources: @lobehub/icons-static-svg 1.90.0
+https://github.com/lobehub/lobe-icons
+https://unpkg.com/@lobehub/icons-static-svg@1.90.0/icons/
+Library license included in lobe-icons-LICENSE. Brand marks remain owned by their respective owners.
+PNGs are browser rasterizations of these SVGs.
+
+Inkling: Thinking Machines Lab
+Official organization avatar downloaded from https://github.com/thinking-machines-lab.png
+https://thinkingmachines.ai/
+
+Retrieved 2026-10-04. Marks are displayed alongside the manuscript model aliases.

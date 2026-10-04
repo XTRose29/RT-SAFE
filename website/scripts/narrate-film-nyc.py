@@ -5,20 +5,23 @@ ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('narration90',ROOT/'scripts/narrate-film-90s.py')
 n=importlib.util.module_from_spec(spec);spec.loader.exec_module(n)
 n.OUT=ROOT/'video/nyc-90s';n.AUDIO=n.OUT/'audio';n.AUDIO.mkdir(parents=True,exist_ok=True)
-n.SCENES=[(name,duration,'ASTRA / SOL: SAME RECORDED ROUTE' if name=='examples' else chapter,
-    'On the same recorded route, Astra finishes in twelve decisions with one collision. Sol takes thirty-three decisions with seventeen collisions. This NYC reconstruction uses recorded agent positions and simulation timing.' if name=='examples' else script)
-    for name,duration,chapter,script in n.SCENES]
-behavior_script='Sonnet has the fewest collisions, but safe success remains rare. Inkling favors longer moves. Fable turns and waits more than Astra.'
-n.SCENES=[(name,duration,chapter,behavior_script if name=='behavior' else script) for name,duration,chapter,script in n.SCENES]
-cache=n.AUDIO/'behavior.script.txt'
-if not cache.exists() or cache.read_text()!=behavior_script:
-    for suffix in ('.mp3','.words.json'):(n.AUDIO/('behavior'+suffix)).unlink(missing_ok=True)
-for name,_,_,_ in n.SCENES:
-    if name in ('examples','behavior'):continue
-    for suffix in ('.mp3','.words.json'):
-        shutil.copy2(ROOT/'video/revision-90s/audio'/f'{name}{suffix}',n.AUDIO/f'{name}{suffix}')
+# Changed scripts invalidate their own cached voice and word timings.
+overrides={
+ 'examples':(16,'HOW DO FRONTIER AGENTS PERFORM?', 'How do frontier agents perform? On the same recorded route, Astra makes twelve decisions with one collision. Sol makes thirty-three decisions with seventeen collisions. Recorded behavior, reconstructed in NYC.'),
+ 'behavior':(14,'EIGHT MODELS: PERFORMANCE AND BEHAVIOR', 'Sonnet records the fewest collisions; Grok, the most. Inkling favors longer moves. Sol turns and waits most. Response time and action choices both shape behavior.'),
+ 'learning':(6,'AN ENVIRONMENT FOR LEARNING', 'R T Safe supports reinforcement learning. Reward design shapes safety.'),
+}
+n.SCENES=[(name,*overrides[name]) if name in overrides else (name,duration,chapter,script) for name,duration,chapter,script in n.SCENES]
+for name,_,_,script in n.SCENES:
+ cache=n.AUDIO/(name+'.script.txt')
+ if name in overrides:
+  if not cache.exists() or cache.read_text()!=script:
+   for suffix in ('.mp3','.words.json'):(n.AUDIO/(name+suffix)).unlink(missing_ok=True)
+ else:
+  for suffix in ('.mp3','.words.json'):
+   shutil.copy2(ROOT/'video/revision-90s/audio'/f'{name}{suffix}',n.AUDIO/f'{name}{suffix}')
 asyncio.run(n.main())
-cache.write_text(behavior_script)
+for name,_,_,script in n.SCENES:(n.AUDIO/(name+'.script.txt')).write_text(script)
 
 # Keep short sentence endings with their preceding phrase for readable captions.
 def seconds(stamp):

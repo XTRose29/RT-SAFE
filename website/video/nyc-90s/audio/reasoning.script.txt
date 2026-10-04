@@ -1,0 +1,1 @@
+More reasoning is not reliably safer. From default to higher effort, collisions rise from forty point seven to sixty-two per episode.

@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import rawData from "./data.json";
 import { BehaviorProfiles } from "./behavior-profiles";
+import { ModelLogo } from "./model-logos";
 import { NYCHero, NYCTiming, NYCComparison, NYCEnvironment, NYCSceneGallery } from "./nyc-scenes";
 
 declare const __RT_SAFE_REPOSITORY_URL__: string;
@@ -188,7 +189,7 @@ function Results() {
                       onClick={() => setSelected(m.name)}
                       aria-pressed={m.name === selected}
                     >
-                      <i style={{ background: m.color }} />
+                      <ModelLogo name={m.name} />
                       <span>
                         {m.name}
                         <small>{m.provider}</small>
@@ -740,7 +741,7 @@ export default function RTsafe() {
           <SectionHead
             n="03"
             label="RECORDED MODEL BEHAVIOR"
-            title={<>Same route. Different decisions.</>}
+            title={<>How do frontier agents perform?</>}
             description="Follow GPT-6 Astra and GPT-5.6 Sol through the same final route segment. Their recorded decisions and timing are reconstructed in the NYC scene."
           />
           <NYCComparison />

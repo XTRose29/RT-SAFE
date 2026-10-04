@@ -19,9 +19,9 @@
     ],
     "format": {
       "duration": "90.000000",
-      "size": "31367709"
+      "size": "30463530"
     },
-    "sha256": "cb7165eae7d8cbfef8d04dd73af8932382a01b8744b6bb0cf0756a350220676a",
+    "sha256": "bb40f8517078483d97592d900dabfc0601286882d6ea7820aac6dae56812ae13",
     "full_decode": "passed"
   },
   "rt-safe-nyc-90s-captioned.mp4": {
@@ -44,33 +44,33 @@
     ],
     "format": {
       "duration": "90.000000",
-      "size": "30414931"
+      "size": "29616828"
     },
-    "sha256": "f82620568536a35409184dead19c9c924531e512b8b870d5a4e22b64071855a2",
+    "sha256": "e18910ef9c7f26edc12c1b8e8e8505784b817a8a143ff05646db5371e531879a",
     "full_decode": "passed"
   },
   "captions": {
     "cues": 26,
-    "last_end_seconds": 89.053,
+    "last_end_seconds": 88.956,
     "ordered_nonoverlapping": true
   },
   "voice_fits_all_scenes": true,
   "timing_motion": {
     "static": {
       "inference_mean_absolute_pixel_changes": [
-        0.048002083333333334,
-        0.047179513888888885,
-        0.04935972222222222
+        0.05545173611111111,
+        0.05566111111111111,
+        0.05948020833333333
       ],
-      "action_change": 7.378497569444445
+      "action_change": 7.736691319444445
     },
     "realtime": {
       "inference_mean_absolute_pixel_changes": [
-        1.0989243055555555,
-        1.4168461805555554,
-        1.6082618055555555
+        1.0392277777777779,
+        1.3272114583333334,
+        1.5328902777777778
       ],
-      "action_change": 7.6181197916666665
+      "action_change": 7.793398263888889
     }
   },
   "completed_segment_holds": {
@@ -185,7 +185,7 @@
     "full_decode": "passed"
   },
   "narration_loudness": {
-    "integrated_lufs": -16.05,
+    "integrated_lufs": -15.97,
     "true_peak_dbtp": -1.48
   },
   "repository_media_size_limit": "all current NYC MP4s below 95 MiB"
