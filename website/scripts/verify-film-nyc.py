@@ -23,6 +23,10 @@ for name in ['rt-safe-nyc-90s.mp4', 'rt-safe-nyc-90s-captioned.mp4']:
     info['full_decode'] = 'passed'
     report[name] = info
 
+canonical = ROOT / 'public/media/rt-safe-video.mp4'
+assert hashlib.sha256(canonical.read_bytes()).hexdigest() == report['rt-safe-nyc-90s.mp4']['sha256']
+report['rt-safe-video.mp4'] = {'identical_to_verified_master': True, 'sha256': report['rt-safe-nyc-90s.mp4']['sha256']}
+
 def seconds(stamp):
     h, m, s = stamp.split(':')
     return int(h) * 3600 + int(m) * 60 + float(s)

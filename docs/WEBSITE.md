@@ -40,7 +40,9 @@ Set repository variable `SITE_URL` only when using a custom domain. Configure th
 - `website/app/rtsafe.tsx`: page and interactive tables.
 - `website/app/data.json`: manuscript results.
 - `website/app/examples.json`: curated recorded decisions.
-- `website/public/media/rt-safe-nyc-90s.mp4`: current 90-second film without audio.
+- `website/public/media/rt-safe-video.mp4`: canonical 90-second film without audio.
+- `website/public/media/rt-safe-nyc-90s.mp4`: identical compatibility copy for existing links.
+- `website/public/media/logos/simworld.png`: supplied SimWorld emblem used in the website brand suite and film opening.
 - `website/public/media/rt-safe-nyc-90s-captioned.mp4`: conference copy with burned captions.
 - `website/public/media/rt-safe-original-comparison.mp4`: current Astra/Sol comparison using original recorded snapshots at 6× simulation speed.
 - `website/public/media/rt-safe-nyc-comparison.mp4`: earlier NYC reconstruction, retained as an alternate.

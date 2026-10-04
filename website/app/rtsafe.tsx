@@ -511,10 +511,13 @@ export default function RTsafe() {
         Skip to benchmark
       </a>
       <header className="header">
-        <a className="brand" href="#top" aria-label="RT-SAFE home">
-          <span className="brand-icon">rt</span> RT–SAFE
-          <span className="brand-note">The real-time safety benchmark</span>
-        </a>
+        <div className="brand-suite">
+          <a className="brand" href="#top" aria-label="RT-SAFE home">
+            <span className="brand-icon">rt</span> RT–SAFE
+            <span className="brand-note">The real-time safety benchmark</span>
+          </a>
+          <span className="simworld-brand"><img src="media/logos/simworld.png" alt="" width="48" height="48" /><span>SimWorld</span></span>
+        </div>
         <button
           className="menu-toggle"
           onClick={() => setMenu(!menu)}
@@ -833,7 +836,7 @@ export default function RTsafe() {
               poster={film === "nyc-90s" ? "media/nyc/film-poster.webp" : "media/recorded/comparison-poster.webp"}
               aria-label="RT-SAFE project film"
             >
-              <source src={`media/rt-safe-${film}.mp4?v=silent-motion-2`} type="video/mp4" />
+              <source src={film === "nyc-90s" ? "media/rt-safe-video.mp4" : "media/rt-safe-original-comparison.mp4?v=silent-motion-2"} type="video/mp4" />
               <track
                 kind="captions"
                 src={`media/rt-safe-${film}.vtt?v=silent-motion-2`}
@@ -847,13 +850,13 @@ export default function RTsafe() {
           <div className="film-footer">
             <span>{film === "nyc-90s" ? "1920 × 1080 · Silent · English captions" : "1920 × 1080 · 6× playback · English captions"}</span>
             <div>
-              <a href={`media/rt-safe-${film}.mp4?v=silent-motion-2`} download>
+              <a href={film === "nyc-90s" ? "media/rt-safe-video.mp4" : "media/rt-safe-original-comparison.mp4?v=silent-motion-2"} download>
                 Download film <span>↓</span>
               </a>
               <a href={`media/rt-safe-${film}.vtt?v=silent-motion-2`} download>
                 Captions <span>↓</span>
               </a>
-              <a href="media/rt-safe-nyc-90s-captioned.mp4?v=silent-motion-2" download>
+              <a href="media/rt-safe-nyc-90s-captioned.mp4?v=simworld-brand" download>
                 90s conference edition <span>↓</span>
               </a>
             </div>
@@ -959,9 +962,12 @@ export default function RTsafe() {
           </a>
         </section>
         <footer className="footer">
-          <a className="brand" href="#top">
-            <span className="brand-icon">rt</span> RT–SAFE
-          </a>
+          <div className="brand-suite">
+            <a className="brand" href="#top">
+              <span className="brand-icon">rt</span> RT–SAFE
+            </a>
+            <span className="simworld-brand"><img src="media/logos/simworld.png" alt="" width="48" height="48" /><span>SimWorld</span></span>
+          </div>
           <p>Benchmarking agent safety in real-time embodied environments.</p>
           <a href="#top">Back to top ↑</a>
         </footer>

@@ -20,7 +20,8 @@ master = MEDIA / 'rt-safe-nyc-90s.mp4'
 run(['-f', 'concat', '-safe', '0', '-i', str(video_list),
      '-map', '0:v:0', '-an', '-c:v', 'copy',
      '-t', '90', '-movflags', '+faststart', str(master)])
-print('Exported 90-second master without an audio track', flush=True)
+shutil.copy2(master, MEDIA / 'rt-safe-video.mp4')
+print('Exported silent master and canonical rt-safe-video.mp4', flush=True)
 
 def ass_stamp(ts):
     h, m, sec = ts.split(':')

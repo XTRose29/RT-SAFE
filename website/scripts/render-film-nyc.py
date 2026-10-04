@@ -39,6 +39,10 @@ def shade(im,top=0,bottom=0):
     return Image.alpha_composite(im.convert('RGBA'),Image.fromarray(layer)).convert('RGB')
 def title(s,t):
     im=shade(footage('hero',t),155,210)
+    # Supplied SimWorld emblem, composited unchanged with its transparency.
+    mark=Image.open(ROOT/'public/media/logos/simworld.png').convert('RGBA').resize((140,140),Image.Resampling.LANCZOS)
+    im.paste(mark,(1470,65),mark)
+    v.text(im,(1610,111),'SimWorld',40,v.WHITE,600)
     v.rect(im,(98,156,179,164),v.PALE,4)
     v.text(im,(91,226),'RT-Safe:',120,v.WHITE,600)
     v.text(im,(98,419),'Benchmarking Agent Safety',72,v.WHITE)

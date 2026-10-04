@@ -47,9 +47,9 @@
       ],
       "format": {
         "duration": "90.000000",
-        "size": "26779304"
+        "size": "26789272"
       },
-      "sha256": "42ecd46d87f1e9281b8b82c6adc57cc24821ff834c9274a094937ad1c3348c8b",
+      "sha256": "ec7cbc0d9ac593091c2cd1fa2e384b198816e7ef65244736326e56b85ae97024",
       "full_decode": "passed"
     },
     "rt-safe-nyc-90s-captioned.mp4": {
@@ -67,10 +67,14 @@
       ],
       "format": {
         "duration": "90.000000",
-        "size": "26104652"
+        "size": "26115883"
       },
-      "sha256": "ec2b60aac55d14e6eca5bda7316065108ac720f34581eb82724c5c6a352fd140",
+      "sha256": "0b268d11386b6d87692adef850775d9ce6ac3dd838fc60a96e12d83958163d9f",
       "full_decode": "passed"
+    },
+    "rt-safe-video.mp4": {
+      "identical_to_verified_master": true,
+      "sha256": "ec7cbc0d9ac593091c2cd1fa2e384b198816e7ef65244736326e56b85ae97024"
     },
     "captions": {
       "cues": 30,
@@ -360,5 +364,26 @@
     "captioned_contact": "reviewed at 17.3 seconds"
   },
   "audio": "All current film and website clips contain no audio streams.",
-  "recorded_comparison": "95 original source frames verified losslessly; 0.14-second display dissolves; unchanged report timing and totals."
+  "recorded_comparison": "95 original source frames verified losslessly; 0.14-second display dissolves; unchanged report timing and totals.",
+  "branding_revision": {
+    "date_utc": "2026-10-04T23:33:09.155412+00:00",
+    "source_logo_preserved": true,
+    "film": "rt-safe-video.mp4",
+    "compatibility_alias": "rt-safe-nyc-90s.mp4",
+    "typescript": "passed",
+    "production_build": "passed",
+    "browser_viewports": [
+      1440,
+      1200,
+      1024,
+      768,
+      600,
+      420,
+      390,
+      320
+    ],
+    "logo_loaded": true,
+    "header_overlap": false,
+    "page_overflow": false
+  }
 }

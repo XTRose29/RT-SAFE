@@ -5,7 +5,7 @@
   <a href="docs/INSTALL.md">Quick start</a> ·
   <a href="https://xtrose29.github.io/RT-SAFE/">Project website</a> ·
   <a href="website/public/media/rt-safe-paper.pdf">Paper draft</a> ·
-  <a href="website/public/media/rt-safe-nyc-90s.mp4">Demo film</a> ·
+  <a href="https://xtrose29.github.io/RT-SAFE/media/rt-safe-video.mp4">Demo film</a> ·
   <a href="#results">Results</a> ·
   <a href="docs/PROTOCOL.md">Protocol</a>
 </p>

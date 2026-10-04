@@ -3286,3 +3286,16 @@ blockquote {
     gap: 9px;
   }
 }
+
+/* Shared RT-SAFE / SimWorld identity. */
+.brand-suite { display: flex; align-items: center; gap: 20px; }
+.simworld-brand { display: flex; align-items: center; gap: 3px; padding-left: 14px; border-left: 1px solid var(--line); color: var(--ink); font: 600 17px var(--display); letter-spacing: -.5px; white-space: nowrap; }
+.simworld-brand img { width: 48px; height: 48px; object-fit: contain; }
+@media (max-width: 600px) {
+  .brand-suite { gap: 10px; }
+  .simworld-brand { padding-left: 7px; font-size: 14px; }
+  .simworld-brand img { width: 38px; height: 38px; }
+}
+@media (max-width: 420px) {
+  .header .simworld-brand span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+}
