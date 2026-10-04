@@ -130,11 +130,11 @@ levels=subprocess.run(['ffmpeg','-hide_banner','-i',str(ROOT/'public/media/rt-sa
 match=re.search(r'\{\s*"input_i"[\s\S]*?\}',levels.stderr)
 assert match,'Missing loudness measurement'
 levels=json.loads(match.group())
-assert -18<float(levels['input_i'])<-14,levels
-assert float(levels['input_tp'])<-.5,levels
-report['narration_loudness']={'integrated_lufs':float(levels['input_i']),'true_peak_dbtp':float(levels['input_tp'])}
+assert -27<float(levels['input_i'])<-23,levels
+assert float(levels['input_tp'])<-4,levels
+report['music_loudness']={'integrated_lufs':float(levels['input_i']),'true_peak_dbtp':float(levels['input_tp'])}
 for path in [*ROOT.glob('public/media/rt-safe-nyc*.mp4'),*ROOT.glob('public/media/nyc/*.mp4'),*ROOT.glob('public/media/recorded/*.mp4'),*ROOT.glob('public/media/rt-safe-original*.mp4')]:
     assert path.stat().st_size<95*1024**2,('File exceeds repository limit',path.name)
 report['repository_media_size_limit']='all current NYC MP4s below 95 MiB'
 (OUT / 'validation.json').write_text(json.dumps(report, indent=2) + '\n')
-print('Passed: both 90-second / 2700-frame exports decode fully; captions do not overlap; voice fits all scenes.')
+print('Passed: both 90-second / 2700-frame exports decode fully; captions do not overlap; instrumental loudness is within the soft target range.')

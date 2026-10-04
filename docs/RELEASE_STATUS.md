@@ -8,7 +8,7 @@ GitHub Actions builds and publishes the website from `website/`.
 
 - Benchmark source, map/task definitions, safety evaluators, model transports and regression tests.
 - Historical VAGEN online-RL pipeline, restored from research commit `1bbb87de`, with adapter/fleet tests. Live training remains unvalidated.
-- Static website, manuscript tables, native NYC scene footage, a 90-second narrated film, and a matched Astra/Sol replay with source evidence.
+- Static website, manuscript tables, native NYC scene footage, a 90-second film with soft instrumental music, and a matched Astra/Sol replay with source evidence.
 - Fresh-repository layout, ignored runtime/output/secrets directories, CI and Pages workflows.
 - Installation, protocol, runtime requirements, media provenance and source import manifest.
 
@@ -27,11 +27,11 @@ Validation details are recorded in [validation/release-checks.json](../validatio
 ## NYC presentation edition
 
 The 4 October 2026 edition adds native Madison Square Park rendering, four camera views,
-a synchronized static/real-time illustration, and the original recorded Astra/Sol first-person segment. The narrated and captioned films are both exactly 90 seconds (2,700 frames at 30 fps).
+a synchronized static/real-time illustration, and the original recorded Astra/Sol first-person segment. The standard and captioned films are both exactly 90 seconds (2,700 frames at 30 fps).
 The full selected comparison is 44.1 seconds at 6× simulation speed.
 
 The native renders completed successfully. Both film editions and the full comparison decode
-without errors. Narration measures -16.07 LUFS integrated and -1.48 dBTP true peak. The
+without errors. The current music-only soundtrack is mixed quietly at approximately -25 LUFS. The
 website passes desktop/mobile playback, seek/replay, camera-gallery, reduced-motion, and
 layout checks. No browser errors were reported. The web aerial loop is an 8 MB 1080p encode;
 the higher-quality render and intermediate frames remain in the local production workspace.
@@ -51,5 +51,5 @@ inference-time recording. The previous NYC comparison remains available as an al
 The opening now begins with static evaluation alone, presents “But the real world does not stop,”
 and reveals RT-Safe beside it. The encounter is rendered on a paved Madison Square Park path
 with trees, benches, and a fountain. A separate environment title card introduces the three
-safety-event categories. The website includes the narrated 15-second opening and 12-second
+safety-event categories. The website includes the 15-second opening with music and 12-second
 environment introduction.

@@ -1,6 +1,6 @@
 """Export a frame-exact 90-second film, with optional burned-in captions."""
 from pathlib import Path
-import json, shutil, subprocess
+import json, shutil, subprocess, importlib.util
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'video/nyc-90s'
@@ -15,25 +15,17 @@ def concat_file(paths, name):
     path.write_text(''.join("file '" + str(p).replace("'", "'\\''") + "'\n" for p in paths))
     return path
 
-audio = []
-for scene in TL['scenes']:
-    name = scene['id']
-    dest = OUT / 'audio' / (name + '-fitted.wav')
-    delay = round(scene['voiceOffset'] * 1000)
-    filters = f'atempo={scene["voiceSpeed"]:.9f},adelay={delay}:all=1,apad,atrim=duration={scene["duration"]}'
-    run(['-i', str(OUT / 'audio' / (name + '.mp3')), '-af', filters,
-         '-ar', '48000', '-ac', '2', '-c:a', 'pcm_s16le', str(dest)])
-    audio.append(dest)
-
+spec=importlib.util.spec_from_file_location('soundtrack',ROOT/'scripts/music-soundtrack.py')
+soundtrack=importlib.util.module_from_spec(spec);spec.loader.exec_module(soundtrack)
+if not soundtrack.TRACK.exists():soundtrack.generate()
 video_list = concat_file([OUT / 'scenes' / (s['id'] + '.mp4') for s in TL['scenes']], 'video-concat.txt')
-audio_list = concat_file(audio, 'audio-concat.txt')
 master = MEDIA / 'rt-safe-nyc-90s.mp4'
 run(['-f', 'concat', '-safe', '0', '-i', str(video_list),
-     '-f', 'concat', '-safe', '0', '-i', str(audio_list),
-     '-map', '0:v:0', '-map', '1:a:0', '-af', 'loudnorm=I=-16:TP=-1.5:LRA=9',
+     '-i', str(soundtrack.TRACK),
+     '-map', '0:v:0', '-map', '1:a:0',
      '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000',
      '-t', '90', '-movflags', '+faststart', str(master)])
-print('Exported narrated 90-second master', flush=True)
+print('Exported 90-second master with soft instrumental music', flush=True)
 
 def ass_stamp(ts):
     h, m, sec = ts.split(':')

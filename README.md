@@ -69,7 +69,7 @@ website/         Static website, paper tables, curated examples and demo media
 docs/            Setup, protocol, asset requirements and release provenance
 ```
 
-The website includes a **90-second narrated NYC film**, a conference copy with burned captions, and a **44-second Astra/Sol comparison**. Native scene scripts and reconstruction evidence are in [`website/nyc/`](website/nyc/README.md); the edit and narration are in [`website/video/nyc-90s/`](website/video/nyc-90s/README.md). Earlier film editions are retained.
+The website includes a **90-second NYC film with soft music**, a conference copy with burned captions, and a **44-second Astra/Sol comparison**. Native scene scripts and reconstruction evidence are in [`website/nyc/`](website/nyc/README.md); the edit, captions, and soundtrack are in [`website/video/nyc-90s/`](website/video/nyc-90s/README.md). Earlier film editions are retained.
 
 The Astra/Sol comparison uses the original RT15 first-person observation and action snapshots, with recorded timing and 1 versus 17 reported collisions. Inputs are held during inference because the source capture is not continuous video. The opening illustrates static and real-time evaluation on a native Madison Square Park path.
 

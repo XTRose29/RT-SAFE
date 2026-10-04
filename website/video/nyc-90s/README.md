@@ -36,12 +36,14 @@ A separate environment title card introduces collisions, hazards, and traffic-ru
 
 ## Exports
 
-- `../../public/media/rt-safe-nyc-90s.mp4`: narrated 1080p, 30 fps, exactly 90 seconds.
+- `../../public/media/rt-safe-nyc-90s.mp4`: 1080p with soft instrumental music, 30 fps, exactly 90 seconds.
 - `../../public/media/rt-safe-nyc-90s-captioned.mp4`: the same edit with burned captions.
 - `../../public/media/rt-safe-nyc-90s.vtt` and `.srt`: English captions.
 - `../../public/media/rt-safe-original-comparison.mp4`: full selected Astra/Sol segments at 6× speed.
 
-Narration uses the synthetic `en-US-AriaNeural` voice. There is no background music.
+The soundtrack is an original, quiet instrumental composed for this project: warm keyboard tones and a soft ambient backing at 64 BPM. It contains no voices or external samples.
+`audio/soft-instrumental.flac` is the lossless master; `scripts/music-soundtrack.py` reproduces it. The target loudness is -25 LUFS, with gentle opening and ending fades.
+Earlier narration files remain as caption-timing source material; they are not mixed into the current exports.
 The standard master uses selectable captions; the conference edition burns them into
 a reserved band below the scene content.
 
@@ -84,7 +86,7 @@ python scripts/finish-nyc-media.py
 ```
 
 The final export controller encodes each completed take, composes the route and
-safety annotations, renders the edit, assembles narration and captions, and verifies
+safety annotations, renders the edit, assembles instrumental music and captions, and verifies
 the exported frame counts, durations, decoding, and static-world freeze.
 
 `python scripts/narrate-film-nyc.py` regenerates the narration timeline from cached
@@ -122,7 +124,11 @@ from the separately provisioned source run. The previous NYC reconstruction is r
 `public/media/rt-safe-nyc-comparison.mp4` for comparison.
 
 The website uses `public/media/nyc/timing-story.mp4` (15 seconds) and
-`public/media/nyc/environment-intro.mp4` (12 seconds), exported with narration and local
+`public/media/nyc/environment-intro.mp4` (12 seconds), exported with soft instrumental music and local
 captions by `python scripts/export-story-clips.py` after film assembly. The opening can be
 re-rendered without Unreal from the included full-width still, scene metadata, and timing
 clips. Native park rendering uses eight spatial samples with screen-space indirect lighting.
+
+To replace the audio in existing exports while preserving every video packet, run
+`python scripts/music-soundtrack.py --apply`. Both full-film editions and the two narrated-era
+website clips receive music only. Captions and the 90-second duration are retained.

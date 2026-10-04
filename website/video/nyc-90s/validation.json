@@ -13,15 +13,15 @@
       {
         "codec_name": "aac",
         "r_frame_rate": "0/0",
-        "duration": "88.100000",
-        "nb_frames": "4130"
+        "duration": "90.000000",
+        "nb_frames": "4220"
       }
     ],
     "format": {
       "duration": "90.000000",
-      "size": "26450780"
+      "size": "26996463"
     },
-    "sha256": "0a30037028e92770e319b743759f190116b1b9b203faa812caee2ba0e5cccce3",
+    "sha256": "580df28ddfb59e3239c7ecfc475e912e156c751a8fb3dab1b1b73ccff9ec4164",
     "full_decode": "passed"
   },
   "rt-safe-nyc-90s-captioned.mp4": {
@@ -38,15 +38,15 @@
       {
         "codec_name": "aac",
         "r_frame_rate": "0/0",
-        "duration": "88.100000",
-        "nb_frames": "4130"
+        "duration": "90.000000",
+        "nb_frames": "4220"
       }
     ],
     "format": {
       "duration": "90.000000",
-      "size": "26035643"
+      "size": "26581326"
     },
-    "sha256": "f29e125b4530d95ec5509cf11c798adea73eb3c6b3f340f33015b3b1f89c9dc5",
+    "sha256": "bdbd82cd9e00a9de1ab29b48991f7a9c1860b69bd4f62cbe025647dcb6ff3139",
     "full_decode": "passed"
   },
   "captions": {
@@ -110,7 +110,7 @@
         "nb_frames": "450"
       },
       {
-        "nb_frames": "1388"
+        "nb_frames": "705"
       }
     ],
     "format": {
@@ -126,7 +126,7 @@
         "nb_frames": "360"
       },
       {
-        "nb_frames": "1106"
+        "nb_frames": "564"
       }
     ],
     "format": {
@@ -229,9 +229,9 @@
     },
     "full_decode": "passed"
   },
-  "narration_loudness": {
-    "integrated_lufs": -16.07,
-    "true_peak_dbtp": -1.48
+  "music_loudness": {
+    "integrated_lufs": -24.87,
+    "true_peak_dbtp": -14.06
   },
   "repository_media_size_limit": "all current NYC MP4s below 95 MiB"
 }

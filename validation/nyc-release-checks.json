@@ -1,5 +1,5 @@
 {
-  "date_utc": "2026-10-04T18:15:22.930060+00:00",
+  "date_utc": "2026-10-04T19:12:12.948035+00:00",
   "scope": "NYC website and film edition; benchmark implementation unchanged",
   "website": {
     "typescript": "passed",
@@ -142,15 +142,15 @@
         {
           "codec_name": "aac",
           "r_frame_rate": "0/0",
-          "duration": "88.100000",
-          "nb_frames": "4130"
+          "duration": "90.000000",
+          "nb_frames": "4220"
         }
       ],
       "format": {
         "duration": "90.000000",
-        "size": "26450780"
+        "size": "26996463"
       },
-      "sha256": "0a30037028e92770e319b743759f190116b1b9b203faa812caee2ba0e5cccce3",
+      "sha256": "580df28ddfb59e3239c7ecfc475e912e156c751a8fb3dab1b1b73ccff9ec4164",
       "full_decode": "passed"
     },
     "rt-safe-nyc-90s-captioned.mp4": {
@@ -167,15 +167,15 @@
         {
           "codec_name": "aac",
           "r_frame_rate": "0/0",
-          "duration": "88.100000",
-          "nb_frames": "4130"
+          "duration": "90.000000",
+          "nb_frames": "4220"
         }
       ],
       "format": {
         "duration": "90.000000",
-        "size": "26035643"
+        "size": "26581326"
       },
-      "sha256": "f29e125b4530d95ec5509cf11c798adea73eb3c6b3f340f33015b3b1f89c9dc5",
+      "sha256": "bdbd82cd9e00a9de1ab29b48991f7a9c1860b69bd4f62cbe025647dcb6ff3139",
       "full_decode": "passed"
     },
     "captions": {
@@ -207,8 +207,7 @@
       "center_message": "But the real world does not stop.",
       "slide_reveal": true,
       "location": "Madison Square Park interior path",
-      "environment_title_seconds": 2.4,
-      "visual_review": "Reviewed static, center message, reveal, inference, action, and environment title frames"
+      "environment_title_seconds": 2.4
     },
     "completed_segment_holds": {
       "astra": {
@@ -240,7 +239,7 @@
           "nb_frames": "450"
         },
         {
-          "nb_frames": "1388"
+          "nb_frames": "705"
         }
       ],
       "format": {
@@ -256,7 +255,7 @@
           "nb_frames": "360"
         },
         {
-          "nb_frames": "1106"
+          "nb_frames": "564"
         }
       ],
       "format": {
@@ -359,16 +358,16 @@
       },
       "full_decode": "passed"
     },
-    "narration_loudness": {
-      "integrated_lufs": -16.07,
-      "true_peak_dbtp": -1.48
+    "music_loudness": {
+      "integrated_lufs": -24.87,
+      "true_peak_dbtp": -14.06
     },
     "repository_media_size_limit": "all current NYC MP4s below 95 MiB"
   },
   "media": {
     "website/public/media/rt-safe-nyc-90s.mp4": {
-      "bytes": 26450780,
-      "sha256": "0a30037028e92770e319b743759f190116b1b9b203faa812caee2ba0e5cccce3"
+      "bytes": 26996463,
+      "sha256": "580df28ddfb59e3239c7ecfc475e912e156c751a8fb3dab1b1b73ccff9ec4164"
     },
     "website/public/media/rt-safe-nyc-comparison.mp4": {
       "bytes": 22061762,
@@ -379,8 +378,8 @@
       "sha256": "0761335387ec93c9a46ff5cd43d0304d9baa9af5d7e1f1ae29fafa7adc0df458"
     },
     "website/public/media/rt-safe-nyc-90s-captioned.mp4": {
-      "bytes": 26035643,
-      "sha256": "f29e125b4530d95ec5509cf11c798adea73eb3c6b3f340f33015b3b1f89c9dc5"
+      "bytes": 26581326,
+      "sha256": "bdbd82cd9e00a9de1ab29b48991f7a9c1860b69bd4f62cbe025647dcb6ff3139"
     },
     "website/public/media/rt-safe-nyc-comparison.vtt": {
       "bytes": 608,
@@ -411,12 +410,12 @@
       "sha256": "b8c12bc33e28d908ae5f8139b8faa0b32f2b890f30c009a79cd720ede8c74711"
     },
     "website/public/media/nyc/timing-story.mp4": {
-      "bytes": 4638064,
-      "sha256": "9bf0f4f80fd414bfb5c90d1e62e73d2a9a5d01b5f2072195ae3bd5bf9fd8fe0c"
+      "bytes": 4771975,
+      "sha256": "b26b3ac885addc06f286c827fd67eb8fbb061e9d31219c852b8cdc85b5c208b1"
     },
     "website/public/media/nyc/environment-intro.mp4": {
-      "bytes": 11607487,
-      "sha256": "151e01920eb01d8d11263fb88cf0df08b321b0f6c858d910e2fec215b858a893"
+      "bytes": 11729482,
+      "sha256": "972f04f22a8ce25064d7144a9f13e1f803acbbfa6df9411a71e71b913a0443dc"
     },
     "website/public/media/nyc/sol.mp4": {
       "bytes": 14677801,
@@ -433,8 +432,7 @@
   },
   "limitations": [
     "NYC timing and environment scenes are illustrative; benchmark results remain measurements on the original evaluation maps.",
-    "The current Astra/Sol comparison replays original recorded snapshots; inputs are held during inference. The separate NYC alternate reconstructs surrounding motion.",
-    "No authenticated GitHub connection; remote creation and Pages deployment remain pending."
+    "The current Astra/Sol comparison replays original recorded snapshots; inputs are held during inference. The separate NYC alternate reconstructs surrounding motion."
   ],
   "release_content": {
     "tracked_files_checked": 842,
@@ -454,5 +452,46 @@
     "environment_title_seconds": 2.4,
     "opening": "Static first, center message, side-by-side RT-Safe reveal",
     "location": "Madison Square Park paved interior path"
+  },
+  "soundtrack": {
+    "track_sha256": "9a88dd594be84ccc5b86d3fda2c1c3320360b15ca8f72e64a6436606d3a94c1c",
+    "exports": {
+      "rt-safe-nyc-90s.mp4": {
+        "video_stream_sha256": "c6b41d1a013b01bf16a08cf0f8cb7feb9e2b7287a3e04a211fd756e1b9955643",
+        "video_unchanged": true,
+        "duration_seconds": 90,
+        "audio": "original soft instrumental; no voice",
+        "music_start_seconds": 0,
+        "audio_matches_instrumental_encode": true,
+        "audio_stream_sha256": "a6ea4b53351ac4904f17d6b2c4eadf75d634bc3cd0c040f7d8fa1b7cf578b174"
+      },
+      "rt-safe-nyc-90s-captioned.mp4": {
+        "video_stream_sha256": "446210cefc9d5390838d4e107d373062d98c7df89a73b43fa7e4e92008044dc8",
+        "video_unchanged": true,
+        "duration_seconds": 90,
+        "audio": "original soft instrumental; no voice",
+        "music_start_seconds": 0,
+        "audio_matches_instrumental_encode": true,
+        "audio_stream_sha256": "a6ea4b53351ac4904f17d6b2c4eadf75d634bc3cd0c040f7d8fa1b7cf578b174"
+      },
+      "nyc/timing-story.mp4": {
+        "video_stream_sha256": "841cb92be19e82c25e65a240d0e103034fff73e95429857233e866a501bf53f3",
+        "video_unchanged": true,
+        "duration_seconds": 15,
+        "audio": "original soft instrumental; no voice",
+        "music_start_seconds": 3,
+        "audio_matches_instrumental_encode": true,
+        "audio_stream_sha256": "5dd2f4ec68f2432761be88f9cbe37c5fdc97d957756e584a8a672a7ae7188a66"
+      },
+      "nyc/environment-intro.mp4": {
+        "video_stream_sha256": "a0af55e6c503ece8136b4385c638ef06c28288df439fd8eb80575486d550ea11",
+        "video_unchanged": true,
+        "duration_seconds": 12,
+        "audio": "original soft instrumental; no voice",
+        "music_start_seconds": 18,
+        "audio_matches_instrumental_encode": true,
+        "audio_stream_sha256": "949ecc47adcb66bbd5541ac6f818dcf42cac33105c5a788acc15693f4fc8c01e"
+      }
+    }
   }
 }
