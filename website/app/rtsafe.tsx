@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import rawData from "./data.json";
+import { BehaviorProfiles } from "./behavior-profiles";
 import { NYCHero, NYCTiming, NYCComparison, NYCEnvironment, NYCSceneGallery } from "./nyc-scenes";
 
 declare const __RT_SAFE_REPOSITORY_URL__: string;
@@ -65,7 +66,7 @@ function SectionHead({
   );
 }
 function Results() {
-  const [scope, setScope] = useState<Scope>("realtime");
+  const [scope, setScope] = useState<Scope>("average");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState<keyof Metric>("collisions");
   const [asc, setAsc] = useState(true);
@@ -778,7 +779,6 @@ export default function RTsafe() {
             }
             description="Compare completion, safety, and decision behavior. Results are transcribed directly from the accompanying manuscript, with each evaluation condition kept explicit."
           />
-          <Findings />
           <div className="table-heading">
             <div>
               <h3>Explore the benchmark</h3>
@@ -787,6 +787,8 @@ export default function RTsafe() {
             <span className="pill">Eight VLMs / Shared protocol</span>
           </div>
           <Results />
+          <BehaviorProfiles />
+          <Findings />
           <Reasoning />
           <Training />
         </section>

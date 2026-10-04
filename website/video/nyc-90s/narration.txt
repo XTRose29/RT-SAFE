@@ -11,7 +11,7 @@ Navigate to the goal across five maps and thirty-six routes. Safety includes col
 On the same recorded route, Astra finishes in twelve decisions with one collision. Sol takes thirty-three decisions with seventeen collisions. This NYC reconstruction uses recorded agent positions and simulation timing.
 
 00:00:41.000  MODEL BEHAVIOR
-Across all difficulty levels, Sonnet records the fewest collisions. Inference exposure strongly tracks collisions, but models differ in how they move, turn, and wait.
+Sonnet has the fewest collisions, but safe success remains rare. Inkling favors longer moves. Fable turns and waits more than Astra.
 
 00:00:51.000  TASK COMPLETION IS NOT ENOUGH
 Task completion is not enough. Success reaches ninety-four point four percent, but safe success is only zero point seven percent.

@@ -52,10 +52,10 @@
       "chapter": "MODEL BEHAVIOR",
       "start": 41,
       "duration": 10,
-      "narration": "Across all difficulty levels, Sonnet records the fewest collisions. Inference exposure strongly tracks collisions, but models differ in how they move, turn, and wait.",
+      "narration": "Sonnet has the fewest collisions, but safe success remains rare. Inkling favors longer moves. Fable turns and waits more than Astra.",
       "voiceOffset": 0.3,
-      "voiceDuration": 11.04,
-      "voiceSpeed": 1.1807486631016042
+      "voiceDuration": 10.08,
+      "voiceSpeed": 1.0780748663101605
     },
     {
       "id": "completion",

@@ -1,0 +1,240 @@
+{
+  "source": "Supplied manuscript Figure 3 and Appendix B.3; curated RQ1 action counts. All difficulties, provider-default effort, 108 episodes per model.",
+  "axes": [
+    "Fewer collisions",
+    "Quicker decisions",
+    "Fewer decisions",
+    "Longer commanded moves",
+    "More waiting",
+    "More turning"
+  ],
+  "normalization": "Reciprocals of mean collisions, latency and decisions; action measures normalized to the maximum across all eight models. Radar area is not a safety score.",
+  "profiles": [
+    {
+      "name": "Astra",
+      "raw": [
+        0.04464664413499359,
+        0.1509274491751815,
+        0.019351380430723025,
+        2.294666,
+        0.015602,
+        0.065455
+      ],
+      "average": {
+        "success": 97.2,
+        "safeSuccess": 0.0,
+        "collisions": 22.4,
+        "latency": 6.6,
+        "decisions": 51.7,
+        "spl": 0.952,
+        "passiveShare": 67.8
+      },
+      "values": [
+        0.8759850165862283,
+        0.7429554613097484,
+        0.7457441476587732,
+        0.8852611688382834,
+        0.25462260301917583,
+        0.4998129185470262
+      ]
+    },
+    {
+      "name": "Sol",
+      "raw": [
+        0.039031396855630666,
+        0.11889475436343748,
+        0.014467508868582935,
+        1.683094,
+        0.061275,
+        0.130959
+      ],
+      "average": {
+        "success": 98.1,
+        "safeSuccess": 1.9,
+        "collisions": 25.6,
+        "latency": 8.4,
+        "decisions": 69.1,
+        "spl": 0.967,
+        "passiveShare": 76.4
+      },
+      "values": [
+        0.765811618866216,
+        0.5852713178294573,
+        0.5575343892685806,
+        0.649322281196785,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Fable",
+      "raw": [
+        0.04785124006488628,
+        0.16981676770764345,
+        0.01698112887148512,
+        2.094961,
+        0.049168,
+        0.098968
+      ],
+      "average": {
+        "success": 96.3,
+        "safeSuccess": 0.0,
+        "collisions": 20.9,
+        "latency": 5.9,
+        "decisions": 58.9,
+        "spl": 0.933,
+        "passiveShare": 64.9
+      },
+      "values": [
+        0.9388604705690948,
+        0.8359400207176456,
+        0.654401763320422,
+        0.8082168052041645,
+        0.8024153406772746,
+        0.7557174382822105
+      ]
+    },
+    {
+      "name": "Sonnet",
+      "raw": [
+        0.0509673605023343,
+        0.2031446796408402,
+        0.01830817789690299,
+        2.217812,
+        0.023079,
+        0.065397
+      ],
+      "average": {
+        "success": 90.7,
+        "safeSuccess": 3.7,
+        "collisions": 19.6,
+        "latency": 4.9,
+        "decisions": 54.6,
+        "spl": 0.896,
+        "passiveShare": 52.4
+      },
+      "values": [
+        1.0,
+        1.0,
+        0.7055422516129506,
+        0.855611598107773,
+        0.37664626682986535,
+        0.4993700318420269
+      ]
+    },
+    {
+      "name": "Gemini",
+      "raw": [
+        0.03614453476562077,
+        0.08900360464598817,
+        0.014999992500003749,
+        1.689493,
+        0.048661,
+        0.118247
+      ],
+      "average": {
+        "success": 94.4,
+        "safeSuccess": 0.0,
+        "collisions": 27.7,
+        "latency": 11.2,
+        "decisions": 66.7,
+        "spl": 0.929,
+        "passiveShare": 83.1
+      },
+      "values": [
+        0.7091702299153857,
+        0.4381291442303413,
+        0.5780547109726445,
+        0.6517909569079325,
+        0.794141166870665,
+        0.9029314518284349
+      ]
+    },
+    {
+      "name": "DeepSeek",
+      "raw": [
+        0.019462977524153553,
+        0.024739860368228082,
+        0.019081274781805622,
+        2.130695,
+        0.018473,
+        0.057347
+      ],
+      "average": {
+        "success": 91.7,
+        "safeSuccess": 0.0,
+        "collisions": 51.4,
+        "latency": 40.4,
+        "decisions": 52.4,
+        "spl": 0.892,
+        "passiveShare": 90.3
+      },
+      "values": [
+        0.3818714042149024,
+        0.12178443664863955,
+        0.7353350862664433,
+        0.822002655784278,
+        0.3014769481844145,
+        0.43790041157919657
+      ]
+    },
+    {
+      "name": "Inkling",
+      "raw": [
+        0.045743352347320125,
+        0.038424148809043504,
+        0.02594908788956068,
+        2.592078,
+        0.006799,
+        0.092714
+      ],
+      "average": {
+        "success": 94.4,
+        "safeSuccess": 0.0,
+        "collisions": 21.9,
+        "latency": 26.0,
+        "decisions": 38.5,
+        "spl": 0.943,
+        "passiveShare": 94.4
+      },
+      "values": [
+        0.8975028703953598,
+        0.18914671492739754,
+        1.0,
+        1.0,
+        0.11095879232966137,
+        0.7079620339190129
+      ]
+    },
+    {
+      "name": "Grok",
+      "raw": [
+        0.01680672268907563,
+        0.02474163547158794,
+        0.016425863507644595,
+        1.860299,
+        0.012657,
+        0.065816
+      ],
+      "average": {
+        "success": 92.6,
+        "safeSuccess": 0.0,
+        "collisions": 59.5,
+        "latency": 40.4,
+        "decisions": 60.9,
+        "spl": 0.912,
+        "passiveShare": 90.8
+      },
+      "values": [
+        0.3297546218487395,
+        0.1217931747724388,
+        0.6330035019940998,
+        0.7176863504879097,
+        0.20656058751529988,
+        0.502569506486763
+      ]
+    }
+  ],
+  "table_source": "Supplied manuscript Table 5",
+  "radar_source": "Supplied manuscript Figure 3 / Appendix B.3; RQ1 raw action aggregates"
+}

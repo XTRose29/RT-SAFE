@@ -41,6 +41,12 @@ images are a visualization of the existing run, not a new evaluation on the NYC 
 counts are taken from the original logs and displayed when the corresponding phase reports them;
 the rendering does not infer new collision events.
 
+The replay overlay includes the original observation image, selected command, and a running
+collision total. Red alerts indicate when the source log reports a collision in a completed
+inference or action phase. The input inset is the original benchmark observation; the large
+background view is the NYC reconstruction. The 90-second film labels its jump to a later
+excerpt, while the 44.1-second comparison shows the whole selected segment.
+
 ## Illustrative scenes
 
 The opening timing example uses the same initial scene, camera, and commanded agent movement.

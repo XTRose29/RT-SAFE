@@ -22,10 +22,10 @@ wait('renders/task19/sol/result.json');run('build-nyc-media.py','comparison')
 wait('renders/hero/result.json')
 run('build-nyc-media.py','hero')
 run('export-nyc-stills.py')
-for name in ['behavior','completion','comparison','reasoning']:
+for name in ['completion','comparison','reasoning']:
  src=ROOT/'video/revision-90s/scenes'/f'{name}.mp4';dest=ROOT/'video/nyc-90s/scenes'/src.name
  if src.exists():shutil.copy2(src,dest)
  else:run('render-film-nyc.py','--scene',name)
-for name in ['title','timing','environment','examples','learning']:run('render-film-nyc.py','--scene',name)
+for name in ['title','timing','environment','examples','behavior','learning']:run('render-film-nyc.py','--scene',name)
 run('render-film-nyc.py','--stills');run('assemble-film-nyc.py');run('verify-film-nyc.py')
 print('NYC video exports complete and validated',flush=True)

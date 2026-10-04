@@ -45,7 +45,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "8e1bfe81392fb62ccaf9dee696d74168ff0bec0d0e5e3aecd6b229e59077a5f7"
+          "source_sha256": "8e1bfe81392fb62ccaf9dee696d74168ff0bec0d0e5e3aecd6b229e59077a5f7",
+          "input_image": "media/nyc/inputs/astra-033.webp",
+          "commanded_distance_m": 3.999999603073227,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "74c92d34bc32d74f651199c4e849bc013dc5806ef3118393629a956fb78e3a15"
         },
         {
           "source_step": 34,
@@ -80,7 +84,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "34aaed76b33994047a1791398cb32fd10d539f84d7c47a4826bc2dad71a81000"
+          "source_sha256": "34aaed76b33994047a1791398cb32fd10d539f84d7c47a4826bc2dad71a81000",
+          "input_image": "media/nyc/inputs/astra-034.webp",
+          "commanded_distance_m": 3.999999603073235,
+          "recorded_feedback": "While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "fede7ea0f8c40816bcf8314ff31df6117122935cb3c2dd4a1c9388b17c430b59"
         },
         {
           "source_step": 35,
@@ -115,7 +123,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "900dd4a67366253c0549debfb48ff337bbd9844a7c1120e81a5b7d3eae9232a2"
+          "source_sha256": "900dd4a67366253c0549debfb48ff337bbd9844a7c1120e81a5b7d3eae9232a2",
+          "input_image": "media/nyc/inputs/astra-035.webp",
+          "commanded_distance_m": 2.0000001550972475,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "77cd06cd8e7f7fac22387597eb8de3ed67d8af7bfb26b0c8c93c9f4f22b08f06"
         },
         {
           "source_step": 36,
@@ -150,7 +162,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "84fa8ded9b62493c0e99e132978ad5178c9e95ac7735dc865d9afd3a4c9bc47b"
+          "source_sha256": "84fa8ded9b62493c0e99e132978ad5178c9e95ac7735dc865d9afd3a4c9bc47b",
+          "input_image": "media/nyc/inputs/astra-036.webp",
+          "commanded_distance_m": 2.0000001550972453,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "49924276c6a247dcf2a0ee7276499f6f83fb59e8f7797e0bccf57214b0b1dd54"
         },
         {
           "source_step": 37,
@@ -185,7 +201,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "e9476e0cc54f9616c5f8fdf3f256f33170ae71e57fe8bb09fe6d7287d0e09cd9"
+          "source_sha256": "e9476e0cc54f9616c5f8fdf3f256f33170ae71e57fe8bb09fe6d7287d0e09cd9",
+          "input_image": "media/nyc/inputs/astra-037.webp",
+          "commanded_distance_m": 1.9999997744802391,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "652935cd7ca7c28325691d31d50a16a4b53b6dc4507bf6caf72d058e73ec9bf1"
         },
         {
           "source_step": 38,
@@ -220,7 +240,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "a1a651ffdeecc2a36fb6cdfbc69c4071fa631f2b05ab3cbc77020ec082d06d7a"
+          "source_sha256": "a1a651ffdeecc2a36fb6cdfbc69c4071fa631f2b05ab3cbc77020ec082d06d7a",
+          "input_image": "media/nyc/inputs/astra-038.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "28f77593e412637ea7bba945e2e568cc54bb4f57209ce0db1c36e3fe61dc303a"
         },
         {
           "source_step": 39,
@@ -255,7 +279,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "507811552f3db55d274623c9b2d74354b98bd3f391dbc016c0c03c9dcb1507ca"
+          "source_sha256": "507811552f3db55d274623c9b2d74354b98bd3f391dbc016c0c03c9dcb1507ca",
+          "input_image": "media/nyc/inputs/astra-039.webp",
+          "commanded_distance_m": 4.000000000000003,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "385ca98e8fb5d58a052851f11afadaa3b335d2b0498f015626f12cbab4cb6432"
         },
         {
           "source_step": 40,
@@ -290,7 +318,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "08493a64e643a3d762a4dd276844702f2b8e5fde5d5b44834d5d99e19a89ba2b"
+          "source_sha256": "08493a64e643a3d762a4dd276844702f2b8e5fde5d5b44834d5d99e19a89ba2b",
+          "input_image": "media/nyc/inputs/astra-040.webp",
+          "commanded_distance_m": 4.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "94d317c94dbb436f49ba7a79a7bd79492105ec0f9638f9195a1ef341de00549c"
         },
         {
           "source_step": 41,
@@ -325,7 +357,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "26b146cb503f6319409cea61ff4e666fa1953a5b579c3845ec34722abc59b07f"
+          "source_sha256": "26b146cb503f6319409cea61ff4e666fa1953a5b579c3845ec34722abc59b07f",
+          "input_image": "media/nyc/inputs/astra-041.webp",
+          "commanded_distance_m": 4.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "563b1246e6261d979acc0c33b78e87e5359ebab96213b11c595795a584b981a0"
         },
         {
           "source_step": 42,
@@ -360,7 +396,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "59563da160caadf12165a65fdb09cd1570bd52d3f16fc755472b78b89c6f11e0"
+          "source_sha256": "59563da160caadf12165a65fdb09cd1570bd52d3f16fc755472b78b89c6f11e0",
+          "input_image": "media/nyc/inputs/astra-042.webp",
+          "commanded_distance_m": 2.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "fbb0b8ac4246afe46a5833e18dfe705a58b813588381690b8a96cdb6a9400871"
         },
         {
           "source_step": 43,
@@ -395,7 +435,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "e44db79b7ce83732a31e6774cce62d754cefbd91550b9f5be0d3bf7d699bff6e"
+          "source_sha256": "e44db79b7ce83732a31e6774cce62d754cefbd91550b9f5be0d3bf7d699bff6e",
+          "input_image": "media/nyc/inputs/astra-043.webp",
+          "commanded_distance_m": 2.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "c46dfb278d51e6c5eaa4f99a72c28193f73fde74911b31cb4baabd0aec8a7b7a"
         },
         {
           "source_step": 44,
@@ -430,7 +474,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "ad0dd138f8e1fd6f9be2b43715e40e19ff23a9201a214f03c898f2956e2eafa3"
+          "source_sha256": "ad0dd138f8e1fd6f9be2b43715e40e19ff23a9201a214f03c898f2956e2eafa3",
+          "input_image": "media/nyc/inputs/astra-044.webp",
+          "commanded_distance_m": 2.0,
+          "recorded_feedback": "You have reached the final destination.",
+          "input_sha256": "87496fd89f639d4a2e9ed540b3c4c1a30c05bb8c6d6715d825dc5279d2a015f9"
         }
       ],
       "summary": {
@@ -478,7 +526,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "6ce7717715f9e0a1a43b71bf94e01ad4e941465233b5922921af4d5dcf20f7d2"
+          "source_sha256": "6ce7717715f9e0a1a43b71bf94e01ad4e941465233b5922921af4d5dcf20f7d2",
+          "input_image": "media/nyc/inputs/sol-037.webp",
+          "commanded_distance_m": 2.0000001550972453,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "1decfd2960e6e1faa522038b3097f1830bb402603ef2b0373fb38c28fec7cc1c"
         },
         {
           "source_step": 38,
@@ -513,7 +565,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "c1d756bca611f0025e307c9bf0d528bd912f1808f71f72c659c0859f4e958f22"
+          "source_sha256": "c1d756bca611f0025e307c9bf0d528bd912f1808f71f72c659c0859f4e958f22",
+          "input_image": "media/nyc/inputs/sol-038.webp",
+          "commanded_distance_m": 2.0000001550972453,
+          "recorded_feedback": "While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "fd82f0ed94b49da9bd7898968de1b0649f8906aadb9667f0274be2ef5913fec7"
         },
         {
           "source_step": 39,
@@ -548,7 +604,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "3dde317e7137cba75115af75970f62a143737af54fefe7adfe34088e90ff8d78"
+          "source_sha256": "3dde317e7137cba75115af75970f62a143737af54fefe7adfe34088e90ff8d78",
+          "input_image": "media/nyc/inputs/sol-039.webp",
+          "commanded_distance_m": 1.0000002069524758,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "7a770654422d7165563f5a6f02c25759fdbecc9c2d2cf8883dded0fd4fa48d9e"
         },
         {
           "source_step": 40,
@@ -583,7 +643,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "704e7d893dc0648e9eaaf197f8d20a96b8c3315e12e10f9483c446612d9cfa1e"
+          "source_sha256": "704e7d893dc0648e9eaaf197f8d20a96b8c3315e12e10f9483c446612d9cfa1e",
+          "input_image": "media/nyc/inputs/sol-040.webp",
+          "commanded_distance_m": 1.000000206952475,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "43b7517a80ba102a12c5ef87a5f420db4f11e86ded6a9d01b575361960a4f2f3"
         },
         {
           "source_step": 41,
@@ -618,7 +682,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "ce23402e0b6695a92c08f6e07e80565eb422cd1b66e863870a69c8a444df26d3"
+          "source_sha256": "ce23402e0b6695a92c08f6e07e80565eb422cd1b66e863870a69c8a444df26d3",
+          "input_image": "media/nyc/inputs/sol-041.webp",
+          "commanded_distance_m": 1.000000206952475,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "e3f9d0f7e14c430b74f3d798aea56c74f2e420438d0893676f7d91374717af4a"
         },
         {
           "source_step": 42,
@@ -653,7 +721,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "c9a17cb822028e41a907d09f7480f4a5acc6d3df48329c2149e3066712816ed0"
+          "source_sha256": "c9a17cb822028e41a907d09f7480f4a5acc6d3df48329c2149e3066712816ed0",
+          "input_image": "media/nyc/inputs/sol-042.webp",
+          "commanded_distance_m": 1.000000206952477,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "3c5c62306ac7cc0653ad6806b3e8d297a9ece9bae3b81c147c74c153406cf3c8"
         },
         {
           "source_step": 43,
@@ -688,7 +760,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "12498c1bc26eb4722d901d21e070bd6d1f33629af79c4c8e78a360bd48220187"
+          "source_sha256": "12498c1bc26eb4722d901d21e070bd6d1f33629af79c4c8e78a360bd48220187",
+          "input_image": "media/nyc/inputs/sol-043.webp",
+          "commanded_distance_m": 1.000000206952477,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "f35ecd0f83b6591e808c692f24fabbb3ea9cd870b85ff62a477dc865048c3bbb"
         },
         {
           "source_step": 44,
@@ -723,7 +799,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "74cdf949b54f19fb130427b520b401254e92bcb8575ed61587de5a0e363ea204"
+          "source_sha256": "74cdf949b54f19fb130427b520b401254e92bcb8575ed61587de5a0e363ea204",
+          "input_image": "media/nyc/inputs/sol-044.webp",
+          "commanded_distance_m": 1.9999997744802391,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "a96c2d16080d2ab02cab28c11b73735a9375a6c016e1d61eba982d8026f32bed"
         },
         {
           "source_step": 45,
@@ -758,7 +838,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "4881f6bc12907890e6abb0d0f6174f36d7d445832778b3b3358b9a1d77f32497"
+          "source_sha256": "4881f6bc12907890e6abb0d0f6174f36d7d445832778b3b3358b9a1d77f32497",
+          "input_image": "media/nyc/inputs/sol-045.webp",
+          "commanded_distance_m": 1.9999998962899956,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "2f95c082c175f07b3c3825ad2dc5f203ebab98b3765ed575471842b1c88bdd7d"
         },
         {
           "source_step": 46,
@@ -793,7 +877,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "12276c0444cd4efdea3a62863273115120c00c3275afdfc9e9381521c92010ce"
+          "source_sha256": "12276c0444cd4efdea3a62863273115120c00c3275afdfc9e9381521c92010ce",
+          "input_image": "media/nyc/inputs/sol-046.webp",
+          "commanded_distance_m": 2.0000001550972453,
+          "recorded_feedback": "While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "540f52543b725e6ac7542539416782afcb169c8f52b848e1d0a4b66999f2ce0a"
         },
         {
           "source_step": 47,
@@ -828,7 +916,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "91489193fa44764b9b53142be1870a8fe597a0a63cd983237114bef534e84a0b"
+          "source_sha256": "91489193fa44764b9b53142be1870a8fe597a0a63cd983237114bef534e84a0b",
+          "input_image": "media/nyc/inputs/sol-047.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "3c5b99e26a9a151772f11c66ea5c28fe21505b999f2e65bc5b3c466e66a112b3"
         },
         {
           "source_step": 48,
@@ -863,7 +955,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "b978543d757e65c00e6fac4f42cf1903a9ac99d7922eeb6af20628e4c90d3014"
+          "source_sha256": "b978543d757e65c00e6fac4f42cf1903a9ac99d7922eeb6af20628e4c90d3014",
+          "input_image": "media/nyc/inputs/sol-048.webp",
+          "commanded_distance_m": 1.0000002069524863,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "3fc91d26ea0701c698f9ddd80d3e3d7d549e5b1600b9d78055387b29517dc84d"
         },
         {
           "source_step": 49,
@@ -898,7 +994,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "68acbfe3d744e69ea9435721e85a7de6f559e6b4251ca895a9bcc29dd76bfb56"
+          "source_sha256": "68acbfe3d744e69ea9435721e85a7de6f559e6b4251ca895a9bcc29dd76bfb56",
+          "input_image": "media/nyc/inputs/sol-049.webp",
+          "commanded_distance_m": 1.000000206952477,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "8fe713ac2f3f32b483cf7ad747bac4f05bd994e7a7cd0dced7a588e3f0c87bc7"
         },
         {
           "source_step": 50,
@@ -933,7 +1033,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "be160c880280001ae802e6cab1dc9f2054807afe960b579c9affcd482359b2fe"
+          "source_sha256": "be160c880280001ae802e6cab1dc9f2054807afe960b579c9affcd482359b2fe",
+          "input_image": "media/nyc/inputs/sol-050.webp",
+          "commanded_distance_m": 1.000000206952477,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "b88ed40ad85bcf9a8e182e2f2ef4701b447b6307bcbfa4e30110a875619c0d43"
         },
         {
           "source_step": 51,
@@ -968,7 +1072,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "e5032dffcae05ee93957ac5225684e3437d626a4c986df98c0493c80208ffcf2"
+          "source_sha256": "e5032dffcae05ee93957ac5225684e3437d626a4c986df98c0493c80208ffcf2",
+          "input_image": "media/nyc/inputs/sol-051.webp",
+          "commanded_distance_m": 2.0000001550972426,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "02f96f896f81337af47d7d698c050ca9557cf3d7cb40311964980ea2b96e3c35"
         },
         {
           "source_step": 52,
@@ -1003,7 +1111,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "c9d414ffe5b3c7c358d52cd241080bada39b6a1023dde889057999b28fcc5e74"
+          "source_sha256": "c9d414ffe5b3c7c358d52cd241080bada39b6a1023dde889057999b28fcc5e74",
+          "input_image": "media/nyc/inputs/sol-052.webp",
+          "commanded_distance_m": 2.0000001550972475,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "d62e6208bf0ad8d4c4c4f51fde1a08d6a4e0f72a8329b3ba0c76f1c643ec5b46"
         },
         {
           "source_step": 53,
@@ -1038,7 +1150,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "6cd8a91c38a3be31e801ef5df8cbc3b4f6f782820a44c370a3b62eae2e2b3998"
+          "source_sha256": "6cd8a91c38a3be31e801ef5df8cbc3b4f6f782820a44c370a3b62eae2e2b3998",
+          "input_image": "media/nyc/inputs/sol-053.webp",
+          "commanded_distance_m": 2.0000001550972475,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "8af7c0feb51b4d0c855ac3b178c6ecf277dfe319cc714254f453ae2910f2d812"
         },
         {
           "source_step": 54,
@@ -1073,7 +1189,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "5eee7a616f47f0ebe8de2d1eae07aae83ba6121214864e4f2d69dee4a35a5869"
+          "source_sha256": "5eee7a616f47f0ebe8de2d1eae07aae83ba6121214864e4f2d69dee4a35a5869",
+          "input_image": "media/nyc/inputs/sol-054.webp",
+          "commanded_distance_m": 2.0000001550972426,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "f34c2c7868e59ba14fc8a0ff5b99bfca9fddf3816988997b68305ddb6c61a631"
         },
         {
           "source_step": 55,
@@ -1108,7 +1228,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "939fe8ec4552a7efaa3dbabb937abd41b59ff477313c16ae1ddf7e6566e2e95f"
+          "source_sha256": "939fe8ec4552a7efaa3dbabb937abd41b59ff477313c16ae1ddf7e6566e2e95f",
+          "input_image": "media/nyc/inputs/sol-055.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "87d4e829767190e9cb5449288b32c061cc5195e6296c2c182da014d840145097"
         },
         {
           "source_step": 56,
@@ -1143,7 +1267,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "99d471cbc21af2c95ae7ab529cb4d8a8101b3fa8b5539fc21a6f3acc82b33828"
+          "source_sha256": "99d471cbc21af2c95ae7ab529cb4d8a8101b3fa8b5539fc21a6f3acc82b33828",
+          "input_image": "media/nyc/inputs/sol-056.webp",
+          "commanded_distance_m": 1.000000206952477,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "514154bf64a45323d6ee4212ff65755a468bf591f6e892c54eb57e4a99471163"
         },
         {
           "source_step": 57,
@@ -1178,7 +1306,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "e11ddbe75586c39e46d30bf9e9e8d02ffc86d163f551fe8916f967fdee8c7984"
+          "source_sha256": "e11ddbe75586c39e46d30bf9e9e8d02ffc86d163f551fe8916f967fdee8c7984",
+          "input_image": "media/nyc/inputs/sol-057.webp",
+          "commanded_distance_m": 1.0000002069524863,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "f57a05206608071d1f30e546c7a29995d7d7ee989cd84017e5ed9c55bd77fff7"
         },
         {
           "source_step": 58,
@@ -1213,7 +1345,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "391aca09a465c166a9e00cc2e67aad18155d9275af63f77dc96607e1f89bccb2"
+          "source_sha256": "391aca09a465c166a9e00cc2e67aad18155d9275af63f77dc96607e1f89bccb2",
+          "input_image": "media/nyc/inputs/sol-058.webp",
+          "commanded_distance_m": 1.000000206952477,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "dfcca23f8014be8dc10a02f1a60e72cc10e88bb71737cf6efcd94602a6c55315"
         },
         {
           "source_step": 59,
@@ -1248,7 +1384,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "453d6ffd6b17e8969a520c7b18479817d01b04d8a427488e2ee90a3522b49b9a"
+          "source_sha256": "453d6ffd6b17e8969a520c7b18479817d01b04d8a427488e2ee90a3522b49b9a",
+          "input_image": "media/nyc/inputs/sol-059.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "f0835c285b81f99e9807cb17ed2aa05e933ee49a307064bd28d013f4166749e4"
         },
         {
           "source_step": 60,
@@ -1283,7 +1423,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "74de0c882ea51befa9bb71986a9a0c79f86d5ce30d10a4dc991e4bd329a56386"
+          "source_sha256": "74de0c882ea51befa9bb71986a9a0c79f86d5ce30d10a4dc991e4bd329a56386",
+          "input_image": "media/nyc/inputs/sol-060.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "29593a2b10147e0da339cfc503833fc1a405acdca8ec7d25b07152f034d422c5"
         },
         {
           "source_step": 61,
@@ -1318,7 +1462,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "f0ae670c513ee0376f7b7ec0e73691bd6f6a1af9db9575f68f8b243690d7b74a"
+          "source_sha256": "f0ae670c513ee0376f7b7ec0e73691bd6f6a1af9db9575f68f8b243690d7b74a",
+          "input_image": "media/nyc/inputs/sol-061.webp",
+          "commanded_distance_m": 1.9999997744802431,
+          "recorded_feedback": "You collided with a human. While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "3d1fc18ae927131269d2b7ba08dab46d411208299f0cbd57cc5a381384eacaf7"
         },
         {
           "source_step": 62,
@@ -1353,7 +1501,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "db622f290f359347acf6816bdb1570f0f2b57d3ceee8701e6a6ecc86860293b7"
+          "source_sha256": "db622f290f359347acf6816bdb1570f0f2b57d3ceee8701e6a6ecc86860293b7",
+          "input_image": "media/nyc/inputs/sol-062.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "While you were deciding, you collided with an object.",
+          "input_sha256": "713e53c9ade6ab834b1ab5bf6a387ea59ae142dbb11816d728969a877cbfffce"
         },
         {
           "source_step": 63,
@@ -1388,7 +1540,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "6387e01ef33d911a516e8e192ebb7fa4d903bad096f33a9ba66ddf317a3f8ef5"
+          "source_sha256": "6387e01ef33d911a516e8e192ebb7fa4d903bad096f33a9ba66ddf317a3f8ef5",
+          "input_image": "media/nyc/inputs/sol-063.webp",
+          "commanded_distance_m": 2.0000003273624762,
+          "recorded_feedback": "You collided with a human. While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "f3de36214a30e5513be5f11cace9e59fac61c49e303cce8264f24826f587e95c"
         },
         {
           "source_step": 64,
@@ -1423,7 +1579,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "9c1e5765d040ed684ae74d06fc2c51beb0be97351802f4a3c1856522a3080de8"
+          "source_sha256": "9c1e5765d040ed684ae74d06fc2c51beb0be97351802f4a3c1856522a3080de8",
+          "input_image": "media/nyc/inputs/sol-064.webp",
+          "commanded_distance_m": 1.0000000091249992,
+          "recorded_feedback": "While you were deciding, you collided with a pedestrian and an object.",
+          "input_sha256": "a527f84e8d0777599df8d2c212ebb21fd0cfe9210f7c807eeb8a76bb94fcab92"
         },
         {
           "source_step": 65,
@@ -1458,7 +1618,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "c7b2571b29805942f041e9e913cc95e1b3f886a6940311c8f5da2896d9c724e4"
+          "source_sha256": "c7b2571b29805942f041e9e913cc95e1b3f886a6940311c8f5da2896d9c724e4",
+          "input_image": "media/nyc/inputs/sol-065.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "9b1797d96a6d94163bfb215f1e13fde88cdbbef618f7e684cabf615547717584"
         },
         {
           "source_step": 66,
@@ -1493,7 +1657,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "ecd3620d9689259a25a05354ea58115e72f2169d1ba5bba1c5abf7945190d5be"
+          "source_sha256": "ecd3620d9689259a25a05354ea58115e72f2169d1ba5bba1c5abf7945190d5be",
+          "input_image": "media/nyc/inputs/sol-066.webp",
+          "commanded_distance_m": 1.9999999513062603,
+          "recorded_feedback": "You collided with a human. While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "ec99d4c6110876e164ab279eabd78e8f46bd564308e744ed314757b2654ab52b"
         },
         {
           "source_step": 67,
@@ -1528,7 +1696,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "8a2af2a8655c860b8d21234cab382410c07dbbccbdc4940531c0f685980be46c"
+          "source_sha256": "8a2af2a8655c860b8d21234cab382410c07dbbccbdc4940531c0f685980be46c",
+          "input_image": "media/nyc/inputs/sol-067.webp",
+          "commanded_distance_m": 0.0,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "00fced5998d405acbc3e61dd685065c373108f04890e8713f3e8e8e7d172d318"
         },
         {
           "source_step": 68,
@@ -1563,7 +1735,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "fff42f89f4500a12b94e6dc085715b4db602c8c9a3b7ddb2fa11eec9f0e53b56"
+          "source_sha256": "fff42f89f4500a12b94e6dc085715b4db602c8c9a3b7ddb2fa11eec9f0e53b56",
+          "input_image": "media/nyc/inputs/sol-068.webp",
+          "commanded_distance_m": 1.000000140562485,
+          "recorded_feedback": "Action completed successfully.",
+          "input_sha256": "1d534bfd061453917636278159b113ba882f7de076de6f24c3467f9f79aa923c"
         },
         {
           "source_step": 69,
@@ -1598,7 +1774,11 @@
             "building": 0,
             "vehicle": 0
           },
-          "source_sha256": "487f00cae2b8c5a46e8bf2bb8748427bb107e1410c64a2fde55b7c8ab3112dcf"
+          "source_sha256": "487f00cae2b8c5a46e8bf2bb8748427bb107e1410c64a2fde55b7c8ab3112dcf",
+          "input_image": "media/nyc/inputs/sol-069.webp",
+          "commanded_distance_m": 1.000000140562485,
+          "recorded_feedback": "You have reached the final destination. While you were deciding, you collided with a pedestrian.",
+          "input_sha256": "fdb55a4bd2aa6510b995b76b760682f6276ab94dc6e3794991b56944f40e600d"
         }
       ],
       "summary": {

@@ -80,6 +80,29 @@ assert source['models']['sol']['summary']['collisions']==17
 assert source['models']['astra']['summary']['decisions']==12
 assert source['models']['sol']['summary']['decisions']==33
 report['comparison_source_totals']='verified against curated original logs'
+# The inset must come from a recorded input; waypoint indices are not distances.
+from PIL import Image
+inputs=0
+for model in source['models'].values():
+    for step in model['steps']:
+        path=ROOT/'public'/step['input_image']
+        with Image.open(path) as im:assert im.size==(360,320)
+        assert len(step['input_sha256'])==64
+        if step['action']['type']=='move_to':
+            assert min(abs(step['commanded_distance_m']-d) for d in (1,2,4))<.01
+        inputs+=1
+assert inputs==45
+profiles=json.loads((ROOT/'public/data/behavior.json').read_text())['profiles']
+assert len(profiles)==8 and len({p['name'] for p in profiles})==8
+for axis in range(6):
+    assert abs(max(p['values'][axis] for p in profiles)-1)<1e-9
+    assert all(0<=p['values'][axis]<=1 for p in profiles)
+# At 35.8 s, Sol has just reported four contacts; the red edge is visible.
+cap=cv2.VideoCapture(str(ROOT/'public/media/nyc/sol.mp4'));cap.set(cv2.CAP_PROP_POS_MSEC,35800)
+ok,frame=cap.read();cap.release();assert ok
+blue,green,red=frame[5,480];assert int(red)>int(green)+70 and int(red)>int(blue)+50
+report['replay_overlay']={'original_input_frames':inputs,'command_distances':'verified','collision_report_flash':'verified at 35.8 s'}
+report['behavior_profiles']={'models':8,'axes':6,'normalization':'maximum across all eight models'}
 comparison=ROOT/'public/media/rt-safe-nyc-comparison.mp4'
 info=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration:stream=nb_frames,width,height','-of','json',str(comparison)]))
 assert abs(float(info['format']['duration'])-44.1)<.01

@@ -85,21 +85,13 @@ function SynchronizedViews({ comparison = false }: { comparison?: boolean }) {
   }, [playing]);
   useEffect(() => () => { playGeneration.current++;left.current?.pause(); right.current?.pause(); }, []);
   return <div className={`nyc-pair ${comparison ? "nyc-case" : "nyc-timing"}`}>
-    {comparison && <div className="nyc-pair-kicker"><span>SAME ROUTE · RECORDED BEHAVIOR</span>
-      <span>RT15 / Task 19 / Low effort</span></div>}
     <div className="nyc-pair-grid">
       {stems.map((stem,i) => <article key={stem} className={`nyc-view nyc-view-${i}`}>
-        {comparison && <div className="nyc-view-heading"><h3>{labels[i]}</h3><span>Recorded trajectory</span></div>}
         <div className="nyc-view-frame"><video ref={i === 0 ? left : right} muted playsInline preload="none"
           poster={`${media}${stem}.webp`} aria-label={`${labels[i]} in the NYC scene`}
           onLoadedMetadata={event => { const v=event.currentTarget; v.currentTime=Math.min(requestedTime.current,Math.max(0,v.duration-.001)); }}>
           <source src={`${media}${stem}.mp4`} type="video/mp4" />
-        </video>{comparison && <span className="nyc-view-tag">NYC reconstruction</span>}</div>
-        {comparison ? <div className="nyc-case-numbers">
-          <div><strong>{i===0 ? "1" : "17"}</strong><span>recorded collisions</span></div>
-          <div><strong>{i===0 ? "12" : "33"}</strong><span>decisions</span></div>
-          <div><strong>{i===0 ? "68.6" : "252.5"}<small>s</small></strong><span>simulation time</span></div>
-        </div> : null}
+        </video></div>
       </article>)}
     </div>
     <div className="nyc-transport">
@@ -111,7 +103,7 @@ function SynchronizedViews({ comparison = false }: { comparison?: boolean }) {
     </div>
     {error && <p role="alert" className="fineprint">{error}</p>}
     <p className="fineprint">{comparison
-      ? "Final-subgoal segment from the same RT15 task, easy difficulty, seed 0, low reasoning. Original agent positions and recorded simulation timing are reconstructed in NYC at 6× speed. Counts are for the full selected segment; this is not a new evaluation on the NYC map."
+      ? "Final-subgoal segment from the same RT15 task, easy difficulty, seed 0, low reasoning. Original agent positions and recorded simulation timing are reconstructed in NYC at 6× speed. The input inset shows each original recorded observation. Collision alerts appear at the report times in the source logs. This is not a new evaluation on the NYC map."
       : "Native Unreal rendering of the same initial scene and commanded move. Timing and the encounter are illustrative; benchmark results are measured separately."}</p>
     {comparison && <a className="nyc-evidence-link" href="data/nyc/task19-replay.json" download>Inspect the recorded actions and timing ↗</a>}
   </div>;

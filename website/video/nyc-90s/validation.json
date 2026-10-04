@@ -19,9 +19,9 @@
     ],
     "format": {
       "duration": "90.000000",
-      "size": "28303756"
+      "size": "31367709"
     },
-    "sha256": "ffcc2cfd6d09dd22479a13f0866f7ab09e9833bbdd6140dfc5978a282e20528b",
+    "sha256": "cb7165eae7d8cbfef8d04dd73af8932382a01b8744b6bb0cf0756a350220676a",
     "full_decode": "passed"
   },
   "rt-safe-nyc-90s-captioned.mp4": {
@@ -44,9 +44,9 @@
     ],
     "format": {
       "duration": "90.000000",
-      "size": "27413310"
+      "size": "30414931"
     },
-    "sha256": "18d11ff4ad466a9a841c2d65fc7e55870ad24e015fbaa0b5ed8073e65de58a96",
+    "sha256": "f82620568536a35409184dead19c9c924531e512b8b870d5a4e22b64071855a2",
     "full_decode": "passed"
   },
   "captions": {
@@ -75,10 +75,10 @@
   },
   "completed_segment_holds": {
     "astra": {
-      "completed_view_mean_absolute_pixel_change": 0.0008101851851851852
+      "completed_view_mean_absolute_pixel_change": 0.0020305555555555554
     },
     "sol": {
-      "completed_view_mean_absolute_pixel_change": 0.01879420653292181
+      "completed_view_mean_absolute_pixel_change": 0.05976666666666667
     }
   },
   "hero": {
@@ -137,8 +137,8 @@
     "programs": [],
     "streams": [
       {
-        "width": 1920,
-        "height": 1080,
+        "width": 960,
+        "height": 1000,
         "nb_frames": "1323"
       }
     ],
@@ -150,8 +150,8 @@
     "programs": [],
     "streams": [
       {
-        "width": 1920,
-        "height": 1080,
+        "width": 960,
+        "height": 1000,
         "nb_frames": "1323"
       }
     ],
@@ -160,6 +160,16 @@
     }
   },
   "comparison_source_totals": "verified against curated original logs",
+  "replay_overlay": {
+    "original_input_frames": 45,
+    "command_distances": "verified",
+    "collision_report_flash": "verified at 35.8 s"
+  },
+  "behavior_profiles": {
+    "models": 8,
+    "axes": 6,
+    "normalization": "maximum across all eight models"
+  },
   "full_selected_comparison": {
     "programs": [],
     "streams": [
@@ -175,7 +185,7 @@
     "full_decode": "passed"
   },
   "narration_loudness": {
-    "integrated_lufs": -16.07,
+    "integrated_lufs": -16.05,
     "true_peak_dbtp": -1.48
   },
   "repository_media_size_limit": "all current NYC MP4s below 95 MiB"

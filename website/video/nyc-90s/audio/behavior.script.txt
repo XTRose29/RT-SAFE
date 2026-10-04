@@ -1,0 +1,1 @@
+Sonnet has the fewest collisions, but safe success remains rare. Inkling favors longer moves. Fable turns and waits more than Astra.

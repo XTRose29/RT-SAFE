@@ -33,14 +33,14 @@ Sol takes thirty-three decisions with seventeen collisions.
 00:00:35.590 --> 00:00:39.979
 This NYC reconstruction uses recorded agent positions and simulation timing.
 
-00:00:41.382 --> 00:00:44.608
-Across all difficulty levels, Sonnet records the fewest collisions.
+00:00:41.390 --> 00:00:44.959
+Sonnet has the fewest collisions, but safe success remains rare.
 
-00:00:45.215 --> 00:00:48.211
-Inference exposure strongly tracks collisions, but models differ
+00:00:45.632 --> 00:00:47.320
+Inkling favors longer moves.
 
-00:00:48.221 --> 00:00:50.029
-in how they move, turn, and wait.
+00:00:47.994 --> 00:00:49.956
+Fable turns and waits more than Astra.
 
 00:00:51.379 --> 00:00:52.781
 Task completion is not enough.

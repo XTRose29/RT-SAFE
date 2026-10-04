@@ -48,18 +48,47 @@ def timing(s,t):
 def environment(s,t):
     return footage('environment-tour',t)
 def examples(s,t):
-    im=v.base(s,t,'Same route. Different decisions.', 'Full-segment outcomes · original recorded run' if t>=10.8 else 'GPT-6 Astra and GPT-5.6 Sol · recorded RT15 Task 19 · low reasoning effort')
-    for i,name in enumerate(('astra','sol')):
-        x=65+i*920;col=v.TEAL if i==0 else v.BLUE
-        v.rect(im,(x,274,x+870,927),v.WHITE,12,v.LINE)
-        v.text(im,(x+22,291),'GPT-6 Astra' if i==0 else 'GPT-5.6 Sol',36,col,600)
-        im.paste(footage(name,t if t<10.8 else 44.05,(870,489)),(x,355))
-        if t<10.8:
-            v.text(im,(x+22,874),'6× recorded simulation time',24,v.MUTED,400)
-        else:
-            v.text(im,(x+22,872),'1 collision · 12 decisions' if i==0 else '17 collisions · 33 decisions',31,col,600)
-            v.text(im,(x+843,917),'FULL SEGMENT TOTAL',16,v.MUTED,400,'ra')
-    v.footer(im,'NYC reconstruction · original agent poses and timing · counts from the full recorded segment')
+    # Two chronological excerpts, followed by the full-segment outcomes.
+    source=t if t<6 else 33+(t-6) if t<12 else 44.05
+    im=Image.new('RGB',(1920,1080),v.INK)
+    for i,name in enumerate(('astra','sol')):im.paste(footage(name,source,(960,1000)),(i*960,0))
+    v.line(im,[(959,0),(959,1000)],v.WHITE,3)
+    if 6<=t<8 or t>=12:
+        label='LATER IN THE SAME RUN' if t<12 else 'FULL SEGMENT OUTCOMES'
+        v.rect(im,(701,107,1219,149),v.INK,8,v.PALE)
+        v.text(im,(960,117),label,20,v.WHITE,600,'ma')
+    return im
+def behavior(s,t):
+    im=Image.new('RGB',(1920,1080),v.BG)
+    v.text(im,(62,28),'REAL-TIME BENCHMARK  /  PROVIDER-DEFAULT REASONING',20,v.TEAL,600)
+    if t<5.2:
+        v.text(im,(60,76),'Eight models. Completion and safety.',60,v.INK,600)
+        v.text(im,(64,158),'All three difficulties · 108 episodes per model · ranked by collisions per episode',25,v.MUTED,400)
+        cols=[(620,'SUCCESS ↑'),(905,'SAFE SUCCESS ↑'),(1240,'COLLISIONS / EP. ↓'),(1545,'LATENCY (s) ↓'),(1830,'DECISIONS / EP.')]
+        v.text(im,(77,224),'MODEL',21,v.MUTED,600)
+        for x,label in cols:v.text(im,(x,224),label,21,v.MUTED,600,'ra')
+        for i,m in enumerate(sorted(v.MODELS,key=lambda m:m['average']['collisions'])):
+            y=279+i*75;a=m['average'];col=v.TEAL if i==0 else v.INK
+            v.rect(im,(60,y-7,1860,y+58),'#e0f0ee' if i==0 else v.WHITE,8)
+            v.text(im,(80,y+6),f'{i+1:02}',23,v.MUTED,500);v.text(im,(141,y),m['name'],35,col,600)
+            vals=[f'{a["success"]:.1f}%',f'{a["safeSuccess"]:.1f}%',f'{a["collisions"]:.1f}',f'{a["latency"]:.1f}',f'{a["decisions"]:.1f}']
+            for j,((x,_),value) in enumerate(zip(cols,vals)):
+                v.text(im,(x,y),value,35,v.RED if j==1 and a['safeSuccess']==0 else col,600 if j==2 else 500,'ra')
+        v.text(im,(65,909),'Sonnet: fewest collisions. Every model: safe success below 4%.',31,v.TEAL,500)
+        v.footer(im,'Paper Table 5 / Appendix B.3 · means across easy, medium, and hard conditions')
+    else:
+        v.text(im,(60,76),'How do their behaviors differ?',60,v.INK,600)
+        v.text(im,(64,158),'Same six axes. Different choices about speed, movement, turning, and waiting.',25,v.MUTED,400)
+        cards=[('Inkling','#518b37',['Longer moves.','Fewer decisions.'],'26.0 s / decision'),('Grok','#c23b52',['Slow responses.','Most collisions.'],'59.5 collisions / ep.'),('Astra','#16878a',['Less turning and waiting','than Fable.'],'51.7 decisions / ep.'),('Fable','#9557b4',['More turning and waiting.','Slightly fewer collisions.'],'20.9 collisions / ep.')]
+        for i,(name,col,lines,stat) in enumerate(cards):
+            x=50+i*470;v.rect(im,(x,225,x+450,878),v.WHITE,14,v.LINE)
+            v.text(im,(x+225,249),name,38,col,600,'ma')
+            chart=Image.open(ROOT/'public/media/behavior'/f'{name.lower()}.png').convert('RGBA').resize((450,450),Image.Resampling.LANCZOS)
+            im.paste(chart,(x,310),chart)
+            for j,line in enumerate(lines):v.text(im,(x+225,758+j*31),line,23,v.INK,500,'ma')
+            v.text(im,(x+225,832),stat,22,col,600,'ma')
+        v.text(im,(65,919),'Radar area is a behavior profile, not an overall safety score.',28,v.MUTED,400)
+        v.footer(im,'Paper Figure 3 · each axis normalized across all eight models · commanded move length, not realized progress')
     return im
 def learning(s,t):
     im=v.base(s,t,'An environment for learning safer behavior.','Offline RL · Qwen3-VL-4B · 16 held-out tasks · fixed 3-second decision delay')
@@ -79,5 +108,5 @@ def learning(s,t):
     v.text(im,(960,887),'Learn to reach the goal. Learn to arrive safely.',37,v.TEAL,500,'ma')
     v.footer(im,'Paper §3.5 / Table 1 · source evaluation results; NYC footage is an environment visualization')
     return im
-v.FUNCS.update({f.__name__:f for f in (title,timing,environment,examples,learning)})
+v.FUNCS.update({f.__name__:f for f in (title,timing,environment,examples,behavior,learning)})
 if __name__=='__main__':v.main()

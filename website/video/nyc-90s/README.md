@@ -11,8 +11,9 @@ Astra/Sol comparison and an eight-second aerial loop.
 | 0:00–0:04 | Project title and NYC aerial |
 | 0:04–0:15 | Static versus real-time inference |
 | 0:15–0:27 | Navigation goal, collisions, hazards, and traffic rules |
-| 0:27–0:41 | Recorded Astra/Sol route segment reconstructed in NYC |
-| 0:41–0:51 | Model ranking and inference-exposure analysis |
+| 0:27–0:41 | Astra/Sol replay with input frames, commands, and collision alerts |
+| 0:41–0:46.2 | All-difficulty leaderboard: success, safe success, collisions, latency, decisions |
+| 0:46.2–0:51 | Four behavior radar profiles and model takeaways |
 | 0:51–0:59 | Success versus safe success |
 | 0:59–1:08 | Matched static versus real-time results |
 | 1:08–1:18 | Lower, default, and higher reasoning effort |
@@ -35,6 +36,12 @@ along the sidewalk while the static world pauses and the real-time world advance
 Narration uses the synthetic `en-US-AriaNeural` voice. There is no background music.
 The standard master uses selectable captions; the conference edition burns them into
 a reserved band below the scene content.
+
+The Astra/Sol scene fills the frame with paired NYC views. Its overlay shows the original
+input image, the navigation goal, the selected command, decision progress, and collision
+reports. Red alerts appear when a completed phase reports contacts. The short film uses
+two chronological excerpts (0–6 s and 33–39 s of the 6× replay), then full-segment totals.
+The jump is labelled. The separate 44.1-second comparison plays the full selected segment.
 
 ## Sources and limits
 
@@ -75,3 +82,13 @@ the exported frame counts, durations, decoding, and static-world freeze.
 voice clips; generating a missing voice clip requires network access. Native render
 frames, editor caches, runtime logs, and the separately licensed Unreal assets are
 excluded from the repository. The finished web media and the render scripts are included.
+
+Behavior profiles use the manuscript’s Figure 3 axes, normalized across all eight models.
+The first three axes are reciprocals of mean collisions, latency, and decisions. Movement,
+waiting, and turning describe choices; radar area is not a composite safety score.
+`public/data/behavior.json` contains the values. The leaderboard uses Table 5 means.
+
+`python scripts/render-behavior-profiles.py` regenerates the standalone SVG/PNG plots.
+The recorded input frames and selected command distances are included in the curated replay
+data. To curate them again from the separately provisioned source logs, run
+`python scripts/prepare-behavior-media.py --campaign /path/to/campaign --radar-csv /path/to/rq1_radar_raw.csv`.
