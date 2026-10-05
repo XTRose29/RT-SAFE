@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import evidence from "./model-examples.json";
 import { ModelLogo } from "./model-logos";
+import { BehaviorProfile } from "./behavior-profiles";
 import { NYCComparison } from "./nyc-scenes";
 
 type Example = typeof evidence.models[number];
 const order = ["Astra", "Sol", "Sonnet", "Fable", "Gemini", "DeepSeek", "Inkling", "Grok"];
 export const modelExamples = order.map(name => evidence.models.find(m => m.name === name)!);
 
-export function RecordedExample({ model, compact = false }: { model: Example; compact?: boolean }) {
+export function RecordedExample({ model }: { model: Example }) {
   const video = useRef<HTMLVideoElement>(null);
   const pendingSeek = useRef<number | null>(null);
   useEffect(() => { const player = video.current; return () => player?.pause(); }, []);
@@ -22,7 +23,7 @@ export function RecordedExample({ model, compact = false }: { model: Example; co
     void v.play().catch(() => setError("Press play to continue the example."));
   };
   const active = model.steps.findIndex(s => time * model.speed < s.end);
-  return <div className={`recorded-example ${compact ? "recorded-example-compact" : ""}`}>
+  return <div className="recorded-example recorded-example-compact">
     <div className="example-player">
       <video ref={video} controls muted playsInline preload="none" poster={model.poster}
         aria-label={`${model.name} recorded behavior example`}
@@ -33,6 +34,12 @@ export function RecordedExample({ model, compact = false }: { model: Example; co
         <source src={model.video} type="video/mp4" />
       </video>
     </div>
+    <div className="example-strip">
+      <span className="example-condition">Recorded excerpt · {model.difficulty} · Task {model.task} · {model.speed}×</span>
+      <strong>{model.headline}</strong>
+      <span>{model.contacts} contact{model.contacts === 1 ? "" : "s"} · {model.hazards > 0 && `${model.hazards} hazard interaction${model.hazards === 1 ? "" : "s"} · `}{model.trafficViolations > 0 && `${model.trafficViolations} traffic violations · `}{model.sourceDuration.toFixed(1)} simulation seconds · 3 decisions</span>
+    </div>
+    <details className="example-record-details"><summary>Explore recorded decisions & events</summary>
     <div className="example-detail">
       <div className="example-condition">{model.difficulty} · Task {model.task} · {model.reasoning}</div>
       <h4>{model.headline}</h4>
@@ -54,6 +61,7 @@ export function RecordedExample({ model, compact = false }: { model: Example; co
       <a className="example-download" href={model.video}>Open {model.name} video ↗</a>
       {error && <p role="alert">{error}</p>}
     </div>
+    </details>
   </div>;
 }
 
@@ -65,8 +73,11 @@ export function ModelExamples() {
     <div className="example-model-selector" role="group" aria-label="Choose a model example">
       {modelExamples.map(m => <button key={m.name} aria-pressed={selected === m.name && !comparison} onClick={() => { setSelected(m.name); setComparison(false); }}><ModelLogo name={m.name} /><span>{m.name}</span></button>)}
     </div>
-    <div className="example-heading"><span className="micro">{comparison ? "MATCHED ROUTE COMPARISON · LOW REASONING" : "RECORDED EXCERPT · PROVIDER-DEFAULT REASONING"}</span><button className="example-compare" aria-pressed={comparison} onClick={() => setComparison(!comparison)}>{comparison ? "← Back to model examples" : "Compare Astra & Sol on the same route ↗"}</button></div>
-    {comparison ? <NYCComparison /> : <RecordedExample key={selected} model={model} />}
+    <div className="example-heading"><span className="micro">{comparison ? "MATCHED ROUTE COMPARISON · LOW REASONING" : "MODEL BEHAVIOR · PROVIDER-DEFAULT REASONING"}</span><button className="example-compare" aria-pressed={comparison} onClick={() => setComparison(!comparison)}>{comparison ? "← Back to model examples" : "Compare Astra & Sol on the same route ↗"}</button></div>
+    {comparison ? <NYCComparison /> : <div className="model-overview" key={selected}>
+      <RecordedExample model={model} />
+      <BehaviorProfile name={selected} />
+    </div>}
     <p className="example-selection-note">Each excerpt illustrates a behavior seen in the model’s profile. Tasks and difficulties differ, so these clips are qualitative examples. Use the leaderboard for aggregate comparisons. <a href="data/model-examples.json" download>Inspect selection, actions & source hashes ↗</a></p>
   </div>;
 }

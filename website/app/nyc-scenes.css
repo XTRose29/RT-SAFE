@@ -256,3 +256,23 @@ td.collision-cell { background:#fff0e7; color:#9d4427; font-weight:700; box-shad
  .example-heading>.micro { font-size:10px; }
  .example-chapters button { grid-template-columns:90px 1fr; }
 }
+
+.model-overview { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:24px; align-items:start; }
+.model-overview .recorded-example { display:block; margin:0; }
+.model-overview .behavior-card { min-width:0; background:#fff; }
+.model-overview .interactive-radar { max-width:440px; display:block; margin:0 auto; }
+.model-overview .profile-scope { font-size:12px; line-height:1.6; margin:12px 0 0; }
+.model-overview .radar-readout { min-height:0; background:#f6f8f2; }
+.model-overview .behavior-note { font-size:11px; margin-bottom:0; }
+.example-strip { display:grid; gap:10px; padding:22px 24px; }
+.example-strip strong { font:500 20px/1.4 var(--display); }
+.example-strip>span:last-child { font-size:12px; color:var(--muted); }
+.example-record-details { margin:0 24px 22px; border-top:1px solid var(--line); padding-top:16px; }
+.example-record-details>summary { cursor:pointer; font:600 14px var(--display); color:var(--green); }
+.recorded-example-compact .example-record-details .example-detail { padding:22px 0 0; }
+.example-record-details>summary:focus-visible { outline:3px solid var(--green); outline-offset:4px; }
+@media(max-width:760px) {
+ .model-overview { grid-template-columns:1fr; gap:18px; }
+ .example-strip { padding:18px; }
+ .example-record-details { margin:0 18px 18px; }
+}

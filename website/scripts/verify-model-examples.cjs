@@ -1,4 +1,4 @@
-/* Check all eight recorded players, seek controls, profile links, and mobile layout. */
+/* Check the merged video/profile selector, seek controls, and mobile layout. */
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const fs=require('fs'),path=require('path');
 const data=require('../app/model-examples.json');
@@ -12,6 +12,13 @@ const assert=(ok,msg)=>{if(!ok)throw Error(msg)};
  assert(await selector.locator('button').count()===8,'Missing model selector');
  for(const model of data.models){
   await selector.getByRole('button',{name:model.name,exact:true}).click();
+  assert(await p.locator('.behavior-card').count()===1,'Duplicate profile section remains');
+  const card=root.locator('.behavior-card');
+  assert((await card.locator('.behavior-model').innerText()).trim()===model.name,'Video/profile model mismatch');
+  await card.getByRole('button',{name:/More turning:/}).press('Enter');
+  assert(await card.locator('.radar-readout>span').innerText()==='Turn actions','Radar interaction failed');
+  await card.locator('summary').click();assert(await card.locator('.profile-details dl>div').count()===10,'Detailed results missing');await card.locator('summary').click();
+  await root.locator('.example-record-details>summary').click();
   const v=root.locator('video');await v.evaluate(v=>v.play());
   await p.waitForFunction(()=>document.querySelector('.model-examples video')?.currentTime>.1);
   const info=await v.evaluate(v=>({src:v.currentSrc,duration:v.duration,muted:v.muted,tracks:v.textTracks.length,w:v.videoWidth,h:v.videoHeight}));
@@ -28,16 +35,10 @@ const assert=(ok,msg)=>{if(!ok)throw Error(msg)};
  await root.screenshot({path:path.join(out,'desktop.png')});
  await root.getByRole('button',{name:/Compare Astra & Sol/}).click();assert(await root.locator('.nyc-case video').count()===2,'Original comparison missing');
  await selector.getByRole('button',{name:'Fable',exact:true}).click();assert(await root.locator('video').count()===1,'Comparison players not removed');
- assert((await root.locator('.example-other-events').innerText()).includes('1 hazard interaction'),'Fable hazard missing');
- for(const model of data.models){
-  const card=p.locator('.behavior-card').filter({has:p.locator('.behavior-model',{hasText:new RegExp('^'+model.name+'$')})});
-  await card.getByRole('button',{name:`▶ Watch ${model.name} example`,exact:true}).click();
-  assert(await card.locator('video source').getAttribute('src')===model.video,`${model.name}: wrong profile replay`);
-  await card.getByRole('button',{name:'Close recorded example',exact:true}).click();assert(await card.locator('video').count()===0,'Profile video not removed');
- }
+ assert((await root.locator('.example-strip').innerText()).includes('1 hazard interaction'),'Fable hazard missing');
  await p.setViewportSize({width:390,height:844});await selector.getByRole('button',{name:'Fable',exact:true}).focus();await root.scrollIntoViewIfNeeded();
  assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Mobile overflow');
  await root.screenshot({path:path.join(out,'mobile.png')});
  assert(errors.length===0,JSON.stringify(errors));
- console.log('All eight players, decision/contact seeks, profile examples, comparison and mobile checks passed.');await b.close();
+ console.log('All eight merged video/radar profiles, results, decision/contact seeks, comparison and mobile checks passed.');await b.close();
 })().catch(e=>{console.error(e);process.exit(1)});

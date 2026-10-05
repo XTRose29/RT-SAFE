@@ -32,18 +32,18 @@ const root=path.resolve(__dirname,'..');const data=JSON.parse(fs.readFileSync(pa
  await table.screenshot({path:path.join(root,'nyc/previews/site-final/effort-leaderboard.png')});
  await page.getByRole('button',{name:'All difficulties',exact:true}).click();assert.equal(await effort.inputValue(),'default');
  assert.equal(await table.locator('tbody tr').count(),8);
- for(const card of await page.locator('.behavior-card').all()){
+ for(const name of ['Astra','Sol','Sonnet','Fable','Gemini','DeepSeek','Inkling','Grok']){
+  await page.getByRole('group',{name:'Choose a model example'}).getByRole('button',{name,exact:true}).click();
+  const card=page.locator('.behavior-card');
   await card.getByRole('button',{name:/More turning:/}).locator('text').click();
   assert.equal(await card.locator('.radar-readout>span').textContent(),'Turn actions');
   await card.locator('summary').click();assert.equal(await card.locator('.profile-details dl>div').count(),10);
   await card.locator('summary').click();
  }
- const card=page.locator('.behavior-card').filter({has:page.locator('.behavior-model').filter({hasText:'Astra'})});
- await card.getByRole('button',{name:'▶ Watch Astra example',exact:true}).click();
- const video=card.locator('video');await video.evaluate(v=>v.play());await page.waitForTimeout(500);
+ await page.getByRole('group',{name:'Choose a model example'}).getByRole('button',{name:'Astra',exact:true}).click();
+ const video=page.locator('.model-overview video');await video.evaluate(v=>v.play());await page.waitForTimeout(500);
  assert(await video.evaluate(v=>v.currentTime>0 && v.muted));await video.evaluate(v=>v.pause());
- await card.screenshot({path:path.join(root,'nyc/previews/site-final/interactive-astra.png')});
- await card.getByRole('button',{name:'Close recorded example'}).click();assert.equal(await card.locator('video').count(),0);
+ await page.locator('.model-overview').screenshot({path:path.join(root,'nyc/previews/site-final/interactive-astra.png')});
  assert.equal(await page.locator('video track').count(),0);assert(await page.locator('video').evaluateAll(vs=>vs.every(v=>v.muted)));
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  await page.setViewportSize({width:390,height:844});

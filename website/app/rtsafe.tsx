@@ -2,7 +2,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import rawData from "./data.json";
 import { ModelExamples } from "./model-examples";
-import { BehaviorProfiles } from "./behavior-profiles";
 import { ModelLogo } from "./model-logos";
 import { NYCTiming, NYCEnvironment, NYCSceneGallery } from "./nyc-scenes";
 
@@ -768,9 +767,9 @@ export default function RTsafe() {
         <section id="examples" className="section">
           <SectionHead
             n="03"
-            label="RECORDED MODEL BEHAVIOR"
+            label="MODEL BEHAVIOR & RECORDED EXAMPLES"
             title={<>How do frontier agents perform?</>}
-            description="Choose any of the eight models to watch a recorded behavior excerpt. Explore its original observations, actions, response times, and collision reports."
+            description="Choose a model to explore its behavior profile and watch a recorded example. Inspect the radar, open detailed results, or follow individual decisions and safety events."
           />
           <ModelExamples />
           <div className="action-space">
@@ -816,7 +815,6 @@ export default function RTsafe() {
             <span className="pill">Eight VLMs / Shared protocol</span>
           </div>
           <Results />
-          <BehaviorProfiles />
           <Findings />
           <Reasoning />
           <Training />

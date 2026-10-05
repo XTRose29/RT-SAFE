@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ModelLogo } from "./model-logos";
 import data from "./behavior.json";
-import { RecordedExample, modelExamples } from "./model-examples";
 const cards = [
   { name: "Inkling", color: "#518b37", title: "Longer moves, fewer decisions.", text: "Despite a 26.0 s response latency, Inkling uses the fewest decisions per episode: 38.5. Its collisions are comparable to much faster models." },
   { name: "Grok", color: "#c23b52", title: "Slow responses add exposure.", text: "Grok combines long response times with shorter commanded moves than Inkling. It records the most collisions: 59.5 per episode." },
@@ -20,9 +19,9 @@ const axisMetrics = [
   { label: "Wait actions", unit: "% of actions", note: "Explicit wait actions as a share of action choices. Time spent on inference is excluded." },
   { label: "Turn actions", unit: "% of actions", note: "Turn actions as a share of all action choices." },
 ];
-function ProfileCard({ card }: { card: typeof cards[number] }) {
+export function BehaviorProfile({ name }: { name: string }) {
+  const card = cards.find(card => card.name === name)!;
   const [axis, setAxis] = useState(0);
-  const [replay, setReplay] = useState(false);
   const profile = data.profiles.find(p => p.name === card.name)!;
   const raw = [profile.average.collisions, profile.average.latency, profile.average.decisions, profile.raw[3], profile.raw[4] * 100, profile.raw[5] * 100];
   const point = (i: number, r: number) => [210 + Math.sin(i * Math.PI / 3) * r, 180 - Math.cos(i * Math.PI / 3) * r];
@@ -30,6 +29,7 @@ function ProfileCard({ card }: { card: typeof cards[number] }) {
   const metric = axisMetrics[axis];
   return <article className="behavior-card">
     <header><span className="behavior-model" style={{color:card.color}}><ModelLogo name={card.name} />{card.name}</span><h4>{card.title}</h4></header>
+    <p className="profile-scope">Aggregate behavior · 108 episodes<br />All difficulties · provider-default reasoning</p>
     <svg className="interactive-radar" viewBox="0 0 420 350" role="group" aria-label={`${card.name} interactive behavior profile`}>
       {[.25,.5,.75,1].map(r => <polygon key={r} points={polygon(Array(6).fill(r))} fill="none" stroke="#d7dfdf" />)}
       {data.axes.map((label, i) => { const [x,y] = point(i,112); return <line key={label} x1="210" y1="180" x2={x} y2={y} stroke="#d7dfdf" />; })}
@@ -61,16 +61,6 @@ function ProfileCard({ card }: { card: typeof cards[number] }) {
       ].map(([label,value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
       <p>Real-time · all difficulties · provider-default reasoning · 108 episodes. Source: manuscript Figures 3 & 7 and Appendix B.3.</p>
     </details>
-    <div className="profile-replay">
-      <button className="light-button" aria-expanded={replay} onClick={() => setReplay(!replay)}>{replay ? "Close recorded example" : `▶ Watch ${card.name} example`}</button>
-      {replay && <RecordedExample model={modelExamples.find(m => m.name === card.name)!} compact />}
-    </div>
+    <p className="behavior-note">Tap a radar axis to inspect its value. Axes are normalized across all eight models; radar area is not an overall safety score. <a href="data/behavior.json" download>Profile data ↗</a></p>
   </article>;
-}
-export function BehaviorProfiles() {
-  return <section className="behavior-profiles" aria-labelledby="behavior-heading">
-    <div className="table-heading"><div><h3 id="behavior-heading">What lies behind the leaderboard?</h3><p>Tap or hover over a radar axis to inspect its value. Open a model’s detailed results, or watch a recorded example for any model.</p></div><span className="pill">Paper Figures 3 & 7</span></div>
-    <div className="behavior-grid">{cards.map(card => <ProfileCard key={card.name} card={card} />)}</div>
-    <p className="behavior-note">All difficulties, provider-default reasoning, 108 episodes per model. Each axis is normalized across all eight models. Move length means commanded distance. Waiting excludes inference time. Radar area is not an overall safety score. <a href="data/behavior.json" download>Download profile data ↗</a></p>
-  </section>;
 }
