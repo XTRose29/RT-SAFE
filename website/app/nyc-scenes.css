@@ -273,6 +273,7 @@ td.collision-cell { background:#fff0e7; color:#9d4427; font-weight:700; box-shad
 .example-record-details>summary:focus-visible { outline:3px solid var(--green); outline-offset:4px; }
 @media(max-width:760px) {
  .model-overview { grid-template-columns:1fr; gap:18px; }
+ .model-overview .interactive-radar text { font-size:16px; }
  .example-strip { padding:18px; }
  .example-record-details { margin:0 18px 18px; }
 }
