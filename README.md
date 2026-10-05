@@ -7,7 +7,8 @@
   <a href="website/public/media/rt-safe-paper.pdf">Paper draft</a> ·
   <a href="https://xtrose29.github.io/RT-SAFE/media/rt-safe-video.mp4">Demo film</a> ·
   <a href="#results">Results</a> ·
-  <a href="docs/PROTOCOL.md">Protocol</a>
+  <a href="docs/PROTOCOL.md">Protocol</a> ·
+  <a href="docs/MAP_TRANSFER.md">Map transfer</a>
 </p>
 
 ![RT-SAFE — the world does not pause](website/public/og.png)
