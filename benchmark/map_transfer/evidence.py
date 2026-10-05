@@ -28,7 +28,29 @@ def verify_run(directory: str | Path) -> dict:
         "Run must remain labeled as a pilot",
     )
     for key in ("task_id", "mode"):
-        require(summary[key] == provenance[key], f"Mismatched {key}")
+        require(summary[key] == provenance[key] == state[key], f"Mismatched {key}")
+    require(
+        abs(summary["simulation_time_s"] - state["simulation_time"]) < 1e-6,
+        "Simulation duration mismatch",
+    )
+    require(
+        abs(summary["traveled_m"] - state["traveled_cm"] / 100) < 1e-6,
+        "Travel distance mismatch",
+    )
+    if "wall_time_s" in summary:
+        require(
+            math.isfinite(summary["wall_time_s"]) and summary["wall_time_s"] >= 0,
+            "Invalid wall duration",
+        )
+        require(
+            abs(summary["wall_time_s"] - state["episode_wall_time_s"]) < 1e-6,
+            "Wall duration mismatch",
+        )
+    if "dynamic_activations" in summary:
+        require(
+            summary["dynamic_activations"] == state["activations"],
+            "Dynamic activation mismatch",
+        )
     counts = Counter()
     last_time = -1.0
     for index, event in enumerate(state["events"]):

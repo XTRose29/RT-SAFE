@@ -9,6 +9,9 @@ from benchmark.map_transfer.evidence import verify_run
 def test_saved_run_verification_rejects_count_and_image_tampering(tmp_path):
     counts = {kind: int(kind == "collision") for kind in EVENT_TYPES}
     state = {
+        "task_id": "check",
+        "mode": "realtime",
+        "traveled_cm": 100.0,
         "events": [
             {
                 "index": 0,
@@ -25,6 +28,8 @@ def test_saved_run_verification_rejects_count_and_image_tampering(tmp_path):
         "terminal_reason": "goal_reached",
     }
     summary = {
+        "simulation_time_s": 2.0,
+        "traveled_m": 1.0,
         "pilot": True,
         "task_id": "check",
         "mode": "realtime",
