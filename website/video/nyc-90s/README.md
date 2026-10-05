@@ -37,6 +37,7 @@ A separate environment title card introduces collisions, hazards, and traffic-ru
 
 ## Exports
 
+- `../../public/media/rt-safe-video.mp4`: current public demo URL, silent and without subtitle tracks.
 - `../../public/media/rt-safe-nyc-90s.mp4`: silent 1080p, 30 fps, exactly 90 seconds.
 - `../../public/media/rt-safe-nyc-90s-captioned.mp4`: the same edit with burned captions.
 - `../../public/media/rt-safe-nyc-90s.vtt` and `.srt`: English captions.
@@ -44,8 +45,9 @@ A separate environment title card introduces collisions, hazards, and traffic-ru
 
 All current exports have no audio track: no narration, music, or sound effects.
 Earlier audio files are retained only as production history and are not used by the export pipeline.
-The standard master uses selectable captions; the conference edition burns them into
-a reserved band below the scene content.
+The website does not attach subtitle tracks. Caption files and the older conference
+edition are retained as production assets; the latter burns captions into a reserved
+band below the scene content.
 
 The Astra/Sol scene fills the frame with the original first-person observation and action
 snapshots. Its overlay shows the navigation goal, the selected command, decision progress, and collision

@@ -1,0 +1,430 @@
+{
+  "description": "Native NYC park encounter; agent remains in inference without acting",
+  "pilot": true,
+  "traces": [
+    {
+      "label": "Static",
+      "mode": "static",
+      "manifest_sha256": "2780751deb4d1ae38b786d04737629fa514b5ddc37c4dc54e23ba2311e0d2d53",
+      "native_binary_sha256": {
+        "SimWorldEditor": "373e7db9895ed6f61d532d305c2f3c23287c6a22343293df70ccc795c2c716d7",
+        "libSimWorldEditor-SimWorld.so": "2b35e6f45d226124f0fa81cc421d0bdff684e125ed08415991c4428e86ca8fc2",
+        "libSimWorldEditor-SpServices.so": "6cf8ca84a2582b1e56adcfc34dcb7ac1a7f7238de1379f6170b7158d4ada66da",
+        "SimWorldEditor.modules": "9af159a3c7696d1166e3357796661564ac681bb75a4ddd5d80801026194f0755"
+      },
+      "source_trajectory_sha256": "2b26edb543616f16c7a8a79e8dcc8753ec7bcbbd873e25ead97f1b7cade1cead",
+      "source_final_state_sha256": "4f1af81e12e3132d39a0ca0436837f70fe6900cf42578171d43c356065ea96ac",
+      "samples": [
+        {
+          "wall_seconds": 0.0,
+          "simulation_seconds": 0.0,
+          "center_distance_m": 6.5
+        },
+        {
+          "wall_seconds": 9.407592616975307,
+          "simulation_seconds": 0.0,
+          "center_distance_m": 6.5
+        },
+        {
+          "wall_seconds": 9.44390885788016,
+          "simulation_seconds": 0.0,
+          "center_distance_m": 6.5
+        }
+      ],
+      "collisions": []
+    },
+    {
+      "label": "Real-time",
+      "mode": "realtime",
+      "manifest_sha256": "2780751deb4d1ae38b786d04737629fa514b5ddc37c4dc54e23ba2311e0d2d53",
+      "native_binary_sha256": {
+        "SimWorldEditor": "373e7db9895ed6f61d532d305c2f3c23287c6a22343293df70ccc795c2c716d7",
+        "libSimWorldEditor-SimWorld.so": "2b35e6f45d226124f0fa81cc421d0bdff684e125ed08415991c4428e86ca8fc2",
+        "libSimWorldEditor-SpServices.so": "6cf8ca84a2582b1e56adcfc34dcb7ac1a7f7238de1379f6170b7158d4ada66da",
+        "SimWorldEditor.modules": "9af159a3c7696d1166e3357796661564ac681bb75a4ddd5d80801026194f0755"
+      },
+      "source_trajectory_sha256": "25b393316a4512ad4d61202cafbf69b3f88f07391e79c3a5f957485cbee1e0e7",
+      "source_final_state_sha256": "000a58c76d0fc530659e5fcbb7fc71e3ea12d53158727cca808311e0eff59084",
+      "samples": [
+        {
+          "wall_seconds": 0.0,
+          "simulation_seconds": 0.0,
+          "center_distance_m": 6.5
+        },
+        {
+          "wall_seconds": 0.014248971827328205,
+          "simulation_seconds": 0.12380105257034302,
+          "center_distance_m": 6.5
+        },
+        {
+          "wall_seconds": 0.13782851886935532,
+          "simulation_seconds": 0.24452906847000122,
+          "center_distance_m": 6.391344785690308
+        },
+        {
+          "wall_seconds": 0.42322255088947713,
+          "simulation_seconds": 0.506904099136591,
+          "center_distance_m": 6.155207248032093
+        },
+        {
+          "wall_seconds": 0.554565210826695,
+          "simulation_seconds": 0.6662880703806877,
+          "center_distance_m": 6.011761673912406
+        },
+        {
+          "wall_seconds": 0.6921327768359333,
+          "simulation_seconds": 0.8010233342647552,
+          "center_distance_m": 5.890499936416745
+        },
+        {
+          "wall_seconds": 0.7985962729435414,
+          "simulation_seconds": 0.9103428386151791,
+          "center_distance_m": 5.792112382501363
+        },
+        {
+          "wall_seconds": 1.003047774778679,
+          "simulation_seconds": 1.1126748323440552,
+          "center_distance_m": 5.610013588145375
+        },
+        {
+          "wall_seconds": 1.1304471918847412,
+          "simulation_seconds": 1.2371726334095001,
+          "center_distance_m": 5.497965563833714
+        },
+        {
+          "wall_seconds": 1.2545216248836368,
+          "simulation_seconds": 1.3673630952835083,
+          "center_distance_m": 5.380794148147106
+        },
+        {
+          "wall_seconds": 1.4050613588187844,
+          "simulation_seconds": 1.512333121150732,
+          "center_distance_m": 5.250321124866605
+        },
+        {
+          "wall_seconds": 1.5124169609043747,
+          "simulation_seconds": 1.6243790909647942,
+          "center_distance_m": 5.149479752033949
+        },
+        {
+          "wall_seconds": 1.622528000967577,
+          "simulation_seconds": 1.7321293205022812,
+          "center_distance_m": 5.05250454545021
+        },
+        {
+          "wall_seconds": 1.7514593137893826,
+          "simulation_seconds": 1.8614248931407928,
+          "center_distance_m": 4.93613853007555
+        },
+        {
+          "wall_seconds": 1.8718597718980163,
+          "simulation_seconds": 1.9815514460206032,
+          "center_distance_m": 4.828024632483721
+        },
+        {
+          "wall_seconds": 1.9844399089924991,
+          "simulation_seconds": 2.096725556999445,
+          "center_distance_m": 4.724367932602763
+        },
+        {
+          "wall_seconds": 2.109236836899072,
+          "simulation_seconds": 2.2200800515711308,
+          "center_distance_m": 4.613348887488246
+        },
+        {
+          "wall_seconds": 2.217099797911942,
+          "simulation_seconds": 2.3269072771072388,
+          "center_distance_m": 4.517204384505749
+        },
+        {
+          "wall_seconds": 2.3313807197846472,
+          "simulation_seconds": 2.4429144002497196,
+          "center_distance_m": 4.412797973677516
+        },
+        {
+          "wall_seconds": 2.4411983559839427,
+          "simulation_seconds": 2.5515815131366253,
+          "center_distance_m": 4.314997572079301
+        },
+        {
+          "wall_seconds": 2.5480852217879146,
+          "simulation_seconds": 2.65869976952672,
+          "center_distance_m": 4.218591141328216
+        },
+        {
+          "wall_seconds": 2.667317842831835,
+          "simulation_seconds": 2.7752444110810757,
+          "center_distance_m": 4.113700963929295
+        },
+        {
+          "wall_seconds": 2.7867323979735374,
+          "simulation_seconds": 2.897377595305443,
+          "center_distance_m": 4.003781098127365
+        },
+        {
+          "wall_seconds": 2.8973653838038445,
+          "simulation_seconds": 3.007262509316206,
+          "center_distance_m": 3.9048846755176783
+        },
+        {
+          "wall_seconds": 3.052620330825448,
+          "simulation_seconds": 3.1607020534574986,
+          "center_distance_m": 3.766789085790515
+        },
+        {
+          "wall_seconds": 3.176881946856156,
+          "simulation_seconds": 3.2852593399584293,
+          "center_distance_m": 3.6546875279396773
+        },
+        {
+          "wall_seconds": 3.3050443259999156,
+          "simulation_seconds": 3.4157042764127254,
+          "center_distance_m": 3.537287085130811
+        },
+        {
+          "wall_seconds": 3.442757235839963,
+          "simulation_seconds": 3.5527458004653454,
+          "center_distance_m": 3.4139497101306917
+        },
+        {
+          "wall_seconds": 3.612463667988777,
+          "simulation_seconds": 3.695757757872343,
+          "center_distance_m": 3.285238948464394
+        },
+        {
+          "wall_seconds": 3.71078204899095,
+          "simulation_seconds": 3.82103218883276,
+          "center_distance_m": 3.1724919606000186
+        },
+        {
+          "wall_seconds": 3.8227305018808693,
+          "simulation_seconds": 3.932764258235693,
+          "center_distance_m": 3.0719330981373787
+        },
+        {
+          "wall_seconds": 3.9737680568359792,
+          "simulation_seconds": 4.083504401147366,
+          "center_distance_m": 2.9362669695168733
+        },
+        {
+          "wall_seconds": 4.118843272794038,
+          "simulation_seconds": 4.2264063991606236,
+          "center_distance_m": 2.8076551713049414
+        },
+        {
+          "wall_seconds": 4.234670216916129,
+          "simulation_seconds": 4.3437062948942184,
+          "center_distance_m": 2.7020852651447056
+        },
+        {
+          "wall_seconds": 4.339301900006831,
+          "simulation_seconds": 4.447583179920912,
+          "center_distance_m": 2.608596068620682
+        },
+        {
+          "wall_seconds": 4.4469997498672456,
+          "simulation_seconds": 4.557685691863298,
+          "center_distance_m": 2.509503807872534
+        },
+        {
+          "wall_seconds": 4.553650909801945,
+          "simulation_seconds": 4.663440860807896,
+          "center_distance_m": 2.4143241558223965
+        },
+        {
+          "wall_seconds": 4.686698963865638,
+          "simulation_seconds": 4.798024736344814,
+          "center_distance_m": 2.2931986678391696
+        },
+        {
+          "wall_seconds": 4.810988001991063,
+          "simulation_seconds": 4.9205678552389145,
+          "center_distance_m": 2.1829098608344792
+        },
+        {
+          "wall_seconds": 4.917431209003553,
+          "simulation_seconds": 5.028447840362787,
+          "center_distance_m": 2.085817874222994
+        },
+        {
+          "wall_seconds": 5.032095175003633,
+          "simulation_seconds": 5.141932055354118,
+          "center_distance_m": 1.9836820807307958
+        },
+        {
+          "wall_seconds": 5.175336604937911,
+          "simulation_seconds": 5.285206116735935,
+          "center_distance_m": 1.8547354254871606
+        },
+        {
+          "wall_seconds": 5.324810073943809,
+          "simulation_seconds": 5.432675525546074,
+          "center_distance_m": 1.7220129575580359
+        },
+        {
+          "wall_seconds": 5.463580482872203,
+          "simulation_seconds": 5.57113541662693,
+          "center_distance_m": 1.597399055585265
+        },
+        {
+          "wall_seconds": 5.566517022904009,
+          "simulation_seconds": 5.677639078348875,
+          "center_distance_m": 1.5015457600355149
+        },
+        {
+          "wall_seconds": 5.6877902508713305,
+          "simulation_seconds": 5.796090561896563,
+          "center_distance_m": 1.3949394281953573
+        },
+        {
+          "wall_seconds": 5.818226557923481,
+          "simulation_seconds": 5.929129295051098,
+          "center_distance_m": 1.2752045683562756
+        },
+        {
+          "wall_seconds": 5.922709650825709,
+          "simulation_seconds": 6.032413221895695,
+          "center_distance_m": 1.1822490341961385
+        },
+        {
+          "wall_seconds": 6.028122670948505,
+          "simulation_seconds": 6.1394434086978436,
+          "center_distance_m": 1.0859218660742045
+        },
+        {
+          "wall_seconds": 6.180696319788694,
+          "simulation_seconds": 6.289496306329966,
+          "center_distance_m": 0.9508742582052946
+        },
+        {
+          "wall_seconds": 6.373436165973544,
+          "simulation_seconds": 6.4812266305089,
+          "center_distance_m": 0.7783169630914927
+        },
+        {
+          "wall_seconds": 6.521540657849982,
+          "simulation_seconds": 6.631746180355549,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 6.640016407938674,
+          "simulation_seconds": 6.749087207019329,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 6.875978598836809,
+          "simulation_seconds": 6.984703883528709,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 7.02609879989177,
+          "simulation_seconds": 7.135906018316746,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 7.143415158847347,
+          "simulation_seconds": 7.252156481146812,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 7.281693297903985,
+          "simulation_seconds": 7.392735298722982,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 7.3838680679909885,
+          "simulation_seconds": 7.494457982480526,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 7.512188314925879,
+          "simulation_seconds": 7.622192043811083,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 7.628527196822688,
+          "simulation_seconds": 7.738521546125412,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 7.732068088836968,
+          "simulation_seconds": 7.842481479048729,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 7.832476188894361,
+          "simulation_seconds": 7.942718993872404,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 7.944254030007869,
+          "simulation_seconds": 8.05378182604909,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 8.063562794821337,
+          "simulation_seconds": 8.1719336733222,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 8.172107363818213,
+          "simulation_seconds": 8.279106218367815,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 8.287406830815598,
+          "simulation_seconds": 8.3950733281672,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 8.41865672590211,
+          "simulation_seconds": 8.529703672975302,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 8.572568202856928,
+          "simulation_seconds": 8.68337968364358,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 8.714730011997744,
+          "simulation_seconds": 8.824484284967184,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 8.816378607880324,
+          "simulation_seconds": 8.925997767597437,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 9.12311785388738,
+          "simulation_seconds": 9.231857154518366,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 9.293084356933832,
+          "simulation_seconds": 9.399235967546701,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 9.40461785485968,
+          "simulation_seconds": 9.47306315973401,
+          "center_distance_m": 0.681927888550108
+        },
+        {
+          "wall_seconds": 9.500706952996552,
+          "simulation_seconds": 9.47306315973401,
+          "center_distance_m": 0.681927888550108
+        }
+      ],
+      "collisions": [
+        {
+          "wall_seconds": 6.516182160004973,
+          "simulation_seconds": 6.631746180355549,
+          "phase": "inference",
+          "source": "unreal_blocking_hit"
+        }
+      ]
+    }
+  ]
+}

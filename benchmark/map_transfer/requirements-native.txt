@@ -1,0 +1,8 @@
+# The matching local SPEAR SDK and spear_ext binary must be supplied separately.
+numpy
+scipy
+Pillow
+PyYAML
+yacs
+psutil
+requests
