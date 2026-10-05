@@ -188,7 +188,7 @@ td.collision-cell { background:#fff0e7; color:#9d4427; font-weight:700; box-shad
 .overview-scene { position:relative; aspect-ratio:16/9; }
 .overview-scene>img,.overview-annotations { position:absolute; inset:0; width:100%; height:100%; display:block; }
 .overview-annotations { font-family:var(--display); pointer-events:none; }
-.overview-start { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); display:flex; align-items:center; gap:16px; border:1px solid #d3eca8; border-radius:13px; background:#20382ef5; color:#f6ffe7; padding:19px 23px; box-shadow:0 8px 35px #06160b77; text-align:left; font:600 16px var(--display); white-space:nowrap; cursor:pointer; }
+.overview-start { position:absolute; left:6%; top:68%; transform:translateY(-50%); display:flex; align-items:center; gap:16px; border:1px solid #d3eca8; border-radius:13px; background:#20382ef5; color:#f6ffe7; padding:19px 23px; box-shadow:0 8px 35px #06160b77; text-align:left; font:600 16px var(--display); white-space:nowrap; cursor:pointer; }
 .overview-start:hover { background:#365343; }
 .overview-start:focus-visible { outline:3px solid white; outline-offset:5px; }
 .overview-start small { display:block; font-size:11px; font-weight:400; color:#c9d8c2; margin-top:7px; }
@@ -201,7 +201,8 @@ td.collision-cell { background:#fff0e7; color:#9d4427; font-weight:700; box-shad
 .explorer-back { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; color:var(--muted); font-size:12px; }
 .explorer-back button { background:none; border:1px solid var(--line); border-radius:7px; padding:12px 16px; color:var(--green); cursor:pointer; }
 @media(max-width:760px) {
- .overview-start { padding:12px 15px; gap:10px; font-size:13px; }
+ .overview-scene { margin-bottom:86px; }
+ .overview-start { left:12px; right:12px; top:calc(100% + 12px); transform:none; padding:12px 15px; gap:10px; font-size:13px; white-space:normal; }
  .overview-start-icon { width:29px; height:29px; font-size:20px; }
  .overview-start small { font-size:9px; }
  .overview-caption { flex-direction:column; align-items:flex-start; padding:20px; gap:12px; }
