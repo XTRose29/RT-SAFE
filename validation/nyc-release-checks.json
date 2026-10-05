@@ -67,9 +67,9 @@
       ],
       "format": {
         "duration": "90.000000",
-        "size": "26115883"
+        "size": "26789272"
       },
-      "sha256": "0b268d11386b6d87692adef850775d9ce6ac3dd838fc60a96e12d83958163d9f",
+      "sha256": "ec7cbc0d9ac593091c2cd1fa2e384b198816e7ef65244736326e56b85ae97024",
       "full_decode": "passed"
     },
     "rt-safe-video.mp4": {
@@ -385,5 +385,13 @@
     "logo_loaded": true,
     "header_overlap": false,
     "page_overflow": false
+  },
+  "environment_revision": {
+    "date_utc": "2026-10-05T00:14:52.300891+00:00",
+    "viewpoints": 4,
+    "captions_removed": true,
+    "public_mp4_files_verified_silent": 24,
+    "native_render": "explorer-render.json",
+    "browser": "environment-explorer.json"
   }
 }

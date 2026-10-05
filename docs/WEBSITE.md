@@ -43,7 +43,7 @@ Set repository variable `SITE_URL` only when using a custom domain. Configure th
 - `website/public/media/rt-safe-video.mp4`: canonical 90-second film without audio.
 - `website/public/media/rt-safe-nyc-90s.mp4`: identical compatibility copy for existing links.
 - `website/public/media/logos/simworld.png`: supplied SimWorld emblem used in the website brand suite and film opening.
-- `website/public/media/rt-safe-nyc-90s-captioned.mp4`: conference copy with burned captions.
+- `website/public/media/rt-safe-nyc-90s-captioned.mp4`: legacy URL retained as a silent, subtitle-free copy.
 - `website/public/media/rt-safe-original-comparison.mp4`: current Astra/Sol comparison using original recorded snapshots at 6× simulation speed.
 - `website/public/media/rt-safe-nyc-comparison.mp4`: earlier NYC reconstruction, retained as an alternate.
 - `website/public/media/nyc/`: native city footage, synchronized timing/replay clips, and camera gallery.
@@ -57,3 +57,17 @@ Do not add raw research folders or environment files to `website/public`: everyt
 [GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
 
 The current revision adds a visible stop and recoil to the illustrative park contact, full-stride walking, an explicit RT-Safe introduction, larger opening headings, and animated leaderboard/radar results. Original replay snapshots use brief dissolves; collision report times and all paper measurements are unchanged.
+
+
+## Interactive NYC environment
+
+The environment section uses four native 360° cubemap captures: the approach, the path,
+the crossing, and Madison Square Park. Drag, touch, or use arrow keys to look; use the
+viewpoint buttons to move between capture positions. Camera rotation can be played and
+paused. The moving-scene option uses the original 12-second Unreal rendering without
+presentation overlays. These are captured views, not a live benchmark simulation.
+
+All public MP4 files contain video only. Website players have no caption tracks, and
+older `captioned` URLs now serve the matching uncaptioned video for compatibility.
+Run `website/scripts/prepare-silent-web-media.py` after regenerating legacy exports.
+The supplied `website/scripts/verify-environment-explorer.cjs` checks the browser controls.

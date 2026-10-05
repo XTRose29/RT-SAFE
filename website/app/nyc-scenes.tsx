@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
+import { EnvironmentExplorer } from "./environment-explorer";
+
 const media = "media/nyc/";
 
 export function NYCHero() {
@@ -112,24 +114,15 @@ function SynchronizedViews({ comparison = false }: { comparison?: boolean }) {
 
 export function NYCTiming() {
   return <figure className="nyc-environment nyc-timing-story">
-    <video controls playsInline preload="none" poster={`${media}timing-story.webp?v=silent-motion-2`} aria-label="From static evaluation to real-time evaluation in Madison Square Park">
+    <video muted controls playsInline preload="none" poster={`${media}timing-story.webp?v=silent-motion-2`} aria-label="From static evaluation to real-time evaluation in Madison Square Park">
       <source src={`${media}timing-story.mp4?v=silent-motion-2`} type="video/mp4" />
-      <track kind="captions" src={`${media}timing-story.vtt?v=silent-motion-2`} srcLang="en" label="English" default />
     </video>
     <figcaption><strong>The real world does not stop.</strong><span>Static evaluation → RT-Safe · illustrative NYC encounter</span></figcaption>
   </figure>;
 }
 export function NYCComparison() { return <SynchronizedViews comparison />; }
 
-export function NYCEnvironment() {
-  return <figure className="nyc-environment">
-    <video controls playsInline preload="none" poster={`${media}environment-intro.webp?v=silent-motion-2`} aria-label="NYC environment tour showing the route and safety events">
-      <source src={`${media}environment-intro.mp4?v=silent-motion-2`} type="video/mp4" />
-      <track kind="captions" src={`${media}environment-intro.vtt?v=silent-motion-2`} srcLang="en" label="English" default />
-    </video>
-    <figcaption><strong>Our RT-Safe task: reach the goal safely.</strong><span>NYC demonstration scene · pedestrians, obstacles, hazards, and traffic rules</span></figcaption>
-  </figure>;
-}
+export function NYCEnvironment() { return <EnvironmentExplorer />; }
 
 const views=[
   {id:"skyline",label:"The city",description:"An aerial view of the Madison Square Park scene."},

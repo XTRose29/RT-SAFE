@@ -1,0 +1,17 @@
+{
+  "url": "http://127.0.0.1:4173/",
+  "drag": true,
+  "keyboard": true,
+  "zoom": true,
+  "rotation_pause": true,
+  "viewpoints": 4,
+  "safety_details": 3,
+  "rapid_navigation": true,
+  "video_play_pause": true,
+  "fullscreen": true,
+  "touch_drag": true,
+  "no_overflow": true,
+  "no_caption_tracks": true,
+  "all_players_muted": true,
+  "errors": []
+}

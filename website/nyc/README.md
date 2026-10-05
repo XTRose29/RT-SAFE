@@ -125,3 +125,16 @@ counts, column emphasis, expanding radar profiles, and pulsing key axes explain 
 paper results; they add no new measurements.
 
 The environment tour warms the world for 180 engine frames before capture, so background traffic is present from the first frame. `RTSAFE_ENV_WARMUP` can increase this on a slower runtime.
+
+## Browser environment explorer
+
+`render_explorer.py` captures four positions as six square 90-degree faces per position.
+Each face is rendered at 1536 × 1536 pixels with fixed exposure, no bloom or vignette,
+and a fixed actor layout. `build-explorer-media.py` creates the WebP cubemaps and metadata
+for the browser. No Unreal packages or marketplace meshes are distributed.
+
+The viewer offers drag/touch/keyboard look, zoom, viewpoint selection, optional rotation,
+and scene-anchored safety details. These are 360-degree captures; moving actors are shown
+in a separate silent 12-second native scene clip. All website players omit subtitle tracks.
+`prepare-silent-web-media.py` also strips audio from legacy MP4 downloads and replaces
+legacy captioned exports with their plain-video counterparts.

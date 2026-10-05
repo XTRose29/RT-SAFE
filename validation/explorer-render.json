@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "jobs": [
+    {
+      "name": "approach",
+      "success": true,
+      "seconds": 34.73869204521179
+    },
+    {
+      "name": "hazards",
+      "success": true,
+      "seconds": 35.80462837219238
+    },
+    {
+      "name": "crossing",
+      "success": true,
+      "seconds": 35.25338673591614
+    },
+    {
+      "name": "park",
+      "success": true,
+      "seconds": 32.35664892196655
+    }
+  ],
+  "elapsed": 168.7594747543335,
+  "metadata": {
+    "native_360": true,
+    "resolution_per_face": 1536
+  }
+}

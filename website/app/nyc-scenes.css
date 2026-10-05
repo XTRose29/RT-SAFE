@@ -72,3 +72,73 @@
 .behavior-model { display:flex; align-items:center; gap:12px; }
 .behavior-model .model-logo { width:38px; height:38px; }
 td.collision-cell { background:#fff0e7; color:#9d4427; font-weight:700; box-shadow:inset 0 -1px 0 #e6c9b9; }
+
+.environment-explorer { margin:0 0 30px; border-radius:16px; overflow:hidden; background:#20302d; color:#f5f7f3; }
+.explorer-heading { padding:25px 28px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.explorer-heading .micro { color:#a6c5b5; font-size:10px; }
+.explorer-heading h3 { margin:8px 0 0; font:500 27px var(--display); letter-spacing:-.7px; }
+.explorer-badge { border:1px solid #51645b; border-radius:30px; padding:9px 15px; font-size:12px; white-space:nowrap; }
+.explorer-viewport { position:relative; aspect-ratio:16/9; background:#152622; }
+.explorer-panorama { position:absolute; inset:0; }
+.explorer-panorama canvas { display:block; width:100%; height:100%; cursor:grab; touch-action:none; outline-offset:-5px; }
+.explorer-panorama canvas:active { cursor:grabbing; }
+.explorer-location { position:absolute; left:24px; top:22px; display:flex; gap:8px; align-items:center; pointer-events:none; font-size:12px; padding:10px 14px; background:#152622dc; border:1px solid #ffffff24; border-radius:30px; }
+.explorer-dot { width:6px; height:6px; border-radius:50%; background:#c7e892; }
+.explorer-fullscreen { position:absolute; right:22px; top:20px; width:38px; height:38px; color:white; background:#152622dc; border:1px solid #ffffff50; border-radius:9px; font-size:27px; }
+.explorer-status { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:18px; padding:30px; text-align:center; background:#182b25; }
+.explorer-status strong { font-size:16px; font-weight:500; }
+.explorer-status button { border:1px solid #769582; border-radius:8px; background:transparent; color:white; padding:12px 18px; }
+.explorer-drag-hint { pointer-events:none; position:absolute; left:50%; bottom:22px; transform:translateX(-50%); padding:9px 16px; border-radius:30px; background:#152622d9; font-size:12px; white-space:nowrap; }
+.explorer-scene-video { display:block; width:100%; height:100%; object-fit:contain; }
+.explorer-controls { padding:17px 22px; display:flex; gap:14px; align-items:center; justify-content:space-between; border-bottom:1px solid #ffffff17; }
+.explorer-controls > span { font-size:10px; color:#b0c1b8; }
+.explorer-transport { display:flex; flex-wrap:wrap; gap:8px; }
+.explorer-transport button { color:#eef6ec; background:#30443c; border:1px solid #52665b; padding:10px 13px; border-radius:7px; font-size:11px; }
+.explorer-transport button.explorer-primary { color:#24352c; background:#d5ecad; border-color:#d5ecad; }
+.explorer-transport button:disabled { opacity:.5; cursor:wait; }
+.explorer-destinations { display:grid; grid-template-columns:repeat(4,1fr); padding:20px 22px 12px; gap:10px; }
+.explorer-destinations button { display:flex; align-items:center; gap:10px; text-align:left; background:transparent; border:1px solid #5a6a60; border-radius:9px; padding:18px 14px; color:#dfe9df; font-size:13px; }
+.explorer-destinations button > span:first-child { color:#91aa9a; font:400 10px var(--mono); }
+.explorer-destinations button > span:last-child { margin-left:auto; }
+.explorer-destinations button[aria-pressed=true] { background:#e4eddd; color:#20352b; border-color:#e4eddd; }
+.explorer-topics { display:flex; align-items:center; flex-wrap:wrap; gap:10px; padding:9px 22px 20px; }
+.explorer-topics > span { font-size:11px; color:#c1cdc5; margin-right:6px; }
+.explorer-topics button { display:flex; align-items:center; gap:7px; background:transparent; border:1px solid #ffffff30; border-radius:30px; color:#fff; padding:8px 13px; font-size:11px; }
+.explorer-topics button[aria-pressed=true] { background:#425347; border-color:var(--event-color); }
+.category-0 { --event-color:#a1d8f9; }
+.category-1 { --event-color:#efc77a; }
+.category-2 { --event-color:#f2ae9f; }
+.explorer-topics i { width:6px; height:6px; border-radius:50%; background:var(--event-color); }
+.explorer-hotspot { position:absolute; transform:translate(-50%,-50%); display:flex; align-items:center; gap:14px; color:#18302d; background:var(--event-color); border:2px solid white; padding:8px 12px; font-size:12px; font-weight:600; border-radius:30px; box-shadow:0 0 0 9px #ffffff30,0 3px 12px #0006; }
+.explorer-hotspot[hidden] { display:none; }
+.explorer-hotspot span { font-size:18px; }
+.explorer-insight { position:absolute; right:22px; bottom:70px; max-width:285px; padding:24px; background:#152c28f2; border:1px solid #ffffff30; border-left:3px solid var(--event-color); border-radius:10px; }
+.explorer-insight .micro { color:var(--event-color); font-size:10px; }
+.explorer-insight h4 { font:500 20px/1.25 var(--display); margin:12px 0; }
+.explorer-insight p { font-size:12px; line-height:1.7; color:#d3e0d7; }
+.explorer-insight > button { position:absolute; right:8px; top:6px; border:0; background:none; color:white; font-size:22px; }
+.explorer-note { font-size:11px; color:#a5bbae; line-height:1.7; margin:0; padding:0 22px 23px; }
+.environment-explorer:fullscreen { overflow:auto; display:flex; flex-direction:column; }
+.environment-explorer:fullscreen .explorer-viewport { flex:1; min-height:45vh; aspect-ratio:auto; }
+@media(max-width:900px) {
+ .explorer-controls { flex-direction:column; align-items:flex-start; }
+ .explorer-insight { max-width:235px; padding:18px; }
+}
+@media(max-width:600px) {
+ .explorer-heading { padding:20px 17px; }
+ .explorer-heading h3 { font-size:21px; }
+ .explorer-badge { font-size:10px; padding:7px 9px; }
+ .explorer-viewport { aspect-ratio:4/5; }
+ .explorer-location { top:14px; left:12px; font-size:10px; }
+ .explorer-fullscreen { top:12px; right:12px; }
+ .explorer-destinations { grid-template-columns:1fr 1fr; padding:15px; gap:8px; }
+ .explorer-destinations button { padding:14px 11px; font-size:11px; }
+ .explorer-controls { padding:15px; }
+ .explorer-transport button { padding:10px 11px; font-size:10px; }
+ .explorer-topics { padding:0 15px 15px; gap:8px; }
+ .explorer-topics > span { width:100%; }
+ .explorer-note { padding:0 15px 20px; font-size:10px; }
+ .explorer-insight { left:13px; right:13px; bottom:60px; max-width:none; padding:15px; }
+ .explorer-insight h4 { font-size:17px; margin:8px 0; }
+ .explorer-insight p { font-size:11px; }
+}

@@ -1,0 +1,98 @@
+{
+  "media/rt-safe-nyc-90s.mp4": {
+    "duration": "90.000000",
+    "streams": "video only"
+  },
+  "media/rt-safe-nyc-comparison.mp4": {
+    "duration": "44.100000",
+    "streams": "video only"
+  },
+  "media/rt-safe-original-comparison.mp4": {
+    "duration": "44.100000",
+    "streams": "video only"
+  },
+  "media/rt-safe-demo-90s-captioned.mp4": {
+    "duration": "90.000000",
+    "streams": "video only"
+  },
+  "media/rt-safe-conference-captioned.mp4": {
+    "duration": "187.766667",
+    "streams": "video only"
+  },
+  "media/rt-safe-nyc-90s-captioned.mp4": {
+    "duration": "90.000000",
+    "streams": "video only"
+  },
+  "media/rt-safe-demo-90s.mp4": {
+    "duration": "90.000000",
+    "streams": "video only"
+  },
+  "media/rt-safe-video.mp4": {
+    "duration": "90.000000",
+    "streams": "video only"
+  },
+  "media/case-7.mp4": {
+    "duration": "1.500000",
+    "streams": "video only"
+  },
+  "media/case-6.mp4": {
+    "duration": "1.500000",
+    "streams": "video only"
+  },
+  "media/rt-safe-highlights.mp4": {
+    "duration": "59.666667",
+    "streams": "video only"
+  },
+  "media/rt-safe-demo.mp4": {
+    "duration": "187.766667",
+    "streams": "video only"
+  },
+  "media/case-1.mp4": {
+    "duration": "2.500000",
+    "streams": "video only"
+  },
+  "media/recorded/astra.mp4": {
+    "duration": "44.100000",
+    "streams": "video only"
+  },
+  "media/recorded/sol.mp4": {
+    "duration": "44.100000",
+    "streams": "video only"
+  },
+  "media/nyc/timing-static.mp4": {
+    "duration": "11.000000",
+    "streams": "video only"
+  },
+  "media/nyc/astra.mp4": {
+    "duration": "44.100000",
+    "streams": "video only"
+  },
+  "media/nyc/environment-tour.mp4": {
+    "duration": "12.000000",
+    "streams": "video only"
+  },
+  "media/nyc/timing-story.mp4": {
+    "duration": "15.000000",
+    "streams": "video only"
+  },
+  "media/nyc/environment-intro.mp4": {
+    "duration": "12.000000",
+    "streams": "video only"
+  },
+  "media/nyc/sol.mp4": {
+    "duration": "44.100000",
+    "streams": "video only"
+  },
+  "media/nyc/timing-realtime.mp4": {
+    "duration": "11.000000",
+    "streams": "video only"
+  },
+  "media/nyc/environment-clean.mp4": {
+    "duration": "12.000000",
+    "streams": "video only"
+  },
+  "media/nyc/hero.mp4": {
+    "duration": "8.000000",
+    "streams": "video only"
+  }
+}

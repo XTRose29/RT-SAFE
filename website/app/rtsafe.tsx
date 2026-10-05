@@ -833,6 +833,7 @@ export default function RTsafe() {
             <video
               key={film}
               ref={videoRef}
+              muted
               controls
               playsInline
               preload="none"
@@ -840,27 +841,14 @@ export default function RTsafe() {
               aria-label="RT-SAFE project film"
             >
               <source src={film === "nyc-90s" ? "media/rt-safe-video.mp4" : "media/rt-safe-original-comparison.mp4?v=silent-motion-2"} type="video/mp4" />
-              <track
-                kind="captions"
-                src={`media/rt-safe-${film}.vtt?v=silent-motion-2`}
-                srcLang="en"
-                label="English"
-                default
-              />
               Your browser does not support video. Download the MP4 below.
             </video>
           </div>
           <div className="film-footer">
-            <span>{film === "nyc-90s" ? "1920 × 1080 · Silent · English captions" : "1920 × 1080 · 6× playback · English captions"}</span>
+            <span>{film === "nyc-90s" ? "1920 × 1080 · Silent" : "1920 × 1080 · 6× playback"}</span>
             <div>
               <a href={film === "nyc-90s" ? "media/rt-safe-video.mp4" : "media/rt-safe-original-comparison.mp4?v=silent-motion-2"} download>
                 Download film <span>↓</span>
-              </a>
-              <a href={`media/rt-safe-${film}.vtt?v=silent-motion-2`} download>
-                Captions <span>↓</span>
-              </a>
-              <a href="media/rt-safe-nyc-90s-captioned.mp4?v=simworld-brand" download>
-                90s conference edition <span>↓</span>
               </a>
             </div>
           </div>
