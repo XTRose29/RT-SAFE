@@ -115,3 +115,36 @@ test("radar raw values correspond to the displayed aggregate metrics", () => {
     assert.equal(p.values.length, 6);
   }
 });
+
+test("every model has a sourced, continuous default-reasoning video excerpt", () => {
+  const examples = read("app/model-examples.json");
+  assert.deepEqual(examples, read("public/data/model-examples.json"));
+  assert.deepEqual(examples.models.map(m => m.name).sort(), data.models.map(m => m.name).sort());
+  const total = counts => Object.values(counts).reduce((a, b) => a + b, 0);
+  for (const model of examples.models) {
+    assert.equal(model.reasoning, "Provider default");
+    assert.equal(model.steps.length, 3);
+    assert.equal(model.speed, 2);
+    assert.ok(Math.abs(model.videoDuration - (model.sourceDuration / model.speed + 2)) < 1 / 30 + .001);
+    assert.equal(model.contacts, model.steps.reduce((n, s) => n + total(s.active) + total(s.passive), 0));
+    assert.equal(model.inferenceContacts, model.steps.reduce((n, s) => n + total(s.passive), 0));
+    assert.equal(model.hazards, model.steps.reduce((n, s) => n + total(s.hazards), 0));
+    for (const [i, step] of model.steps.entries()) {
+      assert.match(step.manifestSha256, /^[a-f0-9]{64}$/);
+      assert.ok(!step.sourceRelativePath.startsWith("/"));
+      assert.ok(step.inputFrames.length > 0 && step.actionFrames.length > 0);
+      for (const frame of [...step.inputFrames, ...step.actionFrames]) assert.match(frame.sha256, /^[a-f0-9]{64}$/);
+      assert.ok(step.end > step.start && step.inference <= step.end - step.start + .01);
+      assert.ok(["move_to", "turn", "turn_around", "wait"].includes(step.action.type));
+      if (i) {
+        assert.equal(step.sourceStep, model.steps[i - 1].sourceStep + 1);
+        assert.ok(Math.abs(step.start - model.steps[i - 1].end) < .1);
+      }
+    }
+    for (const event of model.events) {
+      assert.ok(event.count > 0);
+      assert.ok(model.steps.some(s => Math.abs(event.at * model.speed - (event.phase === "inference" ? s.start + s.inference : s.end)) < .001));
+    }
+    for (const asset of [model.video, model.poster]) assert.ok(existsSync(new URL("../public/" + asset, import.meta.url)), asset);
+  }
+});

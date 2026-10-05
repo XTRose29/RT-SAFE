@@ -213,3 +213,46 @@ td.collision-cell { background:#fff0e7; color:#9d4427; font-weight:700; box-shad
  .overview-mobile-key span:nth-child(2) i { background:#f9cf85; }
  .overview-mobile-key span:nth-child(3) i { background:#ffbaad; }
 }
+
+/* Recorded excerpts share the same player in the model selector and profiles. */
+.example-model-selector { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); gap:9px; }
+.example-model-selector button { display:flex; align-items:center; justify-content:center; gap:9px; padding:15px 9px; background:white; border:1px solid var(--line); border-radius:10px; color:var(--ink); font:500 15px var(--display); cursor:pointer; }
+.example-model-selector button[aria-pressed=true] { background:#e5edde; border-color:var(--green); box-shadow:inset 0 -3px var(--green); }
+.example-model-selector .model-logo { width:26px; height:26px; object-fit:contain; }
+.example-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:15px; margin:25px 0 18px; }
+.example-compare,.example-contact-jump { border:0; background:none; color:var(--green); font:500 14px var(--display); cursor:pointer; text-align:left; padding:8px 0; }
+.recorded-example { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); border:1px solid var(--line); border-radius:16px; overflow:hidden; background:#fff; }
+.example-player { background:#091c2d; display:flex; align-items:center; }
+.example-player video { display:block; width:100%; aspect-ratio:24/25; max-height:820px; object-fit:contain; }
+.example-detail { padding:clamp(20px,3vw,42px); min-width:0; }
+.example-condition { font:500 12px var(--display); color:var(--green); text-transform:uppercase; letter-spacing:.04em; }
+.example-detail h4 { font:500 clamp(21px,2.2vw,30px)/1.25 var(--display); margin:15px 0; }
+.example-detail p { font-size:14px; line-height:1.7; }
+.example-stats { display:grid; grid-template-columns:1fr 1fr; gap:15px; margin:22px 0; }
+.example-stats dt { font-size:12px; color:var(--muted); }
+.example-stats dd { margin:8px 0 0; font:500 27px var(--display); color:var(--green); }
+.example-stats small { display:block; font:400 11px/1.6 var(--display); color:var(--muted); margin-top:6px; }
+.example-chapters { display:grid; gap:8px; }
+.example-chapters>.micro { margin-bottom:5px; }
+.example-chapters button { display:grid; grid-template-columns:100px 1fr; gap:5px 10px; padding:12px; border:1px solid var(--line); border-radius:7px; background:#f8f9f4; text-align:left; color:var(--ink); font:400 12px var(--display); cursor:pointer; }
+.example-chapters button[aria-pressed=true] { border-color:var(--green); background:#edf2e7; }
+.example-chapters strong { font-weight:500; }
+.example-chapters small { grid-column:2; color:var(--muted); }
+.example-contact-jump { color:#a03d47; margin-top:9px; }
+.example-detail .example-provenance { font-size:11px; line-height:1.6; margin-top:14px; color:var(--muted); }
+.example-download { display:inline-block; margin-top:8px; font-size:12px; color:var(--green); }
+.example-selection-note { font-size:12px; line-height:1.8; color:var(--muted); margin:18px 0; }
+.example-selection-note a { color:var(--green); }
+.recorded-example-compact { display:block; margin-top:18px; }
+.recorded-example-compact .example-detail { padding:20px; }
+.profile-replay .example-player video { margin:0; border-radius:0; }
+.recorded-example-compact .example-detail h4 { font-size:21px; }
+.example-model-selector button:focus-visible,.example-chapters button:focus-visible,.example-compare:focus-visible,.example-contact-jump:focus-visible { outline:3px solid var(--green); outline-offset:3px; }
+@media(max-width:1000px) { .example-model-selector { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+@media(max-width:760px) {
+ .recorded-example { display:block; }
+ .example-model-selector button { font-size:12px; flex-direction:column; padding:12px 4px; }
+ .example-heading { align-items:flex-start; }
+ .example-heading>.micro { font-size:10px; }
+ .example-chapters button { grid-template-columns:90px 1fr; }
+}

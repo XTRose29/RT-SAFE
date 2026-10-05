@@ -1,9 +1,10 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import rawData from "./data.json";
+import { ModelExamples } from "./model-examples";
 import { BehaviorProfiles } from "./behavior-profiles";
 import { ModelLogo } from "./model-logos";
-import { NYCTiming, NYCComparison, NYCEnvironment, NYCSceneGallery } from "./nyc-scenes";
+import { NYCTiming, NYCEnvironment, NYCSceneGallery } from "./nyc-scenes";
 
 declare const __RT_SAFE_REPOSITORY_URL__: string;
 const repositoryUrl = typeof __RT_SAFE_REPOSITORY_URL__ !== "undefined" ? __RT_SAFE_REPOSITORY_URL__ : "";
@@ -769,9 +770,9 @@ export default function RTsafe() {
             n="03"
             label="RECORDED MODEL BEHAVIOR"
             title={<>How do frontier agents perform?</>}
-            description="Follow GPT-6 Astra and GPT-5.6 Sol through the same final route segment. See the original first-person observations and action snapshots, with recorded decisions, timing, and collision reports."
+            description="Choose any of the eight models to watch a recorded behavior excerpt. Explore its original observations, actions, response times, and collision reports."
           />
-          <NYCComparison />
+          <ModelExamples />
           <div className="action-space">
             <span className="micro">16 ACTIONS, ONE SHARED INTERFACE</span>
             <div>

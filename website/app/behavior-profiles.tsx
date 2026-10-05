@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ModelLogo } from "./model-logos";
 import data from "./behavior.json";
+import { RecordedExample, modelExamples } from "./model-examples";
 const cards = [
   { name: "Inkling", color: "#518b37", title: "Longer moves, fewer decisions.", text: "Despite a 26.0 s response latency, Inkling uses the fewest decisions per episode: 38.5. Its collisions are comparable to much faster models." },
   { name: "Grok", color: "#c23b52", title: "Slow responses add exposure.", text: "Grok combines long response times with shorter commanded moves than Inkling. It records the most collisions: 59.5 per episode." },
@@ -60,17 +61,15 @@ function ProfileCard({ card }: { card: typeof cards[number] }) {
       ].map(([label,value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
       <p>Real-time · all difficulties · provider-default reasoning · 108 episodes. Source: manuscript Figures 3 & 7 and Appendix B.3.</p>
     </details>
-    {["Astra", "Sol"].includes(card.name) && <div className="profile-replay">
+    <div className="profile-replay">
       <button className="light-button" aria-expanded={replay} onClick={() => setReplay(!replay)}>{replay ? "Close recorded example" : `▶ Watch ${card.name} example`}</button>
-      {replay && <><video key={card.name} controls muted playsInline preload="metadata" poster={`media/recorded/${card.name.toLowerCase()}.webp`} aria-label={`${card.name} recorded example`}><source src={`media/recorded/${card.name.toLowerCase()}.mp4?v=silent-motion-2`} type="video/mp4" /></video>
-        <p>One final-subgoal segment · RT15 · easy · seed 0 · low reasoning · 6× snapshot replay. This example uses a different condition from the aggregate profile above. Collision alerts follow the original logs.</p>
-        <a href="#examples">Compare Astra and Sol side by side ↗</a></>}
-    </div>}
+      {replay && <RecordedExample model={modelExamples.find(m => m.name === card.name)!} compact />}
+    </div>
   </article>;
 }
 export function BehaviorProfiles() {
   return <section className="behavior-profiles" aria-labelledby="behavior-heading">
-    <div className="table-heading"><div><h3 id="behavior-heading">What lies behind the leaderboard?</h3><p>Tap or hover over a radar axis to inspect its value. Open a model’s detailed results, or watch an Astra / Sol example.</p></div><span className="pill">Paper Figures 3 & 7</span></div>
+    <div className="table-heading"><div><h3 id="behavior-heading">What lies behind the leaderboard?</h3><p>Tap or hover over a radar axis to inspect its value. Open a model’s detailed results, or watch a recorded example for any model.</p></div><span className="pill">Paper Figures 3 & 7</span></div>
     <div className="behavior-grid">{cards.map(card => <ProfileCard key={card.name} card={card} />)}</div>
     <p className="behavior-note">All difficulties, provider-default reasoning, 108 episodes per model. Each axis is normalized across all eight models. Move length means commanded distance. Waiting excludes inference time. Radar area is not an overall safety score. <a href="data/behavior.json" download>Download profile data ↗</a></p>
   </section>;
