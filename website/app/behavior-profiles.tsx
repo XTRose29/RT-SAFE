@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ModelLogo } from "./model-logos";
 import data from "./behavior.json";
 const cards = [
@@ -10,14 +11,67 @@ const cards = [
   { name: "Gemini", color: "#b88b18", title: "Shorter moves and frequent turns.", text: "Gemini favors relatively short commanded moves and frequent turns. Its mean response latency is 11.2 s, with 27.7 collisions per episode." },
   { name: "DeepSeek", color: "#ba6f3e", title: "Slow responses, high collision count.", text: "DeepSeek averages 40.4 s per response and 51.4 collisions per episode. Its commanded moves are longer than Grok’s, but shorter than Inkling’s." },
 ];
+const axisMetrics = [
+  { label: "Collisions / episode", unit: "contacts", note: "Mean recorded contacts per episode, including unsuccessful episodes. Fewer contacts extend the radar outward." },
+  { label: "Response latency", unit: "s / decision", note: "Time spent waiting for a model response. Faster responses extend the radar outward." },
+  { label: "Decisions / episode", unit: "decisions", note: "Mean decisions made during an episode. Fewer decisions extend the radar outward." },
+  { label: "Commanded move length", unit: "m / move", note: "Requested movement distance, averaged over movement actions. This is not realized route progress." },
+  { label: "Wait actions", unit: "% of actions", note: "Explicit wait actions as a share of action choices. Time spent on inference is excluded." },
+  { label: "Turn actions", unit: "% of actions", note: "Turn actions as a share of all action choices." },
+];
+function ProfileCard({ card }: { card: typeof cards[number] }) {
+  const [axis, setAxis] = useState(0);
+  const [replay, setReplay] = useState(false);
+  const profile = data.profiles.find(p => p.name === card.name)!;
+  const raw = [profile.average.collisions, profile.average.latency, profile.average.decisions, profile.raw[3], profile.raw[4] * 100, profile.raw[5] * 100];
+  const point = (i: number, r: number) => [210 + Math.sin(i * Math.PI / 3) * r, 180 - Math.cos(i * Math.PI / 3) * r];
+  const polygon = (values: number[]) => values.map((v, i) => point(i, v * 112).join(",")).join(" ");
+  const metric = axisMetrics[axis];
+  return <article className="behavior-card">
+    <header><span className="behavior-model" style={{color:card.color}}><ModelLogo name={card.name} />{card.name}</span><h4>{card.title}</h4></header>
+    <svg className="interactive-radar" viewBox="0 0 420 350" role="group" aria-label={`${card.name} interactive behavior profile`}>
+      {[.25,.5,.75,1].map(r => <polygon key={r} points={polygon(Array(6).fill(r))} fill="none" stroke="#d7dfdf" />)}
+      {data.axes.map((label, i) => { const [x,y] = point(i,112); return <line key={label} x1="210" y1="180" x2={x} y2={y} stroke="#d7dfdf" />; })}
+      <polygon points={polygon(profile.values)} fill={card.color} fillOpacity=".16" stroke={card.color} strokeWidth="2.5" />
+      {data.axes.map((label, i) => {
+        const [x,y] = point(i,profile.values[i]*112);
+        const [tx,ty] = point(i,143);
+        const words = label.split(" "); const half = Math.ceil(words.length/2);
+        return <g key={label} className="radar-axis" role="button" tabIndex={0} aria-label={`${label}: ${raw[i].toFixed(i > 2 ? 2 : 1)} ${axisMetrics[i].unit}`} aria-pressed={axis===i}
+          onMouseEnter={() => setAxis(i)} onFocus={() => setAxis(i)} onClick={() => setAxis(i)} onKeyDown={e => { if(e.key === "Enter" || e.key === " "){e.preventDefault();setAxis(i);} }}>
+          <line x1={x} y1={y} x2={tx} y2={ty} stroke="transparent" strokeWidth="26" />
+          <circle cx={x} cy={y} r="18" fill="transparent" />
+          <circle cx={x} cy={y} r={axis===i ? 6 : 3} fill={card.color} stroke="white" strokeWidth="2" />
+          <text x={tx} y={ty-5} textAnchor="middle" fill={axis===i ? card.color : "#41534e"} fontSize="12" fontWeight={axis===i ? "700" : "400"}>
+            <tspan x={tx}>{words.slice(0,half).join(" ")}</tspan><tspan x={tx} dy="16">{words.slice(half).join(" ")}</tspan>
+          </text>
+        </g>;
+      })}
+    </svg>
+    <div className="radar-readout" aria-live="polite"><span>{metric.label}</span><strong style={{color:card.color}}>{raw[axis].toFixed(axis > 2 ? 2 : 1)} <small>{metric.unit}</small></strong><p>{metric.note}</p></div>
+    <p>{card.text}</p>
+    <details className="profile-details"><summary>Explore {card.name} results</summary>
+      <dl>{[
+        ...axisMetrics.map((m,i) => [m.label, `${raw[i].toFixed(i>2 ? 2 : 1)} ${m.unit}`]),
+        ["Success rate", `${profile.average.success.toFixed(1)}%`],
+        ["Safe success rate", `${profile.average.safeSuccess.toFixed(1)}%`],
+        ["SPL", profile.average.spl.toFixed(3)],
+        ["Contacts during inference", `${profile.average.passiveShare.toFixed(1)}%`],
+      ].map(([label,value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+      <p>Real-time · all difficulties · provider-default reasoning · 108 episodes. Source: manuscript Figures 3 & 7 and Appendix B.3.</p>
+    </details>
+    {["Astra", "Sol"].includes(card.name) && <div className="profile-replay">
+      <button className="light-button" aria-expanded={replay} onClick={() => setReplay(!replay)}>{replay ? "Close recorded example" : `▶ Watch ${card.name} example`}</button>
+      {replay && <><video key={card.name} controls muted playsInline preload="metadata" poster={`media/recorded/${card.name.toLowerCase()}.webp`} aria-label={`${card.name} recorded example`}><source src={`media/recorded/${card.name.toLowerCase()}.mp4?v=silent-motion-2`} type="video/mp4" /></video>
+        <p>One final-subgoal segment · RT15 · easy · seed 0 · low reasoning · 6× snapshot replay. This example uses a different condition from the aggregate profile above. Collision alerts follow the original logs.</p>
+        <a href="#examples">Compare Astra and Sol side by side ↗</a></>}
+    </div>}
+  </article>;
+}
 export function BehaviorProfiles() {
   return <section className="behavior-profiles" aria-labelledby="behavior-heading">
-    <div className="table-heading"><div><h3 id="behavior-heading">What lies behind the leaderboard?</h3><p>Navigation choices shape how long an agent is exposed to a moving world.</p></div><span className="pill">Paper Figures 3 & 7</span></div>
-    <div className="behavior-grid">{cards.map(card => <article className="behavior-card" key={card.name}>
-      <header><span className="behavior-model" style={{color:card.color}}><ModelLogo name={card.name} />{card.name}</span><h4>{card.title}</h4></header>
-      <img src={`media/behavior/${card.name.toLowerCase()}.svg`} alt={`${card.name}: ${data.axes.join(", ")}; values normalized across all eight models.`} width="900" height="900" loading="lazy" />
-      <p>{card.text}</p>
-    </article>)}</div>
+    <div className="table-heading"><div><h3 id="behavior-heading">What lies behind the leaderboard?</h3><p>Tap or hover over a radar axis to inspect its value. Open a model’s detailed results, or watch an Astra / Sol example.</p></div><span className="pill">Paper Figures 3 & 7</span></div>
+    <div className="behavior-grid">{cards.map(card => <ProfileCard key={card.name} card={card} />)}</div>
     <p className="behavior-note">All difficulties, provider-default reasoning, 108 episodes per model. Each axis is normalized across all eight models. Move length means commanded distance. Waiting excludes inference time. Radar area is not an overall safety score. <a href="data/behavior.json" download>Download profile data ↗</a></p>
   </section>;
 }

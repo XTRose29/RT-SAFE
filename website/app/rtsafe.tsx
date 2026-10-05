@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import rawData from "./data.json";
 import { BehaviorProfiles } from "./behavior-profiles";
 import { ModelLogo } from "./model-logos";
-import { NYCHero, NYCTiming, NYCComparison, NYCEnvironment, NYCSceneGallery } from "./nyc-scenes";
+import { NYCTiming, NYCComparison, NYCEnvironment, NYCSceneGallery } from "./nyc-scenes";
 
 declare const __RT_SAFE_REPOSITORY_URL__: string;
 const repositoryUrl = typeof __RT_SAFE_REPOSITORY_URL__ !== "undefined" ? __RT_SAFE_REPOSITORY_URL__ : "";
@@ -12,7 +12,7 @@ type Scope = "realtime" | "static" | "average";
 type Metric = {
   success: number;
   safeSuccess: number;
-  spl: number;
+  spl?: number;
   collisions: number;
   latency: number;
   decisions: number;
@@ -28,13 +28,7 @@ type Model = {
   realtime: Metric;
   static: Metric;
   average: Metric;
-  effort: {
-    label: string;
-    collisions: number;
-    latency: number;
-    active: number;
-    passive: number;
-  }[];
+  effort: (Metric & { label: string; terminations: string; active: number; passive: number })[];
 };
 const models = rawData.models as Model[];
 const fmt = (n: number | undefined, d = 1) =>
@@ -68,6 +62,9 @@ function SectionHead({
 }
 function Results() {
   const [scope, setScope] = useState<Scope>("average");
+  const [effort, setEffort] = useState("default");
+  const scoreFor = (m: Model): Metric => effort === "default" ? m[scope] : m.effort[Number(effort)];
+  const effortLabel = (m: Model) => effort === "default" ? `Provider default · ${m.effort[m.name === "Sol" ? 0 : 1].label}` : `${["Lower", "Middle", "Higher"][Number(effort)]} · ${m.effort[Number(effort)].label}${Number(effort) === (m.name === "Sol" ? 0 : 1) ? " (default)" : ""}`;
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState<keyof Metric>("collisions");
   const [asc, setAsc] = useState(true);
@@ -82,12 +79,12 @@ function Results() {
         )
         .sort(
           (a, b) =>
-            ((a[scope][sort] ?? 0) - (b[scope][sort] ?? 0)) * (asc ? 1 : -1),
+            ((scoreFor(a)[sort] ?? 0) - (scoreFor(b)[sort] ?? 0)) * (asc ? 1 : -1),
         ),
-    [scope, search, sort, asc],
+    [scope, effort, search, sort, asc],
   );
   const model = models.find((m) => m.name === selected)!;
-  const score = model[scope];
+  const score = scoreFor(model);
   const changeSort = (key: keyof Metric) => {
     if (key === sort) setAsc(!asc);
     else {
@@ -117,12 +114,20 @@ function Results() {
             <button
               key={key}
               aria-pressed={scope === key}
-              onClick={() => setScope(key)}
+              onClick={() => { setScope(key); setEffort("default"); }}
             >
               {label}
             </button>
           ))}
         </div>
+        <label className="effort-filter">Reasoning effort
+          <select aria-label="Leaderboard reasoning effort" value={effort} onChange={e => { setEffort(e.target.value); if(e.target.value !== "default") { setScope("realtime"); if(sort === "spl") { setSort("collisions"); setAsc(true); } } }}>
+            <option value="default">Provider default</option>
+            <option value="0">Lower</option>
+            <option value="1">Middle</option>
+            <option value="2">Higher</option>
+          </select>
+        </label>
         <label className="search">
           <span aria-hidden="true">⌕</span>
           <input
@@ -132,7 +137,10 @@ function Results() {
             aria-label="Filter models"
           />
         </label>
-        <a className="text-link csv-link" href="data/results.csv" download>
+        <a className="text-link csv-link" href={`data:text/csv;charset=utf-8,${encodeURIComponent([
+          ["Model", "Condition", "Reasoning", ...cols.map(c => c[0])].join(","),
+          ...list.map(m => [m.name, scope, effortLabel(m), ...cols.map(([key]) => scoreFor(m)[key] ?? "")].map(v => '"' + String(v).replaceAll('"', '""') + '"').join(","))
+        ].join("\n"))}`} download={`rt-safe-${scope}-${effort === "default" ? "default" : ["lower", "middle", "higher"][Number(effort)]}.csv`}>
           CSV <span>↓</span>
         </a>
       </div>
@@ -140,11 +148,12 @@ function Results() {
         <span>
           <i className="live-dot" />
           {scope === "average"
-            ? "108 episodes per model · Easy, medium & hard · Real-time"
-            : "36 matched routes per model · Hard · Provider-default reasoning"}
+            ? "108 episodes per model · Easy, medium & hard · Real-time · Provider-default reasoning"
+            : `36 episodes per model · Hard · ${scope === "static" ? "Static" : "Real-time"} · ${effort === "default" ? "Provider-default" : ["Lower", "Middle", "Higher"][Number(effort)]} reasoning`}
         </span>
         <span>{list.length} models</span>
       </div>
+      <p className="effort-context">Effort comparisons use the same 36 hard, real-time routes. Lower / Middle / Higher are positions within each provider’s tested settings; actual setting names appear under each model.{effort !== "default" && " SPL was not reported in the effort table (—). Source: manuscript Table 15."}</p>
       <div className="results-workspace">
         <div
           className="table-scroll"
@@ -168,7 +177,7 @@ function Results() {
                       sort === key ? (asc ? "ascending" : "descending") : "none"
                     }
                   >
-                    <button onClick={() => changeSort(key)}>
+                    <button disabled={key === "spl" && effort !== "default"} onClick={() => changeSort(key)}>
                       {label}
                       <span>
                         {sort === key ? (asc ? "↑" : "↓") : direction}
@@ -192,7 +201,7 @@ function Results() {
                       <ModelLogo name={m.name} />
                       <span>
                         {m.name}
-                        <small>{m.provider}</small>
+                        <small>{m.provider}</small><small className="effort-badge">{effortLabel(m)}</small>
                       </span>
                     </button>
                   </th>
@@ -208,7 +217,7 @@ function Results() {
                       }
                     >
                       {fmt(
-                        m[scope][key],
+                        scoreFor(m)[key],
                         key === "spl" ? 3 : key === "collisions" ? 2 : 1,
                       )}
                       {["success", "safeSuccess"].includes(key) && (
@@ -233,7 +242,7 @@ function Results() {
         <aside className="model-inspector" aria-live="polite">
           <span className="micro">MODEL IN FOCUS</span>
           <h3>{model.name}</h3>
-          <p>{model.fullName}</p>
+          <p>{model.fullName}</p><p className="effort-badge">{effortLabel(model)}</p>
           <div className="model-score">
             <strong>{fmt(score.collisions, 2)}</strong>
             <span>collisions / episode</span>
@@ -280,7 +289,7 @@ function Results() {
             </p>
           )}
           <div className="model-compare">
-            <span>Static → Real-time</span>
+            <span>Provider default · Static → Real-time</span>
             <strong>
               {(model.realtime.collisions / model.static.collisions).toFixed(1)}
               ×
@@ -341,7 +350,7 @@ function Reasoning() {
                   <b style={{ flex: 1 }} />
                 </div>
               </div>
-              <strong>{["Lower", "Medium", "Higher"][i]}</strong>
+              <strong>{["Lower", "Middle", "Higher"][i]}</strong><small>{e.label}{i === (m.name === "Sol" ? 0 : 1) ? " · default" : ""}</small>
               <small>{fmt(e.latency)} s response</small>
             </div>
           ))}
@@ -358,7 +367,7 @@ function Reasoning() {
         </div>
         <p className="fineprint">
           Effort levels are provider-specific. Sol’s default is Lower; the
-          others default to Medium. Bar heights use the same 0–100 scale for
+          others default to the middle tested setting. Bar heights use the same 0–100 scale for
           every model.
         </p>
       </div>
@@ -551,6 +560,48 @@ export default function RTsafe() {
       </header>
       <main id="top">
         <section className="hero">
+          <div id="demo" className="top-demo" aria-label="Watch the RT-SAFE demo">
+          <div className="film-toolbar">
+            <div className="segmented" aria-label="Film version">
+              <button
+                aria-pressed={film === "nyc-90s"}
+                onClick={() => setFilm("nyc-90s")}
+              >
+                NYC project film · 1:30
+              </button>
+              <button
+                aria-pressed={film === "original-comparison"}
+                onClick={() => setFilm("original-comparison")}
+              >
+                Astra vs. Sol · 0:44
+              </button>
+            </div>
+            <span className="micro">RT–SAFE / PROJECT PRESENTATION</span>
+          </div>
+          <div className="film-shell">
+            <video
+              key={film}
+              ref={videoRef}
+              muted
+              controls
+              playsInline
+              preload="none"
+              poster={film === "nyc-90s" ? "media/nyc/film-poster.webp" : "media/recorded/comparison-poster.webp"}
+              aria-label="RT-SAFE project film"
+            >
+              <source src={film === "nyc-90s" ? "media/rt-safe-video.mp4" : "media/rt-safe-original-comparison.mp4?v=silent-motion-2"} type="video/mp4" />
+              Your browser does not support video. Download the MP4 below.
+            </video>
+          </div>
+          <div className="film-footer">
+            <span>{film === "nyc-90s" ? "1920 × 1080 · Silent" : "1920 × 1080 · 6× playback"}</span>
+            <div>
+              <a href={film === "nyc-90s" ? "media/rt-safe-video.mp4" : "media/rt-safe-original-comparison.mp4?v=silent-motion-2"} download>
+                Download demo <span>↓</span>
+              </a>
+            </div>
+          </div>
+          </div>
           <div className="eyebrow">
             <i /> EMBODIED AI · REAL-TIME SAFETY
           </div>
@@ -567,41 +618,11 @@ export default function RTsafe() {
             </p>
             <div className="hero-actions">
               <button className="light-button" onClick={watch}>
-                <span className="play-icon">▶</span> Watch the film
+                <span className="play-icon">▶</span> Watch demo
               </button>
               <a className="button" href="#results">
                 Explore the results <Arrow />
               </a>
-            </div>
-          </div>
-          <div className="hero-scene">
-            <NYCHero />
-            <div className="scene-top">
-              <span>
-                <i /> THE WORLD IS STILL MOVING
-              </span>
-              <span>RT–SAFE / EMBODIED SAFETY</span>
-            </div>
-            <div className="scene-title">
-              A decision takes seconds.
-              <br />
-              <span>The world only needs one.</span>
-            </div>
-            <button className="scene-preview" onClick={watch}>
-              <img
-                src="media/nyc/high_follow.webp"
-                alt="Elevated third-person view in the NYC scene"
-                width="720"
-                height="640"
-              />
-              <span className="scene-play">▶</span>
-              <span>
-                Inside the benchmark <Arrow diagonal />
-              </span>
-            </button>
-            <div className="scene-bottom">
-              <span>Observe → Reason → Act</span>
-              <span>Madison Square Park · Unreal Engine</span>
             </div>
           </div>
         </section>
@@ -799,63 +820,9 @@ export default function RTsafe() {
           <Reasoning />
           <Training />
         </section>
-        <section id="demo" className="section demo-section">
-          <SectionHead
-            n="05"
-            label="THE PROJECT FILM"
-            title={
-              <>
-                Safety lives
-                <br />
-                between observation and action.
-              </>
-            }
-            description="A conference-ready walkthrough of the motivation, benchmark, recorded agent behavior, and main findings."
-          />
-          <div className="film-toolbar">
-            <div className="segmented" aria-label="Film version">
-              <button
-                aria-pressed={film === "nyc-90s"}
-                onClick={() => setFilm("nyc-90s")}
-              >
-                NYC project film · 1:30
-              </button>
-              <button
-                aria-pressed={film === "original-comparison"}
-                onClick={() => setFilm("original-comparison")}
-              >
-                Astra vs. Sol · 0:44
-              </button>
-            </div>
-            <span className="micro">RT–SAFE / PROJECT PRESENTATION</span>
-          </div>
-          <div className="film-shell">
-            <video
-              key={film}
-              ref={videoRef}
-              muted
-              controls
-              playsInline
-              preload="none"
-              poster={film === "nyc-90s" ? "media/nyc/film-poster.webp" : "media/recorded/comparison-poster.webp"}
-              aria-label="RT-SAFE project film"
-            >
-              <source src={film === "nyc-90s" ? "media/rt-safe-video.mp4" : "media/rt-safe-original-comparison.mp4?v=silent-motion-2"} type="video/mp4" />
-              Your browser does not support video. Download the MP4 below.
-            </video>
-          </div>
-          <div className="film-footer">
-            <span>{film === "nyc-90s" ? "1920 × 1080 · Silent" : "1920 × 1080 · 6× playback"}</span>
-            <div>
-              <a href={film === "nyc-90s" ? "media/rt-safe-video.mp4" : "media/rt-safe-original-comparison.mp4?v=silent-motion-2"} download>
-                Download film <span>↓</span>
-              </a>
-            </div>
-          </div>
-        </section>
         <section id="resources" className="section resources-section">
           <SectionHead
-            n="06"
+            n="05"
             label="GO DEEPER"
             title={<>Built to be inspected.</>}
             description="Read the protocol, download the results, and trace the examples back to their recorded decisions."

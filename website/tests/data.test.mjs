@@ -83,3 +83,35 @@ test("subtitle timeline stays within the film duration", () => {
   }
   assert.ok(Math.abs(t.duration - end) < 0.001);
 });
+
+test("effort comparisons retain hard-route denominators and provider defaults", () => {
+  for (const model of data.models) {
+    const defaultEffort = model.effort[model.name === "Sol" ? 0 : 1];
+    for (const key of ["success", "safeSuccess", "collisions", "latency", "decisions"]) {
+      assert.ok(Math.abs(defaultEffort[key] - model.realtime[key]) <= .051, `${model.name}: default ${key}`);
+    }
+    for (const effort of model.effort) {
+      assert.equal(effort.spl, undefined, "unreported SPL must remain absent");
+      for (const key of ["success", "safeSuccess"]) {
+        const episodes = effort[key] * 36 / 100;
+        assert.ok(Math.abs(episodes - Math.round(episodes)) < .02, `${model.name} ${effort.label}: 36-episode denominator`);
+      }
+      assert.ok(Math.abs(effort.active + effort.passive - effort.collisions) < .11, "independent rounding of collision components");
+    }
+  }
+});
+
+test("radar raw values correspond to the displayed aggregate metrics", () => {
+  const behavior = read("app/behavior.json");
+  for (const p of behavior.profiles) {
+    const model = data.models.find(m => m.name === p.name);
+    assert.ok(model);
+    for (const [i, key] of ["collisions", "latency", "decisions"].entries()) {
+      assert.ok(Math.abs(1 / p.raw[i] - model.average[key]) <= .051);
+    }
+    assert.ok(p.raw[3] > 0 && p.raw[3] <= 4);
+    assert.ok(p.raw[4] >= 0 && p.raw[4] <= 1);
+    assert.ok(p.raw[5] >= 0 && p.raw[5] <= 1);
+    assert.equal(p.values.length, 6);
+  }
+});

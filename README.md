@@ -92,7 +92,9 @@ Hard real-time condition, 36 routes per model, ordered by mean collisions. Safe 
 
 [Download CSV](website/public/data/results.csv) · [Full data](website/public/data/results.json) · [Methodology](docs/PROTOCOL.md)
 
-The interactive website also includes static comparisons, all-difficulty summaries and reasoning-effort ablations. The offline BC/RL table is a separate experiment with a fixed three-second decision delay and 16 held-out tasks.
+The demo is the first content below the navigation. The benchmark explorer includes static comparisons, all-difficulty summaries, and Lower / Middle / Higher reasoning settings on the same 36 hard real-time routes. Provider setting names remain visible, and the CSV export follows the selected condition and search. Missing effort-table SPL values are shown as a dash.
+
+Behavior radars support pointer, touch, and keyboard inspection of exact metrics. Each model has expandable results; Astra and Sol also include silent recorded examples, labeled with their separate easy/low-reasoning condition. The offline BC/RL table is a separate experiment with a fixed three-second decision delay and 16 held-out tasks.
 
 ## Reproducibility and release scope
 
