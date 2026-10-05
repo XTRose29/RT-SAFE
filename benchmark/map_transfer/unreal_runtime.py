@@ -18,6 +18,7 @@ from benchmark.map_transfer.contract import (
     EventLedger,
     point_in_polygon,
     local_to_world,
+    hit_blocks_move,
 )
 from benchmark.map_transfer.manifest import validate_manifest
 from benchmark.map_transfer.hazards import HazardEffects
@@ -695,7 +696,15 @@ def _on_hit(self_actor, other_actor, normal_impulse, hit):
     if id_ in s["vehicles"]:
         terminate("vehicle_collision")
         return
-    if s["command"] and s["command"]["type"] == "move_to":
+    if (
+        s["command"]
+        and s["command"]["type"] == "move_to"
+        and hit_blocks_move(
+            _xyz(s["agent"].get_actor_location()),
+            s["command"]["target"],
+            _xyz(t[6]),
+        )
+    ):
         _finish_command("blocked")
 
 

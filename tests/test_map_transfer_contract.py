@@ -53,6 +53,18 @@ def test_collision_requires_hit_and_deduplicates_until_separation():
         )
 
 
+def test_contact_allows_escape_but_stops_movement_into_the_other_body():
+    from benchmark.map_transfer.contract import hit_blocks_move
+
+    normal = (-1, 0, 0)  # person touching the agent from the +X side
+    assert hit_blocks_move((0, 0, 0), (400, 0, 0), normal)
+    assert hit_blocks_move((0, 0, 0), (200, -200, 0), normal)
+    assert not hit_blocks_move((0, 0, 0), (-400, 0, 0), normal)
+    assert not hit_blocks_move((0, 0, 0), (0, -400, 0), normal)
+    assert not hit_blocks_move((0, 0, 0), (0, 400, 0), normal)
+    assert not hit_blocks_move((0, 0, 0), (0, 0, 0), normal)
+
+
 def test_arrival_with_hazard_is_not_safe_success():
     ledger = EventLedger()
     assert not ledger.safe_success(False)
@@ -164,6 +176,63 @@ def test_visual_policy_gets_goal_and_feedback_without_scene_oracle():
     prompt = policy_prompt(state, {"goal_cm": [0, -1000, 0]}, [])
     assert '"goal_bearing_deg": -90.0' in prompt
     assert "hidden_person" not in prompt and "invisible_signal" not in prompt
+
+
+@pytest.mark.parametrize(
+    "finish, content",
+    [
+        ("length", '{"action_type":"move_to"'),
+        ("stop", "invalid JSON"),
+    ],
+)
+def test_rejected_policy_response_retains_usage_without_accepting_action(
+    tmp_path, finish, content
+):
+    import json
+    from types import SimpleNamespace
+    from benchmark.map_transfer.policy import BudgetedHaikuPolicy, recorded_decision
+
+    policy = object.__new__(BudgetedHaikuPolicy)
+    policy.calls, policy.max_calls, policy.spent, policy.budget = 0, 4, 0.0, 0.25
+    policy.pricing = {"prompt": 0.000001, "completion": 0.000005}
+    policy._key = "test-only-placeholder"
+    response = {
+        "model": policy.MODEL,
+        "usage": {"cost": 0.001, "prompt_tokens": 100},
+        "choices": [{"finish_reason": finish, "message": {"content": content}}],
+    }
+    policy.session = SimpleNamespace(
+        post=lambda *a, **kw: SimpleNamespace(ok=True, json=lambda: response)
+    )
+    with pytest.raises((RuntimeError, ValueError)):
+        recorded_decision(policy, b"image", "goal", tmp_path, 0)
+    assert not (tmp_path / "policy-000.json").exists()
+    rejected = json.loads((tmp_path / "policy-000-rejected.json").read_text())
+    usage = json.loads((tmp_path / "model-usage.json").read_text())
+    assert rejected["accepted"] is False and rejected["response_text"] == content
+    assert usage["model_calls"] == 1 and usage["model_cost_usd"] == 0.001
+    assert usage["usage_complete"] is True
+
+
+def test_transport_failure_marks_model_usage_incomplete(tmp_path):
+    import json
+    from types import SimpleNamespace
+    from benchmark.map_transfer.policy import BudgetedHaikuPolicy, recorded_decision
+
+    policy = object.__new__(BudgetedHaikuPolicy)
+    policy.calls, policy.max_calls, policy.spent, policy.budget = 0, 4, 0.0, 0.25
+    policy.pricing = {"prompt": 0.000001, "completion": 0.000005}
+    policy._key = "test-only-placeholder"
+
+    def timeout(*args, **kwargs):
+        raise TimeoutError("No response")
+
+    policy.session = SimpleNamespace(post=timeout)
+    with pytest.raises(TimeoutError):
+        recorded_decision(policy, b"image", "goal", tmp_path, 0)
+    usage = json.loads((tmp_path / "model-usage.json").read_text())
+    assert usage["model_calls"] == 1 and usage["usage_complete"] is False
+    assert not list(tmp_path.glob("policy-*.json"))
 
 
 def test_hazard_consequences_restore_speed_and_use_simulation_time():

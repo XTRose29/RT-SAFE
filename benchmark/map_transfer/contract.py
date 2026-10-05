@@ -109,6 +109,23 @@ def local_to_world(
     )
 
 
+def hit_blocks_move(position, target, normal) -> bool:
+    """A repeated hit must not cancel a command that escapes the contact.
+
+    Unreal's impact normal points out of the other body toward this actor.
+    Native physics still resolves every contact; this only decides whether
+    the high-level movement command should finish early as blocked.
+    """
+    dx, dy = target[0] - position[0], target[1] - position[1]
+    distance = math.hypot(dx, dy)
+    horizontal_normal = math.hypot(normal[0], normal[1])
+    if distance < 1e-6:
+        return False
+    if horizontal_normal < 1e-6:
+        return True
+    return (dx * normal[0] + dy * normal[1]) < -0.05 * distance * horizontal_normal
+
+
 class EventLedger:
     """Append engine evidence once per contact/overlap entry.
 

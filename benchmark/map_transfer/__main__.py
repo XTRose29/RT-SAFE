@@ -189,7 +189,7 @@ def rollout(client, manifest, args):
         reload_source=True,
     ) as episode:
         if policy:
-            from .policy import SYSTEM_PROMPT, policy_prompt
+            from .policy import SYSTEM_PROMPT, policy_prompt, recorded_decision
 
             (args.output / "system-prompt.txt").write_text(SYSTEM_PROMPT)
         for index in range(args.max_decisions):
@@ -198,11 +198,12 @@ def rollout(client, manifest, args):
                 break
             metadata = None
             if policy:
-                action, metadata = policy.decide(
-                    image, policy_prompt(state, episode.task, episode.trace)
-                )
-                (args.output / f"policy-{index:03d}.json").write_text(
-                    json.dumps(metadata, indent=2)
+                action, metadata = recorded_decision(
+                    policy,
+                    image,
+                    policy_prompt(state, episode.task, episode.trace),
+                    args.output,
+                    index,
                 )
                 if client.call("status")["phase"] == "terminal":
                     break

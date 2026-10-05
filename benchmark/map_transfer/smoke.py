@@ -32,6 +32,10 @@ def validate_suite(summaries: list[dict], delays: dict) -> None:
     assert cases["pedestrian-static"]["safety_events"]["collision"] == 0
     assert cases["pedestrian-park-real"]["passive_collisions"] == 1
     assert cases["pedestrian-park-static"]["safety_events"]["collision"] == 0
+    for name in ("pedestrian-escape-side", "pedestrian-escape-back"):
+        assert cases[name]["passive_collisions"] == 1
+        assert cases[name]["active_collisions"] == 0
+        assert cases[name]["escape_displacement_cm"] > 350
     assert cases["vehicle-real"]["passive_collisions"] == 1
     assert cases["vehicle-real"]["terminal_reason"] == "vehicle_collision"
     assert cases["vehicle-static"]["safety_events"]["collision"] == 0
@@ -102,6 +106,20 @@ def run_suite(client, manifest: dict, output: Path) -> dict:
         ("pedestrian-static", "nyc-sidewalk-pedestrian", "static", [], 0),
         ("pedestrian-park-real", "nyc-park-pedestrian", "realtime", [], 0),
         ("pedestrian-park-static", "nyc-park-pedestrian", "static", [], 0),
+        (
+            "pedestrian-escape-side",
+            "nyc-park-pedestrian",
+            "realtime",
+            [Action("turn_around", "L90")],
+            1,
+        ),
+        (
+            "pedestrian-escape-back",
+            "nyc-park-pedestrian",
+            "realtime",
+            [Action("turn_around", "L90")] * 2,
+            1,
+        ),
         ("vehicle-real", "nyc-road-vehicle-contact", "realtime", [], 0),
         ("vehicle-static", "nyc-road-vehicle-contact", "static", [], 0),
         ("robot-real", "nyc-sidewalk-robot", "realtime", [], 0),
@@ -133,11 +151,19 @@ def run_suite(client, manifest: dict, output: Path) -> dict:
             client, manifest, task, output / name, mode=mode, reload_source=True
         ) as episode:
             episode.observe(0)
+            escape_displacement = None
             if name.startswith(("pedestrian", "vehicle", "robot")) or name in (
                 "falling-real",
                 "falling-static",
             ):
                 delays[name] = episode.wait_inference(8)
+                if name.startswith("pedestrian-escape"):
+                    before = delays[name]["after"]["position_cm"]
+                    for action in prefix + [Action("move_to", "5")] * steps:
+                        state = episode.step(action)
+                    escape_displacement = math.dist(
+                        before[:2], state["position_cm"][:2]
+                    )
             else:
                 for action in prefix + [Action("move_to", "5")] * steps:
                     state = episode.step(action)
@@ -152,6 +178,8 @@ def run_suite(client, manifest: dict, output: Path) -> dict:
                 episode.wait_inference(2)
             episode.observe(1)
             summary = {"case": name, **episode.finish()}
+            if escape_displacement is not None:
+                summary["escape_displacement_cm"] = escape_displacement
             if name == "movable":
                 samples = json.loads((output / name / "trajectory.json").read_text())[
                     "samples"
