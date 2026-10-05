@@ -1,0 +1,17 @@
+{
+  "duration": 60,
+  "frames": 1800,
+  "fps": 30,
+  "size": [
+    1920,
+    1080
+  ],
+  "audioStreams": 0,
+  "subtitleStreams": 0,
+  "rlIncluded": false,
+  "sha256": "14fe884a1d2cf515f2f6b9b7d31499214f4f14d1ed05bb74954790402834912e",
+  "compatibilityAliases": [
+    "rt-safe-nyc-90s.mp4",
+    "rt-safe-nyc-90s-captioned.mp4"
+  ]
+}

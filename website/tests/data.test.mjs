@@ -148,3 +148,24 @@ test("every model has a sourced, continuous default-reasoning video excerpt", ()
     for (const asset of [model.video, model.poster]) assert.ok(existsSync(new URL("../public/" + asset, import.meta.url)), asset);
   }
 });
+
+test("current demo is a continuous 60-second edit with no RL scene", () => {
+  const timeline = read("video/nyc-60s/timeline.json");
+  let frame = 0;
+  assert.equal(timeline.audio, "none");
+  assert.equal(timeline.subtitles, "none");
+  for (const scene of timeline.scenes) {
+    assert.equal(scene.start * timeline.fps, frame);
+    assert.ok(!["learning", "rl", "training"].includes(scene.id));
+    assert.equal(scene.ranges.reduce((sum, cut) => sum + cut.outputFrames, 0), scene.duration * timeline.fps);
+    for (const cut of scene.ranges) {
+      assert.ok(cut.sourceStartFrame >= 0 && cut.sourceEndFrame <= 2550, "Cut reaches the old RL scene");
+      assert.ok(cut.sourceEndFrame > cut.sourceStartFrame);
+      if (scene.id === "examples") assert.equal(cut.outputFrames, cut.sourceEndFrame - cut.sourceStartFrame, "Recorded playback speed must remain accurate");
+    }
+    frame += scene.duration * timeline.fps;
+  }
+  assert.equal(frame, 1800);
+  assert.equal(frame / timeline.fps, timeline.duration);
+  assert.equal(timeline.duration, 60);
+});

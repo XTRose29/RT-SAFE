@@ -1,0 +1,8 @@
+00:00 RT-Safe
+00:03 The real world does not stop
+00:15 Inside the RT-Safe environment
+00:23 How do frontier agents perform?
+00:31 Eight models: performance and behavior
+00:42 Task completion is not enough
+00:47 Static vs. real-time
+00:54 Lower / default / higher reasoning

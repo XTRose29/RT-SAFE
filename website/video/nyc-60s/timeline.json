@@ -1,0 +1,135 @@
+{
+  "title": "RT-Safe: Benchmarking Agent Safety in Real-Time Embodied Environment",
+  "duration": 60,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "audio": "none",
+  "subtitles": "none",
+  "sourceSha256": "ec7cbc0d9ac593091c2cd1fa2e384b198816e7ef65244736326e56b85ae97024",
+  "sourceDuration": 90,
+  "editPolicy": "Recorded agent excerpts retain their labeled 6\u00d7 replay speed. Illustrative scenes and chart animations are retimed. No RL section.",
+  "scenes": [
+    {
+      "id": "title",
+      "chapter": "RT-Safe",
+      "start": 0.0,
+      "duration": 3.0,
+      "ranges": [
+        {
+          "sourceStartFrame": 0,
+          "sourceEndFrame": 90,
+          "outputFrames": 90
+        }
+      ]
+    },
+    {
+      "id": "timing",
+      "chapter": "The real world does not stop",
+      "start": 3.0,
+      "duration": 12.0,
+      "ranges": [
+        {
+          "sourceStartFrame": 90,
+          "sourceEndFrame": 540,
+          "outputFrames": 360
+        }
+      ]
+    },
+    {
+      "id": "environment",
+      "chapter": "Inside the RT-Safe environment",
+      "start": 15.0,
+      "duration": 8.0,
+      "ranges": [
+        {
+          "sourceStartFrame": 540,
+          "sourceEndFrame": 900,
+          "outputFrames": 240
+        }
+      ]
+    },
+    {
+      "id": "examples",
+      "chapter": "How do frontier agents perform?",
+      "start": 23.0,
+      "duration": 8.0,
+      "ranges": [
+        {
+          "sourceStartFrame": 900,
+          "sourceEndFrame": 960,
+          "outputFrames": 60
+        },
+        {
+          "sourceStartFrame": 960,
+          "sourceEndFrame": 1020,
+          "outputFrames": 60
+        },
+        {
+          "sourceStartFrame": 1110,
+          "sourceEndFrame": 1200,
+          "outputFrames": 90
+        },
+        {
+          "sourceStartFrame": 1260,
+          "sourceEndFrame": 1290,
+          "outputFrames": 30
+        }
+      ]
+    },
+    {
+      "id": "behavior",
+      "chapter": "Eight models: performance and behavior",
+      "start": 31.0,
+      "duration": 11.0,
+      "ranges": [
+        {
+          "sourceStartFrame": 1320,
+          "sourceEndFrame": 1740,
+          "outputFrames": 330
+        }
+      ]
+    },
+    {
+      "id": "completion",
+      "chapter": "Task completion is not enough",
+      "start": 42.0,
+      "duration": 5.0,
+      "ranges": [
+        {
+          "sourceStartFrame": 1740,
+          "sourceEndFrame": 1980,
+          "outputFrames": 150
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "chapter": "Static vs. real-time",
+      "start": 47.0,
+      "duration": 7.0,
+      "ranges": [
+        {
+          "sourceStartFrame": 1980,
+          "sourceEndFrame": 2250,
+          "outputFrames": 210
+        }
+      ]
+    },
+    {
+      "id": "reasoning",
+      "chapter": "Lower / default / higher reasoning",
+      "start": 54.0,
+      "duration": 6.0,
+      "ranges": [
+        {
+          "sourceStartFrame": 2250,
+          "sourceEndFrame": 2550,
+          "outputFrames": 180
+        }
+      ]
+    }
+  ],
+  "sourceGitRevision": "9ad2f414ba234a409f2f27856c270ca31831d20d",
+  "sourceRepositoryPath": "website/public/media/rt-safe-video.mp4"
+}

@@ -442,74 +442,10 @@ function Findings() {
     </div>
   );
 }
-function Training() {
-  return (
-    <div className="training">
-      <div>
-        <div className="eyebrow">FROM EVALUATION TO LEARNING</div>
-        <h3>
-          A testbed for
-          <br />
-          safer policies.
-        </h3>
-        <p>
-          RT–SAFE also supplies progress rewards and safety costs for offline
-          reinforcement learning. Reward design changes the balance between
-          arrival, collision avoidance, and route progress.
-        </p>
-        <a
-          className="text-link"
-          href="media/rt-safe-paper.pdf"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Read the training study <Arrow diagonal />
-        </a>
-      </div>
-      <div className="training-results">
-        <div className="chart-header">
-          <span>HELD-OUT MAPS · 16 TASKS</span>
-          <span>Qwen3-VL-4B</span>
-        </div>
-        <table>
-          <caption className="sr-only">Offline training evaluation</caption>
-          <thead>
-            <tr>
-              <th>Method</th>
-              <th>Success ↑</th>
-              <th>Coll. / 100 m ↓</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rawData.rl.map((r) => (
-              <tr key={r.method}>
-                <th>
-                  {r.method === "RL (wander penalty)"
-                    ? "RL · wander penalty"
-                    : r.method === "RL (base reward)"
-                      ? "RL · base reward"
-                      : r.method}
-                </th>
-                <td>{r.success.toFixed(1)}%</td>
-                <td>{r.per100m.toFixed(1)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <p className="fineprint">
-          Separate training study with a fixed 3 s decision delay. Behavior
-          cloning has the lowest collision rate; the wander-penalty policy has
-          the highest completion. This is a different protocol from the
-          eight-model comparison.
-        </p>
-      </div>
-    </div>
-  );
-}
 export default function RTsafe() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [menu, setMenu] = useState(false);
-  const [film, setFilm] = useState<"nyc-90s" | "original-comparison">("nyc-90s");
+  const [film, setFilm] = useState<"nyc-60s" | "original-comparison">("nyc-60s");
   const watch = () => {
     document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
     videoRef.current?.play().catch(() => {});
@@ -564,10 +500,10 @@ export default function RTsafe() {
           <div className="film-toolbar">
             <div className="segmented" aria-label="Film version">
               <button
-                aria-pressed={film === "nyc-90s"}
-                onClick={() => setFilm("nyc-90s")}
+                aria-pressed={film === "nyc-60s"}
+                onClick={() => setFilm("nyc-60s")}
               >
-                NYC project film · 1:30
+                NYC project film · 1:00
               </button>
               <button
                 aria-pressed={film === "original-comparison"}
@@ -586,17 +522,17 @@ export default function RTsafe() {
               controls
               playsInline
               preload="none"
-              poster={film === "nyc-90s" ? "media/nyc/film-poster.webp" : "media/recorded/comparison-poster.webp"}
+              poster={film === "nyc-60s" ? "media/nyc/film-poster.webp" : "media/recorded/comparison-poster.webp"}
               aria-label="RT-SAFE project film"
             >
-              <source src={film === "nyc-90s" ? "media/rt-safe-video.mp4" : "media/rt-safe-original-comparison.mp4?v=silent-motion-2"} type="video/mp4" />
+              <source src={film === "nyc-60s" ? "media/rt-safe-video.mp4?v=60s-no-rl" : "media/rt-safe-original-comparison.mp4?v=silent-motion-2"} type="video/mp4" />
               Your browser does not support video. Download the MP4 below.
             </video>
           </div>
           <div className="film-footer">
-            <span>{film === "nyc-90s" ? "1920 × 1080 · Silent" : "1920 × 1080 · 6× playback"}</span>
+            <span>{film === "nyc-60s" ? "1920 × 1080 · Silent" : "1920 × 1080 · 6× playback"}</span>
             <div>
-              <a href={film === "nyc-90s" ? "media/rt-safe-video.mp4" : "media/rt-safe-original-comparison.mp4?v=silent-motion-2"} download>
+              <a href={film === "nyc-60s" ? "media/rt-safe-video.mp4" : "media/rt-safe-original-comparison.mp4?v=silent-motion-2"} download>
                 Download demo <span>↓</span>
               </a>
             </div>
@@ -817,7 +753,6 @@ export default function RTsafe() {
           <Results />
           <Findings />
           <Reasoning />
-          <Training />
         </section>
         <section id="resources" className="section resources-section">
           <SectionHead
