@@ -20,7 +20,7 @@ GitHub Actions builds and publishes the website from `website/`.
 
 The repository can be shared as a partial source release when its scope is stated clearly. It should not be described as a complete end-to-end reproduction package while the runtime and training materials remain unavailable.
 
-The benchmark tests pass (684 tests and 407 subtests; one optional serving module skipped). The website passes its six data tests, TypeScript check, production build, local asset/link checks and Pages subpath/metadata checks.
+The initial source-release validation passed 684 tests and 407 subtests, with one optional serving module skipped. The website passed its six data tests, TypeScript check, production build, local asset/link checks and Pages subpath/metadata checks. Later validation is recorded below.
 
 Validation details are recorded in [validation/release-checks.json](../validation/release-checks.json). No paid model calls or live Unreal rollouts are made by release checks.
 
@@ -55,3 +55,23 @@ safety-event categories. The website includes the 15-second silent opening and 1
 environment introduction.
 
 The current revision adds a visible stop and recoil to the illustrative park contact, full-stride walking, an explicit RT-Safe introduction, larger opening headings, and animated leaderboard/radar results. Original replay snapshots use brief dissolves; collision report times and all paper measurements are unchanged.
+
+## Native NYC transfer pilot — 5 October 2026
+
+The environment section now opens with an annotated NYC safety overview and a
+centered **Start exploring RT-SAFE** button. Starting loads the interactive
+viewer; returning to the overview stops and unloads it.
+
+The separate native Unreal/SPEAR adapter runs 13 authored NYC tasks. A fresh
+isolated project passed 26 physical checks and all 16 action calibrations;
+152 checked original packages retained their before/after hashes. Two final
+bounded visual-policy trials ran with the corrected contact controller: Codex
+reached the park goal safely, while Haiku reached its decision limit on the
+combined route with recorded hazards and an off-crosswalk entry.
+
+The latest Python checks pass 704 tests and 407 subtests, with one optional
+module skipped. Both GitHub CI jobs pass. These NYC outcomes remain separate
+from the five-map paper results and do not establish benchmark equivalence.
+See the [results report](NYC_TRANSFER_RESULTS.md),
+[validation data](../validation/nyc-transfer-checks.json), and
+[migration plan](MAP_TRANSFER.md).

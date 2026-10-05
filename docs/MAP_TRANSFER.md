@@ -5,12 +5,15 @@
 An isolated NYC pilot runs in the native Madison Square Park Unreal project.
 It supports the RT-SAFE action interface, physical agent movement, moving
 pedestrians, robot dogs, vehicles, movable objects, environmental hazards,
-and annotated traffic rules. This is an implementation and validation pilot;
+falling objects, and annotated traffic rules. A combined sidewalk/crossing
+route exercises these components together. This is an implementation and validation pilot;
 it does not extend the published five-map result tables.
 
 The original levels (`RT10`, `RT12`, `RT15`, `RT18`, `RT20`) and their task files
 remain unchanged. The new adapter lives in `benchmark/map_transfer/`.
 See its [setup guide](../benchmark/map_transfer/README.md) for runnable commands.
+The [validation report](NYC_TRANSFER_RESULTS.md) records the fresh rebuild,
+26 physical checks, action calibration, and bounded visual-agent trials.
 
 ## Why changing the map name is insufficient
 
@@ -40,6 +43,7 @@ Two routes are possible:
 | Place tasks | Explicit centimeter coordinates, start/goal, entity paths, road and crosswalk polygons | Native camera inspection and physical route checks |
 | Control the agent | Seven moves, six turns, three waits; native blocking CharacterMovement | Clear route, box blocking, native wall blocking |
 | Move other actors | Pedestrian CharacterMovement, swept robot/vehicle bodies, rigid-body objects | Real-time contact, static freeze, movable-object displacement |
+| Connect traffic events | Authored conflict vehicle activates after a violation in its linked zone | Red crossing produces contact; a legal crossing leaves the vehicle inactive |
 | Detect safety events | Native blocking hits, continuous hazard overlaps, traffic-zone entry | Positive and negative cases; sustained contact and recontact |
 | Preserve timing intent | Async real-time simulation; pause only during static inference | Simulation/wall clock measurements and actor displacement |
 | Reset repeatedly | Clean up owned actors and release PIE callbacks between episodes | Multiple successive episodes in one editor |
@@ -63,6 +67,9 @@ moving physics bodies retain simple colliders.
 A sampled route audit is useful for locating problems but is not a proof of
 navigability. In particular, capsule overlap samples can flag a curb that
 CharacterMovement successfully steps over. Confirm routes through execution.
+Object placement also samples the complete box footprint, so a prop placed
+on sloping pavement does not start inside the ground. Initial capsule and
+fixture overlaps are rejected before an episode begins.
 
 ### Runtime and reset behavior
 
@@ -75,6 +82,12 @@ switching maps inside a live RPC invalidates that context. Restart the owned
 editor to load the saved map. Python wrappers for PIE delegates also must be
 released before the PIE world is destroyed. The adapter unbinds callbacks,
 collects wrappers, waits for PIE to end, and clears owned scene fixtures.
+
+A visual-policy trial also exposed a control bug after pedestrian contact:
+repeated hit callbacks canceled even movement away from the pedestrian. The
+controller now uses the native impact normal to distinguish movement into the
+contact from sideways or backward escape. Two dedicated recovery cases verify
+that the agent can leave contact while preserving the original collision event.
 
 ### Map-specific traffic and hazards
 

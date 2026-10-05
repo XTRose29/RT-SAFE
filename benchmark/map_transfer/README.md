@@ -116,6 +116,9 @@ execution are not claimed to be bitwise deterministic.
 The route audit samples ground and capsule clearance without task fixtures.
 It is advisory: a flagged curb may still be traversable by CharacterMovement.
 The physical suite checks the actual route and fixture interactions.
+Its 26 cases include escaping sideways and backward after a pedestrian has
+already made contact. Repeated hit callbacks must not cancel an escape command;
+movement into an obstacle still stops through native blocking physics.
 Action calibration measures all seven move distances/directions, six
 one-second turns, and three wait durations on an unobstructed route. Supply
 `--task` for a different map's clear calibration route.
@@ -147,6 +150,9 @@ receives the native RGB observation with waypoint markers, relative goal
 information, and prior action feedback. It does not receive hidden entity
 positions or signal-state metadata. Model identity, usage, and cost are
 recorded; unexpected output or exhausted budget stops the rollout.
+Rejected responses retain their reported usage in `policy-*-rejected.json` and
+`model-usage.json`. If a request fails before usage is available, the usage record
+is marked incomplete. A rejected action is never repaired or executed.
 
 For an existing Codex CLI sign-in, a separate policy uses GPT-5.6 Luna with
 low reasoning effort:

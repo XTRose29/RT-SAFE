@@ -70,9 +70,13 @@ website/         Static website, paper tables, curated examples and demo media
 docs/            Setup, protocol, asset requirements and release provenance
 ```
 
-The website includes a **90-second NYC film with soft music**, a conference copy with burned captions, and a **44-second Astra/Sol comparison**. Native scene scripts and reconstruction evidence are in [`website/nyc/`](website/nyc/README.md); the edit, captions, and soundtrack are in [`website/video/nyc-90s/`](website/video/nyc-90s/README.md). Earlier film editions are retained.
+The website includes a **silent 90-second NYC demo** and a **44-second Astra/Sol comparison**, without narration, music, or subtitle tracks. The main video is [`rt-safe-video.mp4`](website/public/media/rt-safe-video.mp4). Native scene scripts and source evidence are in [`website/nyc/`](website/nyc/README.md); editing instructions and production history are in [`website/video/nyc-90s/`](website/video/nyc-90s/README.md). Earlier film editions are retained separately.
 
 The Astra/Sol comparison uses the original RT15 first-person observation and action snapshots, with recorded timing and 1 versus 17 reported collisions. Inputs are held during inference because the source capture is not continuous video. The opening illustrates static and real-time evaluation on a native Madison Square Park path.
+
+The environment section opens with an annotated NYC overview of the start, goal,
+route, and all three safety categories. **Start exploring RT-SAFE** loads the
+interactive viewer; returning to the overview stops and unloads it.
 
 ## Results
 
