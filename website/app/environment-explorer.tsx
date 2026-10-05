@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { EnvironmentOverview } from "./environment-overview";
 import { Panorama, type ViewAngle } from "./panorama";
 
 type Location = { id: string; label: string; position: number[]; yaw: number };
@@ -10,6 +11,16 @@ const categories = [
 ];
 const clamp=(v:number,a:number,b:number)=>Math.max(a,Math.min(b,v));
 export function EnvironmentExplorer() {
+  const [started, setStarted] = useState(false);
+  const startButton = useRef<HTMLButtonElement>(null);
+  const hasStarted = useRef(false);
+  useEffect(() => { if (!started && hasStarted.current) startButton.current?.focus({preventScroll:true}); }, [started]);
+  return <div className="environment-entry">
+    {started ? <><div className="explorer-back"><button onClick={() => setStarted(false)}>← Back to overview</button><span>Explore RT-SAFE · NYC</span></div><ActiveEnvironmentExplorer /></>
+      : <EnvironmentOverview buttonRef={startButton} onStart={() => { hasStarted.current=true; setStarted(true); }} />}
+  </div>;
+}
+function ActiveEnvironmentExplorer() {
   const shell=useRef<HTMLDivElement>(null), canvas=useRef<HTMLCanvasElement>(null), video=useRef<HTMLVideoElement>(null);
   const fullscreenButton=useRef<HTMLButtonElement>(null);
   const renderer=useRef<Panorama|null>(null),angle=useRef<ViewAngle>({yaw:28.338,pitch:-10,fov:65});

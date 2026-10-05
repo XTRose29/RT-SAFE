@@ -51,6 +51,7 @@ const assert=(ok,message)=>{if(!ok)throw new Error(message)};
  assert(await opening.evaluate(v=>v.readyState>=2&&!v.seeking),'Opening seek failed');
  await page.locator('.nyc-timing-story').screenshot({path:path.join(out,'timing.png')});
  results.timing_story={duration:15,playback:true,seek:true};
+ await page.getByRole('button',{name:/Start exploring RT-SAFE/}).click();
  await page.locator('.environment-explorer').getByRole('button',{name:'Watch moving scene'}).click();
  const tour=page.locator('.explorer-scene-video');await tour.scrollIntoViewIfNeeded();await tour.evaluate(v=>{v.load()});
  await tour.evaluate(v=>new Promise((resolve,reject)=>{if(v.readyState>=1){resolve();return;}v.addEventListener('loadedmetadata',resolve,{once:true});setTimeout(()=>reject(new Error('Tour metadata timeout')),15000)}));
