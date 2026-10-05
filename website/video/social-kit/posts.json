@@ -1,0 +1,50 @@
+[
+  {
+    "folder": "01-main",
+    "title": "Main announcement",
+    "attachment": "rt-safe-video.mp4",
+    "text": "1/ Safe when you looked. Still safe when you move? 🚦\n\nIntroducing RT-SAFE: embodied AI safety in a world that keeps moving while agents think.\n\n8 frontier VLMs, hardest setting: 94.1% reach the goal; just 0.7% finish safely.\n\nDemo, paper & results: https://xtrose29.github.io/RT-SAFE/",
+    "alt": "A 60-second silent introduction to RT-SAFE, showing static and real-time evaluation, the NYC environment demonstration, original recorded model observations, and benchmark results. No RL section.",
+    "source": "Current approved 60-second project demo; numerical headline is the hard, real-time, provider-default setting in paper sections 3.2 and 3.3."
+  },
+  {
+    "folder": "02-problem",
+    "title": "Why real-time safety?",
+    "attachment": "rt-safe-problem-15s.mp4",
+    "text": "2/ A few seconds can change the scene.\n\nA pedestrian enters your path. A vehicle approaches. A light changes.\n\nAn action can become unsafe before it starts. Collisions can happen during inference, too.\n\nRT-SAFE keeps the clock running through reasoning and action.",
+    "alt": "An illustrative NYC park encounter compares static evaluation, where the world pauses during inference, with real-time evaluation, where pedestrians keep moving while the agent thinks. Both worlds advance during action execution.",
+    "source": "Paper introduction and Figure 1 concept. Approved NYC demonstration film, original 90-second source interval 3–18 seconds; illustrative encounter, not a measured model rollout."
+  },
+  {
+    "folder": "03-environment",
+    "title": "The RT-SAFE task and environment",
+    "attachment": "rt-safe-environment-12s.mp4",
+    "text": "3/ Built on SimWorld, RT-SAFE has 36 routes across five city maps.\n\nAgents observe street views and motion context, then move, turn or wait.\n\nSafe completion means reaching the goal with no collisions, hazard interactions or traffic violations.\n\nPaper: https://xtrose29.github.io/RT-SAFE/media/rt-safe-paper.pdf",
+    "alt": "A silent NYC environment demonstration highlights navigation goals, moving pedestrians and robot dogs, obstacles, surface hazards, and traffic rules. This NYC visualization illustrates the task; the reported benchmark results use the five evaluation maps described in the paper.",
+    "source": "Paper section 2 and Figure 2 concept. Approved NYC demonstration film, original 90-second source interval 18–30 seconds."
+  },
+  {
+    "folder": "04-model-results",
+    "title": "RQ1: Model performance and behavior",
+    "attachment": "figure-3-model-behavior.png",
+    "text": "4/ How safely do frontier agents navigate?\n\nAcross eight VLMs and three difficulty levels: 94.4% task success, but only 0.7% safe success.\n\nModels differ in movement, turning and waiting. Response time and decision frequency jointly shape collision exposure.",
+    "alt": "Paper Figure 3. Across eight models, collisions per episode correlate with an inference-exposure proxy: mean response latency times mean decisions per episode, with R-squared 0.934. Inkling lies below the fitted trend. Four radar profiles compare Inkling, Grok, Astra and Fable on collisions, latency, decision count, commanded movement, waiting and turning. The values aggregate easy, medium and hard conditions at provider-default reasoning; radar area is not an overall safety score.",
+    "source": "Paper section 3.2, Figure 3, page 6. Original embedded figure extracted at 2200 × 1200 pixels. The 94.4% success headline averages all three difficulties; 94.1% in post 1 is the hard setting. Verified against the newly supplied Real_Time_Safety_Bench__RT_Safe___Copy_.zip: figure/rq1_main.png; copied byte-for-byte from that archive. Figure pixels and headline results match the published PDF."
+  },
+  {
+    "folder": "05-static-vs-realtime",
+    "title": "RQ2: Static versus real-time",
+    "attachment": "figure-4-static-vs-realtime.png",
+    "text": "5/ Static vs. real-time: 288 matched model-route pairs in hard environments.\n\nTask success: 91.3% → 94.1%\nSafe success: 19.8% → 0.7%\nCollisions: 12.3× higher\n\nStrong performance in a paused world does not reliably predict real-time safety.",
+    "alt": "Paper Figure 4. Collisions increase for all eight models under real-time evaluation, mostly during inference. Task success changes from 91.3% to 94.1%, while safe success falls from 19.8% to 0.7%. The action-choice panel shows fewer four-meter moves and more one- and two-meter moves. The comparison uses 288 matched model-route pairs in hard environments at provider-default reasoning, with mode-specific timing instructions.",
+    "source": "Paper section 3.3, Figure 4, page 7. Original embedded figure extracted at 2048 × 1393 pixels. Conditions have different timing instructions as specified in the paper, so behavioral changes cannot be attributed solely to simulation timing. Verified against the newly supplied Real_Time_Safety_Bench__RT_Safe___Copy_.zip: figure/rq2.png; copied byte-for-byte from that archive. Figure pixels and headline results match the published PDF."
+  },
+  {
+    "folder": "06-reasoning",
+    "title": "RQ3: Reasoning effort",
+    "attachment": "figure-5-reasoning-effort.png",
+    "text": "6/ Can more reasoning make agents safer?\n\nAbove provider defaults, mean collisions rise from 40.7 to 62.0 per episode. Action-time collisions fall slightly; inference-time collisions rise sharply.\n\nSafety must account for time spent thinking.\n\nCode: https://github.com/XTRose29/RT-SAFE",
+    "alt": "Paper Figure 5. Left: response latency versus safety score, where a higher score means a smaller weighted safety-event penalty. Right: response latency versus net route progress per decision. Each of eight models has lower, medium and higher reasoning settings. Higher effort can improve progress per decision for some models while reducing overall safety. The post's 40.7 to 62.0 collision comparison is provider default versus higher effort, reported separately in section 3.4 and appendix B.5; medium and provider default are not identical for every model.",
+    "source": "Paper section 3.4, Figure 5, page 8; provider-default versus higher collision totals and phase breakdown from appendix B.5. Original embedded figure extracted at 2048 × 746 pixels. Verified against the newly supplied Real_Time_Safety_Bench__RT_Safe___Copy_.zip: figure/rq3.png; copied byte-for-byte from that archive. Figure pixels and headline results match the published PDF."
+  }
+]
