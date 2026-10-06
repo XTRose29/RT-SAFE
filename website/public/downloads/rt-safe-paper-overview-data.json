@@ -1,0 +1,55 @@
+{
+  "sourceArchive": "Real_Time_Safety_Bench__RT_Safe___Copy_.zip",
+  "figure": "figure/figure2.png; original image unchanged",
+  "rq1": {
+    "scope": "all difficulties, provider default, 108 episodes per model",
+    "successPercent": 94.4,
+    "safeSuccessPercent": 0.7,
+    "inkling": {
+      "decisions": 38.5,
+      "collisions": 21.9
+    },
+    "grok": {
+      "decisions": 60.9,
+      "collisions": 59.5
+    }
+  },
+  "rq2": {
+    "scope": "hard, 288 matched model-route pairs, provider default, mode-specific timing prompts",
+    "static": {
+      "successPercent": 91.3,
+      "safeSuccessPercent": 19.8,
+      "collisionsExactReported": 3.31
+    },
+    "realtime": {
+      "successPercent": 94.1,
+      "safeSuccessPercent": 0.7,
+      "collisionsExactReported": 40.68
+    },
+    "collisionRatioReported": 12.3,
+    "plottedRoundedAction": [
+      3.3,
+      6.4
+    ],
+    "plottedRoundedInference": [
+      0,
+      34.3
+    ]
+  },
+  "rq3": {
+    "scope": "hard realtime, default versus higher, 288 episodes per condition",
+    "action": [
+      6.4,
+      5.9
+    ],
+    "inference": [
+      34.3,
+      56.1
+    ],
+    "total": [
+      40.7,
+      62.0
+    ]
+  },
+  "omission": "RL omitted from public graphic as requested"
+}
