@@ -9,21 +9,30 @@ import time
 
 
 def _running_group(pgid: int) -> bool:
-    # Linux launchers can exit before their Unreal child. Ignore already-dead
-    # zombies awaiting reaping by init, but wait for every live group member.
+    # A process leader can be a zombie while its worker threads still hold
+    # sockets/GPU resources. Check those threads before treating it as dead.
     for entry in Path("/proc").iterdir():
         if not entry.name.isdigit():
             continue
         try:
             fields = (entry / "stat").read_text().rsplit(")", 1)[1].split()
-            if int(fields[2]) == pgid and fields[0] not in {"Z", "X"}:
+            if int(fields[2]) != pgid:
+                continue
+            if fields[0] not in {"Z", "X"}:
                 return True
+            for task in (entry / "task").iterdir():
+                try:
+                    state = (task / "stat").read_text().rsplit(")", 1)[1].split()[0]
+                    if state not in {"Z", "X"}:
+                        return True
+                except (FileNotFoundError, ProcessLookupError, PermissionError):
+                    continue
         except (FileNotFoundError, ProcessLookupError, PermissionError):
             continue
     return False
 
 
-def stop_process_group(process: subprocess.Popen, *, grace_seconds: float = 15) -> None:
+def stop_process_group(process: subprocess.Popen, *, grace_seconds: float = 30) -> None:
     """Stop only a process launched with ``start_new_session=True`` and its children.
 
     Waiting for just the launcher is insufficient: the official shell wrapper
