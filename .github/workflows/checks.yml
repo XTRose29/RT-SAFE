@@ -15,6 +15,7 @@ jobs:
           DEBIAN_FRONTEND=noninteractive apt-get install -y python3.12-venv git libgl1 libegl1 libglib2.0-0t64 ffmpeg curl
       - uses: actions/checkout@v4
       - run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           python3.12 -m venv /tmp/realtime-env
           echo /tmp/realtime-env/bin >> "$GITHUB_PATH"
       - run: python -m pip install --no-cache-dir -r requirements-dev.txt -c requirements.lock.txt
