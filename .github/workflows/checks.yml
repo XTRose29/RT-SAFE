@@ -23,12 +23,13 @@ jobs:
           python scripts/check-release.py
           python -m pytest -q
           python benchmark/run.py run smoke --plan-only
+      # Export again after the checks so caches, test output and Git metadata
+      # from the validation directory cannot enter the downloadable artifact.
+      - run: python tools/export_realtime_release.py --output /tmp/rt-safe-release-artifact
       - uses: actions/upload-artifact@v4
         with:
           name: realtime-source
-          path: |
-            /tmp/rt-safe-source
-            !/tmp/rt-safe-source/.git
+          path: /tmp/rt-safe-release-artifact
           include-hidden-files: true
   benchmark:
     runs-on: ubuntu-latest
