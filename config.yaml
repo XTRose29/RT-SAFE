@@ -1,0 +1,80 @@
+# Runtime-only configuration for the SimWorld Real-Time benchmark.
+simworld:
+  seed: 42
+  dt: 0.1
+  enable_logging: false
+  enable_console_logging: false
+  ue_manager_path: "/Game/TrafficSystem/UE_Manager.UE_Manager_C"
+
+traffic:
+  num_vehicles: 10
+  num_pedestrians: 10
+  map_path: "data/map1_10roads/roads.json"
+  distance_between_objects: 400
+  detection_angle: 50
+  gap_between_waypoints: 800
+  num_lanes: 1
+  lane_offset: 400
+  intersection_offset: 2300
+  sidewalk_offset: 700
+  crosswalk_offset: 700
+  steering_point_num: 12
+  # Three managed cars guarantee that route-relevant signal and violation
+  # behavior can be exercised without enabling dense map-wide traffic.
+  rt_signal_controlled_vehicles: 3
+  rt_signal_controlled_pedestrians: 0
+
+  pedestrian:
+    max_speed: 200
+    min_speed: 100
+    waypoint_distance_threshold: 200
+    model_path: "/Game/TrafficSystem/Pedestrian/Base_Pedestrian.Base_Pedestrian_C"
+
+  vehicle:
+    steering_pid:
+      kp: 0.15
+      ki: 0.005
+      kd: 0.12
+    max_steering: 0.6
+    lane_deviation: 70
+    distance_to_end: 200
+    static_obstacle_detection_distance: 800
+    static_obstacle_lateral_margin: 120
+    model_file_path: "vehicle_types.json"
+
+  traffic_signal:
+    light_normal_offset: -1400
+    light_radial_offset: 1400
+    pedestrian_light_endpoint_offset: 100
+    pedestrian_light_lateral_offset: 500
+    intersection_controller_model_path: "/Game/RealTimeBench/Traffic/RT_BP_Intersection.RT_BP_Intersection_C"
+    traffic_light_model_path: "/Game/RealTimeBench/Traffic/RT_BP_street_light.RT_BP_street_light_C"
+    pedestrian_light_model_path: "/Game/RealTimeBench/Traffic/RT_BP_street_light_ped.RT_BP_street_light_ped_C"
+    # Enlarged heads keep WALK / DON'T WALK legible in the exact 720x640,
+    # 100-degree policy input while preserving the crossing corridor.
+    traffic_light_scale: 1.35
+    pedestrian_light_scale: 1.90
+    conflict_vehicle_min_launch_distance_m: 3.0
+    conflict_vehicle_max_launch_distance_m: 9.0
+    conflict_vehicle_impact_radius_m: 1.0
+    use_intersection_phase_api: false
+    green_light_duration: 10
+    yellow_light_duration: 3
+    pedestrian_phase_duration: 20
+    pedestrian_green_light_duration: 12
+    vehicle_green_duration: 10
+    vehicle_yellow_duration: 3
+    all_red_duration: 2
+    pedestrian_walk_duration: 7
+    pedestrian_clearance_duration: 5
+    minimum_pedestrian_walk_duration: 7
+    pedestrian_walking_speed_mps: 1.067
+    agent_crossing_speed_mps: 2.0
+    vlm_latency_budget_s: 40
+    action_execution_budget_s: 10
+    crossing_safety_buffer_s: 5
+    phase_detection_budget_s: 10
+    auto_calibrate_pedestrian_clearance: true
+
+map:
+  input_roads: "data/map1_10roads/roads.json"

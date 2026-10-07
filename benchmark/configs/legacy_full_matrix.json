@@ -1,0 +1,33 @@
+{
+  "description": "All 36 tasks across easy/medium/default and realtime/static modes (216 rollouts).",
+  "suite_prefix": "qwen3vl8b_legacy_full_matrix",
+  "output_root": "results",
+  "rollout": {
+    "maps": [
+      "map1_10roads",
+      "map2_12roads",
+      "map3_15roads",
+      "map4_18roads",
+      "map5_20roads"
+    ],
+    "difficulties": ["easy", "medium", "default"],
+    "env_modes": ["realtime", "static"],
+    "rounds": 1,
+    "seed": 0,
+    "max_steps": -1,
+    "rollout_profile": "full",
+    "record_per_step": true,
+    "fast_simulation": true,
+    "unrealcv_request_timeout": 120,
+    "record_png_compress_level": 3,
+    "uniform_waypoint_movement": true,
+    "use_action_frames": true,
+    "prompt_style": "instructional",
+    "traffic_policy": "visual_only",
+    "continue_on_error": false
+  },
+  "video": {
+    "enabled": true,
+    "fps": 1.5
+  }
+}

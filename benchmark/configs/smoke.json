@@ -1,0 +1,28 @@
+{
+  "description": "One-step RT10 smoke test with aligned-video artifacts.",
+  "suite_prefix": "qwen3vl8b_smoke",
+  "output_root": "results",
+  "rollout": {
+    "maps": ["map1_10roads"],
+    "difficulties": ["easy"],
+    "env_modes": ["realtime"],
+    "task_indices": [0],
+    "rounds": 1,
+    "max_steps": 1,
+    "rollout_profile": "full",
+    "record_per_step": true,
+    "fast_simulation": true,
+    "unrealcv_request_timeout": 120,
+    "record_png_compress_level": 3,
+    "uniform_waypoint_movement": true,
+    "use_action_frames": true,
+    "prompt_style": "instructional",
+    "traffic_policy": "visual_only",
+    "static_signal_vehicles": true,
+    "continue_on_error": false
+  },
+  "video": {
+    "enabled": true,
+    "fps": 1.5
+  }
+}

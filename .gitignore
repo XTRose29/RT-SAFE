@@ -1,0 +1,63 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+.secrets/
+*api_key*
+*api-key*
+*_api.txt
+auth.json
+credentials.json
+*.pem
+*.key
+# Environments, tools and caches
+.venv/
+.py312deps/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+node_modules/
+*.tsbuildinfo
+# Runtime, models and private experiment output
+runtime/
+models/
+results/
+runs/
+logs/
+*.log
+*.uasset
+*.umap
+*.pak
+*.pt
+*.pth
+*.safetensors
+# Build output
+website/dist-pages/
+website/video/scenes/
+website/video/stills/
+website/video/source-frames/
+website/video/*.mp4
+website/video/*.wav
+website/video/*.ass
+website/video/revision-90s/scenes/
+website/video/revision-90s/stills/
+website/video/revision-90s/audio/*-fitted.wav
+website/video/revision-90s/*-concat.txt
+website/video/revision-90s/*.ass
+release-artifacts/
+.DS_Store
+*.bak
+*.swo
+
+# Experimental training outputs
+exps/
+wandb/
+checkpoints/
+online_rl/*.env
+
+# Native NYC film intermediates
+website/video/nyc-90s/scenes/
+website/video/nyc-90s/audio/*-fitted.wav
+website/video/nyc-90s/*-concat.txt
+website/video/nyc-90s/*.ass

@@ -1,0 +1,19 @@
+{
+  "status": "ready",
+  "instances": [
+    {
+      "id": "rt10-00",
+      "host": "127.0.0.1",
+      "port": 9010,
+      "map_name": "RT10",
+      "gpu": 0
+    },
+    {
+      "id": "rt10-01",
+      "host": "127.0.0.1",
+      "port": 9020,
+      "map_name": "RT10",
+      "gpu": 1
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "scope": "Two-decision live transport check, not full-route or historical score reproduction",
+  "model": "gpt-6-astra",
+  "transport": "codex-cli",
+  "cli_version": "0.153.4",
+  "reasoning_effort": "medium",
+  "task": "RT10 task 0",
+  "difficulty": "easy",
+  "seed": 0,
+  "max_steps": 2,
+  "time_advance_mode": "resume_pause",
+  "benchmark_source_commit": "07b070d23148bb7c74e4bc5dc60e6b50cc2d9b50",
+  "platform": "Ubuntu 24.04 / RTX A5000",
+  "runs": [
+    {
+      "mode": "static",
+      "metrics": {
+        "success": false,
+        "decision_count": 2,
+        "final_step": 2,
+        "sim_time": 3.0,
+        "termination_reason": "max_steps",
+        "failure_reason": null,
+        "rollout_error": null,
+        "parse_success_rate": 1.0,
+        "total_tokens": 30995,
+        "oil_count": 0,
+        "collision_count": 0,
+        "passive_collision_count": 0,
+        "observation_resolution_px": {
+          "width": 720,
+          "height": 640
+        }
+      },
+      "decisions": [
+        {
+          "step": 0,
+          "decision": 1,
+          "executed_action": {
+            "type": "move_to",
+            "param": "5"
+          },
+          "response_time_seconds": 7.053388595581055,
+          "actual_inference_wall_seconds": 7.053388595581055,
+          "modeled_thinking_latency_seconds": 0.0,
+          "realtime_control_overhead_seconds": 0.0,
+          "concurrent_realtime_inference": false,
+          "sim_time_seconds": 2.0,
+          "position": {
+            "x": 9300.0,
+            "y": -4873.292
+          }
+        },
+        {
+          "step": 1,
+          "decision": 2,
+          "executed_action": {
+            "type": "move_to",
+            "param": "3"
+          },
+          "response_time_seconds": 6.531827449798584,
+          "actual_inference_wall_seconds": 6.531827449798584,
+          "modeled_thinking_latency_seconds": 0.0,
+          "realtime_control_overhead_seconds": 0.0,
+          "concurrent_realtime_inference": false,
+          "sim_time_seconds": 3.0,
+          "position": {
+            "x": 9158.578,
+            "y": -5014.713
+          }
+        }
+      ],
+      "first_observation": "static-first-observation.png",
+      "first_observation_sha256": "9baed8b5432b87b0f6aef22d8a2b1249f4ecd2c869bbb03e07d3d843f3acc371",
+      "raw_result_sha256": "080e131e0160e80615980e17ae59069126640ed17bdbf28d58e5e0e13611c48c"
+    },
+    {
+      "mode": "realtime",
+      "metrics": {
+        "success": false,
+        "decision_count": 2,
+        "final_step": 2,
+        "sim_time": 23.33,
+        "termination_reason": "max_steps",
+        "failure_reason": null,
+        "rollout_error": null,
+        "parse_success_rate": 1.0,
+        "total_tokens": 31034,
+        "oil_count": 0,
+        "collision_count": 0,
+        "passive_collision_count": 0,
+        "observation_resolution_px": {
+          "width": 720,
+          "height": 640
+        }
+      },
+      "decisions": [
+        {
+          "step": 0,
+          "decision": 1,
+          "executed_action": {
+            "type": "move_to",
+            "param": "5"
+          },
+          "response_time_seconds": 5.175774335861206,
+          "actual_inference_wall_seconds": 5.175774335861206,
+          "modeled_thinking_latency_seconds": 8.45,
+          "realtime_control_overhead_seconds": 3.2742256641387932,
+          "concurrent_realtime_inference": true,
+          "sim_time_seconds": 10.45,
+          "position": {
+            "x": 9300.0,
+            "y": -4873.292
+          }
+        },
+        {
+          "step": 1,
+          "decision": 2,
+          "executed_action": {
+            "type": "move_to",
+            "param": "4"
+          },
+          "response_time_seconds": 8.69325566291809,
+          "actual_inference_wall_seconds": 8.69325566291809,
+          "modeled_thinking_latency_seconds": 11.88,
+          "realtime_control_overhead_seconds": 3.18674433708191,
+          "concurrent_realtime_inference": true,
+          "sim_time_seconds": 23.33,
+          "position": {
+            "x": 9441.422,
+            "y": -5014.713
+          }
+        }
+      ],
+      "first_observation": "realtime-first-observation.png",
+      "first_observation_sha256": "926aa6733e298de7ca2b96fb7b213c2ffa29e6e958dc589f9e88473842476620",
+      "raw_result_sha256": "11045507d0e2b5e283300beb553377538d424b8a51b8c741ad4b7544b48d5b99"
+    }
+  ],
+  "notes": [
+    "CLI transport adds product/runtime context; do not equate these with direct API paper scores",
+    "Static excludes planning exposure; realtime records concurrent world evolution during planning",
+    "The hosted-model runner exits 2 because the deliberately capped episode did not finish the route; rollout_error is null and all actions parsed",
+    "Latencies, tokens, actions and safety outcomes are observations, not deterministic expectations"
+  ]
+}

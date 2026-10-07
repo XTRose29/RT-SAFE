@@ -1,0 +1,217 @@
+{
+  "scope": "RT10 task 0, seed 0, easy, greedy, two decisions, one second thinking per decision; installation check, not full route completion",
+  "passed": true,
+  "runs": [
+    {
+      "repetition": 1,
+      "mode": "static",
+      "passed": true,
+      "observed": {
+        "decision_count": 2,
+        "final_step": 2,
+        "sim_time": 4.0,
+        "total_tokens": 0,
+        "realtime_thinking": false,
+        "success": false,
+        "observation_resolution_px": {
+          "width": 720,
+          "height": 640
+        },
+        "termination_reason": "max_steps",
+        "failure_reason": null,
+        "rollout_error": null,
+        "failed": false,
+        "parse_error_count": 0,
+        "signal_traffic_error_count": 0
+      },
+      "additional_observations": {
+        "oil_count": 1,
+        "collision_count": 0,
+        "passive_collision_count": 0,
+        "time_cost": 17.254526138305664,
+        "final_position": {
+          "x": 9300.0,
+          "y": -5273.292
+        }
+      },
+      "raw_result_sha256": "a31a32f59672bfede9110de429f4ab4c684ae1ab4620e324024e7ff71efc2bf0"
+    },
+    {
+      "repetition": 1,
+      "mode": "realtime",
+      "passed": true,
+      "observed": {
+        "decision_count": 2,
+        "final_step": 2,
+        "sim_time": 6.0,
+        "total_tokens": 0,
+        "realtime_thinking": true,
+        "success": false,
+        "observation_resolution_px": {
+          "width": 720,
+          "height": 640
+        },
+        "termination_reason": "max_steps",
+        "failure_reason": null,
+        "rollout_error": null,
+        "failed": false,
+        "parse_error_count": 0,
+        "signal_traffic_error_count": 0
+      },
+      "additional_observations": {
+        "oil_count": 1,
+        "collision_count": 0,
+        "passive_collision_count": 0,
+        "time_cost": 21.788856744766235,
+        "final_position": {
+          "x": 9300.0,
+          "y": -5273.292
+        }
+      },
+      "raw_result_sha256": "47ade7b31fc5f2f1bcf0328eb35bdca12e0245f98b9a77e55b5cc664116ff6b0"
+    },
+    {
+      "repetition": 2,
+      "mode": "static",
+      "passed": true,
+      "observed": {
+        "decision_count": 2,
+        "final_step": 2,
+        "sim_time": 4.0,
+        "total_tokens": 0,
+        "realtime_thinking": false,
+        "success": false,
+        "observation_resolution_px": {
+          "width": 720,
+          "height": 640
+        },
+        "termination_reason": "max_steps",
+        "failure_reason": null,
+        "rollout_error": null,
+        "failed": false,
+        "parse_error_count": 0,
+        "signal_traffic_error_count": 0
+      },
+      "additional_observations": {
+        "oil_count": 1,
+        "collision_count": 0,
+        "passive_collision_count": 0,
+        "time_cost": 17.483638763427734,
+        "final_position": {
+          "x": 9300.0,
+          "y": -5273.292
+        }
+      },
+      "raw_result_sha256": "3ef828cc7b5af1d3efb266a46dfdc0dcf68f49cc6c4aba359ba67429ddcfa757"
+    },
+    {
+      "repetition": 2,
+      "mode": "realtime",
+      "passed": true,
+      "observed": {
+        "decision_count": 2,
+        "final_step": 2,
+        "sim_time": 6.0,
+        "total_tokens": 0,
+        "realtime_thinking": true,
+        "success": false,
+        "observation_resolution_px": {
+          "width": 720,
+          "height": 640
+        },
+        "termination_reason": "max_steps",
+        "failure_reason": null,
+        "rollout_error": null,
+        "failed": false,
+        "parse_error_count": 0,
+        "signal_traffic_error_count": 0
+      },
+      "additional_observations": {
+        "oil_count": 1,
+        "collision_count": 0,
+        "passive_collision_count": 0,
+        "time_cost": 21.31269145011902,
+        "final_position": {
+          "x": 9300.0,
+          "y": -5273.292
+        }
+      },
+      "raw_result_sha256": "82a5ee3558c3a6d16777f4c8c647185b5b25c837cdba44e399d70f97cf86a450"
+    },
+    {
+      "repetition": 3,
+      "mode": "static",
+      "passed": true,
+      "observed": {
+        "decision_count": 2,
+        "final_step": 2,
+        "sim_time": 4.0,
+        "total_tokens": 0,
+        "realtime_thinking": false,
+        "success": false,
+        "observation_resolution_px": {
+          "width": 720,
+          "height": 640
+        },
+        "termination_reason": "max_steps",
+        "failure_reason": null,
+        "rollout_error": null,
+        "failed": false,
+        "parse_error_count": 0,
+        "signal_traffic_error_count": 0
+      },
+      "additional_observations": {
+        "oil_count": 1,
+        "collision_count": 0,
+        "passive_collision_count": 0,
+        "time_cost": 17.31403636932373,
+        "final_position": {
+          "x": 9300.0,
+          "y": -5273.292
+        }
+      },
+      "raw_result_sha256": "25c60824aaab8120a8660d1e777617a3d269724e5925d0f5df598bf873a56d58"
+    },
+    {
+      "repetition": 3,
+      "mode": "realtime",
+      "passed": true,
+      "observed": {
+        "decision_count": 2,
+        "final_step": 2,
+        "sim_time": 6.0,
+        "total_tokens": 0,
+        "realtime_thinking": true,
+        "success": false,
+        "observation_resolution_px": {
+          "width": 720,
+          "height": 640
+        },
+        "termination_reason": "max_steps",
+        "failure_reason": null,
+        "rollout_error": null,
+        "failed": false,
+        "parse_error_count": 0,
+        "signal_traffic_error_count": 0
+      },
+      "additional_observations": {
+        "oil_count": 1,
+        "collision_count": 0,
+        "passive_collision_count": 0,
+        "time_cost": 22.08035945892334,
+        "final_position": {
+          "x": 9300.0,
+          "y": -5273.292
+        }
+      },
+      "raw_result_sha256": "a81e926c4e5230dcb8288706d18c81c6c677529bd941debbeeb6c30e41c42bd6"
+    }
+  ],
+  "conditions_repeated": 3,
+  "benchmark_code_commit": "e2f170b6c608f0a9601a2005eb3f74c9933f60a0",
+  "expanded_comparison_commit": "07b070d23148bb7c74e4bc5dc60e6b50cc2d9b50",
+  "expected_file": "examples/realtime/expected.json",
+  "expected_sha256": "d8f354b216f3f18504fdd0e1271d440b00df02506e081993978ae1194681aa1e",
+  "environment": "Fresh Python 3.12 environment and official runtime download; Linux / RTX A5000",
+  "interpretation": "All declared protocol fields match. Raw result hashes record provenance; timestamps, wall time, physics scheduling and images are not required to match between runs."
+}

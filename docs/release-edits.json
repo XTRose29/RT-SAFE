@@ -1,0 +1,32 @@
+{
+  "portability_edits": [
+    "data/agents.json",
+    "benchmark/DEFAULT_SETTINGS.md",
+    "benchmark/run.py",
+    "evaluation/run_static_rb128_detached_supervisor.py",
+    "evaluation/run_codex_cli_sol_task0_pilot.py",
+    "evaluation/run_api_easy_instructional_matrix.py",
+    "evaluation/run_openai_luna_all36.py",
+    "evaluation/run_openai_astra_pilot.py",
+    "evaluation/watchdog_openai_frontier_campaign.py",
+    "evaluation/run_openai_frontier_matrix.py",
+    "evaluation/replay_recorded_rollout_video.py",
+    "evaluation/run_code_baselines_with_ue_restarts.py",
+    "evaluation/run_prompt_budget_sweep_with_ue_restarts.py",
+    "evaluation/run_codex_cli_gpt56_guarded_campaign.py",
+    "evaluation/run_qwen3vl8b_all_maps.py",
+    "evaluation/run_claude_code_campaign.py",
+    "evaluation/run_openai_sol_task0.py",
+    "evaluation/run_claude_code_supervisor.py",
+    "evaluation/watchdog_openai_frontier_astra.py",
+    "evaluation/run_seedvar_matrix.py",
+    "benchmark/configs/all_tasks_easy_realtime_collision.json",
+    "benchmark/configs/all_tasks_easy_realtime.json",
+    "benchmark/configs/legacy_full_matrix.json",
+    "benchmark/configs/smoke.json",
+    "benchmark/configs/levels_full_matrix.json",
+    "website/video/source-media/provenance.json"
+  ],
+  "integrated_claude_transport": true,
+  "optional_imports": "SimWorld/simworld/__init__.py"
+}

@@ -1,0 +1,2286 @@
+{
+  "source_commit": "1850d8a8cadef025b2760c7ac053a2b70312081b",
+  "note": "Snapshot includes uncommitted research changes. Hashes describe imported files before release portability edits. Original history and private run outputs are excluded.",
+  "files": [
+    {
+      "path": "base/human_control_interface.py",
+      "source": "benchmark workspace",
+      "sha256": "001c32a317019d855c230f034b031baf7589a3ffe3b3d149e9c9f6bca8fb6580"
+    },
+    {
+      "path": "base/rt_action_space.py",
+      "source": "benchmark workspace",
+      "sha256": "f11e8d1eefb3f7bcf883dcd6a8ba7d02a52cee9b5606e3a2d5bd495123d2df22"
+    },
+    {
+      "path": "base/rt_agent.py",
+      "source": "benchmark workspace",
+      "sha256": "2bd5949edcec02b8cff3b3bb0bbacd5d86b7536f4907726b74582ebd8150f1ea"
+    },
+    {
+      "path": "base/rt_communicator.py",
+      "source": "benchmark workspace",
+      "sha256": "c1bbef43d4e53966b0f34e7d789821f57b9b91902b9fc2fadda1935c8c6c3f20"
+    },
+    {
+      "path": "base/rt_evaluator.py",
+      "source": "benchmark workspace",
+      "sha256": "0d8b19c549d83db7fdb86c6b4770e97725622529e70e2b27d9788a61a5b922d4"
+    },
+    {
+      "path": "base/rt_pedestrian.py",
+      "source": "benchmark workspace",
+      "sha256": "af45ab9801f4ff263a913da0c7666bd6da9902bb0f471f5810775f32f15f15ef"
+    },
+    {
+      "path": "base/rt_scooter.py",
+      "source": "benchmark workspace",
+      "sha256": "7eee0632f0820ed985369b9d0b63dec4f6bc65a7bd490613425150e6558f245f"
+    },
+    {
+      "path": "base/rt_traffic_controller.py",
+      "source": "benchmark workspace",
+      "sha256": "cdf47e85c4ad00285aff562f8ede1efce67213c8dedddb9a29f7423d3937e657"
+    },
+    {
+      "path": "base/rt_traffic_system.py",
+      "source": "benchmark workspace",
+      "sha256": "51a5354257c30b84c69254302f42cbab904f93d6fb89e81ff5d965f7d18c2e5a"
+    },
+    {
+      "path": "base/rt_unrealcv.py",
+      "source": "benchmark workspace",
+      "sha256": "9c9d01a3507205eeef06648e5df382ec95aba96a6b9c1f2c1bfc83ca44b9f7ed"
+    },
+    {
+      "path": "manager/world_manager.py",
+      "source": "benchmark workspace",
+      "sha256": "13436e4843b6d4a9b48d3bec9a94c6a94b5650dd2a367a0d37ffb1eb52f160a1"
+    },
+    {
+      "path": "llm/codex_cli_backend.py",
+      "source": "benchmark workspace",
+      "sha256": "a028fa2a83cbe41f4a01635b3b9c8ccf378ccbe3e38a4b04f28b3d336906ef63"
+    },
+    {
+      "path": "llm/prompt.py",
+      "source": "benchmark workspace",
+      "sha256": "5d9e319e94002fe8ca03317fa350bf745480597a9462798329b625690b5b9c1b"
+    },
+    {
+      "path": "llm/reasoning_capabilities.py",
+      "source": "benchmark workspace",
+      "sha256": "d7748b5879fb57e1636ef8a940c1d2d08fce05552d3c20f04a0619411d26caf3"
+    },
+    {
+      "path": "llm/rt_llm.py",
+      "source": "benchmark workspace",
+      "sha256": "ac2d72b4b2270920d0bf61b426dc11ae50c31479d494315c5eb38b83da200973"
+    },
+    {
+      "path": "llm/test_openai_responses.py",
+      "source": "benchmark workspace",
+      "sha256": "36b106e47de9c14550a6fe0ea7b78f8f2c9eae255aa4cb603fcd62129eb9fc7c"
+    },
+    {
+      "path": "benchmark/DEFAULT_SETTINGS.md",
+      "source": "benchmark workspace",
+      "sha256": "c6ff578e08145a5583acb1072883d8e7c07086ea63ebe40f34e5359747fae818"
+    },
+    {
+      "path": "benchmark/__init__.py",
+      "source": "benchmark workspace",
+      "sha256": "fa1f878a315879f2b8d41bf0f796c7cf6824d586f740c291020bbe28937a8880"
+    },
+    {
+      "path": "benchmark/configs/all_tasks_easy_realtime.json",
+      "source": "benchmark workspace",
+      "sha256": "2d4c92a9f024e42bd1b7108e294f0bdf558530c687de639efb824de834119be3"
+    },
+    {
+      "path": "benchmark/configs/all_tasks_easy_realtime_collision.json",
+      "source": "benchmark workspace",
+      "sha256": "a639aa928ff3a868d54235b5d1ee0291ade1cefed27e65525af04870cebcd576"
+    },
+    {
+      "path": "benchmark/configs/legacy_full_matrix.json",
+      "source": "benchmark workspace",
+      "sha256": "aa1254c3f87bf82da1c5805ef4013ceeb89877a990855225a8285c0596070e36"
+    },
+    {
+      "path": "benchmark/configs/levels_full_matrix.json",
+      "source": "benchmark workspace",
+      "sha256": "e6ab140caf0df0c7a41aacd0b353c3f64e61786200ddd1baa02b5710b1b7cd50"
+    },
+    {
+      "path": "benchmark/configs/smoke.json",
+      "source": "benchmark workspace",
+      "sha256": "d2faf5bce82575e1a5043c5085b1bdcf34a152ad968168d2c294f477849bd391"
+    },
+    {
+      "path": "benchmark/experiments.py",
+      "source": "benchmark workspace",
+      "sha256": "f24ccc420907e30d8faee5a68278c723111f60ce97384430f8e2e4e24085541a"
+    },
+    {
+      "path": "benchmark/run.py",
+      "source": "benchmark workspace",
+      "sha256": "a413e13db22f097decd1502a4cf5caf5fef93d4a6964c027892a10451b0330d6"
+    },
+    {
+      "path": "evaluation/aggregate_results.py",
+      "source": "benchmark workspace",
+      "sha256": "22a0104fad245f51c77a34767b0a1e1737750adccbd21288e18f7806690d1e35"
+    },
+    {
+      "path": "evaluation/analyze_prompt_styles.py",
+      "source": "benchmark workspace",
+      "sha256": "740ad0df0bb1be9a8864f90412c0ab7436f0852bd9989ad347d12642cb2cc9f8"
+    },
+    {
+      "path": "evaluation/capture_crossing_signal_samples.py",
+      "source": "benchmark workspace",
+      "sha256": "a9bce554f65a776635178d262d3c9b61a1dadcec63674062879d19ebafc49d29"
+    },
+    {
+      "path": "evaluation/consolidate_rollout_video_indexes.py",
+      "source": "benchmark workspace",
+      "sha256": "68c754afdebbaac98a016504fe6d31db4c27184aaee81e0e979454069f4c526c"
+    },
+    {
+      "path": "evaluation/export_benchmark_asset_inventory.py",
+      "source": "benchmark workspace",
+      "sha256": "f663b3eab8b93d415f27b50e14f27de3c603a05c7fb73ab4a401b05742f2f9be"
+    },
+    {
+      "path": "evaluation/finalize_qwen_rollout_videos.py",
+      "source": "benchmark workspace",
+      "sha256": "e92070234481128bb05091dc7b4b91f5e9a120a7d3e8a4063d0d28160f2fe911"
+    },
+    {
+      "path": "evaluation/fixtures/astra_ue_smoke_condition.json",
+      "source": "benchmark workspace",
+      "sha256": "6414a9860c1afec674e111432df7ba8512dd5e3ddcf56accef6fec6775d0868a"
+    },
+    {
+      "path": "evaluation/fixtures/rt12_oil_example_task.json",
+      "source": "benchmark workspace",
+      "sha256": "7fafd4b915c725a1523743744effa92390c02767500479411a1df4d78b65087d"
+    },
+    {
+      "path": "evaluation/migrate_frontier_workers_at_boundary.py",
+      "source": "benchmark workspace",
+      "sha256": "61f63721807d569952e5531991b1e57378725f141e43c8ba7dfe9c7a0fb71d1f"
+    },
+    {
+      "path": "evaluation/monitor_openai_frontier_campaign.py",
+      "source": "benchmark workspace",
+      "sha256": "9e7bbaf50785e8ab9bdfca5e41f67295da7715fc030f06c2851b5e6865f07940"
+    },
+    {
+      "path": "evaluation/offline_safe_path_planner.py",
+      "source": "benchmark workspace",
+      "sha256": "085fbf818e3266d45d31fb11c00466d46fe834f4208d283db614f286281d8b06"
+    },
+    {
+      "path": "evaluation/qwen3vl_thinking_one_turn_smoke.py",
+      "source": "benchmark workspace",
+      "sha256": "0968c6a8df02cbec657def307d51e01b7569baaae52ab199a5b2d2b29df23444"
+    },
+    {
+      "path": "evaluation/qwen3vl_thinking_openai_server.py",
+      "source": "benchmark workspace",
+      "sha256": "f0464d26b0142c71787ee34ce37506c3a8fddbe77ee92473a0dc33afa7afa083"
+    },
+    {
+      "path": "evaluation/render_annotated_rollout_video.py",
+      "source": "benchmark workspace",
+      "sha256": "2a927af5ef2d0d085355fb3673d42a0b3b87b20d21b6b9fb94678fde6b9ad5fd"
+    },
+    {
+      "path": "evaluation/render_rollout_input_video.py",
+      "source": "benchmark workspace",
+      "sha256": "e3ce11dfd4917db806581b6a0be93ae5077c7c4f3d89dbd95fe00779e89b5dec"
+    },
+    {
+      "path": "evaluation/replay_recorded_rollout_video.py",
+      "source": "benchmark workspace",
+      "sha256": "0b98cd09de65ba8a773e6d1f32f083fd3200d9512ed043f5964b1eafc5aced17"
+    },
+    {
+      "path": "evaluation/replay_safe_trajectory_video.py",
+      "source": "benchmark workspace",
+      "sha256": "bac0d11c38fe7752462f4d18f87095a33ebe9b0cae0e795cd003f7f4274818b0"
+    },
+    {
+      "path": "evaluation/run_api_easy_instructional_matrix.py",
+      "source": "benchmark workspace",
+      "sha256": "73ac2587701665bdabd051260207c40af89314c0fff0b84a3c691f2c8af44f64"
+    },
+    {
+      "path": "evaluation/run_code_baselines.py",
+      "source": "benchmark workspace",
+      "sha256": "f563638ef3f2997a9f22d8c1bb0960ba6fcebb0fe11df0c1111357313db1415a"
+    },
+    {
+      "path": "evaluation/run_code_baselines_with_ue_restarts.py",
+      "source": "benchmark workspace",
+      "sha256": "3d5c65e502c2d4c18626c240452cf91ebba9c374e762f2fb4f7499e6681192df"
+    },
+    {
+      "path": "evaluation/run_codex_cli_gpt56_guarded_campaign.py",
+      "source": "benchmark workspace",
+      "sha256": "abcd3bf7c760934d9bac50cf71cb41814fc72a927b5a5c451eed0a72dbb22369"
+    },
+    {
+      "path": "evaluation/run_codex_cli_sol_matrix.py",
+      "source": "benchmark workspace",
+      "sha256": "5d4d8890a3ea2d23dc870c2cda056903a0e519f2e3132f124d26a8052c32ab7f"
+    },
+    {
+      "path": "evaluation/run_codex_cli_sol_task0_pilot.py",
+      "source": "benchmark workspace",
+      "sha256": "ee93d954ebff554b35e22ca23ffc2e547d3c5503cb030f82eec12bc806025e97"
+    },
+    {
+      "path": "evaluation/run_condition_json.py",
+      "source": "benchmark workspace",
+      "sha256": "0c2b153ef72660372753a7f288301c3f9a27101f375871833faa49c8cca6d0e4"
+    },
+    {
+      "path": "evaluation/run_experiment_matrix.py",
+      "source": "benchmark workspace",
+      "sha256": "073ec7697592e1c271dddcd28320b6b4e08fc558560d8df6812762c48109b2ff"
+    },
+    {
+      "path": "evaluation/run_offline_code_baselines.py",
+      "source": "benchmark workspace",
+      "sha256": "bfc66d28b0688d33fe47d1bde105a4cc78efcc04ae23e7e80b9f4e77eb232b70"
+    },
+    {
+      "path": "evaluation/run_openai_astra_pilot.py",
+      "source": "benchmark workspace",
+      "sha256": "b23cc8a53b453edfbb4ff0401d28fdc636f9b3d8f7114572f3180ff39e8d6440"
+    },
+    {
+      "path": "evaluation/run_openai_benchmark.py",
+      "source": "benchmark workspace",
+      "sha256": "99514b915692f75319ea0f4545fbae8a42f3e408de2ca35aeeb82a7884dec6dc"
+    },
+    {
+      "path": "evaluation/run_openai_frontier_matrix.py",
+      "source": "benchmark workspace",
+      "sha256": "1daf6dd9446a683cc240c4f2fbcbf8d730f9617a88ee580d8c8c180e84161c4f"
+    },
+    {
+      "path": "evaluation/run_openai_luna_all36.py",
+      "source": "benchmark workspace",
+      "sha256": "5e90bf00aaa0c57ffe5c8e90dbc0b1582b006e52acd4275c3e5f4aa7f1a31cb8"
+    },
+    {
+      "path": "evaluation/run_openai_sol_task0.py",
+      "source": "benchmark workspace",
+      "sha256": "ef6318089a2caa336cdda151838493fe1c689ce31bcbffb37ee24c488cf95d5b"
+    },
+    {
+      "path": "evaluation/run_prompt_budget_sweep_with_ue_restarts.py",
+      "source": "benchmark workspace",
+      "sha256": "4a673f8ca797e092bbb652dafe42b72f66fc0f6fefb9ab90e7884be8fdce3df2"
+    },
+    {
+      "path": "evaluation/run_qwen3vl8b_all_maps.py",
+      "source": "benchmark workspace",
+      "sha256": "a3fed49d2ad69542697de4c887b4f711519dfb8af0a3521de64667d4a348185d"
+    },
+    {
+      "path": "evaluation/run_qwen3vl8b_setting_sweep.py",
+      "source": "benchmark workspace",
+      "sha256": "1727362fe6b772746821471d15ce62e6c978b5c20aba662a36f124a2597836a0"
+    },
+    {
+      "path": "evaluation/run_recovered_20260621_static_thinking.py",
+      "source": "benchmark workspace",
+      "sha256": "f1bd9fca69066cc59325d7b2e3382ea84842bff21d5e1a2b20b50662e692621e"
+    },
+    {
+      "path": "evaluation/run_recovered_20260624_011915.py",
+      "source": "benchmark workspace",
+      "sha256": "1d3b2dda403efa099eadac355f41eb3e3b9f80e0b39bbe5eccc1c7c3b32178ab"
+    },
+    {
+      "path": "evaluation/run_recovered_prompt_sweep.py",
+      "source": "benchmark workspace",
+      "sha256": "8d0afd69f21b4c9d0267995732ebbcc97da4546cb962457fb921be220ccf32fc"
+    },
+    {
+      "path": "evaluation/run_recovered_static_vs_realtime.py",
+      "source": "benchmark workspace",
+      "sha256": "f7cbb193aadc244002e35cba4d9d2304d24b53e4387bdf4fcf4781bb08eacd75"
+    },
+    {
+      "path": "evaluation/run_seedvar_matrix.py",
+      "source": "benchmark workspace",
+      "sha256": "05a3e23f81fc0192a1b7951f24533e648a8d5e05b9bb437499b4f1b976374d07"
+    },
+    {
+      "path": "evaluation/run_static_rb128_detached_supervisor.py",
+      "source": "benchmark workspace",
+      "sha256": "fa824d57d1aec850c4510661ec285f3571f178fd2a7a16735148ef87f6c786a2"
+    },
+    {
+      "path": "evaluation/run_static_reasoning_prompt_budget_sweep.py",
+      "source": "benchmark workspace",
+      "sha256": "f1f86db0fb38afd972be0fca529999cae37776df45ffd8c9c897098a2b2b10eb"
+    },
+    {
+      "path": "evaluation/test_codex_cli_backend.py",
+      "source": "benchmark workspace",
+      "sha256": "5ae88d9dce7780921c07c7f72f1e09bb4cbde572210e0f1241e967b574a27d94"
+    },
+    {
+      "path": "evaluation/test_codex_cli_matrix.py",
+      "source": "benchmark workspace",
+      "sha256": "e30358f3443cfd6c81cb53db11d05fba5ea6ec6c62f9e08c94bfc58a8dc5ac84"
+    },
+    {
+      "path": "evaluation/test_finalize_qwen_rollout_videos.py",
+      "source": "benchmark workspace",
+      "sha256": "04d415e24da51caedf1d070a87e38997fc843f07931541f3759a9ab3fa460af7"
+    },
+    {
+      "path": "evaluation/test_qwen3vl_thinking_openai_server.py",
+      "source": "benchmark workspace",
+      "sha256": "5f9c1616fd4b629c8b7a43dd47fee470401ec0f123ba1b81846e9ac28b03ce3c"
+    },
+    {
+      "path": "evaluation/test_run_openai_astra_pilot.py",
+      "source": "benchmark workspace",
+      "sha256": "f09a8254310ac3389c33c41c03ae41512a1a283e932857651a721a67735f343f"
+    },
+    {
+      "path": "evaluation/test_run_openai_benchmark.py",
+      "source": "benchmark workspace",
+      "sha256": "3afcc9a598ac404c29f9ca854f127c9022116c875b7da6cc20dd3d56c849038d"
+    },
+    {
+      "path": "evaluation/test_run_openai_luna_all36.py",
+      "source": "benchmark workspace",
+      "sha256": "f865fbe66b20475f0729a0996128880a6c57973ce9c84075bfbb96041db65ec9"
+    },
+    {
+      "path": "evaluation/test_run_openai_sol_task0.py",
+      "source": "benchmark workspace",
+      "sha256": "406e48cfecb929717e95c6168baef8d1d6b1d7c88248054f3245f10455f40eb8"
+    },
+    {
+      "path": "evaluation/test_run_qwen3vl8b_all_maps.py",
+      "source": "benchmark workspace",
+      "sha256": "87b5c38ba996e918a1fc88f6eaf3886d2f45f7112eda0efc63a50f0608dae98e"
+    },
+    {
+      "path": "evaluation/ue_smoke_test.py",
+      "source": "benchmark workspace",
+      "sha256": "5d9ea678dfb5658818fce44a9219f4da530f29752ae885fb03758d4bd7e2203e"
+    },
+    {
+      "path": "evaluation/ue_world_smoke_test.py",
+      "source": "benchmark workspace",
+      "sha256": "13659737145d44dcfd80f33c312189c01506f2e969dd20ae80f9bd907e03cf30"
+    },
+    {
+      "path": "evaluation/validate_rollout_waypoint_alignment.py",
+      "source": "benchmark workspace",
+      "sha256": "69aca951806880a21c45d4e2a0c10ecb2d0b698965dfd0e73736981d23b8c461"
+    },
+    {
+      "path": "evaluation/visualize_code_baseline_trajectories.py",
+      "source": "benchmark workspace",
+      "sha256": "fb76126db3ea115a70a178ecde74d85d946fd6547480e50e7a98b3d8ab6111f5"
+    },
+    {
+      "path": "evaluation/watchdog_openai_frontier_astra.py",
+      "source": "benchmark workspace",
+      "sha256": "cc6fb8a84b0f779d4985a1f5b89d8fe08992eb7c72e38cf6c48723e6849b0a61"
+    },
+    {
+      "path": "evaluation/watchdog_openai_frontier_campaign.py",
+      "source": "benchmark workspace",
+      "sha256": "d0af37dac6cc0c0889f1269b5c705a822fcc906d527fdb8827d5d4977a84fbb7"
+    },
+    {
+      "path": "evaluation/write_qwen_rollout_summary.py",
+      "source": "benchmark workspace",
+      "sha256": "608830dc4cbc4b5212330ff53c6723f5526d6e094e602ab7588c02bda7db2549"
+    },
+    {
+      "path": "sample/__init__.py",
+      "source": "benchmark workspace",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "sample/obstacle_sampler.py",
+      "source": "benchmark workspace",
+      "sha256": "831ed57189643491ce0cceff315c710b1e83e5a47719239265d0f72daab6692b"
+    },
+    {
+      "path": "sample/pedestrian_sampler.py",
+      "source": "benchmark workspace",
+      "sha256": "acb90a3d356aac949150ee3a1f10f8d3cebb468d258c8ebe54a46952b41de81d"
+    },
+    {
+      "path": "sample/rt_map.py",
+      "source": "benchmark workspace",
+      "sha256": "fd31c21548d5826b670682dd68402aab8bcaa6421a4d725c9e569b866a68ea17"
+    },
+    {
+      "path": "sample/scooter_sampler.py",
+      "source": "benchmark workspace",
+      "sha256": "d115247982a2beb491ebe50a4780073bfda9feaab3fecee67391589c8b8830a4"
+    },
+    {
+      "path": "sample/task_sampler.py",
+      "source": "benchmark workspace",
+      "sha256": "c4ae74446f4e971ab2a60b7d5a1b437231ae3b79be8cdc38baa4ca04e50065d5"
+    },
+    {
+      "path": "sample/walker_waypoint_sampler.py",
+      "source": "benchmark workspace",
+      "sha256": "ab3ec72397be072aa2e610afbf3feadb07fff22f79dc1ee791ac14a58716aeda"
+    },
+    {
+      "path": "utils/annotate_image.py",
+      "source": "benchmark workspace",
+      "sha256": "174eda5b4a2580a59f439dc517a89fd7821dc95f387ab63c840a8f9d55a1347c"
+    },
+    {
+      "path": "utils/evaluation_metrics.py",
+      "source": "benchmark workspace",
+      "sha256": "dac030a8e7b146ae1bf754951bd2b107f30ace7abd41d74fbdcd17192eeb0dad"
+    },
+    {
+      "path": "utils/img2base64.py",
+      "source": "benchmark workspace",
+      "sha256": "777f7b2a6ceaa4a12d3c40f2c074eeaec477b7c0ccab60d5302d69d4ce354880"
+    },
+    {
+      "path": "utils/route_steps.py",
+      "source": "benchmark workspace",
+      "sha256": "8fcef6ac6e27915532b928d5fe8e32476f838c5ce8771a0ec829e52ebd6284aa"
+    },
+    {
+      "path": "utils/task_routes.py",
+      "source": "benchmark workspace",
+      "sha256": "0b9a6ae2eaa3bd28c52191093f393bca6ce3e9944e66f5b7d9da9a105c1d2014"
+    },
+    {
+      "path": "tests/test_agent_camera_settings.py",
+      "source": "benchmark workspace",
+      "sha256": "c4a83e44fe6eea4bb650925fbc451615149bb776486320104ff3fb53e69bbd77"
+    },
+    {
+      "path": "tests/test_agent_safety_alignment_fixes.py",
+      "source": "benchmark workspace",
+      "sha256": "a75feabd905b861cde5afa9821819d4fba748c7e394764aa9c1ee9edb39330d7"
+    },
+    {
+      "path": "tests/test_aggregate_results.py",
+      "source": "benchmark workspace",
+      "sha256": "5a4402ae89aaabb558dfed2eaf1d43a564a4243c699131529a92d781c48d4ffe"
+    },
+    {
+      "path": "tests/test_analyze_natural_rollout_outcomes.py",
+      "source": "benchmark workspace",
+      "sha256": "62215ca85835c0831d386687fccae9c2d2e666d47667a883a0b442496fae2123"
+    },
+    {
+      "path": "tests/test_audit_traffic_e2e.py",
+      "source": "benchmark workspace",
+      "sha256": "059ba97ca78220160207372192c135270e12820b3458039c966e5bad81c3581e"
+    },
+    {
+      "path": "tests/test_benchmark_assets.py",
+      "source": "benchmark workspace",
+      "sha256": "273b2f49438e0db8c48267282e803999f7c54a44212482ca51dd3ae37914ef23"
+    },
+    {
+      "path": "tests/test_benchmark_cli.py",
+      "source": "benchmark workspace",
+      "sha256": "cbf94f277558a6177354afac3511afcf71598bbbab90741f9f59e0fa12237a32"
+    },
+    {
+      "path": "tests/test_collision_distance_sweep.py",
+      "source": "benchmark workspace",
+      "sha256": "fdc495bc33f2cdaf877cded5d94df4a4ec6bf54836f8713f1854c572d626f7f6"
+    },
+    {
+      "path": "tests/test_dynamic_obstacle_evaluator.py",
+      "source": "benchmark workspace",
+      "sha256": "2f1cea4e2f55a45a6a08323f67596a2604c6809b498a7b8829485de210427f1f"
+    },
+    {
+      "path": "tests/test_evaluation_metrics.py",
+      "source": "benchmark workspace",
+      "sha256": "42e66af45f51cd42d8b3afa6f43307bf4b81788d667f67fcfa4a3b2369d99219"
+    },
+    {
+      "path": "tests/test_inspect_task_signal_coverage.py",
+      "source": "benchmark workspace",
+      "sha256": "6c751b39a82f8d25f5e6b7eb0a264646be1bb8f3067b3ab048e3a46b95b1e334"
+    },
+    {
+      "path": "tests/test_legacy_intersection_clearance.py",
+      "source": "benchmark workspace",
+      "sha256": "78d6b6a3a977198bd2efd7ad7d5f24d97f42bfc55f3105e70fbb15460a001241"
+    },
+    {
+      "path": "tests/test_llm_retry.py",
+      "source": "benchmark workspace",
+      "sha256": "a1a6959b0c1715d459d24421a38bc7e1a0842f6db9397b46de39cbd213e5d6db"
+    },
+    {
+      "path": "tests/test_object_cleanup.py",
+      "source": "benchmark workspace",
+      "sha256": "9c089ab6013a9c812f971f588880313f41a998e7149da333001b2f8f67cb2d9f"
+    },
+    {
+      "path": "tests/test_open_source_experiments.py",
+      "source": "benchmark workspace",
+      "sha256": "b34321faeab753088fa198bdee67d16cd857a3c884692cfd21ecc778c2a0acc3"
+    },
+    {
+      "path": "tests/test_prompt_collision_avoidance.py",
+      "source": "benchmark workspace",
+      "sha256": "d4075bb6545c71e45fadb8a08a07f5522165fdea01cf0707e2bc1a0505c4135b"
+    },
+    {
+      "path": "tests/test_qwen_runner_model_identity.py",
+      "source": "benchmark workspace",
+      "sha256": "ffb93762eda7047f43592e0e031d7738415f8b85c368f170ce60a8561e346570"
+    },
+    {
+      "path": "tests/test_realtime_concurrent_inference.py",
+      "source": "benchmark workspace",
+      "sha256": "d06702624306e8fe797af39b898fc3c260ed8b63d0976df517b657c094a37e7d"
+    },
+    {
+      "path": "tests/test_replay_recorded_rollout_video.py",
+      "source": "benchmark workspace",
+      "sha256": "1f1d87331e76296daa6786be07c7bcfbf3b01555378fe33fd5b67d429ee96a14"
+    },
+    {
+      "path": "tests/test_rollout_alignment_validator.py",
+      "source": "benchmark workspace",
+      "sha256": "5596d3623db79dd39bd330f369a7b0b226a6b9694719eea90702bb26f4c7f4f4"
+    },
+    {
+      "path": "tests/test_rollout_video_events.py",
+      "source": "benchmark workspace",
+      "sha256": "e2010c3c6346375330491c44ee4fb5de8f3eaa41b30dc32caacb5486f23aafed"
+    },
+    {
+      "path": "tests/test_route_permission_integration.py",
+      "source": "benchmark workspace",
+      "sha256": "6ed550b63ec9ee9e66e230eb9260e1c57b9ad4ee32eaaeba8bfdcb3b79308021"
+    },
+    {
+      "path": "tests/test_route_steps.py",
+      "source": "benchmark workspace",
+      "sha256": "cd786b4db047c35f5037a0460afd81526ac278453b96aa746f42eee8cf4b3808"
+    },
+    {
+      "path": "tests/test_rt_traffic_system.py",
+      "source": "benchmark workspace",
+      "sha256": "b7f32e0f66972b6b836a07d9304169f820ab43657fb46c15ed433b9dc4787389"
+    },
+    {
+      "path": "tests/test_traffic_light_alignment.py",
+      "source": "benchmark workspace",
+      "sha256": "a0496593b919154a27d4987927e8e8694cab41bb039cbce184f93a6565284476"
+    },
+    {
+      "path": "tests/test_unrealcv_request_timeout.py",
+      "source": "benchmark workspace",
+      "sha256": "2ed621fcbcfce7802f9dc05fc81fd6d4c51012d510afc775a0d0dc8293cf0af8"
+    },
+    {
+      "path": "tests/test_unrealcv_time_control.py",
+      "source": "benchmark workspace",
+      "sha256": "8116de3571cdc11053f587f3c6a2a71dd902f546a40d5845849d64b2598d1b6e"
+    },
+    {
+      "path": "tests/test_waypoint_action_alignment.py",
+      "source": "benchmark workspace",
+      "sha256": "51d523541a791752402ed3a5e740e694503ca78824334a22f0289936ae0ba181"
+    },
+    {
+      "path": "tests/test_world_manager_trigger_controls.py",
+      "source": "benchmark workspace",
+      "sha256": "c7028dff5536f20284d00c431dd072d9415f57a2c810336e677cefcd4e69c47a"
+    },
+    {
+      "path": "tools/analyze_collision_launch_probability.py",
+      "source": "benchmark workspace",
+      "sha256": "22e67a930e06df25d08ca50cddd2b0faad36c9b386c36daaf77931984f5638a4"
+    },
+    {
+      "path": "tools/analyze_natural_rollout_outcomes.py",
+      "source": "benchmark workspace",
+      "sha256": "3fbb6e7e6ed43c88ad68229e2cc79e8dadb7085d1aae8875cfd7fad08c305026"
+    },
+    {
+      "path": "tools/analyze_traffic_run.py",
+      "source": "benchmark workspace",
+      "sha256": "d6eaa8859293ad5ca6edbec43806f51474eaaa10c1576fefb640143c0c9091bd"
+    },
+    {
+      "path": "tools/audit_traffic_e2e.py",
+      "source": "benchmark workspace",
+      "sha256": "33b97b3fdbb2ec17abe356792fb00bed52c97fd2d830640fd5dc94e1bfde183c"
+    },
+    {
+      "path": "tools/benchmark_pedestrian_light_visibility.py",
+      "source": "benchmark workspace",
+      "sha256": "1e35e48c15072906c0e870f3e62da38c1c389cda37715ffe624b237fcb262f81"
+    },
+    {
+      "path": "tools/brighten_demo_video.py",
+      "source": "benchmark workspace",
+      "sha256": "45946a0abd23ff1eb5a8eac5e13b6c94d22c67f573645f3240ec5d9c3edeeb72"
+    },
+    {
+      "path": "tools/build_task_demo.py",
+      "source": "benchmark workspace",
+      "sha256": "a8ad95136da8b2c986bc37df5fa2091436e60d314da3b299cdc050c99a977493"
+    },
+    {
+      "path": "tools/capture_item2_collision_demo.py",
+      "source": "benchmark workspace",
+      "sha256": "fa50e61f4738c49a48c247e7ecbb6c77768cbec068451aed93ca3ae9e658b817"
+    },
+    {
+      "path": "tools/capture_traffic_light_alignment.py",
+      "source": "benchmark workspace",
+      "sha256": "939198532e79ef9c3bbdc1bcbb330db9d5b50cf793731973ca05787880f42f96"
+    },
+    {
+      "path": "tools/capture_triggered_collision_task.py",
+      "source": "benchmark workspace",
+      "sha256": "03c6e25aaf15f9ef449f3a2f7ec17aa9e30896f0ccdaac3b3696a8ea54c7cef5"
+    },
+    {
+      "path": "tools/inspect_task_signal_coverage.py",
+      "source": "benchmark workspace",
+      "sha256": "28b37b1569c140bcacda6ce3f6717626d979774ecfdfa333a37df00703f35069"
+    },
+    {
+      "path": "tools/probe_demo_camera.py",
+      "source": "benchmark workspace",
+      "sha256": "4bdfe8d5a34e5308a8a5473980cb6f0bb10fe26b5485c0fa9ef73daba0b5375b"
+    },
+    {
+      "path": "tools/probe_live_safety_events.py",
+      "source": "benchmark workspace",
+      "sha256": "3d49ff8fe439c935cec28858436993d25306b856aa6c5f72a02225e1f1f090c2"
+    },
+    {
+      "path": "tools/probe_runtime_exposure.py",
+      "source": "benchmark workspace",
+      "sha256": "1bd1a718e9f3401340e592fbe4f6c713859b4340cdb1e722dde8d1bec716ae31"
+    },
+    {
+      "path": "tools/probe_task_camera_exposure.py",
+      "source": "benchmark workspace",
+      "sha256": "7e636190582e6196f28677e450d6aa6fdcf5494da9096dbe8297ac82baddcd27"
+    },
+    {
+      "path": "tools/probe_traffic_light_interfaces.py",
+      "source": "benchmark workspace",
+      "sha256": "79ac2c5dc6b794563b1ab4b106bbb9af4952ddada9fb35058a42aa0bacf9464e"
+    },
+    {
+      "path": "tools/run_collision_distance_sweep.py",
+      "source": "benchmark workspace",
+      "sha256": "9be3eb708c8ec4b29939b3d605ab2fa383d4250d7586fc6e38fa9f137124f73f"
+    },
+    {
+      "path": "tools/validate_demo_brightness.py",
+      "source": "benchmark workspace",
+      "sha256": "648ba981e467f6f3b55c871ae963a55fc1b16433e7cceb33ec2beb0ee35326c3"
+    },
+    {
+      "path": "data/agents.json",
+      "source": "benchmark workspace",
+      "sha256": "6894a5e3f496baf934a7a8075a34dbf93f02c91c1ef7f08e468e2dfdac5e8fe2"
+    },
+    {
+      "path": "data/agents_qwen3vl4b_base_8007.json",
+      "source": "benchmark workspace",
+      "sha256": "c3b1e6904748c82e75ded305e85872c87197ca044801707cb9353b68e2b6dce9"
+    },
+    {
+      "path": "data/agents_qwen3vl8b.json",
+      "source": "benchmark workspace",
+      "sha256": "bc1da2eb534e492d5afd09a9f06a8c8bb66bac1344bfe9a4150cdb336305bdbe"
+    },
+    {
+      "path": "data/agents_qwen3vl8b_base_8000.json",
+      "source": "benchmark workspace",
+      "sha256": "45439efa108742a726cfac1121d41fea935f0d80e92a60c7cb73950f787365f4"
+    },
+    {
+      "path": "data/agents_qwen3vl8b_base_8008_bnb.json",
+      "source": "benchmark workspace",
+      "sha256": "15066ece6242fddae8f5573cf3cb9e483df6435276b6fd36963f2f7c4620908d"
+    },
+    {
+      "path": "data/all_tasks.json",
+      "source": "benchmark workspace",
+      "sha256": "9ee5993bb150c078a5fc968255a7bdeee0fba0bdab990b8231bf460b7d4ef79b"
+    },
+    {
+      "path": "data/bbox.json",
+      "source": "benchmark workspace",
+      "sha256": "9b07c2ef342956966380d35083633324681f98640c163a5c5ddda93f19e36585"
+    },
+    {
+      "path": "data/bbox_test.json",
+      "source": "benchmark workspace",
+      "sha256": "252d0ad12e2bd9eb324082a7120702d1e2d3e88737e1626dd68bcd8fa1a74655"
+    },
+    {
+      "path": "data/bbox_train.json",
+      "source": "benchmark workspace",
+      "sha256": "94c6e6eaf51c4efa720901c27a66eb24d3bbcbfafa0212435f52d73f34297f64"
+    },
+    {
+      "path": "data/generated_scenarios.json",
+      "source": "benchmark workspace",
+      "sha256": "884d4f512d3183203ebc42dddbf1bf9ad57f326084399091fb91cd366b0e4712"
+    },
+    {
+      "path": "data/map1_10roads/buildings.json",
+      "source": "benchmark workspace",
+      "sha256": "20f8778447adc64cd548b5598aaf64abc7445d89d24eaade21e20eccd77e07a5"
+    },
+    {
+      "path": "data/map1_10roads/elements.json",
+      "source": "benchmark workspace",
+      "sha256": "c2c1c50957e5057bf8fe1384e9e841bdd1288c590d3f3813cc65c856abcb4998"
+    },
+    {
+      "path": "data/map1_10roads/obstacles.json",
+      "source": "benchmark workspace",
+      "sha256": "735a2a56ecfb46c67a77983a21f606c0197fdf7702007572bd05e24a6e7ac81a"
+    },
+    {
+      "path": "data/map1_10roads/progen_world.json",
+      "source": "benchmark workspace",
+      "sha256": "8342e130be878a7bafe82bb9ad1b125ce9561a210194921847da3578406cec12"
+    },
+    {
+      "path": "data/map1_10roads/roads.json",
+      "source": "benchmark workspace",
+      "sha256": "0ffd2751c9e37c9d4bb21930ee275f180f405b46d6ee1a85ddda52ab43efaa4b"
+    },
+    {
+      "path": "data/map1_10roads/routes.json",
+      "source": "benchmark workspace",
+      "sha256": "a19a5b11416f0259d08614cdbb02fa66b774af4e173a1fa048c364da90f3d841"
+    },
+    {
+      "path": "data/map1_10roads/task_0.png",
+      "source": "benchmark workspace",
+      "sha256": "aaa46a103d73beec48569f005f88a9d9a67b8b7144141b0b9603f8dc72fc2881"
+    },
+    {
+      "path": "data/map1_10roads/task_1.png",
+      "source": "benchmark workspace",
+      "sha256": "78ec758a6a7f26193c966a723f624702885188cb6d0b3ab02e4bdec5071c9abc"
+    },
+    {
+      "path": "data/map1_10roads/task_2.png",
+      "source": "benchmark workspace",
+      "sha256": "4d5b6e748a07bc9205048ff76f2a98ddff0e633e82bd63b61a8e4b9e33511873"
+    },
+    {
+      "path": "data/map1_10roads/task_3.png",
+      "source": "benchmark workspace",
+      "sha256": "945ed798a1ac89a3f233a1f358ad07fa8b0fa4b77271042dc63c6d42a663bff4"
+    },
+    {
+      "path": "data/map1_10roads/task_4.png",
+      "source": "benchmark workspace",
+      "sha256": "4e83cbc06d949580cf9ca73496a47f91edb8a38aba107e176b50b44e989797f3"
+    },
+    {
+      "path": "data/map1_10roads/task_5.png",
+      "source": "benchmark workspace",
+      "sha256": "3b4c68eb616c2df80d8c774da3279b354c9eed6bfba1c0064a79b1fde08c9ade"
+    },
+    {
+      "path": "data/map1_10roads/task_6.png",
+      "source": "benchmark workspace",
+      "sha256": "2ebbd8adecfe3fcc78f79295a262201600b2dc023fb046919a3ada82bf2c4184"
+    },
+    {
+      "path": "data/map1_10roads/task_7.png",
+      "source": "benchmark workspace",
+      "sha256": "5e4e99c593aeef670f9fc7eb12d8ad2c371691840b425dfca0185f146cdf12f3"
+    },
+    {
+      "path": "data/map1_10roads/task_routes.json",
+      "source": "benchmark workspace",
+      "sha256": "ed1751934b077ae8b628342d4eb957419b85d1b13fef3d59007b336604751c1d"
+    },
+    {
+      "path": "data/map1_10roads/tasks.json",
+      "source": "benchmark workspace",
+      "sha256": "523b273d423baac23bc02a2e65adb31c7fd5576a160fc98abc86d67459a52f92"
+    },
+    {
+      "path": "data/map1_10roads/walker_waypoints.json",
+      "source": "benchmark workspace",
+      "sha256": "c34586f205041cb65ef4a810f7303aa0b72ade004b660a66f1e94df2a767cf11"
+    },
+    {
+      "path": "data/map2_12roads/buildings.json",
+      "source": "benchmark workspace",
+      "sha256": "cf29b7aae526ac35d41f1661cde6c6a7763872d0fd8fcba363a538b4d835bff3"
+    },
+    {
+      "path": "data/map2_12roads/elements.json",
+      "source": "benchmark workspace",
+      "sha256": "c2c1c50957e5057bf8fe1384e9e841bdd1288c590d3f3813cc65c856abcb4998"
+    },
+    {
+      "path": "data/map2_12roads/obstacles.json",
+      "source": "benchmark workspace",
+      "sha256": "35f522e2c2b4ff499c18f0019b046356de8fa9a38f3b07cc859d674d857c51fe"
+    },
+    {
+      "path": "data/map2_12roads/progen_world.json",
+      "source": "benchmark workspace",
+      "sha256": "19c086a602f15f80ae0a82b8317333a329c8add62617cb55c9779305b60d20d6"
+    },
+    {
+      "path": "data/map2_12roads/roads.json",
+      "source": "benchmark workspace",
+      "sha256": "4dad93515a3bb224e4d067f8f453132c919ae0f02c7d6c4ffb2898d814b79a53"
+    },
+    {
+      "path": "data/map2_12roads/routes.json",
+      "source": "benchmark workspace",
+      "sha256": "a19a5b11416f0259d08614cdbb02fa66b774af4e173a1fa048c364da90f3d841"
+    },
+    {
+      "path": "data/map2_12roads/task_10.png",
+      "source": "benchmark workspace",
+      "sha256": "1d67838a5a7d96fcbf3ad1e17412de24f1463ded4b0ef03a49a87683f10992ae"
+    },
+    {
+      "path": "data/map2_12roads/task_11.png",
+      "source": "benchmark workspace",
+      "sha256": "003691475d7175fc5e9fb0c1d954749311f13ae31d644fd6eae67adc6d84a708"
+    },
+    {
+      "path": "data/map2_12roads/task_12.png",
+      "source": "benchmark workspace",
+      "sha256": "3fb48a657c8ca6c28a0d7fd23beee328287e8400e44154157232472fd6e63de2"
+    },
+    {
+      "path": "data/map2_12roads/task_13.png",
+      "source": "benchmark workspace",
+      "sha256": "f84c9fdf21148d9f583a2cd41b72cbe70a9922b89262536ba67fd5f5056763e7"
+    },
+    {
+      "path": "data/map2_12roads/task_14.png",
+      "source": "benchmark workspace",
+      "sha256": "4592fa9023333a84ae7ac52caa3f2dd6e01ac61644f0d4ae5b0fd6452f230326"
+    },
+    {
+      "path": "data/map2_12roads/task_15.png",
+      "source": "benchmark workspace",
+      "sha256": "8594c430e10fa37ded1f5c26396c77c538ed5e7ae43c93acd81e2c441b48e040"
+    },
+    {
+      "path": "data/map2_12roads/task_4.png",
+      "source": "benchmark workspace",
+      "sha256": "d9f9284c19ffb1929bf6101ef9b470d35f0e97e8f5832f28a9f98e46e2454e98"
+    },
+    {
+      "path": "data/map2_12roads/task_5.png",
+      "source": "benchmark workspace",
+      "sha256": "c5ba989b91beb0b180c22ab6dceaa138d1d5a8b4fe09756a86ce6165e8869841"
+    },
+    {
+      "path": "data/map2_12roads/task_6.png",
+      "source": "benchmark workspace",
+      "sha256": "6b61aaac6032f308bade8cf0bb0597f4c97d5ecce315ac38b39d625da7fefe56"
+    },
+    {
+      "path": "data/map2_12roads/task_7.png",
+      "source": "benchmark workspace",
+      "sha256": "443cf591daa1254d3cf9537a23bd1211695ba108a9e1a064f4d02a06747f8a02"
+    },
+    {
+      "path": "data/map2_12roads/task_8.png",
+      "source": "benchmark workspace",
+      "sha256": "39c2d3dc4f301db3b24dd0a1c94650827ae757a8a0dd56dcb74d6a23f9e3e3b5"
+    },
+    {
+      "path": "data/map2_12roads/task_9.png",
+      "source": "benchmark workspace",
+      "sha256": "e2453dcfbc273d45b0dc328c98f33a18930069a51010935c711f46a1e6c27a9e"
+    },
+    {
+      "path": "data/map2_12roads/task_routes.json",
+      "source": "benchmark workspace",
+      "sha256": "a5b74d84bbda6b55380648c75a184ed6abc0ca9a6f35fa8c1fc5106f60884d0b"
+    },
+    {
+      "path": "data/map2_12roads/tasks.json",
+      "source": "benchmark workspace",
+      "sha256": "6a0fe37f06eef5d475ef8e074ac31921743b85cf58b4dbbe6ac7ede8f1d12f2b"
+    },
+    {
+      "path": "data/map2_12roads/walker_waypoints.json",
+      "source": "benchmark workspace",
+      "sha256": "ab380ebe64b7c3c3845630aa741d787ad1579319a74720314373653a3bcfa830"
+    },
+    {
+      "path": "data/map3_15roads/buildings.json",
+      "source": "benchmark workspace",
+      "sha256": "1668f40499d074803e6ece59b0a8dbb2176a571f7acd62524e23d02507313298"
+    },
+    {
+      "path": "data/map3_15roads/elements.json",
+      "source": "benchmark workspace",
+      "sha256": "c2c1c50957e5057bf8fe1384e9e841bdd1288c590d3f3813cc65c856abcb4998"
+    },
+    {
+      "path": "data/map3_15roads/obstacles.json",
+      "source": "benchmark workspace",
+      "sha256": "8d5b5d5c59b9e65a9d58ca672c15b1ee2f6a4f1e7cac8fb07e8938e324d9f166"
+    },
+    {
+      "path": "data/map3_15roads/progen_world.json",
+      "source": "benchmark workspace",
+      "sha256": "db392d22e422a7be12e417cdb742fecd45af5395c280425a9cc7b6a76e7ca5a6"
+    },
+    {
+      "path": "data/map3_15roads/roads.json",
+      "source": "benchmark workspace",
+      "sha256": "750494a6a4ce34ac3acb781640ed5360225f3b9b76786232a15059a0c7b5912a"
+    },
+    {
+      "path": "data/map3_15roads/routes.json",
+      "source": "benchmark workspace",
+      "sha256": "a19a5b11416f0259d08614cdbb02fa66b774af4e173a1fa048c364da90f3d841"
+    },
+    {
+      "path": "data/map3_15roads/task_10.png",
+      "source": "benchmark workspace",
+      "sha256": "655bff73b367cb41fe17e199ce49d3b9ce97dac1ef3dbb0187d3a93f029ab450"
+    },
+    {
+      "path": "data/map3_15roads/task_11.png",
+      "source": "benchmark workspace",
+      "sha256": "fbbe377319f97bba0bcc0591319e004bb3b6d6cd9c6f7489b8af288beb0c1d16"
+    },
+    {
+      "path": "data/map3_15roads/task_16.png",
+      "source": "benchmark workspace",
+      "sha256": "cb218cc14248698835cf3bbc47951e5b9a41f2cefeba050d52c39b64c14b5e12"
+    },
+    {
+      "path": "data/map3_15roads/task_17.png",
+      "source": "benchmark workspace",
+      "sha256": "e03a098bb334073f536277237dfdbe1773dfb54551f5bbd34d70302e6d21ef40"
+    },
+    {
+      "path": "data/map3_15roads/task_18.png",
+      "source": "benchmark workspace",
+      "sha256": "69498c74e2838da7f6f9ecbc9ecd5df1cb9a035d9f93087e64554531fa885381"
+    },
+    {
+      "path": "data/map3_15roads/task_19.png",
+      "source": "benchmark workspace",
+      "sha256": "d98fbf6eb8ecb0eb9c30ec93c6eccbe2ba26340b38bc002af13159619eab5a11"
+    },
+    {
+      "path": "data/map3_15roads/task_20.png",
+      "source": "benchmark workspace",
+      "sha256": "5fbefd1c093b0b18fbd376bb210eef1eb314dd1c837cc70c3cb53176f208201b"
+    },
+    {
+      "path": "data/map3_15roads/task_21.png",
+      "source": "benchmark workspace",
+      "sha256": "5a678f0f347b46a92157e550b35d6fe2af57c2be7b7fd0abff4ea26816f40ee4"
+    },
+    {
+      "path": "data/map3_15roads/task_22.png",
+      "source": "benchmark workspace",
+      "sha256": "f203e349b25b93501bec07e3d2dba0c8513b3017da7021b56a02090d340da2fe"
+    },
+    {
+      "path": "data/map3_15roads/task_23.png",
+      "source": "benchmark workspace",
+      "sha256": "e6e9a72d1e628b33f9f62b2ff52c6f0ca2195ba3384c49a4cfde8026dc66c909"
+    },
+    {
+      "path": "data/map3_15roads/task_8.png",
+      "source": "benchmark workspace",
+      "sha256": "3e1a7bb1013e14b09eddafa7f4d9323f226241855ac4682ef0b2e26baeb4ea9f"
+    },
+    {
+      "path": "data/map3_15roads/task_9.png",
+      "source": "benchmark workspace",
+      "sha256": "6b75e7c6636f1c541cca8f37eddd7fa8e7f1925520189a4df2bc6a9eac3d4c40"
+    },
+    {
+      "path": "data/map3_15roads/task_routes.json",
+      "source": "benchmark workspace",
+      "sha256": "b2dfc91c4e369d9090ffa3ab18972108def55ee9c05f15a5787789ec2f05ccd1"
+    },
+    {
+      "path": "data/map3_15roads/tasks.json",
+      "source": "benchmark workspace",
+      "sha256": "937953cf272fcd6372ad2881cc0b158ac4f36fdc153c580070ddcc8ab1db9eeb"
+    },
+    {
+      "path": "data/map3_15roads/walker_waypoints.json",
+      "source": "benchmark workspace",
+      "sha256": "f8cf3c7fcc6d084f3cbbc916c4eb3d31127f5f3ed325cf2ac2f670507093a192"
+    },
+    {
+      "path": "data/map4_18roads/buildings.json",
+      "source": "benchmark workspace",
+      "sha256": "850822db9ecea2afd996070e480ce178d95a05a3bd5539ce9fc3ea3f14e46db2"
+    },
+    {
+      "path": "data/map4_18roads/elements.json",
+      "source": "benchmark workspace",
+      "sha256": "c2c1c50957e5057bf8fe1384e9e841bdd1288c590d3f3813cc65c856abcb4998"
+    },
+    {
+      "path": "data/map4_18roads/obstacles.json",
+      "source": "benchmark workspace",
+      "sha256": "e3584bb5352e30246232453da8d7db8d244ea4bb874756ce2eef39d2c0e8ff7f"
+    },
+    {
+      "path": "data/map4_18roads/progen_world.json",
+      "source": "benchmark workspace",
+      "sha256": "cb8dcae71dbe81d08f9705819476b9050cf5a5774b707c420ad3a9bf2211fa5e"
+    },
+    {
+      "path": "data/map4_18roads/roads.json",
+      "source": "benchmark workspace",
+      "sha256": "ed6b10e7ceabbf23ece3d0f9f3b0615c506b8d5a462c73f6523e1061f48083d1"
+    },
+    {
+      "path": "data/map4_18roads/routes.json",
+      "source": "benchmark workspace",
+      "sha256": "a19a5b11416f0259d08614cdbb02fa66b774af4e173a1fa048c364da90f3d841"
+    },
+    {
+      "path": "data/map4_18roads/task_12.png",
+      "source": "benchmark workspace",
+      "sha256": "82e08b9bf36e06db6ca77f3d15ee77a344865a5ff6063aee4f9fe77b84b7b52f"
+    },
+    {
+      "path": "data/map4_18roads/task_13.png",
+      "source": "benchmark workspace",
+      "sha256": "e0c7cbf9eaabc63feb70f2c6b26381953f129c0f3c78d553fa97abaa51a112c8"
+    },
+    {
+      "path": "data/map4_18roads/task_14.png",
+      "source": "benchmark workspace",
+      "sha256": "64d60d1d5fa30f8d61cd530e5fb1ef6c0650971e5f9dcadd0e645036b1e4b282"
+    },
+    {
+      "path": "data/map4_18roads/task_15.png",
+      "source": "benchmark workspace",
+      "sha256": "be6fed43b2a371064b0f3943a457031af7b9e7265b5a32ac2e5dc35bca8aaf0b"
+    },
+    {
+      "path": "data/map4_18roads/task_24.png",
+      "source": "benchmark workspace",
+      "sha256": "2947adc4885f023839fc911ef8a3836a94d58462013031d4236be565a844e55d"
+    },
+    {
+      "path": "data/map4_18roads/task_25.png",
+      "source": "benchmark workspace",
+      "sha256": "c24ef2bdf850e0e2fc88b126ba1e23ebf41149e9563019cab7263b0e2f7d5ae0"
+    },
+    {
+      "path": "data/map4_18roads/task_26.png",
+      "source": "benchmark workspace",
+      "sha256": "3bc90894e1c3770e37ab7367e9ecc0940bb782d702e796ae64e02658ae060b73"
+    },
+    {
+      "path": "data/map4_18roads/task_27.png",
+      "source": "benchmark workspace",
+      "sha256": "3a57ad9bfe22232fd7cdfbbe1f12584acbaebabe7218e06ddde396976ad3f899"
+    },
+    {
+      "path": "data/map4_18roads/task_28.png",
+      "source": "benchmark workspace",
+      "sha256": "841271ce1ce7dbeb9f29771c075b2513ffca21394a82e373a79657fa1648ed39"
+    },
+    {
+      "path": "data/map4_18roads/task_29.png",
+      "source": "benchmark workspace",
+      "sha256": "5399017fec198a81237603ee8fe626b2cc2031616ad7b888fdae5c056829239c"
+    },
+    {
+      "path": "data/map4_18roads/task_30.png",
+      "source": "benchmark workspace",
+      "sha256": "31c62a31822aa98e3e41a258b83853215321be9e757b453eea93e9c054365346"
+    },
+    {
+      "path": "data/map4_18roads/task_31.png",
+      "source": "benchmark workspace",
+      "sha256": "014b40dcbb15fd67317f275c53afa254c002764563c89c21a1210ddb06710408"
+    },
+    {
+      "path": "data/map4_18roads/task_routes.json",
+      "source": "benchmark workspace",
+      "sha256": "0d5d334c2ae47625d4eae7e8f6a49c20dbff00c32e2126e68b12284ecd665ab2"
+    },
+    {
+      "path": "data/map4_18roads/tasks.json",
+      "source": "benchmark workspace",
+      "sha256": "0858d6aecd624dd6ec5d44e736f4465f79ce6557c77f6960665bf91b2156fe33"
+    },
+    {
+      "path": "data/map4_18roads/walker_waypoints.json",
+      "source": "benchmark workspace",
+      "sha256": "ec3ae19a81163376818068e9540e9398a69618997f2d3cd8ab570b28fa441064"
+    },
+    {
+      "path": "data/map5_20roads/buildings.json",
+      "source": "benchmark workspace",
+      "sha256": "84e15da4bd65616809ad4a4e11b36cf8dbac84fb51bf0a1eda63f4056024e1a5"
+    },
+    {
+      "path": "data/map5_20roads/elements.json",
+      "source": "benchmark workspace",
+      "sha256": "c2c1c50957e5057bf8fe1384e9e841bdd1288c590d3f3813cc65c856abcb4998"
+    },
+    {
+      "path": "data/map5_20roads/obstacles.json",
+      "source": "benchmark workspace",
+      "sha256": "ac14079992a2eda33917c84edf96b0c2a9025226c250b0804c419402354bfc06"
+    },
+    {
+      "path": "data/map5_20roads/progen_world.json",
+      "source": "benchmark workspace",
+      "sha256": "1ad79858844378363bc67abe3a63bfc7e07d1d330964c456981e89c20461b249"
+    },
+    {
+      "path": "data/map5_20roads/roads.json",
+      "source": "benchmark workspace",
+      "sha256": "347c7d6b6287c0ca6346bd4d58ad883a62975a78e85ad122fb69af3e2fb38ec7"
+    },
+    {
+      "path": "data/map5_20roads/routes.json",
+      "source": "benchmark workspace",
+      "sha256": "a19a5b11416f0259d08614cdbb02fa66b774af4e173a1fa048c364da90f3d841"
+    },
+    {
+      "path": "data/map5_20roads/task_16.png",
+      "source": "benchmark workspace",
+      "sha256": "e9550fe4829fa11e9177e774d643a94768325306db078fd4acb830f970878283"
+    },
+    {
+      "path": "data/map5_20roads/task_17.png",
+      "source": "benchmark workspace",
+      "sha256": "dd173aedafcc8ef1f272e2d11f106d32324c921a173155281f6cb4f10d6f3a03"
+    },
+    {
+      "path": "data/map5_20roads/task_18.png",
+      "source": "benchmark workspace",
+      "sha256": "1225b68ea5acdd7218519b6d304015ccbc4921367b1822b14dc45912c6d82891"
+    },
+    {
+      "path": "data/map5_20roads/task_19.png",
+      "source": "benchmark workspace",
+      "sha256": "641024e7458bcf776ee6a3f1a6ef0c919a93ccd509d10d5cf8242cd127033e46"
+    },
+    {
+      "path": "data/map5_20roads/task_32.png",
+      "source": "benchmark workspace",
+      "sha256": "620b6fa2b34d567b9f857bb8d5c855a165ff110706da57b7be5d18206de69933"
+    },
+    {
+      "path": "data/map5_20roads/task_33.png",
+      "source": "benchmark workspace",
+      "sha256": "90da434884b6868a41d184b94859faacd325aef50e3c25bd2ba90e6971f14879"
+    },
+    {
+      "path": "data/map5_20roads/task_34.png",
+      "source": "benchmark workspace",
+      "sha256": "c5a6ac85e6ef27813fcf85c0b5f87cb1389eb16dc2ec492f8eacec894a57161a"
+    },
+    {
+      "path": "data/map5_20roads/task_35.png",
+      "source": "benchmark workspace",
+      "sha256": "62712e07a5702087dccb380431d4c5d8766e95934408e4e9ba7a851c8c0fe0b8"
+    },
+    {
+      "path": "data/map5_20roads/task_36.png",
+      "source": "benchmark workspace",
+      "sha256": "0424d853272ed8664fd90f99fae96a964074c64a1be46e60930bfb021e49283e"
+    },
+    {
+      "path": "data/map5_20roads/task_37.png",
+      "source": "benchmark workspace",
+      "sha256": "7b6dd63cde0a5cec7b0c188a085a41bfb00bcca8a205fb0af883b2ce44fd8744"
+    },
+    {
+      "path": "data/map5_20roads/task_38.png",
+      "source": "benchmark workspace",
+      "sha256": "517e6a0ca7fd983a53bee06276fcaa62d191d3b559fec0e70c9969280bfa5f41"
+    },
+    {
+      "path": "data/map5_20roads/task_39.png",
+      "source": "benchmark workspace",
+      "sha256": "3bb69e75929b70c69e95d6227c39fbb5c32e82e35a0ed2ec8256b065ab79b370"
+    },
+    {
+      "path": "data/map5_20roads/task_routes.json",
+      "source": "benchmark workspace",
+      "sha256": "5e98976bf7d6701034e082c200a12abd4d0e129dbf4054b7776f749f64c35844"
+    },
+    {
+      "path": "data/map5_20roads/tasks.json",
+      "source": "benchmark workspace",
+      "sha256": "ace3f26fe257cd24cd74dcbd2d2bcf47b6e5100246c30f24614d915349e1c00e"
+    },
+    {
+      "path": "data/map5_20roads/walker_waypoints.json",
+      "source": "benchmark workspace",
+      "sha256": "ca33dd369546b28bf9ceee15926f863da3e11e3c6cf78fab7d442644ad263571"
+    },
+    {
+      "path": "data/tasks.json",
+      "source": "benchmark workspace",
+      "sha256": "6e5f42832b44ce6babfc75681e2e77b93eae8cd16f9ed482eb0c1751bc70e6da"
+    },
+    {
+      "path": "data/ue_assets.json",
+      "source": "benchmark workspace",
+      "sha256": "b1b276bedb64abf4f34faa1e20403f904f5517c4eb72004328f4e0e24b0fe2f3"
+    },
+    {
+      "path": "config.yaml",
+      "source": "benchmark workspace",
+      "sha256": "ad5fe9118cc6728c5354a31ff697cbdd160c80ae2df593d01d1641a5cbc6c668"
+    },
+    {
+      "path": "run_scenario.py",
+      "source": "benchmark workspace",
+      "sha256": "d653080cb778765b7d1e92a74509f04164aec7b8ecc6a62a880348e24bc0ed03"
+    },
+    {
+      "path": "sample_tasks.py",
+      "source": "benchmark workspace",
+      "sha256": "ee20ee9e12194a73cc482e9672a0526fe9b43c46dc8f043031c421bd62e7ba77"
+    },
+    {
+      "path": "visualize_scenarios.py",
+      "source": "benchmark workspace",
+      "sha256": "745db89a3fbd6fb283ccdd26cdc2b31d2dc4c93182032df789372db5def90f57"
+    },
+    {
+      "path": "visualize_waypoints_obstacles.py",
+      "source": "benchmark workspace",
+      "sha256": "c4f2a77a9ce00fc65e8dc5487e38419dc0ced387404f6e871b309797250e300e"
+    },
+    {
+      "path": "requirements-openai-rollout.txt",
+      "source": "benchmark workspace",
+      "sha256": "b735a0a625e2c21a1eef23553daf676aeea763119dacfdf08e4ce2cc01e0ba22"
+    },
+    {
+      "path": "SimWorld/simworld/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "748bd7a12e58376953d4498dd98b44be7b13e314317be96b867e93a2af5b32ab"
+    },
+    {
+      "path": "SimWorld/simworld/communicator/unrealcv.py",
+      "source": "bundled SimWorld",
+      "sha256": "f89118314c6ae91e6dff7fb1723aa214f3c8426816c74aaf6cf8d06279bf28d3"
+    },
+    {
+      "path": "SimWorld/simworld/communicator/communicator.py",
+      "source": "bundled SimWorld",
+      "sha256": "ed0ab204e1ad7f06204cbc3879dc358baad5d76d7c074dca423dc3e6adc231c2"
+    },
+    {
+      "path": "SimWorld/simworld/communicator/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "a34289085a949b08f1d371c6e9c6c2317c7c68038ba1ce76374a4791ff6019ab"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "67662253ac3e50c307a37b73430670395c4ef0383daba7c34109a7269b999781"
+    },
+    {
+      "path": "SimWorld/simworld/data/description_map.json",
+      "source": "bundled SimWorld",
+      "sha256": "686240144a173ebf48c427a5e970086bc1c9440ea00b49ba8042603774ab3fab"
+    },
+    {
+      "path": "SimWorld/simworld/data/vehicle_types.json",
+      "source": "bundled SimWorld",
+      "sha256": "0f2ffd14573565223f282caa42ebc007ba96b6888f7c2b059f479912105186a1"
+    },
+    {
+      "path": "SimWorld/simworld/data/roads.json",
+      "source": "bundled SimWorld",
+      "sha256": "8dc7dd2415934ea3dd3e96ad63a74531dfc7605e21f779587d10508dfef1e910"
+    },
+    {
+      "path": "SimWorld/simworld/data/Bbox.json",
+      "source": "bundled SimWorld",
+      "sha256": "19ad55c41109bd5f680e8b56503e3ce88169c9b6e8cf5282af68624b01bad61a"
+    },
+    {
+      "path": "SimWorld/simworld/data/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "479e2f25b5db2bcaf2d92aee9449c1b425a2355a377614f9fa92df3bba8f71cb"
+    },
+    {
+      "path": "SimWorld/simworld/data/ue_assets.json",
+      "source": "bundled SimWorld",
+      "sha256": "539aa7497e90a746b2a1816d491fb3411dd35e048a11e82868a667755f89c8fb"
+    },
+    {
+      "path": "SimWorld/simworld/data/progen_world.json",
+      "source": "bundled SimWorld",
+      "sha256": "38e939e4d3a78f94a5f3e2f9631bffd7ab42ad483fa191347a0c08e469f80476"
+    },
+    {
+      "path": "SimWorld/simworld/data/predefined_roads.json",
+      "source": "bundled SimWorld",
+      "sha256": "4f13e792e8f15492892958579e675cc7a33161cba67ce08b3282e023f4638656"
+    },
+    {
+      "path": "SimWorld/simworld/local_planner/action_space.py",
+      "source": "bundled SimWorld",
+      "sha256": "0ba2d11ac7ec1abfc51b8ed47d5be043df7c946929fdcb45f03d6d92109d452c"
+    },
+    {
+      "path": "SimWorld/simworld/local_planner/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "d7b917418e5fb696ad98d4ef64e629e892e7e89b4b657ebc14b8dadcb2c67198"
+    },
+    {
+      "path": "SimWorld/simworld/local_planner/local_planner.py",
+      "source": "bundled SimWorld",
+      "sha256": "fa6d747b526ff784ace4c43871c92e21a5053b9ea3a10e630a2a8a7bdea53edc"
+    },
+    {
+      "path": "SimWorld/simworld/assets_rp/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "3eeac0c259b851cb8dbbbb8414a2e6a5d5fe8bf857e77211b8a50f1f97e8e3c5"
+    },
+    {
+      "path": "SimWorld/simworld/assets_rp/AssetsRP.py",
+      "source": "bundled SimWorld",
+      "sha256": "65f8547943c04357baff44d23ebbb961d8f109f5b9c2970c132460a8500df114"
+    },
+    {
+      "path": "SimWorld/simworld/llm/base_llm.py",
+      "source": "bundled SimWorld",
+      "sha256": "c3b353181554acc88955f03c3974241c7884d16e98f64efac25deb2c0060c274"
+    },
+    {
+      "path": "SimWorld/simworld/llm/retry.py",
+      "source": "bundled SimWorld",
+      "sha256": "209726ee7192cc7e47be7dd6ab2ff5927dc3de649d182da053b614182768af42"
+    },
+    {
+      "path": "SimWorld/simworld/llm/a2a_llm.py",
+      "source": "bundled SimWorld",
+      "sha256": "9bf8acaf956ce5add1fa4ce2e49ecb94a404657f3ab18364f51e16226bcd9596"
+    },
+    {
+      "path": "SimWorld/simworld/llm/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "83d175e6872d9f844cc42e1f0ce2389ceb5eebe5a7e4cadb9445cc06018ff2c7"
+    },
+    {
+      "path": "SimWorld/simworld/config/default.yaml",
+      "source": "bundled SimWorld",
+      "sha256": "b50684a467ad673adfb1ea47938633b18e2ebf37385547c685932c45044f4b7d"
+    },
+    {
+      "path": "SimWorld/simworld/config/config_loader.py",
+      "source": "bundled SimWorld",
+      "sha256": "12ae3925512480c163229a99b5662010bcaa08085f0ce379b96c321d823d8743"
+    },
+    {
+      "path": "SimWorld/simworld/config/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "7f26554c1dabb0e553e642af2df5f0762a0b5b44aaa975624f92c8aa0cf76fca"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "52d5bafc19fc9daadd4368ec02c3fe6669ffe0bc1f00cc576046121d20743de7"
+    },
+    {
+      "path": "SimWorld/simworld/map/map.py",
+      "source": "bundled SimWorld",
+      "sha256": "4bc132d3237e7b4e9658dcb3bd246d823c21dde4ad9aa845666673a9b82159e1"
+    },
+    {
+      "path": "SimWorld/simworld/map/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "e79588cca3f6ba3453357bd5090c334ddbbb387951a412d4f32344d9a9b22a51"
+    },
+    {
+      "path": "SimWorld/simworld/agent/humanoid.py",
+      "source": "bundled SimWorld",
+      "sha256": "3d9dd5f8635633c1b361e26d16593271d173147d113c9d317fce3360fb9b3aca"
+    },
+    {
+      "path": "SimWorld/simworld/agent/base_agent.py",
+      "source": "bundled SimWorld",
+      "sha256": "e9ce83b787a7eb9435b4c5b0ccb82eed9c120bf2957ec5373b56509b03ccacd3"
+    },
+    {
+      "path": "SimWorld/simworld/agent/pedestrian.py",
+      "source": "bundled SimWorld",
+      "sha256": "e4d063d9e5e969fc2797c172e36f099c660a89b1fdae91d5330e5c03cef1e142"
+    },
+    {
+      "path": "SimWorld/simworld/agent/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "6bd7f41e96bfaa974b5998ae9df7d97df095b03f641808026962948e689417ed"
+    },
+    {
+      "path": "SimWorld/simworld/agent/scooter.py",
+      "source": "bundled SimWorld",
+      "sha256": "c1c9a02d7dab4fa7eedbdb832762d72a432c0fd8b3a84d85ad21bce6ecc7c7cb"
+    },
+    {
+      "path": "SimWorld/simworld/agent/vehicle.py",
+      "source": "bundled SimWorld",
+      "sha256": "9c26b028d01dddaa45bdb9a36a7593255c4ea52fbf87a562240fa344eb8409a8"
+    },
+    {
+      "path": "SimWorld/simworld/utils/road_utils.py",
+      "source": "bundled SimWorld",
+      "sha256": "1207d35c94ea752d445366db77f1ff17789de31ea6ab470234f49d6ce460785d"
+    },
+    {
+      "path": "SimWorld/simworld/utils/load_json.py",
+      "source": "bundled SimWorld",
+      "sha256": "015fd3392114c9b0f69ec9e9dcbfe42e7d96c7fdc71115be0ff013ba2db60889"
+    },
+    {
+      "path": "SimWorld/simworld/utils/get_bbox.py",
+      "source": "bundled SimWorld",
+      "sha256": "a3342bed368db9d44c3481a0292f16abd1efb3f1c31548f05b021373277e57b1"
+    },
+    {
+      "path": "SimWorld/simworld/utils/data_exporter.py",
+      "source": "bundled SimWorld",
+      "sha256": "af78b1a83fcb1032af7967f819a493096c70a30fb4c7ceadc7bd189f0ea152d6"
+    },
+    {
+      "path": "SimWorld/simworld/utils/logger.py",
+      "source": "bundled SimWorld",
+      "sha256": "01a462dc2bd5ab1d4f0d8ee197912fd26994641b3fad1609a336ae089cdc8382"
+    },
+    {
+      "path": "SimWorld/simworld/utils/math_utils.py",
+      "source": "bundled SimWorld",
+      "sha256": "466216b3cc0b0ad9126da12ea05f054846a6cdf6af7b91e91bc69a5103306bb5"
+    },
+    {
+      "path": "SimWorld/simworld/utils/quadtree.py",
+      "source": "bundled SimWorld",
+      "sha256": "a1eca09fa5b34967028735284ea1f0acedbbe81f4edfb5168e0a7ec2c7dca6fa"
+    },
+    {
+      "path": "SimWorld/simworld/utils/priority_queue.py",
+      "source": "bundled SimWorld",
+      "sha256": "245bb1bfd59766b996471045c298c30212faaedc274b76b7a441e9f982da428c"
+    },
+    {
+      "path": "SimWorld/simworld/utils/traffic_utils.py",
+      "source": "bundled SimWorld",
+      "sha256": "d35f1b0614683a807283b01b1381901f2e557ff0c1f4cb949d49ac0a591a1a40"
+    },
+    {
+      "path": "SimWorld/simworld/utils/bbox_utils.py",
+      "source": "bundled SimWorld",
+      "sha256": "b268069cb4905f7677b3c5c81dcf92a0796d5e64b0bb6ecc408e1f9a6ee310b3"
+    },
+    {
+      "path": "SimWorld/simworld/utils/vector.py",
+      "source": "bundled SimWorld",
+      "sha256": "5996414b2fe5f5fe9bbe09cec20d836e9f847d3e47890d4178d29d2215ba44c5"
+    },
+    {
+      "path": "SimWorld/simworld/utils/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "247ca4b2c9dd227f33ac397c7fafc26194db911daac1209cdb7069f558ddb10b"
+    },
+    {
+      "path": "SimWorld/simworld/utils/data_importer.py",
+      "source": "bundled SimWorld",
+      "sha256": "cf81af53ade6c5ae1e199074b05ebfa2b4a42f1f0ad045d6d12a0c2b6c25fdff"
+    },
+    {
+      "path": "SimWorld/simworld/weather/weather_manager.py",
+      "source": "bundled SimWorld",
+      "sha256": "57a6f295f989db72868c5cf930a50c6d7133277456e0fb59e4761910b3c17fd4"
+    },
+    {
+      "path": "SimWorld/simworld/weather/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "1ea10dda4afcdbf0bb409c17c0159f3a7c7945bc32fe40ad647a0993c4d189f9"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/dataclass/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "7571464f736629f6c9e3a30ac2c16111a8ad983f80c54a5dcd34170e4acb407a"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/dataclass/dataclass.py",
+      "source": "bundled SimWorld",
+      "sha256": "7032bc1b3a63b1f7e60483c9fa813eed5ad33530c4496e29c45b06da5f80e82c"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/city/city_generator.py",
+      "source": "bundled SimWorld",
+      "sha256": "198771ab8a9eccf49e0539fd291f2a8dbd6fa9ab707e7a4627c28317de746487"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/city/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "082be6aeced149e794f18d3d92ece5e58c3e38bed98ffbc1c92dae5d3e60bfae"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/function_call/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "326ceaad7478a3529ca06a1bc735a241371424ddbb9c3d506cfc77471a86c807"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/function_call/city_function_call.py",
+      "source": "bundled SimWorld",
+      "sha256": "3507b610ac32cabda0660c869839e0b1e90d8c206f64b5f33053de745ea87e24"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/route/route_generator.py",
+      "source": "bundled SimWorld",
+      "sha256": "9d5008ac307daf10b8dd08b353a92875b4d8958e52b41af5b374c27e22db56cc"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/route/route_manager.py",
+      "source": "bundled SimWorld",
+      "sha256": "b93a81af5719e59a560a91f45762f8fac850452dfb224308e9c1aaae37ec92d0"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/route/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "6910784603dddc2890df56357aeb9fff62fada1e2d44534908c1e47438d2e5d7"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/building/building_manager.py",
+      "source": "bundled SimWorld",
+      "sha256": "2a80bc7974d733d03de7c8b06e593b070f2af07c95ab90a4b5922758da24507f"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/building/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "6370ab316bdd7386d93a307ac63a055832487512dfb70556a8083fe1cbd266c2"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/building/building_generator.py",
+      "source": "bundled SimWorld",
+      "sha256": "454b7fb9a94579166689de956e49b21333f51e82a761f2acb4c046c2e09a5351"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/render/visualization.py",
+      "source": "bundled SimWorld",
+      "sha256": "1a22541d70e1f564c60982607846710fb5a8a69a9e3a88ee790c69b0d6198d74"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/render/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "2213e9c24d84e294c321307e17f09462368693d8caaedf2224f47b0a9707dd61"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/road/road_generator.py",
+      "source": "bundled SimWorld",
+      "sha256": "201ecb4eaf3612a4379844feaf9fd7ce55a18adb51a753742c1ab260879ce10c"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/road/road_manager.py",
+      "source": "bundled SimWorld",
+      "sha256": "f24e36251344bc54769b507d753ab0ce73792c663c2aa3bafd58ccd63082faab"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/road/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "09aaf1e039a9f770338576f7770cc8742f6cc57b57dbc84a9c473484345b8779"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/element/element_generator.py",
+      "source": "bundled SimWorld",
+      "sha256": "d46320a0dad8f7ded49083702381bb6067b6c910996cbb9a28c7d7e40d96c0a7"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/element/element_manager.py",
+      "source": "bundled SimWorld",
+      "sha256": "638c614b2ee96790c038d8f9c1bc7e3fac96d6e8e30837a118ccca360050b77d"
+    },
+    {
+      "path": "SimWorld/simworld/citygen/element/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "247befee8a7db91623ce4d88c615e973e50aaf9635bb55f810c86bc9e79c43fe"
+    },
+    {
+      "path": "SimWorld/simworld/local_planner/prompt/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "b49e0b50afd728aae1d1b04cc9a1d57d8ae3abedcde22aacafe01804bd3b993c"
+    },
+    {
+      "path": "SimWorld/simworld/local_planner/prompt/prompt.py",
+      "source": "bundled SimWorld",
+      "sha256": "7022911746186fc8c8a388be9883723760ddff753f2f65c2f87becc7a109cafe"
+    },
+    {
+      "path": "SimWorld/simworld/assets_rp/prompt/retrieval_input_prompt.py",
+      "source": "bundled SimWorld",
+      "sha256": "058c09124c2cdad0f9a9861f63ebea948b3b5e970dd64299033cc9e2c612372a"
+    },
+    {
+      "path": "SimWorld/simworld/assets_rp/prompt/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "b448875359ac17e24a77920bff00dab4b25eb91bcbfc13f418a101310f5f521b"
+    },
+    {
+      "path": "SimWorld/simworld/assets_rp/utils/input_parser.py",
+      "source": "bundled SimWorld",
+      "sha256": "e84dc5889ad0fea3034c11f1b09eba3f2c99a592c06bf170a7d978c483211db6"
+    },
+    {
+      "path": "SimWorld/simworld/assets_rp/utils/reference_assets_retriever.py",
+      "source": "bundled SimWorld",
+      "sha256": "a352c49d00dffddb116a98e13920c19c169f1e2d8c87632a49d13f0bb7227afd"
+    },
+    {
+      "path": "SimWorld/simworld/assets_rp/utils/assets_rp_utils.py",
+      "source": "bundled SimWorld",
+      "sha256": "11d51fc8d93e0a9278a62f609bc4842ad23fddf610cb80cb48f621c7c2d84da1"
+    },
+    {
+      "path": "SimWorld/simworld/assets_rp/utils/clip_embedder.py",
+      "source": "bundled SimWorld",
+      "sha256": "34cd12e9e7aa1df0501263e25555116d8f42a6e9d24300857d76902950371f51"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/manager/pedestrian_manager.py",
+      "source": "bundled SimWorld",
+      "sha256": "6591e6d1e6be90c51c1405f27102ef1ac4c37b4d06ef8d20bbe011f6f1fb6273"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/manager/vehicle_manager.py",
+      "source": "bundled SimWorld",
+      "sha256": "2a1d3a6d39a1c5c77840f2c6a07e58a8b3a00a066612568d228c8b12201fc1d0"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/manager/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "d354266d95e104249768a7fd100b1c7d3a1203dcefcf1ea5c163038ac20a4390"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/manager/intersection_manager.py",
+      "source": "bundled SimWorld",
+      "sha256": "2543c33d1711cdba85749bb5d583077ea40231ee86cc1e00b5d6a343e8a6f830"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/ad_algorithm/pid_controller.py",
+      "source": "bundled SimWorld",
+      "sha256": "9d6987bb0810a40b402076efad210a5a4607f315ffbea903fdaa9e60bcfbba06"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/ad_algorithm/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "cf5e930522f888ea91b75b84ca000c44da7f6c3e9fbd6674e4b8a9b32a5abe64"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/base/traffic_signal.py",
+      "source": "bundled SimWorld",
+      "sha256": "4f0f9325d64732b289075dba2c7a935e43d60985b2580292a71efc28a9f00e9e"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/base/traffic_lane.py",
+      "source": "bundled SimWorld",
+      "sha256": "f6f5d5df06d2b8e9ce5e6eea3a55e8244617ca957f0c1f06af925532aa8639ce"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/base/sidewalk.py",
+      "source": "bundled SimWorld",
+      "sha256": "f972319ca881494c7db38ffcf1d6916c416da35244047fc5a5341ae27dd5e33a"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/base/crosswalk.py",
+      "source": "bundled SimWorld",
+      "sha256": "ef6b38518a3b687f27ad7a4c785f7d3b6cdf0dcd7b8dc43fcb74ff89de6491a0"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/base/road.py",
+      "source": "bundled SimWorld",
+      "sha256": "81ffc84589ccb7deedc51dcdc1fbc82a90855e500fd48eafc8908d1e067257fa"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/base/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "d12acb93ae8cca1a69ae32c6913a46dc898b2ce1a31afd6ec963c9dba6589d0b"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/base/intersection.py",
+      "source": "bundled SimWorld",
+      "sha256": "178ac9756942a3a87b65ddb1f20e734b45710219c826f0abedd16404814474db"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/controller/__init__.py",
+      "source": "bundled SimWorld",
+      "sha256": "4c5b6551419dbd6ebda64d5f09380f101ae3072d67a86e51a8260a7e21903e98"
+    },
+    {
+      "path": "SimWorld/simworld/traffic/controller/traffic_controller.py",
+      "source": "bundled SimWorld",
+      "sha256": "d8b94749e19f1a81067d4a39bf077f5e5014b85e808cff34c4bd854e038c0179"
+    },
+    {
+      "path": "SimWorld/LICENSE",
+      "source": "bundled SimWorld",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "website/app/rtsafe.tsx",
+      "source": "RT-SAFE presentation",
+      "sha256": "04961569568118b7a1bce65b6fb87752b790bd35c1d7fd84dbb1bfc1b8a34112"
+    },
+    {
+      "path": "website/app/data.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "1fff518a95a26266ebbcb9ef421342dcab05228a53fc9e088ed8fbfd6d3fe8bf"
+    },
+    {
+      "path": "website/app/examples.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "0e7b497f4cd823e1669434109e0163531451e3d89c62ace337587a45bb379da2"
+    },
+    {
+      "path": "website/app/globals.css",
+      "source": "RT-SAFE presentation",
+      "sha256": "6e72d5d4809a0ac45862a23c99e2697e61795e10f0fb722782a12b9a3572a5fc"
+    },
+    {
+      "path": "website/public/og.png",
+      "source": "RT-SAFE presentation",
+      "sha256": "da70ec55aea1ff4357c277ac9665761c2485e0134769e3e2a97eeb448a12da0c"
+    },
+    {
+      "path": "website/public/favicon.png",
+      "source": "RT-SAFE presentation",
+      "sha256": "8a6a2f58e73ffa9e68bdfba943da14e79c5272dbd2deffecb4553adf316db898"
+    },
+    {
+      "path": "website/public/data/results.csv",
+      "source": "RT-SAFE presentation",
+      "sha256": "76b5d5bf00d8145ef20eab8617d33810d50a19e5f2e33040551e6d64bd6ec5ca"
+    },
+    {
+      "path": "website/public/data/methodology.txt",
+      "source": "RT-SAFE presentation",
+      "sha256": "d8d137f22d183b70899ad307dae89c30213528e5de929083ca175e044af01c3e"
+    },
+    {
+      "path": "website/public/data/results.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "1fff518a95a26266ebbcb9ef421342dcab05228a53fc9e088ed8fbfd6d3fe8bf"
+    },
+    {
+      "path": "website/public/fonts/space-grotesk-500.ttf",
+      "source": "RT-SAFE presentation",
+      "sha256": "3e699ead1876244fa392243054ddefe7cf631b488438828a8a100731a22ab995"
+    },
+    {
+      "path": "website/public/fonts/dm-sans-600.ttf",
+      "source": "RT-SAFE presentation",
+      "sha256": "b79a2ea7a38f33fd96a282fadb9ce97626bb0724a44d21075859f0e50239993a"
+    },
+    {
+      "path": "website/public/fonts/dm-sans-700.ttf",
+      "source": "RT-SAFE presentation",
+      "sha256": "2a8e7f713ee79fbccdef3cef5c787aff47580299f7da60144961e7db2ec08211"
+    },
+    {
+      "path": "website/public/fonts/fonts.css",
+      "source": "RT-SAFE presentation",
+      "sha256": "7e33187b01846176fc511f7d56ea9b9a0826af4956386716a986ab893030ec02"
+    },
+    {
+      "path": "website/public/fonts/space-grotesk-400.ttf",
+      "source": "RT-SAFE presentation",
+      "sha256": "ec926d5065eaca49a48f96e312bbae0bbc5733c24215cf5dfabbdccee926fef7"
+    },
+    {
+      "path": "website/public/fonts/dm-sans-400.ttf",
+      "source": "RT-SAFE presentation",
+      "sha256": "b0ae3e89a7d3ef2b1838bb4b1ceb0b17cc3435af061eee809d76aa623ff116e9"
+    },
+    {
+      "path": "website/public/fonts/LICENSE-DM-Sans.txt",
+      "source": "RT-SAFE presentation",
+      "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1"
+    },
+    {
+      "path": "website/public/fonts/dm-sans-500.ttf",
+      "source": "RT-SAFE presentation",
+      "sha256": "376427b5322148d8de1e03f263bcca4935a2d60ba71d9f94f4947ab664c711ae"
+    },
+    {
+      "path": "website/public/fonts/LICENSE-Space-Grotesk.txt",
+      "source": "RT-SAFE presentation",
+      "sha256": "564ce565c371c5e5bbf286006565a7c9aa55a9f56e7ca58d56e05d649dd61a72"
+    },
+    {
+      "path": "website/public/fonts/space-grotesk-700.ttf",
+      "source": "RT-SAFE presentation",
+      "sha256": "3e756954468ff1cb302dae0414262e72f76a67d87bef3fa1f3226cd0fb9b2d85"
+    },
+    {
+      "path": "website/public/fonts/space-grotesk-600.ttf",
+      "source": "RT-SAFE presentation",
+      "sha256": "6c0346b8d297ebdc225832833e03e884a26ad99d265ecd3924d46e1ba285ea87"
+    },
+    {
+      "path": "website/public/media/hero.webp",
+      "source": "RT-SAFE presentation",
+      "sha256": "66dad6c0cf4bbc27bf4c0899e3968f37c9c503908662966af35c47d0430198f9"
+    },
+    {
+      "path": "website/public/media/rt-safe-conference-captioned.mp4",
+      "source": "RT-SAFE presentation",
+      "sha256": "dfd21b62c73e30e48e4aa0d5d6a564f749d78fe9dee4f1749c25dd4934d91b14"
+    },
+    {
+      "path": "website/public/media/rt-safe-paper.pdf",
+      "source": "RT-SAFE presentation",
+      "sha256": "c23b1086b7ce9112432678351df054ad6b8a0e81b8c6ea7aa2cc2f28f1ff7900"
+    },
+    {
+      "path": "website/public/media/case-7.mp4",
+      "source": "RT-SAFE presentation",
+      "sha256": "974e366d7a4416a145a5c9e1b307d57b2d7de55a5b4304d9563b5d74ebf46c11"
+    },
+    {
+      "path": "website/public/media/rt-safe-demo.vtt",
+      "source": "RT-SAFE presentation",
+      "sha256": "d7284b7c6dfcea8816a34a9fdd279ec9a250dcdd74f709b8a315579ec07c95da"
+    },
+    {
+      "path": "website/public/media/case-6.mp4",
+      "source": "RT-SAFE presentation",
+      "sha256": "2b3e969b07b0870145db73e5a74e3971ea93f334fbdfa7d3e416da901e7f768d"
+    },
+    {
+      "path": "website/public/media/rt-safe-highlights.mp4",
+      "source": "RT-SAFE presentation",
+      "sha256": "491058fa535cea0b79a9ca23e7d8083d58df3b5663cf5406a2f9fa1753fd63af"
+    },
+    {
+      "path": "website/public/media/rt-safe-demo.mp4",
+      "source": "RT-SAFE presentation",
+      "sha256": "68ccb5d91689341324286f137723261a3c7095ecdf172033daa55d3a73462210"
+    },
+    {
+      "path": "website/public/media/case-1.mp4",
+      "source": "RT-SAFE presentation",
+      "sha256": "4c228e57023f552158bc375739c424a735fc5a1799601debd0fcc1edae123d19"
+    },
+    {
+      "path": "website/public/media/rt-safe-highlights.vtt",
+      "source": "RT-SAFE presentation",
+      "sha256": "ac9aff81b23d9f653fb85e23883e0855e11a1d3090f04fc4a38a9126e5b7b184"
+    },
+    {
+      "path": "website/public/media/film-poster.jpg",
+      "source": "RT-SAFE presentation",
+      "sha256": "9fa6fcc6b30adf8e90b1d33e976f9350a0c126e6eb4ae6037bd9aa329bc35d50"
+    },
+    {
+      "path": "website/public/data/examples/case-6.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "187f8187e155e06c88cd15af302ea4e85f3525e705226a1cf54d85e37351c732"
+    },
+    {
+      "path": "website/public/data/examples/case-7.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "c02287323b7aa6dd4e681b633db58b7750dfe8357e159cfdde657d6018dc8478"
+    },
+    {
+      "path": "website/public/data/examples/case-1.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "084d49805a74f35cc13dcc619274d8863f409f87870b22aa9f675817cedc199b"
+    },
+    {
+      "path": "website/public/media/observations/02_temporal_frame_01.png",
+      "source": "RT-SAFE presentation",
+      "sha256": "c1b13cd4d1ddc8205e01e8f587b978a91e1472cfd0b74ae70ef7737dfe767265"
+    },
+    {
+      "path": "website/public/media/observations/case-6.webp",
+      "source": "RT-SAFE presentation",
+      "sha256": "3661425eab5aa11be62ef3c5aaf133da6bef794e7d7e3552bef14c0df9a45a89"
+    },
+    {
+      "path": "website/public/media/observations/01_temporal_frame_00.png",
+      "source": "RT-SAFE presentation",
+      "sha256": "46c16fcf65a8f1bc620cca8eacc4dd9296863e3f363e5a3abd792b2c22be57d8"
+    },
+    {
+      "path": "website/public/media/observations/03_temporal_frame_02.png",
+      "source": "RT-SAFE presentation",
+      "sha256": "e109a472ef58fa29bfd0e198e73536a8f00b1403804218c965b15dabcda392c7"
+    },
+    {
+      "path": "website/public/media/observations/case-1.webp",
+      "source": "RT-SAFE presentation",
+      "sha256": "8c41dc464899031f74060831239791d2384264216ad2390424c7a91b240aaec2"
+    },
+    {
+      "path": "website/public/media/observations/case-6-result.png",
+      "source": "RT-SAFE presentation",
+      "sha256": "1c3793c144441a1df1d2c6cd827413a5b4b3e61ee083111ca433339eb2d1d389"
+    },
+    {
+      "path": "website/public/media/observations/case-7-result.png",
+      "source": "RT-SAFE presentation",
+      "sha256": "68e1c121a59c168b8f765963855cd9fbc9f1466028e221925ec6a0472f6eb889"
+    },
+    {
+      "path": "website/public/media/observations/case-7.webp",
+      "source": "RT-SAFE presentation",
+      "sha256": "acd6c997881754f1e3413dfaa2dbd4103f0cd6c19d924a557821df3f0624a61a"
+    },
+    {
+      "path": "website/public/media/observations/case-1-result.png",
+      "source": "RT-SAFE presentation",
+      "sha256": "4421d31446f77d9c13913a6d483ac70cee688aea94ae31930e9ba43dfe7d2184"
+    },
+    {
+      "path": "website/tests/data.test.mjs",
+      "source": "RT-SAFE presentation",
+      "sha256": "1c8b926981c52961901ce3dd6a243b5914805e2474a3bb5f9cec2ee86cf5a7f6"
+    },
+    {
+      "path": "website/vite.pages.config.ts",
+      "source": "RT-SAFE presentation",
+      "sha256": "9ffdb5e0a267733a49f23952fde80f0bd0a11d55bc2ce675f266b04177dc3c8f"
+    },
+    {
+      "path": "website/pages-entry.tsx",
+      "source": "RT-SAFE presentation",
+      "sha256": "0834224cccff3585ba49a6a6bab48787f6ab698107c2466c555aeb7844409581"
+    },
+    {
+      "path": "website/pages-ssr.tsx",
+      "source": "RT-SAFE presentation",
+      "sha256": "92a8cd3cc520e974592db13e97157dcc805b0676e1f1119c3c78b398859a707d"
+    },
+    {
+      "path": "website/index.html",
+      "source": "RT-SAFE presentation",
+      "sha256": "fd5cb8731c6d69b8dc53c605715575b49c702ee064a99e9e59defea1cedea7d1"
+    },
+    {
+      "path": "website/scripts/prerender-pages.mjs",
+      "source": "RT-SAFE presentation",
+      "sha256": "f5f8572196b864305f5d0808b7c66128ff545c7979ff142fb504b42cd05fe329"
+    },
+    {
+      "path": "website/scripts/finalize-pages.mjs",
+      "source": "RT-SAFE presentation",
+      "sha256": "adf8ff787cd46dbfc7eca4ddfc9cc10d07ddec1147173e7e0820dcb30a4ad3b6"
+    },
+    {
+      "path": "website/video/README.md",
+      "source": "RT-SAFE presentation",
+      "sha256": "6e66e99708b7465877204ae4f2082c6c000b1d1ab0c557d2547b2b285a5e769e"
+    },
+    {
+      "path": "website/video/requirements.txt",
+      "source": "RT-SAFE presentation",
+      "sha256": "d88bb4cbb3b42f61ed861caf1ae8b39851a5547a62dbea9c8372864394be5ddd"
+    },
+    {
+      "path": "website/video/storyboard.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "1f68bb062f9f88d310078a239b7300e6fdf757ef43be1aa93ce86b836ca2b174"
+    },
+    {
+      "path": "website/video/timeline.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "cd5b37f168699d0d406944bc71131c430a0f2f8ed0de17c91da8d8417d79ee0c"
+    },
+    {
+      "path": "website/video/narration.txt",
+      "source": "RT-SAFE presentation",
+      "sha256": "3fa9d598b7050930802d73b6aac60bfd631cdff003e410d0d34618312e4c4e5c"
+    },
+    {
+      "path": "website/video/image-prompts.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "069c7401702c734b0b28a77e191b4c5015a852010155841bd5b1677c91892266"
+    },
+    {
+      "path": "website/video/chapters.txt",
+      "source": "RT-SAFE presentation",
+      "sha256": "4ec54088a5435f4d9c99926da7f743d62b5ad8f996a542aa63d5dff8241fa328"
+    },
+    {
+      "path": "website/video/rt-safe-demo.srt",
+      "source": "RT-SAFE presentation",
+      "sha256": "64fa9dd1dd6739be0c717248708a658bb78529541ed974f40df3446d940d9ea5"
+    },
+    {
+      "path": "website/video/cover-illustration.png",
+      "source": "RT-SAFE presentation",
+      "sha256": "423c689b1cbbad6a292a8310d474dc63fb0fcfb4a20a5756478ec367e77152f8"
+    },
+    {
+      "path": "website/video/audio/effort.mp3",
+      "source": "RT-SAFE presentation",
+      "sha256": "083fe97689bde05b4da6e6c5d8dcb26ad31ab85a191d6b4aa4d7c06f63c5175c"
+    },
+    {
+      "path": "website/video/audio/closing.mp3",
+      "source": "RT-SAFE presentation",
+      "sha256": "f619c6e9ade8c2c75e8c764fb2223c3c305cce94d9d329f8c1449012525d9217"
+    },
+    {
+      "path": "website/video/audio/completion.words.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "514f4080e395f6f7d95029e9c004e843ca96a1e820de149e9626e29ac03f66b3"
+    },
+    {
+      "path": "website/video/audio/opening.words.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "6067ffb06ddf16933ce80dbf67fcd893394ad068be50273dab7513b9feb0ceb3"
+    },
+    {
+      "path": "website/video/audio/interface.mp3",
+      "source": "RT-SAFE presentation",
+      "sha256": "36b364c987f23d2b0baf39e47defff81401b50f01af3d9852102035d36479d89"
+    },
+    {
+      "path": "website/video/audio/decision.words.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "2dfb7c022c03faee594e83d8e6835172a7ca553e351c7a1f8ca3f6d15dd07673"
+    },
+    {
+      "path": "website/video/audio/closing.words.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "94be817e6b054c4307aeafe967cde79c0281e51a75e5b2cb1a7e689dd2ef0d9d"
+    },
+    {
+      "path": "website/video/audio/environment.words.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "f9e485393fdc69a587f5410d575c009cdd79d3795ddd3bb007c4a4fd3fdc855e"
+    },
+    {
+      "path": "website/video/audio/timing.mp3",
+      "source": "RT-SAFE presentation",
+      "sha256": "290134c07c48a866e44a6af8d1a035c3201683131d51dd39453217912f467094"
+    },
+    {
+      "path": "website/video/audio/completion.mp3",
+      "source": "RT-SAFE presentation",
+      "sha256": "450698a0ae5997358a359754a0cc2acd3b559ab8722db9567dc4d5a3cb4583e0"
+    },
+    {
+      "path": "website/video/audio/interface.words.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "4bb44c2d397102644094419717839c2af3050b670684e25ed790993ef7015d04"
+    },
+    {
+      "path": "website/video/audio/safety.words.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "c2ad798e88613973d7f7bcc33ba3ca16b5010e6d3821ef4d73bb2fcfde1ad0b5"
+    },
+    {
+      "path": "website/video/audio/learning.mp3",
+      "source": "RT-SAFE presentation",
+      "sha256": "8fb863c7cd57764f0a1c05ff15836a9be48e5f08b0dfae263835077ffe5227ed"
+    },
+    {
+      "path": "website/video/audio/effort.words.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "2150ad5072c09089b3cc3e4a82643ff6af73f0dd60000bc5f19c6d77021c6eef"
+    },
+    {
+      "path": "website/video/audio/safety.mp3",
+      "source": "RT-SAFE presentation",
+      "sha256": "a8d38c0b590a25fd78f6d662d3a240b20e004c324a71df3bfafbd7f74d14576e"
+    },
+    {
+      "path": "website/video/audio/collisions.mp3",
+      "source": "RT-SAFE presentation",
+      "sha256": "dcc42dbad0d54b01ad037a051b99b8924db1929e562fe28eef0ce27763613f96"
+    },
+    {
+      "path": "website/video/audio/models.mp3",
+      "source": "RT-SAFE presentation",
+      "sha256": "b4b29d94a3fa9aae4d9f3d9e3ca1620c5068c605365c9bcd7570a0a06b228ab2"
+    },
+    {
+      "path": "website/video/audio/timing.words.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "f508ddd84fb0c69920172dc2b101bcaf9101eda8d5f272286c4c226692c1254c"
+    },
+    {
+      "path": "website/video/audio/opening.mp3",
+      "source": "RT-SAFE presentation",
+      "sha256": "8216a3469f5ef7ff473fda95536be5feb6db958e7cd5233552ae42341cb41a21"
+    },
+    {
+      "path": "website/video/audio/collisions.words.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "668445b95d9f093778dcbdcf880f4f51a60ba9c89448d5ca3c9d60b45e6ffcfc"
+    },
+    {
+      "path": "website/video/audio/environment.mp3",
+      "source": "RT-SAFE presentation",
+      "sha256": "e95b8b7438b0c40706371f082d8df5ce83435fa3d668dde7f4bb23e932be002a"
+    },
+    {
+      "path": "website/video/audio/learning.words.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "b425b8e0041161deb6d376e2723cfd23a855b3e872deaff3412f916a256d6a45"
+    },
+    {
+      "path": "website/video/audio/models.words.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "05ed6057a0728b881762f077919a425689d07042ffc447825da2bff8dcafc6ff"
+    },
+    {
+      "path": "website/video/audio/decision.mp3",
+      "source": "RT-SAFE presentation",
+      "sha256": "a55bdad784579611516b3a41c88b779e18e4bb07d4c7fe04f0809d06c592eabc"
+    },
+    {
+      "path": "website/video/source-media/pilot-route.mp4",
+      "source": "RT-SAFE presentation",
+      "sha256": "4b793c2aac44acd8bdd1487c99fdd30a09a6b22697a4a8c8434e7b05c5364317"
+    },
+    {
+      "path": "website/video/source-media/provenance.json",
+      "source": "RT-SAFE presentation",
+      "sha256": "f9de8b8fb55c041a20f3e0aeebb0bcda9057d7d240f91df2b57984bcde4a9a78"
+    },
+    {
+      "path": "website/scripts/generate-narration.py",
+      "source": "RT-SAFE presentation",
+      "sha256": "fbfeceb060d74e62a3cf7f21cfaea798235048eff10c9acc708388704a60886d"
+    },
+    {
+      "path": "website/scripts/render-film.py",
+      "source": "RT-SAFE presentation",
+      "sha256": "8f764aa2c67c48ab579f12a44aef3a895bcdbab7eab61689ea69e53721bcfdf6"
+    },
+    {
+      "path": "website/scripts/assemble-film.py",
+      "source": "RT-SAFE presentation",
+      "sha256": "6aaf509ac972d7be361262c7105c889aff5cb68cf9fe508b3f02b3e6b0542016"
+    },
+    {
+      "path": "online_rl/README.md",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "64fd40d9af71369c3c3e06b33ff9137b09e364e40c08e69a09a590d7b3dd2c2a"
+    },
+    {
+      "path": "online_rl/__init__.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "11ddcd79636dfcd1ee70413f404739eb8d95d15ba0ae3987af97c23fc078261a"
+    },
+    {
+      "path": "online_rl/endpoints.example.json",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "5c02c86884394220c0eb471ad6656d13ca0277b752c0fc127fcac0b469a63131"
+    },
+    {
+      "path": "online_rl/env.example",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "8d70aad2bbe1acc4a88b5eeb7cb7c0e65888d3ea4047f76efb748654a6afa8de"
+    },
+    {
+      "path": "online_rl/launch_ue_fleet.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "576236371ff81ebb732fec67fca637f3df1db0e56f9af1f585acbff0fbb15def"
+    },
+    {
+      "path": "online_rl/preflight.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "b385218adc5e198ed1e20df10c7e291f6b7b450ab89373349be589d0393fa74a"
+    },
+    {
+      "path": "online_rl/realtime_backend.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "75dac3f5faaf23e5a7c6107525b625695fe27bcd8ddcff401b4802530f69a6ab"
+    },
+    {
+      "path": "online_rl/smoke_env.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "01d751a0aea1b8f92a4b26444288956695d7127a8ff5124bc2f0f853b03a880d"
+    },
+    {
+      "path": "online_rl/start_fleet.sh",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "58ddc7eed685c741fa7b0ec844761d19375027ab89425517035a8f45f06b9aac"
+    },
+    {
+      "path": "online_rl/train_grpo_vagen.sh",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "b7eba2b1bad1ea0b7ae0099aa654db20fc796766dbe591b26f6e2f3ee705590f"
+    },
+    {
+      "path": "online_rl/train_vagen.yaml",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "88290fe831775b9c52d1df54b7f1da0feae59309309655c5a95d73edeb82a2ab"
+    },
+    {
+      "path": "online_rl/vagen_env.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "4a3fdc852fc122a9eb4a1900b8052ca297c4fad07df977bc24db36b0a894779e"
+    },
+    {
+      "path": "online_rl/val_vagen.yaml",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "2c054c3e46aba89e10bced7ef1ffcbb1a058a72bfbc277f5d4e49836ec9a300f"
+    },
+    {
+      "path": "tests/test_vagen_env.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "90733673bae91fc2bf6acaa30a8c23d47193119048c76e51a7c7e19be64fac51"
+    },
+    {
+      "path": "tests/test_vagen_fleet.py",
+      "source": "Historical online RL pipeline at 1bbb87de",
+      "sha256": "5cde894bf9078e6a306ed78d04f4ec5957074efcc7876cc203e8bb2a4dec9f5e"
+    }
+  ]
+}

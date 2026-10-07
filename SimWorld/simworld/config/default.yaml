@@ -1,0 +1,65 @@
+simworld:
+  seed: 42
+  dt: 0.1
+  ue_manager_path: "/Game/TrafficSystem/UE_Manager.UE_Manager_C"
+
+traffic:
+  num_vehicles: 10
+  num_pedestrians: 10
+  map_path: "roads.json"
+  distance_between_objects: 400
+  gap_between_waypoints: 800
+  num_lanes: 1
+  lane_offset: 300
+  intersection_offset: 3000
+  sidewalk_offset: 1700
+  crosswalk_offset: 1700
+  steering_point_num: 12
+  rt_signal_controlled_vehicles: 0
+  rt_signal_controlled_pedestrians: 0
+
+  pedestrian:
+    max_speed: 200
+    min_speed: 100
+    waypoint_distance_threshold: 200
+    model_path: "/Game/TrafficSystem/Pedestrian/Base_Pedestrian.Base_Pedestrian_C"
+
+  vehicle:
+    steering_pid:
+      kp: 0.15
+      ki: 0.005
+      kd: 0.12
+    max_steering: 0.5
+    lane_deviation: 70
+    distance_to_end: 400
+    static_obstacle_detection_distance: 800
+    static_obstacle_lateral_margin: 120
+    model_file_path: "vehicle_types.json"
+
+  traffic_signal:
+    light_normal_offset: -1400
+    light_radial_offset: 1400
+    pedestrian_light_endpoint_offset: 100
+    pedestrian_light_lateral_offset: 500
+    traffic_light_model_path: "/Game/city_props/BP/props/street_light/BP_street_light.BP_street_light_C"
+    pedestrian_light_model_path: "/Game/city_props/BP/props/street_light/BP_street_light_ped.BP_street_light_ped_C"
+    green_light_duration: 10
+    yellow_light_duration: 3
+    pedestrian_phase_duration: 20
+    pedestrian_green_light_duration: 12
+    vehicle_green_duration: 10
+    vehicle_yellow_duration: 3
+    all_red_duration: 2
+    pedestrian_walk_duration: 7
+    pedestrian_clearance_duration: 5
+    minimum_pedestrian_walk_duration: 7
+    pedestrian_walking_speed_mps: 1.067
+    agent_crossing_speed_mps: 2.0
+    vlm_latency_budget_s: 40
+    action_execution_budget_s: 10
+    crossing_safety_buffer_s: 5
+    phase_detection_budget_s: 10
+    auto_calibrate_pedestrian_clearance: true
+
+map:
+  input_roads: "roads.json"

@@ -1,0 +1,14 @@
+{
+  "condition_id": "gpt6_astra_pipeline_ue_smoke",
+  "task_index": 0,
+  "task_file": "data/map1_10roads/tasks.json",
+  "agent_config_path": "data/agents.json",
+  "seed": 0,
+  "max_steps": 3,
+  "difficulty": "easy",
+  "prompt_style": "instructional",
+  "realtime_thinking": true,
+  "use_tick": true,
+  "token_based": false,
+  "use_action_frames": false
+}

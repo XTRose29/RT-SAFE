@@ -1,0 +1,11 @@
+{
+  "llm": [
+    {
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "provider": "self-hosted",
+      "url": "http://127.0.0.1:8007/v1",
+      "reasoning": false,
+      "max_tokens": 256
+    }
+  ]
+}

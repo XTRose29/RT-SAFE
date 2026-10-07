@@ -1,0 +1,53 @@
+{
+  "upstream": {
+    "revision": "31bc15758b66cfd2effb93e2183a1d9ee76363c4",
+    "url": "https://huggingface.co/datasets/SimWorld-AI/SimWorld/resolve/31bc15758b66cfd2effb93e2183a1d9ee76363c4/Base20260313/Linux.zip",
+    "size": 25950358766,
+    "archive_sha256": "3a0ca8d98ba1de099541549826dc974007243ad4f5d04d0694960cbfe523287f"
+  },
+  "members": [
+    {
+      "name": "Linux/SimWorld/Content/Paks/pakchunk3002-Linux.pak",
+      "sha256": "7924b67092159e72f8f9aea6d34941c3e2e5c9bd7b612743b9a411129e5a08cf",
+      "size": 36891601
+    },
+    {
+      "name": "Linux/SimWorld/Binaries/Linux/SimWorld",
+      "sha256": "e7023cb3b382c57fa06cb0a79c07e4b17f84536f9852128a2a9e5463f9e2a930",
+      "size": 263120208
+    }
+  ],
+  "downloaded_bytes": 143006172,
+  "base_zip_crc_checks": [
+    {
+      "path": "Linux/SimWorld/Content/Paks/pakchunk0-Linux.pak",
+      "size_matches": true,
+      "crc32_matches": true
+    },
+    {
+      "path": "Linux/SimWorld/Content/Paks/pakchunk1000-Linux.pak",
+      "size_matches": true,
+      "crc32_matches": true
+    },
+    {
+      "path": "Linux/SimWorld/Content/Paks/pakchunk1001-Linux.pak",
+      "size_matches": true,
+      "crc32_matches": true
+    },
+    {
+      "path": "Linux/SimWorld/Content/Paks/pakchunk1001optional-Linux.pak",
+      "size_matches": true,
+      "crc32_matches": true
+    },
+    {
+      "path": "Linux/SimWorld/Content/Paks/pakchunk3001-Linux.pak",
+      "size_matches": true,
+      "crc32_matches": true
+    },
+    {
+      "path": "Linux/SimWorld/Content/Paks/pakchunk3002-Linux.pak",
+      "size_matches": true,
+      "crc32_matches": true
+    }
+  ]
+}

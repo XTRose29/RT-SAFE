@@ -1,0 +1,319 @@
+{
+  "source_commit": "e2f170b6c608f0a9601a2005eb3f74c9933f60a0",
+  "passed": true,
+  "levels": [
+    {
+      "level": "RT10",
+      "checks": {
+        "spawned_classes": [
+          "/Game/TrafficSystem/UE_Manager.UE_Manager_C",
+          "/Game/TrafficSystem/Pedestrian/Base_Pedestrian.Base_Pedestrian_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_Intersection.RT_BP_Intersection_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_street_light.RT_BP_street_light_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_street_light_ped.RT_BP_street_light_ped_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Basketball.RT_Falling_Basketball_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Box.RT_Falling_Box_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Box2.RT_Falling_Box2_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Soccer.RT_Falling_Soccer_C",
+          "/Game/RealTimeBench/Objects/RT_Basketball.RT_Basketball_C",
+          "/Game/RealTimeBench/Objects/RT_Soccer.RT_Soccer_C",
+          "/Game/RealTimeBench/Objects/RT_Tennis.RT_Tennis_C",
+          "/Game/RealTimeBench/Objects/RT_Box.RT_Box_C",
+          "/Game/RealTimeBench/Objects/BP_Ball.BP_Ball_C",
+          "/Game/RealTimeBench/Objects/RT_Bottle1.RT_Bottle1_C",
+          "/Game/RealTimeBench/Objects/RT_Bottle2.RT_Bottle2_C",
+          "/Game/RealTimeBench/Objects/RT_Oil.RT_Oil_C",
+          "/Game/RealTimeBench/Objects/RT_WaterPuddle.RT_WaterPuddle_C",
+          "/Game/RealTimeBench/Objects/BP_Road_Small.BP_Road_Small_C"
+        ],
+        "static_drift_cm": 0.0,
+        "realtime_displacement_cm": 231.24134406502665,
+        "step_displacement_cm": 75.63007280176339,
+        "time_advance_mode": "resume_pause",
+        "realtime_wall_seconds": 1.512350379023701,
+        "agent_state": {
+          "HumanCollision": "0",
+          "ObjectCollision": "0",
+          "BuildingCollision": "0",
+          "Intensity": "0.000000",
+          "OverlapType": "0",
+          "TouchedRoad": "0"
+        },
+        "initial_position": [
+          9300.0,
+          -4473.292,
+          95.958
+        ],
+        "final_position": [
+          9342.708,
+          -4169.407,
+          95.958
+        ],
+        "render": {
+          "size": [
+            640,
+            480
+          ],
+          "pixel_std": 39.838391281346645
+        }
+      },
+      "passed": true
+    },
+    {
+      "level": "RT12",
+      "checks": {
+        "spawned_classes": [
+          "/Game/TrafficSystem/UE_Manager.UE_Manager_C",
+          "/Game/TrafficSystem/Pedestrian/Base_Pedestrian.Base_Pedestrian_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_Intersection.RT_BP_Intersection_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_street_light.RT_BP_street_light_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_street_light_ped.RT_BP_street_light_ped_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Basketball.RT_Falling_Basketball_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Box.RT_Falling_Box_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Box2.RT_Falling_Box2_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Soccer.RT_Falling_Soccer_C",
+          "/Game/RealTimeBench/Objects/RT_Basketball.RT_Basketball_C",
+          "/Game/RealTimeBench/Objects/RT_Soccer.RT_Soccer_C",
+          "/Game/RealTimeBench/Objects/RT_Tennis.RT_Tennis_C",
+          "/Game/RealTimeBench/Objects/RT_Box.RT_Box_C",
+          "/Game/RealTimeBench/Objects/BP_Ball.BP_Ball_C",
+          "/Game/RealTimeBench/Objects/RT_Bottle1.RT_Bottle1_C",
+          "/Game/RealTimeBench/Objects/RT_Bottle2.RT_Bottle2_C",
+          "/Game/RealTimeBench/Objects/RT_Oil.RT_Oil_C",
+          "/Game/RealTimeBench/Objects/RT_WaterPuddle.RT_WaterPuddle_C",
+          "/Game/RealTimeBench/Objects/BP_Road_Small.BP_Road_Small_C"
+        ],
+        "static_drift_cm": 0.0,
+        "realtime_displacement_cm": 162.46100000000297,
+        "step_displacement_cm": 40.64799999999741,
+        "time_advance_mode": "resume_pause",
+        "realtime_wall_seconds": 1.5064833550713956,
+        "agent_state": {
+          "HumanCollision": "0",
+          "ObjectCollision": "0",
+          "BuildingCollision": "0",
+          "Intensity": "0.000000",
+          "OverlapType": "0",
+          "TouchedRoad": "0"
+        },
+        "initial_position": [
+          -28738.746,
+          -700.0,
+          95.958
+        ],
+        "final_position": [
+          -28535.637,
+          -700.0,
+          95.958
+        ],
+        "render": {
+          "size": [
+            640,
+            480
+          ],
+          "pixel_std": 45.84545665487259
+        }
+      },
+      "passed": true
+    },
+    {
+      "level": "RT15",
+      "checks": {
+        "spawned_classes": [
+          "/Game/TrafficSystem/UE_Manager.UE_Manager_C",
+          "/Game/TrafficSystem/Pedestrian/Base_Pedestrian.Base_Pedestrian_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_Intersection.RT_BP_Intersection_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_street_light.RT_BP_street_light_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_street_light_ped.RT_BP_street_light_ped_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Basketball.RT_Falling_Basketball_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Box.RT_Falling_Box_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Box2.RT_Falling_Box2_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Soccer.RT_Falling_Soccer_C",
+          "/Game/RealTimeBench/Objects/RT_Basketball.RT_Basketball_C",
+          "/Game/RealTimeBench/Objects/RT_Soccer.RT_Soccer_C",
+          "/Game/RealTimeBench/Objects/RT_Tennis.RT_Tennis_C",
+          "/Game/RealTimeBench/Objects/RT_Box.RT_Box_C",
+          "/Game/RealTimeBench/Objects/BP_Ball.BP_Ball_C",
+          "/Game/RealTimeBench/Objects/RT_Bottle1.RT_Bottle1_C",
+          "/Game/RealTimeBench/Objects/RT_Bottle2.RT_Bottle2_C",
+          "/Game/RealTimeBench/Objects/RT_Oil.RT_Oil_C",
+          "/Game/RealTimeBench/Objects/RT_WaterPuddle.RT_WaterPuddle_C",
+          "/Game/RealTimeBench/Objects/BP_Road_Small.BP_Road_Small_C"
+        ],
+        "static_drift_cm": 0.0,
+        "realtime_displacement_cm": 168.08899999999994,
+        "step_displacement_cm": 23.700000000000728,
+        "time_advance_mode": "resume_pause",
+        "realtime_wall_seconds": 1.5055632379371673,
+        "agent_state": {
+          "HumanCollision": "0",
+          "ObjectCollision": "0",
+          "BuildingCollision": "0",
+          "Intensity": "0.000000",
+          "OverlapType": "0",
+          "TouchedRoad": "0"
+        },
+        "initial_position": [
+          -23668.826,
+          700.0,
+          95.958
+        ],
+        "final_position": [
+          -23477.037,
+          700.0,
+          95.958
+        ],
+        "render": {
+          "size": [
+            640,
+            480
+          ],
+          "pixel_std": 51.090186274520946
+        }
+      },
+      "passed": true
+    },
+    {
+      "level": "RT18",
+      "checks": {
+        "spawned_classes": [
+          "/Game/TrafficSystem/UE_Manager.UE_Manager_C",
+          "/Game/TrafficSystem/Pedestrian/Base_Pedestrian.Base_Pedestrian_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_Intersection.RT_BP_Intersection_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_street_light.RT_BP_street_light_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_street_light_ped.RT_BP_street_light_ped_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Basketball.RT_Falling_Basketball_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Box.RT_Falling_Box_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Box2.RT_Falling_Box2_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Soccer.RT_Falling_Soccer_C",
+          "/Game/RealTimeBench/Objects/RT_Basketball.RT_Basketball_C",
+          "/Game/RealTimeBench/Objects/RT_Soccer.RT_Soccer_C",
+          "/Game/RealTimeBench/Objects/RT_Tennis.RT_Tennis_C",
+          "/Game/RealTimeBench/Objects/RT_Box.RT_Box_C",
+          "/Game/RealTimeBench/Objects/BP_Ball.BP_Ball_C",
+          "/Game/RealTimeBench/Objects/RT_Bottle1.RT_Bottle1_C",
+          "/Game/RealTimeBench/Objects/RT_Bottle2.RT_Bottle2_C",
+          "/Game/RealTimeBench/Objects/RT_Oil.RT_Oil_C",
+          "/Game/RealTimeBench/Objects/RT_WaterPuddle.RT_WaterPuddle_C",
+          "/Game/RealTimeBench/Objects/BP_Road_Small.BP_Road_Small_C"
+        ],
+        "static_drift_cm": 0.0,
+        "realtime_displacement_cm": 323.14300000000003,
+        "step_displacement_cm": 97.40199999999822,
+        "time_advance_mode": "resume_pause",
+        "realtime_wall_seconds": 1.6258576510008425,
+        "agent_state": {
+          "HumanCollision": "0",
+          "ObjectCollision": "0",
+          "BuildingCollision": "0",
+          "Intensity": "0.000000",
+          "OverlapType": "0",
+          "TouchedRoad": "0"
+        },
+        "initial_position": [
+          -26401.643,
+          -700.0,
+          92.15
+        ],
+        "final_position": [
+          -25981.098,
+          -700.0,
+          92.15
+        ],
+        "render": {
+          "size": [
+            640,
+            480
+          ],
+          "pixel_std": 20.583474082973463
+        }
+      },
+      "passed": true
+    },
+    {
+      "level": "RT20",
+      "checks": {
+        "spawned_classes": [
+          "/Game/TrafficSystem/UE_Manager.UE_Manager_C",
+          "/Game/TrafficSystem/Pedestrian/Base_Pedestrian.Base_Pedestrian_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_Intersection.RT_BP_Intersection_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_street_light.RT_BP_street_light_C",
+          "/Game/RealTimeBench/Traffic/RT_BP_street_light_ped.RT_BP_street_light_ped_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Basketball.RT_Falling_Basketball_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Box.RT_Falling_Box_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Box2.RT_Falling_Box2_C",
+          "/Game/RealTimeBench/Objects/RT_Falling_Soccer.RT_Falling_Soccer_C",
+          "/Game/RealTimeBench/Objects/RT_Basketball.RT_Basketball_C",
+          "/Game/RealTimeBench/Objects/RT_Soccer.RT_Soccer_C",
+          "/Game/RealTimeBench/Objects/RT_Tennis.RT_Tennis_C",
+          "/Game/RealTimeBench/Objects/RT_Box.RT_Box_C",
+          "/Game/RealTimeBench/Objects/BP_Ball.BP_Ball_C",
+          "/Game/RealTimeBench/Objects/RT_Bottle1.RT_Bottle1_C",
+          "/Game/RealTimeBench/Objects/RT_Bottle2.RT_Bottle2_C",
+          "/Game/RealTimeBench/Objects/RT_Oil.RT_Oil_C",
+          "/Game/RealTimeBench/Objects/RT_WaterPuddle.RT_WaterPuddle_C",
+          "/Game/RealTimeBench/Objects/BP_Road_Small.BP_Road_Small_C"
+        ],
+        "static_drift_cm": 0.0,
+        "realtime_displacement_cm": 41.359999999996944,
+        "step_displacement_cm": 1.5300000000024738,
+        "time_advance_mode": "resume_pause",
+        "realtime_wall_seconds": 1.502659142948687,
+        "agent_state": {
+          "HumanCollision": "0",
+          "ObjectCollision": "0",
+          "BuildingCollision": "0",
+          "Intensity": "0.000000",
+          "OverlapType": "0",
+          "TouchedRoad": "0"
+        },
+        "initial_position": [
+          -27252.539,
+          700.0,
+          92.15
+        ],
+        "final_position": [
+          -27209.649,
+          700.0,
+          92.15
+        ],
+        "render": {
+          "size": [
+            640,
+            480
+          ],
+          "pixel_std": 18.612852906535792
+        }
+      },
+      "passed": true
+    }
+  ],
+  "images": {
+    "RT10.png": "243f38e42596828dbc414545601203ba09f70a1d7192998aeac42cee32311c75",
+    "RT12.png": "2a0eddcd75956c9b530fb1b3392a8ace55af477125800d5c8584167ad91c14dd",
+    "RT15.png": "6c4ff5b922a3bee87450e48bb512b8e78fa4f2e9b2e2cce14108aff3b6f401d8",
+    "RT18.png": "c6ca0dbf89ff9808097fed5bec949ebc9c2e7440eaaffd66bf8254a54dc6fcda",
+    "RT20.png": "32009c6fa1adb928f605bed28cebe3e2a8b45324010f4f57d6bf88cbfbbece2f"
+  },
+  "runtime": "Official public ZIP, full SHA-256 verified; separately fetched chunk installed after removing ZIP copy",
+  "archive_sha256": "3a0ca8d98ba1de099541549826dc974007243ad4f5d04d0694960cbfe523287f",
+  "environment": {
+    "os": "Ubuntu 24.04.3 LTS",
+    "python": "3.12.3",
+    "gpu": "NVIDIA RTX A5000",
+    "fresh_python_venv": true,
+    "fresh_runtime_download": true,
+    "runtime_contains_symlinks": false,
+    "fresh_cache_directories": true,
+    "display_server_used": false,
+    "gpu_host_os_is_new": false,
+    "fresh_ubuntu_ci": "https://github.com/XTRose29/RT-SAFE/actions/runs/37575498086"
+  },
+  "validation_limits": [
+    "Original five-map runtime only",
+    "Fresh runtime, Python dependencies and cache directories on an existing GPU host",
+    "Separate clean Ubuntu CI validates source dependencies and unit tests",
+    "No Windows/WSL2 or minimum-VRAM claim",
+    "Not historical model-score reproduction"
+  ]
+}

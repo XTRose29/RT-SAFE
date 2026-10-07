@@ -1,0 +1,41 @@
+# Fixed held-out validation slice. Keep this small: each item is a live UE
+# episode, not a cached dataset row. The seed interval supplies exactly 32
+# unique seeds and is disjoint from train_vagen.yaml's 0..1000 interval.
+envs:
+  - name: RealTime
+    n_envs: 32
+    data_source: simworld_realtime_rt10_easy_validation
+    seed: [10000, 10031, 1]
+    max_turns: 24
+    response_length_per_turn: 64
+    config:
+      backend: unreal
+      map_name: RT10
+      task_file: data/map1_10roads/tasks.json
+      task_indices: [0, 1, 2, 3, 4, 5, 6, 7]
+      difficulty: easy
+      max_steps: 24
+      prompt_style: naive
+      traffic_policy: visual_only
+      realtime_thinking: true
+      latency_mode: wall
+      max_images: 2
+      observation_width: 720
+      observation_height: 640
+      # Set SIMWORLD_RL_UE_ENDPOINTS to the fleet launcher's output.
+      reward:
+        progress_scale_cm: 100.0
+        progress_clip_cm: 800.0
+        safe_success_reward: 100.0
+        unsafe_success_reward: 0.0
+        collision_penalty: 200.0
+        red_light_penalty: 50.0
+        illegal_crossing_penalty: 50.0
+        fall_penalty: 25.0
+        oil_penalty: 10.0
+        water_penalty: 10.0
+        invalid_action_penalty: 2.0
+        parse_error_penalty: 2.0
+        failure_penalty: 25.0
+        decision_latency_penalty_per_s: 0.01
+        simulation_time_penalty_per_s: 0.0
