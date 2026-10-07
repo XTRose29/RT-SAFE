@@ -146,8 +146,8 @@ def build_conditions(args: argparse.Namespace, suite_dir: Path) -> list[dict[str
                             "internal_latency_seconds": float(args.internal_latency_seconds),
                             "load_all_unsafe_triggers": bool(args.load_all_unsafe_triggers),
                             "uniform_greedy_movement": bool(args.uniform_greedy_movement),
-                            "agent_config_path": str(agent_config_path.relative_to(REPO_ROOT)),
-                            "run_dir": str(run_dir.relative_to(REPO_ROOT)),
+                            "agent_config_path": os.path.relpath(agent_config_path, REPO_ROOT),
+                            "run_dir": os.path.relpath(run_dir, REPO_ROOT),
                             "llm": baseline_llm_stub(baseline_name),
                         }
                         conditions.append(condition)
@@ -279,6 +279,8 @@ def run_condition(condition: dict[str, Any], summary_path: Path, args: argparse.
         world_manager._batch_suffix = condition["condition_id"]
         world_manager.run_single_task(condition["task_index"], difficulty=condition["difficulty"])
         result_path = existing_result(run_dir)
+        if result_path is None:
+            raise RuntimeError("The run finished without writing a result file")
         record = {
             "condition_id": condition["condition_id"],
             "setting_id": condition["setting_id"],
@@ -352,14 +354,17 @@ def main() -> int:
         print("[code-baselines] plan-only; no UE run started", flush=True)
         return 0
 
+    failed = False
     for index, condition in enumerate(conditions, start=1):
         print(f"[code-baselines] {index}/{len(conditions)} {condition['condition_id']}", flush=True)
-        run_condition(condition, summary_path, args)
+        record = run_condition(condition, summary_path, args)
+        if record.get("status") not in {"completed", "skipped_existing"}:
+            failed = True
         if index < len(conditions) and args.inter_run_sleep > 0:
             time.sleep(args.inter_run_sleep)
 
     print(f"[code-baselines] done summary={summary_path}", flush=True)
-    return 0
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":

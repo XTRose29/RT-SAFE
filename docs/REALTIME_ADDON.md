@@ -189,8 +189,11 @@ python evaluation/run_code_baselines.py \
 ```
 
 For the static check, change `--env-modes static` and use a new suite name.
-Inspect the suite's `summary.jsonl`: this older baseline entry point can exit
-zero after recording a condition error. A valid smoke result must have
-`status: completed` and a result with two decisions. The explicit 720×640
+The runner exits nonzero after a condition error or missing result. A valid
+smoke result must have `status: completed` and a result with two decisions.
+The explicit 720×640
 observation settings match the normal benchmark runner and keep all seven
 policy waypoint markers visible.
+
+For automatic engine launch, cleanup and comparison of both modes, use
+the [one-command examples](../examples/README.md).
