@@ -7,7 +7,7 @@ libraries and tools first:
 
 ```bash
 sudo apt-get update
-sudo apt-get install -y python3.12-venv libgl1 libegl1 ffmpeg curl
+sudo apt-get install -y python3.12-venv git libgl1 libegl1 libglib2.0-0t64 ffmpeg curl
 ```
 
 From the repository root:
@@ -89,4 +89,3 @@ python evaluation/run_openai_benchmark.py \
 ```
 
 To execute, set `OPENAI_API_KEY` in your shell and omit `--dry-run`. Use the explicit provider/API-mode options for OpenRouter or authenticated CLI transports. Never commit credentials or generated account-usage manifests. Provider availability and pinned model IDs can change; record the resolved serving identity with every result.
-

@@ -7,7 +7,7 @@ code, and tools to obtain and validate the matching public Linux runtime.
 ## Install
 
 Use Linux x86-64 with Python 3.12 and an NVIDIA GPU/driver for live rendering.
-From this directory:
+Install the [system prerequisites](docs/INSTALL.md) first, then from this directory:
 
 ```bash
 python3.12 -m venv .venv

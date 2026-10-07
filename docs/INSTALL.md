@@ -7,7 +7,7 @@ libraries and tools first:
 
 ```bash
 sudo apt-get update
-sudo apt-get install -y python3.12-venv libgl1 libegl1 ffmpeg curl
+sudo apt-get install -y python3.12-venv git libgl1 libegl1 libglib2.0-0t64 ffmpeg curl
 ```
 
 From the repository root:
