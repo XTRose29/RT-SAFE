@@ -8,7 +8,16 @@
       "total_tokens": 0,
       "realtime_thinking": false,
       "success": false,
-      "observation_resolution_px": {"width": 720, "height": 640}
+      "observation_resolution_px": {
+        "width": 720,
+        "height": 640
+      },
+      "termination_reason": "max_steps",
+      "failure_reason": null,
+      "rollout_error": null,
+      "failed": false,
+      "parse_error_count": 0,
+      "signal_traffic_error_count": 0
     },
     "realtime": {
       "decision_count": 2,
@@ -17,7 +26,16 @@
       "total_tokens": 0,
       "realtime_thinking": true,
       "success": false,
-      "observation_resolution_px": {"width": 720, "height": 640}
+      "observation_resolution_px": {
+        "width": 720,
+        "height": 640
+      },
+      "termination_reason": "max_steps",
+      "failure_reason": null,
+      "rollout_error": null,
+      "failed": false,
+      "parse_error_count": 0,
+      "signal_traffic_error_count": 0
     }
   }
 }

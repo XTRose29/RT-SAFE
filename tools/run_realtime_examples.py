@@ -29,8 +29,8 @@ def compare(result: dict, expected: dict) -> dict:
     for key, value in expected.items():
         actual = result.get(key)
         # bool and integer are different protocol values, even in Python.
-        if actual != value or isinstance(actual, bool) != isinstance(value, bool):
-            mismatches[key] = {"expected": value, "actual": actual}
+        if key not in result or actual != value or isinstance(actual, bool) != isinstance(value, bool):
+            mismatches[key] = {"expected": value, "actual": actual, "missing": key not in result}
     return mismatches
 
 

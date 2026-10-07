@@ -32,11 +32,13 @@ uses Python's standard library, so a separate `unzip` program is not required.
 Its checksum comes from upstream LFS metadata. This release
 does not mirror the archive or change upstream asset terms.
 
-The upstream executable and real-time chunk were independently downloaded
-without authentication and matched the locally tested files by SHA-256. All
-six local content chunks also match the upstream ZIP directory's sizes and
-CRC32 values. See [upstream verification](../validation/realtime-addon-upstream.json)
-and the [base/add-on hashes](../validation/realtime-addon-manifest.json).
+The full archive was downloaded without authentication and verified against
+that SHA-256. A fresh extraction, new Python environment, and separate cache
+directories passed live checks on all five maps. The independently downloaded
+real-time chunk was also installed into this fresh base and matched the ZIP's
+copy byte for byte. See [fresh runtime validation](../validation/realtime-fresh-runtime.json),
+[upstream verification](../validation/realtime-addon-upstream.json), and the
+[base/add-on hashes](../validation/realtime-addon-manifest.json).
 
 ## Fetch the real-time part separately
 

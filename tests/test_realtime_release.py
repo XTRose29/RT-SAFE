@@ -1,5 +1,7 @@
 from pathlib import Path
 import subprocess
+import json
+from types import SimpleNamespace
 
 import pytest
 
@@ -25,6 +27,30 @@ def test_example_comparison_rejects_missing_or_incorrect_results():
     assert compare(dict(expected), expected) == {}
     assert set(compare({"decision_count": 1, "sim_time": 4}, expected)) == set(expected)
     assert "success" in compare({**expected, "success": 0}, expected)
+    assert compare({}, {"rollout_error": None})["rollout_error"]["missing"]
+
+
+def test_saved_rollout_error_is_not_reported_as_completed(monkeypatch, tmp_path):
+    monkeypatch.setenv("CODE_BASELINE_THINKING_SECONDS", "0")
+    monkeypatch.setenv("SIMWORLD_UNIFORM_GREEDY_MOVEMENT", "0")
+    monkeypatch.setattr("sys.argv", ["run_code_baselines.py", "--baselines", "greedy",
+                                    "--env-modes", "static", "--output-root", str(tmp_path),
+                                    "--suite-name", "failed"])
+    monkeypatch.setattr("base.rt_unrealcv.RTUnrealCV", lambda **kwargs: object())
+    monkeypatch.setattr("base.rt_communicator.RTCommunicator", lambda ue: object())
+
+    def manager(**kwargs):
+        output = baselines.REPO_ROOT / kwargs["results_dir"]
+        def run(*args, **kwargs):
+            (output / "task_0_test.json").write_text(json.dumps({
+                "decision_count": 2, "rollout_error": "simulator connection lost"}))
+        return SimpleNamespace(run_single_task=run, cleanup=lambda: None)
+
+    monkeypatch.setattr("manager.world_manager.WorldManager", manager)
+    assert baselines.main() == 1
+    record = json.loads((tmp_path / "failed/summary.jsonl").read_text())
+    assert record["status"] == "error"
+    assert "simulator connection lost" in record["error"]
 
 
 def test_source_export_uses_allowlist_and_ignores_local_files(monkeypatch, tmp_path):

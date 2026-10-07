@@ -281,6 +281,9 @@ def run_condition(condition: dict[str, Any], summary_path: Path, args: argparse.
         result_path = existing_result(run_dir)
         if result_path is None:
             raise RuntimeError("The run finished without writing a result file")
+        result = json.loads(result_path.read_text())
+        if result.get("rollout_error"):
+            raise RuntimeError(f"The run recorded a rollout error: {result['rollout_error']}")
         record = {
             "condition_id": condition["condition_id"],
             "setting_id": condition["setting_id"],

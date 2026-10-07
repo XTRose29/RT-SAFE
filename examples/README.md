@@ -35,6 +35,10 @@ paper scores or establish minimum hardware requirements. No model API key is
 needed. A separate full five-map check is available in
 `tools/check_runtime_addon.py`.
 
+[Fresh runtime screenshots and five-map checks](runtime-checks/README.md) are also
+included, so the expected map appearance can be inspected without running
+Unreal.
+
 ## Recorded campaign examples
 
 These are three previously curated decisions from original benchmark maps,
