@@ -140,41 +140,50 @@ not treated as proof of compatibility. `--levels RT10` provides a shorter first
 check. These checks establish basic runtime behavior, not historical score
 reproduction, all hazard outcomes, or hardware minimums.
 
-All five maps passed these live checks on Linux with an NVIDIA RTX A5000.
-See [the validation record](../validation/realtime-addon-live.json). The
-standalone toolkit fetch and both installation paths also passed, alongside
-719 Python tests and 407 subtests (one optional serving test skipped).
+All five maps passed these live checks from the freshly downloaded runtime on
+Linux with an NVIDIA RTX A5000. See [the validation record](../validation/realtime-fresh-runtime.json).
+The standalone source passed 709 Python tests and 407 subtests, with one
+optional serving test skipped, in a clean dependency installation.
 
-For a manual launch using the same configuration:
+For a manual benchmark launch:
 
 ```bash
 /path/to/Linux-runtime/SimWorld.sh /Game/RealTimeBench/Maps/RT10 \
   -RenderOffScreen -windowed -graphicsadapter=0 -cvport 19091 \
-  -ResX=640 -ResY=480 -FPSMAX=30 -noraytracing
+  -ResX=720 -ResY=640 -FPSMAX=30 -noraytracing
 ```
+
+Wait for `Engine is initialized. Leaving FEngineLoop::Init()` in the console
+before connecting a runner. The UnrealCV listener opens earlier than this.
 
 Before a benchmark run, select the validated resume/pause time-advance API:
 
 ```bash
 export SIMWORLD_UE_LAUNCHER=/path/to/Linux-runtime/SimWorld.sh
 export SIMWORLD_TIME_ADVANCE_MODE=resume_pause
-python benchmark/run.py doctor smoke
+export SIMWORLD_OBSERVATION_WIDTH=720
+export SIMWORLD_OBSERVATION_HEIGHT=640
+export SIMWORLD_SKIP_INITIAL_SETRES=1
+export SIMWORLD_SKIP_ASYNC_SKINNED_ASSET_COMPILATION=1
 ```
 
-Then configure a model and follow [INSTALL.md](INSTALL.md). Keep the base
+Then configure a model and follow [INSTALL.md](INSTALL.md). The
+`benchmark/run.py doctor smoke` command checks the Qwen suite and also expects
+a Qwen model or endpoint; it is not required for model-free or hosted CLI
+examples. Keep the base
 manifest, add-on checksum, code commit and resolved suite configuration with
 the results. The pinned full download above provides the matching base for
 new users; the smaller separate fetch is for existing matching installations.
 
 ## Model-free benchmark smoke
 
-The real benchmark runner was also exercised for two greedy decisions on
-RT10 task 0 in each of static and real-time mode, with one simulated second
-of thinking per decision. It completed both runs, recorded zero model tokens,
+The real benchmark runner was exercised in three independent pairs of two
+greedy decisions on RT10 task 0 in static and real-time mode, with one second
+of thinking per decision. All six runs completed, recorded zero model tokens,
 and detected an oil hazard. Reported simulation time was 4 seconds for static
 and 6 seconds for real-time, matching the two added thinking intervals. These
 are short smoke runs, not successful full-route completions or paper results.
-See [the compact baseline evidence](../validation/realtime-addon-baseline.json).
+See [the fresh repeated comparisons](../validation/realtime-fresh-examples.json).
 
 To repeat one condition, launch RT10 using the manual command above and run
 this from the repository root (restart Unreal before the other condition):

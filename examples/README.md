@@ -28,6 +28,11 @@ duration, not an independent measurement of every engine physics tick.
 The short runs deliberately stop after two decisions, so `success: false`
 is expected; it does not mean installation failed.
 
+All six runs in three independent fresh-process pairs matched these expected
+fields, with no rollout, parse or signal errors. Each also recorded one oil
+event and zero contacts. The [fresh comparison record](../validation/realtime-fresh-examples.json)
+contains the observed values, configuration, and source-result hashes.
+
 These examples check timing/configuration invariants. Physics trajectories,
 pixel hashes and hazard/contact counts can vary with scheduling and are
 recorded without requiring exact equality. They do not reproduce historical
@@ -38,6 +43,9 @@ needed. A separate full five-map check is available in
 [Fresh runtime screenshots and five-map checks](runtime-checks/README.md) are also
 included, so the expected map appearance can be inspected without running
 Unreal.
+
+A [live Codex CLI pilot](codex-cli/README.md) includes real model actions,
+observations and timing records from both modes, plus commands to repeat it.
 
 ## Recorded campaign examples
 

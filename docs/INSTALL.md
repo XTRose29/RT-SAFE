@@ -2,7 +2,15 @@
 
 ## 1. Install the Python environment
 
-Use Linux and Python 3.12. From the repository root:
+Use Linux x86-64 and Python 3.12. On minimal Ubuntu 24.04, install the system
+libraries and tools first:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y python3.12-venv libgl1 libegl1 ffmpeg curl
+```
+
+From the repository root:
 
 ```bash
 python3.12 -m venv .venv
@@ -12,14 +20,6 @@ export PYTHONPATH="$PWD/SimWorld:$PWD${PYTHONPATH:+:$PYTHONPATH}"
 ```
 
 Install FFmpeg for video export. A graphical workstation or suitable offscreen configuration and NVIDIA driver are needed for live Unreal rendering. Local Qwen inference needs its own GPU serving environment (a CUDA-compatible PyTorch build plus `requirements-serving.txt`); hosted API evaluation does not require a local model GPU. Hardware needs depend on the runtime and selected checkpoint.
-
-On a minimal Ubuntu installation, install the system libraries used by the
-Python imaging/UnrealCV stack and the download tools:
-
-```bash
-sudo apt-get update
-sudo apt-get install -y python3.12-venv libgl1 libegl1 ffmpeg curl
-```
 
 Install the NVIDIA driver through your system's normal driver setup. A Python
 virtual environment does not install a GPU driver. The tested dependency
@@ -49,6 +49,18 @@ Set:
 
 ```bash
 export SIMWORLD_UE_LAUNCHER=/absolute/path/to/SimWorld.sh
+export SIMWORLD_TIME_ADVANCE_MODE=resume_pause
+export SIMWORLD_OBSERVATION_WIDTH=720
+export SIMWORLD_OBSERVATION_HEIGHT=640
+export SIMWORLD_SKIP_INITIAL_SETRES=1
+export SIMWORLD_SKIP_ASYNC_SKINNED_ASSET_COMPILATION=1
+```
+
+For model-free validation, use the [one-command examples](../examples/README.md).
+The following commands configure the Qwen suite; hosted API/CLI users can
+continue to section 4 without a local Qwen model or server.
+
+```bash
 export SIMWORLD_QWEN_MODEL=/absolute/path/to/Qwen3-VL-8B-Instruct
 python benchmark/run.py doctor smoke
 ```
@@ -66,12 +78,14 @@ Use `--resume` with the same suite name to continue. Outputs are stored under `r
 
 ## 4. Hosted models
 
-The single-task API entry point expects a running UE server. Preview a task first:
+The single-task API entry point expects a running UE server. Use the manual
+RT10 launch command in [REALTIME_ADDON.md](REALTIME_ADDON.md), keep the common
+environment settings above, and wait for engine initialization. Preview a task:
 
 ```bash
 python evaluation/run_openai_benchmark.py \
   --model gpt-6-astra --reasoning-effort medium \
-  --task-file data/map1_10roads/tasks.json --task-index 0 --dry-run
+  --task-file data/map1_10roads/tasks.json --task-index 0 --ue-port 19091 --dry-run
 ```
 
 To execute, set `OPENAI_API_KEY` in your shell and omit `--dry-run`. Use the explicit provider/API-mode options for OpenRouter or authenticated CLI transports. Never commit credentials or generated account-usage manifests. Provider availability and pinned model IDs can change; record the resolved serving identity with every result.
