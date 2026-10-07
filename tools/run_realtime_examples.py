@@ -98,13 +98,14 @@ def run_case(args, mode, repetition, expected):
             result_path = Path(records[0]["result_path"])
             if not result_path.is_absolute():
                 result_path = ROOT / result_path
+            result_path = result_path.resolve()
             result = json.loads(result_path.read_text())
             mismatches = compare(result, expected)
             return {
                 "mode": mode, "repetition": repetition, "passed": not mismatches,
                 "observed": {key: result.get(key) for key in expected},
                 "observations_not_compared": {key: result.get(key) for key in (
-                    "oil_count", "total_collisions", "collision_count", "wall_time", "final_position")},
+                    "oil_count", "collision_count", "passive_collision_count", "time_cost", "final_position")},
                 "mismatches": mismatches,
                 "result": str(result_path.relative_to(args.output)),
                 "result_sha256": hashlib.sha256(result_path.read_bytes()).hexdigest(),

@@ -211,7 +211,7 @@ def run_condition(condition: dict[str, Any], summary_path: Path, args: argparse.
     from base.rt_unrealcv import RTUnrealCV
     from manager.world_manager import WorldManager
 
-    run_dir = REPO_ROOT / condition["run_dir"]
+    run_dir = (REPO_ROOT / condition["run_dir"]).resolve()
     run_dir.mkdir(parents=True, exist_ok=True)
 
     if args.resume:
