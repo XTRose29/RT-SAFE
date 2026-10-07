@@ -1,0 +1,62 @@
+{
+  "scope": "One complete RT10 task-0 greedy episode per mode; observed validation outcomes, not historical paper scores",
+  "source_commit": "07b070d23148bb7c74e4bc5dc60e6b50cc2d9b50",
+  "config": {
+    "task_file": "data/map1_10roads/tasks.json",
+    "task_index": 0,
+    "baseline": "greedy",
+    "seed": 0,
+    "difficulty": "easy",
+    "max_steps": 120,
+    "internal_latency_seconds": 1,
+    "time_mode": "sync",
+    "time_advance_mode": "resume_pause",
+    "observation_resolution": [
+      720,
+      640
+    ],
+    "fresh_engine_per_condition": true
+  },
+  "runs": [
+    {
+      "mode": "static",
+      "metrics": {
+        "success": true,
+        "decision_count": 30,
+        "final_step": 30,
+        "sim_time": 81.0,
+        "termination_reason": "success",
+        "failure_reason": null,
+        "rollout_error": null,
+        "total_tokens": 0,
+        "oil_count": 2,
+        "collision_count": 0,
+        "passive_collision_count": 0,
+        "parse_success_rate": 1.0,
+        "spl": 0.9940446724137931,
+        "traveled_path_length_cm": 11600.0
+      },
+      "raw_result_sha256": "6479c79fdc6adbb274c0826f436d0957e514bc702b70ceebf83da34f007d6621"
+    },
+    {
+      "mode": "realtime",
+      "metrics": {
+        "success": true,
+        "decision_count": 30,
+        "final_step": 30,
+        "sim_time": 111.0,
+        "termination_reason": "success",
+        "failure_reason": null,
+        "rollout_error": null,
+        "total_tokens": 0,
+        "oil_count": 2,
+        "collision_count": 0,
+        "passive_collision_count": 0,
+        "parse_success_rate": 1.0,
+        "spl": 0.9940446724137931,
+        "traveled_path_length_cm": 11600.0
+      },
+      "raw_result_sha256": "5066edc2ad74be6b549a6ff8d23954814dbfb230910b3e4581c950b431c36e91"
+    }
+  ]
+}

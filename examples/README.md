@@ -46,6 +46,12 @@ Unreal.
 
 A [live Codex CLI pilot](codex-cli/README.md) includes real model actions,
 observations and timing records from both modes, plus commands to repeat it.
+The [complete greedy route example](full-route/README.md) also reached the goal
+in both modes: 30 decisions, 81 seconds static and 111 seconds real-time.
+
+The first authored task on each of RT12, RT15, RT18 and RT20 also completed a
+two-decision greedy scene check, including actor generation and policy
+observations. See [the full fresh benchmark check record](../validation/realtime-fresh-campaign.json).
 
 ## Recorded campaign examples
 
