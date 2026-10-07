@@ -26,7 +26,14 @@ The model-server tests are skipped when the optional PyTorch/Transformers servin
 
 ## 3. Configure Unreal and a model
 
-Follow [ASSETS.md](ASSETS.md) to obtain the compatible runtime. Set:
+Follow [ASSETS.md](ASSETS.md) to obtain the compatible runtime.
+
+For the original Linux 5.3.2 runtime, use the pinned SimWorld download in
+[REALTIME_ADDON.md](REALTIME_ADDON.md), then run its model-free engine check.
+That guide also supports downloading the real-time content separately when
+you already have the matching base.
+
+Set:
 
 ```bash
 export SIMWORLD_UE_LAUNCHER=/absolute/path/to/SimWorld.sh

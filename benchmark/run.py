@@ -413,12 +413,20 @@ def doctor_command(args: argparse.Namespace) -> int:
     ue_value = str(rollout.get("ue_launcher") or DEFAULT_UE_LAUNCHER)
     if ue_value:
         ue_launcher = Path(ue_value)
-        checks.append(("UE launcher", ue_launcher.is_file(), str(ue_launcher)))
+        launcher_found = ue_launcher.is_file()
+        launcher_detail = str(ue_launcher)
+        if not launcher_found:
+            launcher_detail += (
+                "; download the pinned SimWorld Base20260313 Linux runtime "
+                "following docs/REALTIME_ADDON.md, then set SIMWORLD_UE_LAUNCHER"
+            )
+        checks.append(("UE launcher", launcher_found, launcher_detail))
     else:
         checks.append(
             (
                 "UE launcher",
                 False,
+                "follow docs/REALTIME_ADDON.md for the pinned runtime download; "
                 "set SIMWORLD_UE_LAUNCHER or rollout.ue_launcher",
             )
         )

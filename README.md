@@ -52,6 +52,10 @@ python -m pytest -q
 
 Planning and unit tests do not require Unreal or model credentials. Live evaluation requires the compatible RT-SAFE Unreal runtime and a local or hosted model. Follow the [installation guide](docs/INSTALL.md) and [runtime contract](docs/ASSETS.md).
 
+The compatible legacy Linux runtime is publicly hosted by SimWorld. See the
+[pinned runtime download and separate real-time add-on](docs/REALTIME_ADDON.md)
+for setup, checksums, and a live check that needs no model credentials.
+
 ## What is included
 
 ```text

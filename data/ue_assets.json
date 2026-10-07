@@ -45,7 +45,7 @@
         "color": "OBSTACLE"
     },
     "RT_Ball_C": {
-        "asset_path": "/Game/RealTimeBench/Objects/RT_Ball.RT_Ball_C",
+        "asset_path": "/Game/RealTimeBench/Objects/BP_Ball.BP_Ball_C",
         "color": "OBSTACLE"
     },
     "RT_Bottle1_C": {

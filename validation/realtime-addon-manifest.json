@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "name": "RT-SAFE legacy real-time content add-on",
+  "platform": "Linux-x86_64",
+  "engine_version": "5.3.2-29314046+++UE5+Release-5.3",
+  "levels": [
+    "RT10",
+    "RT12",
+    "RT15",
+    "RT18",
+    "RT20"
+  ],
+  "payload": {
+    "SimWorld/Content/Paks/pakchunk3002-Linux.pak": {
+      "size": 36891601,
+      "sha256": "7924b67092159e72f8f9aea6d34941c3e2e5c9bd7b612743b9a411129e5a08cf"
+    }
+  },
+  "base_files": {
+    "SimWorld/Binaries/Linux/SimWorld": {
+      "size": 263120208,
+      "sha256": "e7023cb3b382c57fa06cb0a79c07e4b17f84536f9852128a2a9e5463f9e2a930"
+    },
+    "SimWorld/Content/Paks/pakchunk0-Linux.pak": {
+      "size": 2470017052,
+      "sha256": "41c91b9089a3116d9efc7d490b0c98805f2ab3f33cb4c7622f7bbc85fbe8a3f8"
+    },
+    "SimWorld/Content/Paks/pakchunk1000-Linux.pak": {
+      "size": 8220041804,
+      "sha256": "50572c92821a5ea16bb688732310f9796aa722bf6a2d07f8569d5b4480be2382"
+    },
+    "SimWorld/Content/Paks/pakchunk1001-Linux.pak": {
+      "size": 15496921419,
+      "sha256": "8f8cd2d694f0d6b8a4218680bec021d4d1155187f6a9b421278322d76c3b10c1"
+    },
+    "SimWorld/Content/Paks/pakchunk1001optional-Linux.pak": {
+      "size": 90731344,
+      "sha256": "0527774559b35135498c5376b1ebf71c7d2dad93bdf2111d7a82c937d7b039eb"
+    },
+    "SimWorld/Content/Paks/pakchunk3001-Linux.pak": {
+      "size": 6682864,
+      "sha256": "8c1c86e736680822ae3d9b14b796007a26914c114c8d8d1fae6f97bd53e59bdd"
+    }
+  },
+  "distribution_status": "upstream-hosted; binary not mirrored by RT-SAFE",
+  "limitations": [
+    "Requires the exact matching SimWorld base, obtained separately.",
+    "Cooked Linux content, not an editable Unreal project or Windows build.",
+    "Sports-ball assets and textures retain their upstream terms; establish notices before mirroring.",
+    "Does not include the Unreal executable or UnrealCV plugin source."
+  ]
+}
