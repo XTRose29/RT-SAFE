@@ -12,13 +12,15 @@ import hashlib
 import json
 import os
 from pathlib import Path
-import signal
 import socket
 import subprocess
 import sys
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from tools.runtime_process import stop_process_group
+
 REFERENCE = ROOT / "examples/realtime/expected.json"
 
 
@@ -33,13 +35,7 @@ def compare(result: dict, expected: dict) -> dict:
 
 
 def stop(process):
-    if process.poll() is None:
-        os.killpg(process.pid, signal.SIGTERM)
-        try:
-            process.wait(timeout=15)
-        except subprocess.TimeoutExpired:
-            os.killpg(process.pid, signal.SIGKILL)
-            process.wait(timeout=10)
+    stop_process_group(process)
 
 
 def run_case(args, mode, repetition, expected):

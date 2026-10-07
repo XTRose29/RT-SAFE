@@ -14,7 +14,6 @@ import logging
 import math
 import os
 from pathlib import Path
-import signal
 import socket
 import subprocess
 import sys
@@ -23,6 +22,7 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT), str(ROOT / "SimWorld")]
+from tools.runtime_process import stop_process_group
 # Importing OpenCV can modify the loader environment. Keep the engine's launch
 # environment independent of Python's optional imaging-library paths.
 ENGINE_ENV = os.environ.copy()
@@ -197,13 +197,7 @@ def run_level(args, level):
         finally:
             if ue is not None:
                 ue.client.disconnect()
-            if process.poll() is None:
-                os.killpg(process.pid, signal.SIGTERM)
-                try:
-                    process.wait(timeout=15)
-                except subprocess.TimeoutExpired:
-                    os.killpg(process.pid, signal.SIGKILL)
-                    process.wait(timeout=10)
+            stop_process_group(process)
 
 
 def main():

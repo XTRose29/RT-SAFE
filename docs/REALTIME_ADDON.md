@@ -22,12 +22,14 @@ add-on download. Download the pinned version, verify it, and extract it:
 curl -L --fail --retry 3 -o Linux.zip \
   'https://huggingface.co/datasets/SimWorld-AI/SimWorld/resolve/31bc15758b66cfd2effb93e2183a1d9ee76363c4/Base20260313/Linux.zip?download=true'
 echo '3a0ca8d98ba1de099541549826dc974007243ad4f5d04d0694960cbfe523287f  Linux.zip' | sha256sum -c -
-unzip Linux.zip
+python3.12 -m zipfile -e Linux.zip .
 chmod +x Linux/SimWorld.sh Linux/SimWorld/Binaries/Linux/SimWorld
 ```
 
-The ZIP is 25,950,358,766 bytes (about 26 GB); allow additional space for the
-extracted runtime. Its checksum comes from upstream LFS metadata. This release
+The ZIP is 25,950,358,766 bytes (about 26 GB); allow about 60 GB of free disk
+space for the download, extracted runtime and Python environment. Extraction
+uses Python's standard library, so a separate `unzip` program is not required.
+Its checksum comes from upstream LFS metadata. This release
 does not mirror the archive or change upstream asset terms.
 
 The upstream executable and real-time chunk were independently downloaded

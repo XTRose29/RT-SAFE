@@ -18,7 +18,7 @@ Python imaging/UnrealCV stack and the download tools:
 
 ```bash
 sudo apt-get update
-sudo apt-get install -y python3.12-venv libgl1 libegl1 ffmpeg curl unzip
+sudo apt-get install -y python3.12-venv libgl1 libegl1 ffmpeg curl
 ```
 
 Install the NVIDIA driver through your system's normal driver setup. A Python
