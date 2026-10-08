@@ -8,6 +8,18 @@ import { NYCTiming, NYCEnvironment, NYCSceneGallery } from "./nyc-scenes";
 declare const __RT_SAFE_REPOSITORY_URL__: string;
 const repositoryUrl = typeof __RT_SAFE_REPOSITORY_URL__ !== "undefined" ? __RT_SAFE_REPOSITORY_URL__ : "";
 
+const paperUrl = "https://arxiv.org/abs/2610.09294";
+const bibtex = `@misc{xu2026rtsafe,
+  title = {RT-Safe: Benchmarking Agent Safety in Real-Time Embodied Environment},
+  author = {Tianruo Rose Xu and Jiawei Ren and Yichi Yang and Zhaoxu Zheng and Lianhui Qin},
+  year = {2026},
+  eprint = {2610.09294},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  url = {https://arxiv.org/abs/2610.09294}
+}
+`;
+
 type Scope = "realtime" | "static" | "average";
 type Metric = {
   success: number;
@@ -546,6 +558,27 @@ export default function RTsafe() {
             <br />
             while an agent <em>thinks.</em>
           </h1>
+          <div className="publication" aria-labelledby="paper-title">
+            <p className="eyebrow">ARXIV PREPRINT · OCTOBER 2026</p>
+            <h2 id="paper-title">RT-Safe: Benchmarking Agent Safety in Real-Time Embodied Environment</h2>
+            <ul className="publication-authors" aria-label="Paper authors">
+              <li>Tianruo Rose Xu<sup>1</sup></li>
+              <li>Jiawei Ren<sup>2</sup></li>
+              <li>Yichi Yang<sup>2</sup></li>
+              <li>Zhaoxu Zheng<sup>2</sup></li>
+              <li>Lianhui Qin<sup>2</sup></li>
+            </ul>
+            <p className="publication-affiliations">
+              <span><sup>1</sup> Cornell University</span>
+              <span><sup>2</sup> University of California, San Diego</span>
+            </p>
+            <div className="publication-links">
+              <a className="button" href={paperUrl} target="_blank" rel="noreferrer">Paper <Arrow diagonal /></a>
+              <a className="light-button" href="https://arxiv.org/pdf/2610.09294" target="_blank" rel="noreferrer">PDF <Arrow diagonal /></a>
+              <a className="light-button" href={repositoryUrl || "https://github.com/XTRose29/RT-SAFE"} target="_blank" rel="noreferrer">Code <Arrow diagonal /></a>
+              <a className="light-button" href="#citation">Cite <Arrow /></a>
+            </div>
+          </div>
           <div className="hero-bottom">
             <p>
               Neither should its safety evaluation. RT–SAFE measures how
@@ -762,13 +795,13 @@ export default function RTsafe() {
             description="Read the protocol, download the results, and trace the examples back to their recorded decisions."
           />
           <div className="resource-grid">
-            <a href="media/rt-safe-paper.pdf" target="_blank" rel="noreferrer">
+            <a href={paperUrl} target="_blank" rel="noreferrer">
               <span className="resource-icon">01</span>
               <h3>
-                The manuscript <Arrow diagonal />
+                The preprint <Arrow diagonal />
               </h3>
               <p>Benchmark design, experiments, and implementation details.</p>
-              <span className="micro">PDF / RESEARCH MANUSCRIPT</span>
+              <span className="micro">ARXIV:2610.09294 / OCTOBER 2026</span>
             </a>
             <a href="data/results.csv" download>
               <span className="resource-icon">02</span>
@@ -796,6 +829,13 @@ export default function RTsafe() {
               Benchmark source code <Arrow diagonal />
             </a>
           )}
+          <div id="citation" className="citation" aria-labelledby="citation-title">
+            <div className="citation-heading">
+              <h3 id="citation-title">Citation</h3>
+              <a className="light-button" href="data/rt-safe.bib" download>Download BibTeX ↓</a>
+            </div>
+            <pre><code>{bibtex}</code></pre>
+          </div>
           <details className="methodology">
             <summary>
               <span>How to interpret these results</span>

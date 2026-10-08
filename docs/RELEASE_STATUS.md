@@ -6,6 +6,8 @@ GitHub Actions builds and publishes the website from `website/`.
 
 ## Included
 
+- [Published arXiv preprint](https://arxiv.org/abs/2610.09294), author affiliations, and BibTeX/GitHub citation metadata.
+
 - Benchmark source, map/task definitions, safety evaluators, model transports and regression tests.
 - Historical VAGEN online-RL pipeline, restored from research commit `1bbb87de`, with adapter/fleet tests. Live training remains unvalidated.
 - Static website, manuscript tables, native NYC scene footage, a 90-second film without audio, and a matched Astra/Sol replay with source evidence.
@@ -14,7 +16,7 @@ GitHub Actions builds and publishes the website from `website/`.
 
 ## Remaining release materials
 
-1. Select the project-wide code license and supply final author/citation metadata.
+1. Select the project-wide code license.
 2. Provide a compatible Unreal runtime distribution or a reproducible acquisition/build path.
 3. Supply the offline BC/RL implementation, dataset and checkpoints if that paper study is to be reproducible from this repository.
 
