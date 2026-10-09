@@ -89,7 +89,3 @@ python evaluation/run_openai_benchmark.py \
 ```
 
 To execute, set `OPENAI_API_KEY` in your shell and omit `--dry-run`. Use the explicit provider/API-mode options for OpenRouter or authenticated CLI transports. Never commit credentials or generated account-usage manifests. Provider availability and pinned model IDs can change; record the resolved serving identity with every result.
-
-## 5. Project website
-
-See [WEBSITE.md](WEBSITE.md). The website can be built and used without Python, Unreal, or model access.

@@ -1,0 +1,45 @@
+{
+  "scope": "Three curated original RT15/RT18 campaign decisions; historical illustrations, not freshly reproduced scores",
+  "source_commit": "5e6b13367d94740cc7c7e5b167e52380e1362794",
+  "files": {
+    "case-1.webp": {
+      "source": "website/public/media/observations/case-1.webp",
+      "sha256": "8c41dc464899031f74060831239791d2384264216ad2390424c7a91b240aaec2"
+    },
+    "case-1-result.png": {
+      "source": "website/public/media/observations/case-1-result.png",
+      "sha256": "4421d31446f77d9c13913a6d483ac70cee688aea94ae31930e9ba43dfe7d2184"
+    },
+    "case-1.json": {
+      "source": "website/public/data/examples/case-1.json",
+      "source_sha256": "084d49805a74f35cc13dcc619274d8863f409f87870b22aa9f675817cedc199b",
+      "change": "image paths made local to this directory"
+    },
+    "case-6.webp": {
+      "source": "website/public/media/observations/case-6.webp",
+      "sha256": "3661425eab5aa11be62ef3c5aaf133da6bef794e7d7e3552bef14c0df9a45a89"
+    },
+    "case-6-result.png": {
+      "source": "website/public/media/observations/case-6-result.png",
+      "sha256": "1c3793c144441a1df1d2c6cd827413a5b4b3e61ee083111ca433339eb2d1d389"
+    },
+    "case-6.json": {
+      "source": "website/public/data/examples/case-6.json",
+      "source_sha256": "187f8187e155e06c88cd15af302ea4e85f3525e705226a1cf54d85e37351c732",
+      "change": "image paths made local to this directory"
+    },
+    "case-7.webp": {
+      "source": "website/public/media/observations/case-7.webp",
+      "sha256": "acd6c997881754f1e3413dfaa2dbd4103f0cd6c19d924a557821df3f0624a61a"
+    },
+    "case-7-result.png": {
+      "source": "website/public/media/observations/case-7-result.png",
+      "sha256": "68e1c121a59c168b8f765963855cd9fbc9f1466028e221925ec6a0472f6eb889"
+    },
+    "case-7.json": {
+      "source": "website/public/data/examples/case-7.json",
+      "source_sha256": "c02287323b7aa6dd4e681b633db58b7750dfe8357e159cfdde657d6018dc8478",
+      "change": "image paths made local to this directory"
+    }
+  }
+}

@@ -1,0 +1,1296 @@
+{
+  "source_chunk": "pakchunk3002-Linux.pak",
+  "mount_point": "../../../SimWorld/Content/",
+  "entries": [
+    {
+      "path": "RealTimeBench/Agent/ABP_RT_SpotRobot.uasset",
+      "stored_size": 3666,
+      "pak_sha1": "3afbddea4ce607e87f73ce62d62654ec2df9a8d4",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/ABP_RT_SpotRobot.uexp",
+      "stored_size": 1761,
+      "pak_sha1": "a909923cde828ee45bbcda9737bdcc1505961490",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/BP_RT_Agent.uasset",
+      "stored_size": 5922,
+      "pak_sha1": "ff44b8e0d60e009a0cb4aeeada6765aa80f31ab3",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/BP_RT_Agent.uexp",
+      "stored_size": 3199,
+      "pak_sha1": "d19163aa53f1efa1f85fb0b969adb16f3d393aff",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/BP_RT_Character.uasset",
+      "stored_size": 4028,
+      "pak_sha1": "cd3d43c1b3d91da09a7e4c644cdea7b279318a32",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/BP_RT_Character.uexp",
+      "stored_size": 1903,
+      "pak_sha1": "27ebb92fdb08b1280ecad225450c39ecc100e2ad",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/BP_RT_SpotRobot.uasset",
+      "stored_size": 3430,
+      "pak_sha1": "d3bb315799672211452527d36229f8f7fcc071df",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/BP_RT_SpotRobot.uexp",
+      "stored_size": 1852,
+      "pak_sha1": "ac6a5dbc346d23af88d9a9fa399cb1c608f2d3eb",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/BPI_DebuffType.uasset",
+      "stored_size": 632,
+      "pak_sha1": "4debc6bab4d0362b2e6068b329488530f0e835a4",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/BPI_DebuffType.uexp",
+      "stored_size": 221,
+      "pak_sha1": "d4b899037411aca8af563b8ce911f1d3fffc5fc5",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/Agent/RT_Agent_Controller.uasset",
+      "stored_size": 2527,
+      "pak_sha1": "ae0ee3af5414a7e60edcbba2408f4872739fc128",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/RT_Agent_Controller.uexp",
+      "stored_size": 1176,
+      "pak_sha1": "183ee1d04036d20a49d559271d60fca8ae101de0",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/RT_Base_Dog.uasset",
+      "stored_size": 3961,
+      "pak_sha1": "7990a18f6e9c1ce491b9b12ae18d724aeb219c78",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/RT_Base_Dog.uexp",
+      "stored_size": 2008,
+      "pak_sha1": "96d37bfbb913f474213ef71757e5e3be54c7909a",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/RT_Base_Humanoid.uasset",
+      "stored_size": 3865,
+      "pak_sha1": "bc2694bfd36373c300e3bb5b9b6b6b296909e648",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/RT_Base_Humanoid.uexp",
+      "stored_size": 1796,
+      "pak_sha1": "57a37701003a3cd597fb7afc7b5c33d01f6a8e32",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/RT_Base_Pedestrian.uasset",
+      "stored_size": 3968,
+      "pak_sha1": "bb4a987cd4b13096bd9ba591a0abb92a6beaa7df",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/RT_Base_Pedestrian.uexp",
+      "stored_size": 1806,
+      "pak_sha1": "3daf388530d8577da502fc66986fcf3be03a5d8e",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/RT_BP_MetaHuman.uasset",
+      "stored_size": 10789,
+      "pak_sha1": "025067963314f6b97934e5ea6046e58488be50a5",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/RT_BP_MetaHuman.uexp",
+      "stored_size": 9930,
+      "pak_sha1": "f5009d7d7233546eb56a40e079b04a425e726d19",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/RT_BP_Ped_AIController.uasset",
+      "stored_size": 2692,
+      "pak_sha1": "daa7731462a649f8f8d2824fd1ed3fda490499ab",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Agent/RT_BP_Ped_AIController.uexp",
+      "stored_size": 1281,
+      "pak_sha1": "45ba2110a8b59ca76f5d2329dfbccc48683fc0a0",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Baseball.uasset",
+      "stored_size": 705,
+      "pak_sha1": "1dcdcaba2270fd933ee192bc03cd0383965b8130",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Baseball.uexp",
+      "stored_size": 1763,
+      "pak_sha1": "2c8f655618cb90033ccff209bbf6b9e87ca8fa57",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Basketball.uasset",
+      "stored_size": 601,
+      "pak_sha1": "ccdb0d4506e4650113073ed847767eab7a187c07",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Basketball.uexp",
+      "stored_size": 1801,
+      "pak_sha1": "9f759e8f239e3ffe4b249330f8a0a721ff141e36",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Football.uasset",
+      "stored_size": 705,
+      "pak_sha1": "8ccb1c44abb04362448037390d550f2003e47469",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Football.uexp",
+      "stored_size": 1763,
+      "pak_sha1": "cab04ebfff689eb20ec8a8fab36b16625d70decd",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Golf.uasset",
+      "stored_size": 693,
+      "pak_sha1": "2afb79dcae0a08e870595d991be7696b31ef3280",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Golf.uexp",
+      "stored_size": 1763,
+      "pak_sha1": "4f9e9c48217c0c3a220ec1192fd3dd5a5dde6718",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Soccer.uasset",
+      "stored_size": 600,
+      "pak_sha1": "dead6c5d64d382fa7bc964c7d92778353b8ff144",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Soccer.uexp",
+      "stored_size": 1796,
+      "pak_sha1": "7d88c400064141de96d3bb9d85e9e4b86bd02aff",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Baseball.uasset",
+      "stored_size": 726,
+      "pak_sha1": "e5cb6e372710b587f5934bcde5a95eaac6de0811",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Baseball.ubulk",
+      "stored_size": 279,
+      "pak_sha1": "43d9fc81ef8a4ddec0055b60470f3866470e4681",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Baseball.uexp",
+      "stored_size": 20155,
+      "pak_sha1": "67d31f095d896f7d165f811300d7d6dd545ad7a2",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Basketball.uasset",
+      "stored_size": 732,
+      "pak_sha1": "142790f868a8556a925ddbc304c536440e04b95b",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Basketball.ubulk",
+      "stored_size": 253,
+      "pak_sha1": "4e6ade5c578ea6a6fb26edab8145730da1abbc19",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Basketball.uexp",
+      "stored_size": 36191,
+      "pak_sha1": "4320defaec26432f937d8bf44b0e869d42c6d5dd",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Football.uasset",
+      "stored_size": 745,
+      "pak_sha1": "791e11b8ebb15ad92e4bbc61eea239b188524040",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Football.ubulk",
+      "stored_size": 331,
+      "pak_sha1": "236001f7819a8d407b8c996716379c59a232db0b",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Football.uexp",
+      "stored_size": 71501,
+      "pak_sha1": "865a2f073d620a98256bb4aa88b16f9740a86a15",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Golf.uasset",
+      "stored_size": 731,
+      "pak_sha1": "955aeff8cfcc7cedd5a2da32052b523bf94a31c2",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Golf.ubulk",
+      "stored_size": 205,
+      "pak_sha1": "cbf80f0688c241098d30fa6172de838ef4a3d4dc",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Golf.uexp",
+      "stored_size": 18113,
+      "pak_sha1": "11c12bbbe4d58688efab99b583009c098982d7e9",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Soccer.uasset",
+      "stored_size": 730,
+      "pak_sha1": "6feeb32e516f24132a99f7cb237e9064aca18e00",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Soccer.ubulk",
+      "stored_size": 182,
+      "pak_sha1": "72775160df9b984aadea8b40493fa468540de328",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Soccer.uexp",
+      "stored_size": 32599,
+      "pak_sha1": "0aba34a8b9b5be8cc052218ab4ba11ecfa11c467",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Tennis.uasset",
+      "stored_size": 729,
+      "pak_sha1": "93f0ce3c183cbe9ce08436cc6991478f10b82f28",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Tennis.ubulk",
+      "stored_size": 279,
+      "pak_sha1": "43d9fc81ef8a4ddec0055b60470f3866470e4681",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Tennis.uexp",
+      "stored_size": 19947,
+      "pak_sha1": "03f3ab829f8e7150b273e6d9837024afb33a9d71",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Volleyball.uasset",
+      "stored_size": 735,
+      "pak_sha1": "9b55cd6f2b28746e7ef1b8319afbeea01b91d36b",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Volleyball.ubulk",
+      "stored_size": 215,
+      "pak_sha1": "f9b56c18125ebd1680ed004a6e401d307c59934e",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Sport_Balls_Volleyball.uexp",
+      "stored_size": 34847,
+      "pak_sha1": "9ba4c205996569c2d0740c9111bb5f7938828b6f",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Tennis.uasset",
+      "stored_size": 600,
+      "pak_sha1": "10809f75859d676b6185f27c1edf99b1f87606d4",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Tennis.uexp",
+      "stored_size": 1798,
+      "pak_sha1": "5798560e70d1219499ae2588ac12a5ea5dec635e",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Volleyball.uasset",
+      "stored_size": 711,
+      "pak_sha1": "52a9bff0a837f1453a627c352ede52158027081d",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/source/Volleyball.uexp",
+      "stored_size": 1763,
+      "pak_sha1": "cb7c5568e99449640cd8843e4b9f6be965111839",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/internal_ground_ao_texture.uasset",
+      "stored_size": 505,
+      "pak_sha1": "38516660c89b8431dcceb2efa7a02887b17148e7",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/internal_ground_ao_texture.ubulk",
+      "stored_size": 44998,
+      "pak_sha1": "3ba9668614ae4e128b33b6695ea62b3e25bc1d9f",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/internal_ground_ao_texture.uexp",
+      "stored_size": 1627,
+      "pak_sha1": "c6901d96f12695eddb086c56df474f1de8a0cee4",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Baseball_AmbientOcclusion.uasset",
+      "stored_size": 530,
+      "pak_sha1": "610b4bcd0f3fccf36541e3a3608870b4db91148b",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Baseball_AmbientOcclusion.ubulk",
+      "stored_size": 582955,
+      "pak_sha1": "342491c737bdcb1a98bccc2739ba9a38b752e68f",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Baseball_AmbientOcclusion.uexp",
+      "stored_size": 1947,
+      "pak_sha1": "76ca9998b6a2b5326cae004d469d4fb1c2ea696c",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Baseball_BaseColor.uasset",
+      "stored_size": 524,
+      "pak_sha1": "482d67eff454e7a5775fa9555432677fdfbe502d",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Baseball_BaseColor.ubulk",
+      "stored_size": 1699716,
+      "pak_sha1": "3ef81b4283c367e8008c87e45455f9ca5414c255",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Baseball_BaseColor.uexp",
+      "stored_size": 2365,
+      "pak_sha1": "e48e7d2bb87f412dee12a6272820b245e663937d",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Baseball_Normal.uasset",
+      "stored_size": 516,
+      "pak_sha1": "42db3faf4333f850208ae897f287af7a6d3e2d27",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Baseball_Normal.ubulk",
+      "stored_size": 5359599,
+      "pak_sha1": "0a389ab09e38590b146b4a11fcba6e69e9d10dc8",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Baseball_Normal.uexp",
+      "stored_size": 5676,
+      "pak_sha1": "0fa2a6789103e41634ee58af2aed0132840acc4a",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Baseball_Roughness.uasset",
+      "stored_size": 523,
+      "pak_sha1": "5a59876e01e556d04e432c2487b9fae8b1a1f3f6",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Baseball_Roughness.ubulk",
+      "stored_size": 1741138,
+      "pak_sha1": "5314faa81779d7036e3f9908342d0b62c8796c8e",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Baseball_Roughness.uexp",
+      "stored_size": 2391,
+      "pak_sha1": "abf38a4bf52afe7bbe7dc7c4ce99b0076c06d9dd",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Basketball_AmbientOcclusion.uasset",
+      "stored_size": 532,
+      "pak_sha1": "a1cf63334d6e78aa392aa0aabe5c03c0066e114e",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Basketball_AmbientOcclusion.ubulk",
+      "stored_size": 282711,
+      "pak_sha1": "2fb0e0a4395395e56cf79fcaa8534ba27bd6a02a",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Basketball_AmbientOcclusion.uexp",
+      "stored_size": 1625,
+      "pak_sha1": "159a8b810ad5454595cf44468f54b3596a09a422",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Basketball_BaseColor.uasset",
+      "stored_size": 524,
+      "pak_sha1": "67634aa6aec3f3a146a168db4495e1a86c34c616",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Basketball_BaseColor.ubulk",
+      "stored_size": 221925,
+      "pak_sha1": "91ddd92ebc13690d4fd2f39849a5459ad345f275",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Basketball_BaseColor.uexp",
+      "stored_size": 1717,
+      "pak_sha1": "81e51ef96fc5c37c4c12e58ecc6758030a063123",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Basketball_Normal.uasset",
+      "stored_size": 519,
+      "pak_sha1": "c22abeb9a95d9830d152b6fd353890cfa7c652ee",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Basketball_Normal.ubulk",
+      "stored_size": 762780,
+      "pak_sha1": "c62d1b70f238a016f3a598ef5297f1164f4cde67",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Basketball_Normal.uexp",
+      "stored_size": 3702,
+      "pak_sha1": "a8984a134e48c04c8da5b1caf6a4ffa4f072b37a",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Basketball_Roughness.uasset",
+      "stored_size": 525,
+      "pak_sha1": "68649c334624442e2c81b77a283dab0442bbef35",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Basketball_Roughness.ubulk",
+      "stored_size": 253165,
+      "pak_sha1": "c012cf611eae38ced018ffb8be0116051495a92e",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Basketball_Roughness.uexp",
+      "stored_size": 1856,
+      "pak_sha1": "cc146842b61ead0ec115575c9b05baf45116c5df",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Football_AmbientOcclusion.uasset",
+      "stored_size": 530,
+      "pak_sha1": "1cfec9fd66559cbad13a49cd2ca604de41d09bf5",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Football_AmbientOcclusion.ubulk",
+      "stored_size": 331956,
+      "pak_sha1": "369a93867c582919d815f86847cba6aadf759850",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Football_AmbientOcclusion.uexp",
+      "stored_size": 1737,
+      "pak_sha1": "542f4370713519f171441eb0dbe5c300d6820178",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Football_BaseColor.uasset",
+      "stored_size": 523,
+      "pak_sha1": "94bd60e3ccff2993e26ff5417471450c2473e81f",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Football_BaseColor.ubulk",
+      "stored_size": 374066,
+      "pak_sha1": "243e4807436fd7661dff1a6db4a1e4ddbf52a3cc",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Football_BaseColor.uexp",
+      "stored_size": 2020,
+      "pak_sha1": "eb42fa1b6715260fa788f121532c204ad3ec69d8",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Football_Normal.uasset",
+      "stored_size": 516,
+      "pak_sha1": "fe22571af412af1d5eb585de10ec4a99c581b1a1",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Football_Normal.ubulk",
+      "stored_size": 1375943,
+      "pak_sha1": "913401673556c4f4ec93e01360c927cc90f6c6b5",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Football_Normal.uexp",
+      "stored_size": 5534,
+      "pak_sha1": "3895fa964ed7648696b1cff921d345ca1acb8876",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Football_Roughness.uasset",
+      "stored_size": 523,
+      "pak_sha1": "6f9a3cd0241b1cb8aec383fcca18530d56bbb9c5",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Football_Roughness.ubulk",
+      "stored_size": 414521,
+      "pak_sha1": "abd5944df7e185c08ae449f0fd3cec080e858ae5",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Football_Roughness.uexp",
+      "stored_size": 2157,
+      "pak_sha1": "dc03ac44ea5606af72db51e90bf1ab3a50b2a9dd",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Golf_AmbientOcclusion.uasset",
+      "stored_size": 525,
+      "pak_sha1": "1c9d9fb821d0c6cfe4166b0a126018a881b3d25c",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Golf_AmbientOcclusion.ubulk",
+      "stored_size": 563033,
+      "pak_sha1": "01dfe397a41416d3fb01f48bb437c03764c989b5",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Golf_AmbientOcclusion.uexp",
+      "stored_size": 1933,
+      "pak_sha1": "3caadbb0dc963c868be789ca070f6807b7784256",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Golf_BaseColor.uasset",
+      "stored_size": 515,
+      "pak_sha1": "5598241fddb1b7c892a251f5c0958ef628c705fb",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Golf_BaseColor.ubulk",
+      "stored_size": 72180,
+      "pak_sha1": "7c91b787e1e4793fd01bfac21aef4a8a4633c942",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Golf_BaseColor.uexp",
+      "stored_size": 573,
+      "pak_sha1": "94d9b149fe6f8ba6ba826b0082db64a78578dceb",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Golf_Normal.uasset",
+      "stored_size": 513,
+      "pak_sha1": "c1d35230bdfe7a5cc171d935ff7ce833d000f295",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Golf_Normal.ubulk",
+      "stored_size": 3087351,
+      "pak_sha1": "544fb18fc561185604987d3f1f054ef96ff693af",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Golf_Normal.uexp",
+      "stored_size": 4781,
+      "pak_sha1": "a77abec303160c253d2d8024d74a45a7ce68e281",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Golf_Roughness.uasset",
+      "stored_size": 515,
+      "pak_sha1": "3535346310034aee37c3c3cab3f8eb323ebd14b7",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Golf_Roughness.ubulk",
+      "stored_size": 1849,
+      "pak_sha1": "778df3db592752ab223db77b75ff9bd5ca0dbf63",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Golf_Roughness.uexp",
+      "stored_size": 211,
+      "pak_sha1": "358988fdb192bfe174105a62d8869d1153a0399e",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Soccer_AmbientOcclusion.uasset",
+      "stored_size": 527,
+      "pak_sha1": "6442b05e5acd8675e7f1d8af5440e0c8959935c5",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Soccer_AmbientOcclusion.ubulk",
+      "stored_size": 258726,
+      "pak_sha1": "a3b6c4fd30217fa4dbea30fdd6f0b00a72614edb",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Soccer_AmbientOcclusion.uexp",
+      "stored_size": 1756,
+      "pak_sha1": "a3c2e3bcd93ad5fad70256ab32ee2e8a04bebc47",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Soccer_BaseColor.uasset",
+      "stored_size": 520,
+      "pak_sha1": "8eee902120297999a1a15cc995745b602279bee5",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Soccer_BaseColor.ubulk",
+      "stored_size": 918107,
+      "pak_sha1": "c4eef959f9ef8a0448c0a0c8bd604808b080603c",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Soccer_BaseColor.uexp",
+      "stored_size": 2299,
+      "pak_sha1": "6ea463b2cfd8e0fe8c43cda1364841b376102798",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Soccer_Normal.uasset",
+      "stored_size": 513,
+      "pak_sha1": "26fb9bad7e3b2bb1a4f664d60c75aeec67ac1b2a",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Soccer_Normal.ubulk",
+      "stored_size": 3556583,
+      "pak_sha1": "9cc8a1b64c7d247529651cd16a62b6e7d987f26e",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Soccer_Normal.uexp",
+      "stored_size": 5373,
+      "pak_sha1": "d922d9541afdeba144867ac783d75dcedc06c475",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Soccer_Roughness.uasset",
+      "stored_size": 520,
+      "pak_sha1": "3940613af7078268d8b91fedfcbe5f9599333b89",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Soccer_Roughness.ubulk",
+      "stored_size": 1138385,
+      "pak_sha1": "cb44be9e9141336a668b84e9a9fb17802193a655",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Soccer_Roughness.uexp",
+      "stored_size": 1798,
+      "pak_sha1": "e324ec2481875029df30194c6a7ec0f5c9432dda",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Tennis_AmbientOcclusion.uasset",
+      "stored_size": 527,
+      "pak_sha1": "304d10e227e01632bcfce77be3865e57f4fc8e2c",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Tennis_AmbientOcclusion.ubulk",
+      "stored_size": 229061,
+      "pak_sha1": "45b4e0cb025559cd21e986d85e3e42efe9fac2af",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Tennis_AmbientOcclusion.uexp",
+      "stored_size": 1357,
+      "pak_sha1": "537cdd5f712e7f4c7727fe09bbbc4b4876c9043b",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Tennis_BaseColor.uasset",
+      "stored_size": 520,
+      "pak_sha1": "b7ad3e6f12cf03c21a2db55c1cc16538b71f0863",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Tennis_BaseColor.ubulk",
+      "stored_size": 1368254,
+      "pak_sha1": "8b661dd15936811e85875322e81281923c342971",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Tennis_BaseColor.uexp",
+      "stored_size": 2089,
+      "pak_sha1": "9dd2d086b0acecbcfc26db26499c619fddad9b55",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Tennis_Normal.uasset",
+      "stored_size": 513,
+      "pak_sha1": "e96b0dd251842ea42b46d2a7e03a900b72cbbb79",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Tennis_Normal.ubulk",
+      "stored_size": 1836654,
+      "pak_sha1": "c9f39091be48bea7539c61b8c719acb283442ebc",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Tennis_Normal.uexp",
+      "stored_size": 4127,
+      "pak_sha1": "cc45a9b0805dbf6978cf02d85b056d1a71fdc86a",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Tennis_Roughness.uasset",
+      "stored_size": 520,
+      "pak_sha1": "843af7f54dee0b287e62946dd93ee70a3bcb5ea3",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Tennis_Roughness.ubulk",
+      "stored_size": 475009,
+      "pak_sha1": "c3d13dbac0ee96c2432230340fa40907b7cccc46",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Tennis_Roughness.uexp",
+      "stored_size": 976,
+      "pak_sha1": "c3e201c786951cadf81eee70cf66fa738cf1a0c4",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Volleyball_AmbientOcclusion.uasset",
+      "stored_size": 532,
+      "pak_sha1": "ddb4dbc406430cbe5bcddb03cc315cea1c935466",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Volleyball_AmbientOcclusion.ubulk",
+      "stored_size": 253230,
+      "pak_sha1": "60df829934f6ed9638b37e1bcefdbbd7b0b169e9",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Volleyball_AmbientOcclusion.uexp",
+      "stored_size": 1893,
+      "pak_sha1": "ed200ecc1fd96e57ace51fe9f92c4905d56e5fde",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Volleyball_BaseColor.uasset",
+      "stored_size": 525,
+      "pak_sha1": "e399adc734bc676396f95a5b23845986f7120478",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Volleyball_BaseColor.ubulk",
+      "stored_size": 1095736,
+      "pak_sha1": "d5eef7e8919204cbf2cc68e569891c900cf607bc",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Volleyball_BaseColor.uexp",
+      "stored_size": 1944,
+      "pak_sha1": "1eb5695a8aa6e71e862a32695db11be2f1afa970",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Volleyball_Normal.uasset",
+      "stored_size": 519,
+      "pak_sha1": "f7b058724e5c1eeaca80884084da1b161003f79e",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Volleyball_Normal.ubulk",
+      "stored_size": 3506850,
+      "pak_sha1": "950e9e45fc545a72fe688213bce02f53a799bc5d",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Volleyball_Normal.uexp",
+      "stored_size": 5629,
+      "pak_sha1": "d5a3841a09ddfd715c301ebcec80cb0e05440f32",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Volleyball_Roughness.uasset",
+      "stored_size": 525,
+      "pak_sha1": "890b21bb8c585f9ea79da94d80b62ec7ac039799",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Volleyball_Roughness.ubulk",
+      "stored_size": 1105052,
+      "pak_sha1": "58c93d07a7e8dba986265cd05ac9eca76d4d0dcb",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/game-ready-sport-balls/textures/Sport_Balls_Volleyball_Roughness.uexp",
+      "stored_size": 1847,
+      "pak_sha1": "7b2f61addeb14830a98c7ca0c44754f8b3e4ceae",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Maps/DefaultMap3.uexp",
+      "stored_size": 197005,
+      "pak_sha1": "fcda8dc6b7d00aa28e1a2ea08d78affa8b4c2963",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Maps/DefaultMap3.umap",
+      "stored_size": 3665,
+      "pak_sha1": "d8f10bc930bd4a7bc3119df8cda3e9f71103ef04",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Maps/RT10.uexp",
+      "stored_size": 182579,
+      "pak_sha1": "0c8d9d186169d9a24fb40466051b706d2d94ddcb",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Maps/RT10.umap",
+      "stored_size": 38881,
+      "pak_sha1": "103a0c8d8b124ec6dc5a7efada95d21e9756db49",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Maps/RT12.uexp",
+      "stored_size": 393806,
+      "pak_sha1": "070df211e744448915e6d10ad2a9a21323af692e",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Maps/RT12.umap",
+      "stored_size": 45266,
+      "pak_sha1": "649f56fd9ad08e5b2a3c9458f3618b2ebbba81e8",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Maps/RT15.uexp",
+      "stored_size": 456046,
+      "pak_sha1": "9b4809957372ff92be93f244a079b76e150083e3",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Maps/RT15.umap",
+      "stored_size": 57795,
+      "pak_sha1": "8ac6e6d0862517002c8b7198ca9ae34a49293571",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Maps/RT18.uexp",
+      "stored_size": 344795,
+      "pak_sha1": "6b1ff917e7f67e8c098b0c047857f549c42127eb",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Maps/RT18.umap",
+      "stored_size": 23604,
+      "pak_sha1": "fa96c7386d94f218386b18f62e9b4b14855a8c0e",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Maps/RT20.uexp",
+      "stored_size": 366081,
+      "pak_sha1": "a5cde416660dc0feca4696142583bda70a13d13b",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Maps/RT20.umap",
+      "stored_size": 23686,
+      "pak_sha1": "6d4517448623476b78b1da633e871c08ba4f1f7a",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Material/M_OilStick.uasset",
+      "stored_size": 648,
+      "pak_sha1": "f8ab4fed52f17fa40edeedce06a7cbec845b8bbb",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Material/M_OilStick.uexp",
+      "stored_size": 2762,
+      "pak_sha1": "a820db42c9c5e3e64486a5d99a1703b34c241fee",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Material/M_WaterPuddle.uasset",
+      "stored_size": 659,
+      "pak_sha1": "e9318b8913c6969cbe3d0706ade90da85c37b3c1",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Material/M_WaterPuddle.uexp",
+      "stored_size": 2759,
+      "pak_sha1": "95809f232fbe5775de4e4d95a1ce7df1e802c4f6",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/BP_Ball.uasset",
+      "stored_size": 1565,
+      "pak_sha1": "3cca4d988b07ea3192475d88450016a0f5cde958",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/BP_Ball.uexp",
+      "stored_size": 851,
+      "pak_sha1": "3272e8298d5c5300d40cf1886ca695c031ebae92",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/Objects/BP_Debuff_Base.uasset",
+      "stored_size": 2107,
+      "pak_sha1": "1b9e63970ac014e845c350b0572a7a7cee34e1d5",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/BP_Debuff_Base.uexp",
+      "stored_size": 1010,
+      "pak_sha1": "00866061b7f8702587374d7da43f2614213af886",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/BP_Falling_Base.uasset",
+      "stored_size": 1418,
+      "pak_sha1": "a5546ec79147a6d42b5c360176d6bc8e5f2c8efb",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/BP_Falling_Base.uexp",
+      "stored_size": 742,
+      "pak_sha1": "295d49a7001c13b68465584a86b57b06d98b831c",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/Objects/BP_Road_Small.uasset",
+      "stored_size": 2261,
+      "pak_sha1": "d6bfecc7f69b7deb0a58bc92783b256b61478c29",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/BP_Road_Small.uexp",
+      "stored_size": 802,
+      "pak_sha1": "02428f570122b567515ccdcf759f83a1247c6be8",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Basketball.uasset",
+      "stored_size": 1682,
+      "pak_sha1": "b2619189dbdce63107a2c78d2e21564621f9e277",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Basketball.uexp",
+      "stored_size": 937,
+      "pak_sha1": "84bf7a2fb69986a414d7a0eceb1a7b806c23fb59",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Bottle1.uasset",
+      "stored_size": 1710,
+      "pak_sha1": "ac9524e1e1638df0ee1ad180872b5390ef117786",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Bottle1.uexp",
+      "stored_size": 491,
+      "pak_sha1": "b53a270787c2b5b752d3604f31dfdb4001bb86c8",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Bottle2.uasset",
+      "stored_size": 1711,
+      "pak_sha1": "4cc087e7ad449659e6fc0414d32ef38ae770afa9",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Bottle2.uexp",
+      "stored_size": 569,
+      "pak_sha1": "cdb01ea592ccda1e9188b49244aaa624233f96af",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Box.uasset",
+      "stored_size": 1601,
+      "pak_sha1": "73f3771d9a334d1fa9f49db5c242cae9d4db9f08",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Box.uexp",
+      "stored_size": 768,
+      "pak_sha1": "40a1e7ba7c8fe914f7f4d7269ffd8f81f5f9f350",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Falling_Basketball.uasset",
+      "stored_size": 1426,
+      "pak_sha1": "89b25531abcf56231980662ca4c564aadb1cbc94",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Falling_Basketball.uexp",
+      "stored_size": 611,
+      "pak_sha1": "874a06f18b39d6bbc48374e0ca1ce08018862a82",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Falling_Box.uasset",
+      "stored_size": 1307,
+      "pak_sha1": "97c013b1edf2e595047085b3118cc4574e0d4f60",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Falling_Box.uexp",
+      "stored_size": 442,
+      "pak_sha1": "f137fc72655dd015af6731dfdb7feaaf7116fff3",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Falling_Box2.uasset",
+      "stored_size": 1303,
+      "pak_sha1": "a8c4bc7cc7a9fbfa9441c65d9f656e6b7bd0a08c",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Falling_Box2.uexp",
+      "stored_size": 442,
+      "pak_sha1": "a47ca2cec7b827b741ef8f40928cc781435b4831",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Falling_Soccer.uasset",
+      "stored_size": 1327,
+      "pak_sha1": "70c2c77370fb142eb0ed65788aa92508ce7e4249",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Falling_Soccer.uexp",
+      "stored_size": 468,
+      "pak_sha1": "668b8e67b4b6299a5df11d7faf988fe4c65bdb73",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Oil.uasset",
+      "stored_size": 1417,
+      "pak_sha1": "ad0ec05b13e3ddb08c2e30da4cb604380020f82c",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Oil.uexp",
+      "stored_size": 852,
+      "pak_sha1": "276512ea4295c952d249d50062347434aef78039",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Soccer.uasset",
+      "stored_size": 1681,
+      "pak_sha1": "368dda40a9a04320b54207c803c17bec7a285eaf",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Soccer.uexp",
+      "stored_size": 937,
+      "pak_sha1": "9cbe24e86d9d9ca2ecec0b6c61cefb02fa19ee07",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Tennis.uasset",
+      "stored_size": 1683,
+      "pak_sha1": "55292ef1dfd0309fadde7da9761ebb76eb39c495",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_Tennis.uexp",
+      "stored_size": 998,
+      "pak_sha1": "eacfa4c07a1dfaf76074fe48fe032c9e72883a6e",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_WaterPuddle.uasset",
+      "stored_size": 1405,
+      "pak_sha1": "237210a601cdacb2b6cc46446d689ec923832353",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/RT_WaterPuddle.uexp",
+      "stored_size": 830,
+      "pak_sha1": "3a5014afb03c642f849101446515d9a2050d493e",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/Objects/SM_Road_Small_New.uasset",
+      "stored_size": 1008,
+      "pak_sha1": "22e15aac0ff30f9942817f417555a37bae59fd8c",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Objects/SM_Road_Small_New.uexp",
+      "stored_size": 406522,
+      "pak_sha1": "106b4c9cfca0c5b2fa13b2165800d98aad49004a",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/RealTimeBench.uasset",
+      "stored_size": 664,
+      "pak_sha1": "789fa1cc650aa1eb033dc7113dcf58a2ef2fc2aa",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/RealTimeBench.uexp",
+      "stored_size": 21,
+      "pak_sha1": "a19d22696adda187f752415a2d9fde6413665fd0",
+      "compression": "None"
+    },
+    {
+      "path": "RealTimeBench/Texture/Oil.uasset",
+      "stored_size": 461,
+      "pak_sha1": "dfb2483578cc05b1dd362b3144df8408e31ea8a7",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Texture/Oil.ubulk",
+      "stored_size": 296718,
+      "pak_sha1": "5bd145f8948e67c4cb0e1eb7cdbed76e4d647155",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Texture/Oil.uexp",
+      "stored_size": 5662,
+      "pak_sha1": "72d0645f49d7fe50603799bea2f8d69f2fd71c94",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Texture/puddle.uasset",
+      "stored_size": 466,
+      "pak_sha1": "bb151a5fd18dc3c762221f9196117938a0051a1c",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Texture/puddle.ubulk",
+      "stored_size": 44709,
+      "pak_sha1": "98611c191abb9cb0fdc16da9724901e1d69a879f",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Texture/puddle.uexp",
+      "stored_size": 1892,
+      "pak_sha1": "5358038d53c29216ef51b256d92047e16301e124",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Texture/Water_0175normal.uasset",
+      "stored_size": 476,
+      "pak_sha1": "9f5cb57fae1040ba2289ee5ad7dba3672f8ad44c",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Texture/Water_0175normal.ubulk",
+      "stored_size": 342535,
+      "pak_sha1": "eabadd38471fd6f2d5c39601a56fff30ece192fd",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Texture/Water_0175normal.uexp",
+      "stored_size": 5662,
+      "pak_sha1": "ab0d2e58c1d1de91fa213c66be7ca58dd205fcf8",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Traffic/RT_BP_Intersection.uasset",
+      "stored_size": 3018,
+      "pak_sha1": "f5fdd69dd1f8be90a0b5212c7dcebcac84191c96",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Traffic/RT_BP_Intersection.uexp",
+      "stored_size": 1719,
+      "pak_sha1": "0827c92af662252d00493c6d4acda5428f9f4ced",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Traffic/RT_BP_street_light.uasset",
+      "stored_size": 5514,
+      "pak_sha1": "2d8460ba100a8b467c8833436cd1a67d5c007775",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Traffic/RT_BP_street_light.uexp",
+      "stored_size": 3613,
+      "pak_sha1": "1ef0a1fdccd7ba51e23503a59dce69192ccf397b",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Traffic/RT_BP_street_light_ped.uasset",
+      "stored_size": 5012,
+      "pak_sha1": "9421aea7144753ea07e1db0b1f6bad4eedb2c257",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Traffic/RT_BP_street_light_ped.uexp",
+      "stored_size": 3035,
+      "pak_sha1": "a235a17b09c694da2ab63fc377d426919341b9d7",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Traffic/RT_BP_Traffic_Signal.uasset",
+      "stored_size": 1886,
+      "pak_sha1": "c2ca46537d732e9cc62f9003527928174b3b501d",
+      "compression": "Oodle"
+    },
+    {
+      "path": "RealTimeBench/Traffic/RT_BP_Traffic_Signal.uexp",
+      "stored_size": 502,
+      "pak_sha1": "fb38d75cf234b93402d21b173af4e471f94f08a9",
+      "compression": "Oodle"
+    },
+    {
+      "path": "ShaderArchive-SimWorld_Chunk3002-SF_VULKAN_SM5-VULKAN_SM5.ushaderbytecode",
+      "stored_size": 93763,
+      "pak_sha1": "152efe23e9cb8a4861e6cb1c5d3dcccfaf887d7d",
+      "compression": "None"
+    },
+    {
+      "path": "ShaderArchive-SimWorld_Chunk3002-SF_VULKAN_SM6-VULKAN_SM6.ushaderbytecode",
+      "stored_size": 94518,
+      "pak_sha1": "b02258080ec49f4dbaeedf940b169621eb3fcf03",
+      "compression": "None"
+    }
+  ]
+}

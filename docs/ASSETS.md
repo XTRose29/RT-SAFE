@@ -2,7 +2,7 @@
 
 Live evaluation requires the RT-SAFE-compatible SimWorld Unreal Engine runtime, with UnrealCV enabled. The Python code alone cannot render or run the benchmark.
 
-The release includes task geometry and asset identifiers in `data/`, but excludes Unreal binaries, `.pak` files, marketplace content, model weights, and private run outputs. A redistributable runtime download has not yet been supplied. Obtain the compatible runtime from the project maintainers; do not assume a stock SimWorld build contains the RT-SAFE actors.
+This Git repository includes task geometry and asset identifiers in `data/`, but excludes Unreal binaries, `.pak` files, marketplace content, model weights, and private run outputs. The compatible legacy Linux build is available from SimWorld's official `Base20260313/Linux.zip`; it already includes the RT-SAFE actors and five levels. See [the pinned download and separate add-on guide](REALTIME_ADDON.md). Do not substitute an arbitrary newer SimWorld build.
 
 ## Required runtime contract
 
@@ -14,9 +14,18 @@ The release includes task geometry and asset identifiers in `data/`, but exclude
 
 Set `SIMWORLD_UE_LAUNCHER` to the absolute launcher path. Run `python benchmark/run.py doctor smoke` before launching evaluation. The doctor checks configuration, Python modules, launcher presence and model endpoint availability; a successful live smoke run is still required to establish engine compatibility.
 
+The original Linux build's RT-SAFE content is separable as a roughly 36 MB
+add-on. See [the real-time add-on guide](REALTIME_ADDON.md) for the upstream
+range downloader, packaging tool, checksum-verifying installer, exact base
+requirements, and live engine checks. The add-on requires the matching base;
+it is not a standalone simulator or a Windows release.
+
 ## Before distributing a runtime
 
-Record the runtime version, download location, SHA-256, Unreal version, GPU requirements, launch command, and applicable third-party asset terms. The currently available workspace does not establish all of these, so no download or compatibility claim is invented here.
+The guide records the verified upstream location, version, hashes, and launch
+command. Minimum GPU requirements and Windows/WSL2 compatibility have not been
+validated for RT-SAFE. Before mirroring engine assets, establish and include
+their third-party notices; the separate fetcher uses SimWorld's own hosting.
 
 Rendered demonstration media is supplied under `website/public/media`. The current cover and film use native Unreal Engine renders of the Madison Square Park NYC scene. The current Astra/Sol comparison uses original first-person RT15 observation and action snapshots, with counts from the recorded logs. The earlier NYC reconstruction is retained as an alternate. The NYC imagery is not the source of the paper tables. See [scene provenance](../website/nyc/README.md).
 

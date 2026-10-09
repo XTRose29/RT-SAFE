@@ -6,6 +6,35 @@ on:
 permissions:
   contents: read
 jobs:
+  realtime-source:
+    runs-on: ubuntu-24.04
+    container: ubuntu:24.04
+    steps:
+      - run: |
+          apt-get update
+          DEBIAN_FRONTEND=noninteractive apt-get install -y python3.12-venv git libgl1 libegl1 libglib2.0-0t64 ffmpeg curl
+      - uses: actions/checkout@v4
+      - run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          python3.12 -m venv /tmp/realtime-env
+          echo /tmp/realtime-env/bin >> "$GITHUB_PATH"
+      - run: python -m pip install --no-cache-dir -r requirements-dev.txt -c requirements.lock.txt
+      - run: python tools/export_realtime_release.py --output /tmp/rt-safe-source
+      - run: |
+          git -C /tmp/rt-safe-source init
+          git -C /tmp/rt-safe-source add .
+          cd /tmp/rt-safe-source
+          python scripts/check-release.py
+          python -m pytest -q
+          python benchmark/run.py run smoke --plan-only
+      # Export again after the checks so caches, test output and Git metadata
+      # from the validation directory cannot enter the downloadable artifact.
+      - run: python tools/export_realtime_release.py --output /tmp/rt-safe-release-artifact
+      - uses: actions/upload-artifact@v4
+        with:
+          name: realtime-source
+          path: /tmp/rt-safe-release-artifact
+          include-hidden-files: true
   benchmark:
     runs-on: ubuntu-latest
     steps:

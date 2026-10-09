@@ -1,0 +1,41 @@
+{
+  "scope": "RT10 task 0, seed 0, easy, greedy, two decisions, one second thinking per decision; installation check, not full route completion",
+  "conditions": {
+    "static": {
+      "decision_count": 2,
+      "final_step": 2,
+      "sim_time": 4.0,
+      "total_tokens": 0,
+      "realtime_thinking": false,
+      "success": false,
+      "observation_resolution_px": {
+        "width": 720,
+        "height": 640
+      },
+      "termination_reason": "max_steps",
+      "failure_reason": null,
+      "rollout_error": null,
+      "failed": false,
+      "parse_error_count": 0,
+      "signal_traffic_error_count": 0
+    },
+    "realtime": {
+      "decision_count": 2,
+      "final_step": 2,
+      "sim_time": 6.0,
+      "total_tokens": 0,
+      "realtime_thinking": true,
+      "success": false,
+      "observation_resolution_px": {
+        "width": 720,
+        "height": 640
+      },
+      "termination_reason": "max_steps",
+      "failure_reason": null,
+      "rollout_error": null,
+      "failed": false,
+      "parse_error_count": 0,
+      "signal_traffic_error_count": 0
+    }
+  }
+}

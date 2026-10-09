@@ -17,10 +17,18 @@ GitHub Actions builds and publishes the website from `website/`.
 ## Remaining release materials
 
 1. Select the project-wide code license.
-2. Provide a compatible Unreal runtime distribution or a reproducible acquisition/build path.
+2. Coordinate any independently mirrored runtime release and editable Unreal project with SimWorld; include third-party notices. A pinned upstream Linux acquisition path is now documented below.
 3. Supply the offline BC/RL implementation, dataset and checkpoints if that paper study is to be reproducible from this repository.
 
-The repository can be shared as a partial source release when its scope is stated clearly. It should not be described as a complete end-to-end reproduction package while the runtime and training materials remain unavailable.
+The runtime is obtained separately from upstream. This repository should not
+be described as a complete reproduction of every paper experiment while the
+offline training materials and historical campaign configuration are incomplete.
+
+The legacy Linux real-time content has been identified as a separate roughly
+36 MB chunk. [The runtime guide](REALTIME_ADDON.md) now supplies the exact public
+SimWorld base download, a separate chunk fetcher, installation checks, and live
+engine verification. The upstream executable and add-on match the tested local
+files by SHA-256. No engine binaries or third-party assets are mirrored here.
 
 The initial source-release validation passed 684 tests and 407 subtests, with one optional serving module skipped. The website passed its six data tests, TypeScript check, production build, local asset/link checks and Pages subpath/metadata checks. Later validation is recorded below.
 

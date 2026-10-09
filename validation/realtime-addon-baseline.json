@@ -1,0 +1,45 @@
+{
+  "scope": "Two-decision RT10 task-0 greedy smoke with one simulated second of thinking per decision; not a full task or score reproduction",
+  "configuration": {
+    "seed": 0,
+    "difficulty": "easy",
+    "time_mode": "sync",
+    "time_advance_mode": "resume_pause",
+    "observation_width": 720,
+    "observation_height": 640,
+    "gpu": "NVIDIA RTX A5000",
+    "platform": "Linux x86_64"
+  },
+  "results": [
+    {
+      "mode": "realtime",
+      "decision_count": 2,
+      "final_step": 2,
+      "sim_time": 6.0,
+      "total_tokens": 0,
+      "oil_count": 1,
+      "realtime_thinking": true,
+      "observation_resolution_px": {
+        "width": 720,
+        "height": 640
+      },
+      "success": false,
+      "source_result_sha256": "f419e0fe44e0e1aee62a221a2d79841ca06cf78f1080e3bb84230a67b8048b7b"
+    },
+    {
+      "mode": "static",
+      "decision_count": 2,
+      "final_step": 2,
+      "sim_time": 4.0,
+      "total_tokens": 0,
+      "oil_count": 1,
+      "realtime_thinking": false,
+      "observation_resolution_px": {
+        "width": 720,
+        "height": 640
+      },
+      "success": false,
+      "source_result_sha256": "81e7f7728854396e71b24d25b80b68124eadedf5c4352dd2e55f1316de4cd163"
+    }
+  ]
+}
