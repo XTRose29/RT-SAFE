@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import rawData from "./data.json";
 import { ModelExamples } from "./model-examples";
 import { ModelLogo } from "./model-logos";
-import { VisitorMap } from "./visitor-map";
+import { VisitorTracking } from "./visitor-map";
 import { NYCTiming, NYCEnvironment, NYCSceneGallery } from "./nyc-scenes";
 
 declare const __RT_SAFE_REPOSITORY_URL__: string;
@@ -894,7 +894,7 @@ export default function RTsafe() {
             Explore the evidence <Arrow />
           </a>
         </section>
-        <VisitorMap />
+        <VisitorTracking />
         <footer className="footer">
           <div className="brand-suite">
             <a className="simworld-brand" href="https://simworld.org/" aria-label="SimWorld home">
@@ -903,7 +903,7 @@ export default function RTsafe() {
             </a>
             <a className="brand" href="#top">RT–SAFE</a>
           </div>
-          <p>Benchmarking agent safety in real-time embodied environments.</p>
+          <p>Benchmarking agent safety in real-time embodied environments. <a href="./visitors/">Visitors ↗</a></p>
           <a href="#top">Back to top ↑</a>
         </footer>
       </main>
