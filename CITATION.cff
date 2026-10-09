@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use RT-SAFE, please cite the accompanying preprint."
+type: software
+title: RT-SAFE
+authors:
+  - family-names: Xu
+    given-names: Tianruo Rose
+    affiliation: Cornell University
+  - family-names: Ren
+    given-names: Jiawei
+    affiliation: University of California, San Diego
+  - family-names: Yang
+    given-names: Yichi
+    affiliation: University of California, San Diego
+  - family-names: Zheng
+    given-names: Zhaoxu
+    affiliation: University of California, San Diego
+  - family-names: Qin
+    given-names: Lianhui
+    affiliation: University of California, San Diego
+repository-code: "https://github.com/XTRose29/RT-SAFE"
+url: "https://xtrose29.github.io/RT-SAFE/"
+preferred-citation:
+  type: article
+  title: "RT-Safe: Benchmarking Agent Safety in Real-Time Embodied Environment"
+  authors:
+    - family-names: Xu
+      given-names: Tianruo Rose
+      affiliation: Cornell University
+    - family-names: Ren
+      given-names: Jiawei
+      affiliation: University of California, San Diego
+    - family-names: Yang
+      given-names: Yichi
+      affiliation: University of California, San Diego
+    - family-names: Zheng
+      given-names: Zhaoxu
+      affiliation: University of California, San Diego
+    - family-names: Qin
+      given-names: Lianhui
+      affiliation: University of California, San Diego
+  journal: arXiv
+  year: 2026
+  month: 10
+  doi: 10.48550/arXiv.2610.09294
+  url: "https://arxiv.org/abs/2610.09294"

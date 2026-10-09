@@ -1,10 +1,17 @@
 <h1 align="center">RT-SAFE</h1>
-<p align="center"><strong>Benchmarking Agent Safety in Real-Time Embodied Environments</strong></p>
+<p align="center"><strong>Benchmarking Agent Safety in Real-Time Embodied Environment</strong></p>
+<p align="center">
+  Tianruo Rose Xu<sup>1</sup> · Jiawei Ren<sup>2</sup> · Yichi Yang<sup>2</sup> · Zhaoxu Zheng<sup>2</sup> · Lianhui Qin<sup>2</sup>
+</p>
+<p align="center"><sup>1</sup> Cornell University &nbsp; <sup>2</sup> University of California, San Diego</p>
+<p align="center">arXiv preprint · October 2026</p>
 <p align="center">The world does not pause while an agent thinks.</p>
 <p align="center">
   <a href="docs/INSTALL.md">Quick start</a> ·
   <a href="https://xtrose29.github.io/RT-SAFE/">Project website</a> ·
-  <a href="website/public/media/rt-safe-paper.pdf">Paper draft</a> ·
+  <a href="https://arxiv.org/abs/2610.09294">Paper</a> ·
+  <a href="https://arxiv.org/pdf/2610.09294">PDF</a> ·
+  <a href="#license-and-citation">Citation</a> ·
   <a href="https://xtrose29.github.io/RT-SAFE/media/rt-safe-video.mp4">Demo film</a> ·
   <a href="#results">Results</a> ·
   <a href="docs/PROTOCOL.md">Protocol</a> ·
@@ -123,7 +130,21 @@ The public repository is [XTRose29/RT-SAFE](https://github.com/XTRose29/RT-SAFE)
 
 The license for original RT-SAFE code is awaiting the authors' selection. Bundled SimWorld retains its supplied Apache-2.0 license; fonts retain their OFL notices. See [third-party notices](THIRD_PARTY_NOTICES.md).
 
-The supplied paper is an anonymous draft. Author names, archival URL and final citation will be added when publication metadata is supplied; no conference acceptance is claimed here.
+If you use RT-SAFE, please cite our [arXiv preprint](https://arxiv.org/abs/2610.09294):
+
+```bibtex
+@misc{xu2026rtsafe,
+  title = {RT-Safe: Benchmarking Agent Safety in Real-Time Embodied Environment},
+  author = {Tianruo Rose Xu and Jiawei Ren and Yichi Yang and Zhaoxu Zheng and Lianhui Qin},
+  year = {2026},
+  eprint = {2610.09294},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  url = {https://arxiv.org/abs/2610.09294}
+}
+```
+
+[Download BibTeX](website/public/data/rt-safe.bib).
 
 ## Acknowledgments
 

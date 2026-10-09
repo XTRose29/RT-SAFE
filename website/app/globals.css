@@ -3301,3 +3301,20 @@ blockquote {
 @media (max-width: 360px) {
   .header .simworld-brand span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 }
+
+/* Publication details use the same typography and colors as the project hero. */
+.publication { margin-top: 32px; max-width: 980px; }
+.publication h2 { margin-top: 12px; font: 500 clamp(20px, 2.2vw, 28px) / 1.35 var(--display); letter-spacing: -0.5px; }
+.publication-authors { display: flex; flex-wrap: wrap; gap: 10px 24px; list-style: none; padding: 0; margin: 22px 0 12px; font-size: 16px; font-weight: 500; }
+.publication sup { margin-left: 3px; font-size: 10px; color: var(--green); }
+.publication-affiliations { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 13px; line-height: 1.6; color: var(--muted); }
+.publication-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.publication-links .light-button { display: inline-flex; align-items: center; gap: 12px; }
+.citation { margin-top: 36px; min-width: 0; }
+.citation-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.citation pre { margin: 18px 0 0; padding: 24px; border: 1px solid var(--line); border-radius: 8px; background: #eeeee7; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 13px; line-height: 1.7; }
+@media (max-width: 600px) {
+  .publication-authors { gap: 10px 18px; font-size: 15px; }
+  .publication-affiliations { flex-direction: column; }
+  .citation pre { padding: 16px; font-size: 12px; }
+}
