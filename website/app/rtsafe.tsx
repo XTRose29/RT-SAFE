@@ -903,7 +903,7 @@ export default function RTsafe() {
             </a>
             <a className="brand" href="#top">RT–SAFE</a>
           </div>
-          <p>Benchmarking agent safety in real-time embodied environments. <a href="./visitors/">Visitors ↗</a></p>
+          <p>Benchmarking agent safety in real-time embodied environments.</p>
           <a href="#top">Back to top ↑</a>
         </footer>
       </main>
