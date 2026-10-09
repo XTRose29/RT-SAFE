@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import rawData from "./data.json";
 import { ModelExamples } from "./model-examples";
 import { ModelLogo } from "./model-logos";
+import { VisitorMap } from "./visitor-map";
 import { NYCTiming, NYCEnvironment, NYCSceneGallery } from "./nyc-scenes";
 
 declare const __RT_SAFE_REPOSITORY_URL__: string;
@@ -893,6 +894,7 @@ export default function RTsafe() {
             Explore the evidence <Arrow />
           </a>
         </section>
+        <VisitorMap />
         <footer className="footer">
           <div className="brand-suite">
             <a className="simworld-brand" href="https://simworld.org/" aria-label="SimWorld home">

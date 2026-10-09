@@ -1973,6 +1973,23 @@ blockquote {
   font-size: 11px;
   padding: 15px 20px;
 }
+.visitor-section {
+  padding: 48px 0;
+  text-align: center;
+}
+.visitor-section h2 { margin: 12px 0; }
+.visitor-map-card {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 16px;
+  border: 1px solid #d8d8d2;
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+}
+.visitor-map-card img { max-width: 100%; height: auto; }
+.visitor-map-note { font-size: 13px; }
+.visitor-map-note a { text-decoration: underline; text-underline-offset: 3px; }
 .footer {
   border-top: 1px solid var(--line);
   display: flex;
