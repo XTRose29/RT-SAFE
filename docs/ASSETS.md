@@ -22,6 +22,10 @@ it is not a standalone simulator or a Windows release.
 
 ## Before distributing a runtime
 
+See [runtime source and Windows prerequisites](RUNTIME_SOURCE.md) for what is
+published, what is missing from an editable engine release, and the validation
+needed before supplying a Windows package.
+
 The guide records the verified upstream location, version, hashes, and launch
 command. Minimum GPU requirements and Windows/WSL2 compatibility have not been
 validated for RT-SAFE. Before mirroring engine assets, establish and include

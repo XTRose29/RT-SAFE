@@ -71,6 +71,37 @@ There is no validated native Windows package, WSL2 configuration, minimum GPU
 specification, or editable Unreal source project in this add-on release.
 Linux cooked assets must not be advertised as a Windows build.
 
+For the boundary between published benchmark source, packaged engine content,
+and an editable Unreal project, see [runtime source and Windows prerequisites](RUNTIME_SOURCE.md).
+
+### Software rendering and WSL2
+
+The validated configuration is native Ubuntu 24.04.3 LTS, Python 3.12.3,
+and an NVIDIA RTX A5000 (24 GB VRAM), using offscreen rendering. This is a
+tested configuration, not a minimum GPU/VRAM requirement. WSL2, Dozen, and a
+native Windows RT-SAFE package have not been validated.
+
+[Issue #2](https://github.com/XTRose29/RT-SAFE/issues/2) reports a WSL2 run
+that loaded RT10 and connected to UnrealCV but failed the movement check,
+with a log excerpt mentioning `llvmpipe`. This is a user report, not a
+confirmed diagnosis from a complete log. A line saying `Checking device
+support` does not by itself identify the device ultimately selected. Look
+for the `LogVulkanRHI: ... DeviceName:` line emitted when Unreal creates
+the Vulkan device. `llvmpipe` or `lavapipe` there indicates software rendering.
+
+The checker now rejects a selected software renderer before probing movement.
+In the default `resume_pause` mode, its time-advance probe resumes the world
+for 1.5 wall-clock seconds. Very slow rendering can prevent enough simulation
+progress and produce a movement failure; increasing the startup timeout does
+not change this interval. Do not lower movement thresholds or treat a longer
+wait as proof that a real-time benchmark configuration is valid.
+
+For a failed check, include `report.json`, the map's `.console.log` and
+`.engine.log`, the launch command, code revision, and OS/GPU details. The
+confirmed path remains native Linux with working GPU rendering. A Python
+environment or working CUDA model inference does not by itself establish
+Vulkan rendering support for Unreal.
+
 ## Prepare a self-contained add-on archive (maintainers)
 
 Given an authorized copy of the original compatible runtime:
@@ -142,8 +173,12 @@ reproduction, all hazard outcomes, or hardware minimums.
 
 All five maps passed these live checks from the freshly downloaded runtime on
 Linux with an NVIDIA RTX A5000. See [the validation record](../validation/realtime-fresh-runtime.json).
-The standalone source passed 709 Python tests and 407 subtests, with one
-optional serving test skipped, in a clean dependency installation.
+The [2026-10-10 server recheck](../validation/realtime-server-20261010.json)
+uses a new Python environment and the standalone source export, rehashes the
+previously downloaded runtime, and records all five maps plus the two-decision
+static/realtime benchmark pair. Its standalone source passed 716 Python tests
+and 407 subtests, with one optional serving test skipped. For the complete
+installation sequence, follow the [server quickstart](SERVER_QUICKSTART.md).
 
 For a manual benchmark launch:
 

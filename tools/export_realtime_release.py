@@ -24,7 +24,8 @@ FILES = {
     "requirements.txt", "requirements-dev.txt", "requirements.lock.txt",
     "requirements-openai-rollout.txt", "requirements-serving.txt", "run_scenario.py",
     "sample_tasks.py", "visualize_scenarios.py", "visualize_waypoints_obstacles.py",
-    "docs/PROTOCOL.md", "docs/REALTIME_ADDON.md", "docs/source-manifest.json",
+    "docs/PROTOCOL.md", "docs/REALTIME_ADDON.md", "docs/RUNTIME_SOURCE.md",
+    "docs/SERVER_QUICKSTART.md", "docs/source-manifest.json",
     "docs/release-edits.json", "scripts/check-release.py",
 }
 
