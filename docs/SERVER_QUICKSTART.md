@@ -83,8 +83,10 @@ prerequisite for either model-free command above.
 
 ## Validation evidence and limits
 
-The recorded native Linux environment and current run results are linked
-from the [runtime guide](REALTIME_ADDON.md#validate-in-unreal-before-evaluating-models).
+See the [2026-10-10 server validation record](../validation/realtime-server-20261010.json)
+for the environment, runtime hashes, five-map checks and benchmark pair.
+This run used a new Python environment and the standalone source export,
+with a previously downloaded runtime whose pinned files were rehashed.
 These checks establish installation and basic runtime/benchmark behavior.
 They do not reproduce the paper's model scores or validate other operating
 systems, all hardware, or every hazard outcome.

@@ -1,0 +1,567 @@
+{
+  "date_utc": "2026-10-10",
+  "passed": true,
+  "scope": "Native Linux installation, all-five-map runtime smoke and two-decision static/realtime benchmark pair; no model calls or historical score reproduction",
+  "tested_code_commit": "3774908c079c17946fce51c3990c9697d8bee4bf",
+  "execution_source": "Standalone release export; all exported Python file hashes match tested_code_commit. Documentation was updated separately.",
+  "python_source_sha256": "ab8684071205c47cef8d54736787787ca2285a327f5d812cc2f0662ee438cffd",
+  "environment": {
+    "os": "Ubuntu 24.04.3 LTS",
+    "kernel": "6.8.0-139-generic",
+    "python": "3.12.3",
+    "architecture": "x86_64",
+    "gpu": "NVIDIA RTX A5000",
+    "gpu_vram_mib": 24564,
+    "nvidia_driver": "595.84",
+    "engine": "5.3.2-29314046+++UE5+Release-5.3",
+    "rendering": "Vulkan, offscreen, hardware device verified in engine logs",
+    "five_map_gpu_index": 7,
+    "benchmark_pair_gpu_index": 5,
+    "fresh_python_venv": true,
+    "new_XDG_and_NVIDIA_cache_directories": true,
+    "fresh_os": false
+  },
+  "runtime": {
+    "source": "https://huggingface.co/datasets/SimWorld-AI/SimWorld/tree/31bc15758b66cfd2effb93e2183a1d9ee76363c4/Base20260313",
+    "download": "Reused a previously downloaded and extracted official archive; rehashed all seven pinned executable/content files for this validation. No new archive download in this run.",
+    "file_checks": [
+      {
+        "file": "SimWorld/Binaries/Linux/SimWorld",
+        "bytes": 263120208,
+        "sha256": "e7023cb3b382c57fa06cb0a79c07e4b17f84536f9852128a2a9e5463f9e2a930",
+        "passed": true
+      },
+      {
+        "file": "SimWorld/Content/Paks/pakchunk0-Linux.pak",
+        "bytes": 2470017052,
+        "sha256": "41c91b9089a3116d9efc7d490b0c98805f2ab3f33cb4c7622f7bbc85fbe8a3f8",
+        "passed": true
+      },
+      {
+        "file": "SimWorld/Content/Paks/pakchunk1000-Linux.pak",
+        "bytes": 8220041804,
+        "sha256": "50572c92821a5ea16bb688732310f9796aa722bf6a2d07f8569d5b4480be2382",
+        "passed": true
+      },
+      {
+        "file": "SimWorld/Content/Paks/pakchunk1001-Linux.pak",
+        "bytes": 15496921419,
+        "sha256": "8f8cd2d694f0d6b8a4218680bec021d4d1155187f6a9b421278322d76c3b10c1",
+        "passed": true
+      },
+      {
+        "file": "SimWorld/Content/Paks/pakchunk1001optional-Linux.pak",
+        "bytes": 90731344,
+        "sha256": "0527774559b35135498c5376b1ebf71c7d2dad93bdf2111d7a82c937d7b039eb",
+        "passed": true
+      },
+      {
+        "file": "SimWorld/Content/Paks/pakchunk3001-Linux.pak",
+        "bytes": 6682864,
+        "sha256": "8c1c86e736680822ae3d9b14b796007a26914c114c8d8d1fae6f97bd53e59bdd",
+        "passed": true
+      },
+      {
+        "file": "SimWorld/Content/Paks/pakchunk3002-Linux.pak",
+        "bytes": 36891601,
+        "sha256": "7924b67092159e72f8f9aea6d34941c3e2e5c9bd7b612743b9a411129e5a08cf",
+        "passed": true
+      }
+    ]
+  },
+  "commands": [
+    "python -m pip install -r requirements-dev.txt -c requirements.lock.txt",
+    "python -m pip check",
+    "python tools/check_runtime_addon.py --launcher <runtime>/SimWorld.sh --gpu 7 --port 19871 --output <new-output>/five-maps",
+    "python tools/run_realtime_examples.py --launcher <runtime>/SimWorld.sh --gpu 5 --port 19872 --output <new-output>/benchmark-pair"
+  ],
+  "environment_overrides": {
+    "unset": [
+      "PYTHONPATH",
+      "DISPLAY",
+      "WAYLAND_DISPLAY"
+    ],
+    "XDG_CACHE_HOME": "<new-output>/cache",
+    "XDG_CONFIG_HOME": "<new-output>/config",
+    "__GL_SHADER_DISK_CACHE_PATH": "<new-output>/nvidia-cache"
+  },
+  "python_validation": {
+    "pip_check": "passed",
+    "repository": {
+      "passed": 736,
+      "skipped": 1,
+      "subtests_passed": 407
+    },
+    "standalone_export": {
+      "passed": 716,
+      "skipped": 1,
+      "subtests_passed": 407
+    },
+    "release_content_checks": "passed in both trees",
+    "plan_only": "passed in both trees"
+  },
+  "runtime_report": {
+    "scope": "live add-on smoke; no model calls or score reproduction",
+    "requested_levels": [
+      "RT10",
+      "RT12",
+      "RT15",
+      "RT18",
+      "RT20"
+    ],
+    "levels": [
+      {
+        "level": "RT10",
+        "checks": {
+          "spawned_classes": [
+            "/Game/TrafficSystem/UE_Manager.UE_Manager_C",
+            "/Game/TrafficSystem/Pedestrian/Base_Pedestrian.Base_Pedestrian_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_Intersection.RT_BP_Intersection_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_street_light.RT_BP_street_light_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_street_light_ped.RT_BP_street_light_ped_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Basketball.RT_Falling_Basketball_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Box.RT_Falling_Box_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Box2.RT_Falling_Box2_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Soccer.RT_Falling_Soccer_C",
+            "/Game/RealTimeBench/Objects/RT_Basketball.RT_Basketball_C",
+            "/Game/RealTimeBench/Objects/RT_Soccer.RT_Soccer_C",
+            "/Game/RealTimeBench/Objects/RT_Tennis.RT_Tennis_C",
+            "/Game/RealTimeBench/Objects/RT_Box.RT_Box_C",
+            "/Game/RealTimeBench/Objects/BP_Ball.BP_Ball_C",
+            "/Game/RealTimeBench/Objects/RT_Bottle1.RT_Bottle1_C",
+            "/Game/RealTimeBench/Objects/RT_Bottle2.RT_Bottle2_C",
+            "/Game/RealTimeBench/Objects/RT_Oil.RT_Oil_C",
+            "/Game/RealTimeBench/Objects/RT_WaterPuddle.RT_WaterPuddle_C",
+            "/Game/RealTimeBench/Objects/BP_Road_Small.BP_Road_Small_C"
+          ],
+          "static_drift_cm": 0.0,
+          "realtime_displacement_cm": 277.6033140472218,
+          "step_displacement_cm": 71.01076633863346,
+          "time_advance_mode": "resume_pause",
+          "realtime_wall_seconds": 1.5095100440084934,
+          "agent_state": {
+            "HumanCollision": "0",
+            "ObjectCollision": "0",
+            "BuildingCollision": "0",
+            "Intensity": "0.000000",
+            "OverlapType": "0",
+            "TouchedRoad": "0"
+          },
+          "initial_position": [
+            9300.0,
+            -4473.292,
+            95.958
+          ],
+          "final_position": [
+            9366.519,
+            -4131.083,
+            95.958
+          ],
+          "render": {
+            "size": [
+              640,
+              480
+            ],
+            "pixel_std": 40.178980254450124
+          }
+        },
+        "passed": true
+      },
+      {
+        "level": "RT12",
+        "checks": {
+          "spawned_classes": [
+            "/Game/TrafficSystem/UE_Manager.UE_Manager_C",
+            "/Game/TrafficSystem/Pedestrian/Base_Pedestrian.Base_Pedestrian_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_Intersection.RT_BP_Intersection_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_street_light.RT_BP_street_light_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_street_light_ped.RT_BP_street_light_ped_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Basketball.RT_Falling_Basketball_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Box.RT_Falling_Box_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Box2.RT_Falling_Box2_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Soccer.RT_Falling_Soccer_C",
+            "/Game/RealTimeBench/Objects/RT_Basketball.RT_Basketball_C",
+            "/Game/RealTimeBench/Objects/RT_Soccer.RT_Soccer_C",
+            "/Game/RealTimeBench/Objects/RT_Tennis.RT_Tennis_C",
+            "/Game/RealTimeBench/Objects/RT_Box.RT_Box_C",
+            "/Game/RealTimeBench/Objects/BP_Ball.BP_Ball_C",
+            "/Game/RealTimeBench/Objects/RT_Bottle1.RT_Bottle1_C",
+            "/Game/RealTimeBench/Objects/RT_Bottle2.RT_Bottle2_C",
+            "/Game/RealTimeBench/Objects/RT_Oil.RT_Oil_C",
+            "/Game/RealTimeBench/Objects/RT_WaterPuddle.RT_WaterPuddle_C",
+            "/Game/RealTimeBench/Objects/BP_Road_Small.BP_Road_Small_C"
+          ],
+          "static_drift_cm": 0.0,
+          "realtime_displacement_cm": 77.85800000000017,
+          "step_displacement_cm": 40.65099999999802,
+          "time_advance_mode": "resume_pause",
+          "realtime_wall_seconds": 1.5208289490547031,
+          "agent_state": {
+            "HumanCollision": "0",
+            "ObjectCollision": "0",
+            "BuildingCollision": "0",
+            "Intensity": "0.000000",
+            "OverlapType": "0",
+            "TouchedRoad": "0"
+          },
+          "initial_position": [
+            -28738.746,
+            -700.0,
+            95.958
+          ],
+          "final_position": [
+            -28620.237,
+            -700.0,
+            95.958
+          ],
+          "render": {
+            "size": [
+              640,
+              480
+            ],
+            "pixel_std": 46.56651721078099
+          }
+        },
+        "passed": true
+      },
+      {
+        "level": "RT15",
+        "checks": {
+          "spawned_classes": [
+            "/Game/TrafficSystem/UE_Manager.UE_Manager_C",
+            "/Game/TrafficSystem/Pedestrian/Base_Pedestrian.Base_Pedestrian_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_Intersection.RT_BP_Intersection_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_street_light.RT_BP_street_light_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_street_light_ped.RT_BP_street_light_ped_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Basketball.RT_Falling_Basketball_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Box.RT_Falling_Box_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Box2.RT_Falling_Box2_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Soccer.RT_Falling_Soccer_C",
+            "/Game/RealTimeBench/Objects/RT_Basketball.RT_Basketball_C",
+            "/Game/RealTimeBench/Objects/RT_Soccer.RT_Soccer_C",
+            "/Game/RealTimeBench/Objects/RT_Tennis.RT_Tennis_C",
+            "/Game/RealTimeBench/Objects/RT_Box.RT_Box_C",
+            "/Game/RealTimeBench/Objects/BP_Ball.BP_Ball_C",
+            "/Game/RealTimeBench/Objects/RT_Bottle1.RT_Bottle1_C",
+            "/Game/RealTimeBench/Objects/RT_Bottle2.RT_Bottle2_C",
+            "/Game/RealTimeBench/Objects/RT_Oil.RT_Oil_C",
+            "/Game/RealTimeBench/Objects/RT_WaterPuddle.RT_WaterPuddle_C",
+            "/Game/RealTimeBench/Objects/BP_Road_Small.BP_Road_Small_C"
+          ],
+          "static_drift_cm": 0.0,
+          "realtime_displacement_cm": 60.046000000002095,
+          "step_displacement_cm": 36.215000000000146,
+          "time_advance_mode": "resume_pause",
+          "realtime_wall_seconds": 1.5039277779869735,
+          "agent_state": {
+            "HumanCollision": "0",
+            "ObjectCollision": "0",
+            "BuildingCollision": "0",
+            "Intensity": "0.000000",
+            "OverlapType": "0",
+            "TouchedRoad": "0"
+          },
+          "initial_position": [
+            -23668.826,
+            700.0,
+            95.958
+          ],
+          "final_position": [
+            -23572.565,
+            700.0,
+            95.958
+          ],
+          "render": {
+            "size": [
+              640,
+              480
+            ],
+            "pixel_std": 53.17320721076747
+          }
+        },
+        "passed": true
+      },
+      {
+        "level": "RT18",
+        "checks": {
+          "spawned_classes": [
+            "/Game/TrafficSystem/UE_Manager.UE_Manager_C",
+            "/Game/TrafficSystem/Pedestrian/Base_Pedestrian.Base_Pedestrian_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_Intersection.RT_BP_Intersection_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_street_light.RT_BP_street_light_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_street_light_ped.RT_BP_street_light_ped_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Basketball.RT_Falling_Basketball_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Box.RT_Falling_Box_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Box2.RT_Falling_Box2_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Soccer.RT_Falling_Soccer_C",
+            "/Game/RealTimeBench/Objects/RT_Basketball.RT_Basketball_C",
+            "/Game/RealTimeBench/Objects/RT_Soccer.RT_Soccer_C",
+            "/Game/RealTimeBench/Objects/RT_Tennis.RT_Tennis_C",
+            "/Game/RealTimeBench/Objects/RT_Box.RT_Box_C",
+            "/Game/RealTimeBench/Objects/BP_Ball.BP_Ball_C",
+            "/Game/RealTimeBench/Objects/RT_Bottle1.RT_Bottle1_C",
+            "/Game/RealTimeBench/Objects/RT_Bottle2.RT_Bottle2_C",
+            "/Game/RealTimeBench/Objects/RT_Oil.RT_Oil_C",
+            "/Game/RealTimeBench/Objects/RT_WaterPuddle.RT_WaterPuddle_C",
+            "/Game/RealTimeBench/Objects/BP_Road_Small.BP_Road_Small_C"
+          ],
+          "static_drift_cm": 0.0,
+          "realtime_displacement_cm": 298.98299999999654,
+          "step_displacement_cm": 98.20500000000175,
+          "time_advance_mode": "resume_pause",
+          "realtime_wall_seconds": 1.5051793409511447,
+          "agent_state": {
+            "HumanCollision": "0",
+            "ObjectCollision": "0",
+            "BuildingCollision": "0",
+            "Intensity": "0.000000",
+            "OverlapType": "0",
+            "TouchedRoad": "0"
+          },
+          "initial_position": [
+            -26401.643,
+            -700.0,
+            92.15
+          ],
+          "final_position": [
+            -26004.455,
+            -700.0,
+            92.15
+          ],
+          "render": {
+            "size": [
+              640,
+              480
+            ],
+            "pixel_std": 20.49651454060824
+          }
+        },
+        "passed": true
+      },
+      {
+        "level": "RT20",
+        "checks": {
+          "spawned_classes": [
+            "/Game/TrafficSystem/UE_Manager.UE_Manager_C",
+            "/Game/TrafficSystem/Pedestrian/Base_Pedestrian.Base_Pedestrian_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_Intersection.RT_BP_Intersection_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_street_light.RT_BP_street_light_C",
+            "/Game/RealTimeBench/Traffic/RT_BP_street_light_ped.RT_BP_street_light_ped_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Basketball.RT_Falling_Basketball_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Box.RT_Falling_Box_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Box2.RT_Falling_Box2_C",
+            "/Game/RealTimeBench/Objects/RT_Falling_Soccer.RT_Falling_Soccer_C",
+            "/Game/RealTimeBench/Objects/RT_Basketball.RT_Basketball_C",
+            "/Game/RealTimeBench/Objects/RT_Soccer.RT_Soccer_C",
+            "/Game/RealTimeBench/Objects/RT_Tennis.RT_Tennis_C",
+            "/Game/RealTimeBench/Objects/RT_Box.RT_Box_C",
+            "/Game/RealTimeBench/Objects/BP_Ball.BP_Ball_C",
+            "/Game/RealTimeBench/Objects/RT_Bottle1.RT_Bottle1_C",
+            "/Game/RealTimeBench/Objects/RT_Bottle2.RT_Bottle2_C",
+            "/Game/RealTimeBench/Objects/RT_Oil.RT_Oil_C",
+            "/Game/RealTimeBench/Objects/RT_WaterPuddle.RT_WaterPuddle_C",
+            "/Game/RealTimeBench/Objects/BP_Road_Small.BP_Road_Small_C"
+          ],
+          "static_drift_cm": 0.0,
+          "realtime_displacement_cm": 162.14300000000003,
+          "step_displacement_cm": 44.741000000001804,
+          "time_advance_mode": "resume_pause",
+          "realtime_wall_seconds": 1.5992578349541873,
+          "agent_state": {
+            "HumanCollision": "0",
+            "ObjectCollision": "0",
+            "BuildingCollision": "0",
+            "Intensity": "0.000000",
+            "OverlapType": "0",
+            "TouchedRoad": "0"
+          },
+          "initial_position": [
+            -27252.539,
+            700.0,
+            92.15
+          ],
+          "final_position": [
+            -27045.655,
+            700.0,
+            92.15
+          ],
+          "render": {
+            "size": [
+              640,
+              480
+            ],
+            "pixel_std": 19.169886090346694
+          }
+        },
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "benchmark_pair_report": {
+    "scope": "RT10 task 0, seed 0, easy, greedy, two decisions, one second thinking per decision; installation check, not full route completion",
+    "passed": true,
+    "runs": [
+      {
+        "mode": "static",
+        "repetition": 1,
+        "passed": true,
+        "observed": {
+          "decision_count": 2,
+          "final_step": 2,
+          "sim_time": 4.0,
+          "total_tokens": 0,
+          "realtime_thinking": false,
+          "success": false,
+          "observation_resolution_px": {
+            "width": 720,
+            "height": 640
+          },
+          "termination_reason": "max_steps",
+          "failure_reason": null,
+          "rollout_error": null,
+          "failed": false,
+          "parse_error_count": 0,
+          "signal_traffic_error_count": 0
+        },
+        "observations_not_compared": {
+          "oil_count": 1,
+          "collision_count": 0,
+          "passive_collision_count": 0,
+          "time_cost": 19.06591296195984,
+          "final_position": {
+            "x": 9300.0,
+            "y": -5273.292
+          }
+        },
+        "mismatches": {},
+        "result": "repeat-01-static/benchmark/runs/greedy__static__sync__deasy__code/round_01/task_0_greedy__static__sync__deasy__code__round01.json",
+        "result_sha256": "acd75ef7dee915018166a275c30ec9089ee53a84725e31255e01a147e97d4328"
+      },
+      {
+        "mode": "realtime",
+        "repetition": 1,
+        "passed": true,
+        "observed": {
+          "decision_count": 2,
+          "final_step": 2,
+          "sim_time": 6.0,
+          "total_tokens": 0,
+          "realtime_thinking": true,
+          "success": false,
+          "observation_resolution_px": {
+            "width": 720,
+            "height": 640
+          },
+          "termination_reason": "max_steps",
+          "failure_reason": null,
+          "rollout_error": null,
+          "failed": false,
+          "parse_error_count": 0,
+          "signal_traffic_error_count": 0
+        },
+        "observations_not_compared": {
+          "oil_count": 1,
+          "collision_count": 0,
+          "passive_collision_count": 0,
+          "time_cost": 25.74798274040222,
+          "final_position": {
+            "x": 9300.0,
+            "y": -5273.292
+          }
+        },
+        "mismatches": {},
+        "result": "repeat-01-realtime/benchmark/runs/greedy__realtime__sync__deasy__code/round_01/task_0_greedy__realtime__sync__deasy__code__round01.json",
+        "result_sha256": "aec3d2d5fe640acbdbaaf36ed363320373d6f286546ba269d082bc0f47c02255"
+      }
+    ]
+  },
+  "log_fingerprints": {
+    "five-maps/RT10.console.log": {
+      "sha256": "ec0138a77d340ea4162ba27e35019ba42646a01dd574ad9b5847d22b4aa663d0",
+      "bytes": 388503,
+      "created_vulkan_device": "NVIDIA RTX A5000"
+    },
+    "five-maps/RT10.engine.log": {
+      "sha256": "1b86bdb3ec52f734dfb69eb4a043b93fcf6420f5ab515af31f3266adf22c66df",
+      "bytes": 391840,
+      "created_vulkan_device": "NVIDIA RTX A5000"
+    },
+    "five-maps/RT12.console.log": {
+      "sha256": "e80c8bf94c6f7c4cf60ae22030a1301f11bc94907b3b81790ac00b18feefb51a",
+      "bytes": 412598,
+      "created_vulkan_device": "NVIDIA RTX A5000"
+    },
+    "five-maps/RT12.engine.log": {
+      "sha256": "ff828b24abde979a0604e6f91fb6835b93fdb80d35d6f3e5d390e380c64ca624",
+      "bytes": 416106,
+      "created_vulkan_device": "NVIDIA RTX A5000"
+    },
+    "five-maps/RT15.console.log": {
+      "sha256": "c527e51bd83b29117345bfc331ff82c8c11c9bf5878839eb5a3c5ef735a2684f",
+      "bytes": 451653,
+      "created_vulkan_device": "NVIDIA RTX A5000"
+    },
+    "five-maps/RT15.engine.log": {
+      "sha256": "083f26176613e0e549c620dc17840098ecb89212bc83db768e69c621974bc18e",
+      "bytes": 455468,
+      "created_vulkan_device": "NVIDIA RTX A5000"
+    },
+    "five-maps/RT18.console.log": {
+      "sha256": "e2f1c330e22896c55536627a4048b4814662a24ffdbbb5d36191db9f4d7d667f",
+      "bytes": 289134,
+      "created_vulkan_device": "NVIDIA RTX A5000"
+    },
+    "five-maps/RT18.engine.log": {
+      "sha256": "e2e9861fb4e29830777da640f8218d5e80d95c39b39f5f0522e55b55f734a086",
+      "bytes": 291737,
+      "created_vulkan_device": "NVIDIA RTX A5000"
+    },
+    "five-maps/RT20.console.log": {
+      "sha256": "b947fe6f92ab6dc23eeffcd98bbb956bf88c8ad736cf87e89d10b851e916a0fa",
+      "bytes": 289345,
+      "created_vulkan_device": "NVIDIA RTX A5000"
+    },
+    "five-maps/RT20.engine.log": {
+      "sha256": "be0f8f11fdd868bb8ae59a9a23b2b6b942f03348976072023fc980326d9a18ce",
+      "bytes": 291955,
+      "created_vulkan_device": "NVIDIA RTX A5000"
+    },
+    "benchmark-pair/repeat-01-realtime/console.log": {
+      "sha256": "f48846c6fee6c77569b1261be81b0a37c0cb576246f99fa4dcf6f118f7974a7f",
+      "bytes": 2192427,
+      "created_vulkan_device": "NVIDIA RTX A5000"
+    },
+    "benchmark-pair/repeat-01-realtime/engine.log": {
+      "sha256": "4e510593a7ea89e1c5cd2022a27df7363edc6d7844fda783ce9bf1d73e9bf8d0",
+      "bytes": 2215048,
+      "created_vulkan_device": "NVIDIA RTX A5000"
+    },
+    "benchmark-pair/repeat-01-realtime/runner.log": {
+      "sha256": "560dc05cf73ad47a1a29c40ce27c7ff9e2392767d068af39f446e0a2447136ae",
+      "bytes": 94295
+    },
+    "benchmark-pair/repeat-01-static/console.log": {
+      "sha256": "1aeda2354c8aa72f39b650fd0d6896b6ee14c72dcbface7be21ec1ecc77bed29",
+      "bytes": 2080108,
+      "created_vulkan_device": "NVIDIA RTX A5000"
+    },
+    "benchmark-pair/repeat-01-static/engine.log": {
+      "sha256": "2621784eaffc53b80f1283b695ad51085b99f0c969aa7dca41a2873b9dbb52f8",
+      "bytes": 2101092,
+      "created_vulkan_device": "NVIDIA RTX A5000"
+    },
+    "benchmark-pair/repeat-01-static/runner.log": {
+      "sha256": "276b2d6ad3a0be9e388befe9b68c00df511a7439729f2aa7ac11a3f7dc458f77",
+      "bytes": 93638
+    }
+  },
+  "limits": [
+    "Not a fresh OS installation.",
+    "A5000 is a tested configuration, not an established minimum GPU/VRAM requirement.",
+    "Windows, WSL2 and Dozen were not tested.",
+    "Two-decision runs intentionally stop before reaching the goal; success:false is expected.",
+    "Reported simulation time is runner accounting, not an independent physics-tick measurement.",
+    "Checks do not reproduce historical model scores or establish every hazard outcome."
+  ]
+}

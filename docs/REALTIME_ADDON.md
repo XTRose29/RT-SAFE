@@ -173,8 +173,12 @@ reproduction, all hazard outcomes, or hardware minimums.
 
 All five maps passed these live checks from the freshly downloaded runtime on
 Linux with an NVIDIA RTX A5000. See [the validation record](../validation/realtime-fresh-runtime.json).
-The standalone source passed 709 Python tests and 407 subtests, with one
-optional serving test skipped, in a clean dependency installation.
+The [2026-10-10 server recheck](../validation/realtime-server-20261010.json)
+uses a new Python environment and the standalone source export, rehashes the
+previously downloaded runtime, and records all five maps plus the two-decision
+static/realtime benchmark pair. Its standalone source passed 716 Python tests
+and 407 subtests, with one optional serving test skipped. For the complete
+installation sequence, follow the [server quickstart](SERVER_QUICKSTART.md).
 
 For a manual benchmark launch:
 

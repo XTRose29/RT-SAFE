@@ -85,3 +85,18 @@ from the five-map paper results and do not establish benchmark equivalence.
 See the [results report](NYC_TRANSFER_RESULTS.md),
 [validation data](../validation/nyc-transfer-checks.json), and
 [migration plan](MAP_TRANSFER.md).
+
+## Native Linux server validation — 10 October 2026
+
+The [server quickstart](SERVER_QUICKSTART.md) was validated from the standalone
+source export in a new Python environment on native Ubuntu 24.04.3 LTS,
+Python 3.12.3, NVIDIA RTX A5000 (24 GB), driver 595.84 and UE 5.3.2. All five
+maps passed the live runtime checks, and an RT10 static/realtime two-decision
+benchmark pair matched the expected 4/6-second reported simulation times.
+The previously downloaded runtime was reused after all seven pinned
+executable/content files were rehashed; this was not a fresh OS installation.
+
+The exported source passed 716 tests and 407 subtests, with one optional
+serving test skipped. The full repository passed 736 tests and 407 subtests,
+with the same skip. See the [environment, hashes and run results](../validation/realtime-server-20261010.json).
+Windows, WSL2/Dozen and minimum GPU/VRAM requirements remain unvalidated.
