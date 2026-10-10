@@ -37,6 +37,10 @@ High completion rates can coexist with frequent safety events. These are results
 
 ## Start here
 
+**Run the benchmark on a Linux GPU server without model credentials:**
+follow the [server quickstart](docs/SERVER_QUICKSTART.md) for installation,
+all-five-map validation, and a static/real-time benchmark pair.
+
 **View the website** — Node.js 22.13 or newer:
 
 ```bash
@@ -57,11 +61,13 @@ python benchmark/run.py run smoke --plan-only
 python -m pytest -q
 ```
 
-Planning and unit tests do not require Unreal or model credentials. Live evaluation requires the compatible RT-SAFE Unreal runtime and a local or hosted model. Follow the [installation guide](docs/INSTALL.md) and [runtime contract](docs/ASSETS.md).
+Planning and unit tests do not require Unreal or model credentials. Live evaluation requires the compatible RT-SAFE Unreal runtime; deterministic code baselines need no model, while model policies require a local or hosted model. Follow the [installation guide](docs/INSTALL.md) and [runtime contract](docs/ASSETS.md).
 
 The compatible legacy Linux runtime is publicly hosted by SimWorld. See the
 [pinned runtime download and separate real-time add-on](docs/REALTIME_ADDON.md)
 for setup, checksums, and a live check that needs no model credentials.
+See [runtime source and Windows prerequisites](docs/RUNTIME_SOURCE.md) for
+the editable assets needed to build another platform and the current release boundary.
 
 ## What is included
 

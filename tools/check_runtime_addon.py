@@ -14,6 +14,7 @@ import logging
 import math
 import os
 from pathlib import Path
+import re
 import socket
 import subprocess
 import sys
@@ -145,6 +146,26 @@ def probe(ue, level, output):
     return result
 
 
+def check_renderer(log_text):
+    """Reject software rendering based on the created device, not enumeration.
+
+    Vulkan can mention llvmpipe while checking available devices even when it
+    ultimately creates a hardware device. UE 5.3 logs that choice separately
+    as ``LogVulkanRHI: Display: - DeviceName: ...``.
+    """
+    devices = re.findall(r"LogVulkanRHI:.*?\bDeviceName:\s*([^\r\n]+)", log_text,
+                         flags=re.IGNORECASE)
+    if devices and any(name in devices[-1].lower() for name in ("llvmpipe", "lavapipe")):
+        raise RuntimeError(
+            f"Unreal selected CPU software rendering ({devices[-1].strip()}); "
+            "actor movement checks require a working hardware renderer. "
+            "Check Vulkan GPU access and the selected graphics adapter; "
+            "see docs/REALTIME_ADDON.md#software-rendering-and-wsl2."
+        )
+    if "falling back to first device" in log_text.lower():
+        raise RuntimeError("Unreal fell back to the first GPU; verify the requested graphics adapter")
+
+
 def run_level(args, level):
     import unrealcv
     from simworld.communicator.unrealcv import UnrealCV
@@ -177,6 +198,8 @@ def run_level(args, level):
                 if loaded and initialized and f"Start listening on {args.port}" in startup_log:
                     break
                 time.sleep(1)
+            # Diagnose the renderer before movement probes can mask the cause.
+            check_renderer(startup_log)
             ue = UnrealCV.__new__(UnrealCV)
             ue.client = unrealcv.Client(("127.0.0.1", args.port))
             ue.logger = logging.getLogger("runtime-addon-check")
@@ -191,8 +214,7 @@ def run_level(args, level):
             text = console.read_text(errors="replace")
             if f"Bringing World /Game/RealTimeBench/Maps/{level}.{level} up for play" not in text or "Failed to load package" in text:
                 raise RuntimeError("Expected map was not loaded cleanly")
-            if any(s in text.lower() for s in ("llvmpipe", "lavapipe", "falling back to first device")):
-                raise RuntimeError("Unreal selected an unexpected/software GPU")
+            check_renderer(text)
             return result
         finally:
             if ue is not None:

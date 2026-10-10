@@ -1,5 +1,8 @@
 # Installation and first run
 
+For a complete native Linux setup and a first benchmark run without model
+credentials, follow the [server quickstart](SERVER_QUICKSTART.md).
+
 ## 1. Install the Python environment
 
 Use Linux x86-64 and Python 3.12. On minimal Ubuntu 24.04, install the system

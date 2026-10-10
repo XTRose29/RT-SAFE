@@ -6,6 +6,9 @@ code, and tools to obtain and validate the matching public Linux runtime.
 
 ## Install
 
+The [server quickstart](docs/SERVER_QUICKSTART.md) covers a complete Linux
+installation, all-five-map checks and a benchmark pair without model credentials.
+
 Use Linux x86-64 with Python 3.12 and an NVIDIA GPU/driver for live rendering.
 Install the [system prerequisites](docs/INSTALL.md) first, then from this directory:
 
@@ -29,7 +32,7 @@ when evaluating a hosted policy; the deterministic baselines require none.
 
 ## What this package contains
 
-- Original maps RT10, RT12, RT15, RT18, RT20 and their authored routes.
+- Layout and task data for RT10, RT12, RT15, RT18, RT20 and their authored routes.
 - Timing, hazard attribution, code baselines, model adapters, and tests.
 - Separate real-time download/installation tools and exact runtime hashes.
 - Small examples with expected results and provenance.
@@ -38,6 +41,8 @@ This package excludes the website and the separate map-transfer project.
 Runtime binaries and third-party Unreal assets are downloaded from SimWorld,
 not mirrored here. The content add-on requires the exact compatible base;
 it is not a standalone simulator. Native Windows and WSL2 are unvalidated.
+See [runtime source and Windows prerequisites](docs/RUNTIME_SOURCE.md) for
+the missing editable Unreal assets and the requirements for a Windows port.
 
 ## Results and license
 
