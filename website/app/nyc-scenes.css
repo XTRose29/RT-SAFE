@@ -29,6 +29,7 @@
 .nyc-case .nyc-view-1 strong { color:#ae653e; }
 .nyc-evidence-link { display:inline-block; margin:0 28px 25px; font-size:12px; color:var(--green); border-bottom:1px solid var(--green); padding-bottom:4px; }
 .nyc-environment { margin:0 0 28px; background:var(--ink); color:white; border-radius:12px; overflow:hidden; }
+.nyc-timing-story { width:min(100%, 960px); margin:0 auto 28px; }
 .nyc-environment video { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; }
 .nyc-environment figcaption { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:22px 27px; }
 .nyc-environment figcaption strong { font:500 20px var(--display); }

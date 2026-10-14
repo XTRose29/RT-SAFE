@@ -74,30 +74,28 @@ function SectionHead({
   );
 }
 function Results() {
-  const [scope, setScope] = useState<Scope>("average");
-  const [effort, setEffort] = useState("default");
-  const scoreFor = (m: Model): Metric => effort === "default" ? m[scope] : m.effort[Number(effort)];
-  const effortLabel = (m: Model) => effort === "default" ? `Provider default · ${m.effort[m.name === "Sol" ? 0 : 1].label}` : `${["Lower", "Middle", "Higher"][Number(effort)]} · ${m.effort[Number(effort)].label}${Number(effort) === (m.name === "Sol" ? 0 : 1) ? " (default)" : ""}`;
+  const [scope, setScope] = useState<Scope>("realtime");
+  const [effort, setEffort] = useState("all");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState<keyof Metric>("collisions");
   const [asc, setAsc] = useState(true);
-  const [selected, setSelected] = useState("Fable");
-  const list = useMemo(
-    () =>
-      models
-        .filter((m) =>
-          (m.fullName + " " + m.provider)
-            .toLowerCase()
-            .includes(search.toLowerCase()),
-        )
-        .sort(
-          (a, b) =>
-            ((scoreFor(a)[sort] ?? 0) - (scoreFor(b)[sort] ?? 0)) * (asc ? 1 : -1),
-        ),
-    [scope, effort, search, sort, asc],
-  );
-  const model = models.find((m) => m.name === selected)!;
-  const score = scoreFor(model);
+  const [selected, setSelected] = useState("Fable-1");
+  const list = useMemo(() => {
+    const rows = models.flatMap(model => {
+      const defaultIndex = model.name === "Sol" ? 0 : 1;
+      if (scope !== "realtime") return [{ id: model.name, model, score: model[scope], label: `Provider default · ${model.effort[defaultIndex].label}` }];
+      return model.effort.flatMap((score, index) => {
+        if (effort === "default" && index !== defaultIndex) return [];
+        if (!["all", "default"].includes(effort) && index !== Number(effort)) return [];
+        return [{ id: `${model.name}-${index}`, model, score, label: `${score.label}${index === defaultIndex ? " · Provider default" : ""}` }];
+      });
+    });
+    return rows.filter(row => `${row.model.fullName} ${row.model.provider} ${row.label}`.toLowerCase().includes(search.toLowerCase()))
+      .sort((a, b) => ((a.score[sort] ?? 0) - (b.score[sort] ?? 0)) * (asc ? 1 : -1));
+  }, [scope, effort, search, sort, asc]);
+  const focused = list.find(row => row.id === selected) ?? list[0];
+  const model = focused?.model;
+  const score = focused?.score;
   const changeSort = (key: keyof Metric) => {
     if (key === sort) setAsc(!asc);
     else {
@@ -127,20 +125,21 @@ function Results() {
             <button
               key={key}
               aria-pressed={scope === key}
-              onClick={() => { setScope(key); setEffort("default"); }}
+              onClick={() => { setScope(key); setEffort("all"); if (key === "realtime" && sort === "spl") { setSort("collisions"); setAsc(true); } }}
             >
               {label}
             </button>
           ))}
         </div>
-        <label className="effort-filter">Reasoning effort
-          <select aria-label="Leaderboard reasoning effort" value={effort} onChange={e => { setEffort(e.target.value); if(e.target.value !== "default") { setScope("realtime"); if(sort === "spl") { setSort("collisions"); setAsc(true); } } }}>
+        {scope === "realtime" && <label className="effort-filter">Reasoning effort
+          <select aria-label="Leaderboard reasoning effort" value={effort} onChange={e => setEffort(e.target.value)}>
+            <option value="all">All reasoning efforts</option>
             <option value="default">Provider default</option>
             <option value="0">Lower</option>
             <option value="1">Middle</option>
             <option value="2">Higher</option>
           </select>
-        </label>
+        </label>}
         <label className="search">
           <span aria-hidden="true">⌕</span>
           <input
@@ -152,8 +151,8 @@ function Results() {
         </label>
         <a className="text-link csv-link" href={`data:text/csv;charset=utf-8,${encodeURIComponent([
           ["Model", "Condition", "Reasoning", ...cols.map(c => c[0])].join(","),
-          ...list.map(m => [m.name, scope, effortLabel(m), ...cols.map(([key]) => scoreFor(m)[key] ?? "")].map(v => '"' + String(v).replaceAll('"', '""') + '"').join(","))
-        ].join("\n"))}`} download={`rt-safe-${scope}-${effort === "default" ? "default" : ["lower", "middle", "higher"][Number(effort)]}.csv`}>
+          ...list.map(row => [row.model.fullName, scope, row.label, ...cols.map(([key]) => row.score[key] ?? "")].map(v => '"' + String(v).replaceAll('"', '""') + '"').join(","))
+        ].join("\n"))}`} download={`rt-safe-${scope}-${scope !== "realtime" ? "default" : effort === "all" || effort === "default" ? effort : ["lower", "middle", "higher"][Number(effort)]}.csv`}>
           CSV <span>↓</span>
         </a>
       </div>
@@ -162,11 +161,11 @@ function Results() {
           <i className="live-dot" />
           {scope === "average"
             ? "108 episodes per model · Easy, medium & hard · Real-time · Provider-default reasoning"
-            : `36 episodes per model · Hard · ${scope === "static" ? "Static" : "Real-time"} · ${effort === "default" ? "Provider-default" : ["Lower", "Middle", "Higher"][Number(effort)]} reasoning`}
+            : `36 episodes per configuration · Hard · ${scope === "static" ? "Static" : "Real-time"} · ${scope === "static" || effort === "default" ? "Provider-default" : effort === "all" ? "All tested" : ["Lower", "Middle", "Higher"][Number(effort)]} reasoning`}
         </span>
-        <span>{list.length} models</span>
+        <span>{list.length} configurations · {new Set(list.map(row => row.model.name)).size} models</span>
       </div>
-      <p className="effort-context">Effort comparisons use the same 36 hard, real-time routes. Lower / Middle / Higher are positions within each provider’s tested settings; actual setting names appear under each model.{effort !== "default" && " SPL was not reported in the effort table (—). Source: manuscript Table 15."}</p>
+      <p className="effort-context">{scope === "realtime" ? "Each row is one model and reasoning setting on the same 36 hard, real-time routes. All tested efforts share one ranking. Lower / Middle / Higher are provider-specific positions; the actual setting appears with each model. SPL was not reported in the effort table (—). Source: manuscript Table 15." : "Provider-default results from the manuscript. Each evaluation condition is ranked separately."}</p>
       <div className="results-workspace">
         <div
           className="table-scroll"
@@ -190,7 +189,7 @@ function Results() {
                       sort === key ? (asc ? "ascending" : "descending") : "none"
                     }
                   >
-                    <button disabled={key === "spl" && effort !== "default"} onClick={() => changeSort(key)}>
+                    <button disabled={key === "spl" && scope === "realtime"} onClick={() => changeSort(key)}>
                       {label}
                       <span>
                         {sort === key ? (asc ? "↑" : "↓") : direction}
@@ -201,20 +200,20 @@ function Results() {
               </tr>
             </thead>
             <tbody>
-              {list.map((m) => (
+              {list.map((row) => (
                 <tr
-                  key={m.name}
-                  className={m.name === selected ? "selected" : ""}
+                  key={row.id}
+                  className={row.id === focused?.id ? "selected" : ""}
                 >
                   <th scope="row">
                     <button
-                      onClick={() => setSelected(m.name)}
-                      aria-pressed={m.name === selected}
+                      onClick={() => setSelected(row.id)}
+                      aria-pressed={row.id === focused?.id}
                     >
-                      <ModelLogo name={m.name} />
+                      <ModelLogo name={row.model.name} />
                       <span>
-                        {m.name}
-                        <small>{m.provider}</small><small className="effort-badge">{effortLabel(m)}</small>
+                        {row.model.fullName}
+                        <small>{row.model.provider}</small><small className="effort-badge">{row.label}</small>
                       </span>
                     </button>
                   </th>
@@ -230,7 +229,7 @@ function Results() {
                       }
                     >
                       {fmt(
-                        scoreFor(m)[key],
+                        row.score[key],
                         key === "spl" ? 3 : key === "collisions" ? 2 : 1,
                       )}
                       {["success", "safeSuccess"].includes(key) && (
@@ -252,10 +251,10 @@ function Results() {
             </tbody>
           </table>
         </div>
-        <aside className="model-inspector" aria-live="polite">
+        {model && score && focused ? <aside className="model-inspector" aria-live="polite">
           <span className="micro">MODEL IN FOCUS</span>
           <h3>{model.name}</h3>
-          <p>{model.fullName}</p><p className="effort-badge">{effortLabel(model)}</p>
+          <p>{model.fullName}</p><p className="effort-badge">{focused.label}</p>
           <div className="model-score">
             <strong>{fmt(score.collisions, 2)}</strong>
             <span>collisions / episode</span>
@@ -268,7 +267,7 @@ function Results() {
               >
                 <span
                   style={{
-                    width: `${((score.active ?? 0) / score.collisions) * 100}%`,
+                    width: `${score.collisions ? ((score.active ?? 0) / score.collisions) * 100 : 0}%`,
                   }}
                 />
                 <i style={{ flex: 1 }} />
@@ -292,7 +291,7 @@ function Results() {
               <p className="inspector-note">
                 {scope === "static"
                   ? "The world is paused during inference. Passive contacts are zero."
-                  : `${Math.round(((score.passive ?? 0) / score.collisions) * 100)}% of this model’s contacts occur during inference.`}
+                  : score.collisions ? `${Math.round(((score.passive ?? 0) / score.collisions) * 100)}% of this configuration’s contacts occur during inference.` : "No collisions were recorded for this configuration."}
               </p>
             </>
           ) : (
@@ -309,7 +308,7 @@ function Results() {
             </strong>
             <small>change in collisions, hard setting</small>
           </div>
-        </aside>
+        </aside> : <aside className="model-inspector"><p>No matching configurations. Clear the search to inspect results.</p></aside>}
       </div>
       <div className="table-note">
         <b>Read the metrics.</b> Success means arrival. Safe success also
@@ -779,8 +778,8 @@ export default function RTsafe() {
           />
           <div className="table-heading">
             <div>
-              <h3>Explore the benchmark</h3>
-              <p>Choose a condition. Sort a metric. Inspect a model.</p>
+              <h3>Hard real-time leaderboard</h3>
+              <p>Compare every reasoning effort. Sort a metric. Inspect a configuration.</p>
             </div>
             <span className="pill">Eight VLMs / Shared protocol</span>
           </div>
