@@ -279,16 +279,24 @@ td.collision-cell { background:#fff0e7; color:#9d4427; font-weight:700; box-shad
  .example-record-details { margin:0 18px 18px; }
 }
 
-/* Keep provider and effort readable alongside the model identity. */
-.results-explorer .table-scroll tbody th button { font-size:16px; gap:12px; }
-.results-explorer .table-scroll tbody th button > span { max-width:240px; white-space:normal; line-height:1.4; }
-.results-explorer .table-scroll tbody th small { font-size:13px; line-height:1.5; margin-top:5px; color:var(--muted); }
-.results-explorer .table-scroll tbody th .effort-badge { color:var(--green); font-weight:500; }
-.results-explorer .table-scroll .model-logo { width:40px; height:40px; }
+/* Compact model identity leaves room for readable metric values. */
+.results-explorer .table-scroll tbody th button { font-size:16px; font-weight:650; gap:10px; padding:8px 0; }
+.results-explorer .table-scroll tbody th button > span { max-width:320px; white-space:normal; line-height:1.35; }
+.results-explorer .table-scroll tbody th small { font-size:13px; line-height:1.4; margin-top:2px; color:var(--muted); }
+.results-explorer .table-scroll .model-logo { width:32px; height:32px; }
+.results-explorer .table-scroll td { font-size:18px; font-weight:500; padding:10px; line-height:1.3; }
+.results-explorer .table-scroll td.collision-cell { font-weight:700; }
+.results-explorer .table-scroll td > small { font-size:12px; }
+.results-explorer .table-scroll thead th,
+.results-explorer .table-scroll thead button { font-size:12px; }
 .effort-context a { color:var(--green); text-decoration:underline; }
 @media(max-width:760px) {
- .results-explorer .table-scroll tbody th button { font-size:14px; gap:9px; }
+ .results-explorer .table-scroll tbody th button { font-size:14px; gap:8px; }
  .results-explorer .table-scroll tbody th button > span { width:180px; }
  .results-explorer .table-scroll tbody th small { font-size:12px; }
- .results-explorer .table-scroll .model-logo { width:32px; height:32px; }
+ .results-explorer .table-scroll .model-logo { width:28px; height:28px; }
+ .results-explorer .table-scroll td { font-size:16px; padding:10px 9px; }
+ .results-explorer .table-scroll td > small { font-size:11px; }
+ .results-explorer .table-scroll thead th,
+ .results-explorer .table-scroll thead button { font-size:11px; }
 }

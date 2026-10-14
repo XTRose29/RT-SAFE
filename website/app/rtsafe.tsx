@@ -88,12 +88,12 @@ function Results() {
   const list = useMemo(() => {
     const rows = models.flatMap(model => {
       const defaultIndex = model.name === "Sol" ? 0 : 1;
-      if (scope !== "realtime") return [{ id: model.name, model, score: model[scope], label: `Provider default · ${model.effort[defaultIndex].label}` }];
+      if (scope !== "realtime") return [{ id: model.name, model, score: model[scope], effort: model.effort[defaultIndex].label, label: `Provider default · ${model.effort[defaultIndex].label}` }];
       const efforts: (Metric & { label: string })[] = isSubset ? subsetData.models.find(m => m.name === model.name)!.effort : model.effort;
       return efforts.flatMap((score, index) => {
         if (effort === "default" && index !== defaultIndex) return [];
         if (!["all", "default"].includes(effort) && index !== Number(effort)) return [];
-        return [{ id: `${model.name}-${index}`, model, score, label: `${score.label}${index === defaultIndex ? " · Provider default" : ""}` }];
+        return [{ id: `${model.name}-${index}`, model, score, effort: score.label, label: `${score.label}${index === defaultIndex ? " · Provider default" : ""}` }];
       });
     });
     return rows.filter(row => `${row.model.fullName} ${row.model.provider} ${row.label}`.toLowerCase().includes(search.toLowerCase()))
@@ -180,8 +180,8 @@ function Results() {
         <span>{list.length} configurations · {new Set(list.map(row => row.model.name)).size} models</span>
       </div>
       <p className="effort-context">{isSubset
-        ? "Five tasks per map, spanning route lengths and authored crossing counts, selected without using model outcomes. Every configuration uses the same 10 recorded hard, real-time episodes (seed 0). Latency averages episode means; successful and failed episodes both count. Provider-specific reasoning settings appear under each model."
-        : scope === "realtime" ? "Each row is one model and reasoning setting on the same 36 hard, real-time routes. All tested efforts share one ranking. Lower / Middle / Higher are provider-specific positions; the actual setting appears with each model. SPL was not reported in the effort table (—). Source: manuscript Table 15." : "Provider-default results from the manuscript. Each evaluation condition is ranked separately."}
+        ? "Five tasks per map, spanning route lengths and authored crossing counts, selected without using model outcomes. Every configuration uses the same 10 recorded hard, real-time episodes (seed 0). Latency averages episode means; successful and failed episodes both count. Provider-specific reasoning settings appear beside each model."
+        : scope === "realtime" ? "Each row is one model and reasoning setting on the same 36 hard, real-time routes. All tested efforts share one ranking. Lower / Middle / Higher are provider-specific positions; the actual setting appears beside each model. SPL was not reported in the effort table (—). Source: manuscript Table 15." : "Provider-default results from the manuscript. Each evaluation condition is ranked separately."}
         {isSubset && <> <a href="data/subset-results.json" download>Download subset results (JSON) ↓</a></>}
       </p>
       <div className="results-workspace">
@@ -225,13 +225,15 @@ function Results() {
                 >
                   <th scope="row">
                     <button
+                      aria-label={`${row.model.fullName} ${row.model.provider} ${row.label}`}
+                      title={`${row.model.fullName} · ${row.label}`}
                       onClick={() => setSelected(row.id)}
                       aria-pressed={row.id === focused?.id}
                     >
                       <ModelLogo name={row.model.name} />
                       <span>
-                        {row.model.fullName}
-                        <small>{row.model.provider}</small><small className="effort-badge">{row.label}</small>
+                        {row.model.fullName} ({row.effort.toLowerCase()})
+                        <small>{row.model.provider}</small>
                       </span>
                     </button>
                   </th>
