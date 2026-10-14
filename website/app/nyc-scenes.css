@@ -278,3 +278,17 @@ td.collision-cell { background:#fff0e7; color:#9d4427; font-weight:700; box-shad
  .example-strip { padding:18px; }
  .example-record-details { margin:0 18px 18px; }
 }
+
+/* Keep provider and effort readable alongside the model identity. */
+.results-explorer .table-scroll tbody th button { font-size:16px; gap:12px; }
+.results-explorer .table-scroll tbody th button > span { max-width:240px; white-space:normal; line-height:1.4; }
+.results-explorer .table-scroll tbody th small { font-size:13px; line-height:1.5; margin-top:5px; color:var(--muted); }
+.results-explorer .table-scroll tbody th .effort-badge { color:var(--green); font-weight:500; }
+.results-explorer .table-scroll .model-logo { width:40px; height:40px; }
+.effort-context a { color:var(--green); text-decoration:underline; }
+@media(max-width:760px) {
+ .results-explorer .table-scroll tbody th button { font-size:14px; gap:9px; }
+ .results-explorer .table-scroll tbody th button > span { width:180px; }
+ .results-explorer .table-scroll tbody th small { font-size:12px; }
+ .results-explorer .table-scroll .model-logo { width:32px; height:32px; }
+}

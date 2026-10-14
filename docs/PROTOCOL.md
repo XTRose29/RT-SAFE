@@ -21,6 +21,44 @@ The detailed implementation protocol is in [benchmark/DEFAULT_SETTINGS.md](../be
 
 For the matched hard comparison, success is 91.3% static and 94.1% real-time; safe success is 19.8% and 0.7%. Mean contacts per episode rise from 3.31 to 40.68. These are manuscript results, not fresh measurements made during repository preparation.
 
+## Balanced hard real-time leaderboard
+
+The default website leaderboard reaggregates a fixed selection of 10 existing tasks
+across two maps, five per map, at hard difficulty in real time with seed 0. All
+24 model/effort configurations use exactly the same tasks: 240 recorded episodes.
+This is a subset of the existing September campaign, not a newly collected private
+evaluation. The full manuscript tables and their denominators remain available
+through the evaluation controls and are unchanged.
+
+Selection uses authored crossing counts and recorded reference-route lengths,
+without consulting model outcomes. Each map contributes two routes with zero
+authored crossings, two with one, and one with multiple authored crossings.
+Route lengths span approximately 22–160 m. Authored counts describe task
+stratification; they are not counts of crossing events observed during execution.
+
+`website/scripts/build-subset-results.py` reads a frozen local manifest and each
+cell's current completed status. It checks the task, seed, hard configuration,
+real-time timing, reasoning setting, and identical reference-route lengths.
+Incomplete configurations fail aggregation. Failed navigation remains in the
+denominator. Metrics use equal episode weights; latency is the mean of episode
+mean response times, and SPL comes from the recorded benchmark metrics.
+
+The subset generator regression tests run with the website tests (`npm test`)
+and require Python 3; they use only the Python standard library.
+
+The selected task IDs and source-file audit stay outside this public repository.
+The public aggregate is `website/public/data/subset-results.json`; its manifest
+SHA-256 identifies the frozen selection. The website CSV export carries the
+suite ID, episode count, map count, and seed with every configuration.
+
+```bash
+python3 website/scripts/build-subset-results.py \
+  --manifest /path/to/local/manifest.json \
+  --main-root /path/to/main/campaign \
+  --claude-root /path/to/claude/campaign \
+  --audit /path/to/local/audit.json
+```
+
 ## Interpretation limits
 
 - Static and real-time prompts differ in timing advice, so their comparison is not a pure timing-only intervention.

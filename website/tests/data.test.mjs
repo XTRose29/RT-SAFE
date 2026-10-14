@@ -4,6 +4,29 @@ import { readFileSync, existsSync } from "node:fs";
 const read = (p) =>
   JSON.parse(readFileSync(new URL("../" + p, import.meta.url), "utf8"));
 const data = read("app/data.json");
+test("balanced leaderboard has 24 complete configurations on a distinct 10-task scope", () => {
+  const subset = read("app/subset-results.json");
+  assert.deepEqual(subset, read("public/data/subset-results.json"));
+  assert.equal(subset.taskCount, 10);
+  assert.equal(subset.mapCount, 2);
+  assert.equal(subset.tasksPerMap, 5);
+  assert.equal(subset.seed, 0);
+  assert.match(subset.manifestSha256, /^[a-f0-9]{64}$/);
+  assert.deepEqual(subset.models.map(m => m.name), data.models.map(m => m.name));
+  for (const [i, model] of subset.models.entries()) {
+    assert.deepEqual(model.effort.map(e => e.label), data.models[i].effort.map(e => e.label));
+    for (const row of model.effort) {
+      for (const key of ["success", "safeSuccess", "collisions", "active", "passive", "latency", "decisions", "spl"]) {
+        assert.ok(Number.isFinite(row[key]) && row[key] >= 0, `${model.name}: ${key}`);
+      }
+      assert.ok(row.success <= 100 && row.safeSuccess <= row.success);
+      assert.equal(row.success % 10, 0);
+      assert.equal(row.safeSuccess % 10, 0);
+      assert.ok(Math.abs(row.active + row.passive - row.collisions) < .00001);
+      assert.ok(row.spl <= 1);
+    }
+  }
+});
 const mean = (scope, key) =>
   data.models.reduce((sum, m) => sum + m[scope][key], 0) / data.models.length;
 test("all eight manuscript models have complete, distinct conditions", () => {

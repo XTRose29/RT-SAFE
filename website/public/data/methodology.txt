@@ -30,6 +30,14 @@ Response latency: seconds from model request to response; differs from full
 inference exposure and includes the serving interface's behavior.
 
 RESULT SCOPES
+Balanced leaderboard (default): 10 tasks, five per map across two maps, hard,
+real-time, seed 0. All 24 model/effort configurations use the same tasks (240
+recorded episodes). Selection spans route lengths and authored crossing counts,
+without selecting by outcomes. This reuses the existing September campaign.
+Metrics use equal episode weighting, including unsuccessful navigation. Latency
+is the mean of episode means. SPL is recomputed from recorded episode metrics.
+Subset data: subset-results.json, with a SHA-256 of the frozen local manifest.
+Full manuscript conditions below retain their original denominators.
 Hard real-time / static: 36 routes per model, eight models; 288 episodes per mode.
 All difficulties: 108 episodes per model, equal weighting of easy/medium/hard.
 Do not mix these scopes when ranking models.

@@ -1,0 +1,317 @@
+{
+  "id": "hard-realtime-balanced-v1",
+  "source": "Reaggregated finalized hard real-time campaign episodes (September 2026).",
+  "taskCount": 10,
+  "mapCount": 2,
+  "tasksPerMap": 5,
+  "seed": 0,
+  "manifestSha256": "fc0f09df9b7779b2a0f0cde721269faede40d56b49cc9caeb06b49cba9ec027c",
+  "selection": "Five tasks per map, spanning recorded route lengths and authored crossing counts. Selection does not use model outcomes.",
+  "aggregation": "Equal episode weighting, including failed navigation. Latency is the mean of episode mean response times. SPL comes from recorded benchmark metrics.",
+  "models": [
+    {
+      "name": "Astra",
+      "effort": [
+        {
+          "label": "Low",
+          "success": 90,
+          "safeSuccess": 0,
+          "collisions": 29.3,
+          "passive": 21.4,
+          "active": 7.9,
+          "decisions": 54.2,
+          "latency": 6.18006,
+          "spl": 0.848731
+        },
+        {
+          "label": "Medium",
+          "success": 100,
+          "safeSuccess": 0,
+          "collisions": 59.4,
+          "passive": 39.8,
+          "active": 19.6,
+          "decisions": 67.4,
+          "latency": 7.252184,
+          "spl": 0.974369
+        },
+        {
+          "label": "Max",
+          "success": 100,
+          "safeSuccess": 0,
+          "collisions": 38.4,
+          "passive": 31.7,
+          "active": 6.7,
+          "decisions": 57.9,
+          "latency": 13.903532,
+          "spl": 0.960741
+        }
+      ]
+    },
+    {
+      "name": "Sol",
+      "effort": [
+        {
+          "label": "Low",
+          "success": 100,
+          "safeSuccess": 10,
+          "collisions": 33.6,
+          "passive": 26.8,
+          "active": 6.8,
+          "decisions": 79.2,
+          "latency": 9.74918,
+          "spl": 0.985228
+        },
+        {
+          "label": "Medium",
+          "success": 100,
+          "safeSuccess": 0,
+          "collisions": 24.5,
+          "passive": 21.5,
+          "active": 3,
+          "decisions": 53.1,
+          "latency": 9.49609,
+          "spl": 0.987287
+        },
+        {
+          "label": "Max",
+          "success": 100,
+          "safeSuccess": 0,
+          "collisions": 37,
+          "passive": 33.4,
+          "active": 3.6,
+          "decisions": 53.2,
+          "latency": 13.146783,
+          "spl": 0.990726
+        }
+      ]
+    },
+    {
+      "name": "Fable",
+      "effort": [
+        {
+          "label": "Low",
+          "success": 70,
+          "safeSuccess": 10,
+          "collisions": 32.5,
+          "passive": 23.7,
+          "active": 8.8,
+          "decisions": 128.1,
+          "latency": 2.817885,
+          "spl": 0.665921
+        },
+        {
+          "label": "High",
+          "success": 70,
+          "safeSuccess": 0,
+          "collisions": 12.1,
+          "passive": 10.9,
+          "active": 1.2,
+          "decisions": 37.1,
+          "latency": 5.873114,
+          "spl": 0.686415
+        },
+        {
+          "label": "Max",
+          "success": 90,
+          "safeSuccess": 0,
+          "collisions": 73,
+          "passive": 69.8,
+          "active": 3.2,
+          "decisions": 45.2,
+          "latency": 65.076278,
+          "spl": 0.879558
+        }
+      ]
+    },
+    {
+      "name": "Sonnet",
+      "effort": [
+        {
+          "label": "Low",
+          "success": 80,
+          "safeSuccess": 0,
+          "collisions": 43.7,
+          "passive": 11.1,
+          "active": 32.6,
+          "decisions": 93,
+          "latency": 3.425298,
+          "spl": 0.748818
+        },
+        {
+          "label": "High",
+          "success": 80,
+          "safeSuccess": 0,
+          "collisions": 35.6,
+          "passive": 11.2,
+          "active": 24.4,
+          "decisions": 71.5,
+          "latency": 4.803727,
+          "spl": 0.7802
+        },
+        {
+          "label": "Max",
+          "success": 100,
+          "safeSuccess": 0,
+          "collisions": 51.7,
+          "passive": 49.4,
+          "active": 2.3,
+          "decisions": 51.5,
+          "latency": 27.20319,
+          "spl": 0.987084
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "effort": [
+        {
+          "label": "Low",
+          "success": 80,
+          "safeSuccess": 10,
+          "collisions": 22.5,
+          "passive": 17.7,
+          "active": 4.8,
+          "decisions": 60.4,
+          "latency": 5.139345,
+          "spl": 0.775755
+        },
+        {
+          "label": "Medium",
+          "success": 100,
+          "safeSuccess": 0,
+          "collisions": 36.1,
+          "passive": 25.7,
+          "active": 10.4,
+          "decisions": 72.4,
+          "latency": 10.877526,
+          "spl": 0.980654
+        },
+        {
+          "label": "High",
+          "success": 90,
+          "safeSuccess": 0,
+          "collisions": 135,
+          "passive": 114.1,
+          "active": 20.9,
+          "decisions": 95.6,
+          "latency": 35.898744,
+          "spl": 0.884607
+        }
+      ]
+    },
+    {
+      "name": "DeepSeek",
+      "effort": [
+        {
+          "label": "Low",
+          "success": 100,
+          "safeSuccess": 0,
+          "collisions": 65.3,
+          "passive": 59.9,
+          "active": 5.4,
+          "decisions": 52.8,
+          "latency": 34.972791,
+          "spl": 0.981015
+        },
+        {
+          "label": "High",
+          "success": 90,
+          "safeSuccess": 0,
+          "collisions": 72.3,
+          "passive": 63,
+          "active": 9.3,
+          "decisions": 53.3,
+          "latency": 42.190754,
+          "spl": 0.882965
+        },
+        {
+          "label": "Max",
+          "success": 100,
+          "safeSuccess": 0,
+          "collisions": 90.3,
+          "passive": 82.6,
+          "active": 7.7,
+          "decisions": 49,
+          "latency": 64.303507,
+          "spl": 0.964562
+        }
+      ]
+    },
+    {
+      "name": "Inkling",
+      "effort": [
+        {
+          "label": "Low",
+          "success": 80,
+          "safeSuccess": 0,
+          "collisions": 34.4,
+          "passive": 22.1,
+          "active": 12.3,
+          "decisions": 47.1,
+          "latency": 8.989179,
+          "spl": 0.766837
+        },
+        {
+          "label": "High",
+          "success": 90,
+          "safeSuccess": 0,
+          "collisions": 36.9,
+          "passive": 36.2,
+          "active": 0.7,
+          "decisions": 36.5,
+          "latency": 32.0924,
+          "spl": 0.899058
+        },
+        {
+          "label": "Max",
+          "success": 80,
+          "safeSuccess": 0,
+          "collisions": 36.8,
+          "passive": 35.6,
+          "active": 1.2,
+          "decisions": 34.6,
+          "latency": 55.572107,
+          "spl": 0.8
+        }
+      ]
+    },
+    {
+      "name": "Grok",
+      "effort": [
+        {
+          "label": "Low",
+          "success": 80,
+          "safeSuccess": 10,
+          "collisions": 36.6,
+          "passive": 28.7,
+          "active": 7.9,
+          "decisions": 57.8,
+          "latency": 9.802762,
+          "spl": 0.771024
+        },
+        {
+          "label": "High",
+          "success": 100,
+          "safeSuccess": 0,
+          "collisions": 103.9,
+          "passive": 94.1,
+          "active": 9.8,
+          "decisions": 70.8,
+          "latency": 41.519889,
+          "spl": 0.961303
+        },
+        {
+          "label": "Xhigh",
+          "success": 90,
+          "safeSuccess": 0,
+          "collisions": 108.1,
+          "passive": 102,
+          "active": 6.1,
+          "decisions": 59.8,
+          "latency": 57.240672,
+          "spl": 0.87846
+        }
+      ]
+    }
+  ]
+}

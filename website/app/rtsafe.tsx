@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import rawData from "./data.json";
+import subsetData from "./subset-results.json";
 import { ModelExamples } from "./model-examples";
 import { ModelLogo } from "./model-logos";
 import { VisitorTracking } from "./visitor-map";
@@ -76,6 +77,10 @@ function SectionHead({
 function Results() {
   const [scope, setScope] = useState<Scope>("realtime");
   const [effort, setEffort] = useState("all");
+  const [dataset, setDataset] = useState("subset");
+  const isSubset = scope === "realtime" && dataset === "subset";
+  const suite = isSubset ? subsetData.id : `manuscript-${scope}`;
+  const episodes = isSubset ? subsetData.taskCount : scope === "average" ? 108 : 36;
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState<keyof Metric>("collisions");
   const [asc, setAsc] = useState(true);
@@ -84,7 +89,8 @@ function Results() {
     const rows = models.flatMap(model => {
       const defaultIndex = model.name === "Sol" ? 0 : 1;
       if (scope !== "realtime") return [{ id: model.name, model, score: model[scope], label: `Provider default · ${model.effort[defaultIndex].label}` }];
-      return model.effort.flatMap((score, index) => {
+      const efforts: (Metric & { label: string })[] = isSubset ? subsetData.models.find(m => m.name === model.name)!.effort : model.effort;
+      return efforts.flatMap((score, index) => {
         if (effort === "default" && index !== defaultIndex) return [];
         if (!["all", "default"].includes(effort) && index !== Number(effort)) return [];
         return [{ id: `${model.name}-${index}`, model, score, label: `${score.label}${index === defaultIndex ? " · Provider default" : ""}` }];
@@ -92,7 +98,7 @@ function Results() {
     });
     return rows.filter(row => `${row.model.fullName} ${row.model.provider} ${row.label}`.toLowerCase().includes(search.toLowerCase()))
       .sort((a, b) => ((a.score[sort] ?? 0) - (b.score[sort] ?? 0)) * (asc ? 1 : -1));
-  }, [scope, effort, search, sort, asc]);
+  }, [scope, effort, search, sort, asc, isSubset]);
   const focused = list.find(row => row.id === selected) ?? list[0];
   const model = focused?.model;
   const score = focused?.score;
@@ -131,6 +137,12 @@ function Results() {
             </button>
           ))}
         </div>
+        {scope === "realtime" && <label className="effort-filter">Evaluation set
+          <select aria-label="Leaderboard evaluation set" value={dataset} onChange={e => { setDataset(e.target.value); if (e.target.value === "manuscript" && sort === "spl") { setSort("collisions"); setAsc(true); } }}>
+            <option value="subset">Balanced · 2 maps / 10 tasks</option>
+            <option value="manuscript">Full manuscript · 36 routes</option>
+          </select>
+        </label>}
         {scope === "realtime" && <label className="effort-filter">Reasoning effort
           <select aria-label="Leaderboard reasoning effort" value={effort} onChange={e => setEffort(e.target.value)}>
             <option value="all">All reasoning efforts</option>
@@ -150,22 +162,28 @@ function Results() {
           />
         </label>
         <a className="text-link csv-link" href={`data:text/csv;charset=utf-8,${encodeURIComponent([
-          ["Model", "Condition", "Reasoning", ...cols.map(c => c[0])].join(","),
-          ...list.map(row => [row.model.fullName, scope, row.label, ...cols.map(([key]) => row.score[key] ?? "")].map(v => '"' + String(v).replaceAll('"', '""') + '"').join(","))
-        ].join("\n"))}`} download={`rt-safe-${scope}-${scope !== "realtime" ? "default" : effort === "all" || effort === "default" ? effort : ["lower", "middle", "higher"][Number(effort)]}.csv`}>
+          ["Model", "Condition", "Reasoning", "Evaluation set", "Episodes", "Maps", "Seed", ...cols.map(c => c[0])].join(","),
+          ...list.map(row => [row.model.fullName, scope, row.label, suite, episodes, isSubset ? subsetData.mapCount : 5, 0, ...cols.map(([key]) => row.score[key] ?? "")].map(v => '"' + String(v).replaceAll('"', '""') + '"').join(","))
+        ].join("\n"))}`} download={`rt-safe-${suite}-${scope !== "realtime" ? "default" : effort === "all" || effort === "default" ? effort : ["lower", "middle", "higher"][Number(effort)]}.csv`}>
           CSV <span>↓</span>
         </a>
       </div>
       <div className="results-context">
         <span>
           <i className="live-dot" />
-          {scope === "average"
-            ? "108 episodes per model · Easy, medium & hard · Real-time · Provider-default reasoning"
-            : `36 episodes per configuration · Hard · ${scope === "static" ? "Static" : "Real-time"} · ${scope === "static" || effort === "default" ? "Provider-default" : effort === "all" ? "All tested" : ["Lower", "Middle", "Higher"][Number(effort)]} reasoning`}
+          {isSubset
+            ? "2 maps · 10 tasks per configuration · Hard · Real-time · Seed 0"
+            : scope === "average"
+              ? "108 episodes per model · Easy, medium & hard · Real-time · Provider-default reasoning"
+              : `36 episodes per configuration · Hard · ${scope === "static" ? "Static" : "Real-time"} · ${scope === "static" || effort === "default" ? "Provider-default" : effort === "all" ? "All tested" : ["Lower", "Middle", "Higher"][Number(effort)]} reasoning`}
         </span>
         <span>{list.length} configurations · {new Set(list.map(row => row.model.name)).size} models</span>
       </div>
-      <p className="effort-context">{scope === "realtime" ? "Each row is one model and reasoning setting on the same 36 hard, real-time routes. All tested efforts share one ranking. Lower / Middle / Higher are provider-specific positions; the actual setting appears with each model. SPL was not reported in the effort table (—). Source: manuscript Table 15." : "Provider-default results from the manuscript. Each evaluation condition is ranked separately."}</p>
+      <p className="effort-context">{isSubset
+        ? "Five tasks per map, spanning route lengths and authored crossing counts, selected without using model outcomes. Every configuration uses the same 10 recorded hard, real-time episodes (seed 0). Latency averages episode means; successful and failed episodes both count. Provider-specific reasoning settings appear under each model."
+        : scope === "realtime" ? "Each row is one model and reasoning setting on the same 36 hard, real-time routes. All tested efforts share one ranking. Lower / Middle / Higher are provider-specific positions; the actual setting appears with each model. SPL was not reported in the effort table (—). Source: manuscript Table 15." : "Provider-default results from the manuscript. Each evaluation condition is ranked separately."}
+        {isSubset && <> <a href="data/subset-results.json" download>Download subset results (JSON) ↓</a></>}
+      </p>
       <div className="results-workspace">
         <div
           className="table-scroll"
@@ -175,7 +193,7 @@ function Results() {
         >
           <table>
             <caption className="sr-only">
-              RT-SAFE results, {scope}. Select a model to inspect its collision
+              RT-SAFE results, {scope}, {episodes} episodes per configuration. Select a model to inspect its collision
               counts. Select column headers to sort.
             </caption>
             <thead>
@@ -189,7 +207,7 @@ function Results() {
                       sort === key ? (asc ? "ascending" : "descending") : "none"
                     }
                   >
-                    <button disabled={key === "spl" && scope === "realtime"} onClick={() => changeSort(key)}>
+                    <button disabled={key === "spl" && scope === "realtime" && !isSubset} onClick={() => changeSort(key)}>
                       {label}
                       <span>
                         {sort === key ? (asc ? "↑" : "↓") : direction}
@@ -300,14 +318,14 @@ function Results() {
               the three difficulties.
             </p>
           )}
-          <div className="model-compare">
+          {!isSubset && <div className="model-compare">
             <span>Provider default · Static → Real-time</span>
             <strong>
               {(model.realtime.collisions / model.static.collisions).toFixed(1)}
               ×
             </strong>
-            <small>change in collisions, hard setting</small>
-          </div>
+            <small>change in collisions, hard setting · 36 routes</small>
+          </div>}
         </aside> : <aside className="model-inspector"><p>No matching configurations. Clear the search to inspect results.</p></aside>}
       </div>
       <div className="table-note">
@@ -774,7 +792,7 @@ export default function RTsafe() {
                 part of the story.
               </>
             }
-            description="Compare completion, safety, and decision behavior. Results are transcribed directly from the accompanying manuscript, with each evaluation condition kept explicit."
+            description="Compare every reasoning setting on a balanced 10-task, two-map hard real-time subset. Switch to the full manuscript results to explore the original benchmark."
           />
           <div className="table-heading">
             <div>
@@ -784,6 +802,7 @@ export default function RTsafe() {
             <span className="pill">Eight VLMs / Shared protocol</span>
           </div>
           <Results />
+          <div className="table-heading"><div><h3>Full benchmark findings</h3><p>The following analyses use the manuscript’s original evaluation sets.</p></div></div>
           <Findings />
           <Reasoning />
         </section>

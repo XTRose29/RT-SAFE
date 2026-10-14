@@ -1,6 +1,7 @@
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const fs=require('fs');const path=require('path');const assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..');const data=JSON.parse(fs.readFileSync(path.join(root,'app/data.json')));
+const subset=JSON.parse(fs.readFileSync(path.join(root,'app/subset-results.json')));
 (async()=>{
  const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
  const page=await browser.newPage({viewport:{width:1440,height:1000}}); const errors=[];
@@ -12,6 +13,31 @@ const root=path.resolve(__dirname,'..');const data=JSON.parse(fs.readFileSync(pa
  assert.equal(await page.locator('video').first().getAttribute('aria-label'),'RT-SAFE project film');
  await page.screenshot({path:path.join(root,'nyc/previews/site-final/demo-first.png')});
  const table=page.locator('.results-explorer');const effort=page.getByLabel('Leaderboard reasoning effort');
+ const dataset=page.getByLabel('Leaderboard evaluation set');
+ assert.equal(await dataset.inputValue(),'subset');
+ assert.match(await table.locator('.results-context').textContent(),/2 maps · 10 tasks per configuration/);
+ assert.equal(await table.getByRole('button',{name:'SPL',exact:false}).isEnabled(),true);
+ for(const model of subset.models){
+  const identity=data.models.find(m=>m.name===model.name);
+  for(const [index,score] of model.effort.entries()){
+   const label=score.label+(index===(model.name==='Sol'?0:1)?' · Provider default':'');
+   const row=table.locator('tbody tr').filter({has:page.getByRole('button',{name:identity.fullName+' '+identity.provider+' '+label,exact:true})});
+   assert.deepEqual(await row.locator('td').allTextContents(),[`${score.success.toFixed(1)}%`,`${score.safeSuccess.toFixed(1)}%`,score.collisions.toFixed(2),score.spl.toFixed(3),`${score.latency.toFixed(1)} s`,score.decisions.toFixed(1)]);
+  }
+ }
+ const subtitleSizes=await table.locator('tbody tr').first().locator('th small').evaluateAll(nodes=>nodes.map(node=>parseFloat(getComputedStyle(node).fontSize)));
+ assert(subtitleSizes.every(size=>size>=13));
+ assert.equal(await table.locator('.model-compare').count(),0);
+ const subsetCSV=decodeURIComponent((await table.locator('.csv-link').getAttribute('href')).split(',').slice(1).join(',')).split('\n');
+ assert.equal(subsetCSV.length,25);
+ assert(subsetCSV.slice(1).every(row=>row.includes('"hard-realtime-balanced-v1","10","2","0"')));
+ await table.screenshot({path:path.join(root,'nyc/previews/site-final/balanced-leaderboard.png')});
+ await table.getByRole('button',{name:'SPL',exact:false}).click();
+ assert.equal(await table.locator('thead th').nth(4).getAttribute('aria-sort'),'descending');
+ await dataset.selectOption('manuscript');
+ assert.equal(await table.getByRole('button',{name:'SPL',exact:false}).isEnabled(),false);
+ assert.equal(await table.locator('thead th').nth(3).getAttribute('aria-sort'),'ascending');
+ assert.match(await table.locator('.results-context').textContent(),/36 episodes per configuration/);
  assert.equal(await effort.inputValue(),'all');
  assert.equal(await table.locator('tbody tr').count(),24);
  const initialCollisions=await table.locator('tbody tr td:nth-child(4)').allTextContents();
@@ -78,11 +104,15 @@ const root=path.resolve(__dirname,'..');const data=JSON.parse(fs.readFileSync(pa
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  await page.setViewportSize({width:390,height:844});
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
- await page.getByRole('button',{name:'Hard · Real-time',exact:true}).click();assert.equal(await effort.inputValue(),'all');assert.equal(await table.locator('tbody tr').count(),24);await table.screenshot({path:path.join(root,'nyc/previews/site-final/mobile-effort.png')});
+ await page.getByRole('button',{name:'Hard · Real-time',exact:true}).click();assert.equal(await effort.inputValue(),'all');assert.equal(await table.locator('tbody tr').count(),24);await dataset.selectOption('subset');
+ const mobileSizes=await table.locator('tbody tr').first().locator('th small').evaluateAll(nodes=>nodes.map(node=>parseFloat(getComputedStyle(node).fontSize)));
+ assert(mobileSizes.every(size=>size>=12));
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ await table.screenshot({path:path.join(root,'nyc/previews/site-final/mobile-effort.png')});
  await page.locator('.behavior-card').first().screenshot({path:path.join(root,'nyc/previews/site-final/mobile-interactive-radar.png')});
  await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:path.join(root,'nyc/previews/site-final/mobile-demo-first.png')});
  assert.deepEqual(errors,[]);
- const result={effort_rows_verified:24,all_efforts_default:true,unique_configuration_selection:true,smaller_timing_video:true,scoped_csv:true,sort_search_selection:true,interactive_profiles:8,astra_replay:true,demo_first:true,mobile_overflow:false,all_muted:true,browser_errors:errors};
+ const result={effort_rows_verified:48,subset_episodes:240,larger_provider_and_effort_labels:true,all_efforts_default:true,unique_configuration_selection:true,smaller_timing_video:true,scoped_csv:true,sort_search_selection:true,interactive_profiles:8,astra_replay:true,demo_first:true,mobile_overflow:false,all_muted:true,browser_errors:errors};
  fs.writeFileSync(path.join(root,'nyc/previews/site-final/benchmark-validation.json'),JSON.stringify(result,null,2));
  console.log(JSON.stringify(result,null,2));
  await browser.close();
