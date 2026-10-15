@@ -1,0 +1,26 @@
+{
+  "updatedAt": "2026-10-15T03:23:08.334581+00:00",
+  "model": "Gemini 4 Argon",
+  "exactModel": "antigravity/gemini-4-argon-low",
+  "effort": "Low",
+  "plannedTasks": 10,
+  "plannedMaps": 2,
+  "completedTasks": 4,
+  "goalReached": 3,
+  "safeSuccesses": 0,
+  "activeCollisions": 3,
+  "passiveCollisions": 23,
+  "redLightViolations": 2,
+  "excludedInfrastructureAttempts": 4,
+  "ranked": false,
+  "status": "Waiting for account capacity",
+  "note": "Incomplete pilot results; excluded from rankings. Valid navigation failures are included. Account-pool subscription transport; oversized images use JPEG compression at unchanged resolution. These runs have different transport provenance from the historical leaderboard.",
+  "video": "media/gemini4-argon-pilot-review.mp4",
+  "videoNote": "Saved-frame excerpts from four validated episodes. Missing middle images are explicitly marked; playback is not real-time.",
+  "resultHashes": [
+    "47afe4b045a2d1ad9e0fe5ac514c9879b92f1980d55df72c9b42d40bcfa212fb",
+    "a3d30d3fd582e752dda05cea642d7d5d1f78e9745690d3c6be88cfd1cd01472a",
+    "b1a69b991ad5a6913424b092080e5ccae8278416a6bb9ce8ca3f64c3e0d5ae63",
+    "cf7085fa5bce1f8f3563c1165b9273b32f9a98acea8930e22c9f2d6735d3966c"
+  ]
+}

@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import rawData from "./data.json";
 import subsetData from "./subset-results.json";
+import geminiProgress from "./gemini4-progress.json";
 import { ModelExamples } from "./model-examples";
 import { ModelLogo } from "./model-logos";
 import { VisitorTracking } from "./visitor-map";
@@ -804,6 +805,24 @@ export default function RTsafe() {
             <span className="pill">Eight VLMs / Shared protocol</span>
           </div>
           <Results />
+          <section id="gemini4-progress" className="gemini-progress" aria-labelledby="gemini-progress-title">
+            <div className="table-heading"><div>
+              <h3 id="gemini-progress-title">Gemini 4 Argon · evaluation in progress</h3>
+              <p>{geminiProgress.effort} reasoning · {geminiProgress.plannedMaps} maps / {geminiProgress.plannedTasks} planned tasks · Updated {geminiProgress.updatedAt.slice(0, 10)}</p>
+            </div><span className="pill">Unranked · {geminiProgress.status}</span></div>
+            <div className="table-scroll" tabIndex={0} role="region" aria-label="Gemini 4 provisional results">
+              <table><caption className="sr-only">Incomplete Gemini 4 pilot results, excluded from leaderboard rankings</caption>
+                <thead><tr><th>Validated episodes</th><th>Reached goal</th><th>Safe success</th><th>Active collisions</th><th>Passive collisions</th><th>Red-light violations</th></tr></thead>
+                <tbody><tr><td>{geminiProgress.completedTasks} / {geminiProgress.plannedTasks}</td><td>{geminiProgress.goalReached} / {geminiProgress.completedTasks}</td><td>{geminiProgress.safeSuccesses} / {geminiProgress.completedTasks}</td><td>{geminiProgress.activeCollisions}</td><td>{geminiProgress.passiveCollisions}</td><td>{geminiProgress.redLightViolations}</td></tr></tbody>
+              </table>
+            </div>
+            <p className="effort-context">{geminiProgress.note} Collision and violation columns are totals across the {geminiProgress.completedTasks} validated episodes. {geminiProgress.excludedInfrastructureAttempts} infrastructure-interrupted attempts are excluded. <a href="data/gemini4-progress.json" download>Download progress snapshot ↓</a></p>
+            <details><summary>Watch the recorded pilot review</summary>
+              <p>{geminiProgress.videoNote}</p>
+              <video controls muted playsInline preload="none" aria-label="Gemini 4 Argon pilot review" src={geminiProgress.video} style={{ width: "100%", maxWidth: 960 }} />
+              <p><a href={geminiProgress.video} download>Download review video (MP4) ↓</a></p>
+            </details>
+          </section>
           <div className="table-heading"><div><h3>Full benchmark findings</h3><p>The following analyses use the manuscript’s original evaluation sets.</p></div></div>
           <Findings />
           <Reasoning />

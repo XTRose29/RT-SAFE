@@ -3318,3 +3318,9 @@ blockquote {
   .publication-affiliations { flex-direction: column; }
   .citation pre { padding: 16px; font-size: 12px; }
 }
+/* Provisional runs remain outside the ranked results explorer. */
+.gemini-progress { margin: 2rem 0; padding: 1.5rem; border: 1px solid #d6dce2; border-radius: 12px; }
+.gemini-progress .table-heading { flex-wrap: wrap; gap: 1rem; }
+.gemini-progress th, .gemini-progress td { padding: .8rem; }
+.gemini-progress summary { cursor: pointer; font-weight: 600; }
+.gemini-progress details p { margin: 1rem 0; }

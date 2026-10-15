@@ -4,6 +4,21 @@ import { readFileSync, existsSync } from "node:fs";
 const read = (p) =>
   JSON.parse(readFileSync(new URL("../" + p, import.meta.url), "utf8"));
 const data = read("app/data.json");
+test("Gemini 4 pilot progress remains incomplete, unranked and traceable", () => {
+  const progress = read("app/gemini4-progress.json");
+  assert.deepEqual(progress, read("public/data/gemini4-progress.json"));
+  assert.equal(progress.ranked, false);
+  assert.ok(progress.completedTasks < progress.plannedTasks);
+  assert.equal(progress.completedTasks, progress.resultHashes.length);
+  assert.equal(new Set(progress.resultHashes).size, progress.completedTasks);
+  assert.ok(progress.safeSuccesses <= progress.goalReached && progress.goalReached <= progress.completedTasks);
+  assert.ok(!read("app/subset-results.json").models.some(m => m.name === progress.model));
+  for (const hash of progress.resultHashes) assert.match(hash, /^[a-f0-9]{64}$/);
+  assert.ok(existsSync(new URL("../public/" + progress.video, import.meta.url)));
+  assert.match(progress.videoNote, /Missing middle images/);
+  assert.match(progress.note, /JPEG/);
+  assert.doesNotMatch(JSON.stringify(progress), /pool_|\/data\/rose|ucsd\.edu/);
+});
 test("balanced leaderboard has 24 complete configurations on a distinct 10-task scope", () => {
   const subset = read("app/subset-results.json");
   assert.deepEqual(subset, read("public/data/subset-results.json"));
