@@ -310,9 +310,13 @@ def build_suite_config(
             "default_max_steps": "3_per_full_shortest_route_meter",
         },
         "hazard_overlap_policy": {
-            "version": "continuous_region_occupancy_v1",
+            "version": "sampled_action_occupancy_v2",
             "count_once_per_continuous_occupancy": True,
             "spatial_rearm_distance_cm": 450.0,
+            "initial_prop_clearance_radius_cm": 150.0,
+            "initial_prop_max_height_cm": 200.0,
+            "initial_overlap_policy": "reject_episode_as_setup_failure",
+            "trigger_identity_available": False,
         },
         "model_input_geometry_policy": {
             "static_obstacle_geometry": (
@@ -321,9 +325,13 @@ def build_suite_config(
             "mapped_static_obstacles_in_model_context": 0,
         },
         "movement_timing_policy": {
-            "version": "distance_over_speed_v1",
+            "version": "swept_segment_distance_over_speed_v2",
             "nominal_speed_cm_s": 200.0,
             "move_duration": "commanded_distance_cm / nominal_speed_cm_s",
+            "native_capsule_sweep": True,
+            "movement_sample_interval_s": 0.1,
+            "corridor_changes_controller": False,
+            "endpoint_teleport": False,
             "post_move_tail_seconds": 0.0,
         },
         "evaluation_metrics_policy": {
@@ -335,7 +343,7 @@ def build_suite_config(
         "traffic_evaluation_policy": {
             "version": "two_rule_traffic_events_v6",
             "collision_authority": (
-                "ue_counters_plus_launched_vehicle_swept_radius"
+                "ue_counters_plus_launched_vehicle_swept_radius_v2"
             ),
             "vehicle_collision_scope": "launched_conflict_vehicle_only",
             "painted_crosswalk_half_width_cm": 210,
@@ -366,7 +374,7 @@ def build_suite_config(
             "minimum_scripted_lane_clearance_cm": 300.0,
             "collision_enabled": True,
         },
-        "artifact_schema_version": "two_rule_traffic_events_v6",
+        "artifact_schema_version": "execution_alignment_v2",
         "prompt_style": args.prompt_style,
         "prompt_policy": {
             "version": "visual_inference_declarative_rules_only_v5",

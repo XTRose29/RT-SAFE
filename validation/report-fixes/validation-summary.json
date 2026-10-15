@@ -1,0 +1,15 @@
+{
+  "protocol": "execution_alignment_v2",
+  "pytest_command": "python -m pytest -q tests evaluation --disable-warnings --maxfail=10",
+  "result": "754 passed, 1 skipped, 407 subtests passed",
+  "native_server": {
+    "gpu": 7,
+    "port": 19770,
+    "isolated": true,
+    "stopped_after_validation": true
+  },
+  "native_rays_passed": 7,
+  "task15_endpoint_error_cm": 0.0,
+  "task15_trip_count": 0,
+  "scope": "Unit/regression suite and isolated native probes; not a full 36-task model campaign."
+}

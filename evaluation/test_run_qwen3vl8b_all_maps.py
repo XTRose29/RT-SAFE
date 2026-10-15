@@ -1206,9 +1206,13 @@ class SuiteConfigurationTests(unittest.TestCase):
         )
         self.assertEqual(
             {
-                "version": "continuous_region_occupancy_v1",
+                "version": "sampled_action_occupancy_v2",
                 "count_once_per_continuous_occupancy": True,
                 "spatial_rearm_distance_cm": 450.0,
+                "initial_prop_clearance_radius_cm": 150.0,
+                "initial_prop_max_height_cm": 200.0,
+                "initial_overlap_policy": "reject_episode_as_setup_failure",
+                "trigger_identity_available": False,
             },
             config["hazard_overlap_policy"],
         )
@@ -1225,7 +1229,7 @@ class SuiteConfigurationTests(unittest.TestCase):
             {
                 "version": "two_rule_traffic_events_v6",
                 "collision_authority": (
-                    "ue_counters_plus_launched_vehicle_swept_radius"
+                    "ue_counters_plus_launched_vehicle_swept_radius_v2"
                 ),
                 "vehicle_collision_scope": "launched_conflict_vehicle_only",
                 "painted_crosswalk_half_width_cm": 210,
@@ -1250,7 +1254,7 @@ class SuiteConfigurationTests(unittest.TestCase):
             config["traffic_evaluation_policy"],
         )
         self.assertEqual(
-            "two_rule_traffic_events_v6",
+            "execution_alignment_v2",
             config["artifact_schema_version"],
         )
         self.assertEqual(

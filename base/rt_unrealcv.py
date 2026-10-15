@@ -1,6 +1,35 @@
 from simworld.communicator.unrealcv import UnrealCV
+import json
+import math
 
 class RTUnrealCV(UnrealCV):
+    def move_actor_with_sweep(self, name, location):
+        """Move the root collision shape on a straight segment, never teleport.
+
+        The ordinary /object/location command disables sweep. K2_SetActorLocation
+        is available on the packaged actor and sweeps its collision capsule,
+        dispatching UE hit/overlap callbacks even across thin obstacles. Its
+        return value does not mean the target was reached: read the actual pose.
+        """
+        x, y, z = map(float, location)
+        if not all(math.isfinite(v) for v in (x, y, z)):
+            raise ValueError('Swept movement requires a finite target')
+        command = (
+            f'vbp {name} K2_SetActorLocation '
+            f'(X={x:.9f},Y={y:.9f},Z={z:.9f}) true false'
+        )
+        with self.lock:
+            response = self.client.request(command)
+        try:
+            result = json.loads(response)
+            if str(result['ReturnValue']).lower() not in {'true', 'false'}:
+                raise ValueError('Invalid native return value')
+        except (ValueError, KeyError, TypeError) as exc:
+            raise RuntimeError(
+                f'Runtime does not acknowledge swept movement: {response!r}'
+            ) from exc
+        return tuple(float(v) for v in self.get_location(name))
+
     def __init__(
         self,
         port: int = 9000,

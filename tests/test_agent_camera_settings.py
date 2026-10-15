@@ -260,7 +260,7 @@ def test_task_camera_uses_accepted_heading_when_collision_rotates_actor():
     assert agent.camera_rotation == (-25.0, -0.0, 0.0)
 
 
-def test_task_camera_uses_accepted_position_when_collision_displaces_actor():
+def test_task_camera_follows_live_root_when_collision_displaces_actor():
     calls = []
     unrealcv = SimpleNamespace(
         get_location=lambda name: [250.0, -175.0, 95.0],
@@ -285,7 +285,8 @@ def test_task_camera_uses_accepted_position_when_collision_displaces_actor():
 
     agent._sync_first_person_camera()
 
-    assert calls == [(120.0, -30.0, 230.0)]
+    assert calls == [(250.0, -175.0, 230.0)]
+    assert agent.position == Vector(250.0, -175.0)
 
 
 def test_task_camera_keeps_spawn_height_when_collision_lifts_actor():
@@ -958,50 +959,33 @@ def test_move_to_corrects_small_ue_timeline_residual_at_requested_waypoint():
     assert agent.position == Vector(100.0, 0.0)
 
 
-def test_off_route_waypoint_uses_physical_ue_movement_without_teleport():
-    calls = []
-    communicator = SimpleNamespace(
-        unrealcv=SimpleNamespace(
-            set_location=lambda location, name: calls.append(
-                ("set_location", location, name)
-            ),
-        ),
-        rt_agent_move_to=lambda name, waypoint, duration: calls.append(
-            ("move", name, waypoint, duration)
-        ),
+def test_off_route_waypoint_uses_swept_segment_without_teleport():
+    live = [0.0, 0.0, 90.0]
+    sweeps = []
+    def sweep(name, location):
+        live[:] = location
+        sweeps.append(location)
+        return tuple(live)
+    ue = SimpleNamespace(
+        get_location=lambda name: list(live),
+        get_orientation=lambda name: [0., 0., 0.],
+        set_orientation=lambda *args: None,
+        humanoid_stop=lambda name: None,
+        move_actor_with_sweep=sweep,
+        set_location=lambda *args: pytest.fail('Never teleport an executable move'),
     )
-    agent = RTAgent(
-        position=Vector(0.0, 0.0),
-        direction=Vector(1.0, 0.0),
-        destination=Vector(1000.0, 0.0),
-        shortest_path=[Vector(1000.0, 0.0)],
-        required_time=100,
-        communicator=communicator,
-        llm=None,
-        task_edges=[
-            {
-                "node1": [0.0, 0.0],
-                "node2": [1000.0, 0.0],
-                "type": "sidewalk",
-            }
-        ],
-    )
-    agent.name = "RT_AGENT"
-    agent.speed = 200
-    agent.record_action_frames = False
-    agent._advance_simulation_time = lambda seconds: calls.append(
-        ("advance", seconds)
-    )
-    selected = Vector(0.0, 400.0)
+    agent = make_agent(communicator=SimpleNamespace(unrealcv=ue), task_edges=[
+        {'node1': [0., 0.], 'node2': [1000., 0.], 'type': 'sidewalk'}])
+    agent.name = 'RT_AGENT'
+    agent._advance_simulation_time = lambda seconds: None
+    agent._get_traffic_light_snapshot = lambda: {}
+    agent.move_to(Vector(0., 400.))
+    assert agent.position == Vector(0., 400.)
+    assert agent.last_move_execution_mode == 'ue_swept_segment_v2'
+    assert len(sweeps) == 20
+    assert all(p[0] == 0 for p in sweeps)
+    assert sweeps[-1] == (0., 400., 90.)
 
-    agent.move_to(selected)
-
-    assert calls == [
-        ("move", "RT_AGENT", selected, 2.0),
-        ("advance", 2.0),
-    ]
-    assert agent.last_move_execution_mode == "ue_physical_off_route"
-    assert agent.position == Vector(0.0, 0.0)
 
 def test_ordered_edge_move_progresses_monotonically_on_centerline():
     calls = []
@@ -1019,7 +1003,9 @@ def test_ordered_edge_move_progresses_monotonically_on_centerline():
     communicator = SimpleNamespace(
         unrealcv=SimpleNamespace(
             get_location=lambda name: list(live),
-            set_location=set_location,
+            set_location=lambda *args: pytest.fail("Move must sweep"),
+            move_actor_with_sweep=lambda name, loc: (set_location(loc, name), tuple(live))[1],
+            humanoid_stop=lambda name: None,
             get_orientation=lambda name: list(live_orientation),
             set_orientation=set_orientation,
         ),
@@ -1050,6 +1036,7 @@ def test_ordered_edge_move_progresses_monotonically_on_centerline():
         ("advance", seconds)
     )
 
+    agent._get_traffic_light_snapshot = lambda: {}
     agent.move_to(Vector(0.0, 400.0))
 
     positions = [
@@ -1103,7 +1090,9 @@ def test_ordered_edge_move_reasserts_commanded_yaw_after_every_simulation_tick()
     communicator = SimpleNamespace(
         unrealcv=SimpleNamespace(
             get_location=lambda name: list(live),
-            set_location=set_location,
+            set_location=lambda *args: pytest.fail("Move must sweep"),
+            move_actor_with_sweep=lambda name, loc: (set_location(loc, name), tuple(live))[1],
+            humanoid_stop=lambda name: None,
             get_orientation=lambda name: list(live_orientation),
             set_orientation=set_orientation,
         ),
@@ -1130,6 +1119,7 @@ def test_ordered_edge_move_reasserts_commanded_yaw_after_every_simulation_tick()
     agent.record_action_frames = False
     agent._advance_simulation_time = advance
 
+    agent._get_traffic_light_snapshot = lambda: {}
     agent.move_to(Vector(0.0, 200.0))
 
     advance_indices = [

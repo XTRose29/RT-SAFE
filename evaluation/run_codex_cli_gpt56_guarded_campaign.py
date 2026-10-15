@@ -358,8 +358,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--status-interval", type=float, default=30.0)
     parser.add_argument("--ue-port-stride", type=int, default=1)
     parser.add_argument("--record-png-compress-level", type=int, default=3)
-    parser.add_argument("--record-images-first-steps", type=int, default=3)
-    parser.add_argument("--record-images-last-steps", type=int, default=3)
+    parser.add_argument("--record-images-first-steps", type=int, default=0)
+    parser.add_argument("--record-images-last-steps", type=int, default=0)
     args = parser.parse_args(argv)
     if args.workers <= 0:
         parser.error("--workers must be positive")

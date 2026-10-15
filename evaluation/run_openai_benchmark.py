@@ -549,8 +549,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     parser.add_argument("--no-record-per-step", action="store_true")
     parser.add_argument("--record-png-compress-level", type=int, default=0)
-    parser.add_argument("--record-images-first-steps", type=int, default=3)
-    parser.add_argument("--record-images-last-steps", type=int, default=3)
+    parser.add_argument("--record-images-first-steps", type=int, default=0)
+    parser.add_argument("--record-images-last-steps", type=int, default=0)
     parser.add_argument(
         "--record-output-images",
         action=argparse.BooleanOptionalAction,

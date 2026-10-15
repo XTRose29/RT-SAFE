@@ -58,11 +58,11 @@ class LunaCampaignRunnerTests(unittest.TestCase):
             with claim_cell(cell, True) as third:
                 self.assertTrue(third)
 
-    def test_parallel_profile_defaults_keep_sparse_audit_images(self):
+    def test_parallel_profile_defaults_keep_all_step_audit_images(self):
         args = parse_args([])
         self.assertTrue(args.fast_simulation)
-        self.assertEqual(3, args.record_images_first_steps)
-        self.assertEqual(3, args.record_images_last_steps)
+        self.assertEqual(0, args.record_images_first_steps)
+        self.assertEqual(0, args.record_images_last_steps)
         self.assertEqual(0, args.record_png_compress_level)
 
     def test_api_matrix_accepts_full_step_image_recording(self):

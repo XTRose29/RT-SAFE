@@ -1737,6 +1737,8 @@ class WorldManager:
             self.agent.failure_reason = 'runtime_error'
             self.logger.error(f"Error during agent step: {e}")
             self.logger.error(traceback.format_exc())
+            if getattr(e, 'retryable', True) is False:
+                raise
             raise RuntimeError(
                 f"Benchmark rollout stopped after a runtime/UE communication "
                 f"error: {type(e).__name__}: {e}"
@@ -2254,9 +2256,13 @@ class WorldManager:
                 "default_max_steps": "3_per_full_shortest_route_meter",
             },
             "movement_timing_policy": {
-                "version": "distance_over_speed_v1",
+                "version": "swept_segment_distance_over_speed_v2",
                 "nominal_speed_cm_s": 200.0,
                 "move_duration": "commanded_distance_cm / nominal_speed_cm_s",
+                "native_capsule_sweep": True,
+                "movement_sample_interval_s": 0.1,
+                "corridor_changes_controller": False,
+                "endpoint_teleport": False,
                 "post_move_tail_seconds": 0.0,
             },
             "evaluation_metrics_policy": {
@@ -2269,7 +2275,7 @@ class WorldManager:
             "traffic_evaluation_policy": {
                 "version": "two_rule_traffic_events_v6",
                 "collision_authority": (
-                    "ue_counters_plus_launched_vehicle_swept_radius"
+                    "ue_counters_plus_launched_vehicle_swept_radius_v2"
                 ),
                 "vehicle_collision_scope": "launched_conflict_vehicle_only",
                 "launched_vehicle_collision_radius_cm": (
@@ -2296,7 +2302,7 @@ class WorldManager:
                     "red_light_violation",
                 ],
             },
-            "artifact_schema_version": "two_rule_traffic_events_v6",
+            "artifact_schema_version": "execution_alignment_v2",
             "success": self.agent.success,
             "failed": self.agent.failed,
             "termination_reason": termination_reason,
@@ -2374,10 +2380,15 @@ class WorldManager:
             "oil_count": self.agent.oil_count,
             "water_count": self.agent.water_count,
             "red_light_violations_count": self.agent.red_light_violations_count,
+            "initial_hazard_clearance": list(getattr(self, "initial_hazard_clearance", [])),
             "hazard_overlap_policy": {
-                "version": "continuous_region_occupancy_v1",
+                "version": "sampled_action_occupancy_v2",
                 "count_once_per_continuous_occupancy": True,
                 "spatial_rearm_distance_cm": 450.0,
+                "initial_prop_clearance_radius_cm": 150.0,
+                "initial_prop_max_height_cm": 200.0,
+                "initial_overlap_policy": "reject_episode_as_setup_failure",
+                "trigger_identity_available": False,
             },
             "hazard_overlap_raw_counts": dict(
                 getattr(self.agent, 'hazard_overlap_raw_counts', {})
@@ -2488,6 +2499,54 @@ class WorldManager:
             activated.append(object_id)
         return activated
 
+    def _clear_initial_hazards(self):
+        """Remove small hazard props overlapping the task's initial footprint.
+
+        In map2/task15 a basketball was 35 cm behind the initial camera. That
+        spawn overlap cannot be avoided by the policy. Apply the same geometric
+        setup rule to every task, before activation, and retain the removed IDs.
+        This is a versioned environment change, not an outcome-based filter.
+        """
+        self.initial_hazard_clearance = []
+        if not getattr(self, 'map_static_obstacles', []):
+            return
+        center = self.agent.position
+        removed = set()
+        for item in getattr(self, 'map_static_obstacles', []):
+            kind = str(item.get('type', '')).lower()
+            if not any(word in kind for word in ('ball', 'bottle', 'box', 'oil', 'puddle', 'water')):
+                continue
+            if math.hypot(item['x'] - center.x, item['y'] - center.y) > 500:
+                continue
+            actor = str(item['id'])
+            live = self.communicator.unrealcv.get_location(actor)
+            distance = math.hypot(float(live[0]) - center.x, float(live[1]) - center.y)
+            if distance > 150 or abs(float(live[2])) > 200:
+                continue
+            self.communicator.unrealcv.destroy(actor)
+            removed.add(actor)
+            self.initial_hazard_clearance.append({
+                'actor_id': actor, 'type': item['type'],
+                'location_cm': [float(v) for v in live],
+                'distance_to_spawn_cm': distance,
+                'reason': 'initial_footprint_clearance_v2',
+            })
+        if not removed:
+            return
+        for field in ('static_obstacles', 'map_static_obstacles'):
+            setattr(self, field, [o for o in getattr(self, field, [])
+                                 if str(o.get('id')) not in removed])
+        for field in ('selected_movable_obstacle_ids', 'selected_falling_object_ids'):
+            setattr(self, field, [actor for actor in getattr(self, field, [])
+                                 if str(actor) not in removed])
+        for actor in removed:
+            self.dynamic_obstacle_metadata.pop(actor, None)
+            self.agent.dynamic_obstacles.pop(actor, None)
+            self.agent.evaluator.dynamic_obstacles.pop(actor, None)
+            getattr(self.agent.evaluator, '_dynamic_actor_telemetry', {}).pop(actor, None)
+        self.agent.static_obstacles = self.static_obstacles
+        self.agent.evaluator.static_obstacles = self.static_obstacles
+
     def spawn_agents(self):
         # Construction-script child actors can register a frame after their
         # parent road blueprint.  Repeat the freeze immediately before any
@@ -2498,6 +2557,7 @@ class WorldManager:
             'freeze_generated_decorative_vehicles',
         ):
             self._freeze_generated_decorative_vehicles('pre_agent_spawn')
+        self._clear_initial_hazards()
         self.communicator.spawn_agent(self.agent, self.agent.name, '/Game/RealTimeBench/Agent/BP_RT_Agent.BP_RT_Agent_C', type='agent')
         self.communicator.rt_agent_adjust_speed(self.agent.name, self.agent.speed)
         if getattr(self.agent, 'first_person_camera_enabled', False):

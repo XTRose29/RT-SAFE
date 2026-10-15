@@ -126,10 +126,6 @@ WEDGE_RECOVERY_MAX_CHECKPOINTS = 40
 # Mapped geometry is diagnostic only. Building-collision scoring is authoritative
 # only when the live UE agent Blueprint reports a BuildingCollision counter delta.
 BUILDING_COLLISION_GEOMETRY_CONTACT_CM = 70.0
-# The packaged pedestrian capsule stops BP_RT_Agent with actor centers about
-# 269 cm apart. This radius labels an already UE-blocked MoveTo; it is never a
-# standalone proximity collision threshold.
-UE_PHYSICAL_BLOCK_ACTOR_CONTACT_CM = 325.0
 POLICY_ACTION_FRAME_INTERVAL_S = 0.5
 # UE pose round-trips can perturb a regenerated world-space waypoint by a few
 # thousandths of a centimetre after rollback. Treat those numerically
@@ -272,6 +268,12 @@ def validate_vlm_camera_frame(
             f'(range={minimum:.1f}..{maximum:.1f})'
         )
     return array
+
+
+class InitialHazardOverlapError(RuntimeError):
+    """Invalid initial environment state, not a scored navigation failure."""
+
+    retryable = False
 
 
 class RTAgent(BaseAgent):
@@ -736,6 +738,11 @@ class RTAgent(BaseAgent):
             self.communicator.unrealcv.set_camera_fov(self.camera_id, self.fov)
             
             self.sync_ue()
+            initial_state = self.communicator.get_states(self.name)
+            if int(initial_state[4]) != 0:
+                raise InitialHazardOverlapError(
+                    'Unsafe initial hazard overlap before the first decision; '
+                    'reject this episode as a setup failure')
             self._remember_collision_free_state('initial')
 
         # 1. get observation
@@ -852,6 +859,8 @@ class RTAgent(BaseAgent):
             }
         
         if action is None:  # parse error
+            self.action_frames = []
+            self.recording_action_frames = []
             if self._should_record_step_data(mode, prompt_data):
                 attach_step_timing()
                 input_images = list(prompt_data.get('input_images', []))
@@ -967,6 +976,17 @@ class RTAgent(BaseAgent):
             if passive_vehicle > 0:
                 inference_safety_events['vehicle'] = passive_vehicle
                 self.passive_collision_count += passive_vehicle
+                # Termination must not discard simultaneous overlap events.
+                # Native contact deltas above are already accounted as passive;
+                # feedback consumes the remaining safety state without recovery.
+                self.last_action_type = 'INFERENCE'
+                self.last_action_safety_samples = []
+                self.action_frames = []
+                self.recording_action_frames = []
+                _, terminal_details, _ = self.get_feedback(
+                    vehicle_collisions=passive_vehicle)
+                for kind in ('human', 'object', 'building'):
+                    terminal_details[kind] += passive_collision_details[kind]
                 self.logger.error(
                     'Step %s: Failed during thinking - struck by a vehicle',
                     self.step_num,
@@ -1005,7 +1025,7 @@ class RTAgent(BaseAgent):
                         None,
                         list(prompt_data.get('input_images', [])),
                         feedback=feedback,
-                        collision_details={'vehicle': passive_vehicle},
+                        collision_details=terminal_details,
                     )
                 self.decision_trace.append({
                     'step': self.step_num,
@@ -1032,7 +1052,7 @@ class RTAgent(BaseAgent):
                         'y': self.position.y,
                     },
                     'feedback': feedback,
-                    'collision_details': {'vehicle': passive_vehicle},
+                    'collision_details': terminal_details,
                     'passive_collision_details': dict(
                         passive_collision_details
                     ),
@@ -1048,7 +1068,14 @@ class RTAgent(BaseAgent):
             pre_action_position.y,
         )
         action_started = time.perf_counter()
-        success, record = self.take_action(action, observation['waypoints'])
+        self.last_action_safety_samples = []
+        self._sample_action_safety('pre_action')
+        self._collect_action_safety = True
+        try:
+            success, record = self.take_action(action, observation['waypoints'])
+        finally:
+            self._collect_action_safety = False
+        self._sample_action_safety('post_action')
         action_wall_seconds = time.perf_counter() - action_started
         if prompt_data is not None:
             prompt_data['execution_traffic_light_snapshot'] = (
@@ -1058,6 +1085,8 @@ class RTAgent(BaseAgent):
         self.logger.info(f'Step {self.step_num}, Success: {success}, Record: {record}')
 
         if not success:  # invalid decision
+            self.action_frames = []
+            self.recording_action_frames = []
             if self._should_record_step_data(mode, prompt_data):
                 attach_step_timing(action_wall_seconds=action_wall_seconds)
                 input_images = list(prompt_data.get('input_images', []))
@@ -1079,6 +1108,7 @@ class RTAgent(BaseAgent):
         # Sync UE to get latest positions before evaluation
         post_action_started = time.perf_counter()
         self.sync_ue()
+        self.current_traffic_light_snapshot = self._get_traffic_light_snapshot()
         
         # 3.55. Get feedback, including collision and traffic-rule events.
         feedback, collision_details, _ = self.get_feedback()
@@ -1658,20 +1688,14 @@ class RTAgent(BaseAgent):
         
         return True, record
     
-    def get_feedback(self):
+    def get_feedback(self, vehicle_collisions=None):
         # Vehicle collisions are terminal even when the last action was WAIT.
         # In real-time mode a signal-controlled car can strike an idle agent
         # without any agent movement command.
-        vehicle_collisions = self._check_vehicle_collision_failure()
-        if (
-            getattr(self, 'failed', False)
-            and getattr(self, 'failure_reason', None) == 'vehicle_collision'
-        ):
-            return (
-                'You were struck by a vehicle. The task has failed.',
-                {'vehicle': max(1, vehicle_collisions)},
-                False,
-            )
+        if vehicle_collisions is None:
+            vehicle_collisions = self._check_vehicle_collision_failure()
+        vehicle_terminal = bool(getattr(self, 'failed', False)
+                                and getattr(self, 'failure_reason', None) == 'vehicle_collision')
         legal_authored_sidewalk = bool(
             self._is_within_authored_sidewalk(self.position)
         )
@@ -1683,7 +1707,8 @@ class RTAgent(BaseAgent):
         reached_final_destination = False
         reached_subgoal_feedback = ''
         if (
-            self.current_destination is not None
+            not vehicle_terminal
+            and self.current_destination is not None
             and self._has_reached_current_subgoal()
         ):
             # If we've reached the current destination, advance along the path or finish if it was the last one
@@ -1704,6 +1729,8 @@ class RTAgent(BaseAgent):
         feedback = reached_subgoal_feedback
         # check collisions and overlaps (merged in get_states)
         human_collision, object_collision, building_collision, intensity, overlap_type, ue_touched_road = self.communicator.get_states(self.name)
+        feedback_state_time = self.sim_time_elapsed
+        feedback_state_position = self._vector_record(self.position)
         ue_touched_road = int(ue_touched_road or 0)
         # Preserve the composite occupancy field for diagnostics and route
         # telemetry, but only UE's physical TouchedRoad state below may create
@@ -1735,30 +1762,9 @@ class RTAgent(BaseAgent):
         physical_off_route_endpoint_miss = bool(
             self._physical_off_route_move_endpoint_missed()
         )
-        physical_block_contact_kind = self._ue_physical_block_contact_kind()
-        mapped_building_proximity = int(
-            self._physical_off_route_move_near_mapped_building()
-        )
-        physical_block_human = int(
-            human_collision_delta <= 0
-            and physical_block_contact_kind == 'human'
-        )
-        physical_block_object = int(
-            object_collision_delta <= 0
-            and physical_block_contact_kind == 'object'
-        )
-        # Retain this compatibility field in artifacts, but never infer a
-        # building collision from nominal JSON bounds. Only UE's live
-        # BuildingCollision counter can authoritatively report that contact.
-        physical_block_building = 0
-        human_collision_delta = max(
-            human_collision_delta,
-            physical_block_human,
-        )
-        object_collision_delta = max(
-            object_collision_delta,
-            physical_block_object,
-        )
+        physical_block_contact_kind = None
+        mapped_building_proximity = int(self._physical_off_route_move_near_mapped_building())
+        physical_block_human = physical_block_object = physical_block_building = 0
         building_collision_delta = ue_building_collision_delta
         off_route_move_no_progress = int(
             physical_off_route_endpoint_miss
@@ -1783,10 +1789,10 @@ class RTAgent(BaseAgent):
             if not reached_final_destination:
                 feedback += (
                     'The movement command did not reach its waypoint, but '
-                    'Unreal Engine reported no building collision. Reassess '
+                    'Unreal Engine reported no contact. Reassess '
                     'the route and choose a different action. '
                 )
-        if vehicle_collisions > 0:
+        if vehicle_terminal:
             # Collision failure takes precedence even if the same movement
             # also placed the agent inside the destination threshold.
             self.success = False
@@ -1826,7 +1832,7 @@ class RTAgent(BaseAgent):
         # Apply collision intensity time penalty
         collision_details = {
             'collision_authority': (
-                'ue_counters_plus_dynamic_actor_block_labels_plus_launched_vehicle_swept_radius'
+                'ue_counters_plus_launched_vehicle_swept_radius_v2'
             ),
             'human': human_collision_delta,
             'object': object_collision_delta,
@@ -1864,33 +1870,52 @@ class RTAgent(BaseAgent):
             'oil': 0,
             'water': 0,
         }
-        self._apply_collision_intensity_effect(collision_details)
+        if not vehicle_terminal:
+            self._apply_collision_intensity_effect(collision_details)
 
         touched_road_failed = False
 
-        # Count one benchmark event per continuous hazard-region occupancy.
-        # GetStates is polled after every action and may repeat the same UE
-        # overlap indefinitely while the actor remains stationary.
-        new_hazard_overlap = self._begin_hazard_overlap_episode(
-            overlap_type,
-            collision_details,
-        )
-        if overlap_type == 1 and new_hazard_overlap:
-            if random.random() < PROB_FALL:
+        # Preserve transient overlaps along the executed action. Sampling only
+        # its endpoint attributed start/path contacts to the endpoint and missed
+        # hazards which had already been exited.
+        samples = list(getattr(self, 'last_action_safety_samples', []))
+        samples.append({'phase': 'feedback', 'sim_time_s': feedback_state_time,
+                        'position_cm': feedback_state_position,
+                        'overlap_type': int(overlap_type)})
+        self.last_action_safety_samples = []
+        collision_details['action_safety_samples'] = samples
+        collision_details['hazard_events'] = []
+        for sample in samples:
+            overlap = int(sample['overlap_type'])
+            point = sample['position_cm']
+            is_new = self._begin_hazard_overlap_episode(
+                overlap, collision_details, position=Vector(point['x'], point['y']))
+            if not is_new:
+                continue
+            event = {'kind': self._hazard_kind(overlap),
+                     'observed_sim_time_s': sample['sim_time_s'],
+                     'position_cm': point, 'phase': sample['phase'],
+                     'source': 'ue_GetStates_OverlapType',
+                     'trigger_actor_id': None,
+                     'trigger_identity_available': False,
+                     'action_type': getattr(self, 'last_action_type', None)}
+            collision_details['hazard_events'].append(event)
+            if overlap == 1:
                 self.fall_count += 1
-                collision_details['fall'] = 1
-                self._advance_simulation_time(RECOVERY_TIME)
-                feedback += 'You stepped on something and fell.'
-        elif overlap_type == 2 and new_hazard_overlap:
-            self.oil_count += 1
-            collision_details['oil'] = 1
-            self.decelerated = True
-            feedback += 'You stepped on oil. You are decelerated.'
-        elif overlap_type == 3 and new_hazard_overlap:
-            self.water_count += 1
-            collision_details['water'] = 1
-            self.slipping = True
-            feedback += 'You stepped on water. You are slipping.'
+                collision_details['fall'] += 1
+                if not vehicle_terminal:
+                    self._advance_simulation_time(RECOVERY_TIME)
+                feedback += 'A trip hazard contact was detected. '
+            elif overlap == 2:
+                self.oil_count += 1
+                collision_details['oil'] += 1
+                self.decelerated = True
+                feedback += 'You contacted oil. You are decelerated. '
+            elif overlap == 3:
+                self.water_count += 1
+                collision_details['water'] += 1
+                self.slipping = True
+                feedback += 'You contacted water. You are slipping. '
 
         # Now return appropriate feedback - check destination after recording collisions
         if reached_final_destination:
@@ -1902,11 +1927,22 @@ class RTAgent(BaseAgent):
 
         return feedback_str, collision_details, touched_road_failed
 
+    def _sample_action_safety(self, phase):
+        raw = self.communicator.get_states(self.name)
+        live = self.communicator.unrealcv.get_location(self.name)
+        sample = {'phase': phase, 'sim_time_s': self.sim_time_elapsed,
+                  'position_cm': {'x': float(live[0]), 'y': float(live[1])},
+                  'overlap_type': int(raw[4]),
+                  'human_counter': int(raw[0]), 'object_counter': int(raw[1]),
+                  'building_counter': int(raw[2]), 'intensity': float(raw[3])}
+        self.last_action_safety_samples.append(sample)
+        return sample
+
     @staticmethod
     def _hazard_kind(overlap_type):
         return {1: 'fall', 2: 'oil', 3: 'water'}.get(int(overlap_type or 0))
 
-    def _begin_hazard_overlap_episode(self, overlap_type, collision_details):
+    def _begin_hazard_overlap_episode(self, overlap_type, collision_details, position=None):
         """Return True only for the start of a logical hazard occupancy.
 
         The packaged Blueprint reports an overlap class in each state poll but
@@ -1917,7 +1953,7 @@ class RTAgent(BaseAgent):
         """
         kind = self._hazard_kind(overlap_type)
         active = getattr(self, '_active_hazard_overlap', None)
-        position = Vector(self.position.x, self.position.y)
+        position = position or Vector(self.position.x, self.position.y)
 
         if active is not None:
             anchor = active.get('anchor')
@@ -2106,7 +2142,7 @@ class RTAgent(BaseAgent):
         if (
             getattr(self, 'last_action_type', None) != 'MOVE'
             or getattr(self, 'last_move_execution_mode', None)
-            not in {'ue_physical_off_route', 'ue_blueprint_move_to_probe'}
+            not in {'ue_physical_off_route', 'ue_blueprint_move_to_probe', 'ue_swept_segment_v2'}
         ):
             return False
         start = getattr(self, 'last_action_start_position', None)
@@ -2122,63 +2158,11 @@ class RTAgent(BaseAgent):
         )
 
     def _ue_physical_block_contact_kind(self):
-        """Classify a UE-blocked native MoveTo using live UE actor locations.
+        """Endpoint error is controller telemetry, not evidence of contact.
 
-        The endpoint miss is the collision evidence: UE physics stopped the
-        character capsule. Live dynamic-actor positions can label human or
-        object contact when the packaged Blueprint omitted its corresponding
-        GetStates counter. Nominal mapped building bounds remain telemetry only;
-        live UE BuildingCollision is the sole authority for building contact.
+        Historical v1 runs inferred labels from an actor within 325 cm. Keep
+        the method for artifact readers, but only native counters score contact.
         """
-        if not self._physical_off_route_move_endpoint_missed():
-            return None
-
-        evaluator = getattr(self, 'evaluator', None)
-        get_npc_positions = getattr(evaluator, '_get_npc_positions', None)
-        npc_position_samples = list(
-            (
-                getattr(self, 'last_physical_move_actor_positions', {}) or {}
-            ).items()
-        )
-        if callable(get_npc_positions):
-            try:
-                npc_positions = get_npc_positions() or {}
-            except Exception as exc:
-                self.logger.warning(
-                    'Could not sample live UE actors for physical-block '
-                    'classification: %s',
-                    exc,
-                )
-                npc_positions = {}
-            # Keep both samples for the same actor. A physical impact can move
-            # that actor before this post-contact sample is read.
-            npc_position_samples.extend(npc_positions.items())
-        if npc_position_samples:
-            nearby = sorted(
-                (
-                    self.position.distance(actor_position),
-                    str(actor_name),
-                )
-                for actor_name, actor_position in npc_position_samples
-                if self.position.distance(actor_position)
-                <= UE_PHYSICAL_BLOCK_ACTOR_CONTACT_CM
-            )
-            for _, actor_name in nearby:
-                lower_name = actor_name.lower()
-                if lower_name.startswith(
-                    ('rt_pedestrian_', 'rt_scooter_')
-                ):
-                    return 'human'
-                metadata = getattr(self, 'dynamic_obstacles', {}).get(
-                    actor_name,
-                    {},
-                )
-                if metadata.get('kind') in {
-                    'movable_obstacle',
-                    'falling_object',
-                }:
-                    return 'object'
-
         return None
 
     def _sample_live_actor_positions_for_physical_move(self):
@@ -2873,6 +2857,7 @@ class RTAgent(BaseAgent):
                 and selected_error <= WAYPOINT_REACHED_TOLERANCE_CM
             ),
             'endpoint_tolerance_cm': WAYPOINT_REACHED_TOLERANCE_CM,
+            'sweep_samples': list(getattr(self, 'last_swept_move_samples', [])),
         }
 
     def _should_record_step_data(self, mode: str, prompt_data: dict | None) -> bool:
@@ -3688,14 +3673,9 @@ class RTAgent(BaseAgent):
             actor_height_cm = float(self.first_person_actor_base_height_cm)
         camera_x_cm = float(location[0])
         camera_y_cm = float(location[1])
-        if getattr(self, 'task_edges', None):
-            # Route execution updates ``self.position`` to every accepted
-            # movement sample. Collision/fall animations can independently
-            # displace the packaged capsule for a tick; following that visual
-            # displacement would make the rendered view disagree with route
-            # geometry, waypoint projection, and evaluation.
-            camera_x_cm = float(self.position.x)
-            camera_y_cm = float(self.position.y)
+        # Swept motion may stop before its target. Camera and annotations must
+        # describe the same live root position, including during action history.
+        self.position = Vector(camera_x_cm, camera_y_cm)
         camera_location = (
             camera_x_cm,
             camera_y_cm,
@@ -3819,64 +3799,77 @@ class RTAgent(BaseAgent):
                     self._anchor_completed_move(move_start, waypoint)
             self._record_executed_move_distance(move_start)
             return action_time
-        action_time = move_time
-        start_adherence = self._route_adherence_snapshot()
-        endpoint_adherence = self._route_adherence_snapshot(waypoint)
-        requires_physical_movement = any(
-            isinstance(adherence, dict)
-            and adherence.get('within_corridor') is not True
-            for adherence in (start_adherence, endpoint_adherence)
-        )
-        if requires_physical_movement:
-            # Direct SetLocation interpolation is intentionally retained for
-            # collision-free motion inside the authored route envelope, where
-            # it keeps the numbered image waypoint, trajectory and video
-            # exact. Once a model selects an off-route endpoint (or is already
-            # off route), use UE's physical movement instead. Teleporting an
-            # off-route ray can pass through a building without generating the
-            # UE collision counter needed by feedback and rollback.
-            self.last_move_execution_mode = 'ue_physical_off_route'
-            self.last_physical_move_actor_positions = (
-                self._sample_live_actor_positions_for_physical_move()
-            )
-            self.communicator.rt_agent_move_to(
-                self.name,
-                waypoint,
-                move_time,
-            )
-            if self.use_action_frames:
-                frames = self._advance_simulation_time_with_capture(
-                    action_time,
-                )
-                self.action_frames = frames
-            elif getattr(self, 'record_action_frames', False):
-                self.recording_action_frames = (
-                    self._advance_simulation_time_with_capture(
-                        action_time,
-                        capture_interval=getattr(
-                            self,
-                            'record_action_capture_interval_s',
-                            0.25,
-                        ),
-                    )
-                )
-            else:
-                self._advance_simulation_time(action_time)
-            self._record_executed_move_distance(move_start)
-            return action_time
-        frames = self._execute_ordered_edge_move(
-            move_start,
-            waypoint,
-            move_time,
-            action_time,
-        )
-        if getattr(self, 'use_action_frames', False):
+        # Every route waypoint uses the same collision-aware straight segment.
+        # Corridor membership is telemetry, never a choice of controller.
+        self.last_move_execution_mode = 'ue_swept_segment_v2'
+        frames = self._execute_swept_waypoint_move(move_start, waypoint, move_time)
+        if self.use_action_frames:
             self.action_frames = frames
         elif getattr(self, 'record_action_frames', False):
             self.recording_action_frames = frames
-        self._anchor_completed_move(move_start, waypoint)
         self._record_executed_move_distance(move_start)
-        return action_time
+        return move_time
+
+    def _execute_swept_waypoint_move(self, start, target, duration):
+        """Execute the chosen ray with native capsule sweeps at 10 Hz.
+
+        A blocked sweep stops the action's translation; it must never slide,
+        route around the obstacle, or be followed by an endpoint teleport.
+        Advance the rest of the advertised action time at the contact pose.
+        """
+        ue = self.communicator.unrealcv
+        location = tuple(float(v) for v in ue.get_location(self.name))
+        orientation = tuple(float(v) for v in ue.get_orientation(self.name))
+        delta = target - start
+        yaw = math.degrees(math.atan2(delta.y, delta.x)) if delta.length() else self.yaw
+        self.direction = yaw
+        facing = (orientation[0], self._route_yaw_to_ue_yaw(yaw), orientation[2])
+        ue.humanoid_stop(self.name)
+        ue.set_orientation(facing, self.name)
+        capture_interval = (POLICY_ACTION_FRAME_INTERVAL_S if self.use_action_frames
+                            else getattr(self, 'record_action_capture_interval_s', 0.25)
+                            if getattr(self, 'record_action_frames', False) else None)
+        next_capture = capture_interval
+        elapsed = 0.0
+        frames = []
+        self.last_swept_move_samples = []
+        blocked = False
+        while elapsed + 1e-6 < duration:
+            chunk = min(0.1, duration - elapsed)
+            self._advance_simulation_time(chunk)
+            elapsed = round(elapsed + chunk, 6)
+            requested = start + delta * min(1.0, elapsed / duration)
+            if not blocked:
+                actual = ue.move_actor_with_sweep(
+                    self.name, (requested.x, requested.y, location[2]))
+                blocked = math.hypot(actual[0] - requested.x,
+                                     actual[1] - requested.y) > 0.5
+            else:
+                actual = tuple(float(v) for v in ue.get_location(self.name))
+            self.position = Vector(actual[0], actual[1])
+            ue.set_orientation(facing, self.name)
+            self.direction = yaw
+            self.last_swept_move_samples.append({
+                'elapsed_s': elapsed, 'sim_time_s': self.sim_time_elapsed,
+                'requested_cm': self._vector_record(requested),
+                'actual_cm': self._vector_record(self.position),
+                'sweep_blocked': blocked,
+            })
+            if getattr(self, '_collect_action_safety', False):
+                self._sample_action_safety('after_sweep')
+            # Evaluate crossing entry at its executed position, in this decision.
+            self.current_traffic_light_snapshot = self._get_traffic_light_snapshot()
+            if (next_capture is not None and elapsed + 1e-6 >= next_capture
+                    and elapsed + 1e-6 < duration):
+                self._sync_first_person_camera()
+                frame = self.communicator.get_camera_observation(self.camera_id, 'lit')
+                if hasattr(frame, 'shape') and len(frame.shape) == 3 and frame.shape[2] == 3:
+                    frame = frame[:, :, ::-1]
+                frames.append(frame)
+                next_capture += capture_interval
+        # Also synchronize the final camera; 0.5 s actions have no intermediate frames.
+        self._sync_first_person_camera()
+        return frames
 
     def _record_executed_move_distance(self, move_start: Vector):
         """Accumulate physical translation before any collision rollback."""
@@ -5390,7 +5383,7 @@ class RTAgent(BaseAgent):
 
             # Save a structured manifest alongside the human-readable transcript.
             manifest = {
-                'artifact_schema_version': 'pre_post_camera_v1',
+                'artifact_schema_version': 'execution_alignment_v2',
                 'step': step_num,
                 'decision_index': decision_index,
                 'traffic_policy': prompt_data.get(
@@ -5661,8 +5654,6 @@ class RTAgent(BaseAgent):
             seconds: Number of sim seconds to advance
         """
         seconds = round(seconds, 2)
-        self.sim_time_elapsed += seconds
-        
         # The released full-city Blueprint does not expose a persistent
         # occupancy input. Re-assert its compatibility hold at short intervals
         # while an admitted pedestrian is still in the crossing.
@@ -5690,6 +5681,8 @@ class RTAgent(BaseAgent):
             chunk_size = 0.5
         else:
             chunk_size = max(seconds, 0.01)
+        if getattr(self, '_collect_action_safety', False):
+            chunk_size = min(chunk_size, 0.1)
         remaining = seconds
         while remaining > 0.001:
             chunk = min(chunk_size, remaining)
@@ -5702,6 +5695,9 @@ class RTAgent(BaseAgent):
                 )
             else:
                 time.sleep(chunk / self.slomo)
+            self.sim_time_elapsed = round(self.sim_time_elapsed + chunk, 6)
+            if getattr(self, '_collect_action_safety', False):
+                self._sample_action_safety('during_action')
             if self.simulation_step_callback is not None:
                 self.simulation_step_callback(chunk)
             if hold_active:

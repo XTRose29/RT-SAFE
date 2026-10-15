@@ -1,0 +1,888 @@
+{
+  "start": {
+    "x": -4479.807,
+    "y": 10700.0
+  },
+  "target": {
+    "x": -4079.807,
+    "y": 10700.0
+  },
+  "actual": {
+    "x": -4079.807,
+    "y": 10700.0
+  },
+  "error_cm": 0.0,
+  "camera": [
+    -4079.807,
+    10700.0,
+    245.0
+  ],
+  "feedback": "Action completed successfully.",
+  "collisions": {
+    "collision_authority": "ue_counters_plus_launched_vehicle_swept_radius_v2",
+    "human": 0,
+    "object": 0,
+    "building": 0,
+    "vehicle": 0,
+    "intensity": 0.0,
+    "touched_road": 0,
+    "ue_touched_road": 0,
+    "geometric_touched_road": 0,
+    "legal_authored_sidewalk": 1,
+    "legal_route_crosswalk": 0,
+    "legal_marked_crosswalk": 0,
+    "legal_non_route_crosswalk": 0,
+    "unsafe_touched_road": 0,
+    "ue_unsafe_touched_road": 0,
+    "illegal_crossing_detection_source": null,
+    "state_human": 0,
+    "state_object": 0,
+    "state_building": 0,
+    "ue_building_delta": 0,
+    "ue_physical_block_contact_kind": null,
+    "ue_physical_block_human": 0,
+    "ue_physical_block_object": 0,
+    "ue_physical_block_building": 0,
+    "mapped_building_proximity": 0,
+    "off_route_move_no_progress": 0,
+    "overlap_type": 0,
+    "hazard_overlap_new_episode": 0,
+    "hazard_overlap_suppressed": 0,
+    "fall": 0,
+    "oil": 0,
+    "water": 0,
+    "action_safety_samples": [
+      {
+        "phase": "pre_action",
+        "sim_time_s": 0.0,
+        "position_cm": {
+          "x": -4479.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 0.1,
+        "position_cm": {
+          "x": -4479.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 0.1,
+        "position_cm": {
+          "x": -4459.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 0.2,
+        "position_cm": {
+          "x": -4459.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 0.2,
+        "position_cm": {
+          "x": -4439.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 0.30000000000000004,
+        "position_cm": {
+          "x": -4439.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 0.30000000000000004,
+        "position_cm": {
+          "x": -4419.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 0.4,
+        "position_cm": {
+          "x": -4419.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 0.4,
+        "position_cm": {
+          "x": -4399.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 0.5,
+        "position_cm": {
+          "x": -4399.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 0.5,
+        "position_cm": {
+          "x": -4379.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 0.6,
+        "position_cm": {
+          "x": -4379.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 0.6,
+        "position_cm": {
+          "x": -4359.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 0.7,
+        "position_cm": {
+          "x": -4359.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 0.7,
+        "position_cm": {
+          "x": -4339.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 0.7999999999999999,
+        "position_cm": {
+          "x": -4339.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 0.7999999999999999,
+        "position_cm": {
+          "x": -4319.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 0.8999999999999999,
+        "position_cm": {
+          "x": -4319.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 0.8999999999999999,
+        "position_cm": {
+          "x": -4299.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 0.9999999999999999,
+        "position_cm": {
+          "x": -4299.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 0.9999999999999999,
+        "position_cm": {
+          "x": -4279.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 1.0999999999999999,
+        "position_cm": {
+          "x": -4279.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 1.0999999999999999,
+        "position_cm": {
+          "x": -4259.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 1.2,
+        "position_cm": {
+          "x": -4259.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 1.2,
+        "position_cm": {
+          "x": -4239.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 1.3,
+        "position_cm": {
+          "x": -4239.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 1.3,
+        "position_cm": {
+          "x": -4219.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 1.4000000000000001,
+        "position_cm": {
+          "x": -4219.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 1.4000000000000001,
+        "position_cm": {
+          "x": -4199.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 1.5000000000000002,
+        "position_cm": {
+          "x": -4199.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 1.5000000000000002,
+        "position_cm": {
+          "x": -4179.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 1.6000000000000003,
+        "position_cm": {
+          "x": -4179.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 1.6000000000000003,
+        "position_cm": {
+          "x": -4159.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 1.7000000000000004,
+        "position_cm": {
+          "x": -4159.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 1.7000000000000004,
+        "position_cm": {
+          "x": -4139.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 1.8000000000000005,
+        "position_cm": {
+          "x": -4139.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 1.8000000000000005,
+        "position_cm": {
+          "x": -4119.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 1.9000000000000006,
+        "position_cm": {
+          "x": -4119.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 1.9000000000000006,
+        "position_cm": {
+          "x": -4099.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "during_action",
+        "sim_time_s": 2.0000000000000004,
+        "position_cm": {
+          "x": -4099.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "after_sweep",
+        "sim_time_s": 2.0000000000000004,
+        "position_cm": {
+          "x": -4079.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "post_action",
+        "sim_time_s": 2.0000000000000004,
+        "position_cm": {
+          "x": -4079.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0,
+        "human_counter": 0,
+        "object_counter": 0,
+        "building_counter": 0,
+        "intensity": 0.0
+      },
+      {
+        "phase": "feedback",
+        "sim_time_s": 2.0000000000000004,
+        "position_cm": {
+          "x": -4079.807,
+          "y": 10700.0
+        },
+        "overlap_type": 0
+      }
+    ],
+    "hazard_events": []
+  },
+  "spawn_clearance": [
+    {
+      "actor_id": "GEN_RT_RT_Basketball_256",
+      "type": "RT_Basketball_C",
+      "location_cm": [
+        -4498.399,
+        10729.396,
+        2.0
+      ],
+      "distance_to_spawn_cm": 34.78215685218568,
+      "reason": "initial_footprint_clearance_v2"
+    }
+  ],
+  "sweeps": [
+    {
+      "elapsed_s": 0.1,
+      "sim_time_s": 0.1,
+      "requested_cm": {
+        "x": -4459.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4459.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 0.2,
+      "sim_time_s": 0.2,
+      "requested_cm": {
+        "x": -4439.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4439.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 0.3,
+      "sim_time_s": 0.30000000000000004,
+      "requested_cm": {
+        "x": -4419.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4419.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 0.4,
+      "sim_time_s": 0.4,
+      "requested_cm": {
+        "x": -4399.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4399.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 0.5,
+      "sim_time_s": 0.5,
+      "requested_cm": {
+        "x": -4379.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4379.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 0.6,
+      "sim_time_s": 0.6,
+      "requested_cm": {
+        "x": -4359.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4359.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 0.7,
+      "sim_time_s": 0.7,
+      "requested_cm": {
+        "x": -4339.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4339.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 0.8,
+      "sim_time_s": 0.7999999999999999,
+      "requested_cm": {
+        "x": -4319.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4319.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 0.9,
+      "sim_time_s": 0.8999999999999999,
+      "requested_cm": {
+        "x": -4299.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4299.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 1.0,
+      "sim_time_s": 0.9999999999999999,
+      "requested_cm": {
+        "x": -4279.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4279.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 1.1,
+      "sim_time_s": 1.0999999999999999,
+      "requested_cm": {
+        "x": -4259.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4259.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 1.2,
+      "sim_time_s": 1.2,
+      "requested_cm": {
+        "x": -4239.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4239.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 1.3,
+      "sim_time_s": 1.3,
+      "requested_cm": {
+        "x": -4219.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4219.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 1.4,
+      "sim_time_s": 1.4000000000000001,
+      "requested_cm": {
+        "x": -4199.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4199.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 1.5,
+      "sim_time_s": 1.5000000000000002,
+      "requested_cm": {
+        "x": -4179.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4179.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 1.6,
+      "sim_time_s": 1.6000000000000003,
+      "requested_cm": {
+        "x": -4159.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4159.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 1.7,
+      "sim_time_s": 1.7000000000000004,
+      "requested_cm": {
+        "x": -4139.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4139.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 1.8,
+      "sim_time_s": 1.8000000000000005,
+      "requested_cm": {
+        "x": -4119.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4119.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 1.9,
+      "sim_time_s": 1.9000000000000006,
+      "requested_cm": {
+        "x": -4099.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4099.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    },
+    {
+      "elapsed_s": 2.0,
+      "sim_time_s": 2.0000000000000004,
+      "requested_cm": {
+        "x": -4079.807,
+        "y": 10700.0
+      },
+      "actual_cm": {
+        "x": -4079.807,
+        "y": 10700.0
+      },
+      "sweep_blocked": false
+    }
+  ]
+}

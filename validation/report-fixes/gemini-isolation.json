@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-15T23:58:05.120299+00:00",
+  "source_digest_matches_frozen_job": true,
+  "source_sha256": "1058d5effef2230104048162fb2e0e7a1af390063ff3ce38f381fe7f2b933eb3",
+  "job_state": {
+    "state": "running",
+    "pid": 2487227,
+    "supervisor_pid": 2624952,
+    "updated": "2026-10-15T23:57:40.522888+00:00",
+    "recovery": "Existing worker adopted after coordinator ENOSPC; no task restarted"
+  },
+  "latest_progress": {
+    "updated": "2026-10-15T23:57:40.627658+00:00",
+    "completed": 1,
+    "expected": 10,
+    "states": {
+      "completed": 1,
+      "running": 1
+    }
+  },
+  "storage_recovery": {
+    "cause": "Shared /data filled; coordinator exited with ENOSPC, worker and current episode continued",
+    "pip_cache_relocated_to": "/home/rose/rtsafe-storage-relief/pip",
+    "original_cache_path_preserved_by_symlink": true,
+    "existing_worker_pid": 2487227,
+    "current_episode_pid": 2524483,
+    "episode_restarted": false,
+    "monitor_script": "/home/rose/rtsafe-storage-relief/adopt_medium_worker.py"
+  }
+}

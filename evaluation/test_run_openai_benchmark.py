@@ -117,12 +117,12 @@ class OpenAIBenchmarkRunnerTest(unittest.TestCase):
         self.assertIsNone(estimate["configured_output_cap_tokens"])
         self.assertIsNone(estimate["output_cap_scenario_cost_usd"])
 
-    def test_sparse_input_only_artifacts_are_the_openai_defaults(self):
+    def test_all_step_input_artifacts_are_the_openai_defaults(self):
         args = parse_args(["--dry-run"])
 
         self.assertEqual(0, args.record_png_compress_level)
-        self.assertEqual(3, args.record_images_first_steps)
-        self.assertEqual(3, args.record_images_last_steps)
+        self.assertEqual(0, args.record_images_first_steps)
+        self.assertEqual(0, args.record_images_last_steps)
         self.assertFalse(args.record_output_images)
         self.assertFalse(args.record_demo_images)
 

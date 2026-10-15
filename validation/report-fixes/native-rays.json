@@ -1,0 +1,1632 @@
+{
+  "schema": "execution_alignment_v2",
+  "rays": [
+    {
+      "angle_deg": 0,
+      "length_cm": 100,
+      "endpoint_error_cm": 0.0,
+      "max_cross_track_error_cm": 0.0,
+      "camera_error_cm": 0.0,
+      "action_frames": 0,
+      "sweep_samples": [
+        {
+          "elapsed_s": 0.1,
+          "sim_time_s": 0.1,
+          "requested_cm": {
+            "x": -4980.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4980.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.2,
+          "sim_time_s": 0.2,
+          "requested_cm": {
+            "x": -4960.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4960.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.3,
+          "sim_time_s": 0.3,
+          "requested_cm": {
+            "x": -4940.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4940.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.4,
+          "sim_time_s": 0.4,
+          "requested_cm": {
+            "x": -4920.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4920.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.5,
+          "sim_time_s": 0.5,
+          "requested_cm": {
+            "x": -4900.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4900.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        }
+      ]
+    },
+    {
+      "angle_deg": 0,
+      "length_cm": 200,
+      "endpoint_error_cm": 0.0,
+      "max_cross_track_error_cm": 0.0,
+      "camera_error_cm": 0.0,
+      "action_frames": 1,
+      "sweep_samples": [
+        {
+          "elapsed_s": 0.1,
+          "sim_time_s": 0.6,
+          "requested_cm": {
+            "x": -4980.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4980.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.2,
+          "sim_time_s": 0.7,
+          "requested_cm": {
+            "x": -4960.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4960.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.3,
+          "sim_time_s": 0.8,
+          "requested_cm": {
+            "x": -4940.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4940.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.4,
+          "sim_time_s": 0.9,
+          "requested_cm": {
+            "x": -4920.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4920.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.5,
+          "sim_time_s": 1.0,
+          "requested_cm": {
+            "x": -4900.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4900.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.6,
+          "sim_time_s": 1.1,
+          "requested_cm": {
+            "x": -4880.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4880.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.7,
+          "sim_time_s": 1.2,
+          "requested_cm": {
+            "x": -4860.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4860.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.8,
+          "sim_time_s": 1.3,
+          "requested_cm": {
+            "x": -4840.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4840.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.9,
+          "sim_time_s": 1.4,
+          "requested_cm": {
+            "x": -4820.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4820.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.0,
+          "sim_time_s": 1.5,
+          "requested_cm": {
+            "x": -4800.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4800.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        }
+      ]
+    },
+    {
+      "angle_deg": -45,
+      "length_cm": 200,
+      "endpoint_error_cm": 0.0,
+      "max_cross_track_error_cm": 2.6375346351414917e-13,
+      "camera_error_cm": 0.0,
+      "action_frames": 1,
+      "sweep_samples": [
+        {
+          "elapsed_s": 0.1,
+          "sim_time_s": 1.6,
+          "requested_cm": {
+            "x": -4985.858,
+            "y": -14.142
+          },
+          "actual_cm": {
+            "x": -4985.858,
+            "y": -14.142
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.2,
+          "sim_time_s": 1.7,
+          "requested_cm": {
+            "x": -4971.716,
+            "y": -28.284
+          },
+          "actual_cm": {
+            "x": -4971.716,
+            "y": -28.284
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.3,
+          "sim_time_s": 1.8,
+          "requested_cm": {
+            "x": -4957.574,
+            "y": -42.426
+          },
+          "actual_cm": {
+            "x": -4957.574,
+            "y": -42.426
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.4,
+          "sim_time_s": 1.9,
+          "requested_cm": {
+            "x": -4943.432,
+            "y": -56.568
+          },
+          "actual_cm": {
+            "x": -4943.432,
+            "y": -56.568
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.5,
+          "sim_time_s": 2.0,
+          "requested_cm": {
+            "x": -4929.29,
+            "y": -70.71
+          },
+          "actual_cm": {
+            "x": -4929.29,
+            "y": -70.71
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.6,
+          "sim_time_s": 2.1,
+          "requested_cm": {
+            "x": -4915.148,
+            "y": -84.852
+          },
+          "actual_cm": {
+            "x": -4915.148,
+            "y": -84.852
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.7,
+          "sim_time_s": 2.2,
+          "requested_cm": {
+            "x": -4901.006,
+            "y": -98.994
+          },
+          "actual_cm": {
+            "x": -4901.006,
+            "y": -98.994
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.8,
+          "sim_time_s": 2.3,
+          "requested_cm": {
+            "x": -4886.864,
+            "y": -113.136
+          },
+          "actual_cm": {
+            "x": -4886.864,
+            "y": -113.136
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.9,
+          "sim_time_s": 2.4,
+          "requested_cm": {
+            "x": -4872.722,
+            "y": -127.278
+          },
+          "actual_cm": {
+            "x": -4872.722,
+            "y": -127.278
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.0,
+          "sim_time_s": 2.5,
+          "requested_cm": {
+            "x": -4858.58,
+            "y": -141.42
+          },
+          "actual_cm": {
+            "x": -4858.58,
+            "y": -141.42
+          },
+          "sweep_blocked": false
+        }
+      ]
+    },
+    {
+      "angle_deg": 45,
+      "length_cm": 200,
+      "endpoint_error_cm": 0.0,
+      "max_cross_track_error_cm": 2.6375346351414917e-13,
+      "camera_error_cm": 0.0,
+      "action_frames": 1,
+      "sweep_samples": [
+        {
+          "elapsed_s": 0.1,
+          "sim_time_s": 2.6,
+          "requested_cm": {
+            "x": -4985.858,
+            "y": 14.142
+          },
+          "actual_cm": {
+            "x": -4985.858,
+            "y": 14.142
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.2,
+          "sim_time_s": 2.7,
+          "requested_cm": {
+            "x": -4971.716,
+            "y": 28.284
+          },
+          "actual_cm": {
+            "x": -4971.716,
+            "y": 28.284
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.3,
+          "sim_time_s": 2.8,
+          "requested_cm": {
+            "x": -4957.574,
+            "y": 42.426
+          },
+          "actual_cm": {
+            "x": -4957.574,
+            "y": 42.426
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.4,
+          "sim_time_s": 2.9,
+          "requested_cm": {
+            "x": -4943.432,
+            "y": 56.568
+          },
+          "actual_cm": {
+            "x": -4943.432,
+            "y": 56.568
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.5,
+          "sim_time_s": 3.0,
+          "requested_cm": {
+            "x": -4929.29,
+            "y": 70.71
+          },
+          "actual_cm": {
+            "x": -4929.29,
+            "y": 70.71
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.6,
+          "sim_time_s": 3.1,
+          "requested_cm": {
+            "x": -4915.148,
+            "y": 84.852
+          },
+          "actual_cm": {
+            "x": -4915.148,
+            "y": 84.852
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.7,
+          "sim_time_s": 3.2,
+          "requested_cm": {
+            "x": -4901.006,
+            "y": 98.994
+          },
+          "actual_cm": {
+            "x": -4901.006,
+            "y": 98.994
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.8,
+          "sim_time_s": 3.3,
+          "requested_cm": {
+            "x": -4886.864,
+            "y": 113.136
+          },
+          "actual_cm": {
+            "x": -4886.864,
+            "y": 113.136
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.9,
+          "sim_time_s": 3.4,
+          "requested_cm": {
+            "x": -4872.722,
+            "y": 127.278
+          },
+          "actual_cm": {
+            "x": -4872.722,
+            "y": 127.278
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.0,
+          "sim_time_s": 3.5,
+          "requested_cm": {
+            "x": -4858.58,
+            "y": 141.42
+          },
+          "actual_cm": {
+            "x": -4858.58,
+            "y": 141.42
+          },
+          "sweep_blocked": false
+        }
+      ]
+    },
+    {
+      "angle_deg": 0,
+      "length_cm": 400,
+      "endpoint_error_cm": 0.0,
+      "max_cross_track_error_cm": 0.0,
+      "camera_error_cm": 0.0,
+      "action_frames": 3,
+      "sweep_samples": [
+        {
+          "elapsed_s": 0.1,
+          "sim_time_s": 3.6,
+          "requested_cm": {
+            "x": -4980.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4980.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.2,
+          "sim_time_s": 3.7,
+          "requested_cm": {
+            "x": -4960.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4960.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.3,
+          "sim_time_s": 3.8,
+          "requested_cm": {
+            "x": -4940.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4940.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.4,
+          "sim_time_s": 3.9,
+          "requested_cm": {
+            "x": -4920.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4920.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.5,
+          "sim_time_s": 4.0,
+          "requested_cm": {
+            "x": -4900.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4900.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.6,
+          "sim_time_s": 4.1,
+          "requested_cm": {
+            "x": -4880.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4880.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.7,
+          "sim_time_s": 4.2,
+          "requested_cm": {
+            "x": -4860.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4860.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.8,
+          "sim_time_s": 4.3,
+          "requested_cm": {
+            "x": -4840.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4840.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.9,
+          "sim_time_s": 4.4,
+          "requested_cm": {
+            "x": -4820.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4820.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.0,
+          "sim_time_s": 4.5,
+          "requested_cm": {
+            "x": -4800.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4800.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.1,
+          "sim_time_s": 4.6,
+          "requested_cm": {
+            "x": -4780.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4780.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.2,
+          "sim_time_s": 4.7,
+          "requested_cm": {
+            "x": -4760.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4760.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.3,
+          "sim_time_s": 4.8,
+          "requested_cm": {
+            "x": -4740.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4740.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.4,
+          "sim_time_s": 4.9,
+          "requested_cm": {
+            "x": -4720.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4720.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.5,
+          "sim_time_s": 5.0,
+          "requested_cm": {
+            "x": -4700.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4700.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.6,
+          "sim_time_s": 5.1,
+          "requested_cm": {
+            "x": -4680.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4680.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.7,
+          "sim_time_s": 5.2,
+          "requested_cm": {
+            "x": -4660.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4660.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.8,
+          "sim_time_s": 5.3,
+          "requested_cm": {
+            "x": -4640.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4640.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.9,
+          "sim_time_s": 5.4,
+          "requested_cm": {
+            "x": -4620.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4620.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 2.0,
+          "sim_time_s": 5.5,
+          "requested_cm": {
+            "x": -4600.0,
+            "y": 0.0
+          },
+          "actual_cm": {
+            "x": -4600.0,
+            "y": 0.0
+          },
+          "sweep_blocked": false
+        }
+      ]
+    },
+    {
+      "angle_deg": -45,
+      "length_cm": 400,
+      "endpoint_error_cm": 0.0,
+      "max_cross_track_error_cm": 4.0017766878008843e-13,
+      "camera_error_cm": 0.0,
+      "action_frames": 3,
+      "sweep_samples": [
+        {
+          "elapsed_s": 0.1,
+          "sim_time_s": 5.6,
+          "requested_cm": {
+            "x": -4985.858,
+            "y": -14.142
+          },
+          "actual_cm": {
+            "x": -4985.858,
+            "y": -14.142
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.2,
+          "sim_time_s": 5.7,
+          "requested_cm": {
+            "x": -4971.716,
+            "y": -28.284
+          },
+          "actual_cm": {
+            "x": -4971.716,
+            "y": -28.284
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.3,
+          "sim_time_s": 5.8,
+          "requested_cm": {
+            "x": -4957.574,
+            "y": -42.426
+          },
+          "actual_cm": {
+            "x": -4957.574,
+            "y": -42.426
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.4,
+          "sim_time_s": 5.9,
+          "requested_cm": {
+            "x": -4943.432,
+            "y": -56.568
+          },
+          "actual_cm": {
+            "x": -4943.432,
+            "y": -56.568
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.5,
+          "sim_time_s": 6.0,
+          "requested_cm": {
+            "x": -4929.29,
+            "y": -70.71
+          },
+          "actual_cm": {
+            "x": -4929.29,
+            "y": -70.71
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.6,
+          "sim_time_s": 6.1,
+          "requested_cm": {
+            "x": -4915.148,
+            "y": -84.852
+          },
+          "actual_cm": {
+            "x": -4915.148,
+            "y": -84.852
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.7,
+          "sim_time_s": 6.2,
+          "requested_cm": {
+            "x": -4901.006,
+            "y": -98.994
+          },
+          "actual_cm": {
+            "x": -4901.006,
+            "y": -98.994
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.8,
+          "sim_time_s": 6.3,
+          "requested_cm": {
+            "x": -4886.864,
+            "y": -113.136
+          },
+          "actual_cm": {
+            "x": -4886.864,
+            "y": -113.136
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.9,
+          "sim_time_s": 6.4,
+          "requested_cm": {
+            "x": -4872.722,
+            "y": -127.278
+          },
+          "actual_cm": {
+            "x": -4872.722,
+            "y": -127.278
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.0,
+          "sim_time_s": 6.5,
+          "requested_cm": {
+            "x": -4858.58,
+            "y": -141.42
+          },
+          "actual_cm": {
+            "x": -4858.58,
+            "y": -141.42
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.1,
+          "sim_time_s": 6.6,
+          "requested_cm": {
+            "x": -4844.438,
+            "y": -155.562
+          },
+          "actual_cm": {
+            "x": -4844.438,
+            "y": -155.562
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.2,
+          "sim_time_s": 6.7,
+          "requested_cm": {
+            "x": -4830.296,
+            "y": -169.704
+          },
+          "actual_cm": {
+            "x": -4830.296,
+            "y": -169.704
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.3,
+          "sim_time_s": 6.8,
+          "requested_cm": {
+            "x": -4816.154,
+            "y": -183.846
+          },
+          "actual_cm": {
+            "x": -4816.154,
+            "y": -183.846
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.4,
+          "sim_time_s": 6.9,
+          "requested_cm": {
+            "x": -4802.012,
+            "y": -197.988
+          },
+          "actual_cm": {
+            "x": -4802.012,
+            "y": -197.988
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.5,
+          "sim_time_s": 7.0,
+          "requested_cm": {
+            "x": -4787.87,
+            "y": -212.13
+          },
+          "actual_cm": {
+            "x": -4787.87,
+            "y": -212.13
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.6,
+          "sim_time_s": 7.1,
+          "requested_cm": {
+            "x": -4773.728,
+            "y": -226.272
+          },
+          "actual_cm": {
+            "x": -4773.728,
+            "y": -226.272
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.7,
+          "sim_time_s": 7.2,
+          "requested_cm": {
+            "x": -4759.586,
+            "y": -240.414
+          },
+          "actual_cm": {
+            "x": -4759.586,
+            "y": -240.414
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.8,
+          "sim_time_s": 7.3,
+          "requested_cm": {
+            "x": -4745.444,
+            "y": -254.556
+          },
+          "actual_cm": {
+            "x": -4745.444,
+            "y": -254.556
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.9,
+          "sim_time_s": 7.4,
+          "requested_cm": {
+            "x": -4731.302,
+            "y": -268.698
+          },
+          "actual_cm": {
+            "x": -4731.302,
+            "y": -268.698
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 2.0,
+          "sim_time_s": 7.5,
+          "requested_cm": {
+            "x": -4717.16,
+            "y": -282.84
+          },
+          "actual_cm": {
+            "x": -4717.16,
+            "y": -282.84
+          },
+          "sweep_blocked": false
+        }
+      ]
+    },
+    {
+      "angle_deg": 45,
+      "length_cm": 400,
+      "endpoint_error_cm": 0.0,
+      "max_cross_track_error_cm": 4.0017766878008843e-13,
+      "camera_error_cm": 0.0,
+      "action_frames": 3,
+      "sweep_samples": [
+        {
+          "elapsed_s": 0.1,
+          "sim_time_s": 7.6,
+          "requested_cm": {
+            "x": -4985.858,
+            "y": 14.142
+          },
+          "actual_cm": {
+            "x": -4985.858,
+            "y": 14.142
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.2,
+          "sim_time_s": 7.7,
+          "requested_cm": {
+            "x": -4971.716,
+            "y": 28.284
+          },
+          "actual_cm": {
+            "x": -4971.716,
+            "y": 28.284
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.3,
+          "sim_time_s": 7.8,
+          "requested_cm": {
+            "x": -4957.574,
+            "y": 42.426
+          },
+          "actual_cm": {
+            "x": -4957.574,
+            "y": 42.426
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.4,
+          "sim_time_s": 7.9,
+          "requested_cm": {
+            "x": -4943.432,
+            "y": 56.568
+          },
+          "actual_cm": {
+            "x": -4943.432,
+            "y": 56.568
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.5,
+          "sim_time_s": 8.0,
+          "requested_cm": {
+            "x": -4929.29,
+            "y": 70.71
+          },
+          "actual_cm": {
+            "x": -4929.29,
+            "y": 70.71
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.6,
+          "sim_time_s": 8.1,
+          "requested_cm": {
+            "x": -4915.148,
+            "y": 84.852
+          },
+          "actual_cm": {
+            "x": -4915.148,
+            "y": 84.852
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.7,
+          "sim_time_s": 8.2,
+          "requested_cm": {
+            "x": -4901.006,
+            "y": 98.994
+          },
+          "actual_cm": {
+            "x": -4901.006,
+            "y": 98.994
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.8,
+          "sim_time_s": 8.3,
+          "requested_cm": {
+            "x": -4886.864,
+            "y": 113.136
+          },
+          "actual_cm": {
+            "x": -4886.864,
+            "y": 113.136
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 0.9,
+          "sim_time_s": 8.4,
+          "requested_cm": {
+            "x": -4872.722,
+            "y": 127.278
+          },
+          "actual_cm": {
+            "x": -4872.722,
+            "y": 127.278
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.0,
+          "sim_time_s": 8.5,
+          "requested_cm": {
+            "x": -4858.58,
+            "y": 141.42
+          },
+          "actual_cm": {
+            "x": -4858.58,
+            "y": 141.42
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.1,
+          "sim_time_s": 8.6,
+          "requested_cm": {
+            "x": -4844.438,
+            "y": 155.562
+          },
+          "actual_cm": {
+            "x": -4844.438,
+            "y": 155.562
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.2,
+          "sim_time_s": 8.7,
+          "requested_cm": {
+            "x": -4830.296,
+            "y": 169.704
+          },
+          "actual_cm": {
+            "x": -4830.296,
+            "y": 169.704
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.3,
+          "sim_time_s": 8.8,
+          "requested_cm": {
+            "x": -4816.154,
+            "y": 183.846
+          },
+          "actual_cm": {
+            "x": -4816.154,
+            "y": 183.846
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.4,
+          "sim_time_s": 8.9,
+          "requested_cm": {
+            "x": -4802.012,
+            "y": 197.988
+          },
+          "actual_cm": {
+            "x": -4802.012,
+            "y": 197.988
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.5,
+          "sim_time_s": 9.0,
+          "requested_cm": {
+            "x": -4787.87,
+            "y": 212.13
+          },
+          "actual_cm": {
+            "x": -4787.87,
+            "y": 212.13
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.6,
+          "sim_time_s": 9.1,
+          "requested_cm": {
+            "x": -4773.728,
+            "y": 226.272
+          },
+          "actual_cm": {
+            "x": -4773.728,
+            "y": 226.272
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.7,
+          "sim_time_s": 9.2,
+          "requested_cm": {
+            "x": -4759.586,
+            "y": 240.414
+          },
+          "actual_cm": {
+            "x": -4759.586,
+            "y": 240.414
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.8,
+          "sim_time_s": 9.3,
+          "requested_cm": {
+            "x": -4745.444,
+            "y": 254.556
+          },
+          "actual_cm": {
+            "x": -4745.444,
+            "y": 254.556
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 1.9,
+          "sim_time_s": 9.4,
+          "requested_cm": {
+            "x": -4731.302,
+            "y": 268.698
+          },
+          "actual_cm": {
+            "x": -4731.302,
+            "y": 268.698
+          },
+          "sweep_blocked": false
+        },
+        {
+          "elapsed_s": 2.0,
+          "sim_time_s": 9.5,
+          "requested_cm": {
+            "x": -4717.16,
+            "y": 282.84
+          },
+          "actual_cm": {
+            "x": -4717.16,
+            "y": 282.84
+          },
+          "sweep_blocked": false
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "contact": {
+    "feedback": "You collided with a human.",
+    "details": {
+      "collision_authority": "ue_counters_plus_launched_vehicle_swept_radius_v2",
+      "human": 1,
+      "object": 0,
+      "building": 0,
+      "vehicle": 0,
+      "intensity": 0.0,
+      "touched_road": 1,
+      "ue_touched_road": 1,
+      "geometric_touched_road": 0,
+      "legal_authored_sidewalk": 0,
+      "legal_route_crosswalk": 0,
+      "legal_marked_crosswalk": 0,
+      "legal_non_route_crosswalk": 0,
+      "unsafe_touched_road": 1,
+      "ue_unsafe_touched_road": 1,
+      "illegal_crossing_detection_source": "ue_touched_road",
+      "state_human": 1,
+      "state_object": 0,
+      "state_building": 0,
+      "ue_building_delta": 0,
+      "ue_physical_block_contact_kind": null,
+      "ue_physical_block_human": 0,
+      "ue_physical_block_object": 0,
+      "ue_physical_block_building": 0,
+      "mapped_building_proximity": 0,
+      "off_route_move_no_progress": 0,
+      "overlap_type": 0,
+      "hazard_overlap_new_episode": 0,
+      "hazard_overlap_suppressed": 0,
+      "fall": 0,
+      "oil": 0,
+      "water": 0,
+      "action_safety_samples": [
+        {
+          "phase": "feedback",
+          "sim_time_s": 11.5,
+          "position_cm": {
+            "x": -4770.766,
+            "y": 0.0
+          },
+          "overlap_type": 0
+        }
+      ],
+      "hazard_events": []
+    },
+    "displacement_cm": 229.23400000000038,
+    "position": {
+      "x": -4770.766,
+      "y": 0.0
+    },
+    "camera": [
+      -4770.766,
+      0.0,
+      227.15
+    ],
+    "sweep_samples": [
+      {
+        "elapsed_s": 0.1,
+        "sim_time_s": 9.6,
+        "requested_cm": {
+          "x": -4980.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4980.0,
+          "y": 0.0
+        },
+        "sweep_blocked": false
+      },
+      {
+        "elapsed_s": 0.2,
+        "sim_time_s": 9.7,
+        "requested_cm": {
+          "x": -4960.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4960.0,
+          "y": 0.0
+        },
+        "sweep_blocked": false
+      },
+      {
+        "elapsed_s": 0.3,
+        "sim_time_s": 9.8,
+        "requested_cm": {
+          "x": -4940.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4940.0,
+          "y": 0.0
+        },
+        "sweep_blocked": false
+      },
+      {
+        "elapsed_s": 0.4,
+        "sim_time_s": 9.9,
+        "requested_cm": {
+          "x": -4920.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4920.0,
+          "y": 0.0
+        },
+        "sweep_blocked": false
+      },
+      {
+        "elapsed_s": 0.5,
+        "sim_time_s": 10.0,
+        "requested_cm": {
+          "x": -4900.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4900.0,
+          "y": 0.0
+        },
+        "sweep_blocked": false
+      },
+      {
+        "elapsed_s": 0.6,
+        "sim_time_s": 10.1,
+        "requested_cm": {
+          "x": -4880.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4880.0,
+          "y": 0.0
+        },
+        "sweep_blocked": false
+      },
+      {
+        "elapsed_s": 0.7,
+        "sim_time_s": 10.2,
+        "requested_cm": {
+          "x": -4860.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4860.0,
+          "y": 0.0
+        },
+        "sweep_blocked": false
+      },
+      {
+        "elapsed_s": 0.8,
+        "sim_time_s": 10.3,
+        "requested_cm": {
+          "x": -4840.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4840.0,
+          "y": 0.0
+        },
+        "sweep_blocked": false
+      },
+      {
+        "elapsed_s": 0.9,
+        "sim_time_s": 10.4,
+        "requested_cm": {
+          "x": -4820.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4820.0,
+          "y": 0.0
+        },
+        "sweep_blocked": false
+      },
+      {
+        "elapsed_s": 1.0,
+        "sim_time_s": 10.5,
+        "requested_cm": {
+          "x": -4800.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4800.0,
+          "y": 0.0
+        },
+        "sweep_blocked": false
+      },
+      {
+        "elapsed_s": 1.1,
+        "sim_time_s": 10.6,
+        "requested_cm": {
+          "x": -4780.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4780.0,
+          "y": 0.0
+        },
+        "sweep_blocked": false
+      },
+      {
+        "elapsed_s": 1.2,
+        "sim_time_s": 10.7,
+        "requested_cm": {
+          "x": -4760.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4770.766,
+          "y": 0.0
+        },
+        "sweep_blocked": true
+      },
+      {
+        "elapsed_s": 1.3,
+        "sim_time_s": 10.8,
+        "requested_cm": {
+          "x": -4740.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4770.766,
+          "y": 0.0
+        },
+        "sweep_blocked": true
+      },
+      {
+        "elapsed_s": 1.4,
+        "sim_time_s": 10.9,
+        "requested_cm": {
+          "x": -4720.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4770.766,
+          "y": 0.0
+        },
+        "sweep_blocked": true
+      },
+      {
+        "elapsed_s": 1.5,
+        "sim_time_s": 11.0,
+        "requested_cm": {
+          "x": -4700.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4770.766,
+          "y": 0.0
+        },
+        "sweep_blocked": true
+      },
+      {
+        "elapsed_s": 1.6,
+        "sim_time_s": 11.1,
+        "requested_cm": {
+          "x": -4680.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4770.766,
+          "y": 0.0
+        },
+        "sweep_blocked": true
+      },
+      {
+        "elapsed_s": 1.7,
+        "sim_time_s": 11.2,
+        "requested_cm": {
+          "x": -4660.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4770.766,
+          "y": 0.0
+        },
+        "sweep_blocked": true
+      },
+      {
+        "elapsed_s": 1.8,
+        "sim_time_s": 11.3,
+        "requested_cm": {
+          "x": -4640.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4770.766,
+          "y": 0.0
+        },
+        "sweep_blocked": true
+      },
+      {
+        "elapsed_s": 1.9,
+        "sim_time_s": 11.4,
+        "requested_cm": {
+          "x": -4620.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4770.766,
+          "y": 0.0
+        },
+        "sweep_blocked": true
+      },
+      {
+        "elapsed_s": 2.0,
+        "sim_time_s": 11.5,
+        "requested_cm": {
+          "x": -4600.0,
+          "y": 0.0
+        },
+        "actual_cm": {
+          "x": -4770.766,
+          "y": 0.0
+        },
+        "sweep_blocked": true
+      }
+    ]
+  }
+}

@@ -4724,7 +4724,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
                 )
             )
             self.assertEqual(
-                "pre_post_camera_v1",
+                "execution_alignment_v2",
                 manifest["artifact_schema_version"],
             )
             self.assertEqual([1.0, 2.0, 3.0], manifest["input_camera"]["location"])
@@ -5748,7 +5748,7 @@ class RouteCorridorInvariantTests(unittest.TestCase):
         self.assertEqual(0, collisions["building"])
         self.assertEqual(1, collisions["off_route_move_no_progress"])
 
-    def test_ue_blocked_move_near_live_pedestrian_is_human_collision(self):
+    def test_endpoint_miss_near_human_does_not_infer_collision(self):
         start = Vector(0.0, 0.0)
         end = Vector(1000.0, 0.0)
         agent = self._route_agent(Vector(140.0, 300.0), start, end, "sidewalk")
@@ -5772,13 +5772,13 @@ class RouteCorridorInvariantTests(unittest.TestCase):
 
         feedback, collisions, _ = agent.get_feedback()
 
-        self.assertIn("collided with a human", feedback)
-        self.assertEqual(1, collisions["human"])
-        self.assertEqual(1, collisions["ue_physical_block_human"])
-        self.assertEqual("human", collisions["ue_physical_block_contact_kind"])
-        self.assertEqual(0, collisions["off_route_move_no_progress"])
+        self.assertNotIn("collided with a human", feedback)
+        self.assertEqual(0, collisions["human"])
+        self.assertEqual(0, collisions["ue_physical_block_human"])
+        self.assertIsNone(collisions["ue_physical_block_contact_kind"])
+        self.assertEqual(1, collisions["off_route_move_no_progress"])
 
-    def test_ue_blocked_move_near_live_movable_is_object_collision(self):
+    def test_endpoint_miss_near_object_does_not_infer_collision(self):
         start = Vector(0.0, 0.0)
         end = Vector(1000.0, 0.0)
         agent = self._route_agent(Vector(140.0, 300.0), start, end, "sidewalk")
@@ -5805,11 +5805,11 @@ class RouteCorridorInvariantTests(unittest.TestCase):
 
         feedback, collisions, _ = agent.get_feedback()
 
-        self.assertIn("collided with an object", feedback)
-        self.assertEqual(1, collisions["object"])
-        self.assertEqual(1, collisions["ue_physical_block_object"])
-        self.assertEqual("object", collisions["ue_physical_block_contact_kind"])
-        self.assertEqual(0, collisions["off_route_move_no_progress"])
+        self.assertNotIn("collided with an object", feedback)
+        self.assertEqual(0, collisions["object"])
+        self.assertEqual(0, collisions["ue_physical_block_object"])
+        self.assertIsNone(collisions["ue_physical_block_contact_kind"])
+        self.assertEqual(1, collisions["off_route_move_no_progress"])
 
 
     def test_zero_displacement_without_ue_contact_is_not_building_collision(self):

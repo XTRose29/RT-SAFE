@@ -839,8 +839,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--process-shutdown-timeout", type=float, default=20.0)
     parser.add_argument("--status-interval", type=float, default=30.0)
     parser.add_argument("--record-png-compress-level", type=int, default=3)
-    parser.add_argument("--record-images-first-steps", type=int, default=3)
-    parser.add_argument("--record-images-last-steps", type=int, default=3)
+    parser.add_argument("--record-images-first-steps", type=int, default=0)
+    parser.add_argument("--record-images-last-steps", type=int, default=0)
     # Guard thresholds are remaining allowance (100 - utilization).
     parser.add_argument("--min-five-hour-remaining", type=float, default=20.0)
     parser.add_argument("--min-weekly-remaining", type=float, default=10.0)

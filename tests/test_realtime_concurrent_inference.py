@@ -51,7 +51,8 @@ class ConcurrentRealtimeInferenceTests(unittest.TestCase):
         agent.fixed_action_seconds = None
         agent.camera_id = 1
         agent.fov = 100
-        agent.communicator = SimpleNamespace(unrealcv=FakeUnrealCV())
+        agent.name = "RT_AGENT"
+        agent.communicator = SimpleNamespace(unrealcv=FakeUnrealCV(), get_states=lambda name: (0,0,0,0.,0,0))
         agent.disable_step_evaluation = True
         agent.record_per_step = False
         agent.record_dir = None
@@ -78,7 +79,11 @@ class ConcurrentRealtimeInferenceTests(unittest.TestCase):
 
         agent.plan = plan
 
+        agent.action_frames = [object()]
+        agent.recording_action_frames = [object()]
         agent.step("llm")
+        self.assertEqual([], agent.action_frames)
+        self.assertEqual([], agent.recording_action_frames)
 
         self.assertLess(events.index("resume"), events.index("plan_start"))
         self.assertLess(events.index("plan_end"), events.index("pause"))
@@ -147,7 +152,7 @@ class ConcurrentRealtimeInferenceTests(unittest.TestCase):
         agent.first_person_actor_base_height_cm = 92.0
         agent.position = Vector(100.0, 200.0)
         agent.direction = 90.0
-        agent.communicator = SimpleNamespace(unrealcv=unrealcv)
+        agent.communicator = SimpleNamespace(unrealcv=unrealcv, get_states=lambda name: (0,0,0,0.,0,0))
         agent.disable_step_evaluation = True
         agent.record_per_step = False
         agent.record_dir = None
@@ -171,7 +176,11 @@ class ConcurrentRealtimeInferenceTests(unittest.TestCase):
             {"response_time": 0.02},
         )
 
+        agent.action_frames = [object()]
+        agent.recording_action_frames = [object()]
         agent.step("llm")
+        self.assertEqual([], agent.action_frames)
+        self.assertEqual([], agent.recording_action_frames)
 
         self.assertLess(events.index("pause"), events.index("restore_location"))
         self.assertLess(
@@ -218,7 +227,8 @@ class ConcurrentRealtimeInferenceTests(unittest.TestCase):
         agent.fixed_action_seconds = None
         agent.camera_id = 1
         agent.fov = 100
-        agent.communicator = SimpleNamespace(unrealcv=FakeUnrealCV())
+        agent.name = "RT_AGENT"
+        agent.communicator = SimpleNamespace(unrealcv=FakeUnrealCV(), get_states=lambda name: (0,0,0,0.,0,0))
         agent.disable_step_evaluation = True
         agent.record_per_step = False
         agent.record_dir = None
@@ -240,7 +250,11 @@ class ConcurrentRealtimeInferenceTests(unittest.TestCase):
             {"response_time": 12.5},
         )
 
+        agent.action_frames = [object()]
+        agent.recording_action_frames = [object()]
         agent.step("llm")
+        self.assertEqual([], agent.action_frames)
+        self.assertEqual([], agent.recording_action_frames)
 
         self.assertEqual(0.0, agent.sim_time_elapsed)
         self.assertEqual(

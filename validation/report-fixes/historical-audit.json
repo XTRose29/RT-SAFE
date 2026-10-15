@@ -1,0 +1,111 @@
+{
+  "counts": {
+    "episodes": 288,
+    "collisions": 954,
+    "safe_success": 57,
+    "decisions": 13361,
+    "moves_ue_blueprint_move_to": 10374,
+    "reached_ue_blueprint_move_to": 10374,
+    "endpoint_recomputed_ue_blueprint_move_to": 10374,
+    "moving_ue_blueprint_move_to": 10374,
+    "camera_start_ue_blueprint_move_to": 0,
+    "camera_end_ue_blueprint_move_to": 10374,
+    "moves_ue_physical_off_route": 1299,
+    "reached_ue_physical_off_route": 92,
+    "endpoint_recomputed_ue_physical_off_route": 92,
+    "moving_ue_physical_off_route": 1095,
+    "camera_start_ue_physical_off_route": 1095,
+    "camera_end_ue_physical_off_route": 0,
+    "fallback_count": 734,
+    "safe_without_fallback": 80,
+    "red_light": 52,
+    "red_previous_move": 52,
+    "red_current_wait_turn": 29,
+    "red_at_start": 52,
+    "human_decisions": 709,
+    "human_fallback": 571,
+    "fallback_zero_engine_human": 569,
+    "fallback_decisions": 734,
+    "fallback_zero_intensity": 687,
+    "object_decisions": 187,
+    "object_fallback": 163,
+    "fallback_zero_engine_object": 162
+  },
+  "directions": {
+    "0": {
+      "chosen_direction": 439,
+      "elsewhere": 203,
+      "no_move": 108
+    },
+    "45": {
+      "elsewhere": 36,
+      "straight": 117,
+      "chosen_direction": 34,
+      "no_move": 28
+    },
+    "-45": {
+      "no_move": 68,
+      "elsewhere": 52,
+      "chosen_direction": 23,
+      "straight": 191
+    }
+  },
+  "per_model": {
+    "deepseek_deepseek-v4-flash-vision-exp": {
+      "episodes": 36,
+      "collisions": 144,
+      "safe_success": 6,
+      "fallback_count": 121,
+      "safe_without_fallback": 10
+    },
+    "google_gemini-3_8-flash": {
+      "episodes": 36,
+      "collisions": 102,
+      "safe_success": 8,
+      "fallback_count": 77,
+      "safe_without_fallback": 10
+    },
+    "gpt-5_6-sol": {
+      "episodes": 36,
+      "collisions": 195,
+      "safe_success": 6,
+      "fallback_count": 155,
+      "safe_without_fallback": 10
+    },
+    "gpt-6-astra": {
+      "episodes": 36,
+      "collisions": 91,
+      "safe_success": 7,
+      "fallback_count": 69,
+      "safe_without_fallback": 8
+    },
+    "thinkingmachines_inkling": {
+      "episodes": 36,
+      "collisions": 44,
+      "safe_success": 11,
+      "fallback_count": 23,
+      "safe_without_fallback": 13
+    },
+    "x-ai_grok-4_6": {
+      "episodes": 36,
+      "collisions": 97,
+      "safe_success": 10,
+      "fallback_count": 73,
+      "safe_without_fallback": 14
+    },
+    "claude-fable-5-1": {
+      "episodes": 36,
+      "collisions": 118,
+      "safe_success": 7,
+      "fallback_count": 85,
+      "safe_without_fallback": 9
+    },
+    "claude-sonnet-5": {
+      "episodes": 36,
+      "collisions": 163,
+      "safe_success": 2,
+      "fallback_count": 131,
+      "safe_without_fallback": 6
+    }
+  }
+}
