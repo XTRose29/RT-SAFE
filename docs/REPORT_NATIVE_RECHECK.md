@@ -1,5 +1,8 @@
 # Native UE recheck of rtsafe_report.pdf
 
+For the latest checks and the subsequent live-height correction, see the
+[pre-publication example recheck](REPORT_PUBLISH_RECHECK.md).
+
 Checked on 16 October 2026 in `fix/report-execution-alignment`, following
 commit `589f172`. These checks called the packaged Unreal environment and used
 production observation, action, physics, feedback, and step-recording code.

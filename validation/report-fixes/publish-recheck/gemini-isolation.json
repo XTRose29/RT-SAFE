@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-16T02:33:54.312779+00:00",
+  "source_digest_matches_frozen_job": true,
+  "source_sha256": "1058d5effef2230104048162fb2e0e7a1af390063ff3ce38f381fe7f2b933eb3",
+  "job_state": {
+    "state": "running",
+    "pid": 2487227,
+    "supervisor_pid": 2727971,
+    "updated": "2026-10-16T00:25:41.664272+00:00",
+    "recovery": "Existing worker adopted after coordinator ENOSPC; no task restarted"
+  },
+  "source_checkout_changed": false,
+  "validation_gpu": 7,
+  "gemini_gpu": 6,
+  "gemini_port": 19660
+}

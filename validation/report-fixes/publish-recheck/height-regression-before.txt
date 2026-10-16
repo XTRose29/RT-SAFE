@@ -1,0 +1,46 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____________ test_sweep_preserves_height_updated_by_native_physics _____________
+
+    def test_sweep_preserves_height_updated_by_native_physics():
+        world = SweepWorld()
+        a = agent_in(world)
+        advance = a._advance_simulation_time
+        sweep = world.move_actor_with_sweep
+    
+        def physics_tick(dt):
+            advance(dt)
+            # Native floor depenetration/gravity changes height between sweeps.
+            world.location[2] += .25
+    
+        def checked_sweep(name, target):
+            assert target[2] == pytest.approx(world.location[2])
+            return sweep(name, target)
+    
+        a._advance_simulation_time = physics_tick
+        world.move_actor_with_sweep = checked_sweep
+>       a.move_to(Vector(400, 0))
+
+tests/test_report_regressions.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+base/rt_agent.py:3811: in move_to
+    frames = self._execute_swept_waypoint_move(move_start, waypoint, move_time)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+base/rt_agent.py:3849: in _execute_swept_waypoint_move
+    actual = ue.move_actor_with_sweep(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'RT_AGENT', target = (20.0, 0.0, 110.0)
+
+    def checked_sweep(name, target):
+>       assert target[2] == pytest.approx(world.location[2])
+E       assert 110.0 == 110.25 ± 1.1e-04
+E         
+E         comparison failed
+E         Obtained: 110.0
+E         Expected: 110.25 ± 1.1e-04
+
+tests/test_report_regressions.py:114: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_report_regressions.py::test_sweep_preserves_height_updated_by_native_physics
+1 failed in 1.32s

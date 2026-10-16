@@ -1,0 +1,45 @@
+{
+  "checked_at": "2026-10-16T02:34:37.556548+00:00",
+  "all_selected_checks_passed": true,
+  "report_scope": "All report categories checked; hazard trigger identity/visibility remains partial. Native runtime crashes are not fixed.",
+  "example_count": 9,
+  "maps": [
+    "map1_10roads",
+    "map2_12roads",
+    "map3_15roads",
+    "map4_18roads",
+    "map5_20roads"
+  ],
+  "rollout_decisions": 27,
+  "rollout_camera_captures": 121,
+  "rollout_camera_xy_error_cm": 0.0,
+  "rollout_safe_success": false,
+  "policy_interventions": [],
+  "production_source_sha256": {
+    "base/rt_agent.py": "976c933fd4ff889129c03f8e60ccf4b615e4126158401cd073598cf195095b08",
+    "manager/world_manager.py": "89b289e86b7408f7042c82fe24d68c6dc3b95cbc26ed7f723e5a543d47c25ff7",
+    "llm/prompt.py": "5d9e319e94002fe8ca03317fa350bf745480597a9462798329b625690b5b9c1b",
+    "base/rt_unrealcv.py": "9d79e9b15b1f1d3b22069deb52e33fe6f77aa9834fe9b1744c960ce60f3e0ab5"
+  },
+  "validation_runtime_root": "/home/rose/rtsafe-report-publish-validation",
+  "limitations": [
+    "Historical dynamic actor state and prior hazard occupancy are not reconstructed.",
+    "Seven historical example replays and the vehicle consequence check preceded the live-height change; affected examples, full task, rays, contacts and hazards were rerun afterward.",
+    "Task rollout uses a scripted/greedy test policy, not a scored VLM; interventions and contacts are recorded explicitly.",
+    "Renderer crash during one task10 scene setup; fresh retry passed.",
+    "Early replay fixture camera/actor-yaw mismatch and null move metadata on a TURN were corrected and rerun.",
+    "Height diagnostic camera capture failure was bypassed using a camera-free physical isolation test.",
+    "Initial parked-car negative control had no blocker in this scene; replaced by a deterministic static barrier with a pedestrian inside 325 cm."
+  ],
+  "artifacts": {
+    "example-replays.json": "9321217c42c2bc29c8b77f50c85a3888beb4a12afd3af6ddf0b51e7ab212ceae",
+    "height-before-fix-native.json": "09d194ce78136da595b4f022f247880d5d97578652b01f19c3fb27b6459d546d",
+    "historical-example-index.json": "1ff1e01fcbfed75c81d1e2a5412172aeb1973e02bfa21c8b15e69dd97ede4f86",
+    "height-regression-before.txt": "522623149155f3112f1fd9f533281d2c6475a0c2affe7ea00ddd0c13b31a275d",
+    "task15-final.json": "1eaf65cdb5b4b7bda68a7637671d8756c5b702a7e7c952a3e6990442d8fc4b2a",
+    "gemini-isolation.json": "581658a760d378bc6ea6c76dd758d89552597a7015e2490404f19ec025587267",
+    "native-controls.json": "3d53cdd65fc7db68e8856ea324ab8c2a8873bb3f90166e8b57d5ef89eb48cd99",
+    "pytest-final.txt": "41b61470e999ac7f3629f9cc06f129a1004b80baa7931c038c87c1168caab456"
+  },
+  "report_sha256": "e8d7808ebeefc9af3f2fe9f8e16a5df24310455cfbd22a550fd2fb70cf50fa14"
+}

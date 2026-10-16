@@ -99,6 +99,28 @@ def test_sweep_stops_at_thin_obstacle_without_endpoint_snap_or_repeat_hits():
     assert 'collided with a human' in feedback
 
 
+def test_sweep_preserves_height_updated_by_native_physics():
+    world = SweepWorld()
+    a = agent_in(world)
+    advance = a._advance_simulation_time
+    sweep = world.move_actor_with_sweep
+
+    def physics_tick(dt):
+        advance(dt)
+        # Native floor depenetration/gravity changes height between sweeps.
+        world.location[2] += .25
+
+    def checked_sweep(name, target):
+        assert target[2] == pytest.approx(world.location[2])
+        return sweep(name, target)
+
+    a._advance_simulation_time = physics_tick
+    world.move_actor_with_sweep = checked_sweep
+    a.move_to(Vector(400, 0))
+    assert a.position == Vector(400, 0)
+    assert world.location[2] == pytest.approx(115.)
+
+
 def test_entry_event_is_observed_during_the_move_that_crosses():
     a = agent_in(SweepWorld())
     events = []

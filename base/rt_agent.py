@@ -3846,8 +3846,13 @@ class RTAgent(BaseAgent):
             elapsed = round(elapsed + chunk, 6)
             requested = start + delta * min(1.0, elapsed / duration)
             if not blocked:
+                # Physics may settle or depenetrate the capsule during the
+                # preceding tick. Preserve that live height: restoring the
+                # action's old Z can sweep down into the floor and falsely
+                # block an otherwise clear horizontal waypoint.
+                live_height = float(ue.get_location(self.name)[2])
                 actual = ue.move_actor_with_sweep(
-                    self.name, (requested.x, requested.y, location[2]))
+                    self.name, (requested.x, requested.y, live_height))
                 blocked = math.hypot(actual[0] - requested.x,
                                      actual[1] - requested.y) > 0.5
             else:

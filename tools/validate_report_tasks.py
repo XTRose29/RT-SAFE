@@ -38,15 +38,16 @@ class PreparedWorld(WorldManager):
         return SimpleNamespace(model_name='scripted-native-validation')
 
 
-def prepare(ue, output, task_id=15):
+def prepare(ue, output, task_id=15, map_name='map2_12roads'):
+    task_file = ROOT / 'data' / map_name / 'tasks.json'
     m = PreparedWorld(RTCommunicator(ue), agent_path='data/agents.json',
-        task_file_path='data/map2_12roads/tasks.json', seed=0, use_tick=True,
+        task_file_path=str(task_file), seed=0, use_tick=True,
         realtime_thinking=False, use_action_frames=True, record_per_step=True,
         control_mode='greedy', pedestrians_enabled=False,
         movable_obstacles_enabled=False, irregular_npcs_enabled=False,
         falling_objects_enabled=False, red_light_conflict_vehicle_enabled=False,
         results_dir=str(output))
-    tasks = json.loads((ROOT/'data/map2_12roads/tasks.json').read_text())['tasks']
+    tasks = json.loads(task_file.read_text())['tasks']
     m.run_single_task(next(i for i,t in enumerate(tasks) if t['task_id']==task_id), 'hard')
     return m
 
@@ -73,6 +74,8 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--port', type=int, required=True)
     p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--sidewalk-recovery', action='store_true',
+                   help='Allow an explicit scripted sidewalk recovery if greedy stalls.')
     args=p.parse_args(); configure_probe_environment(); args.output.mkdir(parents=True,exist_ok=True)
     # The full route is a controlled static-scene harness test. Vehicle
     # consequences and changing signals are exercised by the crossing probe.
@@ -96,9 +99,24 @@ def main():
         # First action matches all eight reported policies; then an explicit
         # parse-error probe tests the actual step pipeline and image retention.
         actions={0:('move_to','5'),1:None,2:('wait','1'),3:('turn_around','L30'),4:('turn_around','R30')}
+        recovery_queue = []
+        result['policy_interventions'] = []
         for _ in range(80):
             if a.success or a.failed:break
             a.validation_action=actions.get(a.step_num,'baseline')
+            if (args.sidewalk_recovery and not result['policy_interventions']
+                    and len(result['steps']) > 8 and a.position.x < -1000
+                    and 9400 < a.position.y < 9600
+                    and a.current_destination.distance(a.destination) < 1
+                    and result['steps'][-1].get('stagnation', {}).get('count', 0) >= 2):
+                from simworld.utils.vector import Vector
+                turn = a._turn_toward_target_action(Vector(a.position.x, 9300))
+                recovery_queue = [(turn.action_type, turn.action_param), ('move_to', '2')]
+                result['policy_interventions'].append({
+                    'step': a.step_num, 'reason': 'greedy blocked at parked car',
+                    'actions': recovery_queue.copy(), 'actor_teleported': False})
+            if recovery_queue:
+                a.validation_action = recovery_queue.pop(0)
             before=a.step_num
             a.step('greedy')
             trace=dict(a.decision_trace[-1])
@@ -106,6 +124,8 @@ def main():
             trace['live_actor']=[float(v) for v in ue.get_location(a.name)]
             trace['live_camera']=[float(x) for x in ue.get_camera_location(a.camera_id).split()]
             result['steps'].append(trace)
+            result['camera_samples'] = captures
+            result['input_image_counts'] = a.validation_inputs
             print(json.dumps({'step':before,'position':trace['live_actor'],
                  'action':trace.get('executed_action'),'feedback':trace.get('feedback'),
                  'success':a.success,'failed':a.failed}),flush=True)

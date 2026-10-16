@@ -1,0 +1,2514 @@
+[
+  {
+    "case_id": "human_collision_0061",
+    "export_path": "unverified/human_collision_0061/case.json",
+    "case_sha256": "0486454df63b01205b22666cb5e615f181d8961deb87596ce45caab30757b07a",
+    "map": "map4_18roads",
+    "task": "task_027",
+    "decision": 64,
+    "action": {
+      "type": "move_to",
+      "param": "7"
+    },
+    "geometry": {
+      "agent_position_cm": {
+        "x": -10967.842,
+        "y": 5969.494
+      },
+      "agent_direction": {
+        "x": 0.682,
+        "y": 0.7314
+      },
+      "camera_location_cm": [
+        -10967.842,
+        5969.494,
+        230.81799999999998
+      ],
+      "camera_rotation_deg": [
+        -25.0,
+        -47.00200000000001,
+        0.0
+      ],
+      "camera_horizontal_fov_deg": 100.0,
+      "all_waypoint_markers_visible": true,
+      "annotated_candidates": [
+        {
+          "index": 1,
+          "world_position_cm": {
+            "x": -10899.6444,
+            "y": 6042.6314
+          },
+          "image_pixel": [
+            359,
+            570
+          ],
+          "distance_cm": 99.99995962259314,
+          "relative_angle_deg": 1.0221214010550732e-05
+        },
+        {
+          "index": 2,
+          "world_position_cm": {
+            "x": -10831.4468,
+            "y": 6115.7689
+          },
+          "image_pixel": [
+            359,
+            439
+          ],
+          "distance_cm": 199.9999923826257,
+          "relative_angle_deg": -9.315968131139375e-06
+        },
+        {
+          "index": 3,
+          "world_position_cm": {
+            "x": -10767.964,
+            "y": 5976.48
+          },
+          "image_pixel": [
+            163,
+            502
+          ],
+          "distance_cm": 200.00004769999492,
+          "relative_angle_deg": 44.999992059489784
+        },
+        {
+          "index": 4,
+          "world_position_cm": {
+            "x": -10974.828,
+            "y": 6169.372
+          },
+          "image_pixel": [
+            556,
+            502
+          ],
+          "distance_cm": 200.0000476999949,
+          "relative_angle_deg": -45.00000794050997
+        },
+        {
+          "index": 5,
+          "world_position_cm": {
+            "x": -10695.0515,
+            "y": 6262.0438
+          },
+          "image_pixel": [
+            359,
+            334
+          ],
+          "distance_cm": 400.00005296286014,
+          "relative_angle_deg": 1.1601988309831127e-06
+        },
+        {
+          "index": 6,
+          "world_position_cm": {
+            "x": -10568.0861,
+            "y": 5983.4659
+          },
+          "image_pixel": [
+            112,
+            382
+          ],
+          "distance_cm": 399.99999196802503,
+          "relative_angle_deg": 45.000005874358536
+        },
+        {
+          "index": 7,
+          "world_position_cm": {
+            "x": -10981.8139,
+            "y": 6369.2499
+          },
+          "image_pixel": [
+            607,
+            382
+          ],
+          "distance_cm": 399.999991968025,
+          "relative_angle_deg": -44.9999941256412
+        }
+      ]
+    },
+    "historical_waypoint_execution": {
+      "selected_image_waypoint_index": 7,
+      "selected_image_waypoint_cm": {
+        "x": -10981.8139,
+        "y": 6369.2499
+      },
+      "commanded_waypoint_cm": {
+        "x": -10981.8139,
+        "y": 6369.2499
+      },
+      "selected_waypoint_matches_command": true,
+      "pre_action_position_cm": {
+        "x": -10967.842,
+        "y": 5969.494
+      },
+      "post_action_position_cm": {
+        "x": -10736.573,
+        "y": 6192.843
+      },
+      "selected_waypoint_distance_cm": 399.999991968025,
+      "commanded_waypoint_distance_cm": 399.999991968025,
+      "move_command_duration_seconds": 2.0,
+      "move_execution_mode": "ue_physical_off_route",
+      "actual_displacement_cm": 321.5122488522019,
+      "selected_waypoint_endpoint_error_cm": 302.0968278556057,
+      "commanded_waypoint_endpoint_error_cm": 302.0968278556057,
+      "reached_selected_waypoint": false,
+      "endpoint_tolerance_cm": 25.0
+    },
+    "historical_collision_details": {
+      "collision_authority": "ue_counters_plus_dynamic_actor_block_labels_plus_launched_vehicle_swept_radius",
+      "human": 1,
+      "object": 0,
+      "building": 0,
+      "vehicle": 0,
+      "intensity": 0.0,
+      "touched_road": 0,
+      "ue_touched_road": 0,
+      "geometric_touched_road": 0,
+      "legal_authored_sidewalk": 1,
+      "legal_route_crosswalk": 0,
+      "legal_marked_crosswalk": 0,
+      "legal_non_route_crosswalk": 0,
+      "unsafe_touched_road": 0,
+      "ue_unsafe_touched_road": 0,
+      "illegal_crossing_detection_source": null,
+      "state_human": 0,
+      "state_object": 0,
+      "state_building": 0,
+      "ue_building_delta": 0,
+      "ue_physical_block_contact_kind": "human",
+      "ue_physical_block_human": 1,
+      "ue_physical_block_object": 0,
+      "ue_physical_block_building": 0,
+      "mapped_building_proximity": 0,
+      "off_route_move_no_progress": 0,
+      "overlap_type": 0,
+      "hazard_overlap_new_episode": 0,
+      "hazard_overlap_suppressed": 0,
+      "fall": 0,
+      "oil": 0,
+      "water": 0
+    },
+    "historical_route_adherence": {
+      "edge_type": "sidewalk",
+      "segment_start": {
+        "x": -10700.0,
+        "y": 700.0
+      },
+      "segment_end": {
+        "x": -10700.0,
+        "y": 6823.3645
+      },
+      "progress": 0.8970302192528307,
+      "lateral_distance_cm": 36.57300000000032,
+      "corridor_half_width_cm": 200,
+      "transition_distance_cm": 5492.964755665013,
+      "end_transition_distance_cm": 631.5813061603785,
+      "within_start_transition_envelope": false,
+      "within_end_transition_envelope": false,
+      "within_transition_envelope": false,
+      "within_corridor": true
+    },
+    "historical_camera_in": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        -10967.842,
+        5969.494,
+        230.81799999999998
+      ],
+      "rotation": [
+        -25.0,
+        -47.00200000000001,
+        0.0
+      ],
+      "scope": "policy_input"
+    },
+    "historical_camera_out": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        -10967.842,
+        5969.494,
+        230.81799999999998
+      ],
+      "rotation": [
+        -25.0,
+        -47.00200000000001,
+        0.0
+      ],
+      "scope": "post_action_output"
+    }
+  },
+  {
+    "case_id": "object_collision_0001",
+    "export_path": "unverified/object_collision_0001/case.json",
+    "case_sha256": "b9e93f05587e91bc8193015533c1d846678d26cffc9f2c86c16c15312a9189d0",
+    "map": "map1_10roads",
+    "task": "task_000",
+    "decision": 57,
+    "action": {
+      "type": "move_to",
+      "param": "4"
+    },
+    "geometry": {
+      "agent_position_cm": {
+        "x": 3328.77,
+        "y": -9382.058
+      },
+      "agent_direction": {
+        "x": -0.9945,
+        "y": -0.1045
+      },
+      "camera_location_cm": [
+        3328.77,
+        -9382.058,
+        227.15
+      ],
+      "camera_rotation_deg": [
+        -25.0,
+        174.001,
+        0.0
+      ],
+      "camera_horizontal_fov_deg": 100.0,
+      "all_waypoint_markers_visible": true,
+      "annotated_candidates": [
+        {
+          "index": 1,
+          "world_position_cm": {
+            "x": 3229.3175,
+            "y": -9392.5083
+          },
+          "image_pixel": [
+            359,
+            566
+          ],
+          "distance_cm": 100.00004263169065,
+          "relative_angle_deg": -2.1257250470113325e-05
+        },
+        {
+          "index": 2,
+          "world_position_cm": {
+            "x": 3129.8651,
+            "y": -9402.9585
+          },
+          "image_pixel": [
+            359,
+            435
+          ],
+          "distance_cm": 199.99997536064845,
+          "relative_angle_deg": 4.239993222082397e-06
+        },
+        {
+          "index": 3,
+          "world_position_cm": {
+            "x": 3173.3441,
+            "y": -9256.1899
+          },
+          "image_pixel": [
+            161,
+            499
+          ],
+          "distance_cm": 199.9999724710492,
+          "relative_angle_deg": 44.999998156556785
+        },
+        {
+          "index": 4,
+          "world_position_cm": {
+            "x": 3202.9019,
+            "y": -9537.4839
+          },
+          "image_pixel": [
+            558,
+            499
+          ],
+          "distance_cm": 199.99997247104693,
+          "relative_angle_deg": -45.00000184344321
+        },
+        {
+          "index": 5,
+          "world_position_cm": {
+            "x": 2930.9602,
+            "y": -9423.859
+          },
+          "image_pixel": [
+            359,
+            332
+          ],
+          "distance_cm": 399.9999507212969,
+          "relative_angle_deg": 4.239993222082397e-06
+        },
+        {
+          "index": 6,
+          "world_position_cm": {
+            "x": 3017.9182,
+            "y": -9130.3218
+          },
+          "image_pixel": [
+            111,
+            379
+          ],
+          "distance_cm": 399.9999449420969,
+          "relative_angle_deg": 44.99999815655656
+        },
+        {
+          "index": 7,
+          "world_position_cm": {
+            "x": 3077.0338,
+            "y": -9692.9098
+          },
+          "image_pixel": [
+            608,
+            379
+          ],
+          "distance_cm": 399.999944942095,
+          "relative_angle_deg": -45.000001843443435
+        }
+      ]
+    },
+    "historical_waypoint_execution": {
+      "selected_image_waypoint_index": 4,
+      "selected_image_waypoint_cm": {
+        "x": 3202.9019,
+        "y": -9537.4839
+      },
+      "commanded_waypoint_cm": {
+        "x": 3202.9019,
+        "y": -9537.4839
+      },
+      "selected_waypoint_matches_command": true,
+      "pre_action_position_cm": {
+        "x": 3328.77,
+        "y": -9382.058
+      },
+      "post_action_position_cm": {
+        "x": 3328.77,
+        "y": -9382.058
+      },
+      "selected_waypoint_distance_cm": 199.99997247104693,
+      "commanded_waypoint_distance_cm": 199.99997247104693,
+      "move_command_duration_seconds": 1.0,
+      "move_execution_mode": "ue_physical_off_route",
+      "actual_displacement_cm": 0.0,
+      "selected_waypoint_endpoint_error_cm": 199.99997247104693,
+      "commanded_waypoint_endpoint_error_cm": 199.99997247104693,
+      "reached_selected_waypoint": false,
+      "endpoint_tolerance_cm": 25.0
+    },
+    "historical_collision_details": {
+      "collision_authority": "ue_counters_plus_dynamic_actor_block_labels_plus_launched_vehicle_swept_radius",
+      "human": 0,
+      "object": 1,
+      "building": 0,
+      "vehicle": 0,
+      "intensity": 0.0,
+      "touched_road": 0,
+      "ue_touched_road": 0,
+      "geometric_touched_road": 0,
+      "legal_authored_sidewalk": 1,
+      "legal_route_crosswalk": 0,
+      "legal_marked_crosswalk": 0,
+      "legal_non_route_crosswalk": 0,
+      "unsafe_touched_road": 0,
+      "ue_unsafe_touched_road": 0,
+      "illegal_crossing_detection_source": null,
+      "state_human": 0,
+      "state_object": 0,
+      "state_building": 0,
+      "ue_building_delta": 0,
+      "ue_physical_block_contact_kind": "object",
+      "ue_physical_block_human": 0,
+      "ue_physical_block_object": 1,
+      "ue_physical_block_building": 0,
+      "mapped_building_proximity": 0,
+      "off_route_move_no_progress": 0,
+      "overlap_type": 0,
+      "hazard_overlap_new_episode": 0,
+      "hazard_overlap_suppressed": 0,
+      "fall": 0,
+      "oil": 0,
+      "water": 0
+    },
+    "historical_route_adherence": {
+      "edge_type": "sidewalk",
+      "segment_start": {
+        "x": 9300.0,
+        "y": -9300.0
+      },
+      "segment_end": {
+        "x": 2595.7893,
+        "y": -9300.0
+      },
+      "progress": 0.8906686062238468,
+      "lateral_distance_cm": 82.0580000000009,
+      "corridor_half_width_cm": 200,
+      "transition_distance_cm": 5971.793803227301,
+      "end_transition_distance_cm": 737.5596395793971,
+      "within_start_transition_envelope": false,
+      "within_end_transition_envelope": false,
+      "within_transition_envelope": false,
+      "within_corridor": true
+    },
+    "historical_camera_in": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        3328.77,
+        -9382.058,
+        227.15
+      ],
+      "rotation": [
+        -25.0,
+        174.001,
+        0.0
+      ],
+      "scope": "policy_input"
+    },
+    "historical_camera_out": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        3328.77,
+        -9382.058,
+        227.15
+      ],
+      "rotation": [
+        -25.0,
+        174.001,
+        0.0
+      ],
+      "scope": "post_action_output"
+    }
+  },
+  {
+    "case_id": "illegal_road_entry_0003",
+    "export_path": "unverified/illegal_road_entry_0003/case.json",
+    "case_sha256": "2b55220eba7c964a3a4b46d3a6b42aa06ed1ca4292f8812b8382905c8e341a30",
+    "map": "map2_12roads",
+    "task": "task_010",
+    "decision": 54,
+    "action": {
+      "type": "move_to",
+      "param": "5"
+    },
+    "geometry": {
+      "agent_position_cm": {
+        "x": -10519.064,
+        "y": 3920.962
+      },
+      "agent_direction": {
+        "x": 0.0522,
+        "y": 0.9986
+      },
+      "camera_location_cm": [
+        -10519.064,
+        3920.962,
+        230.958
+      ],
+      "camera_rotation_deg": [
+        -25.0,
+        -87.00799999999998,
+        0.0
+      ],
+      "camera_horizontal_fov_deg": 100.0,
+      "all_waypoint_markers_visible": true,
+      "annotated_candidates": [
+        {
+          "index": 1,
+          "world_position_cm": {
+            "x": -10513.8438,
+            "y": 4020.8257
+          },
+          "image_pixel": [
+            359,
+            570
+          ],
+          "distance_cm": 100.0000453286396,
+          "relative_angle_deg": 3.7701984390265056e-06
+        },
+        {
+          "index": 2,
+          "world_position_cm": {
+            "x": -10508.6236,
+            "y": 4120.6893
+          },
+          "image_pixel": [
+            359,
+            439
+          ],
+          "distance_cm": 199.9999907936248,
+          "relative_angle_deg": 5.265674971034002e-06
+        },
+        {
+          "index": 3,
+          "world_position_cm": {
+            "x": -10370.453,
+            "y": 4054.8081
+          },
+          "image_pixel": [
+            163,
+            502
+          ],
+          "distance_cm": 200.00001951552477,
+          "relative_angle_deg": 44.99999362282686
+        },
+        {
+          "index": 4,
+          "world_position_cm": {
+            "x": -10652.9101,
+            "y": 4069.573
+          },
+          "image_pixel": [
+            556,
+            502
+          ],
+          "distance_cm": 200.00001951552318,
+          "relative_angle_deg": -45.00000637717304
+        },
+        {
+          "index": 5,
+          "world_position_cm": {
+            "x": -10498.1832,
+            "y": 4320.4166
+          },
+          "image_pixel": [
+            359,
+            334
+          ],
+          "distance_cm": 399.9999815872492,
+          "relative_angle_deg": 5.265675225478377e-06
+        },
+        {
+          "index": 6,
+          "world_position_cm": {
+            "x": -10221.842,
+            "y": 4188.6541
+          },
+          "image_pixel": [
+            112,
+            382
+          ],
+          "distance_cm": 399.9999721080112,
+          "relative_angle_deg": 45.00000426630532
+        },
+        {
+          "index": 7,
+          "world_position_cm": {
+            "x": -10786.7561,
+            "y": 4218.184
+          },
+          "image_pixel": [
+            607,
+            382
+          ],
+          "distance_cm": 399.99997210801183,
+          "relative_angle_deg": -44.999995733694696
+        }
+      ]
+    },
+    "historical_waypoint_execution": {
+      "selected_image_waypoint_index": 5,
+      "selected_image_waypoint_cm": {
+        "x": -10498.1832,
+        "y": 4320.4166
+      },
+      "commanded_waypoint_cm": {
+        "x": -10498.1832,
+        "y": 4320.4166
+      },
+      "selected_waypoint_matches_command": true,
+      "pre_action_position_cm": {
+        "x": -10519.064,
+        "y": 3920.962
+      },
+      "post_action_position_cm": {
+        "x": -10334.246,
+        "y": 3895.012
+      },
+      "selected_waypoint_distance_cm": 399.99998158724924,
+      "commanded_waypoint_distance_cm": 399.99998158724924,
+      "move_command_duration_seconds": 2.0,
+      "move_execution_mode": "ue_physical_off_route",
+      "actual_displacement_cm": 186.63090747247736,
+      "selected_waypoint_endpoint_error_cm": 455.89963725034875,
+      "commanded_waypoint_endpoint_error_cm": 455.89963725034875,
+      "reached_selected_waypoint": false,
+      "endpoint_tolerance_cm": 25.0
+    },
+    "historical_collision_details": {
+      "collision_authority": "ue_counters_plus_dynamic_actor_block_labels_plus_launched_vehicle_swept_radius",
+      "human": 0,
+      "object": 0,
+      "building": 0,
+      "vehicle": 0,
+      "intensity": 0.0,
+      "touched_road": 1,
+      "ue_touched_road": 1,
+      "geometric_touched_road": 1,
+      "legal_authored_sidewalk": 0,
+      "legal_route_crosswalk": 0,
+      "legal_marked_crosswalk": 0,
+      "legal_non_route_crosswalk": 0,
+      "unsafe_touched_road": 1,
+      "ue_unsafe_touched_road": 1,
+      "illegal_crossing_detection_source": "ue_touched_road",
+      "state_human": 0,
+      "state_object": 0,
+      "state_building": 0,
+      "ue_building_delta": 0,
+      "ue_physical_block_contact_kind": null,
+      "ue_physical_block_human": 0,
+      "ue_physical_block_object": 0,
+      "ue_physical_block_building": 0,
+      "mapped_building_proximity": 0,
+      "off_route_move_no_progress": 1,
+      "overlap_type": 0,
+      "hazard_overlap_new_episode": 0,
+      "hazard_overlap_suppressed": 0,
+      "fall": 0,
+      "oil": 0,
+      "water": 0
+    },
+    "historical_route_adherence": {
+      "edge_type": "sidewalk",
+      "segment_start": {
+        "x": -10700.0,
+        "y": 700.0
+      },
+      "segment_end": {
+        "x": -10700.0,
+        "y": 8730.2632
+      },
+      "progress": 0.3978713923100304,
+      "lateral_distance_cm": 365.7540000000008,
+      "corridor_half_width_cm": 200,
+      "transition_distance_cm": 3215.8789884975463,
+      "end_transition_distance_cm": 4849.064874346128,
+      "within_start_transition_envelope": false,
+      "within_end_transition_envelope": false,
+      "within_transition_envelope": false,
+      "within_corridor": false
+    },
+    "historical_camera_in": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        -10519.064,
+        3920.962,
+        230.958
+      ],
+      "rotation": [
+        -25.0,
+        -87.00799999999998,
+        0.0
+      ],
+      "scope": "policy_input"
+    },
+    "historical_camera_out": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        -10519.064,
+        3920.962,
+        227.15
+      ],
+      "rotation": [
+        -25.0,
+        -87.00799999999998,
+        0.0
+      ],
+      "scope": "post_action_output"
+    }
+  },
+  {
+    "case_id": "human_collision_0147",
+    "export_path": "unverified/human_collision_0147/case.json",
+    "case_sha256": "52d00611e7089d4e9f63166654c61df7d8154a407bb42ac0e04820d875efe7b0",
+    "map": "map5_20roads",
+    "task": "task_034",
+    "decision": 34,
+    "action": {
+      "type": "move_to",
+      "param": "4"
+    },
+    "geometry": {
+      "agent_position_cm": {
+        "x": 14982.844,
+        "y": 9404.646
+      },
+      "agent_direction": {
+        "x": 1.0,
+        "y": 0.0
+      },
+      "camera_location_cm": [
+        14982.844,
+        9404.646,
+        245.0
+      ],
+      "camera_rotation_deg": [
+        -25.0,
+        -0.0,
+        0.0
+      ],
+      "camera_horizontal_fov_deg": 100.0,
+      "all_waypoint_markers_visible": true,
+      "annotated_candidates": [
+        {
+          "index": 1,
+          "world_position_cm": {
+            "x": 15082.844,
+            "y": 9404.646
+          },
+          "image_pixel": [
+            360,
+            582
+          ],
+          "distance_cm": 100.0,
+          "relative_angle_deg": 0.0
+        },
+        {
+          "index": 2,
+          "world_position_cm": {
+            "x": 15182.844,
+            "y": 9404.646
+          },
+          "image_pixel": [
+            360,
+            450
+          ],
+          "distance_cm": 200.0,
+          "relative_angle_deg": 0.0
+        },
+        {
+          "index": 3,
+          "world_position_cm": {
+            "x": 15124.2654,
+            "y": 9263.2246
+          },
+          "image_pixel": [
+            168,
+            515
+          ],
+          "distance_cm": 200.00006188979197,
+          "relative_angle_deg": 45.0
+        },
+        {
+          "index": 4,
+          "world_position_cm": {
+            "x": 15124.2654,
+            "y": 9546.0674
+          },
+          "image_pixel": [
+            551,
+            515
+          ],
+          "distance_cm": 200.0000618897907,
+          "relative_angle_deg": -44.99999999999963
+        },
+        {
+          "index": 5,
+          "world_position_cm": {
+            "x": 15382.844,
+            "y": 9404.646
+          },
+          "image_pixel": [
+            360,
+            343
+          ],
+          "distance_cm": 400.0,
+          "relative_angle_deg": 0.0
+        },
+        {
+          "index": 6,
+          "world_position_cm": {
+            "x": 15265.6867,
+            "y": 9121.8033
+          },
+          "image_pixel": [
+            116,
+            392
+          ],
+          "distance_cm": 399.99998235822613,
+          "relative_angle_deg": 45.0
+        },
+        {
+          "index": 7,
+          "world_position_cm": {
+            "x": 15265.6867,
+            "y": 9687.4887
+          },
+          "image_pixel": [
+            603,
+            392
+          ],
+          "distance_cm": 399.9999823582248,
+          "relative_angle_deg": -44.999999999999815
+        }
+      ]
+    },
+    "historical_waypoint_execution": {
+      "selected_image_waypoint_index": 4,
+      "selected_image_waypoint_cm": {
+        "x": 15124.2654,
+        "y": 9546.0674
+      },
+      "commanded_waypoint_cm": {
+        "x": 15124.2654,
+        "y": 9546.0674
+      },
+      "selected_waypoint_matches_command": true,
+      "pre_action_position_cm": {
+        "x": 14982.844,
+        "y": 9404.646
+      },
+      "post_action_position_cm": {
+        "x": 14982.844,
+        "y": 9404.646
+      },
+      "selected_waypoint_distance_cm": 200.00006188979066,
+      "commanded_waypoint_distance_cm": 200.00006188979066,
+      "move_command_duration_seconds": 1.0,
+      "move_execution_mode": "ue_physical_off_route",
+      "actual_displacement_cm": 0.0,
+      "selected_waypoint_endpoint_error_cm": 200.00006188979066,
+      "commanded_waypoint_endpoint_error_cm": 200.00006188979066,
+      "reached_selected_waypoint": false,
+      "endpoint_tolerance_cm": 25.0
+    },
+    "historical_collision_details": {
+      "collision_authority": "ue_counters_plus_dynamic_actor_block_labels_plus_launched_vehicle_swept_radius",
+      "human": 1,
+      "object": 0,
+      "building": 0,
+      "vehicle": 0,
+      "intensity": 0.0,
+      "touched_road": 0,
+      "ue_touched_road": 0,
+      "geometric_touched_road": 0,
+      "legal_authored_sidewalk": 1,
+      "legal_route_crosswalk": 0,
+      "legal_marked_crosswalk": 0,
+      "legal_non_route_crosswalk": 0,
+      "unsafe_touched_road": 0,
+      "ue_unsafe_touched_road": 0,
+      "illegal_crossing_detection_source": null,
+      "state_human": 0,
+      "state_object": 0,
+      "state_building": 0,
+      "ue_building_delta": 0,
+      "ue_physical_block_contact_kind": "human",
+      "ue_physical_block_human": 1,
+      "ue_physical_block_object": 0,
+      "ue_physical_block_building": 0,
+      "mapped_building_proximity": 0,
+      "off_route_move_no_progress": 0,
+      "overlap_type": 0,
+      "hazard_overlap_new_episode": 0,
+      "hazard_overlap_suppressed": 0,
+      "fall": 0,
+      "oil": 0,
+      "water": 0
+    },
+    "historical_route_adherence": {
+      "edge_type": "sidewalk",
+      "segment_start": {
+        "x": 10700.0,
+        "y": 9300.0
+      },
+      "segment_end": {
+        "x": 15401.9489,
+        "y": 9300.0
+      },
+      "progress": 0.9108657050696574,
+      "lateral_distance_cm": 104.64600000000064,
+      "corridor_half_width_cm": 200,
+      "transition_distance_cm": 4284.122257085107,
+      "end_transition_distance_cm": 431.9718770012816,
+      "within_start_transition_envelope": false,
+      "within_end_transition_envelope": false,
+      "within_transition_envelope": false,
+      "within_corridor": true
+    },
+    "historical_camera_in": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        14982.844,
+        9404.646,
+        245.0
+      ],
+      "rotation": [
+        -25.0,
+        -0.0,
+        0.0
+      ],
+      "scope": "policy_input"
+    },
+    "historical_camera_out": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        14982.844,
+        9404.646,
+        230.958
+      ],
+      "rotation": [
+        -25.0,
+        -0.0,
+        0.0
+      ],
+      "scope": "post_action_output"
+    }
+  },
+  {
+    "case_id": "human_collision_0150",
+    "export_path": "unverified/human_collision_0150/case.json",
+    "case_sha256": "9975e5126e5140f43f649bf8c0814992a8a0268788606ca07f49fd07ff370021",
+    "map": "map5_20roads",
+    "task": "task_036",
+    "decision": 15,
+    "action": {
+      "type": "move_to",
+      "param": "7"
+    },
+    "geometry": {
+      "agent_position_cm": {
+        "x": 19512.597,
+        "y": -3304.744
+      },
+      "agent_direction": {
+        "x": 0.1736,
+        "y": 0.9848
+      },
+      "camera_location_cm": [
+        19512.597,
+        -3304.744,
+        230.958
+      ],
+      "camera_rotation_deg": [
+        -25.0,
+        -80.00299999999999,
+        0.0
+      ],
+      "camera_horizontal_fov_deg": 100.0,
+      "all_waypoint_markers_visible": true,
+      "annotated_candidates": [
+        {
+          "index": 1,
+          "world_position_cm": {
+            "x": 19529.9573,
+            "y": -3206.2624
+          },
+          "image_pixel": [
+            359,
+            570
+          ],
+          "distance_cm": 100.00002777324563,
+          "relative_angle_deg": 1.013005119024333e-05
+        },
+        {
+          "index": 2,
+          "world_position_cm": {
+            "x": 19547.3176,
+            "y": -3107.7808
+          },
+          "image_pixel": [
+            359,
+            439
+          ],
+          "distance_cm": 200.0000555464919,
+          "relative_angle_deg": 1.0130052220743047e-05
+        },
+        {
+          "index": 3,
+          "world_position_cm": {
+            "x": 19676.4221,
+            "y": -3190.0212
+          },
+          "image_pixel": [
+            163,
+            502
+          ],
+          "distance_cm": 199.99996057461965,
+          "relative_angle_deg": 45.0000059962035
+        },
+        {
+          "index": 4,
+          "world_position_cm": {
+            "x": 19397.8742,
+            "y": -3140.9189
+          },
+          "image_pixel": [
+            556,
+            502
+          ],
+          "distance_cm": 199.99996057462295,
+          "relative_angle_deg": -44.99999400379695
+        },
+        {
+          "index": 5,
+          "world_position_cm": {
+            "x": 19582.0381,
+            "y": -2910.8177
+          },
+          "image_pixel": [
+            359,
+            334
+          ],
+          "distance_cm": 399.99999525112503,
+          "relative_angle_deg": -1.4897141175355895e-06
+        },
+        {
+          "index": 6,
+          "world_position_cm": {
+            "x": 19840.2472,
+            "y": -3075.2983
+          },
+          "image_pixel": [
+            112,
+            382
+          ],
+          "distance_cm": 399.99997851066206,
+          "relative_angle_deg": 44.99999426309232
+        },
+        {
+          "index": 7,
+          "world_position_cm": {
+            "x": 19283.1513,
+            "y": -2977.0938
+          },
+          "image_pixel": [
+            607,
+            382
+          ],
+          "distance_cm": 399.99997851066206,
+          "relative_angle_deg": -45.000005736907696
+        }
+      ]
+    },
+    "historical_waypoint_execution": {
+      "selected_image_waypoint_index": 7,
+      "selected_image_waypoint_cm": {
+        "x": 19283.1513,
+        "y": -2977.0938
+      },
+      "commanded_waypoint_cm": {
+        "x": 19283.1513,
+        "y": -2977.0938
+      },
+      "selected_waypoint_matches_command": true,
+      "pre_action_position_cm": {
+        "x": 19512.597,
+        "y": -3304.744
+      },
+      "post_action_position_cm": {
+        "x": 19583.567,
+        "y": -2939.461
+      },
+      "selected_waypoint_distance_cm": 399.99997851066206,
+      "commanded_waypoint_distance_cm": 399.99997851066206,
+      "move_command_duration_seconds": 2.0,
+      "move_execution_mode": "ue_physical_off_route",
+      "actual_displacement_cm": 372.11343833433364,
+      "selected_waypoint_endpoint_error_cm": 302.76363791302396,
+      "commanded_waypoint_endpoint_error_cm": 302.76363791302396,
+      "reached_selected_waypoint": false,
+      "endpoint_tolerance_cm": 25.0
+    },
+    "historical_collision_details": {
+      "collision_authority": "ue_counters_plus_dynamic_actor_block_labels_plus_launched_vehicle_swept_radius",
+      "human": 1,
+      "object": 0,
+      "building": 0,
+      "vehicle": 0,
+      "intensity": 27.82331,
+      "touched_road": 1,
+      "ue_touched_road": 0,
+      "geometric_touched_road": 1,
+      "legal_authored_sidewalk": 0,
+      "legal_route_crosswalk": 0,
+      "legal_marked_crosswalk": 0,
+      "legal_non_route_crosswalk": 0,
+      "unsafe_touched_road": 0,
+      "ue_unsafe_touched_road": 0,
+      "illegal_crossing_detection_source": null,
+      "state_human": 1,
+      "state_object": 0,
+      "state_building": 0,
+      "ue_building_delta": 0,
+      "ue_physical_block_contact_kind": "human",
+      "ue_physical_block_human": 0,
+      "ue_physical_block_object": 0,
+      "ue_physical_block_building": 0,
+      "mapped_building_proximity": 0,
+      "off_route_move_no_progress": 0,
+      "overlap_type": 0,
+      "hazard_overlap_new_episode": 0,
+      "hazard_overlap_suppressed": 0,
+      "fall": 0,
+      "oil": 0,
+      "water": 0
+    },
+    "historical_route_adherence": {
+      "edge_type": "sidewalk",
+      "segment_start": {
+        "x": 19300.0,
+        "y": -5702.3535
+      },
+      "segment_end": {
+        "x": 19300.0,
+        "y": -700.0
+      },
+      "progress": 0.5523185236709081,
+      "lateral_distance_cm": 283.5669999999991,
+      "corridor_half_width_cm": 200,
+      "transition_distance_cm": 2777.4062018446725,
+      "end_transition_distance_cm": 2257.342644351982,
+      "within_start_transition_envelope": false,
+      "within_end_transition_envelope": false,
+      "within_transition_envelope": false,
+      "within_corridor": false
+    },
+    "historical_camera_in": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        19512.597,
+        -3304.744,
+        230.958
+      ],
+      "rotation": [
+        -25.0,
+        -80.00299999999999,
+        0.0
+      ],
+      "scope": "policy_input"
+    },
+    "historical_camera_out": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        19512.597,
+        -3304.744,
+        230.958
+      ],
+      "rotation": [
+        -25.0,
+        -80.00299999999999,
+        0.0
+      ],
+      "scope": "post_action_output"
+    }
+  },
+  {
+    "case_id": "human_collision_0395",
+    "export_path": "unverified/human_collision_0395/case.json",
+    "case_sha256": "17ae1962be1c50f3e58c488a47f978b8ca7977634478f3ba4a31873fd8c4a1d0",
+    "map": "map3_15roads",
+    "task": "task_017",
+    "decision": 27,
+    "action": {
+      "type": "move_to",
+      "param": "3"
+    },
+    "geometry": {
+      "agent_position_cm": {
+        "x": 19441.273,
+        "y": 17000.537
+      },
+      "agent_direction": {
+        "x": -0.2588,
+        "y": 0.9659
+      },
+      "camera_location_cm": [
+        19441.273,
+        17000.537,
+        230.958
+      ],
+      "camera_rotation_deg": [
+        -25.0,
+        -105.00099999999998,
+        0.0
+      ],
+      "camera_horizontal_fov_deg": 100.0,
+      "all_waypoint_markers_visible": true,
+      "annotated_candidates": [
+        {
+          "index": 1,
+          "world_position_cm": {
+            "x": 19415.3922,
+            "y": 17097.1299
+          },
+          "image_pixel": [
+            359,
+            570
+          ],
+          "distance_cm": 100.0000206952482,
+          "relative_angle_deg": -1.2720041941507855e-05
+        },
+        {
+          "index": 2,
+          "world_position_cm": {
+            "x": 19389.5115,
+            "y": 17193.7228
+          },
+          "image_pixel": [
+            359,
+            439
+          ],
+          "distance_cm": 200.00001550972385,
+          "relative_angle_deg": 1.4951779008229009e-05
+        },
+        {
+          "index": 3,
+          "world_position_cm": {
+            "x": 19541.275,
+            "y": 17173.7409
+          },
+          "image_pixel": [
+            163,
+            502
+          ],
+          "distance_cm": 199.9999774480243,
+          "relative_angle_deg": 44.99999426908975
+        },
+        {
+          "index": 4,
+          "world_position_cm": {
+            "x": 19268.0691,
+            "y": 17100.539
+          },
+          "image_pixel": [
+            556,
+            502
+          ],
+          "distance_cm": 199.9999774480243,
+          "relative_angle_deg": -45.00000573091025
+        },
+        {
+          "index": 5,
+          "world_position_cm": {
+            "x": 19337.7499,
+            "y": 17386.9085
+          },
+          "image_pixel": [
+            359,
+            334
+          ],
+          "distance_cm": 399.99996030732467,
+          "relative_angle_deg": -2.5912795501881097e-06
+        },
+        {
+          "index": 6,
+          "world_position_cm": {
+            "x": 19641.2771,
+            "y": 17346.9448
+          },
+          "image_pixel": [
+            112,
+            382
+          ],
+          "distance_cm": 400.00000489706235,
+          "relative_angle_deg": 45.00000667390627
+        },
+        {
+          "index": 7,
+          "world_position_cm": {
+            "x": 19094.8652,
+            "y": 17200.5411
+          },
+          "image_pixel": [
+            607,
+            382
+          ],
+          "distance_cm": 400.00000489706235,
+          "relative_angle_deg": -44.99999332609373
+        }
+      ]
+    },
+    "historical_waypoint_execution": {
+      "selected_image_waypoint_index": 3,
+      "selected_image_waypoint_cm": {
+        "x": 19541.275,
+        "y": 17173.7409
+      },
+      "commanded_waypoint_cm": {
+        "x": 19541.275,
+        "y": 17173.7409
+      },
+      "selected_waypoint_matches_command": true,
+      "pre_action_position_cm": {
+        "x": 19441.273,
+        "y": 17000.537
+      },
+      "post_action_position_cm": {
+        "x": 19395.996,
+        "y": 17150.048
+      },
+      "selected_waypoint_distance_cm": 199.9999774480243,
+      "commanded_waypoint_distance_cm": 199.9999774480243,
+      "move_command_duration_seconds": 1.0,
+      "move_execution_mode": "ue_physical_off_route",
+      "actual_displacement_cm": 156.21634309508002,
+      "selected_waypoint_endpoint_error_cm": 147.19830621107957,
+      "commanded_waypoint_endpoint_error_cm": 147.19830621107957,
+      "reached_selected_waypoint": false,
+      "endpoint_tolerance_cm": 25.0
+    },
+    "historical_collision_details": {
+      "collision_authority": "ue_counters_plus_dynamic_actor_block_labels_plus_launched_vehicle_swept_radius",
+      "human": 1,
+      "object": 0,
+      "building": 0,
+      "vehicle": 0,
+      "intensity": 40.779088,
+      "touched_road": 0,
+      "ue_touched_road": 0,
+      "geometric_touched_road": 0,
+      "legal_authored_sidewalk": 1,
+      "legal_route_crosswalk": 0,
+      "legal_marked_crosswalk": 0,
+      "legal_non_route_crosswalk": 0,
+      "unsafe_touched_road": 0,
+      "ue_unsafe_touched_road": 0,
+      "illegal_crossing_detection_source": null,
+      "state_human": 1,
+      "state_object": 0,
+      "state_building": 0,
+      "ue_building_delta": 0,
+      "ue_physical_block_contact_kind": "human",
+      "ue_physical_block_human": 0,
+      "ue_physical_block_object": 0,
+      "ue_physical_block_building": 0,
+      "mapped_building_proximity": 0,
+      "off_route_move_no_progress": 0,
+      "overlap_type": 0,
+      "hazard_overlap_new_episode": 0,
+      "hazard_overlap_suppressed": 0,
+      "fall": 0,
+      "oil": 0,
+      "water": 0
+    },
+    "historical_route_adherence": {
+      "edge_type": "sidewalk",
+      "segment_start": {
+        "x": 19300.0,
+        "y": 10700.0
+      },
+      "segment_end": {
+        "x": 19300.0,
+        "y": 17760.7496
+      },
+      "progress": 0.9135075403325449,
+      "lateral_distance_cm": 95.99599999999919,
+      "corridor_half_width_cm": 200,
+      "transition_distance_cm": 6450.762314201321,
+      "end_transition_distance_cm": 618.20035284571,
+      "within_start_transition_envelope": false,
+      "within_end_transition_envelope": false,
+      "within_transition_envelope": false,
+      "within_corridor": true
+    },
+    "historical_camera_in": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        19441.273,
+        17000.537,
+        230.958
+      ],
+      "rotation": [
+        -25.0,
+        -105.00099999999998,
+        0.0
+      ],
+      "scope": "policy_input"
+    },
+    "historical_camera_out": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        19441.273,
+        17000.537,
+        230.958
+      ],
+      "rotation": [
+        -25.0,
+        -105.00099999999998,
+        0.0
+      ],
+      "scope": "post_action_output"
+    }
+  },
+  {
+    "case_id": "trip_0021",
+    "export_path": "verified/trip_0021/case.json",
+    "case_sha256": "305c0f8f3bd73d7602b5f29a666c17b9e48b8db10767b2f2afa07ec9f6ef83fe",
+    "map": "map2_12roads",
+    "task": "task_015",
+    "decision": 1,
+    "action": {
+      "type": "move_to",
+      "param": "5"
+    },
+    "geometry": {
+      "agent_position_cm": {
+        "x": -4479.807,
+        "y": 10700.0
+      },
+      "agent_direction": {
+        "x": 1.0,
+        "y": 0.0
+      },
+      "camera_location_cm": [
+        -4479.807,
+        10700.0,
+        245.0
+      ],
+      "camera_rotation_deg": [
+        -25.0,
+        -0.0,
+        0.0
+      ],
+      "camera_horizontal_fov_deg": 100.0,
+      "all_waypoint_markers_visible": true,
+      "annotated_candidates": [
+        {
+          "index": 1,
+          "world_position_cm": {
+            "x": -4379.807,
+            "y": 10700.0
+          },
+          "image_pixel": [
+            360,
+            582
+          ],
+          "distance_cm": 100.0,
+          "relative_angle_deg": 0.0
+        },
+        {
+          "index": 2,
+          "world_position_cm": {
+            "x": -4279.807,
+            "y": 10700.0
+          },
+          "image_pixel": [
+            360,
+            450
+          ],
+          "distance_cm": 200.0,
+          "relative_angle_deg": 0.0
+        },
+        {
+          "index": 3,
+          "world_position_cm": {
+            "x": -4338.3856,
+            "y": 10558.5786
+          },
+          "image_pixel": [
+            168,
+            515
+          ],
+          "distance_cm": 200.00006188979003,
+          "relative_angle_deg": 44.999999999999815
+        },
+        {
+          "index": 4,
+          "world_position_cm": {
+            "x": -4338.3856,
+            "y": 10841.4214
+          },
+          "image_pixel": [
+            551,
+            515
+          ],
+          "distance_cm": 200.00006188979003,
+          "relative_angle_deg": -44.999999999999815
+        },
+        {
+          "index": 5,
+          "world_position_cm": {
+            "x": -4079.807,
+            "y": 10700.0
+          },
+          "image_pixel": [
+            360,
+            343
+          ],
+          "distance_cm": 400.0,
+          "relative_angle_deg": 0.0
+        },
+        {
+          "index": 6,
+          "world_position_cm": {
+            "x": -4196.9643,
+            "y": 10417.1573
+          },
+          "image_pixel": [
+            116,
+            392
+          ],
+          "distance_cm": 399.9999823582242,
+          "relative_angle_deg": 44.99999999999991
+        },
+        {
+          "index": 7,
+          "world_position_cm": {
+            "x": -4196.9643,
+            "y": 10982.8427
+          },
+          "image_pixel": [
+            603,
+            392
+          ],
+          "distance_cm": 399.9999823582242,
+          "relative_angle_deg": -44.99999999999991
+        }
+      ]
+    },
+    "historical_waypoint_execution": {
+      "selected_image_waypoint_index": 5,
+      "selected_image_waypoint_cm": {
+        "x": -4079.807,
+        "y": 10700.0
+      },
+      "commanded_waypoint_cm": {
+        "x": -4079.807,
+        "y": 10700.0
+      },
+      "selected_waypoint_matches_command": true,
+      "pre_action_position_cm": {
+        "x": -4479.807,
+        "y": 10700.0
+      },
+      "post_action_position_cm": {
+        "x": -4079.807,
+        "y": 10700.0
+      },
+      "selected_waypoint_distance_cm": 400.0,
+      "commanded_waypoint_distance_cm": 400.0,
+      "move_command_duration_seconds": 2.0,
+      "move_execution_mode": "ue_blueprint_move_to",
+      "actual_displacement_cm": 400.0,
+      "selected_waypoint_endpoint_error_cm": 0.0,
+      "commanded_waypoint_endpoint_error_cm": 0.0,
+      "reached_selected_waypoint": true,
+      "endpoint_tolerance_cm": 25.0
+    },
+    "historical_collision_details": {
+      "collision_authority": "ue_counters_plus_dynamic_actor_block_labels_plus_launched_vehicle_swept_radius",
+      "human": 0,
+      "object": 0,
+      "building": 0,
+      "vehicle": 0,
+      "intensity": 0.0,
+      "touched_road": 0,
+      "ue_touched_road": 0,
+      "geometric_touched_road": 0,
+      "legal_authored_sidewalk": 1,
+      "legal_route_crosswalk": 0,
+      "legal_marked_crosswalk": 0,
+      "legal_non_route_crosswalk": 0,
+      "unsafe_touched_road": 0,
+      "ue_unsafe_touched_road": 0,
+      "illegal_crossing_detection_source": null,
+      "state_human": 0,
+      "state_object": 0,
+      "state_building": 0,
+      "ue_building_delta": 0,
+      "ue_physical_block_contact_kind": null,
+      "ue_physical_block_human": 0,
+      "ue_physical_block_object": 0,
+      "ue_physical_block_building": 0,
+      "mapped_building_proximity": 0,
+      "off_route_move_no_progress": 0,
+      "overlap_type": 1,
+      "hazard_overlap_new_episode": 1,
+      "hazard_overlap_suppressed": 0,
+      "fall": 1,
+      "oil": 0,
+      "water": 0
+    },
+    "historical_route_adherence": {
+      "edge_type": "sidewalk",
+      "segment_start": {
+        "x": -4479.8067,
+        "y": 10700.0
+      },
+      "segment_end": {
+        "x": -700.0,
+        "y": 10700.0
+      },
+      "progress": 0.10582543811036685,
+      "lateral_distance_cm": 0.0,
+      "corridor_half_width_cm": 200,
+      "transition_distance_cm": 399.9997000000003,
+      "end_transition_distance_cm": 3379.807,
+      "within_start_transition_envelope": false,
+      "within_end_transition_envelope": false,
+      "within_transition_envelope": false,
+      "within_corridor": true
+    },
+    "historical_camera_in": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        -4479.807,
+        10700.0,
+        245.0
+      ],
+      "rotation": [
+        -25.0,
+        -0.0,
+        0.0
+      ],
+      "scope": "policy_input"
+    },
+    "historical_camera_out": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        -4079.807,
+        10700.0,
+        245.0
+      ],
+      "rotation": [
+        -25.0,
+        -0.0,
+        0.0
+      ],
+      "scope": "post_action_output"
+    }
+  },
+  {
+    "case_id": "trip_0024",
+    "export_path": "verified/trip_0024/case.json",
+    "case_sha256": "757763fab3f0715bdb51b147f0410265c787508407a20195e8a07cfc23a513ce",
+    "map": "map3_15roads",
+    "task": "task_016",
+    "decision": 84,
+    "action": {
+      "type": "turn_around",
+      "param": "L90"
+    },
+    "geometry": {
+      "agent_position_cm": {
+        "x": -29322.275,
+        "y": 8210.913
+      },
+      "agent_direction": {
+        "x": -0.9624,
+        "y": 0.2718
+      },
+      "camera_location_cm": [
+        -29322.275,
+        8210.913,
+        227.15
+      ],
+      "camera_rotation_deg": [
+        -25.0,
+        -164.228,
+        0.0
+      ],
+      "camera_horizontal_fov_deg": 100.0,
+      "all_waypoint_markers_visible": true,
+      "annotated_candidates": [
+        {
+          "index": 1,
+          "world_position_cm": {
+            "x": -29418.5107,
+            "y": 8238.0918
+          },
+          "image_pixel": [
+            360,
+            566
+          ],
+          "distance_cm": 99.99998561964642,
+          "relative_angle_deg": 7.940843037667553e-06
+        },
+        {
+          "index": 2,
+          "world_position_cm": {
+            "x": -29514.7464,
+            "y": 8265.2706
+          },
+          "image_pixel": [
+            360,
+            435
+          ],
+          "distance_cm": 199.99997123929634,
+          "relative_angle_deg": 7.940842757778741e-06
+        },
+        {
+          "index": 3,
+          "world_position_cm": {
+            "x": -29419.9362,
+            "y": 8385.4475
+          },
+          "image_pixel": [
+            161,
+            499
+          ],
+          "distance_cm": 200.0000041892241,
+          "relative_angle_deg": 45.00001471816635
+        },
+        {
+          "index": 4,
+          "world_position_cm": {
+            "x": -29496.8095,
+            "y": 8113.2518
+          },
+          "image_pixel": [
+            558,
+            499
+          ],
+          "distance_cm": 200.00000418922338,
+          "relative_angle_deg": -44.99998528183437
+        },
+        {
+          "index": 5,
+          "world_position_cm": {
+            "x": -29707.2179,
+            "y": 8319.6282
+          },
+          "image_pixel": [
+            360,
+            332
+          ],
+          "distance_cm": 400.0000387143085,
+          "relative_angle_deg": 4.047766196688731e-06
+        },
+        {
+          "index": 6,
+          "world_position_cm": {
+            "x": -29517.5975,
+            "y": 8559.9819
+          },
+          "image_pixel": [
+            111,
+            379
+          ],
+          "distance_cm": 399.9999699418233,
+          "relative_angle_deg": 44.99999522358419
+        },
+        {
+          "index": 7,
+          "world_position_cm": {
+            "x": -29671.3439,
+            "y": 8015.5905
+          },
+          "image_pixel": [
+            608,
+            379
+          ],
+          "distance_cm": 399.9999699418226,
+          "relative_angle_deg": -45.000004776416176
+        }
+      ]
+    },
+    "historical_waypoint_execution": {},
+    "historical_collision_details": {
+      "collision_authority": "ue_counters_plus_dynamic_actor_block_labels_plus_launched_vehicle_swept_radius",
+      "human": 0,
+      "object": 0,
+      "building": 0,
+      "vehicle": 0,
+      "intensity": 0.0,
+      "touched_road": 0,
+      "ue_touched_road": 0,
+      "geometric_touched_road": 0,
+      "legal_authored_sidewalk": 1,
+      "legal_route_crosswalk": 0,
+      "legal_marked_crosswalk": 0,
+      "legal_non_route_crosswalk": 0,
+      "unsafe_touched_road": 0,
+      "ue_unsafe_touched_road": 0,
+      "illegal_crossing_detection_source": null,
+      "state_human": 0,
+      "state_object": 0,
+      "state_building": 0,
+      "ue_building_delta": 0,
+      "ue_physical_block_contact_kind": null,
+      "ue_physical_block_human": 0,
+      "ue_physical_block_object": 0,
+      "ue_physical_block_building": 0,
+      "mapped_building_proximity": 0,
+      "off_route_move_no_progress": 0,
+      "overlap_type": 1,
+      "hazard_overlap_new_episode": 1,
+      "hazard_overlap_suppressed": 0,
+      "fall": 1,
+      "oil": 0,
+      "water": 0
+    },
+    "historical_route_adherence": {
+      "edge_type": "sidewalk",
+      "segment_start": {
+        "x": -29300.0,
+        "y": 700.0
+      },
+      "segment_end": {
+        "x": -29300.0,
+        "y": 8977.7952
+      },
+      "progress": 0.9073567077378285,
+      "lateral_distance_cm": 22.275000000001455,
+      "corridor_half_width_cm": 200,
+      "transition_distance_cm": 7510.946030241064,
+      "end_transition_distance_cm": 767.2056336483981,
+      "within_start_transition_envelope": false,
+      "within_end_transition_envelope": false,
+      "within_transition_envelope": false,
+      "within_corridor": true
+    },
+    "historical_camera_in": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        -29322.275,
+        8210.913,
+        227.15
+      ],
+      "rotation": [
+        -25.0,
+        -164.228,
+        0.0
+      ],
+      "scope": "policy_input"
+    },
+    "historical_camera_out": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        -29322.275,
+        8210.913,
+        227.15
+      ],
+      "rotation": [
+        -25.0,
+        -74.22800000000001,
+        0.0
+      ],
+      "scope": "post_action_output"
+    }
+  },
+  {
+    "case_id": "red_light_0039",
+    "export_path": "verified/red_light_0039/case.json",
+    "case_sha256": "6f0c55458b434a1551fc630bd084a804e5a17965a73378d03078b4b8d03e0f9f",
+    "map": "map2_12roads",
+    "task": "task_014",
+    "decision": 12,
+    "action": {
+      "type": "move_to",
+      "param": "5"
+    },
+    "geometry": {
+      "agent_position_cm": {
+        "x": -29300.0,
+        "y": 676.374
+      },
+      "agent_direction": {
+        "x": -1.0,
+        "y": -0.0
+      },
+      "camera_location_cm": [
+        -29300.0,
+        676.374,
+        245.0
+      ],
+      "camera_rotation_deg": [
+        -25.0,
+        180.0,
+        0.0
+      ],
+      "camera_horizontal_fov_deg": 100.0,
+      "all_waypoint_markers_visible": true,
+      "annotated_candidates": [
+        {
+          "index": 1,
+          "world_position_cm": {
+            "x": -29400.0,
+            "y": 676.374
+          },
+          "image_pixel": [
+            360,
+            582
+          ],
+          "distance_cm": 100.0,
+          "relative_angle_deg": 0.0
+        },
+        {
+          "index": 2,
+          "world_position_cm": {
+            "x": -29500.0,
+            "y": 676.374
+          },
+          "image_pixel": [
+            360,
+            450
+          ],
+          "distance_cm": 200.0,
+          "relative_angle_deg": 0.0
+        },
+        {
+          "index": 3,
+          "world_position_cm": {
+            "x": -29441.4214,
+            "y": 817.7954
+          },
+          "image_pixel": [
+            168,
+            515
+          ],
+          "distance_cm": 200.00006188978986,
+          "relative_angle_deg": 45.00000000000017
+        },
+        {
+          "index": 4,
+          "world_position_cm": {
+            "x": -29441.4214,
+            "y": 534.9526
+          },
+          "image_pixel": [
+            551,
+            515
+          ],
+          "distance_cm": 200.00006188978995,
+          "relative_angle_deg": -45.00000000000015
+        },
+        {
+          "index": 5,
+          "world_position_cm": {
+            "x": -29700.0,
+            "y": 676.374
+          },
+          "image_pixel": [
+            359,
+            343
+          ],
+          "distance_cm": 400.0,
+          "relative_angle_deg": 0.0
+        },
+        {
+          "index": 6,
+          "world_position_cm": {
+            "x": -29582.8427,
+            "y": 959.2167
+          },
+          "image_pixel": [
+            116,
+            392
+          ],
+          "distance_cm": 399.9999823582253,
+          "relative_angle_deg": 44.99999999999983
+        },
+        {
+          "index": 7,
+          "world_position_cm": {
+            "x": -29582.8427,
+            "y": 393.5313
+          },
+          "image_pixel": [
+            603,
+            392
+          ],
+          "distance_cm": 399.9999823582254,
+          "relative_angle_deg": -44.9999999999999
+        }
+      ]
+    },
+    "historical_waypoint_execution": {
+      "selected_image_waypoint_index": 5,
+      "selected_image_waypoint_cm": {
+        "x": -29700.0,
+        "y": 676.374
+      },
+      "commanded_waypoint_cm": {
+        "x": -29700.0,
+        "y": 676.374
+      },
+      "selected_waypoint_matches_command": true,
+      "pre_action_position_cm": {
+        "x": -29300.0,
+        "y": 676.374
+      },
+      "post_action_position_cm": {
+        "x": -29700.0,
+        "y": 676.374
+      },
+      "selected_waypoint_distance_cm": 400.0,
+      "commanded_waypoint_distance_cm": 400.0,
+      "move_command_duration_seconds": 2.0,
+      "move_execution_mode": "ue_blueprint_move_to",
+      "actual_displacement_cm": 400.0,
+      "selected_waypoint_endpoint_error_cm": 0.0,
+      "commanded_waypoint_endpoint_error_cm": 0.0,
+      "reached_selected_waypoint": true,
+      "endpoint_tolerance_cm": 25.0
+    },
+    "historical_collision_details": {
+      "collision_authority": "ue_counters_plus_dynamic_actor_block_labels_plus_launched_vehicle_swept_radius",
+      "human": 0,
+      "object": 0,
+      "building": 0,
+      "vehicle": 0,
+      "intensity": 0.0,
+      "touched_road": 1,
+      "ue_touched_road": 0,
+      "geometric_touched_road": 1,
+      "legal_authored_sidewalk": 0,
+      "legal_route_crosswalk": 1,
+      "legal_marked_crosswalk": 1,
+      "legal_non_route_crosswalk": 0,
+      "unsafe_touched_road": 0,
+      "ue_unsafe_touched_road": 0,
+      "illegal_crossing_detection_source": null,
+      "state_human": 0,
+      "state_object": 0,
+      "state_building": 0,
+      "ue_building_delta": 0,
+      "ue_physical_block_contact_kind": null,
+      "ue_physical_block_human": 0,
+      "ue_physical_block_object": 0,
+      "ue_physical_block_building": 0,
+      "mapped_building_proximity": 0,
+      "off_route_move_no_progress": 0,
+      "overlap_type": 0,
+      "hazard_overlap_new_episode": 0,
+      "hazard_overlap_suppressed": 0,
+      "fall": 0,
+      "oil": 0,
+      "water": 0
+    },
+    "historical_route_adherence": {
+      "edge_type": "crosswalk",
+      "segment_start": {
+        "x": -29300.0,
+        "y": 700.0
+      },
+      "segment_end": {
+        "x": -30700.0,
+        "y": 700.0
+      },
+      "progress": 0.2857142857142857,
+      "lateral_distance_cm": 23.625999999999976,
+      "corridor_half_width_cm": 210,
+      "transition_distance_cm": 400.6971273618018,
+      "end_transition_distance_cm": 1000.2790550021529,
+      "within_start_transition_envelope": false,
+      "within_end_transition_envelope": false,
+      "within_transition_envelope": false,
+      "within_corridor": true
+    },
+    "historical_camera_in": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        -29300.0,
+        676.374,
+        245.0
+      ],
+      "rotation": [
+        -25.0,
+        180.0,
+        0.0
+      ],
+      "scope": "policy_input"
+    },
+    "historical_camera_out": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        -29700.0,
+        676.374,
+        245.0
+      ],
+      "rotation": [
+        -25.0,
+        180.0,
+        0.0
+      ],
+      "scope": "post_action_output"
+    }
+  },
+  {
+    "case_id": "red_light_0009",
+    "export_path": "verified/red_light_0009/case.json",
+    "case_sha256": "f52f3ca562c147041f73087b015840648f889689d8fb07368b5ea8ade76f026d",
+    "map": "map2_12roads",
+    "task": "task_014",
+    "decision": 18,
+    "action": {
+      "type": "move_to",
+      "param": "6"
+    },
+    "geometry": {
+      "agent_position_cm": {
+        "x": -29268.133,
+        "y": 774.827
+      },
+      "agent_direction": {
+        "x": -0.8481,
+        "y": -0.5299
+      },
+      "camera_location_cm": [
+        -29268.133,
+        774.827,
+        230.958
+      ],
+      "camera_rotation_deg": [
+        -25.0,
+        148.002,
+        0.0
+      ],
+      "camera_horizontal_fov_deg": 100.0,
+      "all_waypoint_markers_visible": true,
+      "annotated_candidates": [
+        {
+          "index": 1,
+          "world_position_cm": {
+            "x": -29352.9401,
+            "y": 721.8388
+          },
+          "image_pixel": [
+            359,
+            570
+          ],
+          "distance_cm": 99.99996774824325,
+          "relative_angle_deg": -5.803868676625577e-06
+        },
+        {
+          "index": 2,
+          "world_position_cm": {
+            "x": -29437.7473,
+            "y": 668.8506
+          },
+          "image_pixel": [
+            359,
+            439
+          ],
+          "distance_cm": 200.00002030362182,
+          "relative_angle_deg": 9.376135968992712e-06
+        },
+        {
+          "index": 3,
+          "world_position_cm": {
+            "x": -29463.005,
+            "y": 819.8258
+          },
+          "image_pixel": [
+            163,
+            502
+          ],
+          "distance_cm": 199.9999709635973,
+          "relative_angle_deg": 45.000015394890795
+        },
+        {
+          "index": 4,
+          "world_position_cm": {
+            "x": -29313.1318,
+            "y": 579.955
+          },
+          "image_pixel": [
+            556,
+            502
+          ],
+          "distance_cm": 199.9999709635973,
+          "relative_angle_deg": -44.99998460510993
+        },
+        {
+          "index": 5,
+          "world_position_cm": {
+            "x": -29607.3615,
+            "y": 562.8742
+          },
+          "image_pixel": [
+            359,
+            334
+          ],
+          "distance_cm": 399.9999558001079,
+          "relative_angle_deg": 1.7861355417941573e-06
+        },
+        {
+          "index": 6,
+          "world_position_cm": {
+            "x": -29657.8771,
+            "y": 864.8245
+          },
+          "image_pixel": [
+            112,
+            382
+          ],
+          "distance_cm": 400.0000168638245,
+          "relative_angle_deg": 44.99999821540837
+        },
+        {
+          "index": 7,
+          "world_position_cm": {
+            "x": -29358.1305,
+            "y": 385.0829
+          },
+          "image_pixel": [
+            607,
+            382
+          ],
+          "distance_cm": 400.0000168638241,
+          "relative_angle_deg": -45.00000178459193
+        }
+      ]
+    },
+    "historical_waypoint_execution": {
+      "selected_image_waypoint_index": 6,
+      "selected_image_waypoint_cm": {
+        "x": -29657.8771,
+        "y": 864.8245
+      },
+      "commanded_waypoint_cm": {
+        "x": -29657.8771,
+        "y": 864.8245
+      },
+      "selected_waypoint_matches_command": true,
+      "pre_action_position_cm": {
+        "x": -29268.133,
+        "y": 774.827
+      },
+      "post_action_position_cm": {
+        "x": -29657.877,
+        "y": 864.825
+      },
+      "selected_waypoint_distance_cm": 400.0000168638245,
+      "commanded_waypoint_distance_cm": 400.0000168638245,
+      "move_command_duration_seconds": 2.0,
+      "move_execution_mode": "ue_blueprint_move_to",
+      "actual_displacement_cm": 400.0000319249976,
+      "selected_waypoint_endpoint_error_cm": 0.0005099019516771991,
+      "commanded_waypoint_endpoint_error_cm": 0.0005099019516771991,
+      "reached_selected_waypoint": true,
+      "endpoint_tolerance_cm": 25.0
+    },
+    "historical_collision_details": {
+      "collision_authority": "ue_counters_plus_dynamic_actor_block_labels_plus_launched_vehicle_swept_radius",
+      "human": 0,
+      "object": 0,
+      "building": 0,
+      "vehicle": 0,
+      "intensity": 0.0,
+      "touched_road": 1,
+      "ue_touched_road": 0,
+      "geometric_touched_road": 1,
+      "legal_authored_sidewalk": 0,
+      "legal_route_crosswalk": 1,
+      "legal_marked_crosswalk": 1,
+      "legal_non_route_crosswalk": 0,
+      "unsafe_touched_road": 0,
+      "ue_unsafe_touched_road": 0,
+      "illegal_crossing_detection_source": null,
+      "state_human": 0,
+      "state_object": 0,
+      "state_building": 0,
+      "ue_building_delta": 0,
+      "ue_physical_block_contact_kind": null,
+      "ue_physical_block_human": 0,
+      "ue_physical_block_object": 0,
+      "ue_physical_block_building": 0,
+      "mapped_building_proximity": 0,
+      "off_route_move_no_progress": 0,
+      "overlap_type": 0,
+      "hazard_overlap_new_episode": 0,
+      "hazard_overlap_suppressed": 0,
+      "fall": 0,
+      "oil": 0,
+      "water": 0
+    },
+    "historical_route_adherence": {
+      "edge_type": "crosswalk",
+      "segment_start": {
+        "x": -29300.0,
+        "y": 700.0
+      },
+      "segment_end": {
+        "x": -30700.0,
+        "y": 700.0
+      },
+      "progress": 0.2556264285714286,
+      "lateral_distance_cm": 164.82500000000005,
+      "corridor_half_width_cm": 210,
+      "transition_distance_cm": 394.00917216988785,
+      "end_transition_distance_cm": 1055.077071949722,
+      "within_start_transition_envelope": false,
+      "within_end_transition_envelope": false,
+      "within_transition_envelope": false,
+      "within_corridor": true
+    },
+    "historical_camera_in": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        -29268.133,
+        774.827,
+        230.958
+      ],
+      "rotation": [
+        -25.0,
+        148.002,
+        0.0
+      ],
+      "scope": "policy_input"
+    },
+    "historical_camera_out": {
+      "mode": "first_person_free_follow",
+      "id": 2,
+      "resolution": [
+        720,
+        640
+      ],
+      "fov_deg": 100.0,
+      "eye_height_offset_cm": 135.0,
+      "pitch_deg": -25.0,
+      "location": [
+        -29657.8771,
+        864.8245,
+        230.958
+      ],
+      "rotation": [
+        -25.0,
+        -166.9974899169519,
+        0.0
+      ],
+      "scope": "post_action_output"
+    }
+  }
+]

@@ -1,7 +1,7 @@
 {
   "note": "Pinned safety source identity for the clean public snapshot. Retain all protocol checks when deliberately updating these hashes.",
   "sha256": {
-    "base/rt_agent.py": "d7b30ef822f8000c468db60c644f5049844a0c093fa1f04de5b0fc775d65cf11",
+    "base/rt_agent.py": "976c933fd4ff889129c03f8e60ccf4b615e4126158401cd073598cf195095b08",
     "manager/world_manager.py": "89b289e86b7408f7042c82fe24d68c6dc3b95cbc26ed7f723e5a543d47c25ff7",
     "llm/prompt.py": "5d9e319e94002fe8ca03317fa350bf745480597a9462798329b625690b5b9c1b",
     "base/rt_unrealcv.py": "9d79e9b15b1f1d3b22069deb52e33fe6f77aa9834fe9b1744c960ce60f3e0ab5"
