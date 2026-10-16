@@ -1,5 +1,8 @@
 # Execution and scoring fixes from rtsafe_report.pdf
 
+Follow-up: [native UE task recheck](REPORT_NATIVE_RECHECK.md) records actual
+task execution, additional fixes, and the remaining hazard-visibility limits.
+
 The report identifies real harness defects. This branch introduces protocol
 `execution_alignment_v2`, based on commit `4ff27bd`, in the separate checkout
 `/home/rose/rt-safe-report-fixes`. It does not change the running Gemini checkout,

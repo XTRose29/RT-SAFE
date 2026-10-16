@@ -704,6 +704,7 @@ class RTAgent(BaseAgent):
     def step(self, mode='llm'):
         step_wall_started = time.perf_counter()
         step_sim_started = self.sim_time_elapsed
+        self.last_action_safety_samples = []
         red_light_events = getattr(self, 'red_light_violation_events', [])
         illegal_crossing_events = getattr(self, 'illegal_crossing_events', [])
         safety_event_offsets = {
@@ -937,7 +938,12 @@ class RTAgent(BaseAgent):
         # Compare current UE collision counts with last recorded counts to detect passive collisions
         # Only check for passive collisions if realtime_thinking is enabled
         if self.step_num > 0 and self.realtime_thinking:
-            current_human, current_object, current_building, _, _, _ = self.communicator.get_states(self.name)
+            inference_state = self.communicator.get_states(self.name)
+            current_human, current_object, current_building, _, _, _ = inference_state
+            # Preserve the overlap from this very poll. A later GetStates can
+            # return zero, so polling again must not discard an inference-time
+            # hazard (including when a vehicle terminates the same decision).
+            self._sample_action_safety('during_inference', raw=inference_state)
             passive_human = self._collision_delta(current_human, self.last_ue_collision_count['human'])
             passive_object = self._collision_delta(current_object, self.last_ue_collision_count['object'])
             passive_building = self._collision_delta(current_building, self.last_ue_collision_count['building'])
@@ -980,7 +986,6 @@ class RTAgent(BaseAgent):
                 # Native contact deltas above are already accounted as passive;
                 # feedback consumes the remaining safety state without recovery.
                 self.last_action_type = 'INFERENCE'
-                self.last_action_safety_samples = []
                 self.action_frames = []
                 self.recording_action_frames = []
                 _, terminal_details, _ = self.get_feedback(
@@ -1068,7 +1073,6 @@ class RTAgent(BaseAgent):
             pre_action_position.y,
         )
         action_started = time.perf_counter()
-        self.last_action_safety_samples = []
         self._sample_action_safety('pre_action')
         self._collect_action_safety = True
         try:
@@ -1898,7 +1902,8 @@ class RTAgent(BaseAgent):
                      'source': 'ue_GetStates_OverlapType',
                      'trigger_actor_id': None,
                      'trigger_identity_available': False,
-                     'action_type': getattr(self, 'last_action_type', None)}
+                     'action_type': ('INFERENCE' if sample['phase'] == 'during_inference'
+                                     else getattr(self, 'last_action_type', None))}
             collision_details['hazard_events'].append(event)
             if overlap == 1:
                 self.fall_count += 1
@@ -1927,8 +1932,9 @@ class RTAgent(BaseAgent):
 
         return feedback_str, collision_details, touched_road_failed
 
-    def _sample_action_safety(self, phase):
-        raw = self.communicator.get_states(self.name)
+    def _sample_action_safety(self, phase, raw=None):
+        if raw is None:
+            raw = self.communicator.get_states(self.name)
         live = self.communicator.unrealcv.get_location(self.name)
         sample = {'phase': phase, 'sim_time_s': self.sim_time_elapsed,
                   'position_cm': {'x': float(live[0]), 'y': float(live[1])},

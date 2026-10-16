@@ -2381,6 +2381,7 @@ class WorldManager:
             "water_count": self.agent.water_count,
             "red_light_violations_count": self.agent.red_light_violations_count,
             "initial_hazard_clearance": list(getattr(self, "initial_hazard_clearance", [])),
+            "restored_hazard_props": list(getattr(self, "restored_hazard_props", [])),
             "hazard_overlap_policy": {
                 "version": "sampled_action_occupancy_v2",
                 "count_once_per_continuous_occupancy": True,
@@ -2510,6 +2511,8 @@ class WorldManager:
         self.initial_hazard_clearance = []
         if not getattr(self, 'map_static_obstacles', []):
             return
+        get_objects = getattr(self.communicator.unrealcv, 'get_objects', None)
+        live_ids = set(map(str, get_objects())) if callable(get_objects) else None
         center = self.agent.position
         removed = set()
         for item in getattr(self, 'map_static_obstacles', []):
@@ -2519,6 +2522,10 @@ class WorldManager:
             if math.hypot(item['x'] - center.x, item['y'] - center.y) > 500:
                 continue
             actor = str(item['id'])
+            # Explicit traffic-isolation setup may already have removed this
+            # prop. Never query a stale inventory entry as a live actor.
+            if live_ids is not None and actor not in live_ids:
+                continue
             live = self.communicator.unrealcv.get_location(actor)
             distance = math.hypot(float(live[0]) - center.x, float(live[1]) - center.y)
             if distance > 150 or abs(float(live[2])) > 200:
@@ -7267,6 +7274,7 @@ class WorldManager:
             self.intersection_controller_model_path,
         )
         self._generate_ue_world(map_path)
+        self._restore_missing_hazard_props(map_path)
         
         # Store map_path for loading obstacles later
         self.current_map_path = map_path
@@ -7717,6 +7725,47 @@ class WorldManager:
     def _get_pedestrian_speed_options(self) -> list[float]:
         return list(self.difficulty_config.get("pedestrian_speeds", [100, 150, 200]))
         
+    def _restore_missing_hazard_props(self, map_path):
+        """Restore baked props removed by a previous task in this UE process.
+
+        The procedural map generator rebuilds roads, not the baked hazards.
+        Reset missing props from the authored inventory before applying this
+        task's clearance or explicit background-isolation policy.
+        """
+        self.restored_hazard_props = []
+        path = os.path.join(os.path.dirname(map_path), 'obstacles.json')
+        if not os.path.isfile(path):
+            return
+        with open(path, encoding='utf-8') as stream:
+            nodes = json.load(stream).get('nodes', [])
+        with open(UE_ASSET_PATH, encoding='utf-8') as stream:
+            assets = json.load(stream)
+        ue = self.communicator.unrealcv
+        live = {str(actor) for actor in ue.get_objects()}
+        for node in nodes:
+            kind = str(node.get('instance_name', ''))
+            if not any(word in kind.lower() for word in
+                       ('ball', 'bottle', 'box', 'oil', 'puddle', 'water')):
+                continue
+            actor = str(node['id'])
+            if actor in live:
+                continue
+            asset = assets.get(kind, {}).get('asset_path')
+            if not asset:
+                raise RuntimeError(f'Cannot restore missing hazard {actor}: unknown asset {kind}')
+            props = node['properties']
+            loc, rot, scale = props['location'], props['orientation'], props['scale']
+            ue.spawn_bp_asset(asset, actor)
+            ue.set_location(tuple(loc[k] for k in ('x', 'y', 'z')), actor)
+            ue.set_orientation(tuple(rot[k] for k in ('pitch', 'yaw', 'roll')), actor)
+            ue.set_scale(tuple(scale[k] for k in ('x', 'y', 'z')), actor)
+            # A failed spawn must reject setup, rather than silently remove a
+            # hazard from subsequent benchmark tasks.
+            actual = ue.get_location(actor)
+            if math.dist(actual, tuple(loc[k] for k in ('x', 'y', 'z'))) > 1.0:
+                raise RuntimeError(f'Restored hazard {actor} did not reach its authored pose')
+            self.restored_hazard_props.append(actor)
+
     def _load_static_obstacles(self):
         """
         Load static obstacles from the map's obstacles.json file.

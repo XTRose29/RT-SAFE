@@ -1,0 +1,32 @@
+[
+  {
+    "case": "initial_overlap_rejection",
+    "state": [
+      0,
+      0,
+      0,
+      0.0,
+      0,
+      1
+    ],
+    "vehicle_counter": 0,
+    "position": [
+      -5000.0,
+      0.0,
+      105.357
+    ],
+    "camera": "-5000.000 0.000 240.357",
+    "trace": [],
+    "sweep_samples": [],
+    "initial_state": [
+      0,
+      0,
+      0,
+      0.0,
+      1,
+      1
+    ],
+    "rejected": true,
+    "fall_count": 0
+  }
+]

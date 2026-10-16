@@ -1,0 +1,19 @@
+{
+  "actor": "GEN_RT_RT_Basketball_256",
+  "present_before": false,
+  "restored": [
+    "GEN_RT_RT_Basketball_256"
+  ],
+  "pose": [
+    -4498.399,
+    10729.396,
+    2.0
+  ],
+  "expected": {
+    "x": -4498.3989962667065,
+    "y": 10729.395722735599,
+    "z": 2
+  },
+  "second_restore": [],
+  "passed": true
+}

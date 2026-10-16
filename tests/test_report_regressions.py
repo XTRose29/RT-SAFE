@@ -240,7 +240,8 @@ def test_vehicle_during_inference_preserves_simultaneous_contacts_and_trip():
     a._capture_stationary_pose = lambda: None
     action = SimpleNamespace(action_type='WAIT', action_param='1')
     a.plan = lambda *args: (action, 0., 0, 0, None)
-    a.communicator.get_states = lambda name: (1, 1, 0, 0., 1, 0)
+    states=iter([(1, 1, 0, 0., 1, 0), (1, 1, 0, 0., 0, 0)])
+    a.communicator.get_states = lambda name: next(states)
     def vehicle():
         a.failed = True
         a.failure_reason = 'vehicle_collision'
@@ -253,3 +254,37 @@ def test_vehicle_during_inference_preserves_simultaneous_contacts_and_trip():
     assert a.collision_type_counts['human'] == 1
     assert a.collision_type_counts['object'] == 1
     assert a.fall_count == 1
+    assert details['hazard_events'][0]['phase'] == 'during_inference'
+
+
+def test_missing_cleared_prop_restored_from_authored_inventory(tmp_path, monkeypatch):
+    from manager import world_manager
+    node = {'id':'cleared_ball','instance_name':'RT_Basketball_C','properties':{
+        'location':{'x':10.,'y':20.,'z':2.},'orientation':{'pitch':0.,'yaw':90.,'roll':0.},
+        'scale':{'x':1.,'y':1.,'z':1.}}}
+    (tmp_path/'obstacles.json').write_text(json.dumps({'nodes':[node]}))
+    library=tmp_path/'assets.json';library.write_text(json.dumps({'RT_Basketball_C':{'asset_path':'/Ball'}}))
+    monkeypatch.setattr(world_manager,'UE_ASSET_PATH',str(library))
+    calls=[];live=set()
+    def spawn(asset,name):calls.append((asset,name));live.add(name)
+    m=WorldManager.__new__(WorldManager)
+    m.communicator=SimpleNamespace(unrealcv=SimpleNamespace(
+        get_objects=lambda:list(live),spawn_bp_asset=spawn,
+        set_location=lambda *args:None,set_orientation=lambda *args:None,set_scale=lambda *args:None,
+        get_location=lambda name:[10.,20.,2.]))
+    m._restore_missing_hazard_props(str(tmp_path/'progen_world.json'))
+    assert calls==[('/Ball','cleared_ball')]
+    assert m.restored_hazard_props==['cleared_ball']
+    m._restore_missing_hazard_props(str(tmp_path/'progen_world.json'))
+    assert len(calls)==1
+    assert m.restored_hazard_props==[]
+
+
+def test_spawn_clearance_skips_prop_already_removed_by_isolation_setup():
+    m=WorldManager.__new__(WorldManager)
+    m.map_static_obstacles=[{'id':'removed','type':'RT_Basketball_C','x':0.,'y':0.}]
+    m.agent=SimpleNamespace(position=Vector(0,0))
+    m.communicator=SimpleNamespace(unrealcv=SimpleNamespace(get_objects=lambda:[],
+        get_location=lambda name:pytest.fail('Absent actor must not be queried')))
+    m._clear_initial_hazards()
+    assert m.initial_hazard_clearance==[]

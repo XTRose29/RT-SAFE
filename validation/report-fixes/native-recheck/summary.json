@@ -1,0 +1,738 @@
+{
+  "scope": "Controlled native probes and scripted task15 continuation; not a scored model campaign. Visibility and trigger identity remain partial.",
+  "checks": {
+    "all_seven_clear_waypoints": true,
+    "all_camera_samples_track_actor": true,
+    "native_blocker_and_no_proximity_false_labels": true,
+    "all_four_path_hazards_observed": true,
+    "wait_and_turn_do_not_repeat_trip": true,
+    "initial_overlap_rejected": true,
+    "inference_overlap_preserved": true,
+    "same_move_red_light_event": true,
+    "no_red_event_shifted_to_next_wait": true,
+    "vehicle_and_oil_same_action": true,
+    "task15_first_move_no_trip": true,
+    "parse_error_clears_frames": true,
+    "next_decision_only_current_input": true,
+    "every_recorded_decision_keeps_inputs": true,
+    "task15_completed_with_policy_recovery": true,
+    "removed_prop_restored_once": true
+  },
+  "all_scoped_checks_passed": true,
+  "max_clear_endpoint_error_cm": 0.0005656854248876281,
+  "camera_sample_count": 26,
+  "max_camera_xy_error_cm": 0.0,
+  "task15_decisions": 54,
+  "task15_remaining_distance_cm": 81.01539999999977,
+  "task15_final_trip_event": [
+    {
+      "kind": "fall",
+      "observed_sim_time_s": 101.1,
+      "position_cm": {
+        "x": -3076.004,
+        "y": 9300.0
+      },
+      "phase": "after_sweep",
+      "source": "ue_GetStates_OverlapType",
+      "trigger_actor_id": null,
+      "trigger_identity_available": false,
+      "action_type": "MOVE"
+    }
+  ],
+  "input_manifests": [
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0000_decision_0001/step_0000_decision_0001_manifest.json",
+      "step": 0,
+      "input_count": 1,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0001_decision_0002/step_0001_decision_0002_manifest.json",
+      "step": 1,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0002_decision_0003/step_0002_decision_0003_manifest.json",
+      "step": 2,
+      "input_count": 1,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0003_decision_0004/step_0003_decision_0004_manifest.json",
+      "step": 3,
+      "input_count": 2,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0004_decision_0005/step_0004_decision_0005_manifest.json",
+      "step": 4,
+      "input_count": 2,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0005_decision_0006/step_0005_decision_0006_manifest.json",
+      "step": 5,
+      "input_count": 2,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0006_decision_0007/step_0006_decision_0007_manifest.json",
+      "step": 6,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0007_decision_0008/step_0007_decision_0008_manifest.json",
+      "step": 7,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0008_decision_0009/step_0008_decision_0009_manifest.json",
+      "step": 8,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0009_decision_0010/step_0009_decision_0010_manifest.json",
+      "step": 9,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0010_decision_0011/step_0010_decision_0011_manifest.json",
+      "step": 10,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0011_decision_0012/step_0011_decision_0012_manifest.json",
+      "step": 11,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0012_decision_0013/step_0012_decision_0013_manifest.json",
+      "step": 12,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0013_decision_0014/step_0013_decision_0014_manifest.json",
+      "step": 13,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0014_decision_0015/step_0014_decision_0015_manifest.json",
+      "step": 14,
+      "input_count": 2,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0015_decision_0016/step_0015_decision_0016_manifest.json",
+      "step": 15,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0016_decision_0017/step_0016_decision_0017_manifest.json",
+      "step": 16,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0017_decision_0018/step_0017_decision_0018_manifest.json",
+      "step": 17,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0018_decision_0019/step_0018_decision_0019_manifest.json",
+      "step": 18,
+      "input_count": 2,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0019_decision_0020/step_0019_decision_0020_manifest.json",
+      "step": 19,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0020_decision_0021/step_0020_decision_0021_manifest.json",
+      "step": 20,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0021_decision_0022/step_0021_decision_0022_manifest.json",
+      "step": 21,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0022_decision_0023/step_0022_decision_0023_manifest.json",
+      "step": 22,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0023_decision_0024/step_0023_decision_0024_manifest.json",
+      "step": 23,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0024_decision_0025/step_0024_decision_0025_manifest.json",
+      "step": 24,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0025_decision_0026/step_0025_decision_0026_manifest.json",
+      "step": 25,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0026_decision_0027/step_0026_decision_0027_manifest.json",
+      "step": 26,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0027_decision_0028/step_0027_decision_0028_manifest.json",
+      "step": 27,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0028_decision_0029/step_0028_decision_0029_manifest.json",
+      "step": 28,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0029_decision_0030/step_0029_decision_0030_manifest.json",
+      "step": 29,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0030_decision_0031/step_0030_decision_0031_manifest.json",
+      "step": 30,
+      "input_count": 2,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0031_decision_0032/step_0031_decision_0032_manifest.json",
+      "step": 31,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0032_decision_0033/step_0032_decision_0033_manifest.json",
+      "step": 32,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0033_decision_0034/step_0033_decision_0034_manifest.json",
+      "step": 33,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0034_decision_0035/step_0034_decision_0035_manifest.json",
+      "step": 34,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0035_decision_0036/step_0035_decision_0036_manifest.json",
+      "step": 35,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0036_decision_0037/step_0036_decision_0037_manifest.json",
+      "step": 36,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0037_decision_0038/step_0037_decision_0038_manifest.json",
+      "step": 37,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0038_decision_0039/step_0038_decision_0039_manifest.json",
+      "step": 38,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0039_decision_0040/step_0039_decision_0040_manifest.json",
+      "step": 39,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0040_decision_0041/step_0040_decision_0041_manifest.json",
+      "step": 40,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0041_decision_0042/step_0041_decision_0042_manifest.json",
+      "step": 41,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0042_decision_0043/step_0042_decision_0043_manifest.json",
+      "step": 42,
+      "input_count": 2,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0043_decision_0044/step_0043_decision_0044_manifest.json",
+      "step": 43,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0044_decision_0045/step_0044_decision_0045_manifest.json",
+      "step": 44,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/full-route/task15/task_15_ddefault_steps/step_0045_decision_0046/step_0045_decision_0046_manifest.json",
+      "step": 45,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/task15-completed/steps/step_0046_decision_0047/step_0046_decision_0047_manifest.json",
+      "step": 46,
+      "input_count": 1,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/task15-completed/steps/step_0047_decision_0048/step_0047_decision_0048_manifest.json",
+      "step": 47,
+      "input_count": 2,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/task15-completed/steps/step_0048_decision_0049/step_0048_decision_0049_manifest.json",
+      "step": 48,
+      "input_count": 2,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/task15-completed/steps/step_0049_decision_0050/step_0049_decision_0050_manifest.json",
+      "step": 49,
+      "input_count": 2,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/task15-completed/steps/step_0050_decision_0051/step_0050_decision_0051_manifest.json",
+      "step": 50,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/task15-completed/steps/step_0051_decision_0052/step_0051_decision_0052_manifest.json",
+      "step": 51,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/task15-completed/steps/step_0052_decision_0053/step_0052_decision_0053_manifest.json",
+      "step": 52,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    },
+    {
+      "path": "/home/rose/rtsafe-native-recheck/task15-completed/steps/step_0053_decision_0054/step_0053_decision_0054_manifest.json",
+      "step": 53,
+      "input_count": 4,
+      "all_inputs_present": true,
+      "retention": {
+        "policy": "all",
+        "retained": true,
+        "first_steps": 0,
+        "last_steps": 0
+      }
+    }
+  ],
+  "artifacts": {
+    "rays-and-cameras.json": {
+      "native_source": "/home/rose/rtsafe-native-recheck/camera-rays/cases.json",
+      "sha256": "e21905320edac526fb31221536b9174639f98f1c5bea285af0363457efd5df75"
+    },
+    "contacts.json": {
+      "native_source": "/home/rose/rtsafe-native-recheck/contacts/cases.json",
+      "sha256": "6dae98d778dce44a5af8217381f5dfa55db0b7d704368482f9fc731d66b427e4"
+    },
+    "hazard-probes-including-negative-controls.json": {
+      "native_source": "/home/rose/rtsafe-native-recheck/hazards/cases.json",
+      "sha256": "07a1228f9246571663794b7a654417f5e6690e11d735eafb566cbb61fbf24b57"
+    },
+    "initial-overlap.json": {
+      "native_source": "/home/rose/rtsafe-native-recheck/initial-overlap/cases.json",
+      "sha256": "82dd68ddcbaf93acffe10988e58e19e32305f30153a69d420aba0f1ebca6f4df"
+    },
+    "inference-overlap.json": {
+      "native_source": "/home/rose/rtsafe-native-recheck/inference-overlap/cases.json",
+      "sha256": "e1329e9916fe1fd670f7bf6e02809bcfcd9c28bde9cdcc6ddc4efa327251c893"
+    },
+    "crossing.json": {
+      "native_source": "/home/rose/rtsafe-native-recheck/crossing/crossing.json",
+      "sha256": "77a5e52e84439d547c2adaaa3cb1a663f6b4c0cd2ef46fc93ad343114561d0c7"
+    },
+    "restoration.json": {
+      "native_source": "/home/rose/rtsafe-native-recheck/restoration.json",
+      "sha256": "39d44250e9bf3d548d1157bce201bbf0126a6fcc7869be0eb0928ff623bc1ed9"
+    },
+    "task15-first-46-decisions.json": {
+      "native_source": "/home/rose/rtsafe-native-recheck/full-route/progress.json",
+      "sha256": "f8ea52022f446a5603246f67075a13bf821ebc6e9c2e89e30a46018ffe17570e"
+    },
+    "task15-completion.json": {
+      "native_source": "/home/rose/rtsafe-native-recheck/task15-completed/completion.json",
+      "sha256": "1e873d003518c63cf1933951d2431c3cfe55af8cdc10f1ba528690861e65b13b"
+    },
+    "gemini-isolation.json": {
+      "native_source": "/home/rose/rtsafe-native-recheck/gemini-isolation.json",
+      "sha256": "78d2a5fcc35ccb9137db9f66ae56b0dd3e0e8a01064429a37ccdfc476af80baa"
+    },
+    "pytest.txt": {
+      "native_source": "/home/rose/rtsafe-native-recheck/final-tests.txt",
+      "sha256": "105d5078bea7d16e1ba16cb2823df125843a7e4c72a37c81e9333f0ff2498f69"
+    }
+  }
+}
