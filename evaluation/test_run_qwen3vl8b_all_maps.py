@@ -1223,7 +1223,7 @@ class SuiteConfigurationTests(unittest.TestCase):
         )
         self.assertEqual(
             {
-                "version": "two_rule_traffic_events_v6",
+                "version": "two_rule_traffic_events_v7",
                 "collision_authority": (
                     "ue_counters_plus_launched_vehicle_swept_radius"
                 ),
@@ -1231,6 +1231,7 @@ class SuiteConfigurationTests(unittest.TestCase):
                 "painted_crosswalk_half_width_cm": 210,
                 "roadway_occupancy_guard_half_width_cm": 600,
                 "rendered_sidewalk_half_width_cm": 200,
+                "crosswalk_curb_inset_cm": 200,
                 "illegal_crossing_authority": (
                     "ue_touched_road_outside_strict_pedestrian_geometry"
                 ),
@@ -1250,7 +1251,7 @@ class SuiteConfigurationTests(unittest.TestCase):
             config["traffic_evaluation_policy"],
         )
         self.assertEqual(
-            "two_rule_traffic_events_v6",
+            "two_rule_traffic_events_v7",
             config["artifact_schema_version"],
         )
         self.assertEqual(

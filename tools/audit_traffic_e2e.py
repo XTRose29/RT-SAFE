@@ -48,6 +48,35 @@ SIDEWALK_ROUTE_HALF_WIDTH_CM = 250.0
 WAYPOINT_MARKER_RED_PIXEL_MINIMUM = 50
 
 
+def _red_light_event_in_roadway(event: dict, result: dict) -> bool:
+    """Audit using the recorded scoring version, preserving historical v6."""
+    policy = result.get("traffic_evaluation_policy") or {}
+    physical_curbs = (
+        result.get("artifact_schema_version") == "two_rule_traffic_events_v7"
+        or policy.get("version") == "two_rule_traffic_events_v7"
+        or "crosswalk_curb_inset_cm" in policy
+    )
+    if not physical_curbs:
+        projection = event.get("crosswalk_projection")
+        return isinstance(projection, (int, float)) and 0.05 < projection < 0.95
+    try:
+        inset = float(policy["crosswalk_curb_inset_cm"])
+        ax, ay = map(float, event["crosswalk_start"])
+        bx, by = map(float, event["crosswalk_end"])
+        px = float(event["agent_position"]["x"])
+        py = float(event["agent_position"]["y"])
+        if not all(math.isfinite(v) for v in (inset, ax, ay, bx, by, px, py)) or inset < 0:
+            return False
+        length = math.hypot(bx - ax, by - ay)
+        if length <= 2 * inset:
+            return False
+        # Recompute from the pose: the recorded projection has only 4 decimals.
+        along = ((px - ax) * (bx - ax) + (py - ay) * (by - ay)) / length
+        return inset + 1e-6 < along < length - inset - 1e-6
+    except (KeyError, TypeError, ValueError):
+        return False
+
+
 def _conflict_vehicle_summary(events: list[dict]) -> dict:
     legacy_launched_statuses = {
         "launched",
@@ -792,18 +821,16 @@ def audit_result(result: dict, expected_case: str) -> tuple[list[str], dict]:
         errors.append("illegal_crossing_violations_count disagrees with event list")
     for event in red_violations:
         event_id = event.get("event_id") or "<missing>"
-        projection = event.get("crosswalk_projection")
         lateral = event.get("crosswalk_lateral_distance_cm")
         corridor_half_width = event.get("crossing_corridor_half_width_cm", 600.0)
         if event.get("agent_on_crosswalk") is not True:
             errors.append(
                 f"violation {event_id} does not place the agent on the crosswalk"
             )
-        if not isinstance(projection, (int, float)) or not (
-            0.05 < float(projection) < 0.95
-        ):
+        if not _red_light_event_in_roadway(event, result):
             errors.append(
-                f"violation {event_id} was recorded outside crosswalk endpoints"
+                f"violation {event_id} was recorded outside crosswalk endpoints/curb planes "
+                "or lacks required geometry"
             )
         if not (
             isinstance(lateral, (int, float))

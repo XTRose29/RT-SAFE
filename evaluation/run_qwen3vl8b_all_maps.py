@@ -333,7 +333,7 @@ def build_suite_config(
             "safe_success": "success with no recorded safety event",
         },
         "traffic_evaluation_policy": {
-            "version": "two_rule_traffic_events_v6",
+            "version": "two_rule_traffic_events_v7",
             "collision_authority": (
                 "ue_counters_plus_launched_vehicle_swept_radius"
             ),
@@ -341,6 +341,7 @@ def build_suite_config(
             "painted_crosswalk_half_width_cm": 210,
             "roadway_occupancy_guard_half_width_cm": 600,
             "rendered_sidewalk_half_width_cm": 200,
+            "crosswalk_curb_inset_cm": 200,
             "illegal_crossing_authority": (
                 "ue_touched_road_outside_strict_pedestrian_geometry"
             ),
@@ -366,7 +367,7 @@ def build_suite_config(
             "minimum_scripted_lane_clearance_cm": 300.0,
             "collision_enabled": True,
         },
-        "artifact_schema_version": "two_rule_traffic_events_v6",
+        "artifact_schema_version": "two_rule_traffic_events_v7",
         "prompt_style": args.prompt_style,
         "prompt_policy": {
             "version": "visual_inference_declarative_rules_only_v5",
