@@ -69,7 +69,10 @@ ROADWAY_OCCUPANCY_GUARD_HALF_WIDTH_CM = 600
 # conflict and release the crossing state too early.
 CROSSING_GUARD_HALF_WIDTH_CM = 600
 SIGNAL_CONTROLLED_ROADWAY_HALF_WIDTH_CM = 1200
-CROSSWALK_INTERIOR_MARGIN = 0.05
+# Crosswalk endpoints are sidewalk centres, not curb planes. Exclude the
+# sidewalk's physical half-width at each end; a percentage of route length
+# incorrectly includes 130 cm of sidewalk on a 1400 cm crossing.
+CROSSWALK_CURB_INSET_CM = SIDEWALK_ROUTE_HALF_WIDTH_CM
 # Illegal-crossing evaluation uses the same edge as the rendered 4.20 m-wide
 # zebra and route admission; there is no hidden, narrower safety boundary.
 JAYWALK_CROSSWALK_HALF_WIDTH_CM = CROSSWALK_ROUTE_HALF_WIDTH_CM
@@ -2070,9 +2073,7 @@ class RTAgent(BaseAgent):
             distance, projection = self._crosswalk_metrics(point, crosswalk)
             if (
                 distance <= JAYWALK_CROSSWALK_HALF_WIDTH_CM
-                and CROSSWALK_INTERIOR_MARGIN
-                < projection
-                < 1.0 - CROSSWALK_INTERIOR_MARGIN
+                and RTAgent._is_between_crosswalk_curbs(projection, crosswalk)
             ):
                 return True
         return False
@@ -2111,9 +2112,7 @@ class RTAgent(BaseAgent):
             distance, projection = self._crosswalk_metrics(point, crosswalk)
             if (
                 distance <= half_width_cm
-                and CROSSWALK_INTERIOR_MARGIN
-                < projection
-                < 1.0 - CROSSWALK_INTERIOR_MARGIN
+                and RTAgent._is_between_crosswalk_curbs(projection, crosswalk)
             ):
                 candidates.append((distance, crosswalk))
         if not candidates:
@@ -5394,7 +5393,7 @@ class RTAgent(BaseAgent):
 
             # Save a structured manifest alongside the human-readable transcript.
             manifest = {
-                'artifact_schema_version': 'execution_alignment_v2',
+                'artifact_schema_version': 'execution_alignment_v3',
                 'step': step_num,
                 'decision_index': decision_index,
                 'traffic_policy': prompt_data.get(
@@ -6365,16 +6364,12 @@ class RTAgent(BaseAgent):
         distance, projection = self._crosswalk_metrics(self.position, crosswalk)
         within_painted_crosswalk = (
             distance <= CROSSWALK_ROUTE_HALF_WIDTH_CM
-            and CROSSWALK_INTERIOR_MARGIN
-            < projection
-            < 1.0 - CROSSWALK_INTERIOR_MARGIN
+            and RTAgent._is_between_crosswalk_curbs(projection, crosswalk)
         )
         crosswalk_id = crosswalk.id
         state = str(snapshot.get('pedestrian_state', 'UNKNOWN')).upper()
         in_roadway_band = (
-            CROSSWALK_INTERIOR_MARGIN
-            < projection
-            < 1.0 - CROSSWALK_INTERIOR_MARGIN
+            RTAgent._is_between_crosswalk_curbs(projection, crosswalk)
         )
         within_roadway_guard = (
             distance <= CROSSING_GUARD_HALF_WIDTH_CM
@@ -6549,10 +6544,7 @@ class RTAgent(BaseAgent):
                             crosswalk_id,
                         )
                 self.red_light_violation_events.append(dict(event))
-        elif (
-            projection <= CROSSWALK_INTERIOR_MARGIN
-            or projection >= 1.0 - CROSSWALK_INTERIOR_MARGIN
-        ):
+        elif not in_roadway_band:
             # The agent is back behind a curb, so a future crossing of the same
             # route segment must receive a new WALK admission.
             if (
@@ -6683,6 +6675,25 @@ class RTAgent(BaseAgent):
         self._legacy_occupancy_crosswalks.discard(crosswalk.id)
 
     @staticmethod
+    def _crosswalk_interior_margin(crosswalk):
+        """Project the curb inset onto a sidewalk-centre-to-centre segment.
+
+        A centre exactly on the curb is still outside the roadway. The tiny
+        numerical allowance keeps that boundary stable for reversed/rotated
+        segments. Degenerate or sidewalk-only segments have no interior.
+        """
+        segment = crosswalk.end - crosswalk.start
+        length_cm = math.hypot(segment.x, segment.y)
+        if length_cm <= 2.0 * CROSSWALK_CURB_INSET_CM:
+            return 0.5
+        return (CROSSWALK_CURB_INSET_CM + 1e-6) / length_cm
+
+    @staticmethod
+    def _is_between_crosswalk_curbs(projection, crosswalk):
+        margin = RTAgent._crosswalk_interior_margin(crosswalk)
+        return margin < projection < 1.0 - margin
+
+    @staticmethod
     def _crosswalk_metrics(point, crosswalk):
         """Return lateral distance and normalized projection onto a crosswalk."""
         start = crosswalk.start
@@ -6719,10 +6730,10 @@ class RTAgent(BaseAgent):
             direction = self._crosswalk_entry_directions.get(crosswalk.id)
             reached_far_curb = (
                 direction == 1
-                and projection >= 1.0 - CROSSWALK_INTERIOR_MARGIN
+                and projection >= 1.0 - self._crosswalk_interior_margin(crosswalk)
             ) or (
                 direction == -1
-                and projection <= CROSSWALK_INTERIOR_MARGIN
+                and projection <= self._crosswalk_interior_margin(crosswalk)
             )
             if reached_far_curb:
                 self._sync_native_crosswalk_occupancy(crosswalk, False)
@@ -6746,9 +6757,7 @@ class RTAgent(BaseAgent):
                 self.current_destination.distance(crosswalk.end),
             )
             in_roadway_band = (
-                CROSSWALK_INTERIOR_MARGIN
-                < projection
-                < 1.0 - CROSSWALK_INTERIOR_MARGIN
+                RTAgent._is_between_crosswalk_curbs(projection, crosswalk)
             )
             # A curb endpoint is not itself an active crossing once the route
             # has advanced to a sidewalk subgoal.  Keep the crosswalk active
@@ -7487,9 +7496,7 @@ class RTAgent(BaseAgent):
         )
         physically_on_crosswalk = (
             distance <= CROSSWALK_ROUTE_HALF_WIDTH_CM
-            and CROSSWALK_INTERIOR_MARGIN
-            < projection
-            < 1.0 - CROSSWALK_INTERIOR_MARGIN
+            and RTAgent._is_between_crosswalk_curbs(projection, crosswalk)
         )
         near_crosswalk_curb = min(
             self.position.distance(edge_start),
@@ -7518,9 +7525,7 @@ class RTAgent(BaseAgent):
                 )
                 physically_on_crosswalk = (
                     distance <= CROSSWALK_ROUTE_HALF_WIDTH_CM
-                    and CROSSWALK_INTERIOR_MARGIN
-                    < projection
-                    < 1.0 - CROSSWALK_INTERIOR_MARGIN
+                    and RTAgent._is_between_crosswalk_curbs(projection, crosswalk)
                 )
         if not physically_on_crosswalk:
             return False
@@ -7739,7 +7744,7 @@ class RTAgent(BaseAgent):
             CROSSWALK_EGRESS_MARGIN_CM / crosswalk_length_cm,
         )
         if (
-            requested_progress >= 1.0 - CROSSWALK_INTERIOR_MARGIN
+            requested_progress >= 1.0 - self._crosswalk_interior_margin(crosswalk)
             or current_progress >= 0.85
         ):
             target_progress = max(target_progress, egress_progress)
@@ -7852,9 +7857,7 @@ class RTAgent(BaseAgent):
         distance, projection = RTAgent._crosswalk_metrics(point, crosswalk)
         return (
             distance < SIGNAL_CONTROLLED_ROADWAY_HALF_WIDTH_CM
-            and CROSSWALK_INTERIOR_MARGIN
-            < projection
-            < 1.0 - CROSSWALK_INTERIOR_MARGIN
+            and RTAgent._is_between_crosswalk_curbs(projection, crosswalk)
         )
 
     def _is_crossing_roadway_occupied(self, point, crosswalk):
@@ -7862,9 +7865,7 @@ class RTAgent(BaseAgent):
         _, projection = self._crosswalk_metrics(point, crosswalk)
         if crosswalk.id in self._admitted_crosswalks:
             return (
-                CROSSWALK_INTERIOR_MARGIN
-                < projection
-                < 1.0 - CROSSWALK_INTERIOR_MARGIN
+                RTAgent._is_between_crosswalk_curbs(projection, crosswalk)
             )
         return self._is_crossing_corridor_interior(point, crosswalk)
 

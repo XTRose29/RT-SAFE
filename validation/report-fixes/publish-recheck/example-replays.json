@@ -964,7 +964,7 @@
       "hazard_events": []
     },
     "feedback": "Action completed successfully.",
-    "full_trace_path": "/home/rose/rtsafe-report-publish-validation/height-fixed-examples/human_collision_0061/result.json",
+    "full_trace_path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/height-fixed-examples/human_collision_0061/result.json",
     "full_trace_sha256": "669d03f1b88ca132e1c67a10eb748d899d09de9435de8d36fb88c6b1b2e264c8",
     "validation_phase": "after_live_height_fix"
   },
@@ -1517,7 +1517,7 @@
       "hazard_events": []
     },
     "feedback": "Action completed successfully.",
-    "full_trace_path": "/home/rose/rtsafe-report-publish-validation/height-fixed-examples/object_collision_0001/result.json",
+    "full_trace_path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/height-fixed-examples/object_collision_0001/result.json",
     "full_trace_sha256": "4c5f2dab69afdd4a3220a930f52cf13f92baf84dfaf017877381deb531a3fa5f",
     "validation_phase": "after_live_height_fix"
   },
@@ -2486,7 +2486,7 @@
       "hazard_events": []
     },
     "feedback": "Action completed successfully.",
-    "full_trace_path": "/home/rose/rtsafe-report-publish-validation/group-a-retry/illegal_road_entry_0003/result.json",
+    "full_trace_path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/group-a-retry/illegal_road_entry_0003/result.json",
     "full_trace_sha256": "b02bef36cb31854bb35aa25d02847b0a3403e9fa12c31f13f3fc52280dc41584",
     "validation_phase": "before_live_height_fix"
   },
@@ -3039,7 +3039,7 @@
       "hazard_events": []
     },
     "feedback": "Action completed successfully.",
-    "full_trace_path": "/home/rose/rtsafe-report-publish-validation/group-b/human_collision_0147/result.json",
+    "full_trace_path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/group-b/human_collision_0147/result.json",
     "full_trace_sha256": "b38dd591cf7cfaf12dbcffa3bec4aa99f138941a162a572f8c6a6989b1e6f8a5",
     "validation_phase": "before_live_height_fix"
   },
@@ -4008,7 +4008,7 @@
       "hazard_events": []
     },
     "feedback": "Action completed successfully.",
-    "full_trace_path": "/home/rose/rtsafe-report-publish-validation/group-b/human_collision_0150/result.json",
+    "full_trace_path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/group-b/human_collision_0150/result.json",
     "full_trace_sha256": "570b00343ac4be5671cd379c286feb079691102dc984cd2e052cb6868124df8d",
     "validation_phase": "before_live_height_fix"
   },
@@ -4561,7 +4561,7 @@
       "hazard_events": []
     },
     "feedback": "Action completed successfully.",
-    "full_trace_path": "/home/rose/rtsafe-report-publish-validation/group-c/human_collision_0395/result.json",
+    "full_trace_path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/group-c/human_collision_0395/result.json",
     "full_trace_sha256": "337848db945dd0d1e97c52edc28cf0ae13866cc9fe2b81f1fb3a83e4fb324040",
     "validation_phase": "before_live_height_fix"
   },
@@ -4867,7 +4867,7 @@
       "hazard_events": []
     },
     "feedback": "Action completed successfully.",
-    "full_trace_path": "/home/rose/rtsafe-report-publish-validation/group-c-retry/trip_0024/result.json",
+    "full_trace_path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/group-c-retry/trip_0024/result.json",
     "full_trace_sha256": "9d0b8cf16ff92dd63882577b9b8161ae8bc4bc93e957fe3444d26278b71b45e5",
     "validation_phase": "before_live_height_fix"
   },
@@ -6119,7 +6119,7 @@
       "hazard_events": []
     },
     "feedback": "Traffic-rule violation recorded.",
-    "full_trace_path": "/home/rose/rtsafe-report-publish-validation/group-b/red_light_0039/result.json",
+    "full_trace_path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/group-b/red_light_0039/result.json",
     "full_trace_sha256": "b87f8ea59caf0f7cdfd4ca346a625b45b337b965a7cd4b3a24030e43f475f870",
     "validation_phase": "before_live_height_fix"
   },
@@ -7371,7 +7371,7 @@
       "hazard_events": []
     },
     "feedback": "Traffic-rule violation recorded.",
-    "full_trace_path": "/home/rose/rtsafe-report-publish-validation/group-c-retry/red_light_0009/result.json",
+    "full_trace_path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/group-c-retry/red_light_0009/result.json",
     "full_trace_sha256": "71384f9c240dcaaaa52b8b8ce122369c81cd9a821a59a1ba53234db3957e985c",
     "validation_phase": "before_live_height_fix"
   }

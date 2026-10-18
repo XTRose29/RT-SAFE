@@ -82,14 +82,14 @@ model's image.
 Two early attempts to rebuild a complete scene in one UE process crashed in
 Vulkan uniform-buffer code. Fresh dedicated instances completed the selected
 checks. This renderer failure remains unresolved. Early fixture failures and
-logs remain under `/home/rose/rtsafe-native-recheck`; the hazard evidence file
+logs remain under `${VALIDATION_HOME}/rtsafe-native-recheck`; the hazard evidence file
 also preserves an unsuccessful direct-car-push experiment (native vehicle
 counter zero) and an initial-overlap probe that consumed the overlap too early.
 Those are superseded by the production launched-vehicle test and the corrected
 first-read guard test, respectively; they are not counted as passes.
 
 Validation used GPU 7, ports 19770/19771, separate user directories, and output
-under `/home/rose/rtsafe-native-recheck`. Both validation UE instances were shut
+under `${VALIDATION_HOME}/rtsafe-native-recheck`. Both validation UE instances were shut
 down afterward. Reusable probes are `tools/validate_report_tasks.py`,
 `tools/continue_report_task.py`, `tools/validate_report_native_cases.py`, and
 `tools/validate_report_crossing.py`; their `--port` must point to a disposable

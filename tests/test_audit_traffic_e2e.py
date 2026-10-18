@@ -466,6 +466,33 @@ class TrafficE2EAuditTests(unittest.TestCase):
 
         self.assertTrue(any("outside crosswalk endpoints" in error for error in errors))
 
+    def test_v7_checks_physical_curbs_without_reinterpreting_v6_results(self):
+        result = valid_result()
+        result.update(
+            artifact_schema_version="two_rule_traffic_events_v6",
+            red_light_violations_count=1,
+            red_light_violation_events=[{
+                "event_id": "v1", "agent_on_crosswalk": True,
+                "crosswalk_projection": 0.8571,
+                "crosswalk_lateral_distance_cm": 57.71,
+                "crosswalk_start": [-700, 19300],
+                "crosswalk_end": [700, 19300],
+                "agent_position": {"x": 500, "y": 19242.289},
+            }],
+            red_light_conflict_vehicle_events=[{"event_id": "v1", "disposition": "disabled"}],
+        )
+        self.assertEqual([], audit_result(result, "any")[0])
+        result["artifact_schema_version"] = "two_rule_traffic_events_v7"
+        result["traffic_evaluation_policy"] = {"crosswalk_curb_inset_cm": 200}
+        errors, _ = audit_result(result, "any")
+        self.assertTrue(any("curb planes" in e for e in errors))
+        # Just inside the road is valid even if its rounded projection is
+        # indistinguishable from the recorded curb point.
+        result["red_light_violation_events"][0]["agent_position"]["x"] = 499.99
+        self.assertEqual([], audit_result(result, "any")[0])
+        del result["red_light_violation_events"][0]["agent_position"]
+        self.assertTrue(any("required geometry" in e for e in audit_result(result, "any")[0]))
+
     def test_collision_case_accepts_one_verified_collision_among_multiple_launches(self):
         result = valid_result()
         result.update(

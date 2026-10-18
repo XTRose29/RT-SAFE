@@ -32,7 +32,7 @@ def main():
     comm = RTCommunicator(ue)
     suffix = uuid.uuid4().hex[:8]
     name, blocker = 'REPORT_AGENT_'+suffix, 'REPORT_BLOCK_'+suffix
-    report = {'schema': 'execution_alignment_v2', 'rays': [], 'passed': False}
+    report = {'schema': 'execution_alignment_v3', 'rays': [], 'passed': False}
     start = Vector(-5000, 0)
     try:
         ue.spawn_bp_asset('/Game/RealTimeBench/Agent/BP_RT_Agent.BP_RT_Agent_C', name)

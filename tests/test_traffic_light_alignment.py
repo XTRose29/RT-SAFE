@@ -3636,6 +3636,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
         self.assertEqual("CONFLICT", snapshot["pedestrian_state"])
 
     def test_dont_walk_gate_replaces_crosswalk_entry_with_wait(self):
+        # Enter 1 cm beyond the physical curb; stopping at -500 is legal.
         agent = make_agent(
             position=Vector(-9300, -700),
             destination=Vector(-9300, 700),
@@ -3646,7 +3647,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
 
         success, record = agent.take_action(
             RTActionSpace(action_type=MOVE_TO, action_param="1"),
-            [Vector(-9300, -500)],
+            [Vector(-9300, -499)],
         )
 
         self.assertTrue(success)
@@ -3840,6 +3841,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
         self.assertEqual(0, agent.red_light_violations_count)
 
     def test_visual_only_legacy_violation_dispatches_consequence_callback(self):
+        # Enter 1 cm beyond the physical curb; stopping at -500 is legal.
         events = []
         agent = make_agent(
             position=Vector(-9300, -800),
@@ -3875,7 +3877,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
             "local_pedestrian_schedule",
         )
 
-        violated = agent._check_red_light_violation(Vector(-9300, -500))
+        violated = agent._check_red_light_violation(Vector(-9300, -499))
 
         self.assertTrue(violated)
         self.assertEqual(1, agent.red_light_violations_count)
@@ -4023,6 +4025,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
         )
 
     def test_clear_only_wait_is_replaced_with_forward_clearance(self):
+        # Enter 1 cm beyond the physical curb; stopping at -500 is legal.
         agent = make_agent(
             position=Vector(-9300, -700),
             destination=Vector(-9300, 700),
@@ -4031,7 +4034,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
         agent.move_to = lambda waypoint: 1
         agent.take_action(
             RTActionSpace(action_type=MOVE_TO, action_param="1"),
-            [Vector(-9300, -500)],
+            [Vector(-9300, -499)],
         )
         agent.position = Vector(-9300, -300)
         moved = []
@@ -4066,6 +4069,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
         self.assertNotIn("wait for the next full WALK interval", context)
 
     def test_walk_authorizes_entry_even_when_countdown_budget_is_short(self):
+        # Enter 1 cm beyond the physical curb; stopping at -500 is legal.
         agent = make_agent(
             position=Vector(-9300, -700),
             destination=Vector(-9300, 700),
@@ -4077,7 +4081,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
             crossing_safety_buffer_s=5,
         )
 
-        blocked = agent._should_gate_crosswalk_entry(Vector(-9300, -500))
+        blocked = agent._should_gate_crosswalk_entry(Vector(-9300, -499))
 
         self.assertFalse(blocked)
         snapshot = agent.last_execution_traffic_light_snapshot
@@ -4087,6 +4091,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
         self.assertNotIn(42, agent._legacy_occupancy_crosswalks)
 
     def test_admitted_crossing_clamps_overshoot_to_sidewalk_landing(self):
+        # Enter 1 cm beyond the physical curb; stopping at -500 is legal.
         agent = make_agent(
             position=Vector(-9300, -700),
             destination=Vector(-9300, 700),
@@ -4095,7 +4100,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
         agent.move_to = lambda waypoint: 1
         agent.take_action(
             RTActionSpace(action_type=MOVE_TO, action_param="1"),
-            [Vector(-9300, -500)],
+            [Vector(-9300, -499)],
         )
         agent.position = Vector(-9600, 0)
         agent.communicator.states = {7: False, 8: False}
@@ -4117,13 +4122,14 @@ class TrafficLightAlignmentTests(unittest.TestCase):
         )
 
     def test_lateral_drift_does_not_release_admitted_roadway_occupancy(self):
+        # Enter 1 cm beyond the physical curb; stopping at -500 is legal.
         agent = make_agent(
             position=Vector(-9300, -700),
             destination=Vector(-9300, 700),
             states={7: True, 8: True},
         )
         self.assertFalse(
-            agent._should_gate_crosswalk_entry(Vector(-9300, -500))
+            agent._should_gate_crosswalk_entry(Vector(-9300, -499))
         )
 
         # More than six metres off the centerline, but still between curb
@@ -4144,13 +4150,14 @@ class TrafficLightAlignmentTests(unittest.TestCase):
         self.assertEqual(0, agent.red_light_violations_count)
 
     def test_crossing_does_not_extend_legacy_walk_during_long_action(self):
+        # Enter 1 cm beyond the physical curb; stopping at -500 is legal.
         agent = make_agent(
             position=Vector(-9300, -700),
             destination=Vector(-9300, 700),
             states={7: True, 8: True},
         )
         self.assertFalse(
-            agent._should_gate_crosswalk_entry(Vector(-9300, -500))
+            agent._should_gate_crosswalk_entry(Vector(-9300, -499))
         )
         advances = []
         agent.communicator.unrealcv = SimpleNamespace(
@@ -4341,28 +4348,31 @@ class TrafficLightAlignmentTests(unittest.TestCase):
         self.assertEqual(1, len(manager.signal_vehicle_instability_events))
 
     def test_dont_walk_blocks_nearby_illegal_crossing_outside_painted_crosswalk(self):
+        # Enter 1 cm beyond the physical curb; stopping at -500 is legal.
         agent = make_agent(
             position=Vector(-8900, -700),
             destination=Vector(-9300, 700),
             states={7: False, 8: False},
         )
 
-        blocked = agent._should_gate_crosswalk_entry(Vector(-8900, -500))
+        blocked = agent._should_gate_crosswalk_entry(Vector(-8900, -499))
 
         self.assertTrue(blocked)
 
     def test_dont_walk_blocks_intersection_scale_illegal_crossing(self):
+        # Enter 1 cm beyond the physical curb; stopping at -500 is legal.
         agent = make_agent(
             position=Vector(-8450, -700),
             destination=Vector(-9300, 700),
             states={7: False, 8: False},
         )
 
-        blocked = agent._should_gate_crosswalk_entry(Vector(-8450, -500))
+        blocked = agent._should_gate_crosswalk_entry(Vector(-8450, -499))
 
         self.assertTrue(blocked)
 
     def test_walk_admission_remains_legal_during_flashing_clearance(self):
+        # Enter 1 cm beyond the physical curb; stopping at -500 is legal.
         events = []
         agent = make_agent(
             position=Vector(-9300, -700),
@@ -4374,7 +4384,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
         )
 
         self.assertFalse(
-            agent._should_gate_crosswalk_entry(Vector(-9300, -500))
+            agent._should_gate_crosswalk_entry(Vector(-9300, -499))
         )
         agent.position = Vector(-9300, -300)
         agent.crosswalk_intersection_names[42] = "RT_Intersection_12"
@@ -4417,6 +4427,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
         self.assertEqual([], events)
 
     def test_walk_admission_remains_legal_after_clearance_ends(self):
+        # Enter 1 cm beyond the physical curb; stopping at -500 is legal.
         events = []
         agent = make_agent(
             position=Vector(-9300, -700),
@@ -4428,7 +4439,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
         )
 
         self.assertFalse(
-            agent._should_gate_crosswalk_entry(Vector(-9300, -500))
+            agent._should_gate_crosswalk_entry(Vector(-9300, -499))
         )
         agent.position = Vector(-9300, -300)
         crosswalk = next(
@@ -4486,13 +4497,14 @@ class TrafficLightAlignmentTests(unittest.TestCase):
         self.assertEqual([], agent.red_light_violation_events)
 
     def test_conflicting_signal_states_fail_safe_at_execution(self):
+        # Enter 1 cm beyond the physical curb; stopping at -500 is legal.
         agent = make_agent(
             position=Vector(-9300, -700),
             destination=Vector(-9300, 700),
             states={7: True, 8: False},
         )
 
-        blocked = agent._should_gate_crosswalk_entry(Vector(-9300, -500))
+        blocked = agent._should_gate_crosswalk_entry(Vector(-9300, -499))
 
         self.assertTrue(blocked)
         self.assertEqual(
@@ -4724,7 +4736,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
                 )
             )
             self.assertEqual(
-                "execution_alignment_v2",
+                "execution_alignment_v3",
                 manifest["artifact_schema_version"],
             )
             self.assertEqual([1.0, 2.0, 3.0], manifest["input_camera"]["location"])
@@ -5297,7 +5309,7 @@ class RouteCorridorInvariantTests(unittest.TestCase):
         self.assertEqual(19, agent.red_light_violation_events[0]["crosswalk_id"])
         self.assertEqual(-1, agent.red_light_violation_events[0]["crosswalk_entry_direction"])
 
-    def test_route_crosswalk_wins_over_adjacent_crosswalk_path_overlap(self):
+    def test_route_crosswalk_is_not_shadowed_by_adjacent_sidewalk_overlap(self):
         route_crosswalk = SimpleNamespace(
             id=21,
             start=Vector(-29300.0, 700.0),
@@ -5330,8 +5342,10 @@ class RouteCorridorInvariantTests(unittest.TestCase):
             traffic_policy=TRAFFIC_POLICY_VISUAL_ONLY,
         )
 
+        # The path ends before the adjacent crossing's physical curb. Only
+        # the route crossing is entered; the old 5% margin included sidewalk.
         self.assertEqual(
-            12,
+            21,
             agent._marked_crosswalk_for_path(position, next_waypoint).id,
         )
         self.assertFalse(agent._should_gate_crosswalk_entry(next_waypoint))
@@ -6872,6 +6886,150 @@ class RouteCorridorInvariantTests(unittest.TestCase):
                 ['GEN_RT_BAD_ASSET'],
                 'movable_obstacle',
             )
+
+
+class CrosswalkCurbBoundaryTests(unittest.TestCase):
+    """Regressions for the five curb false positives in the October 16 PDF."""
+
+    def make_agent(self, crosswalk, position, reverse=False):
+        destination = crosswalk.start if reverse else crosswalk.end
+        agent = RTAgent(
+            position=position,
+            direction=(destination - position).normalize(),
+            destination=destination,
+            shortest_path=[destination],
+            communicator=FakeCommunicator({}),
+            llm=None,
+            route_crosswalks=[crosswalk],
+            crosswalk_signal_groups={crosswalk.id: []},
+        )
+        agent.red_light_violation_callback = MagicMock(return_value=None)
+        return agent
+
+    @staticmethod
+    def snapshot(agent, crosswalk, state="DONT_WALK"):
+        return agent._finalize_route_crossing_permission(
+            {"relevant": True, "pedestrian_state": state, "consistent": True},
+            crosswalk,
+        )
+
+    def test_reported_task38_curb_position_never_launches_a_conflict(self):
+        crosswalk = SimpleNamespace(
+            id=38, start=Vector(-700, 19300), end=Vector(700, 19300),
+        )
+        # All five reviewed models stopped at this pose after a 2 m move.
+        agent = self.make_agent(crosswalk, Vector(500, 19242.289), reverse=True)
+        controller = RTTrafficController(
+            Config(str(REPO_ROOT / "config.yaml")),
+            str(REPO_ROOT / "data/map5_20roads/roads.json"),
+            seed=0, num_vehicles=0, num_pedestrians=0,
+        )
+        agent.traffic_sidewalks = controller.sidewalks
+        self.assertTrue(agent._is_within_authored_sidewalk(agent.position))
+        for state in ("DONT_WALK", "FLASHING_DONT_WALK", "WALK"):
+            snapshot = self.snapshot(agent, crosswalk, state)
+            self.assertFalse(snapshot["agent_on_crosswalk"])
+            self.assertFalse(snapshot["crossing_in_progress"])
+            self.assertFalse(snapshot["crossing_admitted_on_walk"])
+        self.assertEqual(0, agent.red_light_violations_count)
+        self.assertEqual([], agent.red_light_violation_events)
+        agent.red_light_violation_callback.assert_not_called()
+
+    def test_physical_curb_boundary_in_both_directions_and_rotated_maps(self):
+        for axis in (Vector(1, 0), Vector(0, 1), Vector(0.6, 0.8)):
+            for length in (1400, 2800):
+                crosswalk = SimpleNamespace(
+                    id=42, start=Vector(10000, -20000),
+                    end=Vector(10000, -20000) + axis * length,
+                )
+                for reverse in (False, True):
+                    origin = crosswalk.end if reverse else crosswalk.start
+                    direction = axis * (-1 if reverse else 1)
+                    for inset in (70, 130, 199.9, 200, 200.1, 224.4, 400):
+                        with self.subTest(axis=axis, length=length, reverse=reverse, inset=inset):
+                            point = origin + direction * inset
+                            agent = self.make_agent(crosswalk, point, reverse)
+                            snapshot = self.snapshot(agent, crosswalk)
+                            expected = inset > 200
+                            self.assertEqual(expected, snapshot["agent_on_crosswalk"])
+                            self.assertEqual(expected, agent._is_within_marked_crosswalk(point))
+                            self.assertEqual(expected, agent._is_within_route_crosswalk(point))
+                            self.assertEqual(expected, agent._is_crossing_roadway_occupied(point, crosswalk))
+                            self.assertEqual(int(expected), agent.red_light_violations_count)
+                            self.assertEqual(int(expected), agent.red_light_violation_callback.call_count)
+
+    def test_five_verified_roadway_entries_still_trigger_a_violation(self):
+        # The other five visually reviewed cases in the PDF are actual entries.
+        cases = [
+            ("0016", (-700, 700), (-700, -700), (-893.021, 300)),
+            ("0039", (-29300, 700), (-30700, 700), (-29700, 676.374)),
+            ("0009", (-29300, 700), (-30700, 700), (-29657.877, 864.825)),
+            ("0014", (10700, 9300), (10700, 10700), (10700, 9624.997)),
+            ("0044", (-700, 19300), (700, 19300), (300, 19242.289)),
+        ]
+        for case, start, end, position in cases:
+            with self.subTest(case=case):
+                crosswalk = SimpleNamespace(id=case, start=Vector(*start), end=Vector(*end))
+                agent = self.make_agent(crosswalk, Vector(*position))
+                snapshot = self.snapshot(agent, crosswalk, "DON'T WALK")
+                self.assertTrue(snapshot["agent_on_crosswalk"])
+                self.assertEqual(1, agent.red_light_violations_count)
+                agent.red_light_violation_callback.assert_called_once()
+
+    def test_walk_at_curb_does_not_admit_later_red_entry(self):
+        crosswalk = make_crosswalk()
+        agent = self.make_agent(crosswalk, Vector(-9300, -500))
+        self.snapshot(agent, crosswalk, "WALK")
+        self.assertNotIn(crosswalk.id, agent._admitted_crosswalks)
+        agent.position = Vector(-9300, -499)
+        self.snapshot(agent, crosswalk)
+        self.snapshot(agent, crosswalk)
+        self.assertEqual(1, agent.red_light_violations_count)
+        agent.red_light_violation_callback.assert_called_once()
+
+    def test_legal_entry_stays_admitted_until_physical_far_curb(self):
+        crosswalk = make_crosswalk()
+        for reverse in (False, True):
+            with self.subTest(reverse=reverse):
+                sign = -1 if reverse else 1
+                agent = self.make_agent(crosswalk, Vector(-9300, -499 * sign), reverse)
+                self.snapshot(agent, crosswalk, "WALK")
+                agent.position = Vector(-9300, 499 * sign)
+                snapshot = self.snapshot(agent, crosswalk)
+                self.assertTrue(snapshot["crossing_admitted_on_walk"])
+                self.assertEqual(0, agent.red_light_violations_count)
+                agent.position = Vector(-9300, 500 * sign)
+                snapshot = self.snapshot(agent, crosswalk)
+                self.assertFalse(snapshot["crossing_in_progress"])
+                self.assertNotIn(crosswalk.id, agent._admitted_crosswalks)
+                agent.position = Vector(-9300, 499 * sign)
+                self.snapshot(agent, crosswalk)
+                self.assertEqual(1, agent.red_light_violations_count)
+
+    def test_returning_to_near_curb_rearms_red_entry(self):
+        crosswalk = make_crosswalk()
+        agent = self.make_agent(crosswalk, Vector(-9300, -499))
+        self.snapshot(agent, crosswalk)
+        agent.position = Vector(-9300, -500)
+        self.snapshot(agent, crosswalk)
+        self.assertNotIn(crosswalk.id, agent._active_illegal_crossings)
+        agent.position = Vector(-9300, -499)
+        self.snapshot(agent, crosswalk)
+        self.assertEqual(2, agent.red_light_violations_count)
+
+    def test_curb_approach_path_does_not_enter_roadway(self):
+        crosswalk = make_crosswalk()
+        self.assertFalse(RTAgent._segment_intersects_crossing_corridor(
+            Vector(-9300, -700), Vector(-9300, -500), crosswalk,
+        ))
+        self.assertTrue(RTAgent._segment_intersects_crossing_corridor(
+            Vector(-9300, -700), Vector(-9300, -499), crosswalk,
+        ))
+
+    def test_short_or_degenerate_segment_has_no_roadway(self):
+        for length in (0, 200, 400):
+            crosswalk = SimpleNamespace(id=1, start=Vector(0, 0), end=Vector(length, 0))
+            self.assertFalse(RTAgent._is_crossing_corridor_interior(Vector(length / 2, 0), crosswalk))
 
 
 if __name__ == "__main__":

@@ -11,6 +11,6 @@
   },
   "worker_running": true,
   "episode_running": true,
-  "monitor_log": "/home/rose/rtsafe-storage-relief/medium-monitor.log",
+  "monitor_log": "${VALIDATION_HOME}/rtsafe-storage-relief/medium-monitor.log",
   "storage": "Shared /data nearly full; external monitor retries ENOSPC, worker and episode were not restarted."
 }

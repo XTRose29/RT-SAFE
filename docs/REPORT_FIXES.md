@@ -7,7 +7,7 @@ replays from all five maps and a fix for sweeps restoring stale actor height.
 
 The report identifies real harness defects. This branch introduces protocol
 `execution_alignment_v2`, based on commit `4ff27bd`, in the separate checkout
-`/home/rose/rt-safe-report-fixes`. It does not change the running Gemini checkout,
+`${VALIDATION_HOME}/rt-safe-report-fixes`. It does not change the running Gemini checkout,
 campaign configuration, results, or runtime installation. The worktree was
 moved from `/data/rose` after that shared filesystem filled during validation;
 its Git worktree registration was repaired.
@@ -49,7 +49,7 @@ with corrected movement and feedback.
 
 Coordinates from `human_collision_0061`, `object_collision_0001`, and
 `illegal_road_entry_0003` under
-`/data/hamza/projects/safety/10.08/failure_cases/with_imgs/unverified/` are saved in
+`${REPORT_EXAMPLES_ROOT}/unverified/` are saved in
 [report_actions.json](../tests/fixtures/report_actions.json). Tests replay these
 coordinates in a controlled clear scene, not the original dynamic episode.
 
@@ -103,7 +103,7 @@ been merged into the active checkout or applied to historical results.
 
 The shared `/data` filesystem filled at the end of this work. Gemini's coordinator
 exited with ENOSPC, while its existing worker and episode continued. The 8.2 GB
-pip download cache was relocated to `/home/rose/rtsafe-storage-relief/pip` with
+pip download cache was relocated to `${VALIDATION_HOME}/rtsafe-storage-relief/pip` with
 a symlink preserving its original path. An external monitor adopted the live
 worker and restores summary/result filing without spawning or restarting tasks.
 See [isolation and recovery evidence](../validation/report-fixes/gemini-isolation.json).

@@ -1,5 +1,5 @@
 {
-  "prior_artifact": "/home/rose/rtsafe-native-recheck/full-route/progress.json",
+  "prior_artifact": "${VALIDATION_HOME}/rtsafe-native-recheck/full-route/progress.json",
   "same_actor": "RT_AGENT",
   "starting_live_pose": [
     -1256.004,

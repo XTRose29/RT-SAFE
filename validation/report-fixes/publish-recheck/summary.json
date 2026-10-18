@@ -21,7 +21,7 @@
     "llm/prompt.py": "5d9e319e94002fe8ca03317fa350bf745480597a9462798329b625690b5b9c1b",
     "base/rt_unrealcv.py": "9d79e9b15b1f1d3b22069deb52e33fe6f77aa9834fe9b1744c960ce60f3e0ab5"
   },
-  "validation_runtime_root": "/home/rose/rtsafe-report-publish-validation",
+  "validation_runtime_root": "${VALIDATION_HOME}/rtsafe-report-publish-validation",
   "limitations": [
     "Historical dynamic actor state and prior hazard occupancy are not reconstructed.",
     "Seven historical example replays and the vehicle consequence check preceded the live-height change; affected examples, full task, rays, contacts and hazards were rerun afterward.",

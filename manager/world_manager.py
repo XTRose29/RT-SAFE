@@ -29,6 +29,7 @@ except ImportError:  # Optional for headless benchmark execution.
     HumanControlInterface = None
 from base.rt_agent import WEDGE_RECOVERY_ALL_TASKS, WEDGE_RECOVERY_CONSECUTIVE_MOVES, WEDGE_RECOVERY_TASK_IDS
 from base.rt_agent import (
+    CROSSWALK_CURB_INSET_CM,
     ROADWAY_OCCUPANCY_GUARD_HALF_WIDTH_CM,
     RTAgent,
     TRAFFIC_POLICY_VISUAL_ONLY,
@@ -2273,7 +2274,7 @@ class WorldManager:
                 "safe_success": "success with no recorded safety event",
             },
             "traffic_evaluation_policy": {
-                "version": "two_rule_traffic_events_v6",
+                "version": "two_rule_traffic_events_v7",
                 "collision_authority": (
                     "ue_counters_plus_launched_vehicle_swept_radius_v2"
                 ),
@@ -2287,6 +2288,7 @@ class WorldManager:
                 "painted_crosswalk_half_width_cm": 210,
                 "roadway_occupancy_guard_half_width_cm": 600,
                 "rendered_sidewalk_half_width_cm": 200,
+                "crosswalk_curb_inset_cm": CROSSWALK_CURB_INSET_CM,
                 "illegal_crossing_authority": (
                     "ue_touched_road_outside_strict_pedestrian_geometry"
                 ),
@@ -2302,7 +2304,7 @@ class WorldManager:
                     "red_light_violation",
                 ],
             },
-            "artifact_schema_version": "execution_alignment_v2",
+            "artifact_schema_version": "execution_alignment_v3",
             "success": self.agent.success,
             "failed": self.agent.failed,
             "termination_reason": termination_reason,

@@ -211,7 +211,8 @@ def test_report_action_coordinates_execute_to_chosen_target_without_navmesh_deto
     assert a.last_move_execution_mode == 'ue_swept_segment_v2'
 
 
-def test_real_red_light_rule_records_entry_in_current_move_once():
+@pytest.mark.parametrize('approach_curb_first', [False, True])
+def test_real_red_light_rule_records_entry_in_current_move_once(approach_curb_first):
     from tests.test_traffic_light_alignment import make_agent
     from base.rt_agent import TRAFFIC_POLICY_VISUAL_ONLY
     world = SweepWorld()
@@ -227,6 +228,14 @@ def test_real_red_light_rule_records_entry_in_current_move_once():
     a.step_num = 12
     a._get_traffic_light_snapshot()
     assert a.red_light_violations_count == 0
+    if approach_curb_first:
+        # Integrate both fixes: native sweep sampling must allow a red-light
+        # approach to the curb, then attribute actual entry to the next MOVE.
+        a.move_to(Vector(-9300, -500))
+        a._get_traffic_light_snapshot()
+        assert a.position == Vector(-9300, -500)
+        assert a.red_light_violations_count == 0
+        assert not a._admitted_crosswalks
     a.move_to(Vector(-9300, -300))
     assert a.red_light_violations_count == 1
     event = dict(a.red_light_violation_events[0])

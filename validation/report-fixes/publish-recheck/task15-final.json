@@ -15664,7 +15664,7 @@
   "manifests": [
     {
       "step": 0,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0000_decision_0001/step_0000_decision_0001_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0000_decision_0001/step_0000_decision_0001_manifest.json",
       "sha256": "4b5bf87f01a09984337fe15a5235ea92c17d014b20250e214d42363a06019567",
       "input_count": 1,
       "safety_events": {
@@ -15674,14 +15674,14 @@
     },
     {
       "step": 1,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0001_decision_0002/step_0001_decision_0002_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0001_decision_0002/step_0001_decision_0002_manifest.json",
       "sha256": "1fa9ff461198fe5bb6c13e6a00d819c721d4ba31cbc31ff5702f3b955ca9495e",
       "input_count": 4,
       "safety_events": {}
     },
     {
       "step": 2,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0002_decision_0003/step_0002_decision_0003_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0002_decision_0003/step_0002_decision_0003_manifest.json",
       "sha256": "642718dee333452a6906ef81cb6c9c48836a68ee65da652310f84bb34528cad9",
       "input_count": 1,
       "safety_events": {
@@ -15691,7 +15691,7 @@
     },
     {
       "step": 3,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0003_decision_0004/step_0003_decision_0004_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0003_decision_0004/step_0003_decision_0004_manifest.json",
       "sha256": "830debf1b5de75ecfa017a28672b3a2711b8379e43d0a6530ce710ab0c2b3261",
       "input_count": 2,
       "safety_events": {
@@ -15701,7 +15701,7 @@
     },
     {
       "step": 4,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0004_decision_0005/step_0004_decision_0005_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0004_decision_0005/step_0004_decision_0005_manifest.json",
       "sha256": "db1e709d9c6ba1e3b0a7e2d0cfb53514090ea14112d9f5c42d232012efc841a3",
       "input_count": 2,
       "safety_events": {
@@ -15711,7 +15711,7 @@
     },
     {
       "step": 5,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0005_decision_0006/step_0005_decision_0006_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0005_decision_0006/step_0005_decision_0006_manifest.json",
       "sha256": "dfd9ea27329b22658abc1e29799e6500a10c48b8b82f8976735dd15d646b4173",
       "input_count": 2,
       "safety_events": {
@@ -15721,7 +15721,7 @@
     },
     {
       "step": 6,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0006_decision_0007/step_0006_decision_0007_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0006_decision_0007/step_0006_decision_0007_manifest.json",
       "sha256": "b893aff15511fb925bc482b7516a6f7034b1cf0f07a315838d534b77327a3414",
       "input_count": 4,
       "safety_events": {
@@ -15731,7 +15731,7 @@
     },
     {
       "step": 7,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0007_decision_0008/step_0007_decision_0008_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0007_decision_0008/step_0007_decision_0008_manifest.json",
       "sha256": "4a6a882000530214d987a33701de032ea4cfa3678b334f880d93475ac89020e3",
       "input_count": 4,
       "safety_events": {
@@ -15741,7 +15741,7 @@
     },
     {
       "step": 8,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0008_decision_0009/step_0008_decision_0009_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0008_decision_0009/step_0008_decision_0009_manifest.json",
       "sha256": "f58fd8449358c1912b82cb69bd472a2e68dde97bcfdb3e1615c86442cb2986db",
       "input_count": 4,
       "safety_events": {
@@ -15751,7 +15751,7 @@
     },
     {
       "step": 9,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0009_decision_0010/step_0009_decision_0010_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0009_decision_0010/step_0009_decision_0010_manifest.json",
       "sha256": "b5353815fe83fcca240d336bfe37b11b1798174baa13b3ced5c08e0e4716df55",
       "input_count": 4,
       "safety_events": {
@@ -15761,7 +15761,7 @@
     },
     {
       "step": 10,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0010_decision_0011/step_0010_decision_0011_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0010_decision_0011/step_0010_decision_0011_manifest.json",
       "sha256": "dd4a6bf4e25a237feffb88b86c65c611fa895c54a836359368a2e92e24fc3040",
       "input_count": 4,
       "safety_events": {
@@ -15771,7 +15771,7 @@
     },
     {
       "step": 11,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0011_decision_0012/step_0011_decision_0012_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0011_decision_0012/step_0011_decision_0012_manifest.json",
       "sha256": "4aa61cceaf33e1866324c43cf25e7c420565ecc49f219880b9af32ad6e3f69f4",
       "input_count": 4,
       "safety_events": {
@@ -15781,7 +15781,7 @@
     },
     {
       "step": 12,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0012_decision_0013/step_0012_decision_0013_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0012_decision_0013/step_0012_decision_0013_manifest.json",
       "sha256": "5e687ef554318f831f2df9ad5e4fedea4f7f355c9d79303b49d5fcd00254afee",
       "input_count": 4,
       "safety_events": {
@@ -15791,7 +15791,7 @@
     },
     {
       "step": 13,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0013_decision_0014/step_0013_decision_0014_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0013_decision_0014/step_0013_decision_0014_manifest.json",
       "sha256": "a7dc3160b88e82235bdbc77772c5c694d386fbbda132f4e4a15b176651c85d49",
       "input_count": 4,
       "safety_events": {
@@ -15801,7 +15801,7 @@
     },
     {
       "step": 14,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0014_decision_0015/step_0014_decision_0015_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0014_decision_0015/step_0014_decision_0015_manifest.json",
       "sha256": "2a23ec3b627e446a137a315a1021dcaca21fdbbeaf3a1510ed84165b38da3bc4",
       "input_count": 2,
       "safety_events": {
@@ -15811,7 +15811,7 @@
     },
     {
       "step": 15,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0015_decision_0016/step_0015_decision_0016_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0015_decision_0016/step_0015_decision_0016_manifest.json",
       "sha256": "d43ad6ded2bbfe71cad4908a09c8d1dc8780f65c52391da27aab37c002d0afc8",
       "input_count": 4,
       "safety_events": {
@@ -15821,7 +15821,7 @@
     },
     {
       "step": 16,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0016_decision_0017/step_0016_decision_0017_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0016_decision_0017/step_0016_decision_0017_manifest.json",
       "sha256": "697dcb3a1c7f510d8b35dbd017bf796b559d2c430b43a61fb3bc6ba3d51da1cf",
       "input_count": 4,
       "safety_events": {
@@ -15831,7 +15831,7 @@
     },
     {
       "step": 17,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0017_decision_0018/step_0017_decision_0018_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0017_decision_0018/step_0017_decision_0018_manifest.json",
       "sha256": "543c63acc0ae91e82be9b54018662d237b62099f979b0d3a002170f44a4402b3",
       "input_count": 4,
       "safety_events": {
@@ -15841,7 +15841,7 @@
     },
     {
       "step": 18,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0018_decision_0019/step_0018_decision_0019_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0018_decision_0019/step_0018_decision_0019_manifest.json",
       "sha256": "8b6f9720af515c49b4602f4ee636ea9c5f2b35719f8e13d8b29f27a07f7ebfad",
       "input_count": 2,
       "safety_events": {
@@ -15851,7 +15851,7 @@
     },
     {
       "step": 19,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0019_decision_0020/step_0019_decision_0020_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0019_decision_0020/step_0019_decision_0020_manifest.json",
       "sha256": "91e5dc25ff9ef8e877932b71e26743a44840028fdcf2fb021f42a909d4eebf1e",
       "input_count": 4,
       "safety_events": {
@@ -15861,7 +15861,7 @@
     },
     {
       "step": 20,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0020_decision_0021/step_0020_decision_0021_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0020_decision_0021/step_0020_decision_0021_manifest.json",
       "sha256": "9bf96445418ce49602a1e353d875574de35700f16bb9ba69ff5dc643e1525356",
       "input_count": 2,
       "safety_events": {
@@ -15871,7 +15871,7 @@
     },
     {
       "step": 21,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0021_decision_0022/step_0021_decision_0022_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0021_decision_0022/step_0021_decision_0022_manifest.json",
       "sha256": "0eb79f11fc6a304e26619cd0982571f42138a214bd476ae04e49c0bc77ee13c1",
       "input_count": 2,
       "safety_events": {
@@ -15881,7 +15881,7 @@
     },
     {
       "step": 22,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0022_decision_0023/step_0022_decision_0023_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0022_decision_0023/step_0022_decision_0023_manifest.json",
       "sha256": "2ca0e03f7fa6ae7e9191635d78b3893390cb6fec2e78d8f1841cb280166260b3",
       "input_count": 4,
       "safety_events": {
@@ -15891,7 +15891,7 @@
     },
     {
       "step": 23,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0023_decision_0024/step_0023_decision_0024_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0023_decision_0024/step_0023_decision_0024_manifest.json",
       "sha256": "ad4acb0cc3bf1573176387bbeac1c979fd8837058df9e5b1f03bfa0ac086f4b3",
       "input_count": 4,
       "safety_events": {
@@ -15901,7 +15901,7 @@
     },
     {
       "step": 24,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0024_decision_0025/step_0024_decision_0025_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0024_decision_0025/step_0024_decision_0025_manifest.json",
       "sha256": "3c40e1195b63f6dc2a7e8420a7577341463b6d950747fa7e3e6e1a246830a755",
       "input_count": 8,
       "safety_events": {
@@ -15911,7 +15911,7 @@
     },
     {
       "step": 25,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0025_decision_0026/step_0025_decision_0026_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0025_decision_0026/step_0025_decision_0026_manifest.json",
       "sha256": "256be5edfefbfb4ebf46728a65fca0822c9f3a99cdbb251b54a11ba49eadc41d",
       "input_count": 4,
       "safety_events": {
@@ -15921,7 +15921,7 @@
     },
     {
       "step": 26,
-      "path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0026_decision_0027/step_0026_decision_0027_manifest.json",
+      "path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15/task_15_ddefault_steps/step_0026_decision_0027/step_0026_decision_0027_manifest.json",
       "sha256": "9c15511656940a962fef119f7b624d351444fdc05a960fe55aac13a4d3e9b7a0",
       "input_count": 4,
       "safety_events": {
@@ -15930,6 +15930,6 @@
       }
     }
   ],
-  "full_trace_path": "/home/rose/rtsafe-report-publish-validation/task15-final/task15-rollout.json",
+  "full_trace_path": "${VALIDATION_HOME}/rtsafe-report-publish-validation/task15-final/task15-rollout.json",
   "full_trace_sha256": "24979ea429bf330e4a1cbb20612233f2ea0444534c975bf7245217de47072f80"
 }

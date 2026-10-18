@@ -1,0 +1,55 @@
+{
+  "note": "Only machine-specific path strings were normalized. Existing historical artifact hashes describe the original validation files, not these portable exports. Numerical results and source-code provenance hashes are unchanged.",
+  "files": [
+    {
+      "file": "docs/REPORT_FIXES.md",
+      "original_sha256": "d7185d96228381ea4a1d6a98c4217e1ee1686f90fc0c6170f9c4868031c6a266",
+      "portable_sha256": "bfc382e7380a6637c64676c99be72432676673a36f597705188a78822d784e92"
+    },
+    {
+      "file": "docs/REPORT_NATIVE_RECHECK.md",
+      "original_sha256": "21d5ee1d6874d29b6c74b5c29ffde9c448835b8d146da39662027960262c59a4",
+      "portable_sha256": "8d2f083159c2bbadca65be9c7870f5f62aa2a49ed68232b3758579451c1b30e2"
+    },
+    {
+      "file": "docs/REPORT_PUBLISH_RECHECK.md",
+      "original_sha256": "51a7c0a147658edd0d67b3e33310c4bd3cb244c2ca54c1cbe4a3065e17bad6eb",
+      "portable_sha256": "97d716f7ec0cfa686399d7e2be3abdf3732c8f412db8af15a1819b64794f741e"
+    },
+    {
+      "file": "validation/report-fixes/gemini-isolation.json",
+      "original_sha256": "0cfa9ddf238faf40bfac18339f7bf2b0c4a3f6b454185def1728db753378e610",
+      "portable_sha256": "72658b3300a0e8fafaf3a6fb7d6fe8515c5e7874058bec311c89c1369de4bc78"
+    },
+    {
+      "file": "validation/report-fixes/native-recheck/gemini-isolation.json",
+      "original_sha256": "78d2a5fcc35ccb9137db9f66ae56b0dd3e0e8a01064429a37ccdfc476af80baa",
+      "portable_sha256": "86df1f402321a4260ed79848105da00db5b0bffe7d936666bd1751fa57c07f26"
+    },
+    {
+      "file": "validation/report-fixes/native-recheck/summary.json",
+      "original_sha256": "e4feb7f22f4d3ab4f973b515b78eaf746f85ae5a8f1cce5856221924956f2ef9",
+      "portable_sha256": "a58dba92c33bd182ab8e26eaaa3c9f51ec40310a10969883cb287817372f2ea9"
+    },
+    {
+      "file": "validation/report-fixes/native-recheck/task15-completion.json",
+      "original_sha256": "1e873d003518c63cf1933951d2431c3cfe55af8cdc10f1ba528690861e65b13b",
+      "portable_sha256": "ff297cbb0297a94a38e037d158bd46e30c5e942c5feb87f6aa0e89ff69de716b"
+    },
+    {
+      "file": "validation/report-fixes/publish-recheck/example-replays.json",
+      "original_sha256": "9321217c42c2bc29c8b77f50c85a3888beb4a12afd3af6ddf0b51e7ab212ceae",
+      "portable_sha256": "879cfe69422dec431897adcfc8b634d4c64c3a6a344c052acb6f6902f2a11394"
+    },
+    {
+      "file": "validation/report-fixes/publish-recheck/summary.json",
+      "original_sha256": "02b93f5a68fa8fedd6a2eac08c592a8a2a28044f157b748cd7d342db54778020",
+      "portable_sha256": "7eadb3d0ce7fa5035112212814a096badd1f43d35146e19d4fdc8972a51a01e6"
+    },
+    {
+      "file": "validation/report-fixes/publish-recheck/task15-final.json",
+      "original_sha256": "1eaf65cdb5b4b7bda68a7637671d8756c5b702a7e7c952a3e6990442d8fc4b2a",
+      "portable_sha256": "9203810edf4a80c7abeaa54f710132fbf9e0acbd5058f9ea811de27107ab08ed"
+    }
+  ]
+}

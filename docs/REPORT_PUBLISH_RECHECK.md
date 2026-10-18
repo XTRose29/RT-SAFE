@@ -1,8 +1,8 @@
 # Report examples rechecked in UE before publication
 
 On 16 October 2026, the fix branch was checked again against
-`/data/rose/rtsafe_report.pdf` and the examples under
-`/data/hamza/projects/safety/10.08/failure_cases/with_imgs`.
+`${WORKSPACE}/rtsafe_report.pdf` and the examples under
+`${REPORT_EXAMPLES_ROOT}`.
 This follow-up found and fixed an additional movement defect: sweeps reused
 the action's original height even after native physics had changed it.
 
@@ -95,7 +95,7 @@ scenes; never target a live campaign.
 
 ```bash
 python tools/replay_report_examples.py \
-  --examples-root /data/hamza/projects/safety/10.08/failure_cases/with_imgs \
+  --examples-root ${REPORT_EXAMPLES_ROOT} \
   --cases human_collision_0061 object_collision_0001 \
   --port UNUSED_PORT --gpu FREE_GPU \
   --ue-launcher /path/to/Linux/SimWorld.sh --output /path/to/new-results
@@ -114,7 +114,7 @@ The packaged UE renderer crashed during one task 10 setup; a fresh retry passed.
 A multi-actor height diagnostic also encountered a camera-capture failure;
 the physical cause was then isolated without cameras and the affected full-step
 examples were successfully rerun. Early fixture failures are retained outside
-Git under `/home/rose/rtsafe-report-publish-validation`: a camera/actor-yaw import
+Git under `${VALIDATION_HOME}/rtsafe-report-publish-validation`: a camera/actor-yaw import
 error, missing MOVE metadata on a TURN, and a parked-car control that lacked a
 blocker in this scene. The last was replaced by a deliberately spawned static
 barrier. None of these failed attempts is counted as a passing check.
