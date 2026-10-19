@@ -638,8 +638,19 @@ def validate_attempt(
         for token_key in (
             "prompt_tokens", "completion_tokens", "reasoning_tokens", "total_tokens"
         ):
+            # The subscription bridge reports input/output usage but may omit
+            # reasoning detail. Preserve unknown instead of inventing zero.
+            if PROVIDER == "account-pool" and token_key == "reasoning_tokens":
+                continue
             if token_key not in usage or usage[token_key] is None:
                 issues.append(f"step {index} token field {token_key} absent")
+        if PROVIDER == "account-pool":
+            provider_usage = usage.get("provider_usage") or {}
+            pool = provider_usage.get("account_pool") or {}
+            if provider_usage.get("served_model") != MODEL or pool.get("requested_model") != MODEL:
+                issues.append(f"step {index} account-pool model identity not verified")
+            if pool.get("allow_paid") is not False:
+                issues.append(f"step {index} account-pool paid fallback was not disabled")
         if PROVIDER == "claude-code":
             from llm.claude_code_backend import served_model_matches
 

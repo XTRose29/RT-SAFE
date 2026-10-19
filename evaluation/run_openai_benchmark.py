@@ -31,6 +31,7 @@ sys.modules.setdefault("simworld", _simworld)
 from utils.route_steps import route_length_to_max_steps
 from utils.task_routes import reconstruct_route_points, route_length_cm
 from llm.reasoning_capabilities import openrouter_reasoning_profile
+from llm.account_pool import validate_route
 
 
 DEFAULT_OPENAI_MODEL = "gpt-5.6-luna"
@@ -175,6 +176,7 @@ def build_llm_config(args: argparse.Namespace) -> dict:
                 # Provider/API failures are infrastructure events, not model
                 # actions. Let the matrix retry the entire isolated rollout.
                 "raise_on_api_error": True,
+                **({"extra_body": {"allow_paid": False}} if args.provider == "account-pool" else {}),
                 # The instructional prompt intentionally exposes its concise
                 # Reasoning line. Only the action-only condition may override
                 # that response contract.
@@ -236,9 +238,11 @@ def build_cost_estimate(args: argparse.Namespace) -> dict[str, Any]:
     )
 
     billing_mode = SUBSCRIPTION_BILLING_MODES.get(args.provider, "api_usage_based")
+    if args.provider == "account-pool":
+        billing_mode = "account_pool_subscription"
     pricing = None
     pricing_source = None
-    if args.provider in SUBSCRIPTION_BILLING_MODES:
+    if args.provider in SUBSCRIPTION_BILLING_MODES or args.provider == "account-pool":
         # Codex exec / Claude Code add their own model-visible instructions
         # and consume the signed-in account's plan allowance. API-dollar estimates
         # are therefore inapplicable and would understate the input materially.
@@ -326,6 +330,8 @@ def print_cost_estimate(estimate: dict[str, Any]) -> None:
         elif estimate["billing_mode"] == "claude_subscription_plan_limits":
             print("Estimated API cost: not applicable (uses Claude subscription plan limits)")
             print("Runtime Claude Code token usage is recorded for every decision.")
+        elif estimate["billing_mode"] == "account_pool_subscription":
+            print("Uses pooled subscription quota; paid API fallback is disabled.")
         else:
             print("Estimated API cost: unavailable (model price is not in the local catalog)")
             print(
@@ -357,7 +363,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     parser.add_argument(
         "--provider",
-        choices=("openai", "openrouter", "codex-cli", "claude-code"),
+        choices=("openai", "openrouter", "account-pool", "codex-cli", "claude-code"),
         default="openai",
         help="API provider (default: openai).",
     )
@@ -571,7 +577,14 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Print the secret-free resolved configuration without reading the key or connecting to UE.",
     )
     args = parser.parse_args(argv)
-    if args.provider == "openrouter":
+    if args.provider == "account-pool":
+        try:
+            validate_route(args.model, args.reasoning_effort, args.base_url)
+        except ValueError as exc:
+            parser.error(str(exc))
+        if args.api_mode != "chat_completions" or args.key_file is None:
+            parser.error("Account pool requires --api-mode chat_completions and an explicit --key-file")
+    elif args.provider == "openrouter":
         if args.api_mode != "chat_completions":
             parser.error("OpenRouter rollouts currently require --api-mode chat_completions")
         if args.base_url is None:
@@ -738,6 +751,7 @@ def main(argv: list[str] | None = None) -> int:
     api_key = None
     if args.provider not in SUBSCRIPTION_BILLING_MODES:
         credential_environment = (
+            "POOL_KEY" if args.provider == "account-pool" else
             "OPENROUTER_API_KEY"
             if args.provider == "openrouter"
             else "OPENAI_API_KEY"

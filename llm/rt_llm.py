@@ -11,6 +11,7 @@ from utils.img2base64 import pil_to_base64, np_to_base64
 from base.rt_action_space import RTActionSpace, MOVE_TO, TURN_AROUND, WAIT
 from llm.codex_cli_backend import CodexCLIBackend
 from llm.reasoning_capabilities import openrouter_reasoning_profile
+from llm.account_pool import validate_route, fit_image_request
 from llm.claude_code_backend import ClaudeCodeBackend
 
 # Normalize LLM output to canonical action names
@@ -89,7 +90,17 @@ class RTLLM(BaseLLM):
                  seed: Optional[int] = None):
         if provider == 'openrouter' and not url:
             url = 'https://openrouter.ai/api/v1'
-        if provider in ['openai', 'openrouter']:
+        if provider == 'account-pool':
+            validate_route(model_name, reasoning_effort, url)
+            if api_mode != 'chat_completions':
+                raise ValueError('Account pool benchmark transport requires chat_completions')
+            key = os.environ.get('POOL_KEY')
+            if not key:
+                raise ValueError('POOL_KEY is required for account-pool inference')
+            self.client = openai.OpenAI(api_key=key, base_url=url, max_retries=0)
+            # Enforced here as well as in the runner; callers cannot opt in to paid fallback.
+            extra_body = {**(extra_body or {}), 'allow_paid': False}
+        elif provider in ['openai', 'openrouter']:
             super().__init__(model_name, url, provider)
         elif provider in ('codex-cli', 'claude-code'):
             self.client = None
@@ -404,7 +415,7 @@ class RTLLM(BaseLLM):
                 self.provider in {'openai', 'openrouter'}
                 and _model_supports_reasoning(self.model_name)
             )
-            if not uses_gateway_reasoning:
+            if not uses_gateway_reasoning and self.provider != 'account-pool':
                 create_kwargs['temperature'] = (
                     getattr(self, 'temperature', 0.7)
                     if temperature is None else temperature
@@ -422,7 +433,12 @@ class RTLLM(BaseLLM):
                 chat_template_kwargs = copy.deepcopy(extra_body.get('chat_template_kwargs') or {})
                 chat_template_kwargs['enable_thinking'] = True
                 extra_body['chat_template_kwargs'] = chat_template_kwargs
-            if _model_supports_reasoning(self.model_name) and self.provider == 'openai':
+            if self.provider == 'account-pool':
+                # Antigravity suffix pins effort; Codex accepts an explicit field.
+                extra_body['allow_paid'] = False
+                if self.model_name.startswith('codex/'):
+                    create_kwargs['reasoning_effort'] = self.reasoning_effort
+            elif _model_supports_reasoning(self.model_name) and self.provider == 'openai':
                 create_kwargs['reasoning_effort'] = self._effective_reasoning_effort()
             elif _model_supports_reasoning(self.model_name):
                 # effort: "xhigh"|"high"|"medium"|"low"|"minimal"|"none"; explicit to override provider default
@@ -432,7 +448,11 @@ class RTLLM(BaseLLM):
             if extra_body:
                 create_kwargs['extra_body'] = extra_body
 
+            if self.provider == 'account-pool':
+                create_kwargs, image_transport = fit_image_request(create_kwargs)
             response = self.client.chat.completions.create(**create_kwargs)
+            if self.provider == 'account-pool' and response.model != self.model_name:
+                raise ValueError('Account pool returned a different model than requested')
             message = response.choices[0].message
             action_json = message.content
             reasoning_content = (
@@ -475,6 +495,12 @@ class RTLLM(BaseLLM):
                 self.last_usage_metadata['served_provider'] = served_provider
             if served_model is not None:
                 self.last_usage_metadata['served_model'] = served_model
+            if self.provider == 'account-pool':
+                self.last_usage_metadata['account_pool'] = {
+                    'allow_paid': False, 'requested_model': self.model_name,
+                    'reasoning_tokens_reported': reasoning_tokens is not None,
+                    'image_transport': image_transport,
+                }
 
             char_count = len(recorded_response) if recorded_response else 0
 
