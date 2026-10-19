@@ -1,6 +1,7 @@
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const fs=require('fs');const path=require('path');const assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..');const data=JSON.parse(fs.readFileSync(path.join(root,'app/data.json')));
+const matched=JSON.parse(fs.readFileSync(path.join(root,'app/matched-default-results.json')));
 const subset=JSON.parse(fs.readFileSync(path.join(root,'app/subset-results.json')));
 (async()=>{
  const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
@@ -14,6 +15,25 @@ const subset=JSON.parse(fs.readFileSync(path.join(root,'app/subset-results.json'
  await page.screenshot({path:path.join(root,'nyc/previews/site-final/demo-first.png')});
  const table=page.locator('.results-explorer');const effort=page.getByLabel('Leaderboard reasoning effort');
  const dataset=page.getByLabel('Leaderboard evaluation set');
+ assert.equal(await dataset.inputValue(),'matched');
+ assert.equal(await effort.count(),0);
+ assert.equal(await table.locator('tbody tr').count(),9);
+ assert.match(await table.locator('.results-context').textContent(),/4 maps · 20 tasks per model/);
+ for(const score of matched.models){
+  const row=table.locator('tbody tr').filter({has:page.getByRole('button',{name:score.fullName+' '+score.provider+' '+score.effort+' · Configured default',exact:true})});
+  assert.deepEqual(await row.locator('td').allTextContents(),[`${score.success.toFixed(1)}%`,`${score.safeSuccess.toFixed(1)}%`,score.collisions.toFixed(2),score.spl.toFixed(3),`${score.latency.toFixed(1)} s`,score.decisions.toFixed(1)]);
+ }
+ const matchedCSV=decodeURIComponent((await table.locator('.csv-link').getAttribute('href')).split(',').slice(1).join(',')).split('\n');
+ assert.equal(matchedCSV.length,10);
+ assert(matchedCSV.slice(1).every(row=>row.includes('"hard-realtime-matched20-default-v1","20","4","0"')));
+ await table.getByLabel('Filter models').fill('Gemini 4');
+ assert.equal(await table.locator('tbody tr').count(),1);
+ await table.locator('tbody button').click();
+ assert.equal(await table.locator('.model-score strong').textContent(),matched.models.find(m=>m.name==='Gemini 4').collisions.toFixed(2));
+ await table.getByLabel('Filter models').fill('');
+ await table.screenshot({path:path.join(root,'nyc/previews/site-final/matched-twenty-leaderboard.png')});
+ await page.locator('.matched-leaderboard-figure').screenshot({path:path.join(root,'nyc/previews/site-final/matched-twenty-figure.png')});
+ await dataset.selectOption('subset');
  assert.equal(await dataset.inputValue(),'subset');
  assert.match(await table.locator('.results-context').textContent(),/2 maps · 10 tasks per configuration/);
  assert.equal(await table.getByRole('button',{name:'SPL',exact:false}).isEnabled(),true);
@@ -109,10 +129,15 @@ const subset=JSON.parse(fs.readFileSync(path.join(root,'app/subset-results.json'
  assert(mobileSizes.every(size=>size>=12));
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  await table.screenshot({path:path.join(root,'nyc/previews/site-final/mobile-effort.png')});
+ await dataset.selectOption('matched');
+ assert.equal(await table.locator('tbody tr').count(),9);
+ assert.equal(await effort.count(),0);
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ await table.screenshot({path:path.join(root,'nyc/previews/site-final/mobile-matched-twenty.png')});
  await page.locator('.behavior-card').first().screenshot({path:path.join(root,'nyc/previews/site-final/mobile-interactive-radar.png')});
  await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:path.join(root,'nyc/previews/site-final/mobile-demo-first.png')});
  assert.deepEqual(errors,[]);
- const result={effort_rows_verified:48,subset_episodes:240,larger_provider_and_effort_labels:true,all_efforts_default:true,unique_configuration_selection:true,smaller_timing_video:true,scoped_csv:true,sort_search_selection:true,interactive_profiles:8,astra_replay:true,demo_first:true,mobile_overflow:false,all_muted:true,browser_errors:errors};
+ const result={matched_default_rows_verified:9,matched_episodes:180,matched_csv:true,effort_rows_verified:48,subset_episodes:240,larger_provider_and_effort_labels:true,all_efforts_default:true,unique_configuration_selection:true,smaller_timing_video:true,scoped_csv:true,sort_search_selection:true,interactive_profiles:8,astra_replay:true,demo_first:true,mobile_overflow:false,all_muted:true,browser_errors:errors};
  fs.writeFileSync(path.join(root,'nyc/previews/site-final/benchmark-validation.json'),JSON.stringify(result,null,2));
  console.log(JSON.stringify(result,null,2));
  await browser.close();
