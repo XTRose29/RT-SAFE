@@ -22,6 +22,7 @@ def require_passing_cases(results):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--port',type=int,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--hazards-only',action='store_true');p.add_argument('--rays-only',action='store_true');p.add_argument('--contacts-only',action='store_true');p.add_argument('--initial-only',action='store_true');p.add_argument('--inference-only',action='store_true');p.add_argument('--clear-parked-cars',action='store_true');p.add_argument('--skip-vehicle',action='store_true',help='Skip the direct-car-push negative control')
+    p.add_argument('--recovery-only', action='store_true')
     args=p.parse_args();configure_probe_environment();args.output.mkdir(parents=True,exist_ok=True)
     u=RTUnrealCV(port=args.port,resolution=(720,640));u.pause_simulation();comm=RTCommunicator(u)
     if args.clear_parked_cars:
@@ -68,6 +69,45 @@ def main():
         for name in created:u.destroy(name)
         created.clear();u.clean_garbage()
     try:
+        if args.recovery_only:
+            for kind in ['human', 'transient_oil']:
+                label='recovery_'+kind;a=agent(label)
+                original_plan=a.plan
+                state={'ball':None,'human':None,'oil':None,'started':None,'injected':False}
+                def plan(obs,mode):
+                    if state['ball'] is None:
+                        state['ball']=spawn(assets['RT_Basketball_C']['asset_path'],(-5035,0,2),'PROBE_PROP')
+                    return original_plan(obs,mode)
+                a.plan=plan
+                if kind=='human':
+                    state['human']=spawn('/Game/RealTimeBench/Agent/RT_Base_Pedestrian.RT_Base_Pedestrian_C',(-4700,0,110),'RT_PEDESTRIAN_PROBE')
+                    u.humanoid_stop(state['human'])
+                def during_recovery(delta):
+                    if getattr(a,'_safety_sampling_phase',None)!='during_recovery':return
+                    if state['started'] is None:state['started']=a.sim_time_elapsed
+                    elapsed=a.sim_time_elapsed-state['started']
+                    if not state['injected']:
+                        state['injected']=True
+                        if kind=='human':
+                            u.move_actor_with_sweep(state['human'],(-5000,0,110))
+                        else:
+                            u.destroy(state['ball']);created.remove(state['ball'])
+                            state['oil']=spawn(assets['RT_Oil_C']['asset_path'],(-5000,0,2),'PROBE_PROP')
+                    if kind=='transient_oil' and state['oil'] is not None and elapsed>=.5:
+                        u.destroy(state['oil']);created.remove(state['oil']);state['oil']=None
+                a.simulation_step_callback=during_recovery
+                trace=step(a,'wait','1');d=trace['collision_details']
+                native_count=comm.get_states(a.name)[0]
+                if kind=='human':
+                    passed=bool(d.get('recovery_collision_details',{}).get('human',0)>0
+                                and a.last_ue_collision_count['human']==native_count
+                                and a.passive_collision_count==0)
+                else:
+                    passed=bool(d['oil']==1 and any(e['kind']=='oil' and e['phase']=='during_recovery' for e in d['hazard_events'])
+                                and comm.get_states(a.name)[4]==0)
+                record(label,a,{'passed':passed,'injected':state['injected'],'native_human_counter':native_count})
+                cleanup()
+            return
         if args.inference_only:
             a=agent('inference_overlap');step(a,'wait','1')
             original_plan=a.plan

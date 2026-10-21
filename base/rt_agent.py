@@ -1940,6 +1940,7 @@ class RTAgent(BaseAgent):
         samples.append({'phase': 'feedback', 'sim_time_s': feedback_state_time,
                         'position_cm': feedback_state_position,
                         'overlap_type': int(overlap_type)})
+        samples.sort(key=lambda sample: float(sample['sim_time_s']))
         self.last_action_safety_samples = []
         collision_details['action_safety_samples'] = samples
         collision_details['hazard_events'] = []
@@ -1962,8 +1963,8 @@ class RTAgent(BaseAgent):
             if overlap == 1:
                 self.fall_count += 1
                 collision_details['fall'] += 1
-                if not vehicle_terminal:
-                    self._advance_simulation_time(RECOVERY_TIME)
+                if not vehicle_terminal and not self._terminal_vehicle_collision_pending():
+                    self._advance_feedback_recovery(RECOVERY_TIME)
                 feedback += 'A trip hazard contact was detected. '
             elif overlap == 2:
                 self.oil_count += 1
@@ -1975,6 +1976,34 @@ class RTAgent(BaseAgent):
                 collision_details['water'] += 1
                 self.slipping = True
                 feedback += 'You contacted water. You are slipping. '
+
+            # Recovery can encounter another transient hazard. Consume its
+            # native samples on this decision, in timestamp order, rather than
+            # discarding them when the next decision clears its sample buffer.
+            if self.last_action_safety_samples:
+                samples.extend(self.last_action_safety_samples)
+                self.last_action_safety_samples = []
+
+        if self.sim_time_elapsed > feedback_state_time:
+            # Effects/recovery belong to this action, even though the model's
+            # movement has ended. Advance the baseline here so these contacts
+            # cannot leak into the next inference window's passive count.
+            final_state = self.communicator.get_states(self.name)
+            recovery_contacts = {}
+            for kind, count in zip(('human', 'object', 'building'), final_state[:3]):
+                delta = self._collision_delta(count, self.last_ue_collision_count[kind])
+                recovery_contacts[kind] = delta
+                collision_details[kind] += delta
+                self.collision_count += delta
+                self.last_ue_collision_count[kind] = count
+                collision_details['state_' + kind] = count
+                if delta:
+                    feedback += f'During recovery, you collided with a {kind}. '
+            self._add_collision_type_counts(self.collision_type_counts,
+                recovery_contacts['human'], recovery_contacts['object'], recovery_contacts['building'])
+            collision_details['recovery_collision_details'] = recovery_contacts
+            collision_details['ue_building_delta'] += recovery_contacts['building']
+            self.sync_ue()
 
         # Now return appropriate feedback - check destination after recording collisions
         if reached_final_destination:
@@ -4758,8 +4787,20 @@ class RTAgent(BaseAgent):
         else:
             penalty = COLLISION_PENALTY_HIGH
 
-        self._advance_simulation_time(penalty)
+        self._advance_feedback_recovery(penalty)
         self.logger.info(f'Collision intensity effect: avg_intensity={avg_intensity:.1f}, penalty={penalty}s')
+
+    def _advance_feedback_recovery(self, seconds):
+        """Keep sampling physical exposure during a forced action recovery."""
+        collecting = getattr(self, '_collect_action_safety', False)
+        phase = getattr(self, '_safety_sampling_phase', 'during_action')
+        self._collect_action_safety = True
+        self._safety_sampling_phase = 'during_recovery'
+        try:
+            self._advance_simulation_time(seconds)
+        finally:
+            self._collect_action_safety = collecting
+            self._safety_sampling_phase = phase
 
     def _traffic_config_value(self, key: str, default: float) -> float:
         value = self.traffic_signal_config.get(key, default)
@@ -5811,7 +5852,7 @@ class RTAgent(BaseAgent):
                 self.sim_time_elapsed = round(self.sim_time_elapsed + advanced, 6)
                 elapsed += advanced
                 if getattr(self, '_collect_action_safety', False):
-                    self._sample_action_safety('during_action')
+                    self._sample_action_safety(getattr(self, '_safety_sampling_phase', 'during_action'))
             if self.simulation_step_callback is not None:
                 self.simulation_step_callback(elapsed)
             if hold_active:

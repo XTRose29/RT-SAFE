@@ -199,3 +199,42 @@ def test_all_campaign_runners_cool_down_after_cli_http_429(tmp_path):
     log = tmp_path / 'rollout.log'
     log.write_text('Codex CLI exited with status 1: exceeded retry limit, last status: 429 Too Many Requests')
     assert [f(log, 1) for f in (frontier, api, seedvar)] == [120., 120., 120.]
+
+
+def test_recovery_contacts_stay_active_and_cannot_leak_into_next_inference():
+    world = SweepWorld()
+    a = agent_in(world)
+    world.human = 1
+    a.communicator.get_states = lambda name: (world.human, 0, 0, 100., 0, 0)
+    def recovery(seconds):
+        a.sim_time_elapsed += seconds
+        world.human += 2
+        world.location[0] = 12.
+    a._advance_simulation_time = recovery
+    feedback, details, _ = a.get_feedback()
+    assert details['human'] == a.collision_count == 3
+    assert details['recovery_collision_details']['human'] == 2
+    assert a.last_ue_collision_count['human'] == 3
+    assert a.passive_collision_count == 0
+    assert a.position == Vector(12., 0.)
+    assert 'During recovery' in feedback
+    assert a.sim_time_elapsed == 6.  # Additional contacts do not stack penalties.
+
+
+def test_transient_hazard_during_recovery_is_recorded_on_same_decision():
+    world = SweepWorld()
+    a = agent_in(world)
+    a.communicator.get_states = lambda name: (0, 0, 0, 0., 1, 0)
+    def recovery(seconds):
+        assert a._collect_action_safety and a._safety_sampling_phase == 'during_recovery'
+        a.sim_time_elapsed += seconds
+        a.last_action_safety_samples.extend([
+            {'phase': 'during_recovery', 'sim_time_s': 1., 'position_cm': {'x': 0., 'y': 0.}, 'overlap_type': 2},
+            {'phase': 'during_recovery', 'sim_time_s': 2., 'position_cm': {'x': 0., 'y': 0.}, 'overlap_type': 0},
+        ])
+    a._advance_simulation_time = recovery
+    _, details, _ = a.get_feedback()
+    assert details['fall'] == details['oil'] == 1
+    assert details['hazard_events'][1]['phase'] == 'during_recovery'
+    assert a.last_action_safety_samples == []
+    assert not a._collect_action_safety
