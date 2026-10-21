@@ -5,6 +5,7 @@ allowing for various operations such as object spawning, movement, and image
 capture.
 """
 import json
+import math
 import os
 import queue
 import time
@@ -359,10 +360,19 @@ class UnrealCV(object):
         time.sleep(1)
 
     def check_connection(self):
-        """Check connection status, attempt to reconnect if not connected."""
+        """Retry an unavailable endpoint for a bounded startup interval."""
+        timeout = float(os.environ.get('SIMWORLD_UNREALCV_CONNECT_TIMEOUT_SECONDS', '30'))
+        if not math.isfinite(timeout) or timeout <= 0:
+            raise ValueError('SIMWORLD_UNREALCV_CONNECT_TIMEOUT_SECONDS must be finite and positive')
+        deadline = time.monotonic() + timeout
         while self.client.isconnected() is False:
-            self.logger.error('UnrealCV server is not running. Please try again')
-            time.sleep(1)
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                raise TimeoutError(f'UnrealCV server remained unavailable for {timeout:g}s')
+            self.logger.warning('UnrealCV server unavailable; retrying within startup deadline')
+            time.sleep(min(1.0, remaining))
+            if time.monotonic() >= deadline:
+                raise TimeoutError(f'UnrealCV server remained unavailable for {timeout:g}s')
             self.client.connect()
 
     # Deprecated

@@ -66,6 +66,25 @@ class RequestMetricsRecorder:
 
 
 class UnrealCVTimeControlTests(unittest.TestCase):
+    def test_offline_startup_stops_retrying_at_deadline(self):
+        unrealcv = make_unrealcv()
+        unrealcv.logger = Mock()
+        unrealcv.client.isconnected.return_value = False
+        with patch.dict(os.environ, {'SIMWORLD_UNREALCV_CONNECT_TIMEOUT_SECONDS': '2'}), \
+                patch('simworld.communicator.unrealcv.time.monotonic', side_effect=[0., 0., 1., 1., 2.]), \
+                patch('simworld.communicator.unrealcv.time.sleep'):
+            with self.assertRaisesRegex(TimeoutError, 'remained unavailable'):
+                unrealcv.check_connection()
+        self.assertEqual(unrealcv.client.connect.call_count, 1)
+
+    def test_startup_reconnect_can_succeed_before_deadline(self):
+        unrealcv = make_unrealcv()
+        unrealcv.logger = Mock()
+        unrealcv.client.isconnected.side_effect = [False, True]
+        with patch('simworld.communicator.unrealcv.time.sleep'):
+            unrealcv.check_connection()
+        unrealcv.client.connect.assert_called_once()
+
     def test_explicit_pause_and_resume_use_supported_commands(self):
         unrealcv = make_unrealcv(["paused", "resumed"])
 
