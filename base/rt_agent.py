@@ -849,7 +849,7 @@ class RTAgent(BaseAgent):
             prompt_data['timing'] = {
                 'simulation_clock_source': ('ue:GetGameTimeSinceCreation'
                                             if native_end is not None else 'nominal_test_clock'),
-                'controller_update_policy': 'accumulated_native_interval_v1',
+                'controller_update_policy': 'native_controller_interval_v2',
                 'native_game_time_start_seconds': step_native_started,
                 'native_game_time_end_seconds': native_end,
                 'native_game_time_delta_seconds': (native_end - step_native_started
@@ -5834,8 +5834,6 @@ class RTAgent(BaseAgent):
             chunk_size = 0.5
         else:
             chunk_size = max(seconds, 0.01)
-        if getattr(self, '_collect_action_safety', False):
-            chunk_size = min(chunk_size, 0.1)
         remaining = seconds
         while remaining > 1e-6:
             target = min(chunk_size, remaining)
@@ -5846,6 +5844,11 @@ class RTAgent(BaseAgent):
             # Safety sampling still occurs after EVERY physical advance.
             while target - elapsed > 1e-6:
                 chunk = target - elapsed
+                # Safety observation and city control have distinct cadences.
+                # Keep sub-second contact sampling during waits/recovery without
+                # updating every traffic head on each safety sample.
+                if getattr(self, '_collect_action_safety', False):
+                    chunk = min(chunk, 0.1)
                 native_before = self._native_game_time()
                 if self.use_tick:
                     self.communicator.unrealcv.advance_simulation_time(

@@ -204,8 +204,39 @@ def test_fractional_native_ticks_preserve_safety_without_duplicate_city_updates(
     a.simulation_step_callback = deltas.append
     a._advance_simulation_time(.2)
     assert samples == pytest.approx([.04, .07, .11, .16, .22])
-    assert deltas == pytest.approx([.11, .11])
+    assert deltas == pytest.approx([.22])
     assert sum(deltas) == pytest.approx(a.sim_time_elapsed)
+
+
+@pytest.mark.parametrize('controller_interval', [.5, .05])
+def test_recovery_keeps_transient_safety_reports_at_separate_controller_cadence(controller_interval):
+    class RecoveryWorld(SweepWorld):
+        game_time = 0.
+        def get_actor_sim_time(self, name):
+            return self.game_time
+        def advance_simulation_time(self, requested, scale):
+            self.game_time += requested
+    world = RecoveryWorld()
+    a = agent_in(world)
+    del a._advance_simulation_time
+    a.use_tick = True
+    a.simulation_step_callback_interval_s = controller_interval
+    controller_deltas, samples, transient_reports = [], [], []
+    a.simulation_step_callback = controller_deltas.append
+    def sample(phase):
+        samples.append((world.game_time, phase))
+        if 2.46 < world.game_time < 2.54:
+            transient_reports.append(world.game_time)
+    a._sample_action_safety = sample
+    a._advance_feedback_recovery(6.)
+    assert a.sim_time_elapsed == pytest.approx(6.)
+    assert sum(controller_deltas) == pytest.approx(6.)
+    assert len(controller_deltas) == round(6. / controller_interval)
+    assert max(controller_deltas) <= controller_interval + 1e-6
+    gaps = [right[0] - left[0] for left, right in zip([(0., '')] + samples, samples)]
+    assert max(gaps) <= .1 + 1e-6
+    assert all(phase == 'during_recovery' for _, phase in samples)
+    assert transient_reports  # A report shorter than the city interval survives.
 
 
 def test_replay_uses_truncated_move_duration():
