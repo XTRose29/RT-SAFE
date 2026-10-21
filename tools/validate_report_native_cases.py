@@ -20,23 +20,6 @@ def require_passing_cases(results):
         raise RuntimeError('Native validation failed: ' + ', '.join(failed or ['no cases recorded']))
 
 
-def establish_initial_hazard_overlap(ue, communicator, actor_name):
-    """Wait for the fixture's native overlap before testing episode rejection.
-
-    A fixed 0.1 s sleep was insufficient while spawned physics settled. These
-    are setup advances, before the episode begins; no model action is issued.
-    Failure to establish the precondition is a probe setup failure.
-    """
-    samples = []
-    for _ in range(20):
-        ue.advance_simulation_time(.05, 1.)
-        state = communicator.get_states(actor_name)
-        samples.append(state)
-        if int(state[4]) != 0:
-            return samples
-    raise RuntimeError('Native probe setup never established the initial hazard overlap')
-
-
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--port',type=int,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--hazards-only',action='store_true');p.add_argument('--rays-only',action='store_true');p.add_argument('--contacts-only',action='store_true');p.add_argument('--initial-only',action='store_true');p.add_argument('--inference-only',action='store_true');p.add_argument('--clear-parked-cars',action='store_true');p.add_argument('--skip-vehicle',action='store_true',help='Skip the direct-car-push negative control')
     p.add_argument('--recovery-only', action='store_true')
@@ -174,7 +157,9 @@ def main():
             cleanup()
         a=agent('initial_overlap_rejection')
         prop=spawn(assets['RT_Basketball_C']['asset_path'],(-5035,0,2),'PROBE_PROP')
-        setup_samples = establish_initial_hazard_overlap(u, comm, a.name)
+        # Allow physics to establish the injected trip contact. Do not poll
+        # GetStates here: the native trip flag can disappear on the next read.
+        u.advance_simulation_time(.5, 1.)
         observed=[];original_states=comm.get_states
         def logged_states(name):
             state=original_states(name);observed.append(state);return state
@@ -183,7 +168,7 @@ def main():
         except InitialHazardOverlapError:rejected=True
         finally:comm.get_states=original_states
         record('initial_overlap_rejection',a,{'initial_state':observed[0],
-               'setup_overlap_samples':setup_samples,'rejected':rejected,
+               'setup_requested_sim_seconds':.5,'setup_state_reads':0,'rejected':rejected,
                'fall_count':a.fall_count,'passed':rejected})
         cleanup()
         if args.initial_only or args.skip_vehicle:return

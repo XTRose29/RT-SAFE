@@ -2049,7 +2049,8 @@ class RTAgent(BaseAgent):
     def _begin_hazard_overlap_episode(self, overlap_type, collision_details, position=None):
         """Return True only for the start of a logical hazard occupancy.
 
-        The packaged Blueprint reports an overlap class in each state poll but
+        The packaged Blueprint reports a sampled overlap class, which can
+        disappear on the next read even while the native clock is paused. It
         does not expose a stable actor ID or an overlap-end counter. A short
         spatial latch therefore represents continuous occupancy. A zero
         sample alone does not immediately re-arm the event because UE can
@@ -3940,7 +3941,10 @@ class RTAgent(BaseAgent):
         frames = []
         self.last_swept_move_samples = []
         self.last_move_stop_reason = None
-        contact_baseline = self.communicator.get_states(self.name)[:3]
+        baseline_state = self.communicator.get_states(self.name)
+        contact_baseline = baseline_state[:3]
+        if getattr(self, '_collect_action_safety', False):
+            self._sample_action_safety('pre_move', raw=baseline_state)
         blocked = False
         while elapsed + 1e-6 < duration:
             chunk = min(0.1, duration - elapsed)
@@ -3949,6 +3953,10 @@ class RTAgent(BaseAgent):
             elapsed = round(elapsed + self.sim_time_elapsed - before_advance, 6)
             requested = start + delta * min(1.0, elapsed / duration)
             native = self.communicator.get_states(self.name)
+            # A native trip flag can disappear on the very next paused read.
+            # Keep this poll even when it was requested for contact counters.
+            if getattr(self, '_collect_action_safety', False):
+                self._sample_action_safety('before_sweep', raw=native)
             native_contact = any(self._collision_delta(cur, old) > 0
                                  for cur, old in zip(native[:3], contact_baseline))
             if not blocked and not native_contact:

@@ -308,19 +308,21 @@ def test_bulk_red_keeps_clearance_readback_barrier():
     comm.traffic_signal_switch_to.assert_called_once_with(0, 'green')
 
 
-def test_native_initial_overlap_probe_waits_for_its_precondition():
-    from tools.validate_report_native_cases import establish_initial_hazard_overlap
-    ue, comm = Mock(), Mock()
-    comm.get_states.side_effect = [[0, 0, 0, 0., 0, 0], [0, 0, 0, 0., 1, 0]]
-    samples = establish_initial_hazard_overlap(ue, comm, 'agent')
-    assert [row[4] for row in samples] == [0, 1]
-    assert ue.advance_simulation_time.call_count == 2
 
-
-def test_native_initial_overlap_probe_fails_if_fixture_never_overlaps():
-    from tools.validate_report_native_cases import establish_initial_hazard_overlap
-    ue, comm = Mock(), Mock()
-    comm.get_states.return_value = [0, 0, 0, 0., 0, 0]
-    with pytest.raises(RuntimeError, match='setup never established'):
-        establish_initial_hazard_overlap(ue, comm, 'agent')
-    assert ue.advance_simulation_time.call_count == 20
+@pytest.mark.parametrize('event_read,phase', [(1, 'pre_move'), (2, 'before_sweep')])
+def test_move_preserves_single_poll_hazard_reports(event_read, phase):
+    a = agent_in(SweepWorld())
+    a._collect_action_safety = True
+    a.last_action_safety_samples = []
+    calls = 0
+    def read(name):
+        nonlocal calls
+        calls += 1
+        return (0, 0, 0, 0., 2 if calls == event_read else 0, 0)
+    a.communicator.get_states = read
+    a.move_to(Vector(200, 0))
+    _, details, _ = a.get_feedback()
+    assert details['oil'] == 1
+    assert details['hazard_events'][0]['phase'] == phase
+    _, following, _ = a.get_feedback()
+    assert following['oil'] == 0
