@@ -48,7 +48,7 @@
     "ue_width": 1280,
     "ue_height": 720,
     "ue_fps": 30,
-    "ue_no_rhi_thread": true,
+    "ue_no_rhi_thread": false,
     "unrealcv_request_timeout": 120,
     "unrealcv_reconnect_retries": 0,
     "ue_max_attempts": 3,

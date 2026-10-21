@@ -126,6 +126,7 @@ class BenchmarkConfigTests(unittest.TestCase):
             "conflict_vehicle_max_launch_distance_m": 9.0,
             "conflict_vehicle_impact_radius_m": 1.0,
             "conflict_vehicle_release_wait_timeout_s": 12.0,
+            "ue_no_rhi_thread": False,
         }
         self.assertEqual(
             expected,

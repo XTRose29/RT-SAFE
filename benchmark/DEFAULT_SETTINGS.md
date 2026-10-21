@@ -345,10 +345,13 @@ does not disable benchmark evaluation. PNG compression level is 3. Aligned
 policy-input videos are generated at 1.5 frames/s.
 
 The UE window defaults to 1280 x 720 at 30 FPS, while the policy camera remains
-720 x 640. `-norhithread` is enabled. Each UnrealCV request has a 120 s wall-clock
-deadline. The longer deadline covers cold `setres` operations that recreate
-render targets and initialize graphics PSOs on a shared GPU; it does not change
-simulation time or policy inputs. A lost response is not replayed inside a
+720 x 640. The v4 preset retains the default rendering threads; it does not
+enable `-norhithread` or RHI bypass, which did not prevent full-scene crashes in
+validation. Use the startup flags in [INSTALL.md](../docs/INSTALL.md) to skip
+redundant viewport resizing and the editor-only compilation command. Each
+UnrealCV request has a 120 s wall-clock deadline for cold asset and renderer
+initialization; it does not change simulation time or policy inputs.
+A lost response is not replayed inside a
 desynchronized UE connection, and a camera failure is never replaced by a
 synthetic black observation.
 Instead, the partial attempt is archived and only the interrupted seeded task
