@@ -1,0 +1,378 @@
+{
+  "scope": "Two packaged head types, WALK interrupted before countdown expiry. Native GetState stays WALK after acknowledged stop and subsequent ticks; acknowledgement is not state confirmation. No inference about visible material from these flags alone.",
+  "states": [
+    {
+      "stage": "initial_red",
+      "states": [
+        {
+          "signal_id": 900000,
+          "object_name": "RT_TRAFFIC_SIGNAL_900000",
+          "vehicle_green": false,
+          "pedestrian_walk": false,
+          "remaining_time_s": 10.0,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "false",
+            "ped time": "10.000000"
+          }
+        },
+        {
+          "signal_id": 900001,
+          "object_name": "RT_TRAFFIC_SIGNAL_900001",
+          "vehicle_green": false,
+          "pedestrian_walk": false,
+          "remaining_time_s": 10.0,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "false",
+            "ped time": "10.000000"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "walk_command",
+      "states": [
+        {
+          "signal_id": 900000,
+          "object_name": "RT_TRAFFIC_SIGNAL_900000",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 10.0,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "10.000000"
+          }
+        },
+        {
+          "signal_id": 900001,
+          "object_name": "RT_TRAFFIC_SIGNAL_900001",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 10.0,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "10.000000"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "walk_tick_0",
+      "states": [
+        {
+          "signal_id": 900000,
+          "object_name": "RT_TRAFFIC_SIGNAL_900000",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 9.74476,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "9.744760"
+          }
+        },
+        {
+          "signal_id": 900001,
+          "object_name": "RT_TRAFFIC_SIGNAL_900001",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 9.74476,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "9.744760"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "red_command",
+      "states": [
+        {
+          "signal_id": 900000,
+          "object_name": "RT_TRAFFIC_SIGNAL_900000",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 9.74476,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "9.744760"
+          }
+        },
+        {
+          "signal_id": 900001,
+          "object_name": "RT_TRAFFIC_SIGNAL_900001",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 9.74476,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "9.744760"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "red_tick_0",
+      "states": [
+        {
+          "signal_id": 900000,
+          "object_name": "RT_TRAFFIC_SIGNAL_900000",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 9.507661,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "9.507661"
+          }
+        },
+        {
+          "signal_id": 900001,
+          "object_name": "RT_TRAFFIC_SIGNAL_900001",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 9.507661,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "9.507661"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "red_tick_1",
+      "states": [
+        {
+          "signal_id": 900000,
+          "object_name": "RT_TRAFFIC_SIGNAL_900000",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 9.253675,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "9.253675"
+          }
+        },
+        {
+          "signal_id": 900001,
+          "object_name": "RT_TRAFFIC_SIGNAL_900001",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 9.253675,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "9.253675"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "red_tick_2",
+      "states": [
+        {
+          "signal_id": 900000,
+          "object_name": "RT_TRAFFIC_SIGNAL_900000",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 9.015536,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "9.015536"
+          }
+        },
+        {
+          "signal_id": 900001,
+          "object_name": "RT_TRAFFIC_SIGNAL_900001",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 9.015536,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "9.015536"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "red_tick_3",
+      "states": [
+        {
+          "signal_id": 900000,
+          "object_name": "RT_TRAFFIC_SIGNAL_900000",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 8.712584,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "8.712584"
+          }
+        },
+        {
+          "signal_id": 900001,
+          "object_name": "RT_TRAFFIC_SIGNAL_900001",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 8.712584,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "8.712584"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "red_tick_4",
+      "states": [
+        {
+          "signal_id": 900000,
+          "object_name": "RT_TRAFFIC_SIGNAL_900000",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 8.472074,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "8.472074"
+          }
+        },
+        {
+          "signal_id": 900001,
+          "object_name": "RT_TRAFFIC_SIGNAL_900001",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 8.472074,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "8.472074"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "red_tick_5",
+      "states": [
+        {
+          "signal_id": 900000,
+          "object_name": "RT_TRAFFIC_SIGNAL_900000",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 8.213422,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "8.213422"
+          }
+        },
+        {
+          "signal_id": 900001,
+          "object_name": "RT_TRAFFIC_SIGNAL_900001",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 8.213422,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "8.213422"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "red_tick_6",
+      "states": [
+        {
+          "signal_id": 900000,
+          "object_name": "RT_TRAFFIC_SIGNAL_900000",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 7.964998,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "7.964998"
+          }
+        },
+        {
+          "signal_id": 900001,
+          "object_name": "RT_TRAFFIC_SIGNAL_900001",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 7.964998,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "7.964998"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "red_tick_7",
+      "states": [
+        {
+          "signal_id": 900000,
+          "object_name": "RT_TRAFFIC_SIGNAL_900000",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 7.718619,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "7.718619"
+          }
+        },
+        {
+          "signal_id": 900001,
+          "object_name": "RT_TRAFFIC_SIGNAL_900001",
+          "vehicle_green": false,
+          "pedestrian_walk": true,
+          "remaining_time_s": 7.718619,
+          "source": "ue_blueprint:GetState",
+          "raw": {
+            "green light": "false",
+            "ped green": "true",
+            "ped time": "7.718619"
+          }
+        }
+      ]
+    }
+  ],
+  "raw_sha256": "d0961d608d7890c447a3c489dc87b70e5dfd880567ecb4ee83dc0902f4ab3e0e"
+}

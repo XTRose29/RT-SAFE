@@ -1,0 +1,1269 @@
+{
+  "scope": "Small execution-validation pilot, not a leaderboard. Incomplete attempts have no episode scores.",
+  "completed_episodes": 0,
+  "attempts": [
+    {
+      "task_id": 16,
+      "map": "map3_15roads",
+      "condition": "hard_realtime_instructional_medium",
+      "attempt": 1,
+      "cell_state": "running",
+      "accepted_completed_episode": false,
+      "outcome": "operator_stopped_for_traffic_rpc_fix",
+      "recorded_decisions": 68,
+      "model": "gpt-5.6-luna",
+      "provider": "codex-cli",
+      "reasoning_effort": "medium",
+      "max_native_vs_accounted_delta_error_s": 0.0,
+      "contacts_and_stops": [
+        {
+          "step": 0,
+          "active": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You collided with a human.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.125302,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 12.706999999998516
+        },
+        {
+          "step": 4,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 1,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "A trip hazard contact was detected.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": 2.011868,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 400.0
+        },
+        {
+          "step": 5,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 1,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You contacted oil. You are decelerated.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": 2.008912,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 400.0
+        },
+        {
+          "step": 7,
+          "active": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You collided with a human.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.458191,
+          "move_command_duration_seconds": 0.5,
+          "actual_displacement_cm": 68.13799999999901
+        },
+        {
+          "step": 8,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.113037,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 0.0010000000002037268
+        },
+        {
+          "step": 9,
+          "active": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 1,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You collided with a human. You contacted oil. You are decelerated.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "native_contact",
+          "move_elapsed_seconds": 1.008033,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 176.57870539790505
+        },
+        {
+          "step": 10,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.116303,
+          "move_command_duration_seconds": 4.0,
+          "actual_displacement_cm": 0.0010000000002037268
+        },
+        {
+          "step": 11,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.106842,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 12,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": null,
+          "move_command_duration_seconds": null,
+          "actual_displacement_cm": null
+        },
+        {
+          "step": 13,
+          "active": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You collided with a human.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "native_contact",
+          "move_elapsed_seconds": 0.110367,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 14,
+          "active": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You collided with a human.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.100464,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 15,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": null,
+          "move_command_duration_seconds": null,
+          "actual_displacement_cm": null
+        },
+        {
+          "step": 16,
+          "active": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You collided with a human.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.113998,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 17,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.114701,
+          "move_command_duration_seconds": 0.5,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 18,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.120362,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 19,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.114029,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 21,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 3,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.10736,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 0.0010000000002037268
+        },
+        {
+          "step": 24,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.229751,
+          "move_command_duration_seconds": 0.5,
+          "actual_displacement_cm": 22.851999999998952
+        },
+        {
+          "step": 26,
+          "active": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You collided with a human.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.22992,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 39.92700000000332
+        },
+        {
+          "step": 28,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.104248,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 0.0010000000002037268
+        },
+        {
+          "step": 29,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.11438,
+          "move_command_duration_seconds": 0.5,
+          "actual_displacement_cm": 0.2989999999990687
+        },
+        {
+          "step": 30,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.112518,
+          "move_command_duration_seconds": 0.5,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 33,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": null,
+          "move_command_duration_seconds": null,
+          "actual_displacement_cm": null
+        },
+        {
+          "step": 34,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.111542,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 35,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.115601,
+          "move_command_duration_seconds": 0.5,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 36,
+          "active": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You collided with a human. While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "native_contact",
+          "move_elapsed_seconds": 0.118072,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 38,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": 1.005097,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 200.0000792924822
+        },
+        {
+          "step": 39,
+          "active": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 1,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "A trip hazard contact was detected. During recovery, you collided with a human.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": 2.025208,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 399.9994514621266
+        },
+        {
+          "step": 41,
+          "active": {
+            "human": 2,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 1,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "A trip hazard contact was detected. During recovery, you collided with a human.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": 1.000702,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 200.00033809971217
+        },
+        {
+          "step": 43,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 1
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You contacted water. You are slipping.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": 1.017669,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 200.00007929248224
+        },
+        {
+          "step": 45,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 1,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "A trip hazard contact was detected. While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": 2.001465,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 400.00041739103165
+        },
+        {
+          "step": 47,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You have reached the subgoal. Proceed to the next waypoint. While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": 1.018341,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 200.00007929248574
+        },
+        {
+          "step": 49,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 1.536804,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 294.24721696729733
+        },
+        {
+          "step": 52,
+          "active": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You collided with a human.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.716919,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 135.72462597480305
+        },
+        {
+          "step": 55,
+          "active": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You collided with a human.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.115601,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 3.614729865426009
+        },
+        {
+          "step": 57,
+          "active": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You collided with a human.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.112122,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 58,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.110596,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 59,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.100952,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 61,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 5,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": null,
+          "move_command_duration_seconds": null,
+          "actual_displacement_cm": null
+        },
+        {
+          "step": 62,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.105957,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 0.9010554921868918
+        },
+        {
+          "step": 64,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 1,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "A trip hazard contact was detected.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": 2.009704,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 400.0001280999798
+        },
+        {
+          "step": 65,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 0.122009,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 0.0
+        },
+        {
+          "step": 66,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": null,
+          "move_command_duration_seconds": null,
+          "actual_displacement_cm": null
+        }
+      ],
+      "completed_episode_metrics": null,
+      "result_sha256": null,
+      "rollout_log_sha256": "324273e0aa1d27bdc773e032ea83c543b7b52f2141b1eb8d9b72c1160b3838c5",
+      "manifest_sha256": [
+        "8370249a15d4fd1c17355988e37c5b4aa51445d75897af30acd40fe823a13e0f",
+        "4b1073abb10240bf2732991718abdfa4de4d85043ca8070cfa3737eb49996cc5",
+        "071bd5c950e372e5d0709c2ef5b4f4b874ba1ded54906934a54e263d950b0593",
+        "f4939cb189a494e8be429dc0962a315c18763ecf421a7c967bbe22cd015f1824",
+        "ea989f6dfa484fe9d6efcdf72c70e7f5b0cefb8d12c78ffe573869b0ab5c7e74",
+        "25ff4a12b54d19fa6984f7a1a74b05604a326824138c4c7ad4c5b26de63b8b2e",
+        "eaaf9dbfaad895b45d332dda1b32a6846953a0c580ac3e61a2dff9dbff8f2b63",
+        "ded01d54999ba6ee93592901dd859559537ba9b49bafd8c790dccaf54a3ad26c",
+        "b4df2ff2fd8efc7183b978cba6a439d9638a42c4659e52ed0dea2ea139412c1e",
+        "c123468abc05b5da9c28656a985f6659d20beee7b50e5cf0cc4be33cd2681228",
+        "9470b0a3dadad8737a44b27121dbea286c4bc194fadeb155db7e293d482362d7",
+        "f2784ba6eacf104fe6395d83cc2a4e8cbc935aa2fb02cffcf36fc131404d11d9",
+        "0d5b9d5820fe0fbe3d5537c49214fcb5fc9283e3974a0d344c983e8092f61bb7",
+        "33624b82883b5ac1da490a59c888bc84d88788e5f9b8d370e3b03535fb6ac2a3",
+        "2381f5796a9ebe3edd4039af52c91fe22d2f2ffecb216e9612f4686132875a5b",
+        "3adfe2194fcb59b881296c8ff1f30b7e2b9bcfc5e62abcd62f99b88700832997",
+        "19ccab22d6fafffc83f05ad26fdac524d711703b2cd4aac4b84f33c3f94b09c2",
+        "8fb63233fbd60fa87452b4604a121ce3b431b3bec62b2add6c31dab7d42de65b",
+        "c2c803026af3ce0620396bba69d89b36e40646ae92b6308c2d1c0e5d7b2a35ff",
+        "138c62065b9622a7b320cb38e86c44d495b71f411816ef7765c3b7eda82b1324",
+        "a406edbde2bef87466d3e9378dbe9b735664785723eeaee2e979301ca4bf3f0a",
+        "a4df2a754fed5903f0d1962e301242eeb8cf2b796340ce47e41decc6198e95f1",
+        "6914a032313512745e35a08b15824c4002cb7c08412814b09e2e52cbd234d632",
+        "639c5699005e700c82310f3c2ee853681c577d04898cfe1d2aea2cb867ed7b74",
+        "aaae2aa163f5162705b9c159b9cd15c999b0a8b33255b50eb092b2e70df732cc",
+        "6ccdefe4e4747c16ca38e7a5269f681648a8675f9e94ad4741cf63ec50c1afeb",
+        "5f0af3e3e97ad4089070ef6be7a00bc63c996bef3d8d972a3b984a4ecd3c7561",
+        "9516b3ba1f9417e9aa50b0844ad1ba909d41739b959e3d4a6a44b80f94415f07",
+        "98e8b939b78625888d29d796e815d2d03a7970926826742a3c4642805751f062",
+        "7c1e0d56d1f54bfddab991f5d487f0afec9bc0559b0d6e205d2b2f7afaba1636",
+        "977bd07cf6b6402bc1bef47aa109f6c577d65835ee19708224ad99816e58a8af",
+        "c87a774f0d4984caaffa6fc4efca231d8274e2f299dfd55e61ba5571d02b6866",
+        "57a561c578bf68190c3139d788278c6d3e5674e87dacbe78c4a2322d975bfeb2",
+        "657736e50e64d35a3db23e240f73c3d4359aa18e566d3ad0d1cf7f3d16a17f5d",
+        "9eb522eb146ce85a6e3c55c2bb3294d97733637f5bc8d20492c0ad892770d52b",
+        "439741ba2463f2ba14e70353badae716767c1c43e59d75e3fb0823b4f9ab3aad",
+        "dc99271b49be7bbceb9a20bfd0b471e6182a20372d4815ce89087bd719e65a20",
+        "9239fb941139ea2b13f182c788363d983f0841f6531282abd42cabdb8de438fc",
+        "980f930444b43123e02e68984fd8e5aa85f13d901ec66b121906eaa4da0dbbe9",
+        "2dfc6b00560e09242dc26ebeed86c020dad756dffd2b57525e7010ed9ce04c91",
+        "28bb7eaca37c4e2233eea6f8cb2a2159f2d2df12a250b6c7ad9bde8d41622395",
+        "58a7829d841e0e5d043042f5ae6c1777a49d1dedee6d4fe1d37373ec6502a24e",
+        "d57aa164c9596d10769f23e08f847d41719acbd144ac18806f7a3f7626081b96",
+        "f9d06f2a0c0178f849ffa59aa67f3fc4cfbb6324c6f434f59ce5b474fc387be3",
+        "28a6a5c7da3f1cb7708bca925ae6e762efd72328a01169a78ade70225effe3a1",
+        "a724f9bf9092e5fb5017bbf8fb94cfcf2c14b036ff8277d26a070e7e7e157f1a",
+        "922176ba93e8b43566c257ea305b7ea751d304abad90429b4e0891a427eda490",
+        "fdba5b7b86be882ed96bdc6fb5c1200f92ac3b75ca902176730384eedd7867cc",
+        "ecb277269d9d95bd51f15ea09d2f4b22d0cdbb1bf0017780b0853f38312e66d7",
+        "dc0375f7d972902fd9314f1c7d01d738d161c9f7f4bd86d64cabd068dfd5f483",
+        "60aca72f3eecb46a308bf28515667d9644838416bdd840d689bfbf4aa89b3f40",
+        "fd3f4c05d21d5ed37decbe04978b673680d60dbfec47200ab4193f5cc1513405",
+        "f7b4dc397dfa4b6025f6ddf12cc2da16c8fccc3153a98466df4fcfbca2070519",
+        "5cbd10f8da3d22111e3bf259e9e15aef9cb56d8cf63bfdd6d8f4c9fa5c0ad1f6",
+        "613e6e681a9ed910baa1df84669f8dc2efddbe7946f0fcb186ad5b6a486bec82",
+        "362babe6a18444d65d23d7e215328cf0fe4ebcca9f294c2c9d5fbcfb2a698877",
+        "28ad300ee7a91faf9c22ead8caa63c5529d359db28e4af0954c6383c7f80d319",
+        "55e5ed1c1ef9fc3a21d3a03c8dec852b6e68560624a2fafaeb15cb91b55eeac1",
+        "d78c7597b1dd6d4270159d8f7f8ea74586a874031d843376504c8ce679cb2b62",
+        "403613d6ede8f98f6aa9426f9ab5ecde8ac2b07f27a18850958f5e5143565cde",
+        "57b65f6d019a1acf5af0af93beb178f7b0d0ee51c0f2ff025aaf68bb7383445c",
+        "dd00d2b8af8ca2e7b00fbc40338d826d7c66da889e498129a02bfea9c95e3bd7",
+        "20298a13b8aa963725d73a8b042062a85f017ec5a6f7fbd87630e3997e86baeb",
+        "e2aa88c7af6261a2a80dca863ef4f615c3bb8670c832bb17626a302a09c9d423",
+        "73d1259b4cb2f45982b0a310f36e8f6c8ff7e8e7f4bc575087f0e6376d65857f",
+        "7bc75ee7a8c68230ba74b8e06ebc834c67bdf5ff0c45b4996915b1d2959f2fd3",
+        "8acaa655fc54f3edfbc5e2bd3b7c8fcee5f7029c9363a39d7bfec913627a0601",
+        "57f2de1836c5549c76ae76a8047a6cb03efa7e60958dc6c49ae359996944d9cb"
+      ]
+    }
+  ],
+  "source_commit": "3f9cbbcdd17e8dfc4ccdd39b9cd50a77b63b3f90",
+  "source_sha256": {
+    "base/rt_agent.py": "5d6bdde1ef1cd45b13c16e1e7acd511bc951c496342a1220275129c93c12cf5f",
+    "manager/world_manager.py": "cc792716e49df022f837241b3ae95b63c5416da449ca22a52a1608e17f3c5abc",
+    "llm/prompt.py": "5d9e319e94002fe8ca03317fa350bf745480597a9462798329b625690b5b9c1b",
+    "base/rt_unrealcv.py": "2b836189dd436d6a2ecf538be558602655da67e4780274d1cdd49bdbcd0e2dd0",
+    "base/rt_communicator.py": "62dc61102350678ef6ee50fbed5257affe495cb082f788667d711034a51811f0",
+    "base/rt_traffic_controller.py": "5071e2da545a3f29916a66a2880834495a935103c0ee9e6c5531d677feeb7b1d",
+    "SimWorld/simworld/traffic/manager/intersection_manager.py": "4d427d266721a6c365070d129e7b903cacbda4a160a20cac53826bc623dc8cc1",
+    "SimWorld/simworld/communicator/unrealcv.py": "aadd67a5cb599a412c21c13246c5e1e2e24324b76baeac47c2c93e5b6b8916d3"
+  },
+  "source_unchanged": true,
+  "operator_stop_reason": "Stopped to address repeated all-red RPC slowdown; no task termination or episode score."
+}

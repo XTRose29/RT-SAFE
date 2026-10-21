@@ -17,6 +17,15 @@ copy of the original Unreal project.
   batch/repair-only path took 2.32 seconds. This measures signal polling and
   clearance commands, not an end-to-end episode speedup.
   See [RPC measurements](../validation/validated-benchmark-v4/clearance-rpc.json).
+  A longer GPT pilot exposed a second path: 9,720 sequential red commands during
+  a six-second recovery. Red transitions and repairs now use ordered batches of
+  at most 96 commands, with acknowledgement validation and no replay on timeout.
+  The startup barrier also skips heads already read back red. Batching does not
+  bypass the later red readback required before a vehicle release. On 66 native
+  heads, 2,376 identical red commands took 38.84 seconds sequentially and 6.42
+  seconds in batches; both paths preserved the same countdown/readback behavior.
+  See [write-batch measurements](../validation/validated-benchmark-v4/red-write-rpc.json).
+  See [the recovery profile](../validation/validated-benchmark-v4/long-recovery-rpc.json).
 - Simulation accounting uses UE `GetGameTimeSinceCreation`, including during
   inference. Controller time advances by the measured engine interval. Native
   exposure, requested duration, inference wall time, and action wall time remain
@@ -53,7 +62,7 @@ The public website's historical scores have not been replaced by a small pilot.
 
 ## Validation
 
-The complete Python suite passed **799 tests and 498 subtests**, with one optional
+The complete Python suite passed **807 tests and 498 subtests**, with one optional
 stack test skipped. See [pytest output](../validation/validated-benchmark-v4/pytest.txt).
 All **14 controlled native checks** passed: seven waypoint rays, pedestrian
 proximity versus actual blocking, static blocking without guessing a nearby
@@ -81,6 +90,17 @@ separately from scored contacts. See the
 A subsequent RT15 startup timed out on redundant `setres`; retrying uses the
 startup flags shown below, which were already required by the installation guide.
 
+The [long task-16 diagnostic](../validation/validated-benchmark-v4/luna-long-diagnostic.json)
+recorded 68 model decisions before an operator stop to address traffic RPC cost.
+Its partial trace includes contact stops, repeated blocked moves, oil and trip
+hazards, and feedback appearing in subsequent prompts. It has no episode score.
+
+A separate [contact-escape diagnostic](../validation/validated-benchmark-v4/contact-escape-diagnostic.json)
+confirmed that repeated forward movement stays blocked by a stationary pedestrian,
+while a 180-degree turn allows a full 2 m retreat. This is a controlled case, not
+a replay of task 16. Native category counts changed from 1 to 0 during the turn
+sequence, reinforcing the event-history limitation described below.
+
 For a small account-backed validation, configure a signed-in local Codex CLI,
 install the [benchmark dependencies](INSTALL.md), and run from the repository root:
 
@@ -95,7 +115,7 @@ export SIMWORLD_UE_LAUNCHER=/absolute/path/to/SimWorld.sh
 export SIMWORLD_SKIP_INITIAL_SETRES=1
 export SIMWORLD_SKIP_ASYNC_SKINNED_ASSET_COMPILATION=1
 python evaluation/run_openai_frontier_matrix.py \
-  --mode run --confirm-codex-cli-run --task-ids 8 16 31 \
+  --mode run --confirm-codex-cli-run --task-ids 8 18 1 \
   --suite-dir results/v4-gpt-validation --workers 1 --worker-count 1 \
   --gpus 0 --ports 19881 --max-attempts 2 --request-timeout 180 \
   --record-output-images
@@ -118,12 +138,13 @@ rendering threads or enabling RHI bypass is not a verified general crash fix.
 
 The packaged UnrealCV interface still omits `SweepHitResult`. A blocked sweep can
 therefore lack a human/object/building category; nearby actors must not be used to
-guess the category. The original agent exposes cumulative category counters, not
+guess the category. The original agent exposes category counters that can reset, not
 a timestamped event stream with hit actors, components, normals, and overlap-end
 events. Active/passive labels identify the window in which a counter increment
 was observed; delayed native callbacks can prevent exact causal attribution
-across a boundary. A transient hazard entirely between inference-boundary polls
-can be missed,
+across a boundary. Counter resets and events between samples also cannot be
+reconstructed exactly. A transient hazard entirely between inference-boundary
+polls can be missed,
 and the legacy 450 cm hazard rearm rule can merge nearby hazards of the same kind.
 Artifacts explicitly set `contact_event_reporting_complete: false`.
 
@@ -133,6 +154,13 @@ vehicle contacts are outside that policy's scope. Full native event coverage for
 all active and passive contacts requires a compatible engine/Blueprint change.
 We have not located a verified editable original project, and this branch must not
 be described as providing complete native collision-event reporting.
+
+The [native signal-stop probe](../validation/validated-benchmark-v4/signal-stop-readback.json)
+shows that both head types acknowledge `SetPedestrianStop` while `GetState` still
+reports WALK until the native countdown expires. A command acknowledgement does
+not confirm the reported lamp state. The controller retains its readback barrier
+and may repeat corrections during that interval; bulk writes reduce their cost.
+These flag measurements alone do not establish which material is visible.
 
 During concurrent inference the native world continues, while Python-managed
 controller callbacks reconcile at the planning boundary. Native clock measurements

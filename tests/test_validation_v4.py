@@ -306,3 +306,21 @@ def test_bulk_red_keeps_clearance_readback_barrier():
     intersection.traffic_lights[3].state = (S.VEHICLE_RED, S.PEDESTRIAN_RED)
     manager.update_intersections(comm, delta_time_s=.1)
     comm.traffic_signal_switch_to.assert_called_once_with(0, 'green')
+
+
+def test_native_initial_overlap_probe_waits_for_its_precondition():
+    from tools.validate_report_native_cases import establish_initial_hazard_overlap
+    ue, comm = Mock(), Mock()
+    comm.get_states.side_effect = [[0, 0, 0, 0., 0, 0], [0, 0, 0, 0., 1, 0]]
+    samples = establish_initial_hazard_overlap(ue, comm, 'agent')
+    assert [row[4] for row in samples] == [0, 1]
+    assert ue.advance_simulation_time.call_count == 2
+
+
+def test_native_initial_overlap_probe_fails_if_fixture_never_overlaps():
+    from tools.validate_report_native_cases import establish_initial_hazard_overlap
+    ue, comm = Mock(), Mock()
+    comm.get_states.return_value = [0, 0, 0, 0., 0, 0]
+    with pytest.raises(RuntimeError, match='setup never established'):
+        establish_initial_hazard_overlap(ue, comm, 'agent')
+    assert ue.advance_simulation_time.call_count == 20

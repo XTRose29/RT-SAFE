@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "scope": "Controlled native stationary-pedestrian contact followed by repeated forward movement and a 180-degree turn plus 2m retreat; not a replay of task 16.",
+  "runtime": "UE 5.3.2 RT10",
+  "gpu": 1,
+  "renderer_flags": [],
+  "source_commit": "57f52f2c10d65a16ee8e67d4b7ac3087973937be",
+  "source_sha256": {
+    "base/rt_agent.py": "5d6bdde1ef1cd45b13c16e1e7acd511bc951c496342a1220275129c93c12cf5f",
+    "manager/world_manager.py": "cc792716e49df022f837241b3ae95b63c5416da449ca22a52a1608e17f3c5abc",
+    "llm/prompt.py": "5d9e319e94002fe8ca03317fa350bf745480597a9462798329b625690b5b9c1b",
+    "base/rt_unrealcv.py": "2b836189dd436d6a2ecf538be558602655da67e4780274d1cdd49bdbcd0e2dd0",
+    "base/rt_communicator.py": "62dc61102350678ef6ee50fbed5257affe495cb082f788667d711034a51811f0",
+    "base/rt_traffic_controller.py": "5071e2da545a3f29916a66a2880834495a935103c0ee9e6c5531d677feeb7b1d",
+    "SimWorld/simworld/traffic/manager/intersection_manager.py": "4d427d266721a6c365070d129e7b903cacbda4a160a20cac53826bc623dc8cc1",
+    "SimWorld/simworld/communicator/unrealcv.py": "aadd67a5cb599a412c21c13246c5e1e2e24324b76baeac47c2c93e5b6b8916d3"
+  },
+  "blocked_forward": true,
+  "escaped_after_turn": true,
+  "actions": [
+    {
+      "action": [
+        "move_to",
+        "5"
+      ],
+      "position": [
+        -4770.023,
+        0.0
+      ],
+      "feedback": "You collided with a human. Traffic-rule violation recorded.",
+      "stop_reason": "sweep_blocked",
+      "human_counter": 1
+    },
+    {
+      "action": [
+        "move_to",
+        "5"
+      ],
+      "position": [
+        -4770.02,
+        0.0
+      ],
+      "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+      "stop_reason": "sweep_blocked",
+      "human_counter": 1
+    },
+    {
+      "action": [
+        "turn_around",
+        "R90"
+      ],
+      "position": [
+        -4770.02,
+        0.0
+      ],
+      "feedback": "Action completed successfully.",
+      "human_counter": 0
+    },
+    {
+      "action": [
+        "turn_around",
+        "R90"
+      ],
+      "position": [
+        -4770.02,
+        0.0
+      ],
+      "feedback": "Action completed successfully.",
+      "human_counter": 0
+    },
+    {
+      "action": [
+        "move_to",
+        "2"
+      ],
+      "position": [
+        -4970.02,
+        0.0
+      ],
+      "feedback": "Action completed successfully.",
+      "stop_reason": null,
+      "human_counter": 0
+    }
+  ],
+  "raw_artifact_sha256": "a287884028cadb5ed229531fdfdc12e7e4b67d9b2a090676ae5fb7182ce0d36a",
+  "probe_script_sha256": "f9af1d1058c1fa6e83ab01778121023d736573afc977747a450283633d39dd3c",
+  "normalization_note": "stop_reason is only applicable to movement; stale values on turn rows are omitted.",
+  "timing_scope": "Separate GPU 1 instance while the execution-validation pilot used GPU 6; no comparative latency claim is made."
+}
