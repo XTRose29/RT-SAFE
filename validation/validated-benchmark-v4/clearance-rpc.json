@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "scope": "Compare the old and current clearance RPC paths on isolated native heads.\n\nRequires a dedicated, paused UE instance. This measures only signal polling and\nclearance writes, not end-to-end task throughput or model performance.\n",
+  "results": [
+    {
+      "path": "former_sequential_read_and_reassert",
+      "wall_seconds": 49.90968008385971,
+      "heads": 66,
+      "ticks": 12,
+      "native_state_reads": 792,
+      "all_red_switches": 792,
+      "all_red_commands": 2376,
+      "all_heads_verified_red": true
+    },
+    {
+      "path": "batched_read_and_repair_only",
+      "wall_seconds": 2.3246007850393653,
+      "heads": 66,
+      "ticks": 12,
+      "native_state_reads": 792,
+      "all_red_switches": 0,
+      "all_red_commands": 0,
+      "all_heads_verified_red": true
+    }
+  ],
+  "source_commit": "3f9cbbc",
+  "artifact_sha256": "71a99ec14972ad0d520c7e299d973ce3e26dcdd0e86883469d48319076f0aed2",
+  "renderer_flags": []
+}

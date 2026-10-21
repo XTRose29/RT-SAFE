@@ -1,0 +1,18 @@
+{
+  "source_commit": "3f9cbbcdd17e8dfc4ccdd39b9cd50a77b63b3f90",
+  "protocol": "execution_alignment_v4",
+  "pytest": {
+    "passed": 799,
+    "skipped": 1,
+    "subtests_passed": 498,
+    "exit_code": 0,
+    "log_sha256": "e692bd5dad4cad5d62041d295b574677e55bea664f39f0f52aceaaed34be6e16"
+  },
+  "controlled_native_checks": {
+    "passed": 14,
+    "map": "RT10",
+    "default_rendering_threads": true
+  },
+  "historical_leaderboard_changed": false,
+  "complete_native_contact_event_stream_available": false
+}

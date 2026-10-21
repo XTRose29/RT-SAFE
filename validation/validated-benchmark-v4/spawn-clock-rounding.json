@@ -1,0 +1,67 @@
+{
+  "scope": "Clock diagnostic only: after advancing the world with slomo 20, restore slomo 1, spawn twelve actors while paused and read before/after a requested 0.173-second advance. The deliberately accelerated warmup is not an episode setting.",
+  "runtime": "UE 5.3.2 packaged RT10, default rendering threads",
+  "source_artifact_sha256": "52410f070485ebf280e7c320f62c8f3ca2289f5812e26ed96308f8e92694764c",
+  "samples": [
+    {
+      "index": 0,
+      "before_seconds": -1e-06,
+      "after_seconds": 0.474032
+    },
+    {
+      "index": 1,
+      "before_seconds": -1e-06,
+      "after_seconds": 0.16861
+    },
+    {
+      "index": 2,
+      "before_seconds": 1e-06,
+      "after_seconds": 0.233797
+    },
+    {
+      "index": 3,
+      "before_seconds": -2e-06,
+      "after_seconds": 0.185049
+    },
+    {
+      "index": 4,
+      "before_seconds": -2e-06,
+      "after_seconds": 0.157465
+    },
+    {
+      "index": 5,
+      "before_seconds": 2e-06,
+      "after_seconds": 0.172007
+    },
+    {
+      "index": 6,
+      "before_seconds": -2e-06,
+      "after_seconds": 0.178401
+    },
+    {
+      "index": 7,
+      "before_seconds": -1e-06,
+      "after_seconds": 0.173991
+    },
+    {
+      "index": 8,
+      "before_seconds": -1e-06,
+      "after_seconds": 0.165758
+    },
+    {
+      "index": 9,
+      "before_seconds": 1e-06,
+      "after_seconds": 0.189144
+    },
+    {
+      "index": 10,
+      "before_seconds": -0.0,
+      "after_seconds": 0.179569
+    },
+    {
+      "index": 11,
+      "before_seconds": -4e-06,
+      "after_seconds": 0.1768
+    }
+  ]
+}

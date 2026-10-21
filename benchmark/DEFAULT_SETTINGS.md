@@ -9,6 +9,11 @@ called without a preset name. Every run writes the fully resolved values to
 `suite_config.json`; that generated file is the authority for a particular
 result suite.
 
+This branch uses `execution_alignment_v4`. Its native clock, contact-stop,
+recovery attribution, and termination behavior are described below and in
+[the validated fixes](../docs/CONSOLIDATED_FIXES.md). Historical website and paper
+scores retain their original runtime policies and must not be pooled with v4.
+
 The lower-level `evaluation/run_qwen3vl8b_all_maps.py` CLI supports broader
 experiments and has generic parser defaults. Those generic defaults are not the
 maintained benchmark profile.
@@ -160,16 +165,16 @@ be compared as though only model capability changed.
 ## Real-time and termination protocol
 
 Concurrent real-time inference is enabled and token-based latency simulation is
-disabled. Unreal Engine therefore continues to evolve for the measured
-wall-clock model-request latency. The signal state is sampled immediately before
+disabled. Unreal Engine continues to evolve throughout planning; elapsed exposure
+is measured with its native game clock. Model-request latency, context preparation,
+and the complete planning window are recorded separately. The signal state is sampled immediately before
 the current image and sampled again during execution, so a phase may change
 while the model is reasoning.
 
 An episode ends on:
 
 - successful arrival at the final ordered destination;
-- collision with an active launched conflict vehicle;
-- three consecutive decisions that result in building collisions; or
+- collision with an active launched conflict vehicle; or
 - exhaustion of the route-length-derived decision budget.
 
 No additional stagnation-specific direction is added to the prompt: the model
@@ -262,15 +267,22 @@ proximity telemetry, but cannot create or label a building collision.
 
 For one action interval containing human, object, or building contact with
 positive average UE impulse, one 6-second impact penalty is applied. Passive
-contacts are counted without this penalty. An active building collision also
-returns the agent to the latest collision-free pose and adds a 3-second recovery
-delay. Three consecutive building-collision decisions terminate the episode.
+contacts are counted without this penalty. Active movement stops on a detected
+native contact or blocked sweep and retains the actual UE pose. Building contact
+does not trigger a rollback, an additional three-second delay, or termination
+after three contacts in v4. Those behaviors belong to older protocol versions.
+Counter increments observed during an action's forced recovery remain active
+events on that action; the baseline is reconciled before the next decision. Hazards continue to be
+sampled during recovery, and additional recovery contacts do not stack impact penalties.
 
 A fall-trigger overlap adds a 6-second recovery delay. Oil slows the next
 movement to half speed. Water creates a one-movement slip state without changing
 the commanded waypoint or speed. Each hazard is counted once per continuous
-region occupancy; repeated Unreal state samples at the same location remain raw
-telemetry but do not add benchmark events or reapply effects.
+region occupancy under the legacy overlap/rearm policy; repeated Unreal state
+samples at the same location remain raw telemetry but do not add benchmark events
+or reapply effects. The packaged interface lacks actor-resolved event history:
+nearby hazards can be merged and transient overlaps between samples can be missed.
+See [the engine limitations](../docs/CONSOLIDATED_FIXES.md#remaining-engine-limitations).
 
 Jaywalking is one continuous roadway excursion outside an authored sidewalk and
 all marked crosswalks. A signalized crossing may be entered only during WALK.

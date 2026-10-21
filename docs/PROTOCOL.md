@@ -15,6 +15,11 @@ RT-SAFE evaluates navigation and safety while the world continues during inferen
 
 The detailed implementation protocol is in [benchmark/DEFAULT_SETTINGS.md](../benchmark/DEFAULT_SETTINGS.md). Presets are explicit configuration snapshots. `hard` is called `default` in parts of the legacy low-level runner.
 
+The `fix/validated-benchmark-20261021` branch uses `execution_alignment_v4`.
+[Its fixes and validation](CONSOLIDATED_FIXES.md) concern current execution and
+reporting. All historical result scopes below retain their original scoring;
+the small validation pilots are not leaderboard updates.
+
 ## Results in the website
 
 `website/app/data.json` and `website/public/data/results.csv` are extracted from the supplied manuscript archive dated 2026-10-01. The matched hard comparison contains 36 routes per model per timing mode, with eight models (288 paired episodes). All-difficulty summaries contain 108 episodes per model. Do not mix these denominators.

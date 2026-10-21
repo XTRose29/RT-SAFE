@@ -1,0 +1,30 @@
+{
+  "scope": "Pre-fix diagnostic measuring wall-based advance with native actor clock; native clock is now used in v4 accounting.",
+  "samples": [
+    {
+      "requested_seconds": 0.0,
+      "wall_seconds": 0.708577306009829,
+      "native_elapsed_seconds": 0.0
+    },
+    {
+      "requested_seconds": 0.1,
+      "wall_seconds": 0.4768696278333664,
+      "native_elapsed_seconds": 0.128367
+    },
+    {
+      "requested_seconds": 0.5,
+      "wall_seconds": 0.5540703041478992,
+      "native_elapsed_seconds": 0.502202
+    },
+    {
+      "requested_seconds": 1.0,
+      "wall_seconds": 1.0607290831394494,
+      "native_elapsed_seconds": 1.010831
+    },
+    {
+      "requested_seconds": 2.0,
+      "wall_seconds": 2.060946546960622,
+      "native_elapsed_seconds": 2.010033
+    }
+  ]
+}

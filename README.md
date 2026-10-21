@@ -37,6 +37,12 @@ High completion rates can coexist with frequent safety events. These are results
 
 ## Start here
 
+**Validated fixes branch:** `fix/validated-benchmark-20261021` uses the
+`execution_alignment_v4` protocol. See [the fixes and validation evidence](docs/CONSOLIDATED_FIXES.md)
+for contact-stop behavior, native game-clock accounting, traffic-control performance,
+and the remaining limitations of the packaged engine. Historical tables below
+retain their original protocol and scores.
+
 **Run the benchmark on a Linux GPU server without model credentials:**
 follow the [server quickstart](docs/SERVER_QUICKSTART.md) for installation,
 all-five-map validation, and a static/real-time benchmark pair.

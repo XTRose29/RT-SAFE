@@ -1,0 +1,258 @@
+{
+  "scope": "Small execution-validation pilot, not a leaderboard. Incomplete attempts have no episode scores.",
+  "completed_episodes": 1,
+  "attempts": [
+    {
+      "task_id": 8,
+      "map": "map2_12roads",
+      "condition": "hard_realtime_instructional_medium",
+      "attempt": 1,
+      "cell_state": "completed",
+      "accepted_completed_episode": true,
+      "outcome": "goal_reached",
+      "recorded_decisions": 11,
+      "model": "gpt-5.6-luna",
+      "provider": "codex-cli",
+      "reasoning_effort": "medium",
+      "max_native_vs_accounted_delta_error_s": 0.0,
+      "contacts_and_stops": [
+        {
+          "step": 2,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": "sweep_blocked",
+          "move_elapsed_seconds": 1.548349,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 303.595
+        },
+        {
+          "step": 3,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": 1.006878,
+          "move_command_duration_seconds": 1.0,
+          "actual_displacement_cm": 199.999496204367
+        },
+        {
+          "step": 10,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 1
+          },
+          "passive": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "You have reached the final destination. You contacted water. You are slipping.",
+          "feedback_in_next_prompt": null,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": 2.003144,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 400.0
+        }
+      ],
+      "completed_episode_metrics": {
+        "success": true,
+        "termination_reason": "success",
+        "collision_count": 1,
+        "passive_collision_count": 1,
+        "decision_count": 11,
+        "avg_response_time": 5.293933803384954,
+        "sim_time": 94.39621,
+        "safe_success": null,
+        "benchmark_metrics": {
+          "schema_version": "paper_metrics_v1",
+          "success_indicator": 1,
+          "shortest_path_length_cm": 3537.0531,
+          "traveled_path_length_cm": 3503.594496204367,
+          "spl": 1.0,
+          "optimal_time_seconds": 17.6852655,
+          "sim_time_seconds": 94.39621,
+          "simulation_time_efficiency": 0.18735143603752735,
+          "collision_episode_indicator": 1,
+          "collision_count": 1,
+          "active_collision_count": 0,
+          "passive_collision_count": 1,
+          "collision_type_counts": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "active_collision_type_counts": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "passive_collision_type_counts": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0
+          },
+          "collisions_per_100m": 2.854211584940421,
+          "unsafe_event_count": 2,
+          "safe_episode_indicator": 0,
+          "safe_success_indicator": 0,
+          "conflict_vehicle": {
+            "trigger_count": 0,
+            "valid_launch_count": 0,
+            "impact_count": 0,
+            "impact_given_valid_launch": null
+          },
+          "latency": {
+            "valid_response_count": 11,
+            "mean_response_seconds": 5.293933803384954,
+            "median_response_seconds": 5.171909332275391,
+            "p90_response_seconds": 6.780413389205933,
+            "p95_response_seconds": 6.9017075300216675,
+            "cumulative_response_seconds": 58.2332718372345,
+            "cumulative_simulated_inference_exposure_seconds": 75.71832699999999,
+            "response_samples_seconds": [
+              7.023001670837402,
+              4.461508750915527,
+              4.829307317733765,
+              5.129701852798462,
+              5.2244367599487305,
+              5.213938474655151,
+              6.780413389205933,
+              4.788510799407959,
+              5.4765236377716064,
+              4.13401985168457,
+              5.171909332275391
+            ]
+          },
+          "tokens": {
+            "prompt": 154686,
+            "completion": 2248,
+            "reasoning": 1749,
+            "total": 156934
+          },
+          "errors": {
+            "parse": 0,
+            "invalid_decision": 0,
+            "timeout": 0
+          }
+        }
+      },
+      "result_sha256": "f94efde953c1bc93f8276b074f4a3174f8ce886a85fa466b4ef08a9d119d36f2",
+      "rollout_log_sha256": "941be8a6d6d07cfc277b5b35286739d80214166b82e336bca73544e9e09ffb1c",
+      "manifest_sha256": [
+        "ba375629cbfadc96130d1e44c4d3b9409a385ec2bf80aeb21ab7ece9581b7f2f",
+        "205c35c8a0f592f2331a626bc6956c24d7ca999d845aa5cd7325095c0af2fc5e",
+        "cea794250861ee600f1df5b4c60a8849f5c0eddae5fbdc8b1d9e1643d4a850dd",
+        "a49c033925531d9941b1687adf76bd8d66404c75cb7e88da9b36497edc0dd5e3",
+        "5769114a4f8e32659941d38a2ed4f10c65f15f7899a5e81a745f454f7ae46aa7",
+        "ae7e81850badf78857796c367f46aadce10db765001b1a9ad1864028be092efc",
+        "5f3d59eb5a5cebf04bcd3334b70ce65b6c718b4509a582f4ccef833767ec14d4",
+        "903e229b530fe891d662459b057bf4d1d9300a95df241fa260e599bbcf285a4e",
+        "f594384c32c67b981482c1e422da8d490e3fbcc30aef1de677568df67b4508d9",
+        "b27fcddd1242c3c9a402a59c449d6dcf04f9a20af53bbf238bb7452e7c627045",
+        "f0647f2eeb3b02ff5ebb95efd17538055b53139d27e2eab5bc1fdf6c5c43d11f"
+      ]
+    },
+    {
+      "task_id": 16,
+      "map": "map3_15roads",
+      "condition": "hard_realtime_instructional_medium",
+      "attempt": 1,
+      "cell_state": "running",
+      "accepted_completed_episode": false,
+      "outcome": "incomplete_startup_setres_timeout",
+      "recorded_decisions": 0,
+      "model": null,
+      "provider": null,
+      "reasoning_effort": null,
+      "max_native_vs_accounted_delta_error_s": null,
+      "contacts_and_stops": [],
+      "completed_episode_metrics": null,
+      "result_sha256": null,
+      "rollout_log_sha256": "8b85b59e919ed1c6d41885998e2dcdcba66268678255204911e0ed4ae7b7a14d",
+      "manifest_sha256": []
+    },
+    {
+      "task_id": 16,
+      "map": "map3_15roads",
+      "condition": "hard_realtime_instructional_medium",
+      "attempt": 2,
+      "cell_state": "running",
+      "accepted_completed_episode": false,
+      "outcome": "operator_stopped_before_model_decision",
+      "recorded_decisions": 0,
+      "model": null,
+      "provider": null,
+      "reasoning_effort": null,
+      "max_native_vs_accounted_delta_error_s": null,
+      "contacts_and_stops": [],
+      "completed_episode_metrics": null,
+      "result_sha256": null,
+      "rollout_log_sha256": "f95859b13dd49c28a3fdca577943e53ac9539df8196de3509a55c43241894cdf",
+      "manifest_sha256": []
+    }
+  ],
+  "model": "gpt-5.6-luna",
+  "provider": "codex-cli",
+  "reasoning_effort": "medium",
+  "source_commit": "3f9cbbcdd17e8dfc4ccdd39b9cd50a77b63b3f90",
+  "source_sha256": {
+    "base/rt_agent.py": "5d6bdde1ef1cd45b13c16e1e7acd511bc951c496342a1220275129c93c12cf5f",
+    "manager/world_manager.py": "cc792716e49df022f837241b3ae95b63c5416da449ca22a52a1608e17f3c5abc",
+    "llm/prompt.py": "5d9e319e94002fe8ca03317fa350bf745480597a9462798329b625690b5b9c1b",
+    "base/rt_unrealcv.py": "2b836189dd436d6a2ecf538be558602655da67e4780274d1cdd49bdbcd0e2dd0",
+    "base/rt_communicator.py": "62dc61102350678ef6ee50fbed5257affe495cb082f788667d711034a51811f0",
+    "base/rt_traffic_controller.py": "5071e2da545a3f29916a66a2880834495a935103c0ee9e6c5531d677feeb7b1d",
+    "SimWorld/simworld/traffic/manager/intersection_manager.py": "4d427d266721a6c365070d129e7b903cacbda4a160a20cac53826bc623dc8cc1",
+    "SimWorld/simworld/communicator/unrealcv.py": "aadd67a5cb599a412c21c13246c5e1e2e24324b76baeac47c2c93e5b6b8916d3"
+  },
+  "renderer_flags": [],
+  "startup_overrides": {},
+  "source_unchanged": true
+}

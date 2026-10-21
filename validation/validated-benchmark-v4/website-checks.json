@@ -1,0 +1,14 @@
+{
+  "node_version": "22.15.0",
+  "vite_version": "8.3.4",
+  "data_tests_passed": 13,
+  "python_aggregation_tests_passed": 7,
+  "typecheck_exit_code": 0,
+  "production_build_exit_code": 0,
+  "npm_audit_known_vulnerabilities": 0,
+  "log_sha256": {
+    "website-tests.log": "d0b4ac00a6b9b44879d3052c7e87187988e878a634414c2fbef1153565ea5e2b",
+    "website-typecheck.log": "5af9f87d8205c49b8dba6ea7957e22175c8c665bb6abfa81ce0dfdc936340724",
+    "website-build.log": "93e258a205eaa85272bfb0622d14b75e1c97b13934bb253c0130975b8e94fdb2"
+  }
+}

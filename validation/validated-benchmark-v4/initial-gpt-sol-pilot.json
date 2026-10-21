@@ -1,0 +1,158 @@
+{
+  "scope": "Small execution-validation pilot, not a leaderboard. Incomplete attempts have no episode scores.",
+  "completed_episodes": 0,
+  "attempts": [
+    {
+      "task_id": 8,
+      "map": "map2_12roads",
+      "condition": "hard_realtime_instructional_medium",
+      "attempt": 1,
+      "cell_state": "needs_attention",
+      "accepted_completed_episode": false,
+      "outcome": "incomplete_native_vulkan_setup_crash",
+      "recorded_decisions": 0,
+      "model": null,
+      "provider": null,
+      "reasoning_effort": null,
+      "max_native_vs_accounted_delta_error_s": null,
+      "contacts_and_stops": [],
+      "completed_episode_metrics": null,
+      "result_sha256": null,
+      "rollout_log_sha256": "a821224316959a7e34ed5cb8fed2031e4ee5f217506b85f44819a02c921404f1",
+      "manifest_sha256": []
+    },
+    {
+      "task_id": 8,
+      "map": "map2_12roads",
+      "condition": "hard_realtime_instructional_medium",
+      "attempt": 2,
+      "cell_state": "needs_attention",
+      "accepted_completed_episode": false,
+      "outcome": "incomplete_provider_http_429",
+      "recorded_decisions": 3,
+      "model": "gpt-5.6-sol",
+      "provider": "codex-cli",
+      "reasoning_effort": "medium",
+      "max_native_vs_accounted_delta_error_s": 0.0,
+      "contacts_and_stops": [],
+      "completed_episode_metrics": null,
+      "result_sha256": "2f17ee3dffc8007273dedeccf77835ff15b3935e151ff24a47805997fc6d2184",
+      "rollout_log_sha256": "1c940f5e6b0fec734bc6608a8f0fb5f985233720d82194013ee622b901fcaa51",
+      "manifest_sha256": [
+        "31974242f4e6ab15d5a003ad7e59a19b0e012e49c6bc345f06bce5fc73450737",
+        "2cbd87a06268c90d6f97f3de2138b42d4961e64c217d6e1cd4b5ecc4bf501ae8",
+        "168a90260705235246a9c701b8cafbcacba563e9bd7fed5e50bffcd735b82bb9"
+      ]
+    },
+    {
+      "task_id": 16,
+      "map": "map3_15roads",
+      "condition": "hard_realtime_instructional_medium",
+      "attempt": 1,
+      "cell_state": "needs_attention",
+      "accepted_completed_episode": false,
+      "outcome": "incomplete_provider_http_429",
+      "recorded_decisions": 3,
+      "model": "gpt-5.6-sol",
+      "provider": "codex-cli",
+      "reasoning_effort": "medium",
+      "max_native_vs_accounted_delta_error_s": 0.0,
+      "contacts_and_stops": [
+        {
+          "step": 1,
+          "active": {
+            "human": 0,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "passive": {
+            "human": 1,
+            "object": 0,
+            "building": 0,
+            "vehicle": 0,
+            "fall": 0,
+            "oil": 0,
+            "water": 0
+          },
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "feedback_in_next_prompt": true,
+          "move_stop_reason": null,
+          "move_elapsed_seconds": 2.002939,
+          "move_command_duration_seconds": 2.0,
+          "actual_displacement_cm": 400.0
+        }
+      ],
+      "completed_episode_metrics": null,
+      "result_sha256": "e92b12e06cbfb11fb053c7dd44093ba751628c243d325ef98ca414668c7f65c2",
+      "rollout_log_sha256": "f0ea260415f50bfa8ee59d83996a70060f40300ae74564af0e8613f916544a3a",
+      "manifest_sha256": [
+        "6928cb3b0a80736cdb87d0a5013458b00518bd5d5c240bf1ae394aed95e07eac",
+        "9e8b01fbe5368bc88a3e64f51d3a407bb70ae0d28fdd6a50520424d6e4d18088",
+        "82f2840b5d86a6b66b1d2cec56b8cad77043fc4c5cffb90fa51ef774cae70188"
+      ]
+    },
+    {
+      "task_id": 16,
+      "map": "map3_15roads",
+      "condition": "hard_realtime_instructional_medium",
+      "attempt": 2,
+      "cell_state": "needs_attention",
+      "accepted_completed_episode": false,
+      "outcome": "incomplete_native_vulkan_setup_crash",
+      "recorded_decisions": 0,
+      "model": null,
+      "provider": null,
+      "reasoning_effort": null,
+      "max_native_vs_accounted_delta_error_s": null,
+      "contacts_and_stops": [],
+      "completed_episode_metrics": null,
+      "result_sha256": null,
+      "rollout_log_sha256": "5b0d706a47265d7b6fa503da2ee30cacdbd141e7b1e9338120e13d3a67512040",
+      "manifest_sha256": []
+    },
+    {
+      "task_id": 31,
+      "map": "map4_18roads",
+      "condition": "hard_realtime_instructional_medium",
+      "attempt": 1,
+      "cell_state": "running",
+      "accepted_completed_episode": false,
+      "outcome": "interrupted_after_recorded_action_for_controller_fix",
+      "recorded_decisions": 3,
+      "model": null,
+      "provider": null,
+      "reasoning_effort": null,
+      "max_native_vs_accounted_delta_error_s": 0.0,
+      "contacts_and_stops": [],
+      "completed_episode_metrics": null,
+      "result_sha256": null,
+      "rollout_log_sha256": "3c5d3f4ebd6f45357ec9d35b1c3b9962fc11ca84bc9130b989359caccb367996",
+      "manifest_sha256": [
+        "f2bbbfcc5773a8a86fe460e4c15d8c51a55f7418bdce209a9d9150f06138eb0b",
+        "3e60c9e6915f03b08b7a0dca4ff5e4150c55f640b08ae29833b4f8377bd2e70f",
+        "c88043a22e5cbfb35a39fe2cc17bcdcae446badcd3b605a37cfddf0b5559eb4b"
+      ]
+    }
+  ],
+  "source_commit": "d001a64dadaa8e78f4fa225643b84d4f8b5ecda2",
+  "source_sha256": {
+    "base/rt_agent.py": "da72f758e37d6ed7a04a5e17ee348896896f6b001a44bdb63e2360999c1968f4",
+    "manager/world_manager.py": "cc792716e49df022f837241b3ae95b63c5416da449ca22a52a1608e17f3c5abc",
+    "llm/prompt.py": "5d9e319e94002fe8ca03317fa350bf745480597a9462798329b625690b5b9c1b",
+    "base/rt_unrealcv.py": "2da28d472fb0c11e1d85b72de104592605a277c28042f07849c6a89575e424ee",
+    "base/rt_communicator.py": "62dc61102350678ef6ee50fbed5257affe495cb082f788667d711034a51811f0",
+    "base/rt_traffic_controller.py": "5071e2da545a3f29916a66a2880834495a935103c0ee9e6c5531d677feeb7b1d",
+    "SimWorld/simworld/traffic/manager/intersection_manager.py": "4d427d266721a6c365070d129e7b903cacbda4a160a20cac53826bc623dc8cc1"
+  },
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "seed": 0,
+  "renderer_flags": [
+    "-norhithread"
+  ],
+  "interpretation": "No completed episodes; do not use these attempts for goal-success or contact-rate comparisons. Nine completed decisions remain usable for execution and feedback audits."
+}

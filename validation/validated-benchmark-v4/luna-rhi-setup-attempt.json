@@ -1,0 +1,45 @@
+{
+  "scope": "Small execution-validation pilot, not a leaderboard. Incomplete attempts have no episode scores.",
+  "completed_episodes": 0,
+  "attempts": [
+    {
+      "task_id": 8,
+      "map": "map2_12roads",
+      "condition": "hard_realtime_instructional_medium",
+      "attempt": 1,
+      "cell_state": "running",
+      "accepted_completed_episode": false,
+      "outcome": "incomplete_native_vulkan_setup_crash",
+      "recorded_decisions": 0,
+      "model": null,
+      "provider": null,
+      "reasoning_effort": null,
+      "max_native_vs_accounted_delta_error_s": null,
+      "contacts_and_stops": [],
+      "completed_episode_metrics": null,
+      "result_sha256": null,
+      "rollout_log_sha256": "5a807a0a96540aca90443f6d2721250ea2fded272fb4b6ea48423405d2d91780",
+      "manifest_sha256": []
+    }
+  ],
+  "model": "gpt-5.6-luna",
+  "provider": "codex-cli",
+  "reasoning_effort": "medium",
+  "source_commit": "f7c039394acf3e5c03bd6d5b99498c62b0b4335c",
+  "source_sha256": {
+    "base/rt_agent.py": "6b9bfd20064887bf790697b29ed57ad447a818bc5e191e0754173c799e0b679d",
+    "manager/world_manager.py": "cc792716e49df022f837241b3ae95b63c5416da449ca22a52a1608e17f3c5abc",
+    "llm/prompt.py": "5d9e319e94002fe8ca03317fa350bf745480597a9462798329b625690b5b9c1b",
+    "base/rt_unrealcv.py": "2da28d472fb0c11e1d85b72de104592605a277c28042f07849c6a89575e424ee",
+    "base/rt_communicator.py": "62dc61102350678ef6ee50fbed5257affe495cb082f788667d711034a51811f0",
+    "base/rt_traffic_controller.py": "5071e2da545a3f29916a66a2880834495a935103c0ee9e6c5531d677feeb7b1d",
+    "SimWorld/simworld/traffic/manager/intersection_manager.py": "4d427d266721a6c365070d129e7b903cacbda4a160a20cac53826bc623dc8cc1",
+    "SimWorld/simworld/communicator/unrealcv.py": "aadd67a5cb599a412c21c13246c5e1e2e24324b76baeac47c2c93e5b6b8916d3"
+  },
+  "renderer_flags": [
+    "-norhithread",
+    "-forcerhibypass"
+  ],
+  "source_unchanged": true,
+  "note": "One scene-setup attempt crashed in FVulkanCommandListContext::RHISetShaderUniformBuffer before any model decisions; coordinator was then stopped. Passing small native probes with these flags did not establish full-scene stability."
+}
