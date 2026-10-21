@@ -146,6 +146,30 @@ def test_native_time_drives_accounting_and_controller_delta():
     assert deltas == pytest.approx([.13])
 
 
+def test_paused_spawn_clock_preserves_microsecond_creation_offset():
+    ue = RTUnrealCV.__new__(RTUnrealCV)
+    ue.lock = threading.Lock()
+    ue.client = Mock()
+    ue.client.request.side_effect = [
+        '{"ReturnValue": "-0.000001"}', '{"ReturnValue": "0.474032"}']
+    before = ue.get_actor_sim_time('agent')
+    after = ue.get_actor_sim_time('agent')
+    assert before == -0.000001
+    assert after - before == pytest.approx(.474033)
+
+
+@pytest.mark.parametrize('raw', [
+    '{"ReturnValue": "-0.001"}', '{"ReturnValue": "NaN"}',
+    '{"ReturnValue": "Infinity"}', '{}', 'error actor not found', None])
+def test_invalid_native_clocks_remain_fatal(raw):
+    ue = RTUnrealCV.__new__(RTUnrealCV)
+    ue.lock = threading.Lock()
+    ue.client = Mock()
+    ue.client.request.return_value = raw
+    with pytest.raises(RuntimeError, match='valid native game clock'):
+        ue.get_actor_sim_time('agent')
+
+
 def test_contact_during_world_tick_stops_before_the_next_sweep():
     world = SweepWorld()
     a = agent_in(world)

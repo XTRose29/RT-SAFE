@@ -8,16 +8,20 @@ class RTUnrealCV(UnrealCV):
 
         Unlike wall sleep, this clock stops while the world is paused. Relative
         differences on the same actor are valid throughout an episode.
+        A paused spawn can return a tiny negative creation-time offset (observed
+        -1 microsecond). Preserve it for differences; reject values below -100us.
         """
         with self.lock:
             raw = self.client.request(f'vbp {name} GetGameTimeSinceCreation')
         try:
             value = float(json.loads(raw)['ReturnValue'])
-            if not math.isfinite(value) or value < 0:
+            if not math.isfinite(value) or value < -0.0001:
                 raise ValueError('invalid game clock')
             return value
         except (ValueError, TypeError, KeyError) as exc:
-            raise RuntimeError('Runtime did not return a valid native game clock') from exc
+            raise RuntimeError(
+                f'Runtime did not return a valid native game clock: {str(raw)[:200]!r}'
+            ) from exc
 
     def tl_get_states(self, names):
         """Read rendered heads in one bounded transport batch, in input order."""
