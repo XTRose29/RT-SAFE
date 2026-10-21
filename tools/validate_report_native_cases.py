@@ -13,6 +13,13 @@ from simworld.utils.vector import Vector
 from tools.validate_report_tasks import install_scripted_policy,configure_probe_environment
 
 
+def require_passing_cases(results):
+    """A probe process must fail when a physical check fails, not just log it."""
+    failed = [row.get('case', '<unnamed>') for row in results if row.get('passed') is not True]
+    if not results or failed:
+        raise RuntimeError('Native validation failed: ' + ', '.join(failed or ['no cases recorded']))
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--port',type=int,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--hazards-only',action='store_true');p.add_argument('--rays-only',action='store_true');p.add_argument('--contacts-only',action='store_true');p.add_argument('--initial-only',action='store_true');p.add_argument('--inference-only',action='store_true');p.add_argument('--clear-parked-cars',action='store_true');p.add_argument('--skip-vehicle',action='store_true',help='Skip the direct-car-push negative control')
     args=p.parse_args();configure_probe_environment();args.output.mkdir(parents=True,exist_ok=True)
@@ -78,9 +85,10 @@ def main():
             target=a.last_commanded_waypoint
             camera=[float(v) for v in u.get_camera_location(a.camera_id).split()]
             error=a.position.distance(target)
+            camera_error=math.hypot(camera[0]-a.position.x,camera[1]-a.position.y)
             record(label,a,{'target':[target.x,target.y],'endpoint_error_cm':error,
-                           'camera_error_cm':math.hypot(camera[0]-a.position.x,camera[1]-a.position.y),
-                           'passed':error<.5})
+                           'camera_error_cm':camera_error,
+                           'passed':error<.5 and camera_error<.5 and all(s['error_cm']<.5 for s in camera_samples)})
             cleanup()
         if args.rays_only:return
         for blocking in ([] if args.hazards_only or args.initial_only else [False,True,"parked"]):
@@ -105,7 +113,7 @@ def main():
             wait=step(a,'wait','1');turn=step(a,'turn_around','L30')
             record(label,a,{'start_state':start_state,'post_move_state':after,'prop_pose':prop_pose,
                            'hazard_events_in_move':events,'later_fall_count':sum(t['collision_details'].get('fall',0) for t in [wait,turn]),
-                           'contact_observed':bool(events)})
+                           'contact_observed':bool(events),'passed':bool(events)})
             cleanup()
         a=agent('initial_overlap_rejection')
         prop=spawn(assets['RT_Basketball_C']['asset_path'],(-5035,0,2),'PROBE_PROP')
@@ -117,7 +125,7 @@ def main():
         try:step(a,'wait','1')
         except InitialHazardOverlapError:rejected=True
         finally:comm.get_states=original_states
-        record('initial_overlap_rejection',a,{'initial_state':observed[0],'rejected':rejected,'fall_count':a.fall_count})
+        record('initial_overlap_rejection',a,{'initial_state':observed[0],'rejected':rejected,'fall_count':a.fall_count,'passed':rejected})
         cleanup()
         if args.initial_only or args.skip_vehicle:return
         # Native vehicle collision plus an oil overlap, both created physically.
@@ -132,5 +140,7 @@ def main():
                'passed':bool(d.get('vehicle',0)>0 and d.get('oil',0)>0),'failed':a.failed})
     finally:
         cleanup();u.client.disconnect()
+        if sys.exc_info()[0] is None:
+            require_passing_cases(results)
 
 if __name__=='__main__':main()

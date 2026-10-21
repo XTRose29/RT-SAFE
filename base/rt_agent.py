@@ -849,6 +849,7 @@ class RTAgent(BaseAgent):
             prompt_data['timing'] = {
                 'simulation_clock_source': ('ue:GetGameTimeSinceCreation'
                                             if native_end is not None else 'nominal_test_clock'),
+                'controller_update_policy': 'accumulated_native_interval_v1',
                 'native_game_time_start_seconds': step_native_started,
                 'native_game_time_end_seconds': native_end,
                 'native_game_time_delta_seconds': (native_end - step_native_started
@@ -5788,25 +5789,29 @@ class RTAgent(BaseAgent):
             chunk_size = min(chunk_size, 0.1)
         remaining = seconds
         while remaining > 1e-6:
-            chunk = min(chunk_size, remaining)
-            native_before = self._native_game_time()
-            if self.use_tick:
-                # Current UnrealCV packages advance a paused world through the
-                # supported resume/run/pause helper, not legacy custom ticks.
-                self.communicator.unrealcv.advance_simulation_time(
-                    chunk,
-                    self.slomo,
-                )
-            else:
-                time.sleep(chunk / self.slomo)
-            native_after = self._native_game_time()
-            elapsed = (native_after - native_before
-                       if native_before is not None and native_after is not None else chunk)
-            if elapsed <= 0:
-                raise RuntimeError('Native simulation clock did not advance')
-            self.sim_time_elapsed = round(self.sim_time_elapsed + elapsed, 6)
-            if getattr(self, '_collect_action_safety', False):
-                self._sample_action_safety('during_action')
+            target = min(chunk_size, remaining)
+            elapsed = 0.0
+            # A busy engine can advance less than the requested wall sleep.
+            # Finish this native interval before refreshing every traffic head;
+            # otherwise tiny remainder steps multiply full-city RPC work.
+            # Safety sampling still occurs after EVERY physical advance.
+            while target - elapsed > 1e-6:
+                chunk = target - elapsed
+                native_before = self._native_game_time()
+                if self.use_tick:
+                    self.communicator.unrealcv.advance_simulation_time(
+                        chunk, self.slomo)
+                else:
+                    time.sleep(chunk / self.slomo)
+                native_after = self._native_game_time()
+                advanced = (native_after - native_before
+                            if native_before is not None and native_after is not None else chunk)
+                if advanced <= 0:
+                    raise RuntimeError('Native simulation clock did not advance')
+                self.sim_time_elapsed = round(self.sim_time_elapsed + advanced, 6)
+                elapsed += advanced
+                if getattr(self, '_collect_action_safety', False):
+                    self._sample_action_safety('during_action')
             if self.simulation_step_callback is not None:
                 self.simulation_step_callback(elapsed)
             if hold_active:

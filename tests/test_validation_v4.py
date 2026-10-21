@@ -161,9 +161,41 @@ def test_contact_during_world_tick_stops_before_the_next_sweep():
     assert a.last_move_elapsed_seconds == .1
 
 
+def test_fractional_native_ticks_preserve_safety_without_duplicate_city_updates():
+    class PartialClockWorld(SweepWorld):
+        game_time = 10.
+        increments = iter([.04, .03, .04, .05, .06])
+        def get_actor_sim_time(self, name):
+            return self.game_time
+        def advance_simulation_time(self, requested, scale):
+            self.game_time += next(self.increments)
+    world = PartialClockWorld()
+    a = agent_in(world)
+    del a._advance_simulation_time
+    a.use_tick = True
+    a._collect_action_safety = True
+    samples = []
+    a._sample_action_safety = lambda phase: samples.append(a.sim_time_elapsed)
+    deltas = []
+    a.simulation_step_callback = deltas.append
+    a._advance_simulation_time(.2)
+    assert samples == pytest.approx([.04, .07, .11, .16, .22])
+    assert deltas == pytest.approx([.11, .11])
+    assert sum(deltas) == pytest.approx(a.sim_time_elapsed)
+
+
 def test_replay_uses_truncated_move_duration():
     from evaluation.replay_recorded_rollout_video import phase_durations
     _, action = phase_durations({
         'waypoint_execution': {'move_command_duration_seconds': 2., 'move_elapsed_seconds': .8},
     }, realtime=True)
     assert action == .8
+
+
+def test_all_campaign_runners_cool_down_after_cli_http_429(tmp_path):
+    from evaluation.run_openai_frontier_matrix import retry_delay_seconds as frontier
+    from evaluation.run_api_easy_instructional_matrix import retry_delay_seconds as api
+    from evaluation.run_seedvar_matrix import retry_delay_seconds as seedvar
+    log = tmp_path / 'rollout.log'
+    log.write_text('Codex CLI exited with status 1: exceeded retry limit, last status: 429 Too Many Requests')
+    assert [f(log, 1) for f in (frontier, api, seedvar)] == [120., 120., 120.]

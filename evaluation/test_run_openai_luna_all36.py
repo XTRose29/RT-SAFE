@@ -154,6 +154,11 @@ class LunaCampaignRunnerTests(unittest.TestCase):
                 encoding="utf-8",
             )
             self.assertEqual(120.0, retry_delay_seconds(log, 1))
+            log.write_text(
+                "Codex CLI exited with status 1: exceeded retry limit, last status: 429 Too Many Requests",
+                encoding="utf-8",
+            )
+            self.assertEqual(120.0, retry_delay_seconds(log, 1))
             log.write_text("ordinary rollout failure", encoding="utf-8")
             self.assertEqual(5.0, retry_delay_seconds(log, 1))
 

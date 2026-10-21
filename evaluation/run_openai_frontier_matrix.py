@@ -290,6 +290,8 @@ def retry_delay_seconds(log_path: Path, attempt_number: int) -> float:
         "rate_limit_exceeded",
         "error code: 429",
         "status code: 429",
+        "status: 429",
+        "429 too many requests",
     )
     if not any(marker in lowered for marker in throttle_markers):
         return base_delay
