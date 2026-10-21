@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import rawData from "./data.json";
 import subsetData from "./subset-results.json";
+import matchedData from "./matched-default-results.json";
 import geminiProgress from "./gemini4-progress.json";
 import { ModelExamples } from "./model-examples";
 import { ModelLogo } from "./model-logos";
@@ -78,16 +79,20 @@ function SectionHead({
 function Results() {
   const [scope, setScope] = useState<Scope>("realtime");
   const [effort, setEffort] = useState("all");
-  const [dataset, setDataset] = useState("subset");
+  const [dataset, setDataset] = useState("matched");
+  const isMatched = scope === "realtime" && dataset === "matched";
   const isSubset = scope === "realtime" && dataset === "subset";
-  const suite = isSubset ? subsetData.id : `manuscript-${scope}`;
-  const episodes = isSubset ? subsetData.taskCount : scope === "average" ? 108 : 36;
+  const suite = isMatched ? matchedData.id : isSubset ? subsetData.id : `manuscript-${scope}`;
+  const episodes = isMatched ? matchedData.taskCount : isSubset ? subsetData.taskCount : scope === "average" ? 108 : 36;
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState<keyof Metric>("collisions");
   const [asc, setAsc] = useState(true);
   const [selected, setSelected] = useState("Fable-1");
   const list = useMemo(() => {
-    const rows = models.flatMap(model => {
+    const rows = isMatched ? matchedData.models.map(row => ({
+      id: `${row.name}-default`, model: row, score: row as Metric, effort: row.effort,
+      label: `${row.effort} · Configured default`,
+    })) : models.flatMap(model => {
       const defaultIndex = model.name === "Sol" ? 0 : 1;
       if (scope !== "realtime") return [{ id: model.name, model, score: model[scope], effort: model.effort[defaultIndex].label, label: `Provider default · ${model.effort[defaultIndex].label}` }];
       const efforts: (Metric & { label: string })[] = isSubset ? subsetData.models.find(m => m.name === model.name)!.effort : model.effort;
@@ -99,7 +104,7 @@ function Results() {
     });
     return rows.filter(row => `${row.model.fullName} ${row.model.provider} ${row.label}`.toLowerCase().includes(search.toLowerCase()))
       .sort((a, b) => ((a.score[sort] ?? 0) - (b.score[sort] ?? 0)) * (asc ? 1 : -1));
-  }, [scope, effort, search, sort, asc, isSubset]);
+  }, [scope, effort, search, sort, asc, isSubset, isMatched]);
   const focused = list.find(row => row.id === selected) ?? list[0];
   const model = focused?.model;
   const score = focused?.score;
@@ -140,11 +145,12 @@ function Results() {
         </div>
         {scope === "realtime" && <label className="effort-filter">Evaluation set
           <select aria-label="Leaderboard evaluation set" value={dataset} onChange={e => { setDataset(e.target.value); if (e.target.value === "manuscript" && sort === "spl") { setSort("collisions"); setAsc(true); } }}>
+            <option value="matched">Matched defaults · 4 maps / 20 tasks</option>
             <option value="subset">Balanced · 2 maps / 10 tasks</option>
             <option value="manuscript">Full manuscript · 36 routes</option>
           </select>
         </label>}
-        {scope === "realtime" && <label className="effort-filter">Reasoning effort
+        {scope === "realtime" && !isMatched && <label className="effort-filter">Reasoning effort
           <select aria-label="Leaderboard reasoning effort" value={effort} onChange={e => setEffort(e.target.value)}>
             <option value="all">All reasoning efforts</option>
             <option value="default">Provider default</option>
@@ -164,15 +170,17 @@ function Results() {
         </label>
         <a className="text-link csv-link" href={`data:text/csv;charset=utf-8,${encodeURIComponent([
           ["Model", "Condition", "Reasoning", "Evaluation set", "Episodes", "Maps", "Seed", ...cols.map(c => c[0])].join(","),
-          ...list.map(row => [row.model.fullName, scope, row.label, suite, episodes, isSubset ? subsetData.mapCount : 5, 0, ...cols.map(([key]) => row.score[key] ?? "")].map(v => '"' + String(v).replaceAll('"', '""') + '"').join(","))
-        ].join("\n"))}`} download={`rt-safe-${suite}-${scope !== "realtime" ? "default" : effort === "all" || effort === "default" ? effort : ["lower", "middle", "higher"][Number(effort)]}.csv`}>
+          ...list.map(row => [row.model.fullName, scope, row.label, suite, episodes, isMatched ? matchedData.mapCount : isSubset ? subsetData.mapCount : 5, 0, ...cols.map(([key]) => row.score[key] ?? "")].map(v => '"' + String(v).replaceAll('"', '""') + '"').join(","))
+        ].join("\n"))}`} download={`rt-safe-${suite}-${scope !== "realtime" || isMatched ? "default" : effort === "all" || effort === "default" ? effort : ["lower", "middle", "higher"][Number(effort)]}.csv`}>
           CSV <span>↓</span>
         </a>
       </div>
       <div className="results-context">
         <span>
           <i className="live-dot" />
-          {isSubset
+          {isMatched
+            ? "4 maps · 20 tasks per model · Hard · Real-time · Seed 0 · Configured-default reasoning"
+            : isSubset
             ? "2 maps · 10 tasks per configuration · Hard · Real-time · Seed 0"
             : scope === "average"
               ? "108 episodes per model · Easy, medium & hard · Real-time · Provider-default reasoning"
@@ -180,9 +188,12 @@ function Results() {
         </span>
         <span>{list.length} configurations · {new Set(list.map(row => row.model.name)).size} models</span>
       </div>
-      <p className="effort-context">{isSubset
+      <p className="effort-context">{isMatched
+        ? `${matchedData.selection} ${matchedData.aggregation} Gemini 4 uses explicit medium; other models use their recorded provider defaults. Serving transports and collection dates differ. Original scoring is retained.`
+        : isSubset
         ? "Five tasks per map, spanning route lengths and authored crossing counts, selected without using model outcomes. Every configuration uses the same 10 recorded hard, real-time episodes (seed 0). Latency averages episode means; successful and failed episodes both count. Provider-specific reasoning settings appear beside each model."
         : scope === "realtime" ? "Each row is one model and reasoning setting on the same 36 hard, real-time routes. All tested efforts share one ranking. Lower / Middle / Higher are provider-specific positions; the actual setting appears beside each model. SPL was not reported in the effort table (—). Source: manuscript Table 15." : "Provider-default results from the manuscript. Each evaluation condition is ranked separately."}
+        {isMatched && <> <a href="data/matched-default-results.json" download>Download 20-task results (JSON) ↓</a></>}
         {isSubset && <> <a href="data/subset-results.json" download>Download subset results (JSON) ↓</a></>}
       </p>
       <div className="results-workspace">
@@ -208,7 +219,7 @@ function Results() {
                       sort === key ? (asc ? "ascending" : "descending") : "none"
                     }
                   >
-                    <button disabled={key === "spl" && scope === "realtime" && !isSubset} onClick={() => changeSort(key)}>
+                    <button disabled={key === "spl" && scope === "realtime" && !isSubset && !isMatched} onClick={() => changeSort(key)}>
                       {label}
                       <span>
                         {sort === key ? (asc ? "↑" : "↓") : direction}
@@ -321,7 +332,7 @@ function Results() {
               the three difficulties.
             </p>
           )}
-          {!isSubset && <div className="model-compare">
+          {!isSubset && !isMatched && "realtime" in model && "static" in model && <div className="model-compare">
             <span>Provider default · Static → Real-time</span>
             <strong>
               {(model.realtime.collisions / model.static.collisions).toFixed(1)}
@@ -795,21 +806,25 @@ export default function RTsafe() {
                 part of the story.
               </>
             }
-            description="Compare every reasoning setting on a balanced 10-task, two-map hard real-time subset. Switch to the full manuscript results to explore the original benchmark."
+            description="Compare nine models on the same 20 hard real-time tasks across four maps, at configured-default reasoning. Explore the earlier 10-task effort comparison and full manuscript results using the evaluation selector."
           />
           <div className="table-heading">
             <div>
               <h3>Hard real-time leaderboard</h3>
-              <p>Compare every reasoning effort. Sort a metric. Inspect a configuration.</p>
+              <p>Same 20 tasks. Configured-default reasoning. Sort a metric and inspect a model.</p>
             </div>
-            <span className="pill">Eight VLMs / Shared protocol</span>
+            <span className="pill">Nine VLMs / Matched routes</span>
           </div>
           <Results />
+          <figure className="matched-leaderboard-figure">
+            <img src="downloads/matched-default-leaderboard.png" alt="Nine models compared on the same 20 tasks: collisions split by inference and execution, goal success, and response latency. Exact values are available in the leaderboard and downloadable CSV." loading="lazy" style={{ width: "100%", height: "auto" }} />
+            <figcaption>20 tasks per model · Four maps · Hard, real-time · Seed 0. Contacts are split into active (execution) and passive (inference). Fewer contacts alone does not imply better navigation; compare goal success too. <a href="downloads/matched-default-leaderboard.png" download>PNG ↓</a> · <a href="downloads/matched-default-leaderboard.pdf" download>PDF ↓</a></figcaption>
+          </figure>
           <section id="gemini4-progress" className="gemini-progress" aria-labelledby="gemini-progress-title">
             <div className="table-heading"><div>
-              <h3 id="gemini-progress-title">Gemini 4 Argon · evaluation in progress</h3>
-              <p>{geminiProgress.effort} reasoning · {geminiProgress.plannedMaps} maps / {geminiProgress.plannedTasks} planned tasks · Updated {geminiProgress.updatedAt.slice(0, 10)}</p>
-            </div><span className="pill">Unranked · {geminiProgress.status}</span></div>
+              <h3 id="gemini-progress-title">Gemini 4 Argon · earlier low-reasoning pilot</h3>
+              <p>Historical pilot, separate from the completed 20-task medium/default comparison above. {geminiProgress.effort} reasoning · {geminiProgress.plannedMaps} maps / {geminiProgress.plannedTasks} planned tasks · Updated {geminiProgress.updatedAt.slice(0, 10)}</p>
+            </div><span className="pill">Archived · Unranked low-reasoning pilot</span></div>
             <div className="table-scroll" tabIndex={0} role="region" aria-label="Gemini 4 provisional results">
               <table><caption className="sr-only">Incomplete Gemini 4 pilot results, excluded from leaderboard rankings</caption>
                 <thead><tr><th>Validated episodes</th><th>Reached goal</th><th>Safe success</th><th>Active collisions</th><th>Passive collisions</th><th>Red-light violations</th></tr></thead>

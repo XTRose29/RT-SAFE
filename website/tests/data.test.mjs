@@ -207,3 +207,31 @@ test("current demo is a continuous 60-second edit with no RL scene", () => {
   assert.equal(frame / timeline.fps, timeline.duration);
   assert.equal(timeline.duration, 60);
 });
+
+
+test("matched defaults rank nine complete models using the same 20-task denominator", () => {
+  const matched = read("app/matched-default-results.json");
+  assert.deepEqual(matched, read("public/data/matched-default-results.json"));
+  assert.equal(matched.taskCount, 20);
+  assert.equal(matched.mapCount, 4);
+  assert.equal(matched.tasksPerMap, 5);
+  assert.equal(matched.seed, 0);
+  assert.equal(matched.models.length, 9);
+  assert.deepEqual(matched.models.map(m => m.name), [...data.models.map(m => m.name), "Gemini 4"]);
+  assert.match(matched.manifestSha256, /^[a-f0-9]{64}$/);
+  for (const row of matched.models) {
+    for (const key of ["success", "safeSuccess", "collisions", "active", "passive", "latency", "decisions", "spl"]) {
+      assert.ok(Number.isFinite(row[key]) && row[key] >= 0, `${row.name}: ${key}`);
+    }
+    assert.equal(row.success % 5, 0);
+    assert.equal(row.safeSuccess % 5, 0);
+    assert.ok(row.safeSuccess <= row.success && row.success <= 100);
+    assert.ok(Math.abs(row.active + row.passive - row.collisions) < .00001);
+    assert.ok(row.spl <= 1);
+    assert.equal(Object.values(row.behavior.terminationCounts).reduce((a, b) => a + b, 0), 20);
+    assert.ok(row.transport);
+  }
+  assert.equal(matched.models.find(m => m.name === "Gemini 4").effort.toLowerCase(), "medium");
+  assert.doesNotMatch(JSON.stringify(matched), /\/data\/rose|ucsd\.edu|result_path/);
+  for (const ext of ["png", "pdf"]) assert.ok(existsSync(new URL(`../public/downloads/matched-default-leaderboard.${ext}`, import.meta.url)));
+});

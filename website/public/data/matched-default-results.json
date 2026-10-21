@@ -1,0 +1,300 @@
+{
+  "id": "hard-realtime-matched20-default-v1",
+  "updatedAt": "2026-10-19T03:47:01.830061+00:00",
+  "taskCount": 20,
+  "mapCount": 4,
+  "tasksPerMap": 5,
+  "seed": 0,
+  "manifestSha256": "d9564037ac55769f06b6daa0be037f471658ef30ab13b67d4cfe246323546d0b",
+  "source": "September 2026 historical defaults and October 2026 Gemini 4 explicit-medium runs; original recorded scoring.",
+  "selection": "Five tasks per map, selected by route geometry and crossing strata before Gemini 4 outcomes. All nine models use the same 20 routes.",
+  "aggregation": "Equal episode weighting, including navigation failures. Latency is the mean of episode mean response times. Safe success requires reaching the goal with zero recorded safety events.",
+  "limitations": "One seed; runs collected on different dates and serving transports. Gemini 4 uses explicit medium, the configured default. Original curb scoring retained. Repeated contacts are not distinct accidents; these observations do not isolate latency as a cause.",
+  "models": [
+    {
+      "name": "Astra",
+      "fullName": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "color": "#527d69",
+      "effort": "Medium",
+      "transport": "Codex CLI",
+      "success": 100,
+      "safeSuccess": 0,
+      "collisions": 40.4,
+      "passive": 27.4,
+      "active": 13,
+      "decisions": 60.55,
+      "latency": 7.010678,
+      "spl": 0.978795,
+      "behavior": {
+        "medianDecisions": 45.0,
+        "maxDecisions": 288,
+        "movesPerEpisode": 55.15,
+        "turnsPerEpisode": 4.15,
+        "waitsPerEpisode": 1.25,
+        "commandedMoveMeters": 2.300090661831369,
+        "offRouteNoProgressMoves": 32,
+        "parseErrors": 0,
+        "terminationCounts": {
+          "success": 20
+        },
+        "inferenceMinutesPerEpisode": 8.330192553202311,
+        "passiveCollisionPercent": 67.82178217821782
+      }
+    },
+    {
+      "name": "Sol",
+      "fullName": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "color": "#89a491",
+      "effort": "Low",
+      "transport": "Codex CLI",
+      "success": 100,
+      "safeSuccess": 5,
+      "collisions": 27.65,
+      "passive": 23.3,
+      "active": 4.35,
+      "decisions": 71.3,
+      "latency": 9.583358,
+      "spl": 0.987103,
+      "behavior": {
+        "medianDecisions": 60.0,
+        "maxDecisions": 207,
+        "movesPerEpisode": 55.3,
+        "turnsPerEpisode": 10.15,
+        "waitsPerEpisode": 5.85,
+        "commandedMoveMeters": 2.0099457504520797,
+        "offRouteNoProgressMoves": 50,
+        "parseErrors": 0,
+        "terminationCounts": {
+          "success": 20
+        },
+        "inferenceMinutesPerEpisode": 12.716160548528036,
+        "passiveCollisionPercent": 84.26763110307414
+      }
+    },
+    {
+      "name": "Fable",
+      "fullName": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "color": "#be825a",
+      "effort": "High",
+      "transport": "Claude Code",
+      "success": 85,
+      "safeSuccess": 0,
+      "collisions": 22.65,
+      "passive": 14.2,
+      "active": 8.45,
+      "decisions": 55.95,
+      "latency": 5.835162,
+      "spl": 0.83196,
+      "behavior": {
+        "medianDecisions": 48.0,
+        "maxDecisions": 270,
+        "movesPerEpisode": 51.95,
+        "turnsPerEpisode": 3.1,
+        "waitsPerEpisode": 0.8,
+        "commandedMoveMeters": 2.1847930702598655,
+        "offRouteNoProgressMoves": 69,
+        "parseErrors": 0,
+        "terminationCounts": {
+          "success": 17,
+          "vehicle_collision": 3
+        },
+        "inferenceMinutesPerEpisode": 5.767541641592979,
+        "passiveCollisionPercent": 62.69315673289183
+      }
+    },
+    {
+      "name": "Sonnet",
+      "fullName": "Claude Sonnet 5",
+      "provider": "Anthropic",
+      "color": "#d9a781",
+      "effort": "High",
+      "transport": "Claude Code",
+      "success": 90,
+      "safeSuccess": 0,
+      "collisions": 24.7,
+      "passive": 11.35,
+      "active": 13.35,
+      "decisions": 60.75,
+      "latency": 4.900516,
+      "spl": 0.888489,
+      "behavior": {
+        "medianDecisions": 41.5,
+        "maxDecisions": 404,
+        "movesPerEpisode": 55.4,
+        "turnsPerEpisode": 4.25,
+        "waitsPerEpisode": 1.05,
+        "commandedMoveMeters": 2.2942238267148016,
+        "offRouteNoProgressMoves": 124,
+        "parseErrors": 0,
+        "terminationCounts": {
+          "success": 18,
+          "vehicle_collision": 2
+        },
+        "inferenceMinutesPerEpisode": 5.012576209704081,
+        "passiveCollisionPercent": 45.95141700404859
+      }
+    },
+    {
+      "name": "Gemini",
+      "fullName": "Gemini-3.8-Flash",
+      "provider": "Google",
+      "color": "#5e83a6",
+      "effort": "Medium",
+      "transport": "OpenRouter",
+      "success": 100,
+      "safeSuccess": 0,
+      "collisions": 36.3,
+      "passive": 28.2,
+      "active": 8.1,
+      "decisions": 76.2,
+      "latency": 12.135498,
+      "spl": 0.985212,
+      "behavior": {
+        "medianDecisions": 56.0,
+        "maxDecisions": 265,
+        "movesPerEpisode": 63.1,
+        "turnsPerEpisode": 8.25,
+        "waitsPerEpisode": 3.95,
+        "commandedMoveMeters": 1.942947702060222,
+        "offRouteNoProgressMoves": 94,
+        "parseErrors": 18,
+        "terminationCounts": {
+          "success": 20
+        },
+        "inferenceMinutesPerEpisode": 16.717102203766505,
+        "passiveCollisionPercent": 77.68595041322314
+      }
+    },
+    {
+      "name": "DeepSeek",
+      "fullName": "DeepSeek-V4-Flash-Vision-Exp",
+      "provider": "DeepSeek",
+      "color": "#8b7b9c",
+      "effort": "High",
+      "transport": "OpenRouter",
+      "success": 90,
+      "safeSuccess": 0,
+      "collisions": 65.85,
+      "passive": 56.95,
+      "active": 8.9,
+      "decisions": 57.25,
+      "latency": 41.721585,
+      "spl": 0.872008,
+      "behavior": {
+        "medianDecisions": 52.0,
+        "maxDecisions": 152,
+        "movesPerEpisode": 52.8,
+        "turnsPerEpisode": 3.0,
+        "waitsPerEpisode": 1.25,
+        "commandedMoveMeters": 2.168560606060606,
+        "offRouteNoProgressMoves": 58,
+        "parseErrors": 3,
+        "terminationCounts": {
+          "success": 18,
+          "vehicle_collision": 2
+        },
+        "inferenceMinutesPerEpisode": 39.13097221672535,
+        "passiveCollisionPercent": 86.48443432042521
+      }
+    },
+    {
+      "name": "Inkling",
+      "fullName": "Inkling",
+      "provider": "Thinking Machines",
+      "color": "#b29b4c",
+      "effort": "High",
+      "transport": "OpenRouter",
+      "success": 95,
+      "safeSuccess": 0,
+      "collisions": 34.55,
+      "passive": 33.85,
+      "active": 0.7,
+      "decisions": 39.75,
+      "latency": 33.643681,
+      "spl": 0.949278,
+      "behavior": {
+        "medianDecisions": 40.5,
+        "maxDecisions": 64,
+        "movesPerEpisode": 35.2,
+        "turnsPerEpisode": 4.3,
+        "waitsPerEpisode": 0.2,
+        "commandedMoveMeters": 2.6931818181818183,
+        "offRouteNoProgressMoves": 4,
+        "parseErrors": 0,
+        "terminationCounts": {
+          "success": 19,
+          "vehicle_collision": 1
+        },
+        "inferenceMinutesPerEpisode": 22.537983465393385,
+        "passiveCollisionPercent": 97.9739507959479
+      }
+    },
+    {
+      "name": "Grok",
+      "fullName": "Grok-4.6",
+      "provider": "xAI",
+      "color": "#67716d",
+      "effort": "High",
+      "transport": "OpenRouter",
+      "success": 100,
+      "safeSuccess": 0,
+      "collisions": 82.7,
+      "passive": 75.2,
+      "active": 7.5,
+      "decisions": 68.4,
+      "latency": 39.31284,
+      "spl": 0.979291,
+      "behavior": {
+        "medianDecisions": 60.0,
+        "maxDecisions": 212,
+        "movesPerEpisode": 62.75,
+        "turnsPerEpisode": 4.25,
+        "waitsPerEpisode": 1.4,
+        "commandedMoveMeters": 1.8215139442231076,
+        "offRouteNoProgressMoves": 9,
+        "parseErrors": 0,
+        "terminationCounts": {
+          "success": 20
+        },
+        "inferenceMinutesPerEpisode": 45.68209916353226,
+        "passiveCollisionPercent": 90.9310761789601
+      }
+    },
+    {
+      "name": "Gemini 4",
+      "fullName": "Gemini 4 Argon",
+      "provider": "Google",
+      "color": "#4285f4",
+      "effort": "Medium",
+      "transport": "Account-pool subscription \u00b7 explicit medium",
+      "success": 75,
+      "safeSuccess": 0,
+      "collisions": 104.8,
+      "passive": 52,
+      "active": 52.8,
+      "decisions": 125.9,
+      "latency": 13.138512,
+      "spl": 0.712891,
+      "behavior": {
+        "medianDecisions": 50.5,
+        "maxDecisions": 456,
+        "movesPerEpisode": 107.4,
+        "turnsPerEpisode": 17.7,
+        "waitsPerEpisode": 0.75,
+        "commandedMoveMeters": 2.425046554934823,
+        "offRouteNoProgressMoves": 441,
+        "parseErrors": 0,
+        "terminationCounts": {
+          "success": 15,
+          "max_steps": 4,
+          "vehicle_collision": 1
+        },
+        "inferenceMinutesPerEpisode": 26.87455322523912,
+        "passiveCollisionPercent": 49.61832061068702
+      }
+    }
+  ]
+}
