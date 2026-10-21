@@ -179,6 +179,19 @@ class RTCommunicator(Communicator):
         """
         object_name = self.get_traffic_signal_name(signal_id)
         raw_response = self.unrealcv.tl_get_state(object_name)
+        return self._parse_traffic_signal_state(signal_id, raw_response)
+
+    def get_traffic_signal_states(self, signal_ids):
+        """Fresh rendered-state readback without one round trip per head."""
+        signal_ids = list(signal_ids)
+        responses = self.unrealcv.tl_get_states([
+            self.get_traffic_signal_name(signal_id) for signal_id in signal_ids
+        ])
+        return [self._parse_traffic_signal_state(signal_id, raw)
+                for signal_id, raw in zip(signal_ids, responses)]
+
+    def _parse_traffic_signal_state(self, signal_id, raw_response):
+        object_name = self.get_traffic_signal_name(signal_id)
         payload = json.loads(raw_response)
 
         def parse_bool(value):
@@ -228,7 +241,7 @@ class RTCommunicator(Communicator):
         signals = list(intersection.traffic_lights) + list(
             intersection.pedestrian_lights
         )
-        states = [self.get_traffic_signal_state(signal.id) for signal in signals]
+        states = self.get_traffic_signal_states(signal.id for signal in signals)
         return build_intersection_snapshot(
             intersection,
             states,

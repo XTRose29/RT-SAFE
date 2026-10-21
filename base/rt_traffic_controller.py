@@ -51,8 +51,10 @@ class RTTrafficController(TrafficController):
     def update_states(self):
         """Refresh actor poses and make rendered RT heads authoritative."""
         super().update_states()
-        for signal in self.traffic_signals:
-            observed = self.communicator.get_traffic_signal_state(signal.id)
+        signals = list(self.traffic_signals)
+        observations = self.communicator.get_traffic_signal_states(
+            signal.id for signal in signals)
+        for signal, observed in zip(signals, observations):
             if observed['vehicle_green']:
                 state = (
                     TrafficSignalState.VEHICLE_GREEN,

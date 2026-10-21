@@ -90,7 +90,8 @@ def test_sweep_stops_at_thin_obstacle_without_endpoint_snap_or_repeat_hits():
     a.last_action_start_position = Vector(0, 0)
     a.move_to(Vector(400, 0))
     assert a.position == Vector(155, 0)
-    assert a.sim_time_elapsed == 2.0
+    assert a.sim_time_elapsed == .8
+    assert a.last_move_stop_reason == 'sweep_blocked'
     assert world.human == 1
     assert world.camera[:2] == (155., 0.)
     feedback, details, _ = a.get_feedback()
@@ -221,6 +222,7 @@ def test_real_red_light_rule_records_entry_in_current_move_once(approach_curb_fi
     a.name = 'RT_AGENT'
     a.traffic_policy = TRAFFIC_POLICY_VISUAL_ONLY
     a.communicator.unrealcv = world
+    a.communicator.get_states = lambda name: (0,0,0,0.,0,0)
     a._sync_first_person_camera = lambda: None
     a.use_action_frames = False
     a.record_action_frames = False

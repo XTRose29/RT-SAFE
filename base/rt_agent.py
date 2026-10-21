@@ -550,6 +550,8 @@ class RTAgent(BaseAgent):
         self.passive_collision_type_counts = {'human': 0, 'object': 0, 'building': 0}
         self.building_collision_recovery_count = 0
         self.off_route_move_no_progress_count = 0
+        self.waypoint_missed_without_contact_count = 0
+        self.building_collision_recovery_enabled = False
         self.consecutive_same_building_action_count = 0
         self.last_building_collision_action_key = None
         self.last_building_collision_world_target = None
@@ -707,6 +709,7 @@ class RTAgent(BaseAgent):
     def step(self, mode='llm'):
         step_wall_started = time.perf_counter()
         step_sim_started = self.sim_time_elapsed
+        step_native_started = self._native_game_time()
         self.last_action_safety_samples = []
         red_light_events = getattr(self, 'red_light_violation_events', [])
         illegal_crossing_events = getattr(self, 'illegal_crossing_events', [])
@@ -747,6 +750,9 @@ class RTAgent(BaseAgent):
                 raise InitialHazardOverlapError(
                     'Unsafe initial hazard overlap before the first decision; '
                     'reject this episode as a setup failure')
+            for kind, count in zip(('human', 'object', 'building'), initial_state[:3]):
+                self.last_ue_collision_count[kind] = int(count)
+            self.last_ue_collision_count['vehicle'] = self.communicator.get_vehicle_collision_number(self.name)
             self._remember_collision_free_state('initial')
 
         # 1. get observation
@@ -789,7 +795,10 @@ class RTAgent(BaseAgent):
             and not self._is_code_baseline_mode(mode)
         )
         concurrent_started = None
+        concurrent_native_started = None
+        concurrent_native_seconds = None
         if run_ue_during_planning:
+            concurrent_native_started = self._native_game_time()
             self.communicator.unrealcv.resume_simulation()
             concurrent_started = time.perf_counter()
         try:
@@ -801,6 +810,9 @@ class RTAgent(BaseAgent):
                     time.perf_counter() - concurrent_started,
                 )
                 self.communicator.unrealcv.pause_simulation()
+                if concurrent_native_started is not None:
+                    concurrent_native_seconds = max(
+                        0.0, self._native_game_time() - concurrent_native_started)
                 if thinking_pose is not None:
                     self._restore_stationary_pose(*thinking_pose)
         planning_wall_seconds = time.perf_counter() - planning_started
@@ -809,10 +821,12 @@ class RTAgent(BaseAgent):
                 concurrent_thinking_seconds,
                 2,
             )
-            modeled_thinking_seconds = concurrent_thinking_seconds
-            self.sim_time_elapsed += concurrent_thinking_seconds
+            modeled_thinking_seconds = (concurrent_native_seconds
+                                       if concurrent_native_seconds is not None
+                                       else concurrent_thinking_seconds)
+            self.sim_time_elapsed += modeled_thinking_seconds
             if self.simulation_step_callback is not None:
-                self.simulation_step_callback(concurrent_thinking_seconds)
+                self.simulation_step_callback(modeled_thinking_seconds)
             if self._legacy_occupancy_crosswalks:
                 self._refresh_legacy_occupancy_holds()
         if prompt_data is not None:
@@ -831,7 +845,17 @@ class RTAgent(BaseAgent):
                 return
             elapsed = time.perf_counter() - step_wall_started
             inference = float(prompt_data.get('response_time', time_cost) or 0.0)
+            native_end = self._native_game_time()
             prompt_data['timing'] = {
+                'simulation_clock_source': ('ue:GetGameTimeSinceCreation'
+                                            if native_end is not None else 'nominal_test_clock'),
+                'native_game_time_start_seconds': step_native_started,
+                'native_game_time_end_seconds': native_end,
+                'native_game_time_delta_seconds': (native_end - step_native_started
+                                                  if native_end is not None and step_native_started is not None
+                                                  else None),
+                'inference_exposure_native_seconds': concurrent_native_seconds,
+                'inference_window_wall_seconds': concurrent_thinking_seconds,
                 'sim_time_start_seconds': step_sim_started,
                 'sim_time_end_seconds': self.sim_time_elapsed,
                 'sim_time_delta_seconds': self.sim_time_elapsed - step_sim_started,
@@ -862,56 +886,10 @@ class RTAgent(BaseAgent):
                 'input_render': dict(self.last_observation_render_timing),
             }
         
-        if action is None:  # parse error
-            self.action_frames = []
-            self.recording_action_frames = []
-            if self._should_record_step_data(mode, prompt_data):
-                attach_step_timing()
-                input_images = list(prompt_data.get('input_images', []))
-                self._record_step_data(
-                    self.step_num,
-                    observation,
-                    prompt_data,
-                    action,
-                    input_images,
-                    output_image=observation.get('ego_view'),
-                    output_demo_image=observation.get('raw_first_person_view'),
-                    feedback='Parse error (no executable action)',
-                    collision_details={},
-                )
-            self.decision_trace.append({
-                'step': self.step_num,
-                'decision': self.decision_count,
-                'raw_model_response': (
-                    prompt_data.get('full_response') if prompt_data else None
-                ),
-                'executed_action': None,
-                'response_time_seconds': float(time_cost or 0.0),
-                'modeled_thinking_latency_seconds': float(
-                    modeled_thinking_seconds
-                ),
-                'realtime_control_overhead_seconds': max(
-                    0.0,
-                    float(modeled_thinking_seconds)
-                    - float(
-                        prompt_data.get('response_time', time_cost) or 0.0
-                        if prompt_data else time_cost or 0.0
-                    ),
-                ),
-                'concurrent_realtime_inference': bool(
-                    concurrent_thinking_seconds is not None
-                ),
-                'sim_time_seconds': self.sim_time_elapsed,
-                'position': {'x': self.position.x, 'y': self.position.y},
-                'feedback': 'Parse error (no executable action)',
-                'collision_details': {},
-                'evaluation': {},
-            })
-            self.step_num += 1
-            return observation
-        
-        if self.step_num > 0:       # do not count the first step
-            self.avg_response_time = (self.avg_response_time * (self.step_num - 1) + time_cost) / self.step_num
+        # Every returned decision contributes, including first calls and parse errors.
+        self._response_time_sum = getattr(self, '_response_time_sum', 0.0) + float(time_cost or 0.0)
+        self._response_time_samples = getattr(self, '_response_time_samples', 0) + 1
+        self.avg_response_time = self._response_time_sum / self._response_time_samples
         
         # 2.5. With realtime_thinking, advance simulation time for thinking period (agent stays idle)
         # If realtime_thinking is False, environment is paused during thinking
@@ -937,10 +915,10 @@ class RTAgent(BaseAgent):
             else:
                 self.logger.info('No internal decision latency; skipped thinking-time simulation advance')
         
-        # 2.6. Check for passive collisions before taking action (start after the first action)
+        # 2.6. Account for every inference exposure, including the first decision.
         # Compare current UE collision counts with last recorded counts to detect passive collisions
         # Only check for passive collisions if realtime_thinking is enabled
-        if self.step_num > 0 and self.realtime_thinking:
+        if self.realtime_thinking:
             inference_state = self.communicator.get_states(self.name)
             current_human, current_object, current_building, _, _, _ = inference_state
             # Preserve the overlap from this very poll. A later GetStates can
@@ -977,9 +955,9 @@ class RTAgent(BaseAgent):
                     passive_building
                 )
                 self.logger.info(f'Passive collisions detected: human={passive_human}, object={passive_object}, building={passive_building}')
-                self.last_ue_collision_count['human'] = current_human
-                self.last_ue_collision_count['object'] = current_object
-                self.last_ue_collision_count['building'] = current_building
+            self.last_ue_collision_count['human'] = current_human
+            self.last_ue_collision_count['object'] = current_object
+            self.last_ue_collision_count['building'] = current_building
             passive_vehicle = self._check_vehicle_collision_failure()
             passive_collision_details['vehicle'] = passive_vehicle
             if passive_vehicle > 0:
@@ -1069,6 +1047,60 @@ class RTAgent(BaseAgent):
                 self.step_num += 1
                 return observation
         
+        if prompt_data is not None:
+            prompt_data['passive_collision_details'] = dict(passive_collision_details)
+
+        if action is None:  # parse error
+            feedback, unexecuted_details = self._unexecuted_action_feedback(
+                "Parse error (no executable action)", passive_collision_details)
+            self.action_frames = []
+            self.recording_action_frames = []
+            if self._should_record_step_data(mode, prompt_data):
+                attach_step_timing()
+                input_images = list(prompt_data.get('input_images', []))
+                self._record_step_data(
+                    self.step_num,
+                    observation,
+                    prompt_data,
+                    action,
+                    input_images,
+                    output_image=observation.get('ego_view'),
+                    output_demo_image=observation.get('raw_first_person_view'),
+                    feedback=feedback,
+                    collision_details=unexecuted_details,
+                )
+            self.decision_trace.append({
+                'step': self.step_num,
+                'decision': self.decision_count,
+                'raw_model_response': (
+                    prompt_data.get('full_response') if prompt_data else None
+                ),
+                'executed_action': None,
+                'response_time_seconds': float(time_cost or 0.0),
+                'modeled_thinking_latency_seconds': float(
+                    modeled_thinking_seconds
+                ),
+                'realtime_control_overhead_seconds': max(
+                    0.0,
+                    float(modeled_thinking_seconds)
+                    - float(
+                        prompt_data.get('response_time', time_cost) or 0.0
+                        if prompt_data else time_cost or 0.0
+                    ),
+                ),
+                'concurrent_realtime_inference': bool(
+                    concurrent_thinking_seconds is not None
+                ),
+                'sim_time_seconds': self.sim_time_elapsed,
+                'position': {'x': self.position.x, 'y': self.position.y},
+                'feedback': feedback,
+                'collision_details': unexecuted_details,
+                'passive_collision_details': dict(passive_collision_details),
+                'evaluation': {},
+            })
+            self.step_num += 1
+            return observation
+
         # 3. take action (this will also advance time in token_based mode)
         pre_action_position = Vector(self.position.x, self.position.y)
         self.last_action_start_position = Vector(
@@ -1092,6 +1124,8 @@ class RTAgent(BaseAgent):
         self.logger.info(f'Step {self.step_num}, Success: {success}, Record: {record}')
 
         if not success:  # invalid decision
+            feedback, unexecuted_details = self._unexecuted_action_feedback(
+                "Invalid action (not executed)", passive_collision_details)
             self.action_frames = []
             self.recording_action_frames = []
             if self._should_record_step_data(mode, prompt_data):
@@ -1105,8 +1139,8 @@ class RTAgent(BaseAgent):
                     input_images,
                     output_image=observation.get('ego_view'),
                     output_demo_image=observation.get('raw_first_person_view'),
-                    feedback='Invalid action (not executed)',
-                    collision_details={},
+                    feedback=feedback,
+                    collision_details=unexecuted_details,
                 )
             self.step_num += 1
             return observation
@@ -1773,13 +1807,26 @@ class RTAgent(BaseAgent):
         mapped_building_proximity = int(self._physical_off_route_move_near_mapped_building())
         physical_block_human = physical_block_object = physical_block_building = 0
         building_collision_delta = ue_building_collision_delta
-        off_route_move_no_progress = int(
+        waypoint_missed_without_contact = int(
             physical_off_route_endpoint_miss
             and physical_block_contact_kind is None
             and human_collision_delta <= 0
             and object_collision_delta <= 0
             and ue_building_collision_delta <= 0
         )
+        displacement_cm = None
+        commanded_route = None
+        if physical_off_route_endpoint_miss:
+            displacement_cm = self.last_action_start_position.distance(self.position)
+            commanded_route = self._route_adherence_snapshot(self.last_commanded_waypoint)
+        off_route_move_no_progress = int(
+            waypoint_missed_without_contact
+            and displacement_cm is not None and displacement_cm <= 1.0
+            and commanded_route is not None and not commanded_route['within_corridor']
+        )
+        self.off_route_move_no_progress_count = int(
+            getattr(self, 'off_route_move_no_progress_count', 0)
+        ) + off_route_move_no_progress
         if human_collision_delta > 0:
             self.collision_count += human_collision_delta
             feedback += 'You collided with a human. '
@@ -1789,14 +1836,14 @@ class RTAgent(BaseAgent):
         if building_collision_delta > 0:
             self.collision_count += building_collision_delta
             feedback += 'You collided with a building. '
-        elif off_route_move_no_progress:
-            self.off_route_move_no_progress_count = int(
-                getattr(self, 'off_route_move_no_progress_count', 0)
-            ) + off_route_move_no_progress
+        elif waypoint_missed_without_contact:
+            self.waypoint_missed_without_contact_count = int(
+                getattr(self, 'waypoint_missed_without_contact_count', 0)
+            ) + waypoint_missed_without_contact
             if not reached_final_destination:
                 feedback += (
                     'The movement command did not reach its waypoint, but '
-                    'Unreal Engine reported no contact. Reassess '
+                    'the native category counters did not identify a contact. Reassess '
                     'the route and choose a different action. '
                 )
         if vehicle_terminal:
@@ -1869,7 +1916,10 @@ class RTAgent(BaseAgent):
             'ue_physical_block_object': physical_block_object,
             'ue_physical_block_building': physical_block_building,
             'mapped_building_proximity': mapped_building_proximity,
+            'waypoint_missed_without_contact': waypoint_missed_without_contact,
+            'move_displacement_cm': displacement_cm,
             'off_route_move_no_progress': off_route_move_no_progress,
+            'contact_event_reporting_complete': False,
             'overlap_type': overlap_type,
             'hazard_overlap_new_episode': 0,
             'hazard_overlap_suppressed': 0,
@@ -1934,6 +1984,21 @@ class RTAgent(BaseAgent):
             feedback_str = feedback.strip()
 
         return feedback_str, collision_details, touched_road_failed
+
+    def _unexecuted_action_feedback(self, label, passive):
+        """Rejected model output must not discard observed inference events."""
+        details = {}
+        feedback = label
+        if getattr(self, 'last_action_safety_samples', []):
+            self.last_action_type = 'INFERENCE'
+            safety_feedback, details, _ = self.get_feedback()
+            if any(details.get(k, 0) for k in ('human', 'object', 'building', 'vehicle', 'fall', 'oil', 'water')):
+                feedback += ' ' + safety_feedback
+        feedback = append_passive_collision_feedback(feedback, passive)
+        if hasattr(self, 'text_history'):
+            self.text_history.append(f'Step {self.step_num}, Action: none, Feedback: {feedback}')
+            self.text_history = self.text_history[-self.history_length:]
+        return feedback, details
 
     def _sample_action_safety(self, phase, raw=None):
         if raw is None:
@@ -2337,7 +2402,8 @@ class RTAgent(BaseAgent):
         )
         building_collision_recovered = False
         if (
-            collision_details.get('building', 0) > 0
+            getattr(self, 'building_collision_recovery_enabled', False)
+            and collision_details.get('building', 0) > 0
             and vehicle_collisions <= 0
             and int(collision_details.get('vehicle', 0) or 0) <= 0
         ):
@@ -2357,6 +2423,9 @@ class RTAgent(BaseAgent):
             # that collide with buildings. Any intervening non-building
             # decision breaks the streak, including a turn or wait.
             self._reset_building_collision_streak()
+        if (collision_details.get('building', 0) > 0 and not building_collision_recovered
+                and not self._terminal_vehicle_collision_pending()):
+            feedback += ' The agent remains at the contact position; choose a different direction. '
         return feedback, building_collision_recovered
 
     def _update_wedge_recovery(self, action, feedback: str, physical_contact_this_step: bool) -> str:
@@ -2848,6 +2917,8 @@ class RTAgent(BaseAgent):
                 self.last_move_command_duration_seconds
             ),
             'move_execution_mode': self.last_move_execution_mode,
+            'move_elapsed_seconds': getattr(self, 'last_move_elapsed_seconds', None),
+            'move_stop_reason': getattr(self, 'last_move_stop_reason', None),
             'actual_displacement_cm': float(
                 pre_action_position.distance(post)
             ),
@@ -3813,14 +3884,14 @@ class RTAgent(BaseAgent):
         elif getattr(self, 'record_action_frames', False):
             self.recording_action_frames = frames
         self._record_executed_move_distance(move_start)
-        return move_time
+        return self.last_move_elapsed_seconds
 
     def _execute_swept_waypoint_move(self, start, target, duration):
         """Execute the chosen ray with native capsule sweeps at 10 Hz.
 
         A blocked sweep stops the action's translation; it must never slide,
         route around the obstacle, or be followed by an endpoint teleport.
-        Advance the rest of the advertised action time at the contact pose.
+        End the action on the first detected block/contact and retain its pose.
         """
         ue = self.communicator.unrealcv
         location = tuple(float(v) for v in ue.get_location(self.name))
@@ -3838,13 +3909,19 @@ class RTAgent(BaseAgent):
         elapsed = 0.0
         frames = []
         self.last_swept_move_samples = []
+        self.last_move_stop_reason = None
+        contact_baseline = self.communicator.get_states(self.name)[:3]
         blocked = False
         while elapsed + 1e-6 < duration:
             chunk = min(0.1, duration - elapsed)
+            before_advance = self.sim_time_elapsed
             self._advance_simulation_time(chunk)
-            elapsed = round(elapsed + chunk, 6)
+            elapsed = round(elapsed + self.sim_time_elapsed - before_advance, 6)
             requested = start + delta * min(1.0, elapsed / duration)
-            if not blocked:
+            native = self.communicator.get_states(self.name)
+            native_contact = any(self._collision_delta(cur, old) > 0
+                                 for cur, old in zip(native[:3], contact_baseline))
+            if not blocked and not native_contact:
                 # Physics may settle or depenetrate the capsule during the
                 # preceding tick. Preserve that live height: restoring the
                 # action's old Z can sweep down into the floor and falsely
@@ -3865,10 +3942,16 @@ class RTAgent(BaseAgent):
                 'actual_cm': self._vector_record(self.position),
                 'sweep_blocked': blocked,
             })
+            native = self.communicator.get_states(self.name)
+            native_contact = native_contact or any(self._collision_delta(cur, old) > 0
+                                                  for cur, old in zip(native[:3], contact_baseline))
             if getattr(self, '_collect_action_safety', False):
-                self._sample_action_safety('after_sweep')
+                self._sample_action_safety('after_sweep', raw=native)
             # Evaluate crossing entry at its executed position, in this decision.
             self.current_traffic_light_snapshot = self._get_traffic_light_snapshot()
+            if blocked or native_contact or self._terminal_vehicle_collision_pending():
+                self.last_move_stop_reason = 'sweep_blocked' if blocked else 'native_contact'
+                break
             if (next_capture is not None and elapsed + 1e-6 >= next_capture
                     and elapsed + 1e-6 < duration):
                 self._sync_first_person_camera()
@@ -3877,7 +3960,8 @@ class RTAgent(BaseAgent):
                     frame = frame[:, :, ::-1]
                 frames.append(frame)
                 next_capture += capture_interval
-        # Also synchronize the final camera; 0.5 s actions have no intermediate frames.
+        self.last_move_elapsed_seconds = elapsed
+        # Also synchronize the final camera; blocked actions can have no frames.
         self._sync_first_person_camera()
         return frames
 
@@ -5393,7 +5477,7 @@ class RTAgent(BaseAgent):
 
             # Save a structured manifest alongside the human-readable transcript.
             manifest = {
-                'artifact_schema_version': 'execution_alignment_v3',
+                'artifact_schema_version': 'execution_alignment_v4',
                 'step': step_num,
                 'decision_index': decision_index,
                 'traffic_policy': prompt_data.get(
@@ -5654,6 +5738,13 @@ class RTAgent(BaseAgent):
                     )
                 os.replace(temporary, manifest_path)
     
+    def _native_game_time(self):
+        ue = getattr(getattr(self, 'communicator', None), 'unrealcv', None)
+        # Lightweight unit-test simulators have no engine clock. Production
+        # RTUnrealCV always supplies it and a missing/invalid response is fatal.
+        reader = getattr(type(ue), 'get_actor_sim_time', None)
+        return reader(ue, self.name) if callable(reader) else None
+
     def _advance_simulation_time(self, seconds):
         """Advance simulation time by specified seconds.
         
@@ -5663,7 +5754,9 @@ class RTAgent(BaseAgent):
         Args:
             seconds: Number of sim seconds to advance
         """
-        seconds = round(seconds, 2)
+        seconds = float(seconds)
+        if not math.isfinite(seconds) or seconds < 0:
+            raise ValueError("Simulation duration must be finite and non-negative")
         # The released full-city Blueprint does not expose a persistent
         # occupancy input. Re-assert its compatibility hold at short intervals
         # while an admitted pedestrian is still in the crossing.
@@ -5694,8 +5787,9 @@ class RTAgent(BaseAgent):
         if getattr(self, '_collect_action_safety', False):
             chunk_size = min(chunk_size, 0.1)
         remaining = seconds
-        while remaining > 0.001:
+        while remaining > 1e-6:
             chunk = min(chunk_size, remaining)
+            native_before = self._native_game_time()
             if self.use_tick:
                 # Current UnrealCV packages advance a paused world through the
                 # supported resume/run/pause helper, not legacy custom ticks.
@@ -5705,14 +5799,19 @@ class RTAgent(BaseAgent):
                 )
             else:
                 time.sleep(chunk / self.slomo)
-            self.sim_time_elapsed = round(self.sim_time_elapsed + chunk, 6)
+            native_after = self._native_game_time()
+            elapsed = (native_after - native_before
+                       if native_before is not None and native_after is not None else chunk)
+            if elapsed <= 0:
+                raise RuntimeError('Native simulation clock did not advance')
+            self.sim_time_elapsed = round(self.sim_time_elapsed + elapsed, 6)
             if getattr(self, '_collect_action_safety', False):
                 self._sample_action_safety('during_action')
             if self.simulation_step_callback is not None:
-                self.simulation_step_callback(chunk)
+                self.simulation_step_callback(elapsed)
             if hold_active:
                 self._refresh_legacy_occupancy_holds()
-            remaining = round(remaining - chunk, 6)
+            remaining = round(remaining - elapsed, 6)
         
         self.logger.info(f'Advanced simulation by {seconds:.2f}s, total sim time: {self.sim_time_elapsed:.2f}s')
 

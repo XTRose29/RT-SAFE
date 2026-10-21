@@ -974,10 +974,10 @@ def test_off_route_waypoint_uses_swept_segment_without_teleport():
         move_actor_with_sweep=sweep,
         set_location=lambda *args: pytest.fail('Never teleport an executable move'),
     )
-    agent = make_agent(communicator=SimpleNamespace(unrealcv=ue), task_edges=[
+    agent = make_agent(communicator=SimpleNamespace(unrealcv=ue, get_states=lambda name: (0,0,0,0.,0,0)), task_edges=[
         {'node1': [0., 0.], 'node2': [1000., 0.], 'type': 'sidewalk'}])
     agent.name = 'RT_AGENT'
-    agent._advance_simulation_time = lambda seconds: None
+    agent._advance_simulation_time = lambda seconds: setattr(agent, 'sim_time_elapsed', round(agent.sim_time_elapsed + seconds, 6))
     agent._get_traffic_light_snapshot = lambda: {}
     agent.move_to(Vector(0., 400.))
     assert agent.position == Vector(0., 400.)
@@ -1001,6 +1001,7 @@ def test_ordered_edge_move_progresses_monotonically_on_centerline():
         calls.append(("set_orientation", orientation, name))
 
     communicator = SimpleNamespace(
+        get_states=lambda name: (0,0,0,0.,0,0),
         unrealcv=SimpleNamespace(
             get_location=lambda name: list(live),
             set_location=lambda *args: pytest.fail("Move must sweep"),
@@ -1032,9 +1033,7 @@ def test_ordered_edge_move_progresses_monotonically_on_centerline():
     agent.name = "RT_AGENT"
     agent.speed = 200
     agent.record_action_frames = False
-    agent._advance_simulation_time = lambda seconds: calls.append(
-        ("advance", seconds)
-    )
+    agent._advance_simulation_time = lambda seconds: (calls.append(('advance', seconds)), setattr(agent, 'sim_time_elapsed', round(agent.sim_time_elapsed + seconds, 6)))
 
     agent._get_traffic_light_snapshot = lambda: {}
     agent.move_to(Vector(0.0, 400.0))
@@ -1076,6 +1075,7 @@ def test_ordered_edge_move_reasserts_commanded_yaw_after_every_simulation_tick()
         calls.append(("set_orientation", orientation, name))
 
     def advance(seconds):
+        agent.sim_time_elapsed = round(agent.sim_time_elapsed + seconds, 6)
         # Reproduce the stale Blueprint MoveTo yaw write observed in the real
         # rollout immediately after each simulation tick.
         live_orientation[1] = -90.0
@@ -1088,6 +1088,7 @@ def test_ordered_edge_move_reasserts_commanded_yaw_after_every_simulation_tick()
         calls.append(("move", name, waypoint, duration))
 
     communicator = SimpleNamespace(
+        get_states=lambda name: (0,0,0,0.,0,0),
         unrealcv=SimpleNamespace(
             get_location=lambda name: list(live),
             set_location=lambda *args: pytest.fail("Move must sweep"),

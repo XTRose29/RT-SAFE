@@ -78,7 +78,7 @@ def has_safety_explanation(manifest: dict) -> bool:
             return True
         if int(details.get("touched_road") or 0) > 0:
             return True
-        if int(details.get("off_route_move_no_progress") or 0) > 0:
+        if int(details.get("waypoint_missed_without_contact", details.get("off_route_move_no_progress")) or 0) > 0:
             return True
     feedback = str(manifest.get("feedback") or "").lower()
     return any(
@@ -97,10 +97,10 @@ def has_safety_explanation(manifest: dict) -> bool:
 
 def action_was_executed(manifest: dict) -> bool:
     """Distinguish parsed-but-rejected model output from executed actions."""
-    return str(manifest.get("feedback") or "") not in {
+    return not str(manifest.get("feedback") or "").startswith((
         "Invalid action (not executed)",
         "Parse error (no executable action)",
-    }
+    ))
 
 
 def retained_history_source_frames(

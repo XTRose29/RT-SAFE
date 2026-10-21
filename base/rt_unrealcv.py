@@ -3,6 +3,34 @@ import json
 import math
 
 class RTUnrealCV(UnrealCV):
+    def get_actor_sim_time(self, name):
+        """Read UE game time relative to actor creation, including dilation.
+
+        Unlike wall sleep, this clock stops while the world is paused. Relative
+        differences on the same actor are valid throughout an episode.
+        """
+        with self.lock:
+            raw = self.client.request(f'vbp {name} GetGameTimeSinceCreation')
+        try:
+            value = float(json.loads(raw)['ReturnValue'])
+            if not math.isfinite(value) or value < 0:
+                raise ValueError('invalid game clock')
+            return value
+        except (ValueError, TypeError, KeyError) as exc:
+            raise RuntimeError('Runtime did not return a valid native game clock') from exc
+
+    def tl_get_states(self, names):
+        """Read rendered heads in one bounded transport batch, in input order."""
+        if not names:
+            return []
+        with self.lock:
+            responses = self.client.request_batch([
+                f'vbp {name} GetState' for name in names
+            ])
+        if not isinstance(responses, (list, tuple)) or len(responses) != len(names):
+            raise RuntimeError('Incomplete native traffic-light state batch')
+        return responses
+
     def move_actor_with_sweep(self, name, location):
         """Move the root collision shape on a straight segment, never teleport.
 

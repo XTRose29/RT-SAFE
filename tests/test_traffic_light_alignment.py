@@ -833,6 +833,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
 
     def test_post_action_recovery_vehicle_impact_stays_on_current_step(self):
         agent = object.__new__(RTAgent)
+        agent.building_collision_recovery_enabled = True  # Explicit legacy path.
         collision_checks = iter((0, 1))
         agent._check_vehicle_collision_failure = lambda: next(collision_checks)
         agent._handle_building_collision_recovery = MagicMock(
@@ -4736,7 +4737,7 @@ class TrafficLightAlignmentTests(unittest.TestCase):
                 )
             )
             self.assertEqual(
-                "execution_alignment_v3",
+                "execution_alignment_v4",
                 manifest["artifact_schema_version"],
             )
             self.assertEqual([1.0, 2.0, 3.0], manifest["input_camera"]["location"])
@@ -5730,7 +5731,7 @@ class RouteCorridorInvariantTests(unittest.TestCase):
         self.assertEqual(0, collisions["ue_physical_block_building"])
         self.assertIsNone(collisions["ue_physical_block_contact_kind"])
         self.assertEqual(1, collisions["mapped_building_proximity"])
-        self.assertEqual(1, collisions["off_route_move_no_progress"])
+        self.assertEqual(1, collisions["waypoint_missed_without_contact"])
 
     def test_partial_move_without_building_evidence_is_endpoint_miss(self):
         start = Vector(0.0, 0.0)
@@ -5760,7 +5761,7 @@ class RouteCorridorInvariantTests(unittest.TestCase):
 
         self.assertNotIn("collided with a building", feedback)
         self.assertEqual(0, collisions["building"])
-        self.assertEqual(1, collisions["off_route_move_no_progress"])
+        self.assertEqual(1, collisions["waypoint_missed_without_contact"])
 
     def test_endpoint_miss_near_human_does_not_infer_collision(self):
         start = Vector(0.0, 0.0)
@@ -5790,7 +5791,7 @@ class RouteCorridorInvariantTests(unittest.TestCase):
         self.assertEqual(0, collisions["human"])
         self.assertEqual(0, collisions["ue_physical_block_human"])
         self.assertIsNone(collisions["ue_physical_block_contact_kind"])
-        self.assertEqual(1, collisions["off_route_move_no_progress"])
+        self.assertEqual(1, collisions["waypoint_missed_without_contact"])
 
     def test_endpoint_miss_near_object_does_not_infer_collision(self):
         start = Vector(0.0, 0.0)
@@ -5823,7 +5824,7 @@ class RouteCorridorInvariantTests(unittest.TestCase):
         self.assertEqual(0, collisions["object"])
         self.assertEqual(0, collisions["ue_physical_block_object"])
         self.assertIsNone(collisions["ue_physical_block_contact_kind"])
-        self.assertEqual(1, collisions["off_route_move_no_progress"])
+        self.assertEqual(1, collisions["waypoint_missed_without_contact"])
 
 
     def test_zero_displacement_without_ue_contact_is_not_building_collision(self):
@@ -5847,7 +5848,7 @@ class RouteCorridorInvariantTests(unittest.TestCase):
         self.assertNotIn("collided with a building", feedback)
         self.assertIn("did not reach its waypoint", feedback)
         self.assertEqual(0, collisions["building"])
-        self.assertEqual(1, collisions["off_route_move_no_progress"])
+        self.assertEqual(1, collisions["waypoint_missed_without_contact"])
 
     def test_final_destination_suppresses_endpoint_miss_reassess_wording(self):
         start = Vector(0.0, 0.0)
@@ -5870,7 +5871,7 @@ class RouteCorridorInvariantTests(unittest.TestCase):
 
         self.assertIn("reached the final destination", feedback)
         self.assertNotIn("Reassess the route", feedback)
-        self.assertEqual(1, collisions["off_route_move_no_progress"])
+        self.assertEqual(1, collisions["waypoint_missed_without_contact"])
         self.assertTrue(agent.success)
 
     def test_zero_displacement_with_ue_building_state_is_collision(self):

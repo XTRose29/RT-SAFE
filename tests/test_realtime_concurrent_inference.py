@@ -43,6 +43,9 @@ class ConcurrentRealtimeInferenceTests(unittest.TestCase):
                 events.append("pause")
 
         agent = object.__new__(RTAgent)
+        agent.last_ue_collision_count = {'human': 0, 'object': 0, 'building': 0, 'vehicle': 0}
+        agent._sample_action_safety = lambda *args, **kwargs: None
+        agent._check_vehicle_collision_failure = lambda: 0
         agent.step_num = 0
         agent.sim_time_elapsed = 0.0
         agent.concurrent_realtime_inference = True
@@ -52,7 +55,7 @@ class ConcurrentRealtimeInferenceTests(unittest.TestCase):
         agent.camera_id = 1
         agent.fov = 100
         agent.name = "RT_AGENT"
-        agent.communicator = SimpleNamespace(unrealcv=FakeUnrealCV(), get_states=lambda name: (0,0,0,0.,0,0))
+        agent.communicator = SimpleNamespace(unrealcv=FakeUnrealCV(), get_states=lambda name: (0,0,0,0.,0,0), get_vehicle_collision_number=lambda name: 0)
         agent.disable_step_evaluation = True
         agent.record_per_step = False
         agent.record_dir = None
@@ -139,6 +142,9 @@ class ConcurrentRealtimeInferenceTests(unittest.TestCase):
 
         unrealcv = FakeUnrealCV()
         agent = object.__new__(RTAgent)
+        agent.last_ue_collision_count = {'human': 0, 'object': 0, 'building': 0, 'vehicle': 0}
+        agent._sample_action_safety = lambda *args, **kwargs: None
+        agent._check_vehicle_collision_failure = lambda: 0
         agent.step_num = 0
         agent.sim_time_elapsed = 0.0
         agent.concurrent_realtime_inference = True
@@ -152,7 +158,7 @@ class ConcurrentRealtimeInferenceTests(unittest.TestCase):
         agent.first_person_actor_base_height_cm = 92.0
         agent.position = Vector(100.0, 200.0)
         agent.direction = 90.0
-        agent.communicator = SimpleNamespace(unrealcv=unrealcv, get_states=lambda name: (0,0,0,0.,0,0))
+        agent.communicator = SimpleNamespace(unrealcv=unrealcv, get_states=lambda name: (0,0,0,0.,0,0), get_vehicle_collision_number=lambda name: 0)
         agent.disable_step_evaluation = True
         agent.record_per_step = False
         agent.record_dir = None
@@ -195,6 +201,9 @@ class ConcurrentRealtimeInferenceTests(unittest.TestCase):
 
     def test_token_based_mode_keeps_replay_path(self):
         agent = object.__new__(RTAgent)
+        agent.last_ue_collision_count = {'human': 0, 'object': 0, 'building': 0, 'vehicle': 0}
+        agent._sample_action_safety = lambda *args, **kwargs: None
+        agent._check_vehicle_collision_failure = lambda: 0
         agent.concurrent_realtime_inference = True
         agent.realtime_thinking = True
         agent.token_based = True
@@ -219,6 +228,9 @@ class ConcurrentRealtimeInferenceTests(unittest.TestCase):
                 events.append("fov")
 
         agent = object.__new__(RTAgent)
+        agent.last_ue_collision_count = {'human': 0, 'object': 0, 'building': 0, 'vehicle': 0}
+        agent._sample_action_safety = lambda *args, **kwargs: None
+        agent._check_vehicle_collision_failure = lambda: 0
         agent.step_num = 0
         agent.sim_time_elapsed = 0.0
         agent.concurrent_realtime_inference = True
@@ -228,7 +240,7 @@ class ConcurrentRealtimeInferenceTests(unittest.TestCase):
         agent.camera_id = 1
         agent.fov = 100
         agent.name = "RT_AGENT"
-        agent.communicator = SimpleNamespace(unrealcv=FakeUnrealCV(), get_states=lambda name: (0,0,0,0.,0,0))
+        agent.communicator = SimpleNamespace(unrealcv=FakeUnrealCV(), get_states=lambda name: (0,0,0,0.,0,0), get_vehicle_collision_number=lambda name: 0)
         agent.disable_step_evaluation = True
         agent.record_per_step = False
         agent.record_dir = None
@@ -351,6 +363,9 @@ class LLMInputIntegrityTests(unittest.TestCase):
 class SparseImageRetentionTests(unittest.TestCase):
     def test_first_and_rolling_last_images_are_kept_with_all_manifests(self):
         agent = object.__new__(RTAgent)
+        agent.last_ue_collision_count = {'human': 0, 'object': 0, 'building': 0, 'vehicle': 0}
+        agent._sample_action_safety = lambda *args, **kwargs: None
+        agent._check_vehicle_collision_failure = lambda: 0
         agent.record_images_first_steps = 2
         agent.record_images_last_steps = 2
         with tempfile.TemporaryDirectory() as temporary:

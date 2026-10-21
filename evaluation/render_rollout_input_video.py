@@ -390,7 +390,7 @@ def main() -> int:
                 waypoint_execution.get("selected_waypoint_distance_cm") or 0.0
             ) / 100.0
             duration_s = float(
-                waypoint_execution.get("move_command_duration_seconds") or 0.0
+                waypoint_execution.get("move_elapsed_seconds", waypoint_execution.get("move_command_duration_seconds")) or 0.0
             )
             action_label = (
                 f"ACTION: MOVE_TO {action_param} -> RED DOT {action_param} | "

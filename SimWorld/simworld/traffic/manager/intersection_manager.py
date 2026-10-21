@@ -294,15 +294,26 @@ class IntersectionManager:
                             TrafficSignalState.PEDESTRIAN_RED,
                         )
                     continue
+                corrected_head = False
                 for signal in all_signals:
-                    communicator.traffic_signal_switch_to(
-                        signal.id, 'all red'
-                    )
+                    # Readback is refreshed by the controller on every tick.
+                    # Reassert only a head that has drifted out of all-red;
+                    # repeated writes reset local timers and flood UnrealCV.
+                    if signal.get_state() != (
+                        TrafficSignalState.VEHICLE_RED,
+                        TrafficSignalState.PEDESTRIAN_RED,
+                    ):
+                        communicator.traffic_signal_switch_to(
+                            signal.id, 'all red'
+                        )
+                        corrected_head = True
                     self.python_states[signal.id] = (
                         TrafficSignalState.VEHICLE_RED,
                         TrafficSignalState.PEDESTRIAN_RED,
                     )
-                if elapsed < clearance_s:
+                # A repaired head must be observed red on a later tick before
+                # releasing vehicles, even if the clearance timer has expired.
+                if elapsed < clearance_s or corrected_head:
                     continue
                 intersection.python_pedestrian_phase = None
                 intersection.python_pedestrian_phase_elapsed_s = 0.0

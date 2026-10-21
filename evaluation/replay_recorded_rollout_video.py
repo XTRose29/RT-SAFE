@@ -195,7 +195,9 @@ def phase_durations(
     turn = manifest.get("turn_execution") or {}
     parsed = ((manifest.get("model_output") or {}).get("parsed_action") or {})
     action_type = str(parsed.get("type") or "")
-    if waypoint.get("move_command_duration_seconds") is not None:
+    if waypoint.get("move_elapsed_seconds") is not None:
+        action = float(waypoint["move_elapsed_seconds"])
+    elif waypoint.get("move_command_duration_seconds") is not None:
         action = float(waypoint["move_command_duration_seconds"])
     elif action_type == "turn_around" or turn:
         action = 1.0

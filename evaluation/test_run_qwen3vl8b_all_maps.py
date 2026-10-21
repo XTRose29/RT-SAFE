@@ -1192,10 +1192,10 @@ class SuiteConfigurationTests(unittest.TestCase):
 
         self.assertEqual(
             {
-                "version": "destination_collision_route_budget_v5",
+                "version": "destination_vehicle_route_budget_v6",
                 "destination_success_terminal": True,
                 "vehicle_collision_terminal": True,
-                "consecutive_building_collision_limit": 3,
+                "consecutive_building_collision_limit": None,
                 "stagnation_prompt_guidance": False,
                 "stagnation_terminal": False,
                 "stagnation_progress_epsilon_cm": 25.0,
@@ -1255,7 +1255,7 @@ class SuiteConfigurationTests(unittest.TestCase):
             config["traffic_evaluation_policy"],
         )
         self.assertEqual(
-            "execution_alignment_v3",
+            "execution_alignment_v4",
             config["artifact_schema_version"],
         )
         self.assertEqual(
