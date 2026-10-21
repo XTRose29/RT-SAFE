@@ -1,0 +1,25 @@
+{
+  "scope": "Subscription image preflight and one-task gateway validation. No paid fallback.",
+  "plan": "final-gateway-plan.json",
+  "outcomes": [
+    {
+      "model": "antigravity/gemini-4-argon-medium",
+      "exit_code": 0,
+      "source_unchanged": true
+    },
+    {
+      "model": "antigravity/claude-sonnet-5-5-medium",
+      "outcome": "provider_image_probe_failed",
+      "episode_started": false
+    }
+  ],
+  "claude_latest_image_probe": [
+    {
+      "model": "antigravity/claude-sonnet-5-5-medium",
+      "passed": false,
+      "error_type": "InternalServerError",
+      "status_code": 502,
+      "seconds": 5.566404849290848
+    }
+  ]
+}

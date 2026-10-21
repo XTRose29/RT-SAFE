@@ -1,0 +1,34 @@
+{
+  "created": "2026-10-21T06:32:04.123943+00:00",
+  "source_commit": "691bec6cec7d376e625b798b019ef6a8bb949c0c",
+  "source_sha256": {
+    "base/rt_agent.py": "4cde9b6007daf630d421622b77e88d1f63b99f817dd20496468722d471fc4c87",
+    "manager/world_manager.py": "cc792716e49df022f837241b3ae95b63c5416da449ca22a52a1608e17f3c5abc",
+    "llm/prompt.py": "5d9e319e94002fe8ca03317fa350bf745480597a9462798329b625690b5b9c1b",
+    "base/rt_unrealcv.py": "f77bf3bf9dcec3ee7f669a7736c9752a976d394d6d9d290386d83e5c1693dfe2",
+    "base/rt_communicator.py": "bfbca03e1a3182b507bc8d4a61eafe19d08e4ee4802a8756a371200d5eef21a5",
+    "base/rt_traffic_controller.py": "5071e2da545a3f29916a66a2880834495a935103c0ee9e6c5531d677feeb7b1d",
+    "SimWorld/simworld/traffic/manager/intersection_manager.py": "569bf44afd108505bcf73f4073012c78098c711b331fa5c4fef068996af43a68",
+    "SimWorld/simworld/communicator/unrealcv.py": "aadd67a5cb599a412c21c13246c5e1e2e24324b76baeac47c2c93e5b6b8916d3"
+  },
+  "models": [
+    "antigravity/gemini-4-argon-medium",
+    "antigravity/claude-sonnet-5-5-medium"
+  ],
+  "tasks": [
+    8
+  ],
+  "difficulty": "hard",
+  "timing": "realtime",
+  "reasoning_effort": "medium",
+  "seed": 0,
+  "gpu": 1,
+  "workers": 1,
+  "ue_fps": 30,
+  "default_rendering_threads": true,
+  "allow_paid": false,
+  "protocol": "execution_alignment_v4",
+  "scope": "One common short task per available Gemini/Claude route. Sequential on GPU 1 while local GPT runs on GPU 6; same benchmark configuration but different access surfaces/shared load. Validation, not ranking.",
+  "gpu_hardware": "NVIDIA RTX A5000",
+  "raw_artifact_sha256": "7a530c926c7d8467999cdc8f09c6f3d2c3698d5ede0f232e00dd3b9384b4733e"
+}

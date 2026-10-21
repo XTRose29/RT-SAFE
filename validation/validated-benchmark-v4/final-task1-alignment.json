@@ -1,0 +1,6140 @@
+{
+  "passed": true,
+  "manifest_count": 44,
+  "move_steps": 33,
+  "meter_labels_unchanged": {
+    "dot_1": "1m",
+    "dots_2_to_4": "2m",
+    "dots_5_to_7": "4m"
+  },
+  "constant_walk_speed_cm_per_second": 200.0,
+  "oil_slowed_move_steps": 1,
+  "unexecuted_action_steps": 0,
+  "selected_dot_command_matches": 33,
+  "reached_selected_dot_steps": 18,
+  "safety_explained_blocked_steps": 15,
+  "sequential_position_checks": 32,
+  "mean_output_to_next_input_pixel_mae_0_to_255": 1.1123357087101637,
+  "history_action_frame_checks": 65,
+  "history_action_frame_unverifiable": 0,
+  "turn_steps_with_following_observation": 7,
+  "turn_label_heading_matches": 7,
+  "turn_position_stationary_checks": 7,
+  "turn_position_stationary_matches": 7,
+  "mean_recorded_action_to_next_history_pixel_mae_0_to_255": 0.0,
+  "failure_count": 0,
+  "failures": [],
+  "steps": [
+    {
+      "step": 0,
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "The clear sidewalk leads straight toward the subgoal; move 400 cm efficiently while avoiding roadway entry and nearby pedestrians."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -10700.0,
+          "y": -4288.438
+        },
+        "commanded_waypoint_cm": {
+          "x": -10700.0,
+          "y": -4288.438
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10700.0,
+          "y": -4688.438
+        },
+        "post_action_position_cm": {
+          "x": -10700.0,
+          "y": -4647.196
+        },
+        "selected_waypoint_distance_cm": 400.0,
+        "commanded_waypoint_distance_cm": 400.0,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.219706,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 41.24200000000019,
+        "selected_waypoint_endpoint_error_cm": 358.7579999999998,
+        "commanded_waypoint_endpoint_error_cm": 358.7579999999998,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.106584,
+            "sim_time_s": 9.077269,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4667.1212
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4667.121
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.219706,
+            "sim_time_s": 9.190391,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4644.4968
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4647.196
+            },
+            "sweep_blocked": true
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "output_to_next_input_pixel_mae_0_to_255": 1.2262984664351853
+    },
+    {
+      "step": 1,
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "The forward sidewalk path is clear enough for efficient progress; maintain course while avoiding nearby pedestrians."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -10700.0,
+          "y": -4247.196
+        },
+        "commanded_waypoint_cm": {
+          "x": -10700.0,
+          "y": -4247.196
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10700.0,
+          "y": -4647.196
+        },
+        "post_action_position_cm": {
+          "x": -10700.0,
+          "y": -4514.248
+        },
+        "selected_waypoint_distance_cm": 400.0,
+        "commanded_waypoint_distance_cm": 400.0,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.727606,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 132.94800000000032,
+        "selected_waypoint_endpoint_error_cm": 267.0519999999997,
+        "commanded_waypoint_endpoint_error_cm": 267.0519999999997,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.156338,
+            "sim_time_s": 18.257118,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4615.9284
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4615.928
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.269936,
+            "sim_time_s": 18.370716,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4593.2088
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4593.209
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.384121,
+            "sim_time_s": 18.484901,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4570.3718
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4570.372
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.501847,
+            "sim_time_s": 18.602627,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4546.8266
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4546.827
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.616894,
+            "sim_time_s": 18.717674,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4523.8172
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4523.817
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.727606,
+            "sim_time_s": 18.828386,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4501.6748
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4514.248
+            },
+            "sweep_blocked": true
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.5856213831018519
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "move_to",
+        "param": "2",
+        "reasoning": "Advance 200cm along the clear sidewalk, limiting exposure to nearby pedestrians while making safe progress toward the straight-ahead subgoal."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 2,
+        "selected_image_waypoint_cm": {
+          "x": -10700.0,
+          "y": -4314.248
+        },
+        "commanded_waypoint_cm": {
+          "x": -10700.0,
+          "y": -4314.248
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10700.0,
+          "y": -4514.248
+        },
+        "post_action_position_cm": {
+          "x": -10700.0,
+          "y": -4314.248
+        },
+        "selected_waypoint_distance_cm": 200.0,
+        "commanded_waypoint_distance_cm": 200.0,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.000651,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 200.0,
+        "selected_waypoint_endpoint_error_cm": 0.0,
+        "commanded_waypoint_endpoint_error_cm": 0.0,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.110527,
+            "sim_time_s": 24.109674,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4492.1426
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4492.143
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.219092,
+            "sim_time_s": 24.218239,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4470.4296
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4470.43
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.332304,
+            "sim_time_s": 24.331451,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4447.7872
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4447.787
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.520022,
+            "sim_time_s": 24.519169,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4410.2436
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4410.244
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.641947,
+            "sim_time_s": 24.641094,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4385.8586
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4385.859
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.748661,
+            "sim_time_s": 24.747808,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4364.5158
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4364.516
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.864821,
+            "sim_time_s": 24.863968,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4341.2838
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4341.284
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.982172,
+            "sim_time_s": 24.981319,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4317.8136
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4317.814
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.000651,
+            "sim_time_s": 24.999798,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4314.248
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4314.248
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.43667317708333336
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "move_to",
+        "param": "2",
+        "reasoning": "Advance 200cm along the clear sidewalk, limiting exposure while monitoring nearby pedestrians and preserving direct progress toward the subgoal."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 2,
+        "selected_image_waypoint_cm": {
+          "x": -10700.0,
+          "y": -4114.248
+        },
+        "commanded_waypoint_cm": {
+          "x": -10700.0,
+          "y": -4114.248
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10700.0,
+          "y": -4314.248
+        },
+        "post_action_position_cm": {
+          "x": -10700.0,
+          "y": -4114.248
+        },
+        "selected_waypoint_distance_cm": 200.0,
+        "commanded_waypoint_distance_cm": 200.0,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.001596,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 200.0,
+        "selected_waypoint_endpoint_error_cm": 0.0,
+        "commanded_waypoint_endpoint_error_cm": 0.0,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.114906,
+            "sim_time_s": 30.500023,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4291.2668
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4291.267
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.238412,
+            "sim_time_s": 30.623529,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4266.5656
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4266.566
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.349548,
+            "sim_time_s": 30.734665,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4244.3384
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4244.338
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.450718,
+            "sim_time_s": 30.835835,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4224.1044
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4224.104
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.564327,
+            "sim_time_s": 30.949444,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4201.3826
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4201.383
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.699106,
+            "sim_time_s": 31.084223,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4174.4268
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4174.427
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.815694,
+            "sim_time_s": 31.200811,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4151.1092
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4151.109
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.919744,
+            "sim_time_s": 31.304861,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4130.2992
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4130.299
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.001596,
+            "sim_time_s": 31.386713,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4114.248
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4114.248
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.4684483506944444
+    },
+    {
+      "step": 4,
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "The sidewalk ahead is clear enough for rapid progress, with pedestrians offset from the straight path; a longer move minimizes exposure to changing hazards."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -10700.0,
+          "y": -3714.248
+        },
+        "commanded_waypoint_cm": {
+          "x": -10700.0,
+          "y": -3714.248
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10700.0,
+          "y": -4114.248
+        },
+        "post_action_position_cm": {
+          "x": -10700.0,
+          "y": -3774.125
+        },
+        "selected_waypoint_distance_cm": 399.99999999999955,
+        "commanded_waypoint_distance_cm": 399.99999999999955,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.777615,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 340.1229999999996,
+        "selected_waypoint_endpoint_error_cm": 59.87699999999995,
+        "commanded_waypoint_endpoint_error_cm": 59.87699999999995,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.104401,
+            "sim_time_s": 37.801838,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4093.3678
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4093.368
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.209782,
+            "sim_time_s": 37.907219,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4072.2916
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4072.292
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.318741,
+            "sim_time_s": 38.016178,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4050.4998
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4050.5
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.426846,
+            "sim_time_s": 38.124283,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4028.8788
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4028.879
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.534581,
+            "sim_time_s": 38.232018,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -4007.3318
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -4007.332
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.682541,
+            "sim_time_s": 38.379978,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -3977.7398
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -3977.74
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.794648,
+            "sim_time_s": 38.492085,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -3955.3184
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -3955.318
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.91367,
+            "sim_time_s": 38.611107,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -3931.514
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -3931.514
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.018631,
+            "sim_time_s": 38.716068,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -3910.5218
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -3910.522
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.129048,
+            "sim_time_s": 38.826485,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -3888.4384
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -3888.438
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.232201,
+            "sim_time_s": 38.929638,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -3867.8078
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -3867.808
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.332226,
+            "sim_time_s": 39.029663,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -3847.8028
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -3847.803
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.44812,
+            "sim_time_s": 39.145557,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -3824.624
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -3824.624
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.559357,
+            "sim_time_s": 39.256794,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -3802.3766
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -3802.377
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.667061,
+            "sim_time_s": 39.364498,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -3780.8358
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -3780.836
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.777615,
+            "sim_time_s": 39.475052,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -3758.725
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -3774.125
+            },
+            "sweep_blocked": true
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 1.1248198784722223
+    },
+    {
+      "step": 5,
+      "action": {
+        "type": "move_to",
+        "param": "2",
+        "reasoning": "Move 200 cm straight toward the subgoal, avoiding nearby pedestrians and limiting exposure after the prior collision and oil slowdown."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 2,
+        "selected_image_waypoint_cm": {
+          "x": -10700.0,
+          "y": -3574.125
+        },
+        "commanded_waypoint_cm": {
+          "x": -10700.0,
+          "y": -3574.125
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10700.0,
+          "y": -3774.125
+        },
+        "post_action_position_cm": {
+          "x": -10700.0,
+          "y": -3774.125
+        },
+        "selected_waypoint_distance_cm": 200.0,
+        "commanded_waypoint_distance_cm": 200.0,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.111225,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 0.0,
+        "selected_waypoint_endpoint_error_cm": 200.0,
+        "commanded_waypoint_endpoint_error_cm": 200.0,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.111225,
+            "sim_time_s": 46.531475,
+            "requested_cm": {
+              "x": -10700.0,
+              "y": -3763.0025
+            },
+            "actual_cm": {
+              "x": -10700.0,
+              "y": -3774.125
+            },
+            "sweep_blocked": true
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "output_to_next_input_pixel_mae_0_to_255": 0.7215487557870371
+    },
+    {
+      "step": 6,
+      "action": {
+        "type": "move_to",
+        "param": "4",
+        "reasoning": "Move a short distance right to avoid the pedestrian and debris while staying on the sidewalk, minimizing exposure after the recent collision."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 4,
+        "selected_image_waypoint_cm": {
+          "x": -10841.4214,
+          "y": -3632.7036
+        },
+        "commanded_waypoint_cm": {
+          "x": -10841.4214,
+          "y": -3632.7036
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10700.0,
+          "y": -3774.125
+        },
+        "post_action_position_cm": {
+          "x": -10841.421,
+          "y": -3632.704
+        },
+        "selected_waypoint_distance_cm": 200.00006188979003,
+        "commanded_waypoint_distance_cm": 200.00006188979003,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.052692,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 199.99949620436556,
+        "selected_waypoint_endpoint_error_cm": 0.0005656854244856845,
+        "commanded_waypoint_endpoint_error_cm": 0.0005656854244856845,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.102745,
+            "sim_time_s": 54.329872,
+            "requested_cm": {
+              "x": -10714.5303,
+              "y": -3759.5947
+            },
+            "actual_cm": {
+              "x": -10714.53,
+              "y": -3759.595
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.20755,
+            "sim_time_s": 54.434677,
+            "requested_cm": {
+              "x": -10729.352,
+              "y": -3744.773
+            },
+            "actual_cm": {
+              "x": -10729.352,
+              "y": -3744.773
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.323677,
+            "sim_time_s": 54.550804,
+            "requested_cm": {
+              "x": -10745.7749,
+              "y": -3728.3501
+            },
+            "actual_cm": {
+              "x": -10745.775,
+              "y": -3728.35
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.431358,
+            "sim_time_s": 54.658485,
+            "requested_cm": {
+              "x": -10761.0033,
+              "y": -3713.1217
+            },
+            "actual_cm": {
+              "x": -10761.003,
+              "y": -3713.122
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.533512,
+            "sim_time_s": 54.760639,
+            "requested_cm": {
+              "x": -10775.45,
+              "y": -3698.675
+            },
+            "actual_cm": {
+              "x": -10775.45,
+              "y": -3698.675
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.659874,
+            "sim_time_s": 54.887001,
+            "requested_cm": {
+              "x": -10793.3203,
+              "y": -3680.8047
+            },
+            "actual_cm": {
+              "x": -10793.32,
+              "y": -3680.805
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.759995,
+            "sim_time_s": 54.987122,
+            "requested_cm": {
+              "x": -10807.4796,
+              "y": -3666.6454
+            },
+            "actual_cm": {
+              "x": -10807.48,
+              "y": -3666.645
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.866436,
+            "sim_time_s": 55.093563,
+            "requested_cm": {
+              "x": -10822.5326,
+              "y": -3651.5924
+            },
+            "actual_cm": {
+              "x": -10822.533,
+              "y": -3651.592
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.968765,
+            "sim_time_s": 55.195892,
+            "requested_cm": {
+              "x": -10837.0041,
+              "y": -3637.1209
+            },
+            "actual_cm": {
+              "x": -10837.004,
+              "y": -3637.121
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.052692,
+            "sim_time_s": 55.279819,
+            "requested_cm": {
+              "x": -10841.4214,
+              "y": -3632.7036
+            },
+            "actual_cm": {
+              "x": -10841.421,
+              "y": -3632.704
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.5506047453703703
+    },
+    {
+      "step": 7,
+      "action": {
+        "type": "turn_around",
+        "param": "L60",
+        "reasoning": "Turn left toward the subgoal while avoiding the roadway and recent pedestrian hazards; the brief rotation minimizes exposure before reassessing the sidewalk route."
+      },
+      "waypoint_execution": null,
+      "turn_execution": {
+        "requested_param": "L60",
+        "observation_position_cm": {
+          "x": -10841.421,
+          "y": -3632.704
+        },
+        "command_start_position_cm": {
+          "x": -10841.421,
+          "y": -3632.704
+        },
+        "command_start_position_drift_from_input_cm": 0.0,
+        "verified_end_position_cm": {
+          "x": -10841.421,
+          "y": -3632.704
+        },
+        "observation_yaw_deg": 135.0,
+        "raw_blueprint_end_yaw_deg": 78.0,
+        "raw_blueprint_delta_from_input_deg": -57.0,
+        "expected_end_yaw_deg": 75.0,
+        "verified_end_yaw_deg": 75.0,
+        "verified_delta_from_input_deg": -60.0,
+        "raw_blueprint_position_drift_cm": 6.375419358756457,
+        "verified_position_drift_cm": 0.0,
+        "post_turn_correction_applied": true,
+        "post_turn_position_correction_applied": true
+      },
+      "turn_heading_delta_deg": -59.99932894204305,
+      "turn_input_to_recorded_observation_error_cm": 0.0,
+      "turn_command_start_drift_from_input_cm": 0.0,
+      "turn_verified_position_drift_cm": 0.0,
+      "turn_to_next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 1.2759230324074073
+    },
+    {
+      "step": 8,
+      "action": {
+        "type": "move_to",
+        "param": "2",
+        "reasoning": "The sidewalk ahead is clear but a box lies farther forward, so take a short straight move to reduce collision and exposure risk while advancing."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 2,
+        "selected_image_waypoint_cm": {
+          "x": -10789.6595,
+          "y": -3439.5182
+        },
+        "commanded_waypoint_cm": {
+          "x": -10789.6595,
+          "y": -3439.5182
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10841.421,
+          "y": -3632.704
+        },
+        "post_action_position_cm": {
+          "x": -10789.659,
+          "y": -3439.518
+        },
+        "selected_waypoint_distance_cm": 200.00001550972473,
+        "commanded_waypoint_distance_cm": 200.00001550972473,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.009834,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 200.00033809971453,
+        "selected_waypoint_endpoint_error_cm": 0.0005385164807893829,
+        "commanded_waypoint_endpoint_error_cm": 0.0005385164807893829,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.104675,
+            "sim_time_s": 72.307251,
+            "requested_cm": {
+              "x": -10836.0029,
+              "y": -3612.4823
+            },
+            "actual_cm": {
+              "x": -10836.003,
+              "y": -3612.482
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.220176,
+            "sim_time_s": 72.422752,
+            "requested_cm": {
+              "x": -10830.0244,
+              "y": -3590.1691
+            },
+            "actual_cm": {
+              "x": -10830.024,
+              "y": -3590.169
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.330139,
+            "sim_time_s": 72.532715,
+            "requested_cm": {
+              "x": -10824.3325,
+              "y": -3568.9258
+            },
+            "actual_cm": {
+              "x": -10824.333,
+              "y": -3568.926
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.441337,
+            "sim_time_s": 72.643913,
+            "requested_cm": {
+              "x": -10818.5767,
+              "y": -3547.444
+            },
+            "actual_cm": {
+              "x": -10818.577,
+              "y": -3547.444
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.542022,
+            "sim_time_s": 72.744598,
+            "requested_cm": {
+              "x": -10813.3651,
+              "y": -3527.993
+            },
+            "actual_cm": {
+              "x": -10813.365,
+              "y": -3527.993
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.666435,
+            "sim_time_s": 72.869011,
+            "requested_cm": {
+              "x": -10806.9253,
+              "y": -3503.9582
+            },
+            "actual_cm": {
+              "x": -10806.925,
+              "y": -3503.958
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.7826,
+            "sim_time_s": 72.985176,
+            "requested_cm": {
+              "x": -10800.9125,
+              "y": -3481.5168
+            },
+            "actual_cm": {
+              "x": -10800.913,
+              "y": -3481.517
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.897407,
+            "sim_time_s": 73.099983,
+            "requested_cm": {
+              "x": -10794.9699,
+              "y": -3459.3377
+            },
+            "actual_cm": {
+              "x": -10794.97,
+              "y": -3459.338
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.009834,
+            "sim_time_s": 73.21241,
+            "requested_cm": {
+              "x": -10789.6595,
+              "y": -3439.5182
+            },
+            "actual_cm": {
+              "x": -10789.659,
+              "y": -3439.518
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.5927025462962963
+    },
+    {
+      "step": 9,
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "The sidewalk ahead is clear enough for rapid progress, with no immediate roadway entry or collision threat along the straight waypoint."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -10686.1359,
+          "y": -3053.1465
+        },
+        "commanded_waypoint_cm": {
+          "x": -10686.1359,
+          "y": -3053.1465
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10789.659,
+          "y": -3439.518
+        },
+        "post_action_position_cm": {
+          "x": -10686.136,
+          "y": -3053.146
+        },
+        "selected_waypoint_distance_cm": 399.9999603073233,
+        "commanded_waypoint_distance_cm": 399.9999603073233,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.01651,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 400.0004173910319,
+        "selected_waypoint_endpoint_error_cm": 0.0005099019512312826,
+        "commanded_waypoint_endpoint_error_cm": 0.0005099019512312826,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.113831,
+            "sim_time_s": 79.82515,
+            "requested_cm": {
+              "x": -10783.7669,
+              "y": -3417.5275
+            },
+            "actual_cm": {
+              "x": -10783.767,
+              "y": -3417.528
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.232376,
+            "sim_time_s": 79.943695,
+            "requested_cm": {
+              "x": -10777.6309,
+              "y": -3394.6263
+            },
+            "actual_cm": {
+              "x": -10777.631,
+              "y": -3394.626
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.354942,
+            "sim_time_s": 80.066261,
+            "requested_cm": {
+              "x": -10771.2867,
+              "y": -3370.9483
+            },
+            "actual_cm": {
+              "x": -10771.287,
+              "y": -3370.948
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.469101,
+            "sim_time_s": 80.18042,
+            "requested_cm": {
+              "x": -10765.3776,
+              "y": -3348.8944
+            },
+            "actual_cm": {
+              "x": -10765.378,
+              "y": -3348.894
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.574745,
+            "sim_time_s": 80.286064,
+            "requested_cm": {
+              "x": -10759.9093,
+              "y": -3328.4855
+            },
+            "actual_cm": {
+              "x": -10759.909,
+              "y": -3328.485
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.682602,
+            "sim_time_s": 80.393921,
+            "requested_cm": {
+              "x": -10754.3265,
+              "y": -3307.649
+            },
+            "actual_cm": {
+              "x": -10754.326,
+              "y": -3307.649
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.794517,
+            "sim_time_s": 80.505836,
+            "requested_cm": {
+              "x": -10748.5336,
+              "y": -3286.0286
+            },
+            "actual_cm": {
+              "x": -10748.534,
+              "y": -3286.029
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.907349,
+            "sim_time_s": 80.618668,
+            "requested_cm": {
+              "x": -10742.6932,
+              "y": -3264.2311
+            },
+            "actual_cm": {
+              "x": -10742.693,
+              "y": -3264.231
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.037376,
+            "sim_time_s": 80.748695,
+            "requested_cm": {
+              "x": -10735.9628,
+              "y": -3239.1117
+            },
+            "actual_cm": {
+              "x": -10735.963,
+              "y": -3239.112
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.139824,
+            "sim_time_s": 80.851143,
+            "requested_cm": {
+              "x": -10730.6599,
+              "y": -3219.3202
+            },
+            "actual_cm": {
+              "x": -10730.66,
+              "y": -3219.32
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.261528,
+            "sim_time_s": 80.972847,
+            "requested_cm": {
+              "x": -10724.3604,
+              "y": -3195.8088
+            },
+            "actual_cm": {
+              "x": -10724.36,
+              "y": -3195.809
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.377579,
+            "sim_time_s": 81.088898,
+            "requested_cm": {
+              "x": -10718.3534,
+              "y": -3173.3894
+            },
+            "actual_cm": {
+              "x": -10718.353,
+              "y": -3173.389
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.484512,
+            "sim_time_s": 81.195831,
+            "requested_cm": {
+              "x": -10712.8184,
+              "y": -3152.7314
+            },
+            "actual_cm": {
+              "x": -10712.818,
+              "y": -3152.731
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.584686,
+            "sim_time_s": 81.296005,
+            "requested_cm": {
+              "x": -10707.6332,
+              "y": -3133.3792
+            },
+            "actual_cm": {
+              "x": -10707.633,
+              "y": -3133.379
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.704315,
+            "sim_time_s": 81.415634,
+            "requested_cm": {
+              "x": -10701.441,
+              "y": -3110.2686
+            },
+            "actual_cm": {
+              "x": -10701.441,
+              "y": -3110.269
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.810272,
+            "sim_time_s": 81.521591,
+            "requested_cm": {
+              "x": -10695.9565,
+              "y": -3089.7992
+            },
+            "actual_cm": {
+              "x": -10695.957,
+              "y": -3089.799
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.915062,
+            "sim_time_s": 81.626381,
+            "requested_cm": {
+              "x": -10690.5324,
+              "y": -3069.5553
+            },
+            "actual_cm": {
+              "x": -10690.532,
+              "y": -3069.555
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 2.01651,
+            "sim_time_s": 81.727829,
+            "requested_cm": {
+              "x": -10686.1359,
+              "y": -3053.1465
+            },
+            "actual_cm": {
+              "x": -10686.136,
+              "y": -3053.146
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.8332595486111112
+    },
+    {
+      "step": 10,
+      "action": {
+        "type": "move_to",
+        "param": "2",
+        "reasoning": "Move two meters straight along the clear sidewalk, limiting exposure near pedestrians and bikes while making safe progress toward the slightly rightward subgoal."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 2,
+        "selected_image_waypoint_cm": {
+          "x": -10634.3745,
+          "y": -2859.9602
+        },
+        "commanded_waypoint_cm": {
+          "x": -10634.3745,
+          "y": -2859.9602
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10686.136,
+          "y": -3053.146
+        },
+        "post_action_position_cm": {
+          "x": -10634.374,
+          "y": -2859.96
+        },
+        "selected_waypoint_distance_cm": 200.00001550972473,
+        "commanded_waypoint_distance_cm": 200.00001550972473,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.004295,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 200.00033809971453,
+        "selected_waypoint_endpoint_error_cm": 0.0005385164807893829,
+        "commanded_waypoint_endpoint_error_cm": 0.0005385164807893829,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.104713,
+            "sim_time_s": 89.577339,
+            "requested_cm": {
+              "x": -10680.7159,
+              "y": -3032.9169
+            },
+            "actual_cm": {
+              "x": -10680.716,
+              "y": -3032.917
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.212463,
+            "sim_time_s": 89.685089,
+            "requested_cm": {
+              "x": -10675.1386,
+              "y": -3012.1012
+            },
+            "actual_cm": {
+              "x": -10675.139,
+              "y": -3012.101
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.326065,
+            "sim_time_s": 89.798691,
+            "requested_cm": {
+              "x": -10669.2584,
+              "y": -2990.1549
+            },
+            "actual_cm": {
+              "x": -10669.258,
+              "y": -2990.155
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.44445,
+            "sim_time_s": 89.917076,
+            "requested_cm": {
+              "x": -10663.1306,
+              "y": -2967.2846
+            },
+            "actual_cm": {
+              "x": -10663.131,
+              "y": -2967.285
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.556167,
+            "sim_time_s": 90.028793,
+            "requested_cm": {
+              "x": -10657.348,
+              "y": -2945.7024
+            },
+            "actual_cm": {
+              "x": -10657.348,
+              "y": -2945.702
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.673233,
+            "sim_time_s": 90.145859,
+            "requested_cm": {
+              "x": -10651.2885,
+              "y": -2923.0869
+            },
+            "actual_cm": {
+              "x": -10651.289,
+              "y": -2923.087
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.789116,
+            "sim_time_s": 90.261742,
+            "requested_cm": {
+              "x": -10645.2902,
+              "y": -2900.7
+            },
+            "actual_cm": {
+              "x": -10645.29,
+              "y": -2900.7
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.895218,
+            "sim_time_s": 90.367844,
+            "requested_cm": {
+              "x": -10639.7982,
+              "y": -2880.2026
+            },
+            "actual_cm": {
+              "x": -10639.798,
+              "y": -2880.203
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.004295,
+            "sim_time_s": 90.476921,
+            "requested_cm": {
+              "x": -10634.3745,
+              "y": -2859.9602
+            },
+            "actual_cm": {
+              "x": -10634.374,
+              "y": -2859.96
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.6592469618055555
+    },
+    {
+      "step": 11,
+      "action": {
+        "type": "move_to",
+        "param": "4",
+        "reasoning": "Move 200cm right toward the subgoal, avoiding the pedestrian ahead while staying on the sidewalk and limiting exposure near the box and crowd."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 4,
+        "selected_image_waypoint_cm": {
+          "x": -10734.376,
+          "y": -2686.7561
+        },
+        "commanded_waypoint_cm": {
+          "x": -10734.376,
+          "y": -2686.7561
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10634.374,
+          "y": -2859.96
+        },
+        "post_action_position_cm": {
+          "x": -10634.374,
+          "y": -2859.96
+        },
+        "selected_waypoint_distance_cm": 199.9999774480239,
+        "commanded_waypoint_distance_cm": 199.9999774480239,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.12072,
+        "move_stop_reason": "native_contact",
+        "actual_displacement_cm": 0.0,
+        "selected_waypoint_endpoint_error_cm": 199.9999774480239,
+        "commanded_waypoint_endpoint_error_cm": 199.9999774480239,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.12072,
+            "sim_time_s": 99.323898,
+            "requested_cm": {
+              "x": -10646.4462,
+              "y": -2839.0508
+            },
+            "actual_cm": {
+              "x": -10634.374,
+              "y": -2859.96
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "output_to_next_input_pixel_mae_0_to_255": 0.9240574363425926
+    },
+    {
+      "step": 12,
+      "action": {
+        "type": "move_to",
+        "param": "4",
+        "reasoning": "The direct and left paths contain pedestrians and a robot; take the clear short right-side waypoint to avoid collision while maintaining sidewalk progress."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 4,
+        "selected_image_waypoint_cm": {
+          "x": -10827.5598,
+          "y": -2808.1986
+        },
+        "commanded_waypoint_cm": {
+          "x": -10827.5598,
+          "y": -2808.1986
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10634.374,
+          "y": -2859.96
+        },
+        "post_action_position_cm": {
+          "x": -10827.56,
+          "y": -2808.199
+        },
+        "selected_waypoint_distance_cm": 199.99998962900077,
+        "commanded_waypoint_distance_cm": 199.99998962900077,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.011337,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 200.00007929248397,
+        "selected_waypoint_endpoint_error_cm": 0.00044721359477759053,
+        "commanded_waypoint_endpoint_error_cm": 0.00044721359477759053,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.10875,
+            "sim_time_s": 108.641129,
+            "requested_cm": {
+              "x": -10655.383,
+              "y": -2854.3309
+            },
+            "actual_cm": {
+              "x": -10655.383,
+              "y": -2854.331
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.226097,
+            "sim_time_s": 108.758476,
+            "requested_cm": {
+              "x": -10678.0527,
+              "y": -2848.2569
+            },
+            "actual_cm": {
+              "x": -10678.053,
+              "y": -2848.257
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.329102,
+            "sim_time_s": 108.861481,
+            "requested_cm": {
+              "x": -10697.9518,
+              "y": -2842.9252
+            },
+            "actual_cm": {
+              "x": -10697.952,
+              "y": -2842.925
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.44204,
+            "sim_time_s": 108.974419,
+            "requested_cm": {
+              "x": -10719.7699,
+              "y": -2837.0794
+            },
+            "actual_cm": {
+              "x": -10719.77,
+              "y": -2837.079
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.562431,
+            "sim_time_s": 109.09481,
+            "requested_cm": {
+              "x": -10743.0277,
+              "y": -2830.8478
+            },
+            "actual_cm": {
+              "x": -10743.028,
+              "y": -2830.848
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.663345,
+            "sim_time_s": 109.195724,
+            "requested_cm": {
+              "x": -10762.5228,
+              "y": -2825.6243
+            },
+            "actual_cm": {
+              "x": -10762.523,
+              "y": -2825.624
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.763962,
+            "sim_time_s": 109.296341,
+            "requested_cm": {
+              "x": -10781.9606,
+              "y": -2820.4163
+            },
+            "actual_cm": {
+              "x": -10781.961,
+              "y": -2820.416
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.867417,
+            "sim_time_s": 109.399796,
+            "requested_cm": {
+              "x": -10801.9466,
+              "y": -2815.0613
+            },
+            "actual_cm": {
+              "x": -10801.947,
+              "y": -2815.061
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.96994,
+            "sim_time_s": 109.502319,
+            "requested_cm": {
+              "x": -10821.7526,
+              "y": -2809.7545
+            },
+            "actual_cm": {
+              "x": -10821.753,
+              "y": -2809.755
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.011337,
+            "sim_time_s": 109.543716,
+            "requested_cm": {
+              "x": -10827.5598,
+              "y": -2808.1986
+            },
+            "actual_cm": {
+              "x": -10827.56,
+              "y": -2808.199
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.6757978877314814
+    },
+    {
+      "step": 13,
+      "action": {
+        "type": "turn_around",
+        "param": "L90",
+        "reasoning": "The subgoal is 78 degrees left; turn left 90 degrees first to align safely while avoiding the nearby tree and roadway."
+      },
+      "waypoint_execution": null,
+      "turn_execution": {
+        "requested_param": "L90",
+        "observation_position_cm": {
+          "x": -10827.56,
+          "y": -2808.199
+        },
+        "command_start_position_cm": {
+          "x": -10827.56,
+          "y": -2808.199
+        },
+        "command_start_position_drift_from_input_cm": 0.0,
+        "verified_end_position_cm": {
+          "x": -10827.56,
+          "y": -2808.199
+        },
+        "observation_yaw_deg": 165.001,
+        "raw_blueprint_end_yaw_deg": 79.001,
+        "raw_blueprint_delta_from_input_deg": -86.0,
+        "expected_end_yaw_deg": 75.001,
+        "verified_end_yaw_deg": 75.001,
+        "verified_delta_from_input_deg": -90.0,
+        "raw_blueprint_position_drift_cm": 3.5758340285869363,
+        "verified_position_drift_cm": 0.0,
+        "post_turn_correction_applied": true,
+        "post_turn_position_correction_applied": true
+      },
+      "turn_heading_delta_deg": -90.00000000000001,
+      "turn_input_to_recorded_observation_error_cm": 0.0,
+      "turn_command_start_drift_from_input_cm": 0.0,
+      "turn_verified_position_drift_cm": 0.0,
+      "turn_to_next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 2.6007110821759256
+    },
+    {
+      "step": 14,
+      "action": {
+        "type": "move_to",
+        "param": "2",
+        "reasoning": "A short forward move limits exposure while avoiding nearby pedestrians and robots, maintaining alignment with the subgoal on the sidewalk."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 2,
+        "selected_image_waypoint_cm": {
+          "x": -10775.7985,
+          "y": -2615.0132
+        },
+        "commanded_waypoint_cm": {
+          "x": -10775.7985,
+          "y": -2615.0132
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10827.56,
+          "y": -2808.199
+        },
+        "post_action_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "selected_waypoint_distance_cm": 200.00001550972425,
+        "commanded_waypoint_distance_cm": 200.00001550972425,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.214203,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 35.628907729538795,
+        "selected_waypoint_endpoint_error_cm": 164.37110778019962,
+        "commanded_waypoint_endpoint_error_cm": 164.37110778019962,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.112915,
+            "sim_time_s": 125.591675,
+            "requested_cm": {
+              "x": -10821.7154,
+              "y": -2786.3854
+            },
+            "actual_cm": {
+              "x": -10821.715,
+              "y": -2786.385
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.214203,
+            "sim_time_s": 125.692963,
+            "requested_cm": {
+              "x": -10816.4725,
+              "y": -2766.818
+            },
+            "actual_cm": {
+              "x": -10818.339,
+              "y": -2773.784
+            },
+            "sweep_blocked": true
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "output_to_next_input_pixel_mae_0_to_255": 2.4035988136574074
+    },
+    {
+      "step": 15,
+      "action": {
+        "type": "move_to",
+        "param": "2",
+        "reasoning": "Move 200cm toward the slightly rightward goal on the sidewalk, limiting exposure while avoiding the pedestrian ahead and nearby obstacles."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 2,
+        "selected_image_waypoint_cm": {
+          "x": -10766.5775,
+          "y": -2580.5982
+        },
+        "commanded_waypoint_cm": {
+          "x": -10766.5775,
+          "y": -2580.5982
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "post_action_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "selected_waypoint_distance_cm": 200.00001550972473,
+        "commanded_waypoint_distance_cm": 200.00001550972473,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.100952,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 0.0,
+        "selected_waypoint_endpoint_error_cm": 200.00001550972473,
+        "commanded_waypoint_endpoint_error_cm": 200.00001550972473,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.100952,
+            "sim_time_s": 133.274139,
+            "requested_cm": {
+              "x": -10813.1136,
+              "y": -2754.2815
+            },
+            "actual_cm": {
+              "x": -10818.339,
+              "y": -2773.784
+            },
+            "sweep_blocked": true
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "output_to_next_input_pixel_mae_0_to_255": 0.9468496817129629
+    },
+    {
+      "step": 16,
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "Move forward toward the subgoal, avoiding the nearby robot on the right while minimizing exposure to pedestrians and maintaining sidewalk safety."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -10714.8159,
+          "y": -2387.4125
+        },
+        "commanded_waypoint_cm": {
+          "x": -10714.8159,
+          "y": -2387.4125
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "post_action_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "selected_waypoint_distance_cm": 399.9999603073233,
+        "commanded_waypoint_distance_cm": 399.9999603073233,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.107529,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 0.0,
+        "selected_waypoint_endpoint_error_cm": 399.9999603073233,
+        "commanded_waypoint_endpoint_error_cm": 399.9999603073233,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.107529,
+            "sim_time_s": 138.965485,
+            "requested_cm": {
+              "x": -10812.7731,
+              "y": -2753.0109
+            },
+            "actual_cm": {
+              "x": -10818.339,
+              "y": -2773.784
+            },
+            "sweep_blocked": true
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "output_to_next_input_pixel_mae_0_to_255": 2.0249660011574075
+    },
+    {
+      "step": 17,
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "The sidewalk ahead is mostly clear; move 400 cm nearly straight toward the subgoal for efficient progress while avoiding nearby pedestrians."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -10714.8159,
+          "y": -2387.4125
+        },
+        "commanded_waypoint_cm": {
+          "x": -10714.8159,
+          "y": -2387.4125
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "post_action_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "selected_waypoint_distance_cm": 399.9999603073233,
+        "commanded_waypoint_distance_cm": 399.9999603073233,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.116501,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 0.0,
+        "selected_waypoint_endpoint_error_cm": 399.9999603073233,
+        "commanded_waypoint_endpoint_error_cm": 399.9999603073233,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.116501,
+            "sim_time_s": 145.13295,
+            "requested_cm": {
+              "x": -10812.3087,
+              "y": -2751.2777
+            },
+            "actual_cm": {
+              "x": -10818.339,
+              "y": -2773.784
+            },
+            "sweep_blocked": true
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "output_to_next_input_pixel_mae_0_to_255": 0.9830743634259259
+    },
+    {
+      "step": 18,
+      "action": {
+        "type": "turn_around",
+        "param": "R30",
+        "reasoning": "A pedestrian blocks the forward path; turn right briefly to align with the target and reduce collision risk before advancing."
+      },
+      "waypoint_execution": null,
+      "turn_execution": {
+        "requested_param": "R30",
+        "observation_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "command_start_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "command_start_position_drift_from_input_cm": 0.0,
+        "verified_end_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "observation_yaw_deg": 75.001,
+        "raw_blueprint_end_yaw_deg": 105.001,
+        "raw_blueprint_delta_from_input_deg": 30.0,
+        "expected_end_yaw_deg": 105.00099999999998,
+        "verified_end_yaw_deg": 105.001,
+        "verified_delta_from_input_deg": 30.0,
+        "raw_blueprint_position_drift_cm": 6.507588493443507,
+        "verified_position_drift_cm": 0.0,
+        "post_turn_correction_applied": false,
+        "post_turn_position_correction_applied": true
+      },
+      "turn_heading_delta_deg": 29.9986578840861,
+      "turn_input_to_recorded_observation_error_cm": 0.0,
+      "turn_command_start_drift_from_input_cm": 0.0,
+      "turn_verified_position_drift_cm": 0.0,
+      "turn_to_next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 2.3271867766203704
+    },
+    {
+      "step": 19,
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "The long forward sidewalk path is clear, while pedestrians cluster left; move straight for efficient progress with minimal collision exposure."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -10921.8621,
+          "y": -2387.4125
+        },
+        "commanded_waypoint_cm": {
+          "x": -10921.8621,
+          "y": -2387.4125
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "post_action_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "selected_waypoint_distance_cm": 399.9999603073233,
+        "commanded_waypoint_distance_cm": 399.9999603073233,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.114334,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 0.0,
+        "selected_waypoint_endpoint_error_cm": 399.9999603073233,
+        "commanded_waypoint_endpoint_error_cm": 399.9999603073233,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.114334,
+            "sim_time_s": 159.686081,
+            "requested_cm": {
+              "x": -10824.2571,
+              "y": -2751.6963
+            },
+            "actual_cm": {
+              "x": -10818.339,
+              "y": -2773.784
+            },
+            "sweep_blocked": true
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "output_to_next_input_pixel_mae_0_to_255": 1.2640538194444444
+    },
+    {
+      "step": 20,
+      "action": {
+        "type": "move_to",
+        "param": "3",
+        "reasoning": "Move 200 cm left toward the subgoal through the clearer sidewalk gap, avoiding the nearby pedestrian and limiting exposure to moving obstacles."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 3,
+        "selected_image_waypoint_cm": {
+          "x": -10718.337,
+          "y": -2600.5801
+        },
+        "commanded_waypoint_cm": {
+          "x": -10718.337,
+          "y": -2600.5801
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "post_action_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "selected_waypoint_distance_cm": 199.9999774480239,
+        "commanded_waypoint_distance_cm": 199.9999774480239,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.101608,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 0.0,
+        "selected_waypoint_endpoint_error_cm": 199.9999774480239,
+        "commanded_waypoint_endpoint_error_cm": 199.9999774480239,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.101608,
+            "sim_time_s": 166.578903,
+            "requested_cm": {
+              "x": -10808.178,
+              "y": -2756.1851
+            },
+            "actual_cm": {
+              "x": -10818.339,
+              "y": -2773.784
+            },
+            "sweep_blocked": true
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "output_to_next_input_pixel_mae_0_to_255": 1.3270196759259258
+    },
+    {
+      "step": 21,
+      "action": {
+        "type": "move_to",
+        "param": "7",
+        "reasoning": "Move toward the right-aligned subgoal along the clear sidewalk, avoiding the clustered pedestrians and minimizing exposure near the roadway."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 7,
+        "selected_image_waypoint_cm": {
+          "x": -10921.8617,
+          "y": -2387.4124
+        },
+        "commanded_waypoint_cm": {
+          "x": -10921.8617,
+          "y": -2387.4124
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "post_action_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "selected_waypoint_distance_cm": 399.9999533773096,
+        "commanded_waypoint_distance_cm": 399.9999533773096,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.112442,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 0.0,
+        "selected_waypoint_endpoint_error_cm": 399.9999533773096,
+        "commanded_waypoint_endpoint_error_cm": 399.9999533773096,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.112442,
+            "sim_time_s": 175.99025,
+            "requested_cm": {
+              "x": -10824.1591,
+              "y": -2752.0618
+            },
+            "actual_cm": {
+              "x": -10818.339,
+              "y": -2773.784
+            },
+            "sweep_blocked": true
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "output_to_next_input_pixel_mae_0_to_255": 4.086945891203704
+    },
+    {
+      "step": 22,
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "The clear sidewalk corridor ahead offers efficient progress toward the slightly left subgoal while avoiding the clustered pedestrians and nearby tree."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -10921.8621,
+          "y": -2387.4125
+        },
+        "commanded_waypoint_cm": {
+          "x": -10921.8621,
+          "y": -2387.4125
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10818.339,
+          "y": -2773.784
+        },
+        "post_action_position_cm": {
+          "x": -10921.862,
+          "y": -2387.412
+        },
+        "selected_waypoint_distance_cm": 399.9999603073233,
+        "commanded_waypoint_distance_cm": 399.9999603073233,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.00444,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 400.00041739103233,
+        "selected_waypoint_endpoint_error_cm": 0.0005099019516771991,
+        "commanded_waypoint_endpoint_error_cm": 0.0005099019516771991,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.120315,
+            "sim_time_s": 183.144592,
+            "requested_cm": {
+              "x": -10824.5667,
+              "y": -2750.5409
+            },
+            "actual_cm": {
+              "x": -10824.567,
+              "y": -2750.541
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.235916,
+            "sim_time_s": 183.260193,
+            "requested_cm": {
+              "x": -10830.5504,
+              "y": -2728.2084
+            },
+            "actual_cm": {
+              "x": -10830.55,
+              "y": -2728.208
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.345749,
+            "sim_time_s": 183.370026,
+            "requested_cm": {
+              "x": -10836.2355,
+              "y": -2706.9902
+            },
+            "actual_cm": {
+              "x": -10836.236,
+              "y": -2706.99
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.461776,
+            "sim_time_s": 183.486053,
+            "requested_cm": {
+              "x": -10842.2412,
+              "y": -2684.5755
+            },
+            "actual_cm": {
+              "x": -10842.241,
+              "y": -2684.575
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.562469,
+            "sim_time_s": 183.586746,
+            "requested_cm": {
+              "x": -10847.4533,
+              "y": -2665.123
+            },
+            "actual_cm": {
+              "x": -10847.453,
+              "y": -2665.123
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.662552,
+            "sim_time_s": 183.686829,
+            "requested_cm": {
+              "x": -10852.6337,
+              "y": -2645.7884
+            },
+            "actual_cm": {
+              "x": -10852.634,
+              "y": -2645.788
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.769562,
+            "sim_time_s": 183.793839,
+            "requested_cm": {
+              "x": -10858.1727,
+              "y": -2625.1156
+            },
+            "actual_cm": {
+              "x": -10858.173,
+              "y": -2625.116
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.87204,
+            "sim_time_s": 183.896317,
+            "requested_cm": {
+              "x": -10863.4771,
+              "y": -2605.3183
+            },
+            "actual_cm": {
+              "x": -10863.477,
+              "y": -2605.318
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.992843,
+            "sim_time_s": 184.01712,
+            "requested_cm": {
+              "x": -10869.7301,
+              "y": -2581.9809
+            },
+            "actual_cm": {
+              "x": -10869.73,
+              "y": -2581.981
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.111725,
+            "sim_time_s": 184.136002,
+            "requested_cm": {
+              "x": -10875.8836,
+              "y": -2559.0146
+            },
+            "actual_cm": {
+              "x": -10875.884,
+              "y": -2559.015
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.229904,
+            "sim_time_s": 184.254181,
+            "requested_cm": {
+              "x": -10882.0007,
+              "y": -2536.1841
+            },
+            "actual_cm": {
+              "x": -10882.001,
+              "y": -2536.184
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.330963,
+            "sim_time_s": 184.35524,
+            "requested_cm": {
+              "x": -10887.2317,
+              "y": -2516.6609
+            },
+            "actual_cm": {
+              "x": -10887.232,
+              "y": -2516.661
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.436142,
+            "sim_time_s": 184.460419,
+            "requested_cm": {
+              "x": -10892.6759,
+              "y": -2496.3418
+            },
+            "actual_cm": {
+              "x": -10892.676,
+              "y": -2496.342
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.543731,
+            "sim_time_s": 184.568008,
+            "requested_cm": {
+              "x": -10898.2449,
+              "y": -2475.5572
+            },
+            "actual_cm": {
+              "x": -10898.245,
+              "y": -2475.557
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.658844,
+            "sim_time_s": 184.683121,
+            "requested_cm": {
+              "x": -10904.2033,
+              "y": -2453.319
+            },
+            "actual_cm": {
+              "x": -10904.203,
+              "y": -2453.319
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.760086,
+            "sim_time_s": 184.784363,
+            "requested_cm": {
+              "x": -10909.4438,
+              "y": -2433.7605
+            },
+            "actual_cm": {
+              "x": -10909.444,
+              "y": -2433.76
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.902145,
+            "sim_time_s": 184.926422,
+            "requested_cm": {
+              "x": -10916.797,
+              "y": -2406.3167
+            },
+            "actual_cm": {
+              "x": -10916.797,
+              "y": -2406.317
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 2.00444,
+            "sim_time_s": 185.028717,
+            "requested_cm": {
+              "x": -10921.8621,
+              "y": -2387.4125
+            },
+            "actual_cm": {
+              "x": -10921.862,
+              "y": -2387.412
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.6370601851851853
+    },
+    {
+      "step": 23,
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "Move 400 cm forward along the clear sidewalk, maintaining distance from pedestrians and robots while making efficient progress toward the subgoal."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -11025.3851,
+          "y": -2001.0405
+        },
+        "commanded_waypoint_cm": {
+          "x": -11025.3851,
+          "y": -2001.0405
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10921.862,
+          "y": -2387.412
+        },
+        "post_action_position_cm": {
+          "x": -11025.385,
+          "y": -2001.041
+        },
+        "selected_waypoint_distance_cm": 399.99996030732285,
+        "commanded_waypoint_distance_cm": 399.99996030732285,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.005279,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 399.99945146212406,
+        "selected_waypoint_endpoint_error_cm": 0.0005099019510975077,
+        "commanded_waypoint_endpoint_error_cm": 0.0005099019510975077,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.113403,
+            "sim_time_s": 193.603317,
+            "requested_cm": {
+              "x": -10927.7319,
+              "y": -2365.5042
+            },
+            "actual_cm": {
+              "x": -10927.732,
+              "y": -2365.504
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.223602,
+            "sim_time_s": 193.713516,
+            "requested_cm": {
+              "x": -10933.436,
+              "y": -2344.2153
+            },
+            "actual_cm": {
+              "x": -10933.436,
+              "y": -2344.215
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.330933,
+            "sim_time_s": 193.820847,
+            "requested_cm": {
+              "x": -10938.9916,
+              "y": -2323.4805
+            },
+            "actual_cm": {
+              "x": -10938.992,
+              "y": -2323.481
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.432556,
+            "sim_time_s": 193.92247,
+            "requested_cm": {
+              "x": -10944.2518,
+              "y": -2303.8483
+            },
+            "actual_cm": {
+              "x": -10944.252,
+              "y": -2303.848
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.533539,
+            "sim_time_s": 194.023453,
+            "requested_cm": {
+              "x": -10949.4788,
+              "y": -2284.3399
+            },
+            "actual_cm": {
+              "x": -10949.479,
+              "y": -2284.34
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.657455,
+            "sim_time_s": 194.147369,
+            "requested_cm": {
+              "x": -10955.8929,
+              "y": -2260.4011
+            },
+            "actual_cm": {
+              "x": -10955.893,
+              "y": -2260.401
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.772552,
+            "sim_time_s": 194.262466,
+            "requested_cm": {
+              "x": -10961.8505,
+              "y": -2238.166
+            },
+            "actual_cm": {
+              "x": -10961.851,
+              "y": -2238.166
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.879211,
+            "sim_time_s": 194.369125,
+            "requested_cm": {
+              "x": -10967.3713,
+              "y": -2217.561
+            },
+            "actual_cm": {
+              "x": -10967.371,
+              "y": -2217.561
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.992462,
+            "sim_time_s": 194.482376,
+            "requested_cm": {
+              "x": -10973.2334,
+              "y": -2195.6825
+            },
+            "actual_cm": {
+              "x": -10973.233,
+              "y": -2195.682
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.092865,
+            "sim_time_s": 194.582779,
+            "requested_cm": {
+              "x": -10978.4304,
+              "y": -2176.2861
+            },
+            "actual_cm": {
+              "x": -10978.43,
+              "y": -2176.286
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.215301,
+            "sim_time_s": 194.705215,
+            "requested_cm": {
+              "x": -10984.7679,
+              "y": -2152.6332
+            },
+            "actual_cm": {
+              "x": -10984.768,
+              "y": -2152.633
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.317154,
+            "sim_time_s": 194.807068,
+            "requested_cm": {
+              "x": -10990.0399,
+              "y": -2132.9566
+            },
+            "actual_cm": {
+              "x": -10990.04,
+              "y": -2132.957
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.417267,
+            "sim_time_s": 194.907181,
+            "requested_cm": {
+              "x": -10995.2219,
+              "y": -2113.6162
+            },
+            "actual_cm": {
+              "x": -10995.222,
+              "y": -2113.616
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.522186,
+            "sim_time_s": 195.0121,
+            "requested_cm": {
+              "x": -11000.6527,
+              "y": -2093.3474
+            },
+            "actual_cm": {
+              "x": -11000.653,
+              "y": -2093.347
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.639938,
+            "sim_time_s": 195.129852,
+            "requested_cm": {
+              "x": -11006.7477,
+              "y": -2070.5993
+            },
+            "actual_cm": {
+              "x": -11006.748,
+              "y": -2070.599
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.747208,
+            "sim_time_s": 195.237122,
+            "requested_cm": {
+              "x": -11012.3002,
+              "y": -2049.8763
+            },
+            "actual_cm": {
+              "x": -11012.3,
+              "y": -2049.876
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.860748,
+            "sim_time_s": 195.350662,
+            "requested_cm": {
+              "x": -11018.1772,
+              "y": -2027.942
+            },
+            "actual_cm": {
+              "x": -11018.177,
+              "y": -2027.942
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.972519,
+            "sim_time_s": 195.462433,
+            "requested_cm": {
+              "x": -11023.9626,
+              "y": -2006.3494
+            },
+            "actual_cm": {
+              "x": -11023.963,
+              "y": -2006.349
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 2.005279,
+            "sim_time_s": 195.495193,
+            "requested_cm": {
+              "x": -11025.3851,
+              "y": -2001.0405
+            },
+            "actual_cm": {
+              "x": -11025.385,
+              "y": -2001.041
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.5417867476851852
+    },
+    {
+      "step": 24,
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "The sidewalk ahead is clear along the building; a 400-centimeter straight move maximizes progress while avoiding nearby pedestrians and the robot."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -11128.9081,
+          "y": -1614.6695
+        },
+        "commanded_waypoint_cm": {
+          "x": -11128.9081,
+          "y": -1614.6695
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -11025.385,
+          "y": -2001.041
+        },
+        "post_action_position_cm": {
+          "x": -11086.454,
+          "y": -1773.12
+        },
+        "selected_waypoint_distance_cm": 399.9999603073231,
+        "commanded_waypoint_distance_cm": 399.9999603073231,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.197754,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 235.96060052898653,
+        "selected_waypoint_endpoint_error_cm": 164.03935978008462,
+        "commanded_waypoint_endpoint_error_cm": 164.03935978008462,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.106064,
+            "sim_time_s": 201.32724,
+            "requested_cm": {
+              "x": -11030.875,
+              "y": -1980.5509
+            },
+            "actual_cm": {
+              "x": -11030.875,
+              "y": -1980.551
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.210144,
+            "sim_time_s": 201.43132,
+            "requested_cm": {
+              "x": -11036.2624,
+              "y": -1960.4442
+            },
+            "actual_cm": {
+              "x": -11036.262,
+              "y": -1960.444
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.311936,
+            "sim_time_s": 201.533112,
+            "requested_cm": {
+              "x": -11041.5313,
+              "y": -1940.7794
+            },
+            "actual_cm": {
+              "x": -11041.531,
+              "y": -1940.779
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.422547,
+            "sim_time_s": 201.643723,
+            "requested_cm": {
+              "x": -11047.2567,
+              "y": -1919.4109
+            },
+            "actual_cm": {
+              "x": -11047.257,
+              "y": -1919.411
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.526001,
+            "sim_time_s": 201.747177,
+            "requested_cm": {
+              "x": -11052.6116,
+              "y": -1899.4251
+            },
+            "actual_cm": {
+              "x": -11052.612,
+              "y": -1899.425
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.641586,
+            "sim_time_s": 201.862762,
+            "requested_cm": {
+              "x": -11058.5945,
+              "y": -1877.0957
+            },
+            "actual_cm": {
+              "x": -11058.594,
+              "y": -1877.096
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.751511,
+            "sim_time_s": 201.972687,
+            "requested_cm": {
+              "x": -11064.2844,
+              "y": -1855.8598
+            },
+            "actual_cm": {
+              "x": -11064.284,
+              "y": -1855.86
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.86998,
+            "sim_time_s": 202.091156,
+            "requested_cm": {
+              "x": -11070.4165,
+              "y": -1832.9733
+            },
+            "actual_cm": {
+              "x": -11070.416,
+              "y": -1832.973
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.976181,
+            "sim_time_s": 202.197357,
+            "requested_cm": {
+              "x": -11075.9136,
+              "y": -1812.4567
+            },
+            "actual_cm": {
+              "x": -11075.914,
+              "y": -1812.457
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.089539,
+            "sim_time_s": 202.310715,
+            "requested_cm": {
+              "x": -11081.7812,
+              "y": -1790.5576
+            },
+            "actual_cm": {
+              "x": -11081.781,
+              "y": -1790.558
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.197754,
+            "sim_time_s": 202.41893,
+            "requested_cm": {
+              "x": -11087.3826,
+              "y": -1769.652
+            },
+            "actual_cm": {
+              "x": -11086.454,
+              "y": -1773.12
+            },
+            "sweep_blocked": true
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.5476548032407407
+    },
+    {
+      "step": 25,
+      "action": {
+        "type": "move_to",
+        "param": "6",
+        "reasoning": "Move 400 cm diagonally left along the open sidewalk, avoiding the building while making strong progress toward the subgoal."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 6,
+        "selected_image_waypoint_cm": {
+          "x": -10886.4499,
+          "y": -1426.7122
+        },
+        "commanded_waypoint_cm": {
+          "x": -10886.4499,
+          "y": -1426.7122
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -11086.454,
+          "y": -1773.12
+        },
+        "post_action_position_cm": {
+          "x": -10921.578,
+          "y": -1487.554
+        },
+        "selected_waypoint_distance_cm": 400.00000489706247,
+        "commanded_waypoint_distance_cm": 400.00000489706247,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.683243,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 329.7454104790542,
+        "selected_waypoint_endpoint_error_cm": 70.25459441808778,
+        "commanded_waypoint_endpoint_error_cm": 70.25459441808778,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.118836,
+            "sim_time_s": 210.221024,
+            "requested_cm": {
+              "x": -11074.5702,
+              "y": -1752.5371
+            },
+            "actual_cm": {
+              "x": -11074.57,
+              "y": -1752.537
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.221192,
+            "sim_time_s": 210.32338,
+            "requested_cm": {
+              "x": -11064.3343,
+              "y": -1734.8087
+            },
+            "actual_cm": {
+              "x": -11064.334,
+              "y": -1734.809
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.332794,
+            "sim_time_s": 210.434982,
+            "requested_cm": {
+              "x": -11053.1739,
+              "y": -1715.4788
+            },
+            "actual_cm": {
+              "x": -11053.174,
+              "y": -1715.479
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.436646,
+            "sim_time_s": 210.538834,
+            "requested_cm": {
+              "x": -11042.7885,
+              "y": -1697.4912
+            },
+            "actual_cm": {
+              "x": -11042.789,
+              "y": -1697.491
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.549805,
+            "sim_time_s": 210.651993,
+            "requested_cm": {
+              "x": -11031.4724,
+              "y": -1677.8916
+            },
+            "actual_cm": {
+              "x": -11031.472,
+              "y": -1677.892
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.653458,
+            "sim_time_s": 210.755646,
+            "requested_cm": {
+              "x": -11021.1069,
+              "y": -1659.9385
+            },
+            "actual_cm": {
+              "x": -11021.107,
+              "y": -1659.938
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.797089,
+            "sim_time_s": 210.899277,
+            "requested_cm": {
+              "x": -11006.7435,
+              "y": -1635.0611
+            },
+            "actual_cm": {
+              "x": -11006.744,
+              "y": -1635.061
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.912583,
+            "sim_time_s": 211.014771,
+            "requested_cm": {
+              "x": -10995.1938,
+              "y": -1615.0571
+            },
+            "actual_cm": {
+              "x": -10995.194,
+              "y": -1615.057
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.014618,
+            "sim_time_s": 211.116806,
+            "requested_cm": {
+              "x": -10984.9901,
+              "y": -1597.3842
+            },
+            "actual_cm": {
+              "x": -10984.99,
+              "y": -1597.384
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.118759,
+            "sim_time_s": 211.220947,
+            "requested_cm": {
+              "x": -10974.5758,
+              "y": -1579.3466
+            },
+            "actual_cm": {
+              "x": -10974.576,
+              "y": -1579.347
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.221588,
+            "sim_time_s": 211.323776,
+            "requested_cm": {
+              "x": -10964.2927,
+              "y": -1561.5362
+            },
+            "actual_cm": {
+              "x": -10964.293,
+              "y": -1561.536
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.333939,
+            "sim_time_s": 211.436127,
+            "requested_cm": {
+              "x": -10953.0574,
+              "y": -1542.0766
+            },
+            "actual_cm": {
+              "x": -10953.057,
+              "y": -1542.077
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.439301,
+            "sim_time_s": 211.541489,
+            "requested_cm": {
+              "x": -10942.5209,
+              "y": -1523.8275
+            },
+            "actual_cm": {
+              "x": -10942.521,
+              "y": -1523.828
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.543732,
+            "sim_time_s": 211.64592,
+            "requested_cm": {
+              "x": -10932.0776,
+              "y": -1505.7396
+            },
+            "actual_cm": {
+              "x": -10932.078,
+              "y": -1505.74
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.683243,
+            "sim_time_s": 211.785431,
+            "requested_cm": {
+              "x": -10918.1262,
+              "y": -1481.5757
+            },
+            "actual_cm": {
+              "x": -10921.578,
+              "y": -1487.554
+            },
+            "sweep_blocked": true
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.7912666377314815
+    },
+    {
+      "step": 26,
+      "action": {
+        "type": "move_to",
+        "param": "4",
+        "reasoning": "Move 200 cm to the right to avoid nearby pedestrians and the pole while making safe progress toward the subgoal."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 4,
+        "selected_image_waypoint_cm": {
+          "x": -10973.3394,
+          "y": -1294.3682
+        },
+        "commanded_waypoint_cm": {
+          "x": -10973.3394,
+          "y": -1294.3682
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10921.578,
+          "y": -1487.554
+        },
+        "post_action_position_cm": {
+          "x": -10973.339,
+          "y": -1294.368
+        },
+        "selected_waypoint_distance_cm": 199.99998962900025,
+        "commanded_waypoint_distance_cm": 199.99998962900025,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.011612,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 200.00007929248454,
+        "selected_waypoint_endpoint_error_cm": 0.0004472135962011749,
+        "commanded_waypoint_endpoint_error_cm": 0.0004472135962011749,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.106171,
+            "sim_time_s": 217.95694,
+            "requested_cm": {
+              "x": -10927.0736,
+              "y": -1467.0433
+            },
+            "actual_cm": {
+              "x": -10927.074,
+              "y": -1467.043
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.212799,
+            "sim_time_s": 218.063568,
+            "requested_cm": {
+              "x": -10932.5928,
+              "y": -1446.4443
+            },
+            "actual_cm": {
+              "x": -10932.593,
+              "y": -1446.444
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.323975,
+            "sim_time_s": 218.174744,
+            "requested_cm": {
+              "x": -10938.3474,
+              "y": -1424.9666
+            },
+            "actual_cm": {
+              "x": -10938.347,
+              "y": -1424.967
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.427185,
+            "sim_time_s": 218.277954,
+            "requested_cm": {
+              "x": -10943.6897,
+              "y": -1405.0279
+            },
+            "actual_cm": {
+              "x": -10943.69,
+              "y": -1405.028
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.531738,
+            "sim_time_s": 218.382507,
+            "requested_cm": {
+              "x": -10949.1015,
+              "y": -1384.8298
+            },
+            "actual_cm": {
+              "x": -10949.102,
+              "y": -1384.83
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.64917,
+            "sim_time_s": 218.499939,
+            "requested_cm": {
+              "x": -10955.1799,
+              "y": -1362.1436
+            },
+            "actual_cm": {
+              "x": -10955.18,
+              "y": -1362.144
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.763397,
+            "sim_time_s": 218.614166,
+            "requested_cm": {
+              "x": -10961.0925,
+              "y": -1340.0765
+            },
+            "actual_cm": {
+              "x": -10961.093,
+              "y": -1340.076
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.879425,
+            "sim_time_s": 218.730194,
+            "requested_cm": {
+              "x": -10967.0983,
+              "y": -1317.6616
+            },
+            "actual_cm": {
+              "x": -10967.098,
+              "y": -1317.662
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.994736,
+            "sim_time_s": 218.845505,
+            "requested_cm": {
+              "x": -10973.0669,
+              "y": -1295.3851
+            },
+            "actual_cm": {
+              "x": -10973.067,
+              "y": -1295.385
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.011612,
+            "sim_time_s": 218.862381,
+            "requested_cm": {
+              "x": -10973.3394,
+              "y": -1294.3682
+            },
+            "actual_cm": {
+              "x": -10973.339,
+              "y": -1294.368
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.5532060185185185
+    },
+    {
+      "step": 27,
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "Move forward along the clear sidewalk, avoiding the nearby pedestrian and building while making substantial progress toward the left-offset subgoal."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -11076.8621,
+          "y": -907.9965
+        },
+        "commanded_waypoint_cm": {
+          "x": -11076.8621,
+          "y": -907.9965
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10973.339,
+          "y": -1294.368
+        },
+        "post_action_position_cm": {
+          "x": -11076.862,
+          "y": -907.996
+        },
+        "selected_waypoint_distance_cm": 399.9999603073231,
+        "commanded_waypoint_distance_cm": 399.9999603073231,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.0262,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 400.000417391032,
+        "selected_waypoint_endpoint_error_cm": 0.00050990195156572,
+        "commanded_waypoint_endpoint_error_cm": 0.00050990195156572,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.109345,
+            "sim_time_s": 226.998154,
+            "requested_cm": {
+              "x": -10978.9989,
+              "y": -1273.2441
+            },
+            "actual_cm": {
+              "x": -10978.999,
+              "y": -1273.244
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.213852,
+            "sim_time_s": 227.102661,
+            "requested_cm": {
+              "x": -10984.4083,
+              "y": -1253.0548
+            },
+            "actual_cm": {
+              "x": -10984.408,
+              "y": -1253.055
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.322388,
+            "sim_time_s": 227.211197,
+            "requested_cm": {
+              "x": -10990.0263,
+              "y": -1232.0872
+            },
+            "actual_cm": {
+              "x": -10990.026,
+              "y": -1232.087
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.430115,
+            "sim_time_s": 227.318924,
+            "requested_cm": {
+              "x": -10995.6024,
+              "y": -1211.2759
+            },
+            "actual_cm": {
+              "x": -10995.602,
+              "y": -1211.276
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.530899,
+            "sim_time_s": 227.419708,
+            "requested_cm": {
+              "x": -11000.8192,
+              "y": -1191.8059
+            },
+            "actual_cm": {
+              "x": -11000.819,
+              "y": -1191.806
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.669342,
+            "sim_time_s": 227.558151,
+            "requested_cm": {
+              "x": -11007.9852,
+              "y": -1165.0607
+            },
+            "actual_cm": {
+              "x": -11007.985,
+              "y": -1165.061
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.786072,
+            "sim_time_s": 227.674881,
+            "requested_cm": {
+              "x": -11014.0273,
+              "y": -1142.5101
+            },
+            "actual_cm": {
+              "x": -11014.027,
+              "y": -1142.51
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.88617,
+            "sim_time_s": 227.774979,
+            "requested_cm": {
+              "x": -11019.2085,
+              "y": -1123.1726
+            },
+            "actual_cm": {
+              "x": -11019.209,
+              "y": -1123.173
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.002136,
+            "sim_time_s": 227.890945,
+            "requested_cm": {
+              "x": -11025.2111,
+              "y": -1100.7696
+            },
+            "actual_cm": {
+              "x": -11025.211,
+              "y": -1100.77
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.116272,
+            "sim_time_s": 228.005081,
+            "requested_cm": {
+              "x": -11031.119,
+              "y": -1078.7202
+            },
+            "actual_cm": {
+              "x": -11031.119,
+              "y": -1078.72
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.232453,
+            "sim_time_s": 228.121262,
+            "requested_cm": {
+              "x": -11037.1327,
+              "y": -1056.2756
+            },
+            "actual_cm": {
+              "x": -11037.133,
+              "y": -1056.276
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.354309,
+            "sim_time_s": 228.243118,
+            "requested_cm": {
+              "x": -11043.4401,
+              "y": -1032.7348
+            },
+            "actual_cm": {
+              "x": -11043.44,
+              "y": -1032.735
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.470642,
+            "sim_time_s": 228.359451,
+            "requested_cm": {
+              "x": -11049.4617,
+              "y": -1010.2609
+            },
+            "actual_cm": {
+              "x": -11049.462,
+              "y": -1010.261
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.575241,
+            "sim_time_s": 228.46405,
+            "requested_cm": {
+              "x": -11054.8759,
+              "y": -990.0539
+            },
+            "actual_cm": {
+              "x": -11054.876,
+              "y": -990.054
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.677948,
+            "sim_time_s": 228.566757,
+            "requested_cm": {
+              "x": -11060.1922,
+              "y": -970.2124
+            },
+            "actual_cm": {
+              "x": -11060.192,
+              "y": -970.212
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.789307,
+            "sim_time_s": 228.678116,
+            "requested_cm": {
+              "x": -11065.9563,
+              "y": -948.6994
+            },
+            "actual_cm": {
+              "x": -11065.956,
+              "y": -948.699
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.89267,
+            "sim_time_s": 228.781479,
+            "requested_cm": {
+              "x": -11071.3065,
+              "y": -928.7311
+            },
+            "actual_cm": {
+              "x": -11071.307,
+              "y": -928.731
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 2.0262,
+            "sim_time_s": 228.915009,
+            "requested_cm": {
+              "x": -11076.8621,
+              "y": -907.9965
+            },
+            "actual_cm": {
+              "x": -11076.862,
+              "y": -907.996
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.6105779803240741
+    },
+    {
+      "step": 28,
+      "action": {
+        "type": "turn_around",
+        "param": "L90",
+        "reasoning": "The subgoal is far left at 76 degrees; turn left to align safely while remaining on the unobstructed sidewalk and minimizing collision exposure."
+      },
+      "waypoint_execution": null,
+      "turn_execution": {
+        "requested_param": "L90",
+        "observation_position_cm": {
+          "x": -11076.862,
+          "y": -907.996
+        },
+        "command_start_position_cm": {
+          "x": -11076.862,
+          "y": -907.996
+        },
+        "command_start_position_drift_from_input_cm": 0.0,
+        "verified_end_position_cm": {
+          "x": -11076.862,
+          "y": -907.996
+        },
+        "observation_yaw_deg": 104.999,
+        "raw_blueprint_end_yaw_deg": 18.999,
+        "raw_blueprint_delta_from_input_deg": -86.0,
+        "expected_end_yaw_deg": 14.998999999999995,
+        "verified_end_yaw_deg": 14.999,
+        "verified_delta_from_input_deg": -90.0,
+        "raw_blueprint_position_drift_cm": 2.733921176624422,
+        "verified_position_drift_cm": 0.0,
+        "post_turn_correction_applied": true,
+        "post_turn_position_correction_applied": true
+      },
+      "turn_heading_delta_deg": -90.0,
+      "turn_input_to_recorded_observation_error_cm": 0.0,
+      "turn_command_start_drift_from_input_cm": 0.0,
+      "turn_verified_position_drift_cm": 0.0,
+      "turn_to_next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.6013375289351851
+    },
+    {
+      "step": 29,
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "The path ahead is clear and the target is nearly straight ahead; move 400cm efficiently while maintaining safe separation from distant pedestrians."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -10690.4905,
+          "y": -804.4729
+        },
+        "commanded_waypoint_cm": {
+          "x": -10690.4905,
+          "y": -804.4729
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -11076.862,
+          "y": -907.996
+        },
+        "post_action_position_cm": {
+          "x": -10735.348,
+          "y": -816.492
+        },
+        "selected_waypoint_distance_cm": 399.99996030732234,
+        "commanded_waypoint_distance_cm": 399.99996030732234,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.826218,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 353.5601705678957,
+        "selected_waypoint_endpoint_error_cm": 46.439789739618824,
+        "commanded_waypoint_endpoint_error_cm": 46.439789739618824,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.100067,
+            "sim_time_s": 243.660614,
+            "requested_cm": {
+              "x": -11057.5305,
+              "y": -902.8164
+            },
+            "actual_cm": {
+              "x": -11057.531,
+              "y": -902.816
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.216522,
+            "sim_time_s": 243.777069,
+            "requested_cm": {
+              "x": -11035.033,
+              "y": -896.7885
+            },
+            "actual_cm": {
+              "x": -11035.033,
+              "y": -896.788
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.331085,
+            "sim_time_s": 243.891632,
+            "requested_cm": {
+              "x": -11012.9011,
+              "y": -890.8585
+            },
+            "actual_cm": {
+              "x": -11012.901,
+              "y": -890.859
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.434845,
+            "sim_time_s": 243.995392,
+            "requested_cm": {
+              "x": -10992.8561,
+              "y": -885.4877
+            },
+            "actual_cm": {
+              "x": -10992.856,
+              "y": -885.488
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.53595,
+            "sim_time_s": 244.096497,
+            "requested_cm": {
+              "x": -10973.3241,
+              "y": -880.2544
+            },
+            "actual_cm": {
+              "x": -10973.324,
+              "y": -880.254
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.647812,
+            "sim_time_s": 244.208359,
+            "requested_cm": {
+              "x": -10951.714,
+              "y": -874.4642
+            },
+            "actual_cm": {
+              "x": -10951.714,
+              "y": -874.464
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.751907,
+            "sim_time_s": 244.312454,
+            "requested_cm": {
+              "x": -10931.6043,
+              "y": -869.0761
+            },
+            "actual_cm": {
+              "x": -10931.604,
+              "y": -869.076
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.868011,
+            "sim_time_s": 244.428558,
+            "requested_cm": {
+              "x": -10909.1746,
+              "y": -863.0664
+            },
+            "actual_cm": {
+              "x": -10909.175,
+              "y": -863.066
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.992325,
+            "sim_time_s": 244.552872,
+            "requested_cm": {
+              "x": -10885.159,
+              "y": -856.6317
+            },
+            "actual_cm": {
+              "x": -10885.159,
+              "y": -856.632
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.105362,
+            "sim_time_s": 244.665909,
+            "requested_cm": {
+              "x": -10863.3218,
+              "y": -850.7807
+            },
+            "actual_cm": {
+              "x": -10863.322,
+              "y": -850.781
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.228805,
+            "sim_time_s": 244.789352,
+            "requested_cm": {
+              "x": -10839.4744,
+              "y": -844.3911
+            },
+            "actual_cm": {
+              "x": -10839.474,
+              "y": -844.391
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.351181,
+            "sim_time_s": 244.911728,
+            "requested_cm": {
+              "x": -10815.8331,
+              "y": -838.0568
+            },
+            "actual_cm": {
+              "x": -10815.833,
+              "y": -838.057
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.455414,
+            "sim_time_s": 245.015961,
+            "requested_cm": {
+              "x": -10795.6968,
+              "y": -832.6615
+            },
+            "actual_cm": {
+              "x": -10795.697,
+              "y": -832.662
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.561508,
+            "sim_time_s": 245.122055,
+            "requested_cm": {
+              "x": -10775.2009,
+              "y": -827.1699
+            },
+            "actual_cm": {
+              "x": -10775.201,
+              "y": -827.17
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.720367,
+            "sim_time_s": 245.280914,
+            "requested_cm": {
+              "x": -10744.5116,
+              "y": -818.9471
+            },
+            "actual_cm": {
+              "x": -10744.512,
+              "y": -818.947
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.826218,
+            "sim_time_s": 245.386765,
+            "requested_cm": {
+              "x": -10724.0627,
+              "y": -813.4681
+            },
+            "actual_cm": {
+              "x": -10735.348,
+              "y": -816.492
+            },
+            "sweep_blocked": true
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.93021484375
+    },
+    {
+      "step": 30,
+      "action": {
+        "type": "move_to",
+        "param": "6",
+        "reasoning": "Move 400 cm left to avoid the nearby pedestrian while making substantial progress toward the slightly leftward subgoal."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 6,
+        "selected_image_waypoint_cm": {
+          "x": -10388.9402,
+          "y": -1016.4961
+        },
+        "commanded_waypoint_cm": {
+          "x": -10388.9402,
+          "y": -1016.4961
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10735.348,
+          "y": -816.492
+        },
+        "post_action_position_cm": {
+          "x": -10388.94,
+          "y": -1016.496
+        },
+        "selected_waypoint_distance_cm": 400.0000048970632,
+        "commanded_waypoint_distance_cm": 400.0000048970632,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.011017,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 400.000128099979,
+        "selected_waypoint_endpoint_error_cm": 0.0002236067964736339,
+        "commanded_waypoint_endpoint_error_cm": 0.0002236067964736339,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.124024,
+            "sim_time_s": 252.627701,
+            "requested_cm": {
+              "x": -10713.8666,
+              "y": -828.8947
+            },
+            "actual_cm": {
+              "x": -10713.867,
+              "y": -828.895
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.237717,
+            "sim_time_s": 252.741394,
+            "requested_cm": {
+              "x": -10694.1745,
+              "y": -840.2642
+            },
+            "actual_cm": {
+              "x": -10694.174,
+              "y": -840.264
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.341492,
+            "sim_time_s": 252.845169,
+            "requested_cm": {
+              "x": -10676.2003,
+              "y": -850.6419
+            },
+            "actual_cm": {
+              "x": -10676.2,
+              "y": -850.642
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.445237,
+            "sim_time_s": 252.948914,
+            "requested_cm": {
+              "x": -10658.2312,
+              "y": -861.0166
+            },
+            "actual_cm": {
+              "x": -10658.231,
+              "y": -861.017
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.554688,
+            "sim_time_s": 253.058365,
+            "requested_cm": {
+              "x": -10639.2739,
+              "y": -871.9619
+            },
+            "actual_cm": {
+              "x": -10639.274,
+              "y": -871.962
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.669205,
+            "sim_time_s": 253.172882,
+            "requested_cm": {
+              "x": -10619.4391,
+              "y": -883.4139
+            },
+            "actual_cm": {
+              "x": -10619.439,
+              "y": -883.414
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.781189,
+            "sim_time_s": 253.284866,
+            "requested_cm": {
+              "x": -10600.043,
+              "y": -894.6125
+            },
+            "actual_cm": {
+              "x": -10600.043,
+              "y": -894.612
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.885849,
+            "sim_time_s": 253.389526,
+            "requested_cm": {
+              "x": -10581.9155,
+              "y": -905.0787
+            },
+            "actual_cm": {
+              "x": -10581.915,
+              "y": -905.079
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.997818,
+            "sim_time_s": 253.501495,
+            "requested_cm": {
+              "x": -10562.522,
+              "y": -916.2758
+            },
+            "actual_cm": {
+              "x": -10562.522,
+              "y": -916.276
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.100068,
+            "sim_time_s": 253.603745,
+            "requested_cm": {
+              "x": -10544.8119,
+              "y": -926.5011
+            },
+            "actual_cm": {
+              "x": -10544.812,
+              "y": -926.501
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.208405,
+            "sim_time_s": 253.712082,
+            "requested_cm": {
+              "x": -10526.0475,
+              "y": -937.335
+            },
+            "actual_cm": {
+              "x": -10526.048,
+              "y": -937.335
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.309998,
+            "sim_time_s": 253.813675,
+            "requested_cm": {
+              "x": -10508.4512,
+              "y": -947.4945
+            },
+            "actual_cm": {
+              "x": -10508.451,
+              "y": -947.495
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.427811,
+            "sim_time_s": 253.931488,
+            "requested_cm": {
+              "x": -10488.0456,
+              "y": -959.276
+            },
+            "actual_cm": {
+              "x": -10488.046,
+              "y": -959.276
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.551133,
+            "sim_time_s": 254.05481,
+            "requested_cm": {
+              "x": -10466.6857,
+              "y": -971.6085
+            },
+            "actual_cm": {
+              "x": -10466.686,
+              "y": -971.609
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.656525,
+            "sim_time_s": 254.160202,
+            "requested_cm": {
+              "x": -10448.4314,
+              "y": -982.1479
+            },
+            "actual_cm": {
+              "x": -10448.431,
+              "y": -982.148
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.767151,
+            "sim_time_s": 254.270828,
+            "requested_cm": {
+              "x": -10429.2706,
+              "y": -993.2107
+            },
+            "actual_cm": {
+              "x": -10429.271,
+              "y": -993.211
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.869034,
+            "sim_time_s": 254.372711,
+            "requested_cm": {
+              "x": -10411.624,
+              "y": -1003.3992
+            },
+            "actual_cm": {
+              "x": -10411.624,
+              "y": -1003.399
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.974396,
+            "sim_time_s": 254.478073,
+            "requested_cm": {
+              "x": -10393.3749,
+              "y": -1013.9356
+            },
+            "actual_cm": {
+              "x": -10393.375,
+              "y": -1013.936
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 2.011017,
+            "sim_time_s": 254.514694,
+            "requested_cm": {
+              "x": -10388.9402,
+              "y": -1016.4961
+            },
+            "actual_cm": {
+              "x": -10388.94,
+              "y": -1016.496
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 1.147591869212963
+    },
+    {
+      "step": 31,
+      "action": {
+        "type": "wait",
+        "param": "2",
+        "reasoning": "The pedestrian signal shows DON'T WALK, so waiting avoids an illegal crossing while allowing the signal and nearby pedestrians to change."
+      },
+      "waypoint_execution": null,
+      "turn_execution": null,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 1.013033130787037
+    },
+    {
+      "step": 32,
+      "action": {
+        "type": "wait",
+        "param": "1",
+        "reasoning": "The pedestrian signal appears non-WALK, so waiting briefly avoids an illegal crossing while limiting exposure before proceeding toward the rightward subgoal."
+      },
+      "waypoint_execution": null,
+      "turn_execution": null,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.7121636284722221
+    },
+    {
+      "step": 33,
+      "action": {
+        "type": "turn_around",
+        "param": "R60",
+        "reasoning": "Rotate toward the subgoal while limiting exposure; nearby pedestrians and roadway boundaries make immediate long movement risky."
+      },
+      "waypoint_execution": null,
+      "turn_execution": {
+        "requested_param": "R60",
+        "observation_position_cm": {
+          "x": -10388.94,
+          "y": -1016.496
+        },
+        "command_start_position_cm": {
+          "x": -10388.94,
+          "y": -1016.496
+        },
+        "command_start_position_drift_from_input_cm": 0.0,
+        "verified_end_position_cm": {
+          "x": -10388.94,
+          "y": -1016.496
+        },
+        "observation_yaw_deg": -30.001,
+        "raw_blueprint_end_yaw_deg": 29.999,
+        "raw_blueprint_delta_from_input_deg": 60.0,
+        "expected_end_yaw_deg": 29.998999999999995,
+        "verified_end_yaw_deg": 29.999,
+        "verified_delta_from_input_deg": 60.0,
+        "raw_blueprint_position_drift_cm": 0.0,
+        "verified_position_drift_cm": 0.0,
+        "post_turn_correction_applied": false,
+        "post_turn_position_correction_applied": false
+      },
+      "turn_heading_delta_deg": 60.00145556165475,
+      "turn_input_to_recorded_observation_error_cm": 0.0,
+      "turn_command_start_drift_from_input_cm": 0.0,
+      "turn_verified_position_drift_cm": 0.0,
+      "turn_to_next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 1.2140400752314815
+    },
+    {
+      "step": 34,
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "The target is nearly straight ahead, and the clear roadway offers efficient progress with minimal immediate obstacle or traffic risk."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -10042.5324,
+          "y": -816.4916
+        },
+        "commanded_waypoint_cm": {
+          "x": -10042.5324,
+          "y": -816.4916
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10388.94,
+          "y": -1016.496
+        },
+        "post_action_position_cm": {
+          "x": -10042.532,
+          "y": -816.492
+        },
+        "selected_waypoint_distance_cm": 399.9999816964,
+        "commanded_waypoint_distance_cm": 399.9999816964,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.011719,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 400.0001280999806,
+        "selected_waypoint_endpoint_error_cm": 0.0005656854255307379,
+        "commanded_waypoint_endpoint_error_cm": 0.0005656854255307379,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.103943,
+            "sim_time_s": 292.963379,
+            "requested_cm": {
+              "x": -10370.9367,
+              "y": -1006.1015
+            },
+            "actual_cm": {
+              "x": -10370.937,
+              "y": -1006.101
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.208374,
+            "sim_time_s": 293.06781,
+            "requested_cm": {
+              "x": -10352.8488,
+              "y": -995.6581
+            },
+            "actual_cm": {
+              "x": -10352.849,
+              "y": -995.658
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.331726,
+            "sim_time_s": 293.191162,
+            "requested_cm": {
+              "x": -10331.4838,
+              "y": -983.3227
+            },
+            "actual_cm": {
+              "x": -10331.484,
+              "y": -983.323
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.442719,
+            "sim_time_s": 293.302155,
+            "requested_cm": {
+              "x": -10312.2594,
+              "y": -972.2231
+            },
+            "actual_cm": {
+              "x": -10312.259,
+              "y": -972.223
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.559631,
+            "sim_time_s": 293.419067,
+            "requested_cm": {
+              "x": -10292.0098,
+              "y": -960.5317
+            },
+            "actual_cm": {
+              "x": -10292.01,
+              "y": -960.532
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.687408,
+            "sim_time_s": 293.546844,
+            "requested_cm": {
+              "x": -10269.8783,
+              "y": -947.7537
+            },
+            "actual_cm": {
+              "x": -10269.878,
+              "y": -947.754
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.805969,
+            "sim_time_s": 293.665405,
+            "requested_cm": {
+              "x": -10249.3431,
+              "y": -935.8973
+            },
+            "actual_cm": {
+              "x": -10249.343,
+              "y": -935.897
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.907257,
+            "sim_time_s": 293.766693,
+            "requested_cm": {
+              "x": -10231.7996,
+              "y": -925.7683
+            },
+            "actual_cm": {
+              "x": -10231.8,
+              "y": -925.768
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.028442,
+            "sim_time_s": 293.887878,
+            "requested_cm": {
+              "x": -10210.8099,
+              "y": -913.6495
+            },
+            "actual_cm": {
+              "x": -10210.81,
+              "y": -913.649
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.13382,
+            "sim_time_s": 293.993256,
+            "requested_cm": {
+              "x": -10192.5581,
+              "y": -903.1115
+            },
+            "actual_cm": {
+              "x": -10192.558,
+              "y": -903.111
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.254425,
+            "sim_time_s": 294.113861,
+            "requested_cm": {
+              "x": -10171.6688,
+              "y": -891.0507
+            },
+            "actual_cm": {
+              "x": -10171.669,
+              "y": -891.051
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.36795,
+            "sim_time_s": 294.227386,
+            "requested_cm": {
+              "x": -10152.0059,
+              "y": -879.698
+            },
+            "actual_cm": {
+              "x": -10152.006,
+              "y": -879.698
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.468903,
+            "sim_time_s": 294.328339,
+            "requested_cm": {
+              "x": -10134.5204,
+              "y": -869.6025
+            },
+            "actual_cm": {
+              "x": -10134.52,
+              "y": -869.602
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.57309,
+            "sim_time_s": 294.432526,
+            "requested_cm": {
+              "x": -10116.4748,
+              "y": -859.1835
+            },
+            "actual_cm": {
+              "x": -10116.475,
+              "y": -859.183
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.679718,
+            "sim_time_s": 294.539154,
+            "requested_cm": {
+              "x": -10098.0065,
+              "y": -848.5205
+            },
+            "actual_cm": {
+              "x": -10098.006,
+              "y": -848.52
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.779877,
+            "sim_time_s": 294.639313,
+            "requested_cm": {
+              "x": -10080.6585,
+              "y": -838.5044
+            },
+            "actual_cm": {
+              "x": -10080.658,
+              "y": -838.504
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.881928,
+            "sim_time_s": 294.741364,
+            "requested_cm": {
+              "x": -10062.9829,
+              "y": -828.2991
+            },
+            "actual_cm": {
+              "x": -10062.983,
+              "y": -828.299
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.996002,
+            "sim_time_s": 294.855438,
+            "requested_cm": {
+              "x": -10043.2249,
+              "y": -816.8914
+            },
+            "actual_cm": {
+              "x": -10043.225,
+              "y": -816.891
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 2.011719,
+            "sim_time_s": 294.871155,
+            "requested_cm": {
+              "x": -10042.5324,
+              "y": -816.4916
+            },
+            "actual_cm": {
+              "x": -10042.532,
+              "y": -816.492
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 1.2823307291666668
+    },
+    {
+      "step": 35,
+      "action": {
+        "type": "wait",
+        "param": "2",
+        "reasoning": "Pedestrian signals show DON'T WALK, so wait briefly to avoid another crossing violation while preserving progress toward the subgoal."
+      },
+      "waypoint_execution": null,
+      "turn_execution": null,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 1.0710286458333333
+    },
+    {
+      "step": 36,
+      "action": {
+        "type": "wait",
+        "param": "3",
+        "reasoning": "Pedestrian signals show a non-WALK phase, so waiting avoids another crossing violation while preserving a safe opportunity to proceed."
+      },
+      "waypoint_execution": null,
+      "turn_execution": null,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.8298430266203703
+    },
+    {
+      "step": 37,
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "The route is mostly straight toward the subgoal, with an open path and visible WALK signals; a moderate move limits exposure while advancing safely."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -9696.1244,
+          "y": -616.4876
+        },
+        "commanded_waypoint_cm": {
+          "x": -9696.1244,
+          "y": -616.4876
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -10042.532,
+          "y": -816.492
+        },
+        "post_action_position_cm": {
+          "x": -9696.124,
+          "y": -616.488
+        },
+        "selected_waypoint_distance_cm": 399.9999816963983,
+        "commanded_waypoint_distance_cm": 399.9999816963983,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.050689,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 400.00012809997895,
+        "selected_waypoint_endpoint_error_cm": 0.0005656854255307379,
+        "commanded_waypoint_endpoint_error_cm": 0.0005656854255307379,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.115631,
+            "sim_time_s": 322.976807,
+            "requested_cm": {
+              "x": -10022.5043,
+              "y": -804.9286
+            },
+            "actual_cm": {
+              "x": -10022.504,
+              "y": -804.929
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.233154,
+            "sim_time_s": 323.09433,
+            "requested_cm": {
+              "x": -10002.1488,
+              "y": -793.1761
+            },
+            "actual_cm": {
+              "x": -10002.149,
+              "y": -793.176
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.337188,
+            "sim_time_s": 323.198364,
+            "requested_cm": {
+              "x": -9984.1298,
+              "y": -782.7725
+            },
+            "actual_cm": {
+              "x": -9984.13,
+              "y": -782.773
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.445495,
+            "sim_time_s": 323.306671,
+            "requested_cm": {
+              "x": -9965.3706,
+              "y": -771.9415
+            },
+            "actual_cm": {
+              "x": -9965.371,
+              "y": -771.942
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.548187,
+            "sim_time_s": 323.409363,
+            "requested_cm": {
+              "x": -9947.5839,
+              "y": -761.6721
+            },
+            "actual_cm": {
+              "x": -9947.584,
+              "y": -761.672
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.652618,
+            "sim_time_s": 323.513794,
+            "requested_cm": {
+              "x": -9929.4961,
+              "y": -751.2288
+            },
+            "actual_cm": {
+              "x": -9929.496,
+              "y": -751.229
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.769897,
+            "sim_time_s": 323.631073,
+            "requested_cm": {
+              "x": -9909.1829,
+              "y": -739.5006
+            },
+            "actual_cm": {
+              "x": -9909.183,
+              "y": -739.501
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.872985,
+            "sim_time_s": 323.734161,
+            "requested_cm": {
+              "x": -9891.3277,
+              "y": -729.1916
+            },
+            "actual_cm": {
+              "x": -9891.328,
+              "y": -729.192
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.9747,
+            "sim_time_s": 323.835876,
+            "requested_cm": {
+              "x": -9873.7103,
+              "y": -719.0199
+            },
+            "actual_cm": {
+              "x": -9873.71,
+              "y": -719.02
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.075347,
+            "sim_time_s": 323.936523,
+            "requested_cm": {
+              "x": -9856.2778,
+              "y": -708.9549
+            },
+            "actual_cm": {
+              "x": -9856.278,
+              "y": -708.955
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.176361,
+            "sim_time_s": 324.037537,
+            "requested_cm": {
+              "x": -9838.7818,
+              "y": -698.8533
+            },
+            "actual_cm": {
+              "x": -9838.782,
+              "y": -698.853
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.291168,
+            "sim_time_s": 324.152344,
+            "requested_cm": {
+              "x": -9818.8968,
+              "y": -687.3724
+            },
+            "actual_cm": {
+              "x": -9818.897,
+              "y": -687.372
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.391876,
+            "sim_time_s": 324.253052,
+            "requested_cm": {
+              "x": -9801.4538,
+              "y": -677.3013
+            },
+            "actual_cm": {
+              "x": -9801.454,
+              "y": -677.301
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.497375,
+            "sim_time_s": 324.358551,
+            "requested_cm": {
+              "x": -9783.181,
+              "y": -666.7512
+            },
+            "actual_cm": {
+              "x": -9783.181,
+              "y": -666.751
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.613494,
+            "sim_time_s": 324.47467,
+            "requested_cm": {
+              "x": -9763.0687,
+              "y": -655.1391
+            },
+            "actual_cm": {
+              "x": -9763.069,
+              "y": -655.139
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.770141,
+            "sim_time_s": 324.631317,
+            "requested_cm": {
+              "x": -9735.9369,
+              "y": -639.474
+            },
+            "actual_cm": {
+              "x": -9735.937,
+              "y": -639.474
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.888061,
+            "sim_time_s": 324.749237,
+            "requested_cm": {
+              "x": -9715.5127,
+              "y": -627.6817
+            },
+            "actual_cm": {
+              "x": -9715.513,
+              "y": -627.682
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 2.050689,
+            "sim_time_s": 324.911865,
+            "requested_cm": {
+              "x": -9696.1244,
+              "y": -616.4876
+            },
+            "actual_cm": {
+              "x": -9696.124,
+              "y": -616.488
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 0.8464995659722222
+    },
+    {
+      "step": 38,
+      "action": {
+        "type": "move_to",
+        "param": "6",
+        "reasoning": "Move 400 cm left toward the subgoal, maintaining alignment while avoiding the nearby pedestrian and minimizing exposure time."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 6,
+        "selected_image_waypoint_cm": {
+          "x": -9309.7524,
+          "y": -720.0107
+        },
+        "commanded_waypoint_cm": {
+          "x": -9309.7524,
+          "y": -720.0107
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -9696.124,
+          "y": -616.488
+        },
+        "post_action_position_cm": {
+          "x": -9309.752,
+          "y": -720.011
+        },
+        "selected_waypoint_distance_cm": 399.9999533773102,
+        "commanded_waypoint_distance_cm": 399.9999533773102,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.004882,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 400.00041739103165,
+        "selected_waypoint_endpoint_error_cm": 0.000499999999146894,
+        "commanded_waypoint_endpoint_error_cm": 0.000499999999146894,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.107635,
+            "sim_time_s": 331.001068,
+            "requested_cm": {
+              "x": -9675.3304,
+              "y": -622.0593
+            },
+            "actual_cm": {
+              "x": -9675.33,
+              "y": -622.059
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.210571,
+            "sim_time_s": 331.104004,
+            "requested_cm": {
+              "x": -9655.4447,
+              "y": -627.3874
+            },
+            "actual_cm": {
+              "x": -9655.445,
+              "y": -627.387
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.322631,
+            "sim_time_s": 331.216064,
+            "requested_cm": {
+              "x": -9633.7963,
+              "y": -633.1878
+            },
+            "actual_cm": {
+              "x": -9633.796,
+              "y": -633.188
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.439849,
+            "sim_time_s": 331.333282,
+            "requested_cm": {
+              "x": -9611.1514,
+              "y": -639.2552
+            },
+            "actual_cm": {
+              "x": -9611.151,
+              "y": -639.255
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.553894,
+            "sim_time_s": 331.447327,
+            "requested_cm": {
+              "x": -9589.1195,
+              "y": -645.1583
+            },
+            "actual_cm": {
+              "x": -9589.12,
+              "y": -645.158
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.657104,
+            "sim_time_s": 331.550537,
+            "requested_cm": {
+              "x": -9569.1808,
+              "y": -650.5006
+            },
+            "actual_cm": {
+              "x": -9569.181,
+              "y": -650.501
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.759491,
+            "sim_time_s": 331.652924,
+            "requested_cm": {
+              "x": -9549.4011,
+              "y": -655.8003
+            },
+            "actual_cm": {
+              "x": -9549.401,
+              "y": -655.8
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.890136,
+            "sim_time_s": 331.783569,
+            "requested_cm": {
+              "x": -9524.1624,
+              "y": -662.5626
+            },
+            "actual_cm": {
+              "x": -9524.162,
+              "y": -662.563
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.995147,
+            "sim_time_s": 331.88858,
+            "requested_cm": {
+              "x": -9503.8757,
+              "y": -667.9982
+            },
+            "actual_cm": {
+              "x": -9503.876,
+              "y": -667.998
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.096466,
+            "sim_time_s": 331.989899,
+            "requested_cm": {
+              "x": -9484.3023,
+              "y": -673.2426
+            },
+            "actual_cm": {
+              "x": -9484.302,
+              "y": -673.243
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.19934,
+            "sim_time_s": 332.092773,
+            "requested_cm": {
+              "x": -9464.4285,
+              "y": -678.5675
+            },
+            "actual_cm": {
+              "x": -9464.428,
+              "y": -678.567
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.316772,
+            "sim_time_s": 332.210205,
+            "requested_cm": {
+              "x": -9441.7423,
+              "y": -684.6459
+            },
+            "actual_cm": {
+              "x": -9441.742,
+              "y": -684.646
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.445648,
+            "sim_time_s": 332.339081,
+            "requested_cm": {
+              "x": -9416.8453,
+              "y": -691.3167
+            },
+            "actual_cm": {
+              "x": -9416.845,
+              "y": -691.317
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.550537,
+            "sim_time_s": 332.44397,
+            "requested_cm": {
+              "x": -9396.5823,
+              "y": -696.7459
+            },
+            "actual_cm": {
+              "x": -9396.582,
+              "y": -696.746
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.654144,
+            "sim_time_s": 332.547577,
+            "requested_cm": {
+              "x": -9376.5669,
+              "y": -702.1087
+            },
+            "actual_cm": {
+              "x": -9376.567,
+              "y": -702.109
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.760192,
+            "sim_time_s": 332.653625,
+            "requested_cm": {
+              "x": -9356.0799,
+              "y": -707.5979
+            },
+            "actual_cm": {
+              "x": -9356.08,
+              "y": -707.598
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.877075,
+            "sim_time_s": 332.770508,
+            "requested_cm": {
+              "x": -9333.4998,
+              "y": -713.6479
+            },
+            "actual_cm": {
+              "x": -9333.5,
+              "y": -713.648
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.981384,
+            "sim_time_s": 332.874817,
+            "requested_cm": {
+              "x": -9313.3487,
+              "y": -719.0471
+            },
+            "actual_cm": {
+              "x": -9313.349,
+              "y": -719.047
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 2.004882,
+            "sim_time_s": 332.898315,
+            "requested_cm": {
+              "x": -9309.7524,
+              "y": -720.0107
+            },
+            "actual_cm": {
+              "x": -9309.752,
+              "y": -720.011
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 1.179537037037037
+    },
+    {
+      "step": 39,
+      "action": {
+        "type": "turn_around",
+        "param": "L60",
+        "reasoning": "Turn left toward the waypoint while avoiding the nearby pedestrian and reducing collision risk before making forward progress."
+      },
+      "waypoint_execution": null,
+      "turn_execution": {
+        "requested_param": "L60",
+        "observation_position_cm": {
+          "x": -9309.752,
+          "y": -720.011
+        },
+        "command_start_position_cm": {
+          "x": -9309.752,
+          "y": -720.011
+        },
+        "command_start_position_drift_from_input_cm": 0.0,
+        "verified_end_position_cm": {
+          "x": -9309.752,
+          "y": -720.011
+        },
+        "observation_yaw_deg": -14.999,
+        "raw_blueprint_end_yaw_deg": -71.999,
+        "raw_blueprint_delta_from_input_deg": -57.0,
+        "expected_end_yaw_deg": -74.999,
+        "verified_end_yaw_deg": -74.999,
+        "verified_delta_from_input_deg": -60.0,
+        "raw_blueprint_position_drift_cm": 4.698013197087037,
+        "verified_position_drift_cm": 0.0,
+        "post_turn_correction_applied": true,
+        "post_turn_position_correction_applied": true
+      },
+      "turn_heading_delta_deg": -60.0013421159139,
+      "turn_input_to_recorded_observation_error_cm": 0.0,
+      "turn_command_start_drift_from_input_cm": 0.0,
+      "turn_verified_position_drift_cm": 0.0,
+      "turn_to_next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 2.1409881365740744
+    },
+    {
+      "step": 40,
+      "action": {
+        "type": "move_to",
+        "param": "1",
+        "reasoning": "A nearby pedestrian blocks the longer forward route, so take a short forward step to reduce collision risk while maintaining progress toward the slightly-left subgoal."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 1,
+        "selected_image_waypoint_cm": {
+          "x": -9283.8712,
+          "y": -816.6039
+        },
+        "commanded_waypoint_cm": {
+          "x": -9283.8712,
+          "y": -816.6039
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -9309.752,
+          "y": -720.011
+        },
+        "post_action_position_cm": {
+          "x": -9283.871,
+          "y": -816.604
+        },
+        "selected_waypoint_distance_cm": 100.00002069524805,
+        "commanded_waypoint_distance_cm": 100.00002069524805,
+        "move_command_duration_seconds": 0.5,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.507019,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 100.00016904985749,
+        "selected_waypoint_endpoint_error_cm": 0.00022360679815142974,
+        "commanded_waypoint_endpoint_error_cm": 0.00022360679815142974,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.100373,
+            "sim_time_s": 349.655457,
+            "requested_cm": {
+              "x": -9304.5565,
+              "y": -739.4016
+            },
+            "actual_cm": {
+              "x": -9304.557,
+              "y": -739.402
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.218537,
+            "sim_time_s": 349.773621,
+            "requested_cm": {
+              "x": -9298.4402,
+              "y": -762.2292
+            },
+            "actual_cm": {
+              "x": -9298.44,
+              "y": -762.229
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.320099,
+            "sim_time_s": 349.875183,
+            "requested_cm": {
+              "x": -9293.1832,
+              "y": -781.8496
+            },
+            "actual_cm": {
+              "x": -9293.183,
+              "y": -781.85
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.423523,
+            "sim_time_s": 349.978607,
+            "requested_cm": {
+              "x": -9287.8298,
+              "y": -801.8296
+            },
+            "actual_cm": {
+              "x": -9287.83,
+              "y": -801.83
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.507019,
+            "sim_time_s": 350.062103,
+            "requested_cm": {
+              "x": -9283.8712,
+              "y": -816.6039
+            },
+            "actual_cm": {
+              "x": -9283.871,
+              "y": -816.604
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "output_to_next_input_pixel_mae_0_to_255": 1.0260973668981481
+    },
+    {
+      "step": 41,
+      "action": {
+        "type": "move_to",
+        "param": "6",
+        "reasoning": "Move diagonally left to avoid the tree ahead, reducing collision risk while making substantial progress toward the slightly leftward subgoal."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 6,
+        "selected_image_waypoint_cm": {
+          "x": -9483.8751,
+          "y": -1163.0118
+        },
+        "commanded_waypoint_cm": {
+          "x": -9483.8751,
+          "y": -1163.0118
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -9283.871,
+          "y": -816.604
+        },
+        "post_action_position_cm": {
+          "x": -9483.875,
+          "y": -1163.012
+        },
+        "selected_waypoint_distance_cm": 400.00000489706247,
+        "commanded_waypoint_distance_cm": 400.00000489706247,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.016907,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 400.0001280999798,
+        "selected_waypoint_endpoint_error_cm": 0.00022360679738879527,
+        "commanded_waypoint_endpoint_error_cm": 0.00022360679738879527,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.103637,
+            "sim_time_s": 356.252563,
+            "requested_cm": {
+              "x": -9294.2349,
+              "y": -834.5543
+            },
+            "actual_cm": {
+              "x": -9294.235,
+              "y": -834.554
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.214294,
+            "sim_time_s": 356.36322,
+            "requested_cm": {
+              "x": -9305.3008,
+              "y": -853.7206
+            },
+            "actual_cm": {
+              "x": -9305.301,
+              "y": -853.721
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.33374,
+            "sim_time_s": 356.482666,
+            "requested_cm": {
+              "x": -9317.2457,
+              "y": -874.4091
+            },
+            "actual_cm": {
+              "x": -9317.246,
+              "y": -874.409
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.447723,
+            "sim_time_s": 356.596649,
+            "requested_cm": {
+              "x": -9328.6442,
+              "y": -894.1514
+            },
+            "actual_cm": {
+              "x": -9328.644,
+              "y": -894.151
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.557037,
+            "sim_time_s": 356.705963,
+            "requested_cm": {
+              "x": -9339.5758,
+              "y": -913.085
+            },
+            "actual_cm": {
+              "x": -9339.576,
+              "y": -913.085
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.659698,
+            "sim_time_s": 356.808624,
+            "requested_cm": {
+              "x": -9349.8422,
+              "y": -930.8663
+            },
+            "actual_cm": {
+              "x": -9349.842,
+              "y": -930.866
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.765838,
+            "sim_time_s": 356.914764,
+            "requested_cm": {
+              "x": -9360.4564,
+              "y": -949.2501
+            },
+            "actual_cm": {
+              "x": -9360.456,
+              "y": -949.25
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.868683,
+            "sim_time_s": 357.017609,
+            "requested_cm": {
+              "x": -9370.7411,
+              "y": -967.0633
+            },
+            "actual_cm": {
+              "x": -9370.741,
+              "y": -967.063
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.028991,
+            "sim_time_s": 357.177917,
+            "requested_cm": {
+              "x": -9386.7722,
+              "y": -994.8293
+            },
+            "actual_cm": {
+              "x": -9386.772,
+              "y": -994.829
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.135834,
+            "sim_time_s": 357.28476,
+            "requested_cm": {
+              "x": -9397.4567,
+              "y": -1013.3349
+            },
+            "actual_cm": {
+              "x": -9397.457,
+              "y": -1013.335
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.240448,
+            "sim_time_s": 357.389374,
+            "requested_cm": {
+              "x": -9407.9183,
+              "y": -1031.4544
+            },
+            "actual_cm": {
+              "x": -9407.918,
+              "y": -1031.454
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.346649,
+            "sim_time_s": 357.495575,
+            "requested_cm": {
+              "x": -9418.5387,
+              "y": -1049.8489
+            },
+            "actual_cm": {
+              "x": -9418.539,
+              "y": -1049.849
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.459839,
+            "sim_time_s": 357.608765,
+            "requested_cm": {
+              "x": -9429.8579,
+              "y": -1069.4538
+            },
+            "actual_cm": {
+              "x": -9429.858,
+              "y": -1069.454
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.666778,
+            "sim_time_s": 357.815704,
+            "requested_cm": {
+              "x": -9450.5522,
+              "y": -1105.2965
+            },
+            "actual_cm": {
+              "x": -9450.552,
+              "y": -1105.296
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.770508,
+            "sim_time_s": 357.919434,
+            "requested_cm": {
+              "x": -9460.9254,
+              "y": -1123.2629
+            },
+            "actual_cm": {
+              "x": -9460.925,
+              "y": -1123.263
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.880066,
+            "sim_time_s": 358.028992,
+            "requested_cm": {
+              "x": -9471.8815,
+              "y": -1142.2388
+            },
+            "actual_cm": {
+              "x": -9471.881,
+              "y": -1142.239
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.997467,
+            "sim_time_s": 358.146393,
+            "requested_cm": {
+              "x": -9483.6218,
+              "y": -1162.5731
+            },
+            "actual_cm": {
+              "x": -9483.622,
+              "y": -1162.573
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 2.016907,
+            "sim_time_s": 358.165833,
+            "requested_cm": {
+              "x": -9483.8751,
+              "y": -1163.0118
+            },
+            "actual_cm": {
+              "x": -9483.875,
+              "y": -1163.012
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null,
+      "next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 1.0180787037037036
+    },
+    {
+      "step": 42,
+      "action": {
+        "type": "turn_around",
+        "param": "R60",
+        "reasoning": "Turn right to align with the subgoal while minimizing collision exposure; the roadway ahead appears clear, but pedestrians make immediate long movement risky."
+      },
+      "waypoint_execution": null,
+      "turn_execution": {
+        "requested_param": "R60",
+        "observation_position_cm": {
+          "x": -9483.875,
+          "y": -1163.012
+        },
+        "command_start_position_cm": {
+          "x": -9483.875,
+          "y": -1163.012
+        },
+        "command_start_position_drift_from_input_cm": 0.0,
+        "verified_end_position_cm": {
+          "x": -9483.875,
+          "y": -1163.012
+        },
+        "observation_yaw_deg": -120.001,
+        "raw_blueprint_end_yaw_deg": -60.001,
+        "raw_blueprint_delta_from_input_deg": 60.0,
+        "expected_end_yaw_deg": -60.001000000000005,
+        "verified_end_yaw_deg": -60.001,
+        "verified_delta_from_input_deg": 60.0,
+        "raw_blueprint_position_drift_cm": 0.0,
+        "verified_position_drift_cm": 0.0,
+        "post_turn_correction_applied": false,
+        "post_turn_position_correction_applied": false
+      },
+      "turn_heading_delta_deg": 60.00145556165478,
+      "turn_input_to_recorded_observation_error_cm": 0.0,
+      "turn_command_start_drift_from_input_cm": 0.0,
+      "turn_verified_position_drift_cm": 0.0,
+      "turn_to_next_input_position_error_cm": 0.0,
+      "recorded_action_to_next_history_pixel_mae_0_to_255": [
+        0.0
+      ],
+      "output_to_next_input_pixel_mae_0_to_255": 1.0966905381944445
+    },
+    {
+      "step": 43,
+      "action": {
+        "type": "move_to",
+        "param": "2",
+        "reasoning": "The path ahead is clear and the subgoal is nearly straight ahead; a 200cm move provides safe, efficient progress with limited exposure."
+      },
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 2,
+        "selected_image_waypoint_cm": {
+          "x": -9383.8728,
+          "y": -1336.2158
+        },
+        "commanded_waypoint_cm": {
+          "x": -9383.8728,
+          "y": -1336.2158
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -9483.875,
+          "y": -1163.012
+        },
+        "post_action_position_cm": {
+          "x": -9383.873,
+          "y": -1336.216
+        },
+        "selected_waypoint_distance_cm": 199.99999084820018,
+        "commanded_waypoint_distance_cm": 199.99999084820018,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.045563,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 200.0000640499899,
+        "selected_waypoint_endpoint_error_cm": 0.0002828427127251746,
+        "commanded_waypoint_endpoint_error_cm": 0.0002828427127251746,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0,
+        "sweep_samples": [
+          {
+            "elapsed_s": 0.113068,
+            "sim_time_s": 375.934204,
+            "requested_cm": {
+              "x": -9472.568,
+              "y": -1182.5958
+            },
+            "actual_cm": {
+              "x": -9472.568,
+              "y": -1182.596
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.214112,
+            "sim_time_s": 376.035248,
+            "requested_cm": {
+              "x": -9462.4633,
+              "y": -1200.097
+            },
+            "actual_cm": {
+              "x": -9462.463,
+              "y": -1200.097
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.315247,
+            "sim_time_s": 376.136383,
+            "requested_cm": {
+              "x": -9452.3496,
+              "y": -1217.614
+            },
+            "actual_cm": {
+              "x": -9452.35,
+              "y": -1217.614
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.416199,
+            "sim_time_s": 376.237335,
+            "requested_cm": {
+              "x": -9442.2542,
+              "y": -1235.0992
+            },
+            "actual_cm": {
+              "x": -9442.254,
+              "y": -1235.099
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.518921,
+            "sim_time_s": 376.340057,
+            "requested_cm": {
+              "x": -9431.9818,
+              "y": -1252.8911
+            },
+            "actual_cm": {
+              "x": -9431.982,
+              "y": -1252.891
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.626923,
+            "sim_time_s": 376.448059,
+            "requested_cm": {
+              "x": -9421.1813,
+              "y": -1271.5974
+            },
+            "actual_cm": {
+              "x": -9421.181,
+              "y": -1271.597
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.729584,
+            "sim_time_s": 376.55072,
+            "requested_cm": {
+              "x": -9410.915,
+              "y": -1289.3787
+            },
+            "actual_cm": {
+              "x": -9410.915,
+              "y": -1289.379
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.845459,
+            "sim_time_s": 376.666595,
+            "requested_cm": {
+              "x": -9399.3272,
+              "y": -1309.4487
+            },
+            "actual_cm": {
+              "x": -9399.327,
+              "y": -1309.449
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 0.954285,
+            "sim_time_s": 376.775421,
+            "requested_cm": {
+              "x": -9388.4444,
+              "y": -1328.2978
+            },
+            "actual_cm": {
+              "x": -9388.444,
+              "y": -1328.298
+            },
+            "sweep_blocked": false
+          },
+          {
+            "elapsed_s": 1.045563,
+            "sim_time_s": 376.866699,
+            "requested_cm": {
+              "x": -9383.8728,
+              "y": -1336.2158
+            },
+            "actual_cm": {
+              "x": -9383.873,
+              "y": -1336.216
+            },
+            "sweep_blocked": false
+          }
+        ]
+      },
+      "turn_execution": null
+    }
+  ],
+  "source_commit": "691bec6cec7d376e625b798b019ef6a8bb949c0c",
+  "raw_artifact_sha256": "bcfa6237eea5aa8595ca1148f02e9a2d80a1016f3648530770d30f70e309bc54"
+}

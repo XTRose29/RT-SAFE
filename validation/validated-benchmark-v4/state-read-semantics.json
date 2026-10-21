@@ -1,0 +1,211 @@
+{
+  "scope": "Native paused-read diagnostic. Trip overlap was 1 then 0 at unchanged actor game time; human count remained 1 across repeated reads. This does not establish every hazard or lifecycle behavior.",
+  "observations": [
+    {
+      "stage": "hazard_poll",
+      "method": "GetStates",
+      "raw": {
+        "HumanCollision": "0",
+        "ObjectCollision": "0",
+        "BuildingCollision": "0",
+        "Intensity": "0.000000",
+        "OverlapType": "0",
+        "TouchedRoad": "1"
+      },
+      "clock": 0.012083
+    },
+    {
+      "stage": "hazard_poll",
+      "method": "GetStates",
+      "raw": {
+        "HumanCollision": "0",
+        "ObjectCollision": "0",
+        "BuildingCollision": "0",
+        "Intensity": "0.000000",
+        "OverlapType": "0",
+        "TouchedRoad": "1"
+      },
+      "clock": 0.067477
+    },
+    {
+      "stage": "hazard_poll",
+      "method": "GetStates",
+      "raw": {
+        "HumanCollision": "0",
+        "ObjectCollision": "0",
+        "BuildingCollision": "0",
+        "Intensity": "0.000000",
+        "OverlapType": "1",
+        "TouchedRoad": "1"
+      },
+      "clock": 0.113445
+    },
+    {
+      "stage": "hazard_paused_repeat",
+      "method": "GetStates",
+      "raw": {
+        "HumanCollision": "0",
+        "ObjectCollision": "0",
+        "BuildingCollision": "0",
+        "Intensity": "0.000000",
+        "OverlapType": "0",
+        "TouchedRoad": "1"
+      },
+      "clock": 0.113445
+    },
+    {
+      "stage": "hazard_paused_repeat",
+      "method": "GetStates",
+      "raw": {
+        "HumanCollision": "0",
+        "ObjectCollision": "0",
+        "BuildingCollision": "0",
+        "Intensity": "0.000000",
+        "OverlapType": "0",
+        "TouchedRoad": "1"
+      },
+      "clock": 0.113445
+    },
+    {
+      "stage": "hazard_paused_repeat",
+      "method": "GetStates",
+      "raw": {
+        "HumanCollision": "0",
+        "ObjectCollision": "0",
+        "BuildingCollision": "0",
+        "Intensity": "0.000000",
+        "OverlapType": "0",
+        "TouchedRoad": "1"
+      },
+      "clock": 0.113445
+    },
+    {
+      "stage": "hazard_paused_repeat",
+      "method": "GetStates",
+      "raw": {
+        "HumanCollision": "0",
+        "ObjectCollision": "0",
+        "BuildingCollision": "0",
+        "Intensity": "0.000000",
+        "OverlapType": "0",
+        "TouchedRoad": "1"
+      },
+      "clock": 0.113445
+    },
+    {
+      "stage": "hazard_paused_repeat",
+      "method": "GetStates",
+      "raw": {
+        "HumanCollision": "0",
+        "ObjectCollision": "0",
+        "BuildingCollision": "0",
+        "Intensity": "0.000000",
+        "OverlapType": "0",
+        "TouchedRoad": "1"
+      },
+      "clock": 0.113445
+    },
+    {
+      "stage": "hazard_separate_query",
+      "method": "GetOverlapType",
+      "raw": {
+        "overlap_type": "0"
+      },
+      "clock": 0.113445
+    },
+    {
+      "stage": "hazard_separate_query",
+      "method": "GetOverlapType",
+      "raw": {
+        "overlap_type": "0"
+      },
+      "clock": 0.113445
+    },
+    {
+      "stage": "hazard_separate_query",
+      "method": "GetOverlapType",
+      "raw": {
+        "overlap_type": "0"
+      },
+      "clock": 0.113445
+    },
+    {
+      "stage": "human_paused_repeat",
+      "method": "GetStates",
+      "raw": {
+        "HumanCollision": "1",
+        "ObjectCollision": "0",
+        "BuildingCollision": "0",
+        "Intensity": "0.000000",
+        "OverlapType": "0",
+        "TouchedRoad": "1"
+      },
+      "clock": 0.159135
+    },
+    {
+      "stage": "human_paused_repeat",
+      "method": "GetStates",
+      "raw": {
+        "HumanCollision": "1",
+        "ObjectCollision": "0",
+        "BuildingCollision": "0",
+        "Intensity": "0.000000",
+        "OverlapType": "0",
+        "TouchedRoad": "1"
+      },
+      "clock": 0.159135
+    },
+    {
+      "stage": "human_paused_repeat",
+      "method": "GetStates",
+      "raw": {
+        "HumanCollision": "1",
+        "ObjectCollision": "0",
+        "BuildingCollision": "0",
+        "Intensity": "0.000000",
+        "OverlapType": "0",
+        "TouchedRoad": "1"
+      },
+      "clock": 0.159135
+    },
+    {
+      "stage": "human_paused_repeat",
+      "method": "GetStates",
+      "raw": {
+        "HumanCollision": "1",
+        "ObjectCollision": "0",
+        "BuildingCollision": "0",
+        "Intensity": "0.000000",
+        "OverlapType": "0",
+        "TouchedRoad": "1"
+      },
+      "clock": 0.159135
+    },
+    {
+      "stage": "human_paused_repeat",
+      "method": "GetStates",
+      "raw": {
+        "HumanCollision": "1",
+        "ObjectCollision": "0",
+        "BuildingCollision": "0",
+        "Intensity": "0.000000",
+        "OverlapType": "0",
+        "TouchedRoad": "1"
+      },
+      "clock": 0.159135
+    },
+    {
+      "stage": "collision_num",
+      "method": "GetCollisionNum",
+      "raw": {
+        "HumanCollision": "1",
+        "ObjectCollision": "0",
+        "BuildingCollision": "0"
+      },
+      "clock": 0.159135
+    }
+  ],
+  "raw_sha256": "ecedd08e4e6ef1c30a8cbc0f0018b57ad7a14607cb031dc52aaa670cc6b2c33a",
+  "source_commit": "b6c6664c8212bb27b5df4b57282760a9cb15005d",
+  "probe_script_sha256": "c1db394e2095d1c607942c68c2efeab95b13d91b857a161bac63e3ded36378bc"
+}

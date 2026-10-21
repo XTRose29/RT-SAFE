@@ -1,0 +1,23 @@
+{
+  "scope": "Image preflight only; no benchmark episode scores. Claude probe attempts repeated with production output-token settings.",
+  "probes": [
+    {
+      "model": "antigravity/claude-sonnet-5-5-medium",
+      "passed": false,
+      "error_type": "InternalServerError",
+      "seconds": 0.36632233392447233
+    },
+    {
+      "model": "antigravity/gemini-4-argon-medium",
+      "passed": true,
+      "seconds": 6.8933470686897635
+    },
+    {
+      "model": "antigravity/claude-sonnet-5-5-medium",
+      "passed": false,
+      "error_type": "InternalServerError",
+      "status_code": 502,
+      "seconds": 5.300874798092991
+    }
+  ]
+}

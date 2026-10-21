@@ -1,17 +1,17 @@
 {
   "protocol": "execution_alignment_v4",
-  "code_commit": "3f9cbbcdd17e8dfc4ccdd39b9cd50a77b63b3f90",
+  "code_commit": "691bec6cec7d376e625b798b019ef6a8bb949c0c",
   "runtime": "UE 5.3.2 packaged SimWorld RT10",
   "renderer_flags": [],
   "scope": "Fourteen controlled native probes on a dedicated engine, GPU 6, 30 FPS, default rendering threads. Not an exhaustive all-map safety certification.",
   "source_sha256": {
-    "base/rt_agent.py": "5d6bdde1ef1cd45b13c16e1e7acd511bc951c496342a1220275129c93c12cf5f",
+    "base/rt_agent.py": "4cde9b6007daf630d421622b77e88d1f63b99f817dd20496468722d471fc4c87",
     "manager/world_manager.py": "cc792716e49df022f837241b3ae95b63c5416da449ca22a52a1608e17f3c5abc",
     "llm/prompt.py": "5d9e319e94002fe8ca03317fa350bf745480597a9462798329b625690b5b9c1b",
-    "base/rt_unrealcv.py": "2b836189dd436d6a2ecf538be558602655da67e4780274d1cdd49bdbcd0e2dd0",
-    "base/rt_communicator.py": "62dc61102350678ef6ee50fbed5257affe495cb082f788667d711034a51811f0",
+    "base/rt_unrealcv.py": "f77bf3bf9dcec3ee7f669a7736c9752a976d394d6d9d290386d83e5c1693dfe2",
+    "base/rt_communicator.py": "bfbca03e1a3182b507bc8d4a61eafe19d08e4ee4802a8756a371200d5eef21a5",
     "base/rt_traffic_controller.py": "5071e2da545a3f29916a66a2880834495a935103c0ee9e6c5531d677feeb7b1d",
-    "SimWorld/simworld/traffic/manager/intersection_manager.py": "4d427d266721a6c365070d129e7b903cacbda4a160a20cac53826bc623dc8cc1",
+    "SimWorld/simworld/traffic/manager/intersection_manager.py": "569bf44afd108505bcf73f4073012c78098c711b331fa5c4fef068996af43a68",
     "SimWorld/simworld/communicator/unrealcv.py": "aadd67a5cb599a412c21c13246c5e1e2e24324b76baeac47c2c93e5b6b8916d3"
   },
   "cases": [
@@ -39,12 +39,12 @@
       "camera_error_cm": 0.0,
       "passed": true,
       "group": "rays",
-      "source_artifact_sha256": "481c48899b68d14461412dba6b6d5a412449867b55598873811ff9112e979b1a",
+      "source_artifact_sha256": "b3a781e9f4138e06e4358a1488426f442e550bffb030395b36749675e36bf901",
       "observed_events": [
         {
           "step": 0,
           "feedback": "Traffic-rule violation recorded.",
-          "manifest_sha256": "0b7ddf02740945ee12e11d697d9388d72cb120eef5e3da7c83dbfe3f8549d95b",
+          "manifest_sha256": "e98b33fdba0d806bedf55a2a302c4ee2140e9d0111548a3657a4f29de54d5241",
           "collisions": {
             "human": 0,
             "object": 0,
@@ -58,7 +58,7 @@
           "recovery_collision_details": null,
           "hazard_events": [],
           "waypoint": {
-            "move_elapsed_seconds": 0.512812,
+            "move_elapsed_seconds": 0.515673,
             "move_command_duration_seconds": 0.5,
             "move_stop_reason": null,
             "actual_displacement_cm": 100.0
@@ -90,12 +90,12 @@
       "camera_error_cm": 0.0,
       "passed": true,
       "group": "rays",
-      "source_artifact_sha256": "481c48899b68d14461412dba6b6d5a412449867b55598873811ff9112e979b1a",
+      "source_artifact_sha256": "b3a781e9f4138e06e4358a1488426f442e550bffb030395b36749675e36bf901",
       "observed_events": [
         {
           "step": 0,
           "feedback": "Traffic-rule violation recorded.",
-          "manifest_sha256": "e4e9463fb4fee11b5dba76199bcb8398426234b14f49fd1d86eb03112b02fb86",
+          "manifest_sha256": "265e32bdcffd5af1322ad02101a3afd15f2639d04642e2dc3424f320a504b14b",
           "collisions": {
             "human": 0,
             "object": 0,
@@ -109,7 +109,7 @@
           "recovery_collision_details": null,
           "hazard_events": [],
           "waypoint": {
-            "move_elapsed_seconds": 1.014997,
+            "move_elapsed_seconds": 1.007204,
             "move_command_duration_seconds": 1.0,
             "move_stop_reason": null,
             "actual_displacement_cm": 200.0
@@ -141,12 +141,12 @@
       "camera_error_cm": 0.0,
       "passed": true,
       "group": "rays",
-      "source_artifact_sha256": "481c48899b68d14461412dba6b6d5a412449867b55598873811ff9112e979b1a",
+      "source_artifact_sha256": "b3a781e9f4138e06e4358a1488426f442e550bffb030395b36749675e36bf901",
       "observed_events": [
         {
           "step": 0,
           "feedback": "Traffic-rule violation recorded.",
-          "manifest_sha256": "ee987d11b864d2100978aca223715f9715f2cf7a977c888113824b9095a6870c",
+          "manifest_sha256": "2273cacbfa0fa3173fd12fe488e43754fe4c0a948dfec0d73bd0460d44ef719b",
           "collisions": {
             "human": 0,
             "object": 0,
@@ -160,7 +160,7 @@
           "recovery_collision_details": null,
           "hazard_events": [],
           "waypoint": {
-            "move_elapsed_seconds": 1.002433,
+            "move_elapsed_seconds": 1.016672,
             "move_command_duration_seconds": 1.0,
             "move_stop_reason": null,
             "actual_displacement_cm": 199.99949620436567
@@ -192,12 +192,12 @@
       "camera_error_cm": 0.0,
       "passed": true,
       "group": "rays",
-      "source_artifact_sha256": "481c48899b68d14461412dba6b6d5a412449867b55598873811ff9112e979b1a",
+      "source_artifact_sha256": "b3a781e9f4138e06e4358a1488426f442e550bffb030395b36749675e36bf901",
       "observed_events": [
         {
           "step": 0,
           "feedback": "Traffic-rule violation recorded.",
-          "manifest_sha256": "5f18dc965540bb981b82052240b324b00fa762158040594d069c16783247c7a7",
+          "manifest_sha256": "c707b4a46d161cb577c9be5dfc33cf57bc6b14c6fe4074dada5be629e27fa317",
           "collisions": {
             "human": 0,
             "object": 0,
@@ -211,7 +211,7 @@
           "recovery_collision_details": null,
           "hazard_events": [],
           "waypoint": {
-            "move_elapsed_seconds": 1.007339,
+            "move_elapsed_seconds": 1.009335,
             "move_command_duration_seconds": 1.0,
             "move_stop_reason": null,
             "actual_displacement_cm": 199.99949620436567
@@ -243,12 +243,12 @@
       "camera_error_cm": 0.0,
       "passed": true,
       "group": "rays",
-      "source_artifact_sha256": "481c48899b68d14461412dba6b6d5a412449867b55598873811ff9112e979b1a",
+      "source_artifact_sha256": "b3a781e9f4138e06e4358a1488426f442e550bffb030395b36749675e36bf901",
       "observed_events": [
         {
           "step": 0,
           "feedback": "Traffic-rule violation recorded.",
-          "manifest_sha256": "274ad1c2af81641f565d108b77d574a64a20fd7aa651e0af1b096d397863aad4",
+          "manifest_sha256": "b21560840c3a9bfbe214813d0f3c04bd727a205ae2dfed08bcc4d8cc162d8309",
           "collisions": {
             "human": 0,
             "object": 0,
@@ -262,7 +262,7 @@
           "recovery_collision_details": null,
           "hazard_events": [],
           "waypoint": {
-            "move_elapsed_seconds": 2.011118,
+            "move_elapsed_seconds": 2.014367,
             "move_command_duration_seconds": 2.0,
             "move_stop_reason": null,
             "actual_displacement_cm": 400.0
@@ -294,12 +294,12 @@
       "camera_error_cm": 0.0,
       "passed": true,
       "group": "rays",
-      "source_artifact_sha256": "481c48899b68d14461412dba6b6d5a412449867b55598873811ff9112e979b1a",
+      "source_artifact_sha256": "b3a781e9f4138e06e4358a1488426f442e550bffb030395b36749675e36bf901",
       "observed_events": [
         {
           "step": 0,
           "feedback": "Traffic-rule violation recorded.",
-          "manifest_sha256": "f5e91bea034b7b4fe6830400ed38689f53e5bbbe0c68ff1d58e254aa29e1edcc",
+          "manifest_sha256": "80620897593e00366977c3d4e178ce1436c1c1e028da77898ce75af6d7de7675",
           "collisions": {
             "human": 0,
             "object": 0,
@@ -313,7 +313,7 @@
           "recovery_collision_details": null,
           "hazard_events": [],
           "waypoint": {
-            "move_elapsed_seconds": 2.002693,
+            "move_elapsed_seconds": 2.008516,
             "move_command_duration_seconds": 2.0,
             "move_stop_reason": null,
             "actual_displacement_cm": 400.0004066222932
@@ -345,12 +345,12 @@
       "camera_error_cm": 0.0,
       "passed": true,
       "group": "rays",
-      "source_artifact_sha256": "481c48899b68d14461412dba6b6d5a412449867b55598873811ff9112e979b1a",
+      "source_artifact_sha256": "b3a781e9f4138e06e4358a1488426f442e550bffb030395b36749675e36bf901",
       "observed_events": [
         {
           "step": 0,
           "feedback": "Traffic-rule violation recorded.",
-          "manifest_sha256": "90b2295983b69979847da6d4f0264b8038eee3df317a530ac67d1f07d29ba56c",
+          "manifest_sha256": "68e6522c815aeedeaa25a8a03e453241492840b787e5b690b9609e2632e040bf",
           "collisions": {
             "human": 0,
             "object": 0,
@@ -364,7 +364,7 @@
           "recovery_collision_details": null,
           "hazard_events": [],
           "waypoint": {
-            "move_elapsed_seconds": 2.002616,
+            "move_elapsed_seconds": 2.010953,
             "move_command_duration_seconds": 2.0,
             "move_stop_reason": null,
             "actual_displacement_cm": 400.0004066222932
@@ -391,12 +391,12 @@
       "displacement_cm": 400.0,
       "passed": true,
       "group": "contacts",
-      "source_artifact_sha256": "68b7e203f16eb79b2dc688ed220dd2cd215b9a775f81219ddebcb935d1773109",
+      "source_artifact_sha256": "fbe4547a4b0c7706d0c9c6f64492fd2965c6e46d3e44c16d10870642d26f9d65",
       "observed_events": [
         {
           "step": 0,
           "feedback": "Traffic-rule violation recorded.",
-          "manifest_sha256": "2d39303d1091cad05f1227f13f82e5cec9fb87f036792c4c40d621ba8d66cb5d",
+          "manifest_sha256": "e298478b3c0fc42d10da8eb095c8db57cd7c88e6c42dde41b4b89cc4ec75afdd",
           "collisions": {
             "human": 0,
             "object": 0,
@@ -410,7 +410,7 @@
           "recovery_collision_details": null,
           "hazard_events": [],
           "waypoint": {
-            "move_elapsed_seconds": 2.008061,
+            "move_elapsed_seconds": 2.006859,
             "move_command_duration_seconds": 2.0,
             "move_stop_reason": null,
             "actual_displacement_cm": 400.0
@@ -430,19 +430,19 @@
       ],
       "vehicle_counter": 0,
       "position": [
-        -4770.021,
+        -4770.026,
         0.0,
         92.15
       ],
-      "displacement_cm": 229.97900000000027,
+      "displacement_cm": 229.97400000000016,
       "passed": true,
       "group": "contacts",
-      "source_artifact_sha256": "68b7e203f16eb79b2dc688ed220dd2cd215b9a775f81219ddebcb935d1773109",
+      "source_artifact_sha256": "fbe4547a4b0c7706d0c9c6f64492fd2965c6e46d3e44c16d10870642d26f9d65",
       "observed_events": [
         {
           "step": 0,
           "feedback": "You collided with a human. Traffic-rule violation recorded.",
-          "manifest_sha256": "7426a9fa0efc8eff60383cc87924b0ad03827a5e05c30fa9a213eb2f8f51991d",
+          "manifest_sha256": "8a666cb9a946c16a7f0f680824142a0dc9bf5b2d77d3704731d786c464ebacfa",
           "collisions": {
             "human": 1,
             "object": 0,
@@ -456,10 +456,10 @@
           "recovery_collision_details": null,
           "hazard_events": [],
           "waypoint": {
-            "move_elapsed_seconds": 1.175622,
+            "move_elapsed_seconds": 1.252253,
             "move_command_duration_seconds": 2.0,
             "move_stop_reason": "sweep_blocked",
-            "actual_displacement_cm": 229.97900000000027
+            "actual_displacement_cm": 229.97400000000016
           }
         }
       ]
@@ -476,19 +476,19 @@
       ],
       "vehicle_counter": 0,
       "position": [
-        -4867.368,
+        -4867.326,
         0.0,
         92.15
       ],
-      "displacement_cm": 132.6319999999996,
+      "displacement_cm": 132.67399999999998,
       "passed": true,
       "group": "contacts",
-      "source_artifact_sha256": "68b7e203f16eb79b2dc688ed220dd2cd215b9a775f81219ddebcb935d1773109",
+      "source_artifact_sha256": "fbe4547a4b0c7706d0c9c6f64492fd2965c6e46d3e44c16d10870642d26f9d65",
       "observed_events": [
         {
           "step": 0,
           "feedback": "You collided with an object. Traffic-rule violation recorded.",
-          "manifest_sha256": "78ffcb453421ccc071dbda81b0c4d639ab2b63b233eebb0825b5e469774258aa",
+          "manifest_sha256": "460a0e923e666d139f2b35af629139db81de37fb05851216ae4c4b3dce5f99ff",
           "collisions": {
             "human": 0,
             "object": 1,
@@ -502,10 +502,10 @@
           "recovery_collision_details": null,
           "hazard_events": [],
           "waypoint": {
-            "move_elapsed_seconds": 0.975501,
+            "move_elapsed_seconds": 0.694683,
             "move_command_duration_seconds": 2.0,
             "move_stop_reason": "sweep_blocked",
-            "actual_displacement_cm": 132.6319999999996
+            "actual_displacement_cm": 132.67399999999998
           }
         }
       ]
@@ -524,12 +524,22 @@
       "position": [
         -5000.0,
         0.0,
-        97.71
+        92.15
       ],
+      "initial_state": [
+        0,
+        0,
+        0,
+        0.0,
+        1,
+        1
+      ],
+      "setup_requested_sim_seconds": 0.5,
+      "setup_state_reads": 0,
       "rejected": true,
       "passed": true,
       "group": "initial",
-      "source_artifact_sha256": "e3443567e87a5f03d3cbc3fd4c08baac472aba3cb8f5931d6f4b9f453a6ae97b",
+      "source_artifact_sha256": "b39459e05847b35095461d52179cbd2a6c686ebec3c24e807bb7fe5a28c26292",
       "observed_events": []
     },
     {
@@ -544,18 +554,18 @@
       ],
       "vehicle_counter": 0,
       "position": [
-        -4980.78,
+        -4992.305,
         0.0,
         92.15
       ],
       "passed": true,
       "group": "inference",
-      "source_artifact_sha256": "82e3d9512a6f5177b407ff1704dae7d3028c87abf113f1b94fd516aa30ccbf89",
+      "source_artifact_sha256": "c7082e54687a269e48e37db1840baa48e06899786c44e1ed88d05bc16d274848",
       "observed_events": [
         {
           "step": 0,
           "feedback": "Traffic-rule violation recorded.",
-          "manifest_sha256": "6758ede1d74ce65a826ddd5c2d13cf69f2be53a146b7d0b74c4e4f1ee00e25ec",
+          "manifest_sha256": "6455099cd41e4f21250cf847ac7b45afc5a01d58d1714acadd6000f94679ab1e",
           "collisions": {
             "human": 0,
             "object": 0,
@@ -578,7 +588,7 @@
         {
           "step": 1,
           "feedback": "A trip hazard contact was detected.",
-          "manifest_sha256": "a83e4bb9ed2423af203f20c869bdc5f2b5b2c6b81b75843b1f5d7c46a6370eea",
+          "manifest_sha256": "7c07a245edb7c637b75109c34e8f0514246df4cb5eb2ba1e1342cdd9ca9fef10",
           "collisions": {
             "human": 0,
             "object": 0,
@@ -597,7 +607,7 @@
           "hazard_events": [
             {
               "kind": "fall",
-              "observed_sim_time_s": 1.127932,
+              "observed_sim_time_s": 1.134931,
               "position_cm": {
                 "x": -5000.0,
                 "y": 0.0
@@ -630,7 +640,7 @@
       ],
       "vehicle_counter": 0,
       "position": [
-        -4988.852,
+        -4992.218,
         0.0,
         92.15
       ],
@@ -638,12 +648,12 @@
       "injected": true,
       "native_human_counter": 1,
       "group": "recovery",
-      "source_artifact_sha256": "61a5b9f649693adab25a57e66e07b108745afd59911f69e51b7e1b495896a713",
+      "source_artifact_sha256": "8c0e0c0a9af52e1a44e478aeb8ddfb6356c6ea05566922f622f28c2e2ac9ad4d",
       "observed_events": [
         {
           "step": 0,
           "feedback": "A trip hazard contact was detected. During recovery, you collided with a human. Traffic-rule violation recorded.",
-          "manifest_sha256": "6ea8e02e75d49bda1eb378217dc195dc1301c0c7cbd756408c597f6330f36321",
+          "manifest_sha256": "718c30b54c028d2b8dbe654899f2477694ee846488ef1e140282ca3a85743a66",
           "collisions": {
             "human": 1,
             "object": 0,
@@ -662,7 +672,7 @@
           "hazard_events": [
             {
               "kind": "fall",
-              "observed_sim_time_s": 0.10215,
+              "observed_sim_time_s": 0.097363,
               "position_cm": {
                 "x": -5000.0,
                 "y": 0.0
@@ -695,7 +705,7 @@
       ],
       "vehicle_counter": 0,
       "position": [
-        -4991.876,
+        -4994.747,
         0.0,
         92.15
       ],
@@ -703,12 +713,12 @@
       "injected": true,
       "native_human_counter": 0,
       "group": "recovery",
-      "source_artifact_sha256": "61a5b9f649693adab25a57e66e07b108745afd59911f69e51b7e1b495896a713",
+      "source_artifact_sha256": "8c0e0c0a9af52e1a44e478aeb8ddfb6356c6ea05566922f622f28c2e2ac9ad4d",
       "observed_events": [
         {
           "step": 0,
           "feedback": "A trip hazard contact was detected. You contacted oil. You are decelerated. Traffic-rule violation recorded.",
-          "manifest_sha256": "0d8c9993597de5728cb601a625e53fb8ce7268562d52e0c3736f4e04fb310497",
+          "manifest_sha256": "8777727f830e433663c347c51733ef5c66f693c510cd2b1087ec0912c38e928d",
           "collisions": {
             "human": 0,
             "object": 0,
@@ -727,7 +737,7 @@
           "hazard_events": [
             {
               "kind": "fall",
-              "observed_sim_time_s": 0.14496,
+              "observed_sim_time_s": 0.09933,
               "position_cm": {
                 "x": -5000.0,
                 "y": 0.0
@@ -740,9 +750,9 @@
             },
             {
               "kind": "oil",
-              "observed_sim_time_s": 1.272633,
+              "observed_sim_time_s": 1.230442,
               "position_cm": {
-                "x": -4991.876,
+                "x": -4994.747,
                 "y": 0.0
               },
               "phase": "during_recovery",

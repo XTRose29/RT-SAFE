@@ -1,0 +1,1865 @@
+{
+  "method": "Read-only matching of engine request/response IDs within completed action windows. Batch spans can overlap; do not interpret their sum as an additive wall-time decomposition.",
+  "engine_log_snapshot_bytes": 22327153,
+  "engine_log_snapshot_sha256": "3c51bb11154f93a95f8a3128f0381080cf4997ce0e0ea2168e90d4ea7b7fef3d",
+  "rollout_log_sha256": "6effb64f2c3e594dad78039dc859f036cebfe70c5c17a10803277f551773fbeb",
+  "completed_recorded_actions": 18,
+  "actions": [
+    {
+      "step": 0,
+      "decision": 1,
+      "manifest_sha256": "9a4fbaa81818ef12c4df64163d31ef60ec86f18f84749fc1b187ba373115c08c",
+      "action": {
+        "type": "wait",
+        "param": "1",
+        "reasoning": "No pedestrian WALK signal is visible, so wait briefly before entering the roadway and avoid an illegal crossing while preserving progress."
+      },
+      "feedback": "Action completed successfully.",
+      "logged_action_wall_s": 8.486000061035156,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 0.0,
+        "native_game_time_end_seconds": 14.15845,
+        "native_game_time_delta_seconds": 14.15845,
+        "inference_exposure_native_seconds": 13.133018,
+        "inference_window_wall_seconds": 13.13,
+        "sim_time_start_seconds": 0.0,
+        "sim_time_end_seconds": 14.15845,
+        "sim_time_delta_seconds": 14.15845,
+        "step_wall_seconds_before_record_write": 23.726885873824358,
+        "observation_wall_seconds": 0.46966981515288353,
+        "planning_wall_seconds": 13.222039732616395,
+        "model_inference_wall_seconds": 9.055380582809448,
+        "context_construction_wall_seconds": 4.077531738206744,
+        "model_response_processing_wall_seconds": 3.02167609333992e-05,
+        "simulation_thinking_latency_seconds": 13.133018,
+        "realtime_control_overhead_seconds": 4.077637417190552,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 8.426420362200588,
+        "post_action_wall_seconds": 0.5404094438999891,
+        "other_wall_seconds_before_record_write": 14.67150529101491,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.37206848803907633,
+          "waypoint_annotation_wall_seconds": 0.004321369808167219,
+          "total_wall_seconds": 0.37638985784724355,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {},
+      "engine_requests": 751,
+      "engine_request_span_union_s": 7.426001071929932,
+      "categories": {
+        "native_clock_read": {
+          "requests": 30,
+          "summed_spans_s": 0.2560007572174072,
+          "span_union_s": 0.2560007572174072,
+          "median_span_ms": 6.000041961669922
+        },
+        "other": {
+          "requests": 178,
+          "summed_spans_s": 3.371999979019165,
+          "span_union_s": 3.371999979019165,
+          "median_span_ms": 16.99995994567871
+        },
+        "pause_resume": {
+          "requests": 30,
+          "summed_spans_s": 0.9930000305175781,
+          "span_union_s": 0.9930000305175781,
+          "median_span_ms": 18.49997043609619
+        },
+        "traffic_signal_read": {
+          "requests": 513,
+          "summed_spans_s": 86.57400608062744,
+          "span_union_s": 2.8050003051757812,
+          "median_span_ms": 163.9997959136963
+        }
+      }
+    },
+    {
+      "step": 1,
+      "decision": 2,
+      "manifest_sha256": "945805a53a6e8c10c0fb5aa4464aa7a18dca8ab244ea98078c99a0941507555b",
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "The route follows the marked crosswalk straight ahead; move efficiently toward the next waypoint while avoiding nearby pedestrians and remaining within the crossing."
+      },
+      "feedback": "You have reached the subgoal. Proceed to the next waypoint.",
+      "logged_action_wall_s": 17.27500009536743,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 14.15845,
+        "native_game_time_end_seconds": 25.162476,
+        "native_game_time_delta_seconds": 11.004026000000001,
+        "inference_exposure_native_seconds": 8.98841,
+        "inference_window_wall_seconds": 9.0,
+        "sim_time_start_seconds": 14.15845,
+        "sim_time_end_seconds": 25.162476,
+        "sim_time_delta_seconds": 11.004026000000001,
+        "step_wall_seconds_before_record_write": 28.883375336881727,
+        "observation_wall_seconds": 0.29229403380304575,
+        "planning_wall_seconds": 9.09475587727502,
+        "model_inference_wall_seconds": 8.036627054214478,
+        "context_construction_wall_seconds": 0.9627123549580574,
+        "model_response_processing_wall_seconds": 2.213241532444954e-05,
+        "simulation_thinking_latency_seconds": 8.98841,
+        "realtime_control_overhead_seconds": 0.9517829457855225,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 17.225641006138176,
+        "post_action_wall_seconds": 0.3989306022413075,
+        "other_wall_seconds_before_record_write": 20.84674828266725,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.21938921930268407,
+          "waypoint_annotation_wall_seconds": 0.002845028880983591,
+          "total_wall_seconds": 0.22223424818366766,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -29138.746,
+          "y": -700.0
+        },
+        "commanded_waypoint_cm": {
+          "x": -29138.746,
+          "y": -700.0
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -28738.746,
+          "y": -700.0
+        },
+        "post_action_position_cm": {
+          "x": -29138.746,
+          "y": -700.0
+        },
+        "selected_waypoint_distance_cm": 400.0,
+        "commanded_waypoint_distance_cm": 400.0,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.015616,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 400.0,
+        "selected_waypoint_endpoint_error_cm": 0.0,
+        "commanded_waypoint_endpoint_error_cm": 0.0,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 1614,
+      "engine_request_span_union_s": 15.027000904083252,
+      "categories": {
+        "native_clock_read": {
+          "requests": 66,
+          "summed_spans_s": 0.8579995632171631,
+          "span_union_s": 0.8579995632171631,
+          "median_span_ms": 13.499975204467773
+        },
+        "other": {
+          "requests": 513,
+          "summed_spans_s": 9.102001667022705,
+          "span_union_s": 8.81200122833252,
+          "median_span_ms": 16.000032424926758
+        },
+        "pause_resume": {
+          "requests": 66,
+          "summed_spans_s": 1.8089995384216309,
+          "span_union_s": 1.8089995384216309,
+          "median_span_ms": 19.500017166137695
+        },
+        "traffic_signal_read": {
+          "requests": 969,
+          "summed_spans_s": 112.85700273513794,
+          "span_union_s": 3.5480005741119385,
+          "median_span_ms": 109.9998950958252
+        }
+      }
+    },
+    {
+      "step": 2,
+      "decision": 3,
+      "manifest_sha256": "bee9b95bba13f2df58b8b250a4bed98e2bcf38874d05809514ff8dff35a48d54",
+      "action": {
+        "type": "turn_around",
+        "param": "R90",
+        "reasoning": "Turn right toward the subgoal while staying on the sidewalk, minimizing exposure before selecting a forward movement."
+      },
+      "feedback": "Action completed successfully.",
+      "logged_action_wall_s": 10.194000005722046,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 25.162476,
+        "native_game_time_end_seconds": 31.688984,
+        "native_game_time_delta_seconds": 6.526508,
+        "inference_exposure_native_seconds": 5.474841999999999,
+        "inference_window_wall_seconds": 5.5,
+        "sim_time_start_seconds": 25.162476,
+        "sim_time_end_seconds": 31.688984,
+        "sim_time_delta_seconds": 6.526508,
+        "step_wall_seconds_before_record_write": 17.236050128936768,
+        "observation_wall_seconds": 0.28215211909264326,
+        "planning_wall_seconds": 5.577490952797234,
+        "model_inference_wall_seconds": 4.658503532409668,
+        "context_construction_wall_seconds": 0.8370202081277966,
+        "model_response_processing_wall_seconds": 1.0019168257713318e-05,
+        "simulation_thinking_latency_seconds": 5.474841999999999,
+        "realtime_control_overhead_seconds": 0.8163384675903309,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 10.142853640951216,
+        "post_action_wall_seconds": 0.3737955912947655,
+        "other_wall_seconds_before_record_write": 12.5775465965271,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.20822129491716623,
+          "waypoint_annotation_wall_seconds": 0.003164513036608696,
+          "total_wall_seconds": 0.21138580795377493,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {},
+      "engine_requests": 1048,
+      "engine_request_span_union_s": 8.680002927780151,
+      "categories": {
+        "native_clock_read": {
+          "requests": 54,
+          "summed_spans_s": 0.4810004234313965,
+          "span_union_s": 0.4810004234313965,
+          "median_span_ms": 6.000041961669922
+        },
+        "other": {
+          "requests": 256,
+          "summed_spans_s": 4.696002006530762,
+          "span_union_s": 4.696002006530762,
+          "median_span_ms": 16.99995994567871
+        },
+        "pause_resume": {
+          "requests": 54,
+          "summed_spans_s": 1.2190005779266357,
+          "span_union_s": 1.2190005779266357,
+          "median_span_ms": 19.00005340576172
+        },
+        "traffic_signal_read": {
+          "requests": 684,
+          "summed_spans_s": 74.31700778007507,
+          "span_union_s": 2.2839999198913574,
+          "median_span_ms": 106.99987411499023
+        }
+      }
+    },
+    {
+      "step": 3,
+      "decision": 4,
+      "manifest_sha256": "c4a19b5cce983d73b3399601c2b73f10efdfe27ab8cffbdff787fa63734e1d9e",
+      "action": {
+        "type": "move_to",
+        "param": "6",
+        "reasoning": "Move 400 cm along the clear sidewalk-left path, avoiding the pedestrian ahead while maintaining progress toward the nearly aligned subgoal."
+      },
+      "feedback": "Action completed successfully.",
+      "logged_action_wall_s": 22.23799991607666,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 31.688984,
+        "native_game_time_end_seconds": 43.714676,
+        "native_game_time_delta_seconds": 12.025691999999996,
+        "inference_exposure_native_seconds": 10.011962999999998,
+        "inference_window_wall_seconds": 10.01,
+        "sim_time_start_seconds": 31.688984,
+        "sim_time_end_seconds": 43.714676,
+        "sim_time_delta_seconds": 12.025691999999996,
+        "step_wall_seconds_before_record_write": 36.456544887740165,
+        "observation_wall_seconds": 0.2908560140058398,
+        "planning_wall_seconds": 10.140930633991957,
+        "model_inference_wall_seconds": 7.802159547805786,
+        "context_construction_wall_seconds": 2.209878822788596,
+        "model_response_processing_wall_seconds": 1.3696029782295227e-05,
+        "simulation_thinking_latency_seconds": 10.011962999999998,
+        "realtime_control_overhead_seconds": 2.209803452194212,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 22.191544763278216,
+        "post_action_wall_seconds": 0.39432042418047786,
+        "other_wall_seconds_before_record_write": 28.65438533993438,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.23123733885586262,
+          "waypoint_annotation_wall_seconds": 0.0037352819927036762,
+          "total_wall_seconds": 0.2349726208485663,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 6,
+        "selected_image_waypoint_cm": {
+          "x": -29421.5887,
+          "y": -982.8427
+        },
+        "commanded_waypoint_cm": {
+          "x": -29421.5887,
+          "y": -982.8427
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29138.746,
+          "y": -700.0
+        },
+        "post_action_position_cm": {
+          "x": -29421.589,
+          "y": -982.843
+        },
+        "selected_waypoint_distance_cm": 399.9999823582254,
+        "commanded_waypoint_distance_cm": 399.9999823582254,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.013729,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 400.00040662229384,
+        "selected_waypoint_endpoint_error_cm": 0.00042426406844465206,
+        "commanded_waypoint_endpoint_error_cm": 0.00042426406844465206,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 1844,
+      "engine_request_span_union_s": 19.049000024795532,
+      "categories": {
+        "native_clock_read": {
+          "requests": 90,
+          "summed_spans_s": 1.1640007495880127,
+          "span_union_s": 1.1640007495880127,
+          "median_span_ms": 11.00003719329834
+        },
+        "other": {
+          "requests": 581,
+          "summed_spans_s": 10.648998975753784,
+          "span_union_s": 10.403999090194702,
+          "median_span_ms": 16.000032424926758
+        },
+        "pause_resume": {
+          "requests": 90,
+          "summed_spans_s": 2.2689995765686035,
+          "span_union_s": 2.2689995765686035,
+          "median_span_ms": 19.00005340576172
+        },
+        "traffic_signal_read": {
+          "requests": 1083,
+          "summed_spans_s": 164.12901902198792,
+          "span_union_s": 5.212000608444214,
+          "median_span_ms": 138.0000114440918
+        }
+      }
+    },
+    {
+      "step": 4,
+      "decision": 5,
+      "manifest_sha256": "2112e617bd00bbf00f0894a8401cb38d472b8221b05bffa5e1ee800d58cec46b",
+      "action": {
+        "type": "move_to",
+        "param": "7",
+        "reasoning": "Move 400 cm along the clear sidewalk toward the right-side subgoal, avoiding roadway entry and nearby pedestrians while maximizing progress."
+      },
+      "feedback": "While you were deciding, you collided with a pedestrian.",
+      "logged_action_wall_s": 17.802000045776367,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 43.714676,
+        "native_game_time_end_seconds": 52.342583,
+        "native_game_time_delta_seconds": 8.627907,
+        "inference_exposure_native_seconds": 6.618690000000001,
+        "inference_window_wall_seconds": 6.62,
+        "sim_time_start_seconds": 43.714676,
+        "sim_time_end_seconds": 52.342583,
+        "sim_time_delta_seconds": 8.627907,
+        "step_wall_seconds_before_record_write": 25.851563712581992,
+        "observation_wall_seconds": 0.30698404600843787,
+        "planning_wall_seconds": 6.71796167595312,
+        "model_inference_wall_seconds": 5.37485933303833,
+        "context_construction_wall_seconds": 1.2428600271232426,
+        "model_response_processing_wall_seconds": 1.7443206161260605e-05,
+        "simulation_thinking_latency_seconds": 6.618690000000001,
+        "realtime_control_overhead_seconds": 1.2438306669616708,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 17.748892751988024,
+        "post_action_wall_seconds": 0.4071998931467533,
+        "other_wall_seconds_before_record_write": 20.476704379543662,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.2321630991064012,
+          "waypoint_annotation_wall_seconds": 0.0031939693726599216,
+          "total_wall_seconds": 0.23535706847906113,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 7,
+        "selected_image_waypoint_cm": {
+          "x": -29421.589,
+          "y": -1382.843
+        },
+        "commanded_waypoint_cm": {
+          "x": -29421.589,
+          "y": -1382.843
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29421.589,
+          "y": -982.843
+        },
+        "post_action_position_cm": {
+          "x": -29421.589,
+          "y": -1382.843
+        },
+        "selected_waypoint_distance_cm": 400.0000000000001,
+        "commanded_waypoint_distance_cm": 400.0000000000001,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.009217,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 400.0000000000001,
+        "selected_waypoint_endpoint_error_cm": 0.0,
+        "commanded_waypoint_endpoint_error_cm": 0.0,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 1717,
+      "engine_request_span_union_s": 15.209999561309814,
+      "categories": {
+        "native_clock_read": {
+          "requests": 74,
+          "summed_spans_s": 0.8490011692047119,
+          "span_union_s": 0.8490011692047119,
+          "median_span_ms": 7.000207901000977
+        },
+        "other": {
+          "requests": 543,
+          "summed_spans_s": 9.398998737335205,
+          "span_union_s": 9.075999021530151,
+          "median_span_ms": 16.000032424926758
+        },
+        "pause_resume": {
+          "requests": 74,
+          "summed_spans_s": 1.9529995918273926,
+          "span_union_s": 1.9529995918273926,
+          "median_span_ms": 20.49994468688965
+        },
+        "traffic_signal_read": {
+          "requests": 1026,
+          "summed_spans_s": 108.23900413513184,
+          "span_union_s": 3.3319997787475586,
+          "median_span_ms": 105.99994659423828
+        }
+      }
+    },
+    {
+      "step": 5,
+      "decision": 6,
+      "manifest_sha256": "c70092f9856903c42694aaf4b4cae6342bb924f45ca9cbf76821bd3d6bd7cdc8",
+      "action": {
+        "type": "move_to",
+        "param": "2",
+        "reasoning": "Advance 200 cm along the sidewalk toward the nearly straight subgoal, limiting exposure while avoiding the ball, scooter, and nearby pedestrians."
+      },
+      "feedback": "Action completed successfully.",
+      "logged_action_wall_s": 9.684000015258789,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 52.342583,
+        "native_game_time_end_seconds": 61.947308,
+        "native_game_time_delta_seconds": 9.604725000000002,
+        "inference_exposure_native_seconds": 8.594864000000001,
+        "inference_window_wall_seconds": 8.62,
+        "sim_time_start_seconds": 52.342583,
+        "sim_time_end_seconds": 61.947308,
+        "sim_time_delta_seconds": 9.604725000000002,
+        "step_wall_seconds_before_record_write": 19.783721275161952,
+        "observation_wall_seconds": 0.3462786050513387,
+        "planning_wall_seconds": 8.706501258071512,
+        "model_inference_wall_seconds": 7.147395133972168,
+        "context_construction_wall_seconds": 1.4726798422634602,
+        "model_response_processing_wall_seconds": 2.0688865333795547e-05,
+        "simulation_thinking_latency_seconds": 8.594864000000001,
+        "realtime_control_overhead_seconds": 1.4474688660278332,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 9.655177941080183,
+        "post_action_wall_seconds": 0.36951679922640324,
+        "other_wall_seconds_before_record_write": 12.636326141189784,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.27797431871294975,
+          "waypoint_annotation_wall_seconds": 0.0034471568651497364,
+          "total_wall_seconds": 0.2814214755780995,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 2,
+        "selected_image_waypoint_cm": {
+          "x": -29421.589,
+          "y": -1582.843
+        },
+        "commanded_waypoint_cm": {
+          "x": -29421.589,
+          "y": -1582.843
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29421.589,
+          "y": -1382.843
+        },
+        "post_action_position_cm": {
+          "x": -29421.589,
+          "y": -1582.843
+        },
+        "selected_waypoint_distance_cm": 200.0,
+        "commanded_waypoint_distance_cm": 200.0,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.009861,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 200.0,
+        "selected_waypoint_endpoint_error_cm": 0.0,
+        "commanded_waypoint_endpoint_error_cm": 0.0,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 927,
+      "engine_request_span_union_s": 8.446002006530762,
+      "categories": {
+        "native_clock_read": {
+          "requests": 38,
+          "summed_spans_s": 0.42800045013427734,
+          "span_union_s": 0.42800045013427734,
+          "median_span_ms": 6.999969482421875
+        },
+        "other": {
+          "requests": 281,
+          "summed_spans_s": 5.024001121520996,
+          "span_union_s": 5.024001121520996,
+          "median_span_ms": 16.000032424926758
+        },
+        "pause_resume": {
+          "requests": 38,
+          "summed_spans_s": 0.9900002479553223,
+          "span_union_s": 0.9900002479553223,
+          "median_span_ms": 19.00005340576172
+        },
+        "traffic_signal_read": {
+          "requests": 570,
+          "summed_spans_s": 64.56401371955872,
+          "span_union_s": 2.004000186920166,
+          "median_span_ms": 108.00004005432129
+        }
+      }
+    },
+    {
+      "step": 6,
+      "decision": 7,
+      "manifest_sha256": "2284e380c2d92ee2ec83455f8a075fbd5220a3f1630272af85b83ac6c9e2e231",
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "The straight sidewalk route is clear enough, and a 400-centimeter move maximizes progress while keeping the roadway and nearby obstacles avoided."
+      },
+      "feedback": "While you were deciding, you collided with a pedestrian.",
+      "logged_action_wall_s": 20.447999954223633,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 61.947308,
+        "native_game_time_end_seconds": 74.194786,
+        "native_game_time_delta_seconds": 12.247477999999994,
+        "inference_exposure_native_seconds": 10.237140000000004,
+        "inference_window_wall_seconds": 10.26,
+        "sim_time_start_seconds": 61.947308,
+        "sim_time_end_seconds": 74.194786,
+        "sim_time_delta_seconds": 12.247477999999994,
+        "step_wall_seconds_before_record_write": 32.49616029020399,
+        "observation_wall_seconds": 0.3422883008606732,
+        "planning_wall_seconds": 10.345821294002235,
+        "model_inference_wall_seconds": 5.993414878845215,
+        "context_construction_wall_seconds": 4.26324851019308,
+        "model_response_processing_wall_seconds": 1.7162412405014038e-05,
+        "simulation_thinking_latency_seconds": 10.237140000000004,
+        "realtime_control_overhead_seconds": 4.243725121154789,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 20.405530331190675,
+        "post_action_wall_seconds": 0.4868663791567087,
+        "other_wall_seconds_before_record_write": 26.502745411358774,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.2583943409845233,
+          "waypoint_annotation_wall_seconds": 0.004234174732118845,
+          "total_wall_seconds": 0.26262851571664214,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -29421.589,
+          "y": -1982.843
+        },
+        "commanded_waypoint_cm": {
+          "x": -29421.589,
+          "y": -1982.843
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29421.589,
+          "y": -1582.843
+        },
+        "post_action_position_cm": {
+          "x": -29421.589,
+          "y": -1982.843
+        },
+        "selected_waypoint_distance_cm": 400.0,
+        "commanded_waypoint_distance_cm": 400.0,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.010338,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 400.0,
+        "selected_waypoint_endpoint_error_cm": 0.0,
+        "commanded_waypoint_endpoint_error_cm": 0.0,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 1808,
+      "engine_request_span_union_s": 16.4630024433136,
+      "categories": {
+        "native_clock_read": {
+          "requests": 78,
+          "summed_spans_s": 1.0760018825531006,
+          "span_union_s": 1.0760018825531006,
+          "median_span_ms": 10.500073432922363
+        },
+        "other": {
+          "requests": 569,
+          "summed_spans_s": 9.190999507904053,
+          "span_union_s": 8.963000535964966,
+          "median_span_ms": 16.000032424926758
+        },
+        "pause_resume": {
+          "requests": 78,
+          "summed_spans_s": 1.7380001544952393,
+          "span_union_s": 1.7380001544952393,
+          "median_span_ms": 17.999887466430664
+        },
+        "traffic_signal_read": {
+          "requests": 1083,
+          "summed_spans_s": 146.06099438667297,
+          "span_union_s": 4.685999870300293,
+          "median_span_ms": 128.00002098083496
+        }
+      }
+    },
+    {
+      "step": 7,
+      "decision": 8,
+      "manifest_sha256": "affe443598c51b031433bf82c9024f37f7721ca09bcc6d2913933de82c097fbc",
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "Straight sidewalk is clear enough for efficient progress; maintain course toward the slightly rightward subgoal while avoiding nearby pedestrians and roadway."
+      },
+      "feedback": "While you were deciding, you collided with a pedestrian.",
+      "logged_action_wall_s": 20.677000045776367,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 74.194786,
+        "native_game_time_end_seconds": 82.561592,
+        "native_game_time_delta_seconds": 8.366806000000011,
+        "inference_exposure_native_seconds": 6.3657380000000074,
+        "inference_window_wall_seconds": 6.37,
+        "sim_time_start_seconds": 74.194786,
+        "sim_time_end_seconds": 82.561592,
+        "sim_time_delta_seconds": 8.366806000000011,
+        "step_wall_seconds_before_record_write": 28.526641077827662,
+        "observation_wall_seconds": 0.2958370288833976,
+        "planning_wall_seconds": 6.483051917050034,
+        "model_inference_wall_seconds": 5.649019241333008,
+        "context_construction_wall_seconds": 0.7209507580846548,
+        "model_response_processing_wall_seconds": 3.837328404188156e-05,
+        "simulation_thinking_latency_seconds": 6.3657380000000074,
+        "realtime_control_overhead_seconds": 0.7167187586669996,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 20.640024485997856,
+        "post_action_wall_seconds": 0.3601723099127412,
+        "other_wall_seconds_before_record_write": 22.877621836494654,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.21564475819468498,
+          "waypoint_annotation_wall_seconds": 0.004917897749692202,
+          "total_wall_seconds": 0.22056265594437718,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -29421.589,
+          "y": -2382.843
+        },
+        "commanded_waypoint_cm": {
+          "x": -29421.589,
+          "y": -2382.843
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29421.589,
+          "y": -1982.843
+        },
+        "post_action_position_cm": {
+          "x": -29421.589,
+          "y": -2382.843
+        },
+        "selected_waypoint_distance_cm": 399.9999999999998,
+        "commanded_waypoint_distance_cm": 399.9999999999998,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.001068,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 399.9999999999998,
+        "selected_waypoint_endpoint_error_cm": 0.0,
+        "commanded_waypoint_endpoint_error_cm": 0.0,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 1790,
+      "engine_request_span_union_s": 16.667006492614746,
+      "categories": {
+        "native_clock_read": {
+          "requests": 72,
+          "summed_spans_s": 0.6599998474121094,
+          "span_union_s": 0.6599998474121094,
+          "median_span_ms": 6.000041961669922
+        },
+        "other": {
+          "requests": 563,
+          "summed_spans_s": 9.834003686904907,
+          "span_union_s": 9.556005954742432,
+          "median_span_ms": 16.000032424926758
+        },
+        "pause_resume": {
+          "requests": 72,
+          "summed_spans_s": 1.8650002479553223,
+          "span_union_s": 1.8650002479553223,
+          "median_span_ms": 17.50004291534424
+        },
+        "traffic_signal_read": {
+          "requests": 1083,
+          "summed_spans_s": 143.18702125549316,
+          "span_union_s": 4.586000442504883,
+          "median_span_ms": 117.00010299682617
+        }
+      }
+    },
+    {
+      "step": 8,
+      "decision": 9,
+      "manifest_sha256": "52ed6044194643d6b83ee88692e2d2a372d9bf15af281dcac391fbcc30884181",
+      "action": {
+        "type": "move_to",
+        "param": "7",
+        "reasoning": "Move diagonally right along the open sidewalk to avoid pedestrians ahead while making substantial progress toward the slightly rightward subgoal."
+      },
+      "feedback": "Action completed successfully.",
+      "logged_action_wall_s": 19.26699995994568,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 82.561592,
+        "native_game_time_end_seconds": 92.325859,
+        "native_game_time_delta_seconds": 9.76426699999999,
+        "inference_exposure_native_seconds": 7.753692999999998,
+        "inference_window_wall_seconds": 7.77,
+        "sim_time_start_seconds": 82.561592,
+        "sim_time_end_seconds": 92.325859,
+        "sim_time_delta_seconds": 9.76426699999999,
+        "step_wall_seconds_before_record_write": 28.530394745990634,
+        "observation_wall_seconds": 0.3488787389360368,
+        "planning_wall_seconds": 7.860837479121983,
+        "model_inference_wall_seconds": 6.404683351516724,
+        "context_construction_wall_seconds": 1.3638632949441671,
+        "model_response_processing_wall_seconds": 4.396308213472366e-05,
+        "simulation_thinking_latency_seconds": 7.753692999999998,
+        "realtime_control_overhead_seconds": 1.3490096484832748,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 19.224219799041748,
+        "post_action_wall_seconds": 0.35482341703027487,
+        "other_wall_seconds_before_record_write": 22.12571139447391,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.2691220212727785,
+          "waypoint_annotation_wall_seconds": 0.003723038826137781,
+          "total_wall_seconds": 0.2728450600989163,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 7,
+        "selected_image_waypoint_cm": {
+          "x": -29138.7463,
+          "y": -2665.6857
+        },
+        "commanded_waypoint_cm": {
+          "x": -29138.7463,
+          "y": -2665.6857
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29421.589,
+          "y": -2382.843
+        },
+        "post_action_position_cm": {
+          "x": -29138.746,
+          "y": -2665.686
+        },
+        "selected_waypoint_distance_cm": 399.99998235822545,
+        "commanded_waypoint_distance_cm": 399.99998235822545,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.010574,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 400.00040662229407,
+        "selected_waypoint_endpoint_error_cm": 0.00042426406860542954,
+        "commanded_waypoint_endpoint_error_cm": 0.00042426406860542954,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 1766,
+      "engine_request_span_union_s": 16.03299570083618,
+      "categories": {
+        "native_clock_read": {
+          "requests": 68,
+          "summed_spans_s": 0.8650007247924805,
+          "span_union_s": 0.8650007247924805,
+          "median_span_ms": 7.500171661376953
+        },
+        "other": {
+          "requests": 547,
+          "summed_spans_s": 9.559995651245117,
+          "span_union_s": 9.229994773864746,
+          "median_span_ms": 16.000032424926758
+        },
+        "pause_resume": {
+          "requests": 68,
+          "summed_spans_s": 1.8200008869171143,
+          "span_union_s": 1.8200008869171143,
+          "median_span_ms": 18.500089645385742
+        },
+        "traffic_signal_read": {
+          "requests": 1083,
+          "summed_spans_s": 130.55998873710632,
+          "span_union_s": 4.117999315261841,
+          "median_span_ms": 108.99996757507324
+        }
+      }
+    },
+    {
+      "step": 9,
+      "decision": 10,
+      "manifest_sha256": "eb20b79089a2c39fd17e1829ac2de1be539fb31d382451d40996a9a0df57184e",
+      "action": {
+        "type": "move_to",
+        "param": "6",
+        "reasoning": "Point 6 aligns closely with the subgoal and stays on the sidewalk, minimizing roadway exposure while making efficient progress."
+      },
+      "feedback": "You collided with a human.",
+      "logged_action_wall_s": 6.48799991607666,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 92.325859,
+        "native_game_time_end_seconds": 100.263901,
+        "native_game_time_delta_seconds": 7.93804200000001,
+        "inference_exposure_native_seconds": 7.38925900000001,
+        "inference_window_wall_seconds": 7.42,
+        "sim_time_start_seconds": 92.325859,
+        "sim_time_end_seconds": 100.263901,
+        "sim_time_delta_seconds": 7.93804200000001,
+        "step_wall_seconds_before_record_write": 15.52734665106982,
+        "observation_wall_seconds": 0.3069264027290046,
+        "planning_wall_seconds": 7.528859599959105,
+        "model_inference_wall_seconds": 6.645539045333862,
+        "context_construction_wall_seconds": 0.7724508419632912,
+        "model_response_processing_wall_seconds": 1.4948192983865738e-05,
+        "simulation_thinking_latency_seconds": 7.38925900000001,
+        "realtime_control_overhead_seconds": 0.7437199546661475,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 6.442761806771159,
+        "post_action_wall_seconds": 0.3985816459171474,
+        "other_wall_seconds_before_record_write": 8.881807605735958,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.22866754792630672,
+          "waypoint_annotation_wall_seconds": 0.0037697171792387962,
+          "total_wall_seconds": 0.23243726510554552,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 6,
+        "selected_image_waypoint_cm": {
+          "x": -29138.746,
+          "y": -3065.686
+        },
+        "commanded_waypoint_cm": {
+          "x": -29138.746,
+          "y": -3065.686
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29138.746,
+          "y": -2665.686
+        },
+        "post_action_position_cm": {
+          "x": -29138.746,
+          "y": -2772.785
+        },
+        "selected_waypoint_distance_cm": 400.0,
+        "commanded_waypoint_distance_cm": 400.0,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.548783,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 107.0989999999997,
+        "selected_waypoint_endpoint_error_cm": 292.9010000000003,
+        "commanded_waypoint_endpoint_error_cm": 292.9010000000003,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 665,
+      "engine_request_span_union_s": 5.7380006313323975,
+      "categories": {
+        "native_clock_read": {
+          "requests": 24,
+          "summed_spans_s": 0.32900047302246094,
+          "span_union_s": 0.32900047302246094,
+          "median_span_ms": 11.500000953674316
+        },
+        "other": {
+          "requests": 152,
+          "summed_spans_s": 2.684999465942383,
+          "span_union_s": 2.684999465942383,
+          "median_span_ms": 16.99995994567871
+        },
+        "pause_resume": {
+          "requests": 24,
+          "summed_spans_s": 0.5800001621246338,
+          "span_union_s": 0.5800001621246338,
+          "median_span_ms": 20.49994468688965
+        },
+        "traffic_signal_all_red_write": {
+          "requests": 180,
+          "summed_spans_s": 8.839005947113037,
+          "span_union_s": 0.8870000839233398,
+          "median_span_ms": 30.00009059906006
+        },
+        "traffic_signal_read": {
+          "requests": 285,
+          "summed_spans_s": 38.53500938415527,
+          "span_union_s": 1.25700044631958,
+          "median_span_ms": 124.00007247924805
+        }
+      }
+    },
+    {
+      "step": 10,
+      "decision": 11,
+      "manifest_sha256": "f5a0e3894f7c98f649be8e558207b4fd4190355d67a806945f572a3e8e0c56b1",
+      "action": {
+        "type": "move_to",
+        "param": "6",
+        "reasoning": "Move 400 cm along the clear sidewalk to the left, avoiding the pedestrian ahead while making safe progress toward the subgoal."
+      },
+      "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+      "logged_action_wall_s": 1.3280000686645508,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 100.263901,
+        "native_game_time_end_seconds": 107.34481,
+        "native_game_time_delta_seconds": 7.080908999999991,
+        "inference_exposure_native_seconds": 6.980659000000003,
+        "inference_window_wall_seconds": 7.01,
+        "sim_time_start_seconds": 100.263901,
+        "sim_time_end_seconds": 107.34481,
+        "sim_time_delta_seconds": 7.080908999999991,
+        "step_wall_seconds_before_record_write": 9.91361867217347,
+        "observation_wall_seconds": 0.3444959409534931,
+        "planning_wall_seconds": 7.076369707938284,
+        "model_inference_wall_seconds": 6.2628350257873535,
+        "context_construction_wall_seconds": 0.7459671101532876,
+        "model_response_processing_wall_seconds": 1.3113953173160553e-05,
+        "simulation_thinking_latency_seconds": 6.980659000000003,
+        "realtime_control_overhead_seconds": 0.7178239742126493,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 1.2857078001834452,
+        "post_action_wall_seconds": 0.3693335191346705,
+        "other_wall_seconds_before_record_write": 3.6507836463861167,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.2125979964621365,
+          "waypoint_annotation_wall_seconds": 0.003026941791176796,
+          "total_wall_seconds": 0.2156249382533133,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 6,
+        "selected_image_waypoint_cm": {
+          "x": -29421.5887,
+          "y": -3055.6277
+        },
+        "commanded_waypoint_cm": {
+          "x": -29421.5887,
+          "y": -3055.6277
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29138.746,
+          "y": -2772.785
+        },
+        "post_action_position_cm": {
+          "x": -29138.746,
+          "y": -2772.785
+        },
+        "selected_waypoint_distance_cm": 399.99998235822545,
+        "commanded_waypoint_distance_cm": 399.99998235822545,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.10025,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 0.0,
+        "selected_waypoint_endpoint_error_cm": 399.99998235822545,
+        "commanded_waypoint_endpoint_error_cm": 399.99998235822545,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 139,
+      "engine_request_span_union_s": 1.1430003643035889,
+      "categories": {
+        "native_clock_read": {
+          "requests": 2,
+          "summed_spans_s": 0.02200007438659668,
+          "span_union_s": 0.02200007438659668,
+          "median_span_ms": 11.00003719329834
+        },
+        "other": {
+          "requests": 42,
+          "summed_spans_s": 0.6300003528594971,
+          "span_union_s": 0.6300003528594971,
+          "median_span_ms": 15.49994945526123
+        },
+        "pause_resume": {
+          "requests": 2,
+          "summed_spans_s": 0.05099987983703613,
+          "span_union_s": 0.05099987983703613,
+          "median_span_ms": 25.499939918518066
+        },
+        "traffic_signal_all_red_write": {
+          "requests": 36,
+          "summed_spans_s": 1.474001407623291,
+          "span_union_s": 0.15400004386901855,
+          "median_span_ms": 40.50004482269287
+        },
+        "traffic_signal_read": {
+          "requests": 57,
+          "summed_spans_s": 9.014000177383423,
+          "span_union_s": 0.28600001335144043,
+          "median_span_ms": 154.00004386901855
+        }
+      }
+    },
+    {
+      "step": 11,
+      "decision": 12,
+      "manifest_sha256": "cb13ca2990759755c604f7b162fddd74dcdbe253866f9d75a199067eab46cb86",
+      "action": {
+        "type": "move_to",
+        "param": "7",
+        "reasoning": "Move along the clear sidewalk toward the right, avoiding nearby pedestrians and staying out of the roadway while making substantial progress toward the subgoal."
+      },
+      "feedback": "You collided with a human.",
+      "logged_action_wall_s": 24.24399995803833,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 107.34481,
+        "native_game_time_end_seconds": 115.323761,
+        "native_game_time_delta_seconds": 7.978951000000009,
+        "inference_exposure_native_seconds": 6.212738999999999,
+        "inference_window_wall_seconds": 6.23,
+        "sim_time_start_seconds": 107.34481,
+        "sim_time_end_seconds": 115.323761,
+        "sim_time_delta_seconds": 7.978951000000009,
+        "step_wall_seconds_before_record_write": 32.44562641624361,
+        "observation_wall_seconds": 0.2885402920655906,
+        "planning_wall_seconds": 6.320061321835965,
+        "model_inference_wall_seconds": 5.2260236740112305,
+        "context_construction_wall_seconds": 1.0072649982757866,
+        "model_response_processing_wall_seconds": 1.1431984603404999e-05,
+        "simulation_thinking_latency_seconds": 6.212738999999999,
+        "realtime_control_overhead_seconds": 0.9867153259887687,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 24.193031650967896,
+        "post_action_wall_seconds": 0.3808783548884094,
+        "other_wall_seconds_before_record_write": 27.219602742232382,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.2036927598528564,
+          "waypoint_annotation_wall_seconds": 0.003102225251495838,
+          "total_wall_seconds": 0.20679498510435224,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 7,
+        "selected_image_waypoint_cm": {
+          "x": -29138.746,
+          "y": -3172.785
+        },
+        "commanded_waypoint_cm": {
+          "x": -29138.746,
+          "y": -3172.785
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29138.746,
+          "y": -2772.785
+        },
+        "post_action_position_cm": {
+          "x": -29138.746,
+          "y": -3121.5
+        },
+        "selected_waypoint_distance_cm": 400.0,
+        "commanded_waypoint_distance_cm": 400.0,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.766212,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 348.71500000000015,
+        "selected_waypoint_endpoint_error_cm": 51.284999999999854,
+        "commanded_waypoint_endpoint_error_cm": 51.284999999999854,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 3554,
+      "engine_request_span_union_s": 22.802002429962158,
+      "categories": {
+        "native_clock_read": {
+          "requests": 62,
+          "summed_spans_s": 0.4890000820159912,
+          "span_union_s": 0.4890000820159912,
+          "median_span_ms": 5.000114440917969
+        },
+        "other": {
+          "requests": 493,
+          "summed_spans_s": 5.329998254776001,
+          "span_union_s": 5.303000211715698,
+          "median_span_ms": 13.000011444091797
+        },
+        "pause_resume": {
+          "requests": 62,
+          "summed_spans_s": 1.0990009307861328,
+          "span_union_s": 1.0990009307861328,
+          "median_span_ms": 17.499923706054688
+        },
+        "traffic_signal_all_red_write": {
+          "requests": 2025,
+          "summed_spans_s": 65.18901038169861,
+          "span_union_s": 7.9780004024505615,
+          "median_span_ms": 9.999990463256836
+        },
+        "traffic_signal_read": {
+          "requests": 912,
+          "summed_spans_s": 170.98200464248657,
+          "span_union_s": 7.933000802993774,
+          "median_span_ms": 77.5001049041748
+        }
+      }
+    },
+    {
+      "step": 12,
+      "decision": 13,
+      "manifest_sha256": "57b9ff8bbc04edfaa42fddc05b96ef349ee99d95f1dc5c83387ab42c143e00b4",
+      "action": {
+        "type": "move_to",
+        "param": "2",
+        "reasoning": "Move 200cm toward the slightly-left subgoal on the sidewalk, avoiding the robot ahead while limiting exposure to nearby pedestrians."
+      },
+      "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+      "logged_action_wall_s": 1.6549999713897705,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 115.323761,
+        "native_game_time_end_seconds": 122.662018,
+        "native_game_time_delta_seconds": 7.338256999999999,
+        "inference_exposure_native_seconds": 7.227119000000002,
+        "inference_window_wall_seconds": 7.23,
+        "sim_time_start_seconds": 115.323761,
+        "sim_time_end_seconds": 122.662018,
+        "sim_time_delta_seconds": 7.338256999999999,
+        "step_wall_seconds_before_record_write": 10.718851123005152,
+        "observation_wall_seconds": 0.29892735928297043,
+        "planning_wall_seconds": 7.34263322642073,
+        "model_inference_wall_seconds": 6.534261226654053,
+        "context_construction_wall_seconds": 0.6965504023246467,
+        "model_response_processing_wall_seconds": 1.4496967196464539e-05,
+        "simulation_thinking_latency_seconds": 7.227119000000002,
+        "realtime_control_overhead_seconds": 0.6928577733459491,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 1.61601533414796,
+        "post_action_wall_seconds": 0.36401438200846314,
+        "other_wall_seconds_before_record_write": 4.184589896351099,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.1992821111343801,
+          "waypoint_annotation_wall_seconds": 0.0033674370497465134,
+          "total_wall_seconds": 0.20264954818412662,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 2,
+        "selected_image_waypoint_cm": {
+          "x": -29138.746,
+          "y": -3321.5
+        },
+        "commanded_waypoint_cm": {
+          "x": -29138.746,
+          "y": -3321.5
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29138.746,
+          "y": -3121.5
+        },
+        "post_action_position_cm": {
+          "x": -29138.746,
+          "y": -3121.5
+        },
+        "selected_waypoint_distance_cm": 200.0,
+        "commanded_waypoint_distance_cm": 200.0,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.111138,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 0.0,
+        "selected_waypoint_endpoint_error_cm": 200.0,
+        "commanded_waypoint_endpoint_error_cm": 200.0,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 244,
+      "engine_request_span_union_s": 1.5180003643035889,
+      "categories": {
+        "native_clock_read": {
+          "requests": 4,
+          "summed_spans_s": 0.054000139236450195,
+          "span_union_s": 0.054000139236450195,
+          "median_span_ms": 11.500000953674316
+        },
+        "other": {
+          "requests": 44,
+          "summed_spans_s": 0.740999698638916,
+          "span_union_s": 0.740999698638916,
+          "median_span_ms": 16.000032424926758
+        },
+        "pause_resume": {
+          "requests": 4,
+          "summed_spans_s": 0.11100029945373535,
+          "span_union_s": 0.11100029945373535,
+          "median_span_ms": 25.00009536743164
+        },
+        "traffic_signal_all_red_write": {
+          "requests": 135,
+          "summed_spans_s": 5.3580005168914795,
+          "span_union_s": 0.40200018882751465,
+          "median_span_ms": 36.99994087219238
+        },
+        "traffic_signal_read": {
+          "requests": 57,
+          "summed_spans_s": 6.013004541397095,
+          "span_union_s": 0.21000003814697266,
+          "median_span_ms": 101.99999809265137
+        }
+      }
+    },
+    {
+      "step": 13,
+      "decision": 14,
+      "manifest_sha256": "a14378d994a13c337e666569256c39e391a33393a56fc122a1f206977ac6a29a",
+      "action": {
+        "type": "move_to",
+        "param": "6",
+        "reasoning": "Move 400cm left toward the subgoal, avoiding the nearby pedestrian while staying on the clear sidewalk and minimizing exposure."
+      },
+      "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+      "logged_action_wall_s": 1.0529999732971191,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 122.662018,
+        "native_game_time_end_seconds": 129.438904,
+        "native_game_time_delta_seconds": 6.776886000000005,
+        "inference_exposure_native_seconds": 6.676497999999995,
+        "inference_window_wall_seconds": 6.7,
+        "sim_time_start_seconds": 122.662018,
+        "sim_time_end_seconds": 129.438904,
+        "sim_time_delta_seconds": 6.776886000000005,
+        "step_wall_seconds_before_record_write": 10.184364250861108,
+        "observation_wall_seconds": 0.28119749994948506,
+        "planning_wall_seconds": 6.8971060030162334,
+        "model_inference_wall_seconds": 5.88859224319458,
+        "context_construction_wall_seconds": 0.8159613888710737,
+        "model_response_processing_wall_seconds": 8.414965122938156e-06,
+        "simulation_thinking_latency_seconds": 6.676497999999995,
+        "realtime_control_overhead_seconds": 0.7879057568054151,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 1.0023592910729349,
+        "post_action_wall_seconds": 0.4103920026682317,
+        "other_wall_seconds_before_record_write": 4.295772007666528,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.20184490596875548,
+          "waypoint_annotation_wall_seconds": 0.003640762995928526,
+          "total_wall_seconds": 0.205485668964684,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 6,
+        "selected_image_waypoint_cm": {
+          "x": -29421.5887,
+          "y": -3404.3427
+        },
+        "commanded_waypoint_cm": {
+          "x": -29421.5887,
+          "y": -3404.3427
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29138.746,
+          "y": -3121.5
+        },
+        "post_action_position_cm": {
+          "x": -29140.513,
+          "y": -3123.267
+        },
+        "selected_waypoint_distance_cm": 399.99998235822545,
+        "commanded_waypoint_distance_cm": 399.99998235822545,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.100388,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 2.498915364713012,
+        "selected_waypoint_endpoint_error_cm": 397.50106699351244,
+        "commanded_waypoint_endpoint_error_cm": 397.50106699351244,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 103,
+      "engine_request_span_union_s": 0.9369995594024658,
+      "categories": {
+        "native_clock_read": {
+          "requests": 2,
+          "summed_spans_s": 0.02200007438659668,
+          "span_union_s": 0.02200007438659668,
+          "median_span_ms": 11.00003719329834
+        },
+        "other": {
+          "requests": 42,
+          "summed_spans_s": 0.7279994487762451,
+          "span_union_s": 0.7279994487762451,
+          "median_span_ms": 16.99995994567871
+        },
+        "pause_resume": {
+          "requests": 2,
+          "summed_spans_s": 0.04500007629394531,
+          "span_union_s": 0.04500007629394531,
+          "median_span_ms": 22.500038146972656
+        },
+        "traffic_signal_read": {
+          "requests": 57,
+          "summed_spans_s": 4.82999849319458,
+          "span_union_s": 0.1419999599456787,
+          "median_span_ms": 85.99996566772461
+        }
+      }
+    },
+    {
+      "step": 14,
+      "decision": 15,
+      "manifest_sha256": "78af6d7bc8569f91ca4f2f4ac60bfda010544aefabdc3466df12517b793648de",
+      "action": {
+        "type": "move_to",
+        "param": "7",
+        "reasoning": "Move diagonally right along the sidewalk toward the subgoal, avoiding roadway entry and reducing exposure to nearby pedestrians and obscuring foliage."
+      },
+      "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+      "logged_action_wall_s": 1.13100004196167,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 129.438904,
+        "native_game_time_end_seconds": 136.909149,
+        "native_game_time_delta_seconds": 7.470245000000006,
+        "inference_exposure_native_seconds": 7.365660999999989,
+        "inference_window_wall_seconds": 7.38,
+        "sim_time_start_seconds": 129.438904,
+        "sim_time_end_seconds": 136.909149,
+        "sim_time_delta_seconds": 7.470245000000006,
+        "step_wall_seconds_before_record_write": 10.67493192711845,
+        "observation_wall_seconds": 0.3081151903606951,
+        "planning_wall_seconds": 7.454084856901318,
+        "model_inference_wall_seconds": 6.705135345458984,
+        "context_construction_wall_seconds": 0.6792335417121649,
+        "model_response_processing_wall_seconds": 1.4738179743289948e-05,
+        "simulation_thinking_latency_seconds": 7.365660999999989,
+        "realtime_control_overhead_seconds": 0.6605256545410043,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 1.0763479522429407,
+        "post_action_wall_seconds": 0.3779368228279054,
+        "other_wall_seconds_before_record_write": 3.969796581659466,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.22687817411497235,
+          "waypoint_annotation_wall_seconds": 0.0035920413210988045,
+          "total_wall_seconds": 0.23047021543607116,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 7,
+        "selected_image_waypoint_cm": {
+          "x": -29140.513,
+          "y": -3523.267
+        },
+        "commanded_waypoint_cm": {
+          "x": -29140.513,
+          "y": -3523.267
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29140.513,
+          "y": -3123.267
+        },
+        "post_action_position_cm": {
+          "x": -29140.514,
+          "y": -3128.438
+        },
+        "selected_waypoint_distance_cm": 400.0,
+        "commanded_waypoint_distance_cm": 400.0,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.104584,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 5.171000096693372,
+        "selected_waypoint_endpoint_error_cm": 394.8290000012661,
+        "commanded_waypoint_endpoint_error_cm": 394.8290000012661,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 109,
+      "engine_request_span_union_s": 0.995999813079834,
+      "categories": {
+        "native_clock_read": {
+          "requests": 4,
+          "summed_spans_s": 0.040000200271606445,
+          "span_union_s": 0.040000200271606445,
+          "median_span_ms": 10.500073432922363
+        },
+        "other": {
+          "requests": 44,
+          "summed_spans_s": 0.7099997997283936,
+          "span_union_s": 0.7099997997283936,
+          "median_span_ms": 16.000032424926758
+        },
+        "pause_resume": {
+          "requests": 4,
+          "summed_spans_s": 0.07799983024597168,
+          "span_union_s": 0.07799983024597168,
+          "median_span_ms": 18.000006675720215
+        },
+        "traffic_signal_read": {
+          "requests": 57,
+          "summed_spans_s": 5.495002746582031,
+          "span_union_s": 0.1679999828338623,
+          "median_span_ms": 101.00007057189941
+        }
+      }
+    },
+    {
+      "step": 15,
+      "decision": 16,
+      "manifest_sha256": "edc4bdb7c4fd37ce0ef15df68adb41a38763f32490d51e550ea7e45649f00458",
+      "action": {
+        "type": "move_to",
+        "param": "5",
+        "reasoning": "Move 400cm forward along the clear sidewalk toward the subgoal, limiting exposure while avoiding the roadway and nearby pedestrians."
+      },
+      "feedback": "You collided with a human.",
+      "logged_action_wall_s": 2.3449997901916504,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 136.909149,
+        "native_game_time_end_seconds": 143.957687,
+        "native_game_time_delta_seconds": 7.048537999999979,
+        "inference_exposure_native_seconds": 6.828155999999979,
+        "inference_window_wall_seconds": 6.85,
+        "sim_time_start_seconds": 136.909149,
+        "sim_time_end_seconds": 143.957687,
+        "sim_time_delta_seconds": 7.048537999999979,
+        "step_wall_seconds_before_record_write": 10.636709519196302,
+        "observation_wall_seconds": 0.28117922507226467,
+        "planning_wall_seconds": 6.922985001001507,
+        "model_inference_wall_seconds": 6.091982126235962,
+        "context_construction_wall_seconds": 0.7567480900324881,
+        "model_response_processing_wall_seconds": 2.3653730750083923e-05,
+        "simulation_thinking_latency_seconds": 6.828155999999979,
+        "realtime_control_overhead_seconds": 0.7361738737640167,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 2.2995587210170925,
+        "post_action_wall_seconds": 0.3965358757413924,
+        "other_wall_seconds_before_record_write": 4.54472739296034,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.201645087916404,
+          "waypoint_annotation_wall_seconds": 0.003085584379732609,
+          "total_wall_seconds": 0.20473067229613662,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 5,
+        "selected_image_waypoint_cm": {
+          "x": -29140.514,
+          "y": -3528.438
+        },
+        "commanded_waypoint_cm": {
+          "x": -29140.514,
+          "y": -3528.438
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29140.514,
+          "y": -3128.438
+        },
+        "post_action_position_cm": {
+          "x": -29140.514,
+          "y": -3158.77
+        },
+        "selected_waypoint_distance_cm": 400.0,
+        "commanded_waypoint_distance_cm": 400.0,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 0.220382,
+        "move_stop_reason": "sweep_blocked",
+        "actual_displacement_cm": 30.33199999999988,
+        "selected_waypoint_endpoint_error_cm": 369.6680000000001,
+        "commanded_waypoint_endpoint_error_cm": 369.6680000000001,
+        "reached_selected_waypoint": false,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 206,
+      "engine_request_span_union_s": 1.9699997901916504,
+      "categories": {
+        "native_clock_read": {
+          "requests": 10,
+          "summed_spans_s": 0.08899998664855957,
+          "span_union_s": 0.08899998664855957,
+          "median_span_ms": 4.999995231628418
+        },
+        "other": {
+          "requests": 72,
+          "summed_spans_s": 1.193000078201294,
+          "span_union_s": 1.193000078201294,
+          "median_span_ms": 16.000032424926758
+        },
+        "pause_resume": {
+          "requests": 10,
+          "summed_spans_s": 0.18499970436096191,
+          "span_union_s": 0.18499970436096191,
+          "median_span_ms": 17.999887466430664
+        },
+        "traffic_signal_read": {
+          "requests": 114,
+          "summed_spans_s": 15.68400502204895,
+          "span_union_s": 0.503000020980835,
+          "median_span_ms": 139.99998569488525
+        }
+      }
+    },
+    {
+      "step": 16,
+      "decision": 17,
+      "manifest_sha256": "7cc732da7cf4a7858e40d1916f646e378081902703f73c1b95c357aec5d66a78",
+      "action": {
+        "type": "move_to",
+        "param": "3",
+        "reasoning": "Move 200 cm diagonally left to avoid the nearby pedestrian while making safe progress toward the left-offset subgoal."
+      },
+      "feedback": "Action completed successfully.",
+      "logged_action_wall_s": 9.42199993133545,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 143.957687,
+        "native_game_time_end_seconds": 151.806931,
+        "native_game_time_delta_seconds": 7.849243999999999,
+        "inference_exposure_native_seconds": 6.844559000000004,
+        "inference_window_wall_seconds": 6.87,
+        "sim_time_start_seconds": 143.957687,
+        "sim_time_end_seconds": 151.806931,
+        "sim_time_delta_seconds": 7.849243999999999,
+        "step_wall_seconds_before_record_write": 17.949870789889246,
+        "observation_wall_seconds": 0.2842218759469688,
+        "planning_wall_seconds": 6.954482826869935,
+        "model_inference_wall_seconds": 5.845414876937866,
+        "context_construction_wall_seconds": 1.0281177978031337,
+        "model_response_processing_wall_seconds": 1.0809861123561859e-05,
+        "simulation_thinking_latency_seconds": 6.844559000000004,
+        "realtime_control_overhead_seconds": 0.9991441230621376,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 9.369341928046197,
+        "post_action_wall_seconds": 0.4427521522156894,
+        "other_wall_seconds_before_record_write": 12.10445591295138,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.2009107400663197,
+          "waypoint_annotation_wall_seconds": 0.004275382962077856,
+          "total_wall_seconds": 0.20518612302839756,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 3,
+        "selected_image_waypoint_cm": {
+          "x": -29281.9354,
+          "y": -3300.1914
+        },
+        "commanded_waypoint_cm": {
+          "x": -29281.9354,
+          "y": -3300.1914
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29140.514,
+          "y": -3158.77
+        },
+        "post_action_position_cm": {
+          "x": -29281.935,
+          "y": -3300.191
+        },
+        "selected_waypoint_distance_cm": 200.00006188979003,
+        "commanded_waypoint_distance_cm": 200.00006188979003,
+        "move_command_duration_seconds": 1.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 1.004685,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 199.9994962043668,
+        "selected_waypoint_endpoint_error_cm": 0.0005656854231994647,
+        "commanded_waypoint_endpoint_error_cm": 0.0005656854231994647,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 854,
+      "engine_request_span_union_s": 6.713999032974243,
+      "categories": {
+        "native_clock_read": {
+          "requests": 40,
+          "summed_spans_s": 0.42599964141845703,
+          "span_union_s": 0.42599964141845703,
+          "median_span_ms": 7.500052452087402
+        },
+        "other": {
+          "requests": 261,
+          "summed_spans_s": 3.8420004844665527,
+          "span_union_s": 3.8420004844665527,
+          "median_span_ms": 15.000104904174805
+        },
+        "pause_resume": {
+          "requests": 40,
+          "summed_spans_s": 0.8559989929199219,
+          "span_union_s": 0.8559989929199219,
+          "median_span_ms": 16.499996185302734
+        },
+        "traffic_signal_read": {
+          "requests": 513,
+          "summed_spans_s": 55.2820041179657,
+          "span_union_s": 1.5899999141693115,
+          "median_span_ms": 88.99998664855957
+        }
+      }
+    },
+    {
+      "step": 17,
+      "decision": 18,
+      "manifest_sha256": "fc7726e4cf471e8798457de448abb9ed6f2aa83b2409543816e073dcba8e305d",
+      "action": {
+        "type": "move_to",
+        "param": "7",
+        "reasoning": "Move toward the subgoal along the clear right-side sidewalk, avoiding roadway entry and minimizing exposure near pedestrians."
+      },
+      "feedback": "You have reached the final destination. You contacted water. You are slipping.",
+      "logged_action_wall_s": 20.075999975204468,
+      "timing": {
+        "simulation_clock_source": "ue:GetGameTimeSinceCreation",
+        "controller_update_policy": "accumulated_native_interval_v1",
+        "native_game_time_start_seconds": 151.806931,
+        "native_game_time_end_seconds": 159.496964,
+        "native_game_time_delta_seconds": 7.690033,
+        "inference_exposure_native_seconds": 5.68040400000001,
+        "inference_window_wall_seconds": 5.7,
+        "sim_time_start_seconds": 151.806931,
+        "sim_time_end_seconds": 159.496964,
+        "sim_time_delta_seconds": 7.690033,
+        "step_wall_seconds_before_record_write": 27.30059892917052,
+        "observation_wall_seconds": 0.2922622780315578,
+        "planning_wall_seconds": 5.765410504769534,
+        "model_inference_wall_seconds": 4.963765621185303,
+        "context_construction_wall_seconds": 0.7391068870201707,
+        "model_response_processing_wall_seconds": 1.1552125215530396e-05,
+        "simulation_thinking_latency_seconds": 5.68040400000001,
+        "realtime_control_overhead_seconds": 0.7166383788147073,
+        "concurrent_realtime_inference": true,
+        "action_wall_seconds": 20.027191624045372,
+        "post_action_wall_seconds": 0.4077407889999449,
+        "other_wall_seconds_before_record_write": 22.336833307985216,
+        "input_render": {
+          "ue_capture_wall_seconds": 0.2104981760494411,
+          "waypoint_annotation_wall_seconds": 0.003163420595228672,
+          "total_wall_seconds": 0.21366159664466977,
+          "resolution_pixels": [
+            720,
+            640
+          ]
+        }
+      },
+      "native_vs_accounted_delta_error_s": 0.0,
+      "waypoint_execution": {
+        "selected_image_waypoint_index": 7,
+        "selected_image_waypoint_cm": {
+          "x": -29281.935,
+          "y": -3700.191
+        },
+        "commanded_waypoint_cm": {
+          "x": -29281.935,
+          "y": -3700.191
+        },
+        "selected_waypoint_matches_command": true,
+        "pre_action_position_cm": {
+          "x": -29281.935,
+          "y": -3300.191
+        },
+        "post_action_position_cm": {
+          "x": -29281.935,
+          "y": -3700.191
+        },
+        "selected_waypoint_distance_cm": 400.0,
+        "commanded_waypoint_distance_cm": 400.0,
+        "move_command_duration_seconds": 2.0,
+        "move_execution_mode": "ue_swept_segment_v2",
+        "move_elapsed_seconds": 2.009629,
+        "move_stop_reason": null,
+        "actual_displacement_cm": 400.0,
+        "selected_waypoint_endpoint_error_cm": 0.0,
+        "commanded_waypoint_endpoint_error_cm": 0.0,
+        "reached_selected_waypoint": true,
+        "endpoint_tolerance_cm": 25.0
+      },
+      "engine_requests": 1802,
+      "engine_request_span_union_s": 15.506999254226685,
+      "categories": {
+        "native_clock_read": {
+          "requests": 76,
+          "summed_spans_s": 1.0199992656707764,
+          "span_union_s": 1.0199992656707764,
+          "median_span_ms": 6.000041961669922
+        },
+        "other": {
+          "requests": 567,
+          "summed_spans_s": 7.631998062133789,
+          "span_union_s": 7.302000284194946,
+          "median_span_ms": 14.000177383422852
+        },
+        "pause_resume": {
+          "requests": 76,
+          "summed_spans_s": 3.101999521255493,
+          "span_union_s": 3.101999521255493,
+          "median_span_ms": 16.000032424926758
+        },
+        "traffic_signal_read": {
+          "requests": 1083,
+          "summed_spans_s": 110.11499667167664,
+          "span_union_s": 4.083000183105469,
+          "median_span_ms": 78.99999618530273
+        }
+      }
+    }
+  ],
+  "source_commit": "691bec6cec7d376e625b798b019ef6a8bb949c0c",
+  "raw_artifact_sha256": "3fa160bec6bdab129a1529fc2b588b1b151069ae529c3c7e3674cedf109b6c1b"
+}

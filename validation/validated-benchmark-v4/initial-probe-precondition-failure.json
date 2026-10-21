@@ -1,0 +1,53 @@
+{
+  "scope": "Two failed initial-hazard probe attempts, retained and excluded from passing checks.",
+  "attempts": [
+    {
+      "passed": false,
+      "initial_state": [
+        0,
+        0,
+        0,
+        0.0,
+        0,
+        1
+      ],
+      "setup_overlap_samples": null,
+      "rejected": false,
+      "fall_count": 1,
+      "raw_sha256": "a50a60f1e07bec4cf44a01d294f26a588b47c3e004fe7687e317b4962ce05049"
+    },
+    {
+      "passed": false,
+      "initial_state": [
+        0,
+        0,
+        0,
+        0.0,
+        0,
+        1
+      ],
+      "setup_overlap_samples": [
+        [
+          0,
+          0,
+          0,
+          0.0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0.0,
+          1,
+          1
+        ]
+      ],
+      "rejected": false,
+      "fall_count": 0,
+      "raw_sha256": "d290ad667a12fbb7dc20dfcd55ef1fdcd0ecb9d42fed88c404d9b0c2c7953a40"
+    }
+  ],
+  "diagnosis": "The fixed 0.1-second setup advance missed the initial report in the first attempt. Polling during setup then observed the trip flag but it disappeared before the rejection check. The paused-read diagnostic independently reproduced this nonpersistent report. The revised fixture advances 0.5 seconds without consuming a state sample before the first decision."
+}

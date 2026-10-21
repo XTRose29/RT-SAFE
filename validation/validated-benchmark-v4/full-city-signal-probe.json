@@ -1,0 +1,149 @@
+{
+  "source_commit": "0c25fcd",
+  "scope": "RT15 full-city signal controller, 3 static background vehicles, no task pedestrians or other dynamic task hazards. Twenty 6-second native advances, normal 0.5-second controller interval. This is not a paired replay of task-16 recovery, which invokes shorter advances. No model and no episode score.",
+  "native_sim_seconds": 120.247826,
+  "steps": [
+    {
+      "step": 0,
+      "wall_seconds": 13.573334038257599,
+      "red_calls": 0,
+      "red_heads": 0,
+      "sim_time": 6.017806
+    },
+    {
+      "step": 1,
+      "wall_seconds": 13.70721777388826,
+      "red_calls": 0,
+      "red_heads": 0,
+      "sim_time": 12.031486
+    },
+    {
+      "step": 2,
+      "wall_seconds": 14.72266981890425,
+      "red_calls": 0,
+      "red_heads": 0,
+      "sim_time": 18.040932
+    },
+    {
+      "step": 3,
+      "wall_seconds": 14.000046352855861,
+      "red_calls": 0,
+      "red_heads": 0,
+      "sim_time": 24.059607
+    },
+    {
+      "step": 4,
+      "wall_seconds": 14.290753020904958,
+      "red_calls": 0,
+      "red_heads": 0,
+      "sim_time": 30.068895
+    },
+    {
+      "step": 5,
+      "wall_seconds": 17.665523879230022,
+      "red_calls": 0,
+      "red_heads": 0,
+      "sim_time": 36.07428
+    },
+    {
+      "step": 6,
+      "wall_seconds": 14.068535728845745,
+      "red_calls": 0,
+      "red_heads": 0,
+      "sim_time": 42.086185
+    },
+    {
+      "step": 7,
+      "wall_seconds": 13.657028388231993,
+      "red_calls": 0,
+      "red_heads": 0,
+      "sim_time": 48.100773
+    },
+    {
+      "step": 8,
+      "wall_seconds": 13.601768247783184,
+      "red_calls": 0,
+      "red_heads": 0,
+      "sim_time": 54.150566
+    },
+    {
+      "step": 9,
+      "wall_seconds": 13.736657193861902,
+      "red_calls": 0,
+      "red_heads": 0,
+      "sim_time": 60.166275
+    },
+    {
+      "step": 10,
+      "wall_seconds": 13.650012753438205,
+      "red_calls": 0,
+      "red_heads": 0,
+      "sim_time": 66.167801
+    },
+    {
+      "step": 11,
+      "wall_seconds": 13.37628011405468,
+      "red_calls": 0,
+      "red_heads": 0,
+      "sim_time": 72.18055
+    },
+    {
+      "step": 12,
+      "wall_seconds": 13.87257228884846,
+      "red_calls": 0,
+      "red_heads": 0,
+      "sim_time": 78.20137
+    },
+    {
+      "step": 13,
+      "wall_seconds": 13.588797775097191,
+      "red_calls": 0,
+      "red_heads": 0,
+      "sim_time": 84.202003
+    },
+    {
+      "step": 14,
+      "wall_seconds": 14.424950263928622,
+      "red_calls": 14,
+      "red_heads": 84,
+      "sim_time": 90.205185
+    },
+    {
+      "step": 15,
+      "wall_seconds": 15.017671830020845,
+      "red_calls": 24,
+      "red_heads": 144,
+      "sim_time": 96.207687
+    },
+    {
+      "step": 16,
+      "wall_seconds": 15.326121600810438,
+      "red_calls": 18,
+      "red_heads": 108,
+      "sim_time": 102.218788
+    },
+    {
+      "step": 17,
+      "wall_seconds": 21.289024190045893,
+      "red_calls": 96,
+      "red_heads": 720,
+      "sim_time": 108.23082
+    },
+    {
+      "step": 18,
+      "wall_seconds": 23.450478790793568,
+      "red_calls": 96,
+      "red_heads": 720,
+      "sim_time": 114.245232
+    },
+    {
+      "step": 19,
+      "wall_seconds": 16.913148280698806,
+      "red_calls": 32,
+      "red_heads": 240,
+      "sim_time": 120.247826
+    }
+  ],
+  "red_update_calls": 280,
+  "raw_sha256": "e7cf2463fc542df86b6765982c4527191770ef584c2d7b347e0de6e0207e251c"
+}

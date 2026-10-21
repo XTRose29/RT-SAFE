@@ -1,0 +1,873 @@
+{
+  "source_commit": "691bec6cec7d376e625b798b019ef6a8bb949c0c",
+  "scope": "Observed action choices in completed validation episodes; not a causal model/benchmark attribution or model ranking.",
+  "episodes": [
+    {
+      "task_id": 1,
+      "model": "gpt-5.6-luna",
+      "action_counts": {
+        "move_to": 33,
+        "turn_around": 7,
+        "wait": 4
+      },
+      "blocked_move_steps": [
+        0,
+        1,
+        4,
+        5,
+        11,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        24,
+        25,
+        29
+      ],
+      "same_image_dot_selected_immediately_after_block_steps": [
+        0,
+        11,
+        14,
+        16
+      ],
+      "repeat_definition": "Same action type and image-dot index on the following decision; this need not be the same world-space endpoint.",
+      "step_wall_seconds_before_record_write_sum": 981.9356435663067,
+      "median_action_wall_seconds": 9.825052374973893,
+      "max_action_wall_seconds": 34.594543751794845,
+      "max_post_action_wall_seconds": 38.16818701196462,
+      "decisions": [
+        {
+          "step": 0,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "You collided with a human.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 41.24200000000019
+        },
+        {
+          "step": 1,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "You collided with a human.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 132.94800000000032
+        },
+        {
+          "step": 2,
+          "type": "move_to",
+          "param": "2",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 200.0
+        },
+        {
+          "step": 3,
+          "type": "move_to",
+          "param": "2",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 200.0
+        },
+        {
+          "step": 4,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "You collided with a human. You contacted oil. You are decelerated.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 340.1229999999996
+        },
+        {
+          "step": 5,
+          "type": "move_to",
+          "param": "2",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 0.0
+        },
+        {
+          "step": 6,
+          "type": "move_to",
+          "param": "4",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 199.99949620436556
+        },
+        {
+          "step": 7,
+          "type": "turn_around",
+          "param": "L60",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 8,
+          "type": "move_to",
+          "param": "2",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 200.00033809971453
+        },
+        {
+          "step": 9,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.0004173910319
+        },
+        {
+          "step": 10,
+          "type": "move_to",
+          "param": "2",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 200.00033809971453
+        },
+        {
+          "step": 11,
+          "type": "move_to",
+          "param": "4",
+          "feedback": "You collided with a human.",
+          "stop_reason": "native_contact",
+          "displacement_cm": 0.0
+        },
+        {
+          "step": 12,
+          "type": "move_to",
+          "param": "4",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 200.00007929248397
+        },
+        {
+          "step": 13,
+          "type": "turn_around",
+          "param": "L90",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 14,
+          "type": "move_to",
+          "param": "2",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 35.628907729538795
+        },
+        {
+          "step": 15,
+          "type": "move_to",
+          "param": "2",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 0.0
+        },
+        {
+          "step": 16,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 0.0
+        },
+        {
+          "step": 17,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 0.0
+        },
+        {
+          "step": 18,
+          "type": "turn_around",
+          "param": "R30",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 19,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 0.0
+        },
+        {
+          "step": 20,
+          "type": "move_to",
+          "param": "3",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 0.0
+        },
+        {
+          "step": 21,
+          "type": "move_to",
+          "param": "7",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 0.0
+        },
+        {
+          "step": 22,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.00041739103233
+        },
+        {
+          "step": 23,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 399.99945146212406
+        },
+        {
+          "step": 24,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "You collided with a building. The agent remains at the contact position; choose a different direction. ",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 235.96060052898653
+        },
+        {
+          "step": 25,
+          "type": "move_to",
+          "param": "6",
+          "feedback": "You collided with a human.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 329.7454104790542
+        },
+        {
+          "step": 26,
+          "type": "move_to",
+          "param": "4",
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "stop_reason": null,
+          "displacement_cm": 200.00007929248454
+        },
+        {
+          "step": 27,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.000417391032
+        },
+        {
+          "step": 28,
+          "type": "turn_around",
+          "param": "L90",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 29,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "You have reached the subgoal. Proceed to the next waypoint. You collided with a human.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 353.5601705678957
+        },
+        {
+          "step": 30,
+          "type": "move_to",
+          "param": "6",
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "stop_reason": null,
+          "displacement_cm": 400.000128099979
+        },
+        {
+          "step": 31,
+          "type": "wait",
+          "param": "2",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 32,
+          "type": "wait",
+          "param": "1",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 33,
+          "type": "turn_around",
+          "param": "R60",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 34,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "Traffic-rule violation recorded.",
+          "stop_reason": null,
+          "displacement_cm": 400.0001280999806
+        },
+        {
+          "step": 35,
+          "type": "wait",
+          "param": "2",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 36,
+          "type": "wait",
+          "param": "3",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 37,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.00012809997895
+        },
+        {
+          "step": 38,
+          "type": "move_to",
+          "param": "6",
+          "feedback": "You have reached the subgoal. Proceed to the next waypoint. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": null,
+          "displacement_cm": 400.00041739103165
+        },
+        {
+          "step": 39,
+          "type": "turn_around",
+          "param": "L60",
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 40,
+          "type": "move_to",
+          "param": "1",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 100.00016904985749
+        },
+        {
+          "step": 41,
+          "type": "move_to",
+          "param": "6",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.0001280999798
+        },
+        {
+          "step": 42,
+          "type": "turn_around",
+          "param": "R60",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 43,
+          "type": "move_to",
+          "param": "2",
+          "feedback": "You have reached the final destination. A trip hazard contact was detected. During recovery, you collided with a human. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": null,
+          "displacement_cm": 200.0000640499899
+        }
+      ]
+    },
+    {
+      "task_id": 8,
+      "model": "gpt-5.6-luna",
+      "action_counts": {
+        "wait": 1,
+        "move_to": 16,
+        "turn_around": 1
+      },
+      "blocked_move_steps": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "same_image_dot_selected_immediately_after_block_steps": [
+        9
+      ],
+      "repeat_definition": "Same action type and image-dot index on the following decision; this need not be the same world-space endpoint.",
+      "step_wall_seconds_before_record_write_sum": 386.8432556078769,
+      "median_action_wall_seconds": 9.8990157910157,
+      "max_action_wall_seconds": 24.193031650967896,
+      "max_post_action_wall_seconds": 0.5404094438999891,
+      "decisions": [
+        {
+          "step": 0,
+          "type": "wait",
+          "param": "1",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 1,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "You have reached the subgoal. Proceed to the next waypoint.",
+          "stop_reason": null,
+          "displacement_cm": 400.0
+        },
+        {
+          "step": 2,
+          "type": "turn_around",
+          "param": "R90",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 3,
+          "type": "move_to",
+          "param": "6",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.00040662229384
+        },
+        {
+          "step": 4,
+          "type": "move_to",
+          "param": "7",
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "stop_reason": null,
+          "displacement_cm": 400.0000000000001
+        },
+        {
+          "step": 5,
+          "type": "move_to",
+          "param": "2",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 200.0
+        },
+        {
+          "step": 6,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "stop_reason": null,
+          "displacement_cm": 400.0
+        },
+        {
+          "step": 7,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "stop_reason": null,
+          "displacement_cm": 399.9999999999998
+        },
+        {
+          "step": 8,
+          "type": "move_to",
+          "param": "7",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.00040662229407
+        },
+        {
+          "step": 9,
+          "type": "move_to",
+          "param": "6",
+          "feedback": "You collided with a human.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 107.0989999999997
+        },
+        {
+          "step": 10,
+          "type": "move_to",
+          "param": "6",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 0.0
+        },
+        {
+          "step": 11,
+          "type": "move_to",
+          "param": "7",
+          "feedback": "You collided with a human.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 348.71500000000015
+        },
+        {
+          "step": 12,
+          "type": "move_to",
+          "param": "2",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 0.0
+        },
+        {
+          "step": 13,
+          "type": "move_to",
+          "param": "6",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 2.498915364713012
+        },
+        {
+          "step": 14,
+          "type": "move_to",
+          "param": "7",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 5.171000096693372
+        },
+        {
+          "step": 15,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "You collided with a human.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 30.33199999999988
+        },
+        {
+          "step": 16,
+          "type": "move_to",
+          "param": "3",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 199.9994962043668
+        },
+        {
+          "step": 17,
+          "type": "move_to",
+          "param": "7",
+          "feedback": "You have reached the final destination. You contacted water. You are slipping.",
+          "stop_reason": null,
+          "displacement_cm": 400.0
+        }
+      ]
+    },
+    {
+      "task_id": 18,
+      "model": "gpt-5.6-luna",
+      "action_counts": {
+        "move_to": 29,
+        "turn_around": 4,
+        "wait": 1
+      },
+      "blocked_move_steps": [
+        16,
+        18,
+        22,
+        24,
+        25,
+        26,
+        27,
+        28,
+        30,
+        31,
+        32
+      ],
+      "same_image_dot_selected_immediately_after_block_steps": [
+        30
+      ],
+      "repeat_definition": "Same action type and image-dot index on the following decision; this need not be the same world-space endpoint.",
+      "step_wall_seconds_before_record_write_sum": 1045.7243508864194,
+      "median_action_wall_seconds": 13.869574685348198,
+      "max_action_wall_seconds": 33.5876255100593,
+      "max_post_action_wall_seconds": 121.77229652972892,
+      "decisions": [
+        {
+          "step": 0,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.0
+        },
+        {
+          "step": 1,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "You contacted water. You are slipping. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": null,
+          "displacement_cm": 400.0
+        },
+        {
+          "step": 2,
+          "type": "move_to",
+          "param": "4",
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "stop_reason": null,
+          "displacement_cm": 199.99949620436587
+        },
+        {
+          "step": 3,
+          "type": "move_to",
+          "param": "6",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.0
+        },
+        {
+          "step": 4,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.0
+        },
+        {
+          "step": 5,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "You have reached the subgoal. Proceed to the next waypoint.",
+          "stop_reason": null,
+          "displacement_cm": 400.0
+        },
+        {
+          "step": 6,
+          "type": "turn_around",
+          "param": "L90",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 7,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.0
+        },
+        {
+          "step": 8,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.0
+        },
+        {
+          "step": 9,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.0
+        },
+        {
+          "step": 10,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.0
+        },
+        {
+          "step": 11,
+          "type": "move_to",
+          "param": "2",
+          "feedback": "A trip hazard contact was detected.",
+          "stop_reason": null,
+          "displacement_cm": 200.0
+        },
+        {
+          "step": 12,
+          "type": "move_to",
+          "param": "3",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 199.99949620436587
+        },
+        {
+          "step": 13,
+          "type": "move_to",
+          "param": "7",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 400.0
+        },
+        {
+          "step": 14,
+          "type": "move_to",
+          "param": "2",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 200.0
+        },
+        {
+          "step": 15,
+          "type": "move_to",
+          "param": "2",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 200.0
+        },
+        {
+          "step": 16,
+          "type": "move_to",
+          "param": "3",
+          "feedback": "You collided with a human. A trip hazard contact was detected.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 80.4291537192818
+        },
+        {
+          "step": 17,
+          "type": "move_to",
+          "param": "4",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 200.0
+        },
+        {
+          "step": 18,
+          "type": "move_to",
+          "param": "4",
+          "feedback": "You collided with a human. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": "native_contact",
+          "displacement_cm": 66.01548909157648
+        },
+        {
+          "step": 19,
+          "type": "turn_around",
+          "param": "L30",
+          "feedback": "While you were deciding, you collided with a pedestrian.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 20,
+          "type": "move_to",
+          "param": "3",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": 200.0000640499913
+        },
+        {
+          "step": 21,
+          "type": "turn_around",
+          "param": "R60",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 22,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 16.895683709158995
+        },
+        {
+          "step": 23,
+          "type": "wait",
+          "param": "1",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 24,
+          "type": "move_to",
+          "param": "1",
+          "feedback": "You collided with a human. While you were deciding, you collided with a pedestrian and an object.",
+          "stop_reason": "native_contact",
+          "displacement_cm": 1.281815119272526
+        },
+        {
+          "step": 25,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 0.0010000000002037268
+        },
+        {
+          "step": 26,
+          "type": "move_to",
+          "param": "2",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 0.0
+        },
+        {
+          "step": 27,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 0.0
+        },
+        {
+          "step": 28,
+          "type": "move_to",
+          "param": "4",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 0.0
+        },
+        {
+          "step": 29,
+          "type": "turn_around",
+          "param": "L60",
+          "feedback": "Action completed successfully.",
+          "stop_reason": null,
+          "displacement_cm": null
+        },
+        {
+          "step": 30,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action. While you were deciding, you collided with a pedestrian.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 13.575643667980577
+        },
+        {
+          "step": 31,
+          "type": "move_to",
+          "param": "5",
+          "feedback": "You collided with an object.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 76.94147106079939
+        },
+        {
+          "step": 32,
+          "type": "move_to",
+          "param": "1",
+          "feedback": "The movement command did not reach its waypoint, but the native category counters did not identify a contact. Reassess the route and choose a different action.",
+          "stop_reason": "sweep_blocked",
+          "displacement_cm": 0.0010000000002037268
+        },
+        {
+          "step": 33,
+          "type": "move_to",
+          "param": "4",
+          "feedback": "You have reached the final destination.",
+          "stop_reason": null,
+          "displacement_cm": 200.00006404998948
+        }
+      ]
+    }
+  ]
+}

@@ -43,6 +43,15 @@ def summarize(suite):
                 outcome = 'incomplete_infrastructure_or_validation_failure'
             else:
                 outcome = 'not_finalized'
+            completed_metrics = None
+            if accepted:
+                completed_metrics = {k: result.get(k) for k in [
+                    'success', 'termination_reason', 'collision_count', 'passive_collision_count',
+                    'decision_count', 'avg_response_time', 'sim_time', 'safe_success', 'benchmark_metrics']}
+                if completed_metrics['safe_success'] is None:
+                    indicator = (result.get('benchmark_metrics') or {}).get('safe_success_indicator')
+                    if indicator is not None:
+                        completed_metrics['safe_success'] = bool(indicator)
             errors = [abs(s['timing']['native_game_time_delta_seconds'] - s['timing']['sim_time_delta_seconds'])
                       for s in steps if s.get('timing', {}).get('native_game_time_delta_seconds') is not None]
             contacts = []
@@ -71,10 +80,7 @@ def summarize(suite):
                 'reasoning_effort': result.get('reasoning_effort'),
                 'max_native_vs_accounted_delta_error_s': max(errors) if errors else None,
                 'contacts_and_stops': contacts,
-                'completed_episode_metrics': ({k: result.get(k) for k in [
-                    'success', 'termination_reason', 'collision_count', 'passive_collision_count',
-                    'decision_count', 'avg_response_time', 'sim_time', 'safe_success', 'benchmark_metrics']}
-                    if accepted else None),
+                'completed_episode_metrics': completed_metrics,
                 'result_sha256': digest(path) if path else None,
                 'rollout_log_sha256': digest(log) if log.exists() else None,
                 'manifest_sha256': [digest(p) for p in step_paths]})

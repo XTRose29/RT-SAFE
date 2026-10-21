@@ -1,19 +1,34 @@
 {
-  "source_commit": "0c25fcd854ff89bade224fb55a76029f3083e509",
+  "source_commit": "691bec6cec7d376e625b798b019ef6a8bb949c0c",
   "protocol": "execution_alignment_v4",
   "pytest": {
-    "passed": 807,
+    "passed": 809,
     "skipped": 1,
     "subtests_passed": 498,
     "exit_code": 0,
-    "log_sha256": "7fb5542acbb68c37f1938181b6f3eecb8a82803837e9bed073e86ebe602c41ea"
+    "log_sha256": "fd15155f858fb58841929803e7ceb7a53442e64d5be67f6e60a8f52c976da90e"
   },
   "controlled_native_checks": {
     "passed": 14,
     "map": "RT10",
     "default_rendering_threads": true,
-    "source_commit": "3f9cbbcdd17e8dfc4ccdd39b9cd50a77b63b3f90"
+    "source_commit": "691bec6cec7d376e625b798b019ef6a8bb949c0c",
+    "failed_probe_attempts_retained": "initial-probe-precondition-failure.json"
   },
   "historical_leaderboard_changed": false,
-  "complete_native_contact_event_stream_available": false
+  "complete_native_contact_event_stream_available": false,
+  "account_pilot": {
+    "source_commit": "691bec6cec7d376e625b798b019ef6a8bb949c0c",
+    "gpt_completed_episodes": 3,
+    "gemini_completed_episodes": 1,
+    "claude_completed_episodes": 0,
+    "gpt_renderer_setup_failures_retained": 2,
+    "audits": {
+      "decisions": 113,
+      "moves_checked": 94,
+      "history_frames_checked": 151,
+      "feedback_in_next_prompt": 49
+    },
+    "max_native_vs_accounted_delta_error_s": 0.0
+  }
 }
