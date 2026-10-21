@@ -190,6 +190,12 @@ class RTCommunicator(Communicator):
         return [self._parse_traffic_signal_state(signal_id, raw)
                 for signal_id, raw in zip(signal_ids, responses)]
 
+    def traffic_signals_all_red(self, signal_ids):
+        """Apply ordered native red transitions; readback is a separate tick."""
+        self.unrealcv.tl_set_all_red_batch([
+            self.get_traffic_signal_name(signal_id) for signal_id in signal_ids
+        ])
+
     def _parse_traffic_signal_state(self, signal_id, raw_response):
         object_name = self.get_traffic_signal_name(signal_id)
         payload = json.loads(raw_response)

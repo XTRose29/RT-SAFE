@@ -55,11 +55,10 @@ class LegacyIntersectionClearanceTests(unittest.TestCase):
 
         manager.update_intersections(communicator)
 
-        communicator.traffic_signal_switch_to.assert_has_calls(
-            [
-                call(vehicle_head.id, "all red"),
-                call(pedestrian_head.id, "all red"),
-            ]
+        # The already-red vehicle head needs no redundant write. The WALK
+        # head must be corrected, then observed red on a subsequent update.
+        communicator.traffic_signal_switch_to.assert_called_once_with(
+            pedestrian_head.id, "all red"
         )
         intersection.increment_cycle_count.assert_not_called()
 

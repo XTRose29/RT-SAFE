@@ -262,3 +262,47 @@ def test_transient_hazard_during_recovery_is_recorded_on_same_decision():
     assert details['hazard_events'][1]['phase'] == 'during_recovery'
     assert a.last_action_safety_samples == []
     assert not a._collect_action_safety
+
+
+def test_bulk_red_transitions_preserve_order_and_bound_batch_size():
+    ue = RTUnrealCV.__new__(RTUnrealCV)
+    ue.lock = threading.Lock()
+    ue.client = Mock()
+    ue.client.request_batch.side_effect = lambda commands: ['{}'] * len(commands)
+    comm = RTCommunicator(ue)
+    comm.traffic_signals_all_red(range(66))
+    batches = [call.args[0] for call in ue.client.request_batch.call_args_list]
+    assert [len(batch) for batch in batches] == [96, 96, 6]
+    assert [command for batch in batches for command in batch] == [
+        f'vbp RT_TRAFFIC_SIGNAL_{i} {method}' for i in range(66)
+        for method in ('SwitchVehicleFrontRed', 'SwitchVehicleBackRed', 'SetPedestrianStop')]
+    ue.client.request.assert_not_called()
+
+
+@pytest.mark.parametrize('responses', [[], ['{}'] * 2, ['error bad method'] * 3,
+    [None] * 3, ['[]'] * 3, ['{"error":"missing actor"}'] * 3])
+def test_bulk_red_fails_closed_on_bad_acknowledgement(responses):
+    ue = RTUnrealCV.__new__(RTUnrealCV)
+    ue.lock = threading.Lock()
+    ue.client = Mock()
+    ue.client.request_batch.return_value = responses
+    with pytest.raises(RuntimeError):
+        ue.tl_set_all_red_batch(['one'])
+    assert ue.client.request_batch.call_count == 1
+    ue.client.request.assert_not_called()
+
+
+def test_bulk_red_keeps_clearance_readback_barrier():
+    manager, intersection = clearance_manager()
+    intersection.python_pedestrian_phase_elapsed_s = 3.
+    intersection.traffic_lights[3].state = (S.VEHICLE_RED, S.PEDESTRIAN_GREEN)
+    class Comm:
+        traffic_signals_all_red = Mock()
+        traffic_signal_switch_to = Mock()
+    comm = Comm()
+    manager.update_intersections(comm, delta_time_s=.1)
+    comm.traffic_signals_all_red.assert_called_once_with([3])
+    comm.traffic_signal_switch_to.assert_not_called()
+    intersection.traffic_lights[3].state = (S.VEHICLE_RED, S.PEDESTRIAN_RED)
+    manager.update_intersections(comm, delta_time_s=.1)
+    comm.traffic_signal_switch_to.assert_called_once_with(0, 'green')

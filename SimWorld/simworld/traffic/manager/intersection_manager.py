@@ -206,6 +206,16 @@ class IntersectionManager:
 
         return next_sidewalk, crosswalk, next_waypoints, current_intersection
 
+    def _set_all_red(self, communicator, signals):
+        """Use the RT bulk transport when implemented by the communicator."""
+        signals = list(signals)
+        bulk = getattr(type(communicator), 'traffic_signals_all_red', None)
+        if callable(bulk):
+            communicator.traffic_signals_all_red([signal.id for signal in signals])
+        else:
+            for signal in signals:
+                communicator.traffic_signal_switch_to(signal.id, 'all red')
+
     def update_intersections(
         self,
         communicator: Communicator,
@@ -285,16 +295,14 @@ class IntersectionManager:
                 if pedestrian_phase == 'walk':
                     intersection.python_pedestrian_phase = 'clearance'
                     intersection.python_pedestrian_phase_elapsed_s = 0.0
+                    self._set_all_red(communicator, all_signals)
                     for signal in all_signals:
-                        communicator.traffic_signal_switch_to(
-                            signal.id, 'all red'
-                        )
                         self.python_states[signal.id] = (
                             TrafficSignalState.VEHICLE_RED,
                             TrafficSignalState.PEDESTRIAN_RED,
                         )
                     continue
-                corrected_head = False
+                drifted_heads = []
                 for signal in all_signals:
                     # Readback is refreshed by the controller on every tick.
                     # Reassert only a head that has drifted out of all-red;
@@ -303,17 +311,16 @@ class IntersectionManager:
                         TrafficSignalState.VEHICLE_RED,
                         TrafficSignalState.PEDESTRIAN_RED,
                     ):
-                        communicator.traffic_signal_switch_to(
-                            signal.id, 'all red'
-                        )
-                        corrected_head = True
+                        drifted_heads.append(signal)
                     self.python_states[signal.id] = (
                         TrafficSignalState.VEHICLE_RED,
                         TrafficSignalState.PEDESTRIAN_RED,
                     )
                 # A repaired head must be observed red on a later tick before
                 # releasing vehicles, even if the clearance timer has expired.
-                if elapsed < clearance_s or corrected_head:
+                if drifted_heads:
+                    self._set_all_red(communicator, drifted_heads)
+                if elapsed < clearance_s or drifted_heads:
                     continue
                 intersection.python_pedestrian_phase = None
                 intersection.python_pedestrian_phase_elapsed_s = 0.0
@@ -354,10 +361,14 @@ class IntersectionManager:
                         f'Intersection {intersection.id} is entering an '
                         'all-red pedestrian clearance barrier'
                     )
-                    for signal in all_signals:
-                        communicator.traffic_signal_switch_to(
-                            signal.id, 'all red'
+                    self._set_all_red(communicator, [
+                        signal for signal in all_signals
+                        if signal.get_state() != (
+                            TrafficSignalState.VEHICLE_RED,
+                            TrafficSignalState.PEDESTRIAN_RED,
                         )
+                    ])
+                    for signal in all_signals:
                         self.python_states[signal.id] = (
                             TrafficSignalState.VEHICLE_RED,
                             TrafficSignalState.PEDESTRIAN_RED,

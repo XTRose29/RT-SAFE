@@ -35,6 +35,37 @@ class RTUnrealCV(UnrealCV):
             raise RuntimeError('Incomplete native traffic-light state batch')
         return responses
 
+    def tl_set_all_red_batch(self, names):
+        """Send ordered red transitions in bounded batches without replay.
+
+        Acknowledgement is not state confirmation: the controller must read
+        the heads again on a later tick before releasing conflicting traffic.
+        The transport never retries these non-idempotent Blueprint commands.
+        """
+        names = list(names)
+        with self.lock:
+            for start in range(0, len(names), 32):
+                commands = [
+                    f'vbp {name} {method}'
+                    for name in names[start:start + 32]
+                    for method in ('SwitchVehicleFrontRed',
+                                   'SwitchVehicleBackRed', 'SetPedestrianStop')
+                ]
+                responses = self.client.request_batch(commands)
+                if not isinstance(responses, (list, tuple)) or len(responses) != len(commands):
+                    raise RuntimeError('Incomplete native all-red command batch')
+                for response in responses:
+                    if isinstance(response, bytes):
+                        response = response.decode('utf-8', errors='replace')
+                    try:
+                        payload = json.loads(response)
+                    except (ValueError, TypeError) as exc:
+                        raise RuntimeError('Invalid native all-red acknowledgement') from exc
+                    if not isinstance(payload, dict) or any(
+                        str(key).lower() == 'error' for key in payload
+                    ):
+                        raise RuntimeError('Failed native all-red command')
+
     def move_actor_with_sweep(self, name, location):
         """Move the root collision shape on a straight segment, never teleport.
 
