@@ -795,6 +795,20 @@ class WorldManagerTriggerControlTests(unittest.TestCase):
         manager = self.make_manager()
         self.assertEqual(manager._normalize_difficulty_label('hard'), 'default')
 
+    def test_episode_schema_matches_release_protocol(self):
+        import ast
+        import textwrap
+        import json
+        from pathlib import Path
+        tree = ast.parse(textwrap.dedent(inspect.getsource(WorldManager.save_evaluation_data)))
+        schemas = [value.value for node in ast.walk(tree) if isinstance(node, ast.Dict)
+                   for key, value in zip(node.keys, node.values)
+                   if isinstance(key, ast.Constant) and key.value == 'artifact_schema_version'
+                   and isinstance(value, ast.Constant)]
+        release = json.loads((Path(__file__).resolve().parents[1] /
+                              'benchmark/release_sources.json').read_text())
+        self.assertEqual(schemas, [release['protocol']])
+
     def test_evaluation_result_serializes_canonical_termination_reason(self):
         source = inspect.getsource(WorldManager.save_evaluation_data)
         self.assertIn('"termination_reason": termination_reason', source)

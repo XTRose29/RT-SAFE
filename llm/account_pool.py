@@ -1,4 +1,4 @@
-"""Contracts for exact Gemini subscription routes on the account gateway."""
+"""Contracts for explicitly validated subscription routes on the account gateway."""
 import re
 import base64
 import copy
@@ -8,6 +8,12 @@ from urllib.parse import urlsplit
 
 from PIL import Image
 
+
+PINNED_ROUTES = {
+    "antigravity/gemini-4-argon-medium": "medium",
+    "antigravity/claude-sonnet-5-5-medium": "medium",
+    "codex/gpt-6-astra": "medium",
+}
 
 REQUEST_BUDGET_BYTES = 1_000_000  # Headroom below the gateway's 1 MiB limit.
 
@@ -64,10 +70,5 @@ def validate_route(model, effort, base_url):
     url = urlsplit(base_url or "")
     if url.scheme not in {"http", "https"} or not url.hostname or url.username or url.password or url.query or url.fragment or url.path.rstrip("/") != "/v1":
         raise ValueError("Account pool requires an explicit http(s)://host[:port]/v1 base URL")
-    pinned = {
-        "antigravity/gemini-4-argon-medium": "medium",
-        "antigravity/claude-sonnet-5-5-medium": "medium",
-        "codex/gpt-6-astra": "medium",
-    }
-    if model not in pinned or effort != pinned[model]:
+    if model not in PINNED_ROUTES or effort != PINNED_ROUTES[model]:
         raise ValueError("This pilot requires an explicitly pinned model route and medium effort")

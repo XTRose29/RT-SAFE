@@ -2306,7 +2306,7 @@ class WorldManager:
                     "red_light_violation",
                 ],
             },
-            "artifact_schema_version": "execution_alignment_v3",
+            "artifact_schema_version": "execution_alignment_v4",
             "success": self.agent.success,
             "failed": self.agent.failed,
             "termination_reason": termination_reason,

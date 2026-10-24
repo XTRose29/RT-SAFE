@@ -1,10 +1,32 @@
 # Validated benchmark fixes
 
-Branch `fix/validated-benchmark-20261021` contains the complete benchmark source,
+Branch `fix/rt-safe-v4` contains the complete benchmark source,
 task definitions, runners, tests, and website, with the earlier consolidated fixes
 plus the `execution_alignment_v4` changes below. The UE binary remains a separate
 [pinned download](REALTIME_ADDON.md). This branch does not contain an editable
 copy of the original Unreal project.
+
+## Consolidation follow-up
+
+The standalone `fix/rt-safe-v4` branch includes the completed source-`691bec6`
+GPT/Gemini evidence, the default-rendering preset correction, and a further
+controller-cadence correction: safety sampling remains at most 0.1 simulated
+seconds apart, while full-city updates during wait/recovery respect the configured
+controller interval (normally 0.5 seconds). The cadence regression tests pass;
+the attempted paired native performance probe produced no completed comparison.
+Do not claim a measured end-to-end speedup for this follow-up.
+
+Episode metadata now agrees with the step artifacts and release manifest on
+`execution_alignment_v4`. The [model-watch adapter](MODEL_WATCH.md) supports a
+separate v4 queue and ten/twenty-task filing; it does not publish historical scores
+or start jobs merely because the shared feed announces a model. The previous
+native checks and account episodes below retain their original source pins;
+they have not been rerun on this combined follow-up source.
+
+The combined source passed **830 tests and 498 subtests**, with one optional
+stack test skipped. See [the consolidation test output](../validation/validated-benchmark-v4/consolidation-pytest.txt).
+Release-content checks and all eight pinned runtime source hashes also passed.
+These are software checks, not a new native-renderer campaign.
 
 ## Changes in v4
 

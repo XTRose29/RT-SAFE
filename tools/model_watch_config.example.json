@@ -1,0 +1,39 @@
+{
+  "repo": "/srv/rtsafe/source",
+  "state_dir": "/srv/rtsafe/private/state-v4",
+  "selection_manifest": "/srv/rtsafe/private/matched20.json",
+  "python": "/srv/rtsafe/venv/bin/python",
+  "key_file": "/srv/rtsafe/private/pool.key",
+  "ue_launcher": "/srv/rtsafe/runtime/Linux/SimWorld.sh",
+  "workers": 1,
+  "gpus": [
+    0
+  ],
+  "ports": [
+    19660
+  ],
+  "max_attempts": 2,
+  "feed_url": "http://ds-serv6.ucsd.edu:8953/feed/models.json",
+  "catalog_url": "https://openrouter.ai/api/v1/models",
+  "max_feed_age_hours": 6,
+  "model_prefixes": [
+    "antigravity/gemini-",
+    "antigravity/claude-",
+    "codex/gpt-"
+  ],
+  "efforts": [
+    "medium"
+  ],
+  "provider": "account-pool",
+  "base_url": "http://127.0.0.1:9443/v1",
+  "environment": {
+    "SIMWORLD_SKIP_INITIAL_SETRES": "1",
+    "SIMWORLD_SKIP_ASYNC_SKINNED_ASSET_COMPILATION": "1"
+  },
+  "slack": {
+    "channel_name": "#proj-safety",
+    "channel_id": "",
+    "owner_user_id": "",
+    "token_file": "/srv/rtsafe/private/slack.env"
+  }
+}

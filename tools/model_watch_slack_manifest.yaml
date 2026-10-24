@@ -1,0 +1,23 @@
+display_information:
+  name: RT-SAFE model watch
+  description: Queue new models and manually run RT-SAFE in proj-safety.
+  background_color: "#243c52"
+features:
+  bot_user:
+    display_name: rtsafe-model-watch
+    always_online: true
+  slash_commands:
+    - command: /rtsafe
+      description: Show queued models and RT-SAFE campaign status
+      should_escape: false
+oauth_config:
+  scopes:
+    bot:
+      - chat:write
+      - commands
+settings:
+  interactivity:
+    is_enabled: true
+  socket_mode_enabled: true
+  org_deploy_enabled: false
+  token_rotation_enabled: false
