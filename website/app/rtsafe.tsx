@@ -4,6 +4,7 @@ import rawData from "./data.json";
 import subsetData from "./subset-results.json";
 import matchedData from "./matched-default-results.json";
 import geminiProgress from "./gemini4-progress.json";
+import { LatestResults } from "./latest-results";
 import { ModelExamples } from "./model-examples";
 import { ModelLogo } from "./model-logos";
 import { VisitorTracking } from "./visitor-map";
@@ -646,6 +647,7 @@ export default function RTsafe() {
             <span>available actions</span>
           </div>
         </section>
+        <LatestResults />
         <section id="benchmark" className="section">
           <SectionHead
             n="01"
@@ -795,19 +797,13 @@ export default function RTsafe() {
             </div>
           </div>
         </section>
-        <section id="results" className="section results-section">
-          <SectionHead
-            n="04"
-            label="THE RESULTS"
-            title={
-              <>
-                Arrival is only
-                <br />
-                part of the story.
-              </>
-            }
-            description="Compare nine models on the same 20 hard real-time tasks across four maps, at configured-default reasoning. Explore the earlier 10-task effort comparison and full manuscript results using the evaluation selector."
-          />
+        <section id="evaluation-comparisons" className="section results-section">
+          <SectionHead n="04" label="REASONING & EVALUATION SETTINGS" title={<>When does reasoning<br />become a safety risk?</>} description="The manuscript’s static-versus-real-time and reasoning-effort comparisons retain their original evaluation sets. Explore earlier model results below." />
+          <Findings />
+          <Reasoning />
+          <details className="historical-results">
+            <summary>Earlier model results & reasoning-effort explorer</summary>
+            <p>Historical evaluation sets, separate from the latest model-version comparison above. The selector preserves the 20-task defaults, 10-task effort comparison, and full manuscript results.</p>
           <div className="table-heading">
             <div>
               <h3>Hard real-time leaderboard</h3>
@@ -838,9 +834,7 @@ export default function RTsafe() {
               <p><a href={geminiProgress.video} download>Download review video (MP4) ↓</a></p>
             </details>
           </section>
-          <div className="table-heading"><div><h3>Full benchmark findings</h3><p>The following analyses use the manuscript’s original evaluation sets.</p></div></div>
-          <Findings />
-          <Reasoning />
+          </details>
         </section>
         <section id="resources" className="section resources-section">
           <SectionHead
